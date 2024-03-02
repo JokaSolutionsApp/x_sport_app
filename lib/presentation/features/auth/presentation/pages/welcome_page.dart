@@ -15,6 +15,10 @@ class WelcomePage extends StatelessWidget {
   WelcomePage({super.key});
   @override
   Widget build(BuildContext context) {
+    final List<SportEntity> sports = [];
+    final ValueNotifier<List<bool>> isSelectedList = ValueNotifier<List<bool>>(
+        List.generate(sports.length, (index) => false));
+    final List<int> selectedSports = [];
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -44,225 +48,215 @@ class WelcomePage extends StatelessWidget {
         toolbarHeight: 0,
       ),
       body: Container(
-        alignment: Alignment.topCenter,
-        height: 1.sh,
-        width: 1.sw,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-              colors: [XColors.Background_Color1, XColors.Background_Color2],
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight),
-        ),
-        child: BlocBuilder<AuthBloc, AuthState>(builder: (context, state) {
-          return state.when(
-            initial: () => const SizedBox.shrink(),
-            register: (loading, state, data) {
-              if (true) {
-                final List<SportEntity> sports = [];
-                final ValueNotifier<List<bool>> isSelectedList =
-                    ValueNotifier<List<bool>>(
-                        List.generate(sports.length, (index) => false));
-                final List<int> selectedSports = [];
-                return Stack(
-                  fit: StackFit.expand,
-                  alignment: Alignment.topCenter,
-                  children: [
-                    Positioned(
-                        top: 10.h,
-                        child: Image.asset(
-                          'assets/images/x_logo_welcome.png',
-                          colorBlendMode: BlendMode.plus,
-                        )),
-                    Positioned(
-                        top: 200.h,
-                        width: 1.sw,
-                        child: Column(
-                          children: [
-                            Text(
-                              'اهلا بك!',
-                              style: GoogleFonts.tajawal(
-                                textStyle: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 40.sp,
-                                    fontWeight: FontWeight.w400),
-                              ),
+          alignment: Alignment.topCenter,
+          height: 1.sh,
+          width: 1.sw,
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+                colors: [XColors.Background_Color1, XColors.Background_Color2],
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight),
+          ),
+          child: Stack(
+            fit: StackFit.expand,
+            alignment: Alignment.topCenter,
+            children: [
+              Positioned(
+                  top: 0.h,
+                  child: Image.asset(
+                    'assets/images/x_sport_logo.png',
+                    height: 220.h,
+                    width: 220.w,
+                  )),
+              Positioned(
+                  top: 200.h,
+                  width: 1.sw,
+                  child: Column(
+                    children: [
+                      Text(
+                        'اهلا بك!',
+                        style: GoogleFonts.tajawal(
+                          textStyle: TextStyle(
+                              color: Colors.white,
+                              fontSize: 40.sp,
+                              fontWeight: FontWeight.w400),
+                        ),
+                      ),
+                      Text(
+                        textAlign: TextAlign.center,
+                        'قم باكمال معلوماتك الشخصية كي تحقق افضل تجربة في اكس سبورت',
+                        style: GoogleFonts.tajawal(
+                          textStyle: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20.sp,
+                              fontWeight: FontWeight.w400),
+                        ),
+                      ),
+                      SizedBox(height: 30.h),
+                      ImagePcikerComponent(
+                        getImage: (bytes, type) {
+                          imageBytes = bytes;
+                          imageType = type;
+                        },
+                      ),
+                      SizedBox(height: 30.h),
+                      Text(
+                        'اي رياضة تفضل ان تبدأبها؟!',
+                        style: GoogleFonts.tajawal(
+                          textStyle: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20.sp,
+                              fontWeight: FontWeight.w400),
+                        ),
+                      ),
+                      Text(
+                        textAlign: TextAlign.center,
+                        'يمكنك اضافة  المزيد من النشاطات لاحقا!',
+                        style: GoogleFonts.tajawal(
+                          textStyle: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15.sp,
+                              fontWeight: FontWeight.w400),
+                        ),
+                      ),
+                      SizedBox(height: 30.h),
+                      SizedBox(
+                          height: 120.h,
+                          width: 360.w,
+                          child: GridView.builder(
+                            gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                              mainAxisExtent: 36.w,
+                              crossAxisCount: 3,
+                              crossAxisSpacing: 14.0.w,
+                              mainAxisSpacing: 20.0.w,
                             ),
-                            Text(
-                              textAlign: TextAlign.center,
-                              'قم باكمال معلوماتك الشخصية كي تحقق افضل تجربة في اكس سبورت',
-                              style: GoogleFonts.tajawal(
-                                textStyle: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20.sp,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                            ),
-                            SizedBox(height: 30.h),
-                            ImagePcikerComponent(
-                              getImage: (bytes, type) {
-                                imageBytes = bytes;
-                                imageType = type;
-                              },
-                            ),
-                            SizedBox(height: 30.h),
-                            Text(
-                              'اي رياضة تفضل ان تبدأبها؟!',
-                              style: GoogleFonts.tajawal(
-                                textStyle: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20.sp,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                            ),
-                            Text(
-                              textAlign: TextAlign.center,
-                              'يمكنك اضافة  المزيد من النشاطات لاحقا!',
-                              style: GoogleFonts.tajawal(
-                                textStyle: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 15.sp,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                            ),
-                            SizedBox(height: 30.h),
-                            SizedBox(
-                                height: 120.h,
-                                width: 360.w,
-                                child: GridView.builder(
-                                  gridDelegate:
-                                      SliverGridDelegateWithFixedCrossAxisCount(
-                                    mainAxisExtent: 36.w,
-                                    crossAxisCount: 3,
-                                    crossAxisSpacing: 14.0.w,
-                                    mainAxisSpacing: 20.0.w,
-                                  ),
-                                  itemCount: sports.length,
-                                  itemBuilder: (context, index) {
-                                    return ValueListenableBuilder(
-                                      valueListenable: isSelectedList,
-                                      builder: (context, selectedList, child) {
-                                        final isSelected = selectedList[index];
+                            itemCount: sports.length,
+                            itemBuilder: (context, index) {
+                              return ValueListenableBuilder(
+                                valueListenable: isSelectedList,
+                                builder: (context, selectedList, child) {
+                                  final isSelected = selectedList[index];
 
-                                        return GestureDetector(
-                                          onTap: () {
-                                            final sportId =
-                                                sports[index].sportId;
+                                  return GestureDetector(
+                                    onTap: () {
+                                      final sportId = sports[index].sportId;
 
-                                            if (selectedSports
-                                                .contains(sportId)) {
-                                              // If sportId is already in the list, remove it
-                                              selectedSports.remove(sportId);
-                                            } else {
-                                              // If sportId is not in the list, add it
-                                              selectedSports.add(sportId);
-                                            }
+                                      if (selectedSports.contains(sportId)) {
+                                        // If sportId is already in the list, remove it
+                                        selectedSports.remove(sportId);
+                                      } else {
+                                        // If sportId is not in the list, add it
+                                        selectedSports.add(sportId);
+                                      }
 
-                                            print(selectedSports);
+                                      print(selectedSports);
 
-                                            final List<bool> newList =
-                                                List.from(selectedList);
-                                            newList[index] = !isSelected;
-                                            isSelectedList.value = newList;
-                                          },
-                                          child: Container(
-                                            width: 60.0.w,
-                                            decoration: BoxDecoration(
-                                              color: isSelected
-                                                  ? Colors.white
-                                                  : Colors.transparent,
-                                              borderRadius:
-                                                  BorderRadius.circular(18.sp),
-                                              border: Border.all(
-                                                color: Colors.white,
-                                                width: 1.0,
+                                      final List<bool> newList =
+                                          List.from(selectedList);
+                                      newList[index] = !isSelected;
+                                      isSelectedList.value = newList;
+                                    },
+                                    child: Container(
+                                      width: 60.0.w,
+                                      decoration: BoxDecoration(
+                                        color: isSelected
+                                            ? Colors.white
+                                            : Colors.transparent,
+                                        borderRadius:
+                                            BorderRadius.circular(18.sp),
+                                        border: Border.all(
+                                          color: Colors.white,
+                                          width: 1.0,
+                                        ),
+                                      ),
+                                      child: Container(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 12.w),
+                                        alignment: Alignment.center,
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Expanded(
+                                              child: Icon(
+                                                Icons.sports_tennis_outlined,
+                                                color: isSelected
+                                                    ? XColors.Background_Color1
+                                                    : Colors.white,
+                                                size: 22.sp,
                                               ),
                                             ),
-                                            child: Container(
-                                              padding: EdgeInsets.symmetric(
-                                                  horizontal: 12.w),
-                                              alignment: Alignment.center,
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
-                                                  Expanded(
-                                                    child: Icon(
-                                                      Icons
-                                                          .sports_tennis_outlined,
+                                            Expanded(
+                                              flex: 8,
+                                              child: Text(
+                                                textAlign: TextAlign.end,
+                                                sports[index].name,
+                                                style: GoogleFonts.tajawal(
+                                                  textStyle: TextStyle(
                                                       color: isSelected
                                                           ? XColors
                                                               .Background_Color1
                                                           : Colors.white,
-                                                      size: 22.sp,
-                                                    ),
-                                                  ),
-                                                  Expanded(
-                                                    flex: 8,
-                                                    child: Text(
-                                                      textAlign: TextAlign.end,
-                                                      sports[index].name,
-                                                      style:
-                                                          GoogleFonts.tajawal(
-                                                        textStyle: TextStyle(
-                                                            color: isSelected
-                                                                ? XColors
-                                                                    .Background_Color1
-                                                                : Colors.white,
-                                                            fontSize: 15.sp,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .w300),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
+                                                      fontSize: 15.sp,
+                                                      fontWeight:
+                                                          FontWeight.w300),
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                        );
-                                      },
-                                    );
-                                  },
-                                )),
-                            SizedBox(height: 20.h),
-                            SubmitButton(
-                              radius: 28,
-                              isButtonEnabled: true,
-                              fillColor: XColors.Submit_Button_Color,
-                              textColor: Colors.white,
-                              text: 'ابدأ الان',
-                              onPressed: () {
-                                print("image ${imageBytes}");
-                                print("image ${imageType}");
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                },
+                              );
+                            },
+                          )),
+                      SizedBox(height: 20.h),
+                      SubmitButton(
+                        radius: 28,
+                        isButtonEnabled: true,
+                        fillColor: XColors.Submit_Button_Color,
+                        textColor: Colors.white,
+                        text: 'ابدأ الان',
+                        onPressed: () {
+                          print("image ${imageBytes}");
+                          print("image ${imageType}");
 
-                                context.read<AuthBloc>().add(
-                                    AuthEvent.sendImageAndSports(
-                                        imageBytes: imageBytes,
-                                        imageType: imageType,
-                                        selectedSports: selectedSports));
+                          context.read<AuthBloc>().add(
+                              AuthEvent.sendImageAndSports(
+                                  imageBytes: imageBytes,
+                                  imageType: imageType,
+                                  selectedSports: selectedSports));
 
-                                // EasyLoadingInit.startLoading();
-                                // Future.delayed(Duration(seconds: 2), () {
-                                //   EasyLoading.dismiss();
-                                //   Navigator.of(navigatorKey.currentContext!).push(
-                                //     MaterialPageRoute(
-                                //         builder: (context) => MainScreen()),
-                                //   );
-                                // });
-                              },
-                            ),
-                          ],
-                        ))
-                  ],
-                );
-              } else {
-                return Center(child: CircularProgressIndicator());
-              }
-            },
-          );
-        }),
-      ),
+                          // EasyLoadingInit.startLoading();
+                          // Future.delayed(Duration(seconds: 2), () {
+                          //   EasyLoading.dismiss();
+                          //   Navigator.of(navigatorKey.currentContext!).push(
+                          //     MaterialPageRoute(
+                          //         builder: (context) => MainScreen()),
+                          //   );
+                          // });
+                        },
+                      ),
+                    ],
+                  ))
+            ],
+          )
+          // child: BlocBuilder<AuthBloc, AuthState>(builder: (context, state) {
+          //   return state.when(
+          //     initial: () => const SizedBox.shrink(),
+          //     register: (loading, state, data) {
+          //       if (true) {
+
+          //       } else {
+          //         return Center(child: CircularProgressIndicator());
+          //       }
+          //     },
+          //   );
+          // }),
+          ),
     );
   }
 }

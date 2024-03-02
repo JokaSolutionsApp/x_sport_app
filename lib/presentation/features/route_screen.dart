@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:x_sport/presentation/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:x_sport/presentation/features/auth/presentation/pages/register_page.dart';
+import 'package:x_sport/presentation/features/auth/presentation/pages/welcome_page.dart';
 
 class RouteScreen extends StatelessWidget {
   const RouteScreen({super.key});
@@ -9,7 +10,7 @@ class RouteScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AuthBloc, AuthState>(builder: (context, state) {
-      return RegisterPage();
+      return WelcomePage();
       // if (state.userAuthState == UserAuthState.loggedIn) {
       //   return MainScreen();
       // } else if (state.userAuthState == UserAuthState.guest) {
