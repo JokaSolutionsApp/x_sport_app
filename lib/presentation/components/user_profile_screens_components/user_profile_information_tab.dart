@@ -383,7 +383,6 @@ class UserProfileInformationTab extends StatelessWidget {
                                   //                 (element) => element.name.contains(newValue))
                                   //             .first
                                   //             .id;
-                                  //         print("idNew: ${id}");
 
                                   //         // context.read<UserBloc>().add(
                                   //         //     UpdateUserPreferencesEvent(
@@ -391,7 +390,6 @@ class UserProfileInformationTab extends StatelessWidget {
                                   //         //         favoriteHand: 0,
                                   //         //         favoritePos: 0,
                                   //         //         favoriteTime: 0));
-                                  //         print(selectedValue.value);
                                   //       },
                                   //       items: widget.preferences![widget.index].options
                                   //           .map<DropdownMenuItem<String>>(

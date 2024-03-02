@@ -55,11 +55,8 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
       'email_or_phone': signInStream.emailPhoneValue,
       'password': signInStream.passwordValue,
     };
-    print('signinpostData ${postData}');
     try {
       final response = await ApiService.post(ApiConstance.signInApi, postData);
-      print('signin ${response.data}');
-      print("response.statusCode ${response.statusCode}");
 
       final data = response.data;
 
@@ -73,7 +70,6 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
         throw ServerException(errorModel: ErrorModel.formJson(data));
       }
     } catch (e) {
-      print('error ${e.runtimeType}');
       throw ServerException(errorModel: ErrorModel.formJson({}));
     }
   }
@@ -81,7 +77,6 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
   @override
   Future<bool> checkUserLogged() async {
     final isLogged = await sl<SecureStorageService>().containsKey('token');
-    print("isLogged $isLogged");
     if (isLogged) {
       return true;
     } else {
@@ -118,12 +113,9 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
     final response = await ApiService.post(ApiConstance.registerApi, postData);
     final data = response.data;
 
-    print("signUp ${response.statusCode}");
-    print("signUp $data");
     if (response.statusCode == 200) {
       final token = data['user']['token'];
       sl<SecureStorageService>().write('token', token);
-      print('user created');
 
       return true;
     } else {
@@ -138,7 +130,6 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
 
     if (response.statusCode == 200) {
       sl<SecureStorageService>().delete('token');
-      print('user log out');
 
       return true;
     } else {
@@ -152,8 +143,6 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
     final data = response.data;
 
     if (response.statusCode == 200) {
-      print('getSports ${data}');
-
       return sportDtoFromJson(json.encode(data));
     } else {
       throw ServerException(errorModel: ErrorModel.formJson(data));
@@ -180,17 +169,14 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
     for (int sportId in selectedSports) {
       formData.fields.add(MapEntry('selected_sports[]', sportId.toString()));
     }
-    print("sendImageAndSports ${formData.fields}");
 
     final response = await ApiService.postFormData(
         ApiConstance.sendImageAndSportsApi, formData);
     final data = response.data;
-    print("sendImageAndSports $data");
 
     if (response.statusCode == 200) {
       return userDtoFromJson(json.encode(data));
     } else {
-      print("Error Response: ${response.data}");
       throw ServerException(errorModel: ErrorModel.formJson(data));
     }
   }
@@ -199,8 +185,6 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
   Future<UserDto> getUserInfo() async {
     try {
       final response = await ApiService.get(ApiConstance.getUserInfoApi);
-      print('getUserInfo ${response.data}');
-      print("response.statusCode ${response.statusCode}");
 
       final data = response.data;
 
@@ -211,7 +195,6 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
         throw ServerException(errorModel: ErrorModel.formJson(data));
       }
     } catch (e) {
-      print('error ${e.runtimeType}');
       throw ServerException(errorModel: ErrorModel.formJson({}));
     }
   }
@@ -229,8 +212,6 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
     try {
       final response =
           await ApiService.post(ApiConstance.updateUserPreferncesApi, postData);
-      print('updateUserPreferences ${response.data}');
-      print("response.statusCode ${response.statusCode}");
 
       final data = response.data;
 
@@ -241,7 +222,6 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
         throw ServerException(errorModel: ErrorModel.formJson(data));
       }
     } catch (e) {
-      print('error ${e.runtimeType}');
       throw ServerException(errorModel: ErrorModel.formJson({}));
     }
   }
@@ -276,17 +256,14 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
     for (int sportId in selectedSports) {
       formData.fields.add(MapEntry('selected_sports[]', sportId.toString()));
     }
-    print("sendImageAndSports ${formData.fields}");
 
     final response = await ApiService.postFormData(
         ApiConstance.updateUserProfileApi, formData);
     final data = response.data;
-    debugPrint("updateUserProfile $data");
 
     if (response.statusCode == 200) {
       return userDtoFromJson(json.encode(data));
     } else {
-      print("Error Response: ${response.data}");
       throw ServerException(errorModel: ErrorModel.formJson(data));
     }
   }
@@ -301,19 +278,15 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
     try {
       final response =
           await ApiService.post(ApiConstance.updateUserPreferncesApi, postData);
-      print('updateHandPrefernce ${response.data}');
-      print(" updateHandPrefernce.statusCode ${response.statusCode}");
 
       final data = response.data;
 
       final stringData = json.encode(data);
       if (response.statusCode == 200) {
-        print("updateHandPrefernce $data");
       } else {
         throw ServerException(errorModel: ErrorModel.formJson(data));
       }
     } catch (e) {
-      print('error ${e.runtimeType}');
       throw ServerException(errorModel: ErrorModel.formJson({}));
     }
   }
@@ -328,19 +301,15 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
     try {
       final response =
           await ApiService.post(ApiConstance.updateUserPreferncesApi, postData);
-      print('updatePositionPreference ${response.data}');
-      print(" updatePositionPreference.statusCode ${response.statusCode}");
 
       final data = response.data;
 
       final stringData = json.encode(data);
       if (response.statusCode == 200) {
-        print("updatePositionPreference $data");
       } else {
         throw ServerException(errorModel: ErrorModel.formJson(data));
       }
     } catch (e) {
-      print('error ${e.runtimeType}');
       throw ServerException(errorModel: ErrorModel.formJson({}));
     }
   }
@@ -355,19 +324,15 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
     try {
       final response =
           await ApiService.post(ApiConstance.updateUserPreferncesApi, postData);
-      print('updateTimePreference ${response.data}');
-      print(" updateTimePreference.statusCode ${response.statusCode}");
 
       final data = response.data;
 
       final stringData = json.encode(data);
       if (response.statusCode == 200) {
-        print("updateTimePreference $data");
       } else {
         throw ServerException(errorModel: ErrorModel.formJson(data));
       }
     } catch (e) {
-      print('error ${e.runtimeType}');
       throw ServerException(errorModel: ErrorModel.formJson({}));
     }
   }

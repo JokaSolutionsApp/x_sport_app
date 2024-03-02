@@ -49,8 +49,6 @@ class _ActivityPreferncesComponentState
 
   @override
   Widget build(BuildContext context) {
-    print("widget.initialValue ${widget.initialValue}");
-
     return RectangleContainer(
       bottomMargin: 20,
       borderWidth: 1,
@@ -94,7 +92,6 @@ class _ActivityPreferncesComponentState
                   //                 (element) => element.name.contains(newValue))
                   //             .first
                   //             .id;
-                  //         print("idNew: ${id}");
 
                   //         // context.read<UserBloc>().add(
                   //         //     UpdateUserPreferencesEvent(
@@ -102,7 +99,6 @@ class _ActivityPreferncesComponentState
                   //         //         favoriteHand: 0,
                   //         //         favoritePos: 0,
                   //         //         favoriteTime: 0));
-                  //         print(selectedValue.value);
                   //       },
                   //       items: widget.preferences![widget.index].options
                   //           .map<DropdownMenuItem<String>>(

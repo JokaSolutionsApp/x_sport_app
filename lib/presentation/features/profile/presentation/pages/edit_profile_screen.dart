@@ -44,7 +44,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
           automaticallyImplyLeading: false,
           leading: IconButton(
               onPressed: () {
-                print(selectedSport);
                 context.read<AuthBloc>().add(AuthEvent.updateUserProfile(
                       userName: editProfileStream.nameValue ?? '',
                       phone: editProfileStream.phoneValue ?? '',

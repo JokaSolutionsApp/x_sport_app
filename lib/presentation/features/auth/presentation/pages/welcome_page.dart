@@ -150,8 +150,6 @@ class WelcomePage extends StatelessWidget {
                                         selectedSports.add(sportId);
                                       }
 
-                                      print(selectedSports);
-
                                       final List<bool> newList =
                                           List.from(selectedList);
                                       newList[index] = !isSelected;
@@ -221,42 +219,17 @@ class WelcomePage extends StatelessWidget {
                         textColor: Colors.white,
                         text: 'ابدأ الان',
                         onPressed: () {
-                          print("image ${imageBytes}");
-                          print("image ${imageType}");
-
                           context.read<AuthBloc>().add(
                               AuthEvent.sendImageAndSports(
                                   imageBytes: imageBytes,
                                   imageType: imageType,
                                   selectedSports: selectedSports));
-
-                          // EasyLoadingInit.startLoading();
-                          // Future.delayed(Duration(seconds: 2), () {
-                          //   EasyLoading.dismiss();
-                          //   Navigator.of(navigatorKey.currentContext!).push(
-                          //     MaterialPageRoute(
-                          //         builder: (context) => MainScreen()),
-                          //   );
-                          // });
                         },
                       ),
                     ],
                   ))
             ],
-          )
-          // child: BlocBuilder<AuthBloc, AuthState>(builder: (context, state) {
-          //   return state.when(
-          //     initial: () => const SizedBox.shrink(),
-          //     register: (loading, state, data) {
-          //       if (true) {
-
-          //       } else {
-          //         return Center(child: CircularProgressIndicator());
-          //       }
-          //     },
-          //   );
-          // }),
-          ),
+          )),
     );
   }
 }

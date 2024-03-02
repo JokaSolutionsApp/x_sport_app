@@ -64,7 +64,6 @@ class _ProfileTabBarComponentState extends State<ProfileTabBarComponent>
 
   @override
   Widget build(BuildContext context) {
-    // print(widget.favoritSports![0].name);
     return Column(
       children: [
         RectangleContainer(

@@ -23,7 +23,6 @@ class ApiService {
 
       return response;
     } catch (error) {
-      print("post error $error");
       throw ServerException(
           errorModel: ErrorModel.formJson(const {'status': 0}));
     }
@@ -35,10 +34,8 @@ class ApiService {
   ) async {
     try {
       final response = await _dio.post(path, data: formData);
-      print("response $response");
       return response;
     } catch (error) {
-      print("error $error");
       throw ServerException(
           errorModel: ErrorModel.formJson(const {'status': 0}));
     }

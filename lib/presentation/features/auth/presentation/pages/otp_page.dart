@@ -189,12 +189,9 @@ class _OtpPageState extends State<OtpPage> {
                         blurRadius: 2.sp,
                         spreadRadius: 2.sp)
                   ],
-                  onCompleted: (v) {
-                    debugPrint("Completed");
-                  },
+                  onCompleted: (v) {},
                   onChanged: (value) => registerStream.changecode(value),
                   beforeTextPaste: (text) {
-                    debugPrint("Allowing to paste $text");
                     return true;
                   },
                 )),
