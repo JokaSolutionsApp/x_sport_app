@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 import 'package:x_sport/presentation/components/profile_screen_components/profile_main_components/profile_stats_component.dart';
 import 'package:x_sport/presentation/components/user_profile_screens_components/user_profile_tabbar_component.dart';
 import 'package:x_sport/presentation/widgets/buttons/submit_button.dart';
@@ -38,8 +39,9 @@ class UserProfileScreen extends StatelessWidget {
                   child: Container(
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage('assets/images/avatar5.png'),
-                        fit: BoxFit.cover,
+                        fit: BoxFit.fill,
+                        image:
+                            AssetsManager.images.avatars.avatar5.image().image,
                       ),
                     ),
                     child: ClipRect(
@@ -259,12 +261,11 @@ class UserProfileScreen extends StatelessWidget {
                             height: 110.w,
                             width: 110.w,
                             child: Container(
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                image: DecorationImage(
-                                  image:
-                                      AssetImage('assets/images/avatar0.png'),
-                                ),
+                              child: CircleAvatar(
+                                backgroundImage: AssetsManager
+                                    .images.social.socialImage
+                                    .image(fit: BoxFit.cover)
+                                    .image,
                               ),
                             ),
                           ),

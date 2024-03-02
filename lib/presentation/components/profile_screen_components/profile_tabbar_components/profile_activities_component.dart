@@ -2,6 +2,8 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:x_sport/core/constance/local_data.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 import 'package:x_sport/presentation/components/profile_screen_components/profile_alert_dialog.dart';
 import 'package:x_sport/presentation/components/profile_screen_components/profile_tabbar_components/activity_prefrences_component.dart';
 import 'package:x_sport/presentation/features/auth/data/dtos/user_dto/user_dto.dart';
@@ -16,21 +18,10 @@ class ProfileActivitiesComponent extends StatelessWidget {
   ProfileActivitiesComponent({super.key, required this.favoritSports});
   final ValueNotifier<int> selectedIndex = ValueNotifier<int>(0);
 
-  final List<Map<String, dynamic>> levels = [
-    {
-      'points': '5000 xp points',
-      'level': 'متمرس',
-    },
-    {
-      'points': '3000 xp points',
-      'level': 'هاو',
-    },
-    {
-      'points': '1000 xp points',
-      'level': 'مبتدئ',
-    }
-  ];
+  final List<LocalPreference> localPrefernces = LocalData.prefernces;
+  final localFavoritSports = LocalData.favoritSports;
 
+  final levels = LocalData.levels;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -45,7 +36,7 @@ class ProfileActivitiesComponent extends StatelessWidget {
                     builder: (BuildContext context) {
                       return ProfileAlertDialog(
                         selectedIndex: selectedIndex,
-                        favoriteSports: levels,
+                        favoriteSports: localFavoritSports,
                         title: 'ازالة لعبة',
                         subtitle:
                             'تنويه: بازالتك لاحد الالعاب سيختفي المحتوى المرتبط بتلك اللعبة خلال تصفحك التطبيق',
@@ -91,15 +82,15 @@ class ProfileActivitiesComponent extends StatelessWidget {
                   child: GridView.builder(
                     shrinkWrap: true,
                     gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                      maxCrossAxisExtent: 114.w,
+                      maxCrossAxisExtent: 80.w,
                       mainAxisExtent: 38.h,
                       crossAxisSpacing: 14.0.w,
                       mainAxisSpacing: 20.0.w,
                     ),
-                    itemCount:
-                        favoritSports!.length + 1, // Add 1 for the "Add" button
+                    itemCount: localFavoritSports!.length +
+                        1, // Add 1 for the "Add" button
                     itemBuilder: (context, index) {
-                      if (index < favoritSports.length) {
+                      if (index < localFavoritSports.length) {
                         // Render the regular item
 
                         return ValueListenableBuilder(
@@ -131,7 +122,7 @@ class ProfileActivitiesComponent extends StatelessWidget {
                                         EdgeInsets.symmetric(horizontal: 12.w),
                                     alignment: Alignment.center,
                                     child: Text(
-                                      favoritSports![index].name,
+                                      localFavoritSports![index],
                                       style: GoogleFonts.tajawal(
                                         textStyle: TextStyle(
                                           color: selectedText,
@@ -145,7 +136,6 @@ class ProfileActivitiesComponent extends StatelessWidget {
                               );
                             });
                       } else {
-                        // Render the "Add" button for the last index
                         return GestureDetector(
                           onTap: () {
                             showDialog(
@@ -153,19 +143,12 @@ class ProfileActivitiesComponent extends StatelessWidget {
                                 builder: (BuildContext context) {
                                   return ProfileAlertDialog(
                                     selectedIndex: selectedIndex,
-                                    favoriteSports: levels,
+                                    favoriteSports: localFavoritSports,
                                     title: 'اضف لعبة جديدة',
                                     subtitle:
                                         'تنويه: باضافتك للعبة جديدة سيظهر لك محتوى جديد خلال تصفحك مرتبط بتلك اللعبة',
                                   );
                                 });
-                            // AppFunctions.addDeleteSportsDialog(
-                            //   context,
-                            //   selectedIndex,
-                            //   favoriteSports: levels,
-                            //   title: 'اضف لعبة جديدة',
-                            //   subtitle:
-                            // );
                           },
                           child: DottedBorder(
                             borderPadding: EdgeInsets.symmetric(vertical: 2.w),
@@ -202,7 +185,7 @@ class ProfileActivitiesComponent extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Image.asset('assets/images/tennis.png'),
+                          AssetsManager.images.main.tennis.image(),
                           Container(
                             height: 149.h,
                             padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -211,7 +194,7 @@ class ProfileActivitiesComponent extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
                                 Text(
-                                  favoritSports![selectedIndex.value].name,
+                                  localFavoritSports[selectedIndex.value],
                                   style: GoogleFonts.tajawal(
                                     textStyle: TextStyle(
                                         color: Colors.black,
@@ -230,9 +213,8 @@ class ProfileActivitiesComponent extends StatelessWidget {
                                         ),
                                         children: [
                                       TextSpan(
-                                        text:
-                                            favoritSports![selectedIndex.value]
-                                                .level,
+                                        text: localFavoritSports![
+                                            selectedIndex.value],
                                         style: GoogleFonts.tajawal(
                                           textStyle: TextStyle(
                                               color: Colors.black,
@@ -252,10 +234,8 @@ class ProfileActivitiesComponent extends StatelessWidget {
                                         ),
                                         children: [
                                       TextSpan(
-                                        text:
-                                            favoritSports![selectedIndex.value]
-                                                .point
-                                                .toString(),
+                                        text: localFavoritSports![
+                                            selectedIndex.value],
                                         style: GoogleFonts.tajawal(
                                           textStyle: TextStyle(
                                               color: Colors.black,
@@ -273,7 +253,7 @@ class ProfileActivitiesComponent extends StatelessWidget {
                                       borderRadius:
                                           BorderRadius.circular(20.sp)),
                                   child: Text(
-                                    favoritSports![selectedIndex.value].level,
+                                    localFavoritSports![selectedIndex.value],
                                     style: GoogleFonts.tajawal(
                                         color: Colors.white,
                                         fontSize: 18.sp,
@@ -352,13 +332,13 @@ class ProfileActivitiesComponent extends StatelessWidget {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          levels[index]['points'],
+                                          levels[index].points,
                                           style: GoogleFonts.tajawal(
                                               fontSize: 16.sp,
                                               color: Color(0xFF2C2C2C)),
                                         ),
                                         Text(
-                                          levels[index]['level'],
+                                          levels[index].level,
                                           style: GoogleFonts.tajawal(
                                               fontSize: 15.sp,
                                               color: Color(0xFF1B1B1B)),
@@ -398,17 +378,12 @@ class ProfileActivitiesComponent extends StatelessWidget {
                   ListView.builder(
                     physics: NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
-                    itemCount:
-                        favoritSports[selectedIndex.value].preferences!.length,
+                    itemCount: localFavoritSports[selectedIndex.value].length,
                     itemBuilder: (context, index) {
                       return ActivityPreferncesComponent(
-                        sportId: favoritSports[selectedIndex.value].sportId,
-                        index: index,
-                        preferences:
-                            favoritSports[selectedIndex.value].preferences!,
-                        initialValue: favoritSports[selectedIndex.value]
-                            .preferences![index]
-                            .selected,
+                        sportId: 0,
+                        index: 0,
+                        initialValue: '',
                       );
                     },
                   ),

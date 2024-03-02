@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
 import 'package:x_sport/core/constance/app_icons_icons.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 import 'package:x_sport/presentation/features/paymnet/presentation/pages/payment_add_method_info_screen.dart';
 import 'package:x_sport/presentation/features/paymnet/presentation/components/payment_info_components/payment_history_component.dart';
 import 'package:x_sport/presentation/widgets/buttons/custom_radio_button.dart';
@@ -119,7 +120,7 @@ class PaymentMethodScreen extends StatelessWidget {
                       return CustomRadioButton(
                         value: 1,
                         lable: 'Master card',
-                        image: 'master_card_method.png',
+                        image: AssetsManager.images.payment.masterCardMethod,
                         onTap: (value) {
                           selectedValue.value = value;
                         },
@@ -133,7 +134,7 @@ class PaymentMethodScreen extends StatelessWidget {
                       return CustomRadioButton(
                         value: 2,
                         lable: 'PayPal',
-                        image: 'paypal_logo.png',
+                        image: AssetsManager.images.payment.paypalLogo,
                         onTap: (value) {
                           selectedValue.value = value;
                         },
@@ -147,7 +148,7 @@ class PaymentMethodScreen extends StatelessWidget {
                       return CustomRadioButton(
                         value: 3,
                         lable: 'Visa',
-                        image: 'visa_method.png',
+                        image: AssetsManager.images.payment.visaMethod,
                         onTap: (value) {
                           selectedValue.value = value;
                         },

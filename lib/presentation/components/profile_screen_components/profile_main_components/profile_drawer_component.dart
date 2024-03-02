@@ -121,17 +121,6 @@ class ProfileDrawerComponent extends StatelessWidget {
               ],
             ),
           ),
-          // Container(
-          //   margin: EdgeInsets.only(top: 26.h, bottom: 14.h, right: 55.w),
-          //   child: Text(
-          //     'تعديل الملف الشخصي',
-          //     style: GoogleFonts.tajawal(
-          //       color: Color(0xFF2E2E2E),
-          //       fontSize: 17.sp,
-          //       fontWeight: FontWeight.w400,
-          //     ),
-          //   ),
-          // ),
           Padding(
             padding: EdgeInsets.only(right: 17.0.w),
             child: Column(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:x_sport/core/constance/app_icons_icons.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 import 'package:x_sport/presentation/controllers/fileds_bloc.dart';
 import 'package:x_sport/presentation/widgets/buttons/submit_button.dart';
 import 'package:x_sport/presentation/widgets/text_fields/add_payment_field.dart';
@@ -68,7 +69,7 @@ class PaymentAddMethodInfoScreen extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Image.asset('assets/images/paypal_logo.png'),
+                        AssetsManager.images.payment.paypalLogo.image(),
                         Text(
                           'معلومات البطاقة الشخصية',
                           style: GoogleFonts.tajawal(

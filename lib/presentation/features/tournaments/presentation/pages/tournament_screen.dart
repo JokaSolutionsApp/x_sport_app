@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
 import 'package:x_sport/core/constance/app_icons_icons.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 import 'package:x_sport/main.dart';
 import 'package:x_sport/presentation/features/paymnet/presentation/components/payment_info_components/payment_history_component.dart';
 import 'package:x_sport/presentation/features/tournaments/presentation/components/tournament_result_rank_component.dart';
@@ -66,8 +67,9 @@ class TournamentScreen extends StatelessWidget {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(21.sp),
                     image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: AssetImage('assets/images/court.png'))),
+                      fit: BoxFit.cover,
+                      image: AssetsManager.images.courts.court.image().image,
+                    )),
               ),
               SizedBox(
                 width: 1.sw,
@@ -214,8 +216,13 @@ class TournamentScreen extends StatelessWidget {
                                           height: 30.w,
                                           decoration: BoxDecoration(
                                             image: DecorationImage(
-                                                image: AssetImage(
-                                                    'assets/images/avatar1.png')),
+                                              image: AssetsManager
+                                                  .images.avatars.avatar2
+                                                  .image(
+                                                    fit: BoxFit.cover,
+                                                  )
+                                                  .image,
+                                            ),
                                             shape: BoxShape.circle,
                                             color: Color.fromARGB(index * 60,
                                                 index * 40, index * 10, 200),

@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:x_sport/core/constance/local_data.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 import 'package:x_sport/presentation/features/auth/data/dtos/user_dto/user_dto.dart';
 
 import '../../../widgets/rectangle_container.dart';
 
 class ActivityPreferncesComponent extends StatefulWidget {
   final int sportId;
-  final List<Preference> preferences;
   final int index;
   final String initialValue;
-  ActivityPreferncesComponent({
+  const ActivityPreferncesComponent({
     super.key,
-    required this.preferences,
     required this.index,
     required this.initialValue,
     required this.sportId,
@@ -27,20 +27,7 @@ class _ActivityPreferncesComponentState
     extends State<ActivityPreferncesComponent> {
   late ValueNotifier<String?> selectedValue;
 
-  final List<Map<String, dynamic>> prefernces = [
-    {
-      'title': 'اليد المفضلة',
-      'image': 'hand.png',
-    },
-    {
-      'title': 'المركز المفضل',
-      'image': 'position.png',
-    },
-    {
-      'title': 'الوقت المفضل ل اللعب',
-      'image': 'time.png',
-    }
-  ];
+  final List<LocalPreference> localPrefernces = LocalData.prefernces;
   @override
   void initState() {
     selectedValue = ValueNotifier<String?>(widget.initialValue);
@@ -59,17 +46,13 @@ class _ActivityPreferncesComponentState
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Image.asset(
-              'assets/images/activities/${prefernces[widget.index]['image']}',
-              width: 30.w,
-            ),
+            localPrefernces[0].image.image(width: 30.w),
             SizedBox(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    // widget.preferences![widget.index].name,
-                    prefernces[0]['title'],
+                    localPrefernces[0].title,
                     style: GoogleFonts.tajawal(
                       fontSize: 15.sp,
                       color: Colors.black,
@@ -87,20 +70,20 @@ class _ActivityPreferncesComponentState
                   //       elevation: 0,
                   //       onChanged: (String? newValue) {
                   //         selectedValue.value = newValue!;
-                  //         final id = widget.preferences[widget.index].options
+                  //         final id = widget.preference[0].options
                   //             .where(
                   //                 (element) => element.name.contains(newValue))
                   //             .first
                   //             .id;
 
                   //         // context.read<UserBloc>().add(
-                  //         //     UpdateUserPreferencesEvent(
+                  //         //     UpdateUserPreferenceEvent(
                   //         //         sportId: widget.sportId,
                   //         //         favoriteHand: 0,
                   //         //         favoritePos: 0,
                   //         //         favoriteTime: 0));
                   //       },
-                  //       items: widget.preferences![widget.index].options
+                  //       items: widget.preference![0].options
                   //           .map<DropdownMenuItem<String>>(
                   //         (Option value) {
                   //           return DropdownMenuItem<String>(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:x_sport/core/constance/app_icons_icons.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 import 'package:x_sport/core/widgets/floating_action_button.dart';
 import 'package:x_sport/core/widgets/global_app_bar.dart';
 
@@ -116,11 +117,12 @@ class NewGroupChat extends StatelessWidget {
                             Container(
                               height: 43.w,
                               width: 43.w,
-                              decoration: const BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  image: DecorationImage(
-                                      image: AssetImage(
-                                          'assets/images/avatar0.png'))),
+                              child: CircleAvatar(
+                                backgroundImage: AssetsManager
+                                    .images.avatars.avatar0
+                                    .image(fit: BoxFit.cover)
+                                    .image,
+                              ),
                             ),
                             SizedBox(width: 12.w),
                             Text(

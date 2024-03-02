@@ -3,26 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
 import 'package:x_sport/core/constance/app_icons_icons.dart';
+import 'package:x_sport/core/constance/local_data.dart';
 
 class MatchTypeComponent extends StatelessWidget {
-  const MatchTypeComponent({super.key});
-
+  MatchTypeComponent({super.key});
+  final matchTypes = LocalData.matchTypes;
   @override
   Widget build(BuildContext context) {
-    final List<Map<String, dynamic>> matchTypes = [
-      {
-        'title': 'مباراة ودية',
-        'subtitle': 'سيتم نشر اعلانك ليظهر عند منافسين يبحثون عن مباريات ودية',
-        'image': 'assets/images/friendly_match.png',
-      },
-      {
-        'title': 'مباراة تنافسية',
-        'subtitle':
-            'سيتم نشر اعلانك ليظهر عند منافسين يبحثون عن مباريات تنافسية',
-        'image': 'assets/images/comp_match.png',
-      },
-    ];
-
     final ValueNotifier<int?> isSelectedIndex = ValueNotifier<int?>(null);
     return ListView.builder(
         shrinkWrap: true,
@@ -64,7 +51,7 @@ class MatchTypeComponent extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
                                 Text(
-                                  matchTypes[index]['title'],
+                                  matchTypes[index].title,
                                   style: GoogleFonts.tajawal(
                                     height: 2.2.w,
                                     fontSize: 20.sp,
@@ -72,7 +59,7 @@ class MatchTypeComponent extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  matchTypes[index]['subtitle'],
+                                  matchTypes[index].subtitle,
                                   textAlign: TextAlign.end,
                                   style: GoogleFonts.tajawal(
                                     height: 2.2.w,
@@ -91,9 +78,10 @@ class MatchTypeComponent extends StatelessWidget {
                                 width: 60.w,
                                 decoration: BoxDecoration(
                                     image: DecorationImage(
-                                        image: AssetImage(
-                                  matchTypes[index]['image'],
-                                ))),
+                                        image: matchTypes[index]
+                                            .image
+                                            .image()
+                                            .image)),
                               )
                             : SizedBox(
                                 height: 60.w,

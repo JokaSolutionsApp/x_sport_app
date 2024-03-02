@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 import 'package:x_sport/presentation/features/auth/domain/enitites/sport_entity.dart';
 import 'package:x_sport/presentation/features/auth/presentation/bloc/auth_bloc.dart';
 import '../../../../../core/constance/app_constance.dart';
@@ -63,8 +64,7 @@ class WelcomePage extends StatelessWidget {
             children: [
               Positioned(
                   top: 0.h,
-                  child: Image.asset(
-                    'assets/images/x_sport_logo.png',
+                  child: AssetsManager.images.main.xSportLogo.image(
                     height: 220.h,
                     width: 220.w,
                   )),

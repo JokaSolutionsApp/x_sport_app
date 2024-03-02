@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
 import 'package:x_sport/core/constance/app_icons_icons.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 import 'package:x_sport/presentation/features/paymnet/presentation/pages/payment_method_screen.dart';
 import 'package:x_sport/presentation/features/paymnet/presentation/components/payment_info_components/payment_history_component.dart';
 import 'package:x_sport/presentation/widgets/buttons/submit_button.dart';
@@ -62,7 +63,8 @@ class PaymentInfoScreen extends StatelessWidget {
               height: 270.h,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage('assets/images/credit_card.png'))),
+                image: AssetsManager.images.payment.creditCard.image().image,
+              )),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

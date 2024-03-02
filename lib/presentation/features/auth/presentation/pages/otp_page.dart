@@ -208,7 +208,7 @@ class _OtpPageState extends State<OtpPage> {
                   Text(
                     'ارسال مرة اخرى',
                     style: TextStyle(
-                      color: const Color(0xFF2E5DD7),
+                      color: XColors.Submit_Button_Color,
                       fontSize: 18.sp,
                       fontFamily: 'Tajawal',
                       fontWeight: FontWeight.w400,
@@ -218,7 +218,7 @@ class _OtpPageState extends State<OtpPage> {
                   Container(
                     width: 114.w,
                     height: 1,
-                    color: const Color(0xFF2E5DD7),
+                    color: XColors.Submit_Button_Color,
                   )
                 ],
               ),

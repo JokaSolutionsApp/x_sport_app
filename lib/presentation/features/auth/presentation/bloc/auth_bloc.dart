@@ -6,7 +6,6 @@ import 'package:x_sport/core/constance/app_functions.dart';
 import 'package:x_sport/core/utils/enums.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:x_sport/main.dart';
-import 'package:x_sport/presentation/features/auth/domain/enitites/welcome_enitty.dart';
 import 'package:x_sport/presentation/features/auth/domain/usecase/user_usecase/check_user_logged_usecase.dart';
 import 'package:x_sport/presentation/features/auth/domain/usecase/user_usecase/get_sports_usecase.dart';
 import 'package:x_sport/presentation/features/auth/domain/usecase/user_usecase/get_user_info_usecase.dart';

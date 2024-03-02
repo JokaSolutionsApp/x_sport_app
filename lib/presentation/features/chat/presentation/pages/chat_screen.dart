@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 import 'package:x_sport/presentation/features/chat/presentation/components/chat_section.dart';
 import 'package:x_sport/presentation/features/chat/presentation/components/message_input.dart';
 
@@ -79,12 +80,12 @@ class _ChatScreenState extends State<ChatScreen> {
                         Container(
                           height: 66.w,
                           width: 66.w,
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              image: DecorationImage(
-                                image: AssetImage('assets/images/avatar0.png'),
-                                fit: BoxFit.cover,
-                              )),
+                          child: CircleAvatar(
+                            backgroundImage: AssetsManager
+                                .images.avatars.avatar0
+                                .image(fit: BoxFit.cover)
+                                .image,
+                          ),
                         ),
                         Positioned(
                           left: 1.w,

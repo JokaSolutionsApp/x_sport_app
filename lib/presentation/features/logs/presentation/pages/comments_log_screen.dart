@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 import 'package:x_sport/core/widgets/global_app_bar.dart';
 import 'package:x_sport/presentation/features/archives/presentation/components/posts_archive_components/post_archive_filter_dialog.dart';
 
@@ -72,9 +73,11 @@ class CommentsLogScreen extends StatelessWidget {
                         width: 140.w,
                         decoration: BoxDecoration(
                             image: DecorationImage(
-                                fit: BoxFit.cover,
-                                image: AssetImage(
-                                    'assets/images/social_image.png'))),
+                          fit: BoxFit.cover,
+                          image: AssetsManager.images.social.socialImage
+                              .image()
+                              .image,
+                        )),
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
@@ -100,11 +103,12 @@ class CommentsLogScreen extends StatelessWidget {
                                     margin: EdgeInsets.only(bottom: 5.w),
                                     height: 40.w,
                                     width: 40.w,
-                                    decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                            fit: BoxFit.cover,
-                                            image: AssetImage(
-                                                'assets/images/avatar0.png'))),
+                                    child: CircleAvatar(
+                                      backgroundImage: AssetsManager
+                                          .images.avatars.avatar0
+                                          .image(fit: BoxFit.cover)
+                                          .image,
+                                    ),
                                   ),
                                   Text(
                                     'يوم',
@@ -140,11 +144,11 @@ class CommentsLogScreen extends StatelessWidget {
                                       margin: EdgeInsets.only(bottom: 5.w),
                                       height: 40.w,
                                       width: 40.w,
-                                      decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                              fit: BoxFit.cover,
-                                              image: AssetImage(
-                                                  'assets/images/avatar1.png'))),
+                                      child: CircleAvatar(
+                                          backgroundImage: AssetsManager
+                                              .images.avatars.avatar2
+                                              .image(fit: BoxFit.cover)
+                                              .image),
                                     ),
                                     Text(
                                       'يوم',

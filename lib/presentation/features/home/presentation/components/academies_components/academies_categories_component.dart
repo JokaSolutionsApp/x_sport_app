@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 
 import '../../../../../../core/constance/app_constance.dart';
 import '../../../../../widgets/rectangle_container.dart';
@@ -47,8 +48,7 @@ class AcademeiesCategoriesComponent extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Image.asset(
-                          'assets/images/tennis_game.png',
+                        AssetsManager.images.main.tennisGame.image(
                           height: 55.w,
                         ),
                         Text(

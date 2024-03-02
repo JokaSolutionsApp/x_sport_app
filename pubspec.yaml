@@ -74,9 +74,28 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   injectable_generator: ^2.4.1
   build_runner:
+  flutter_gen_runner:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
+flutter_gen:
+  output: lib/core/utils/assets_managers
+
+  integrations:
+    flutter_svg: true
+    lottie: true
+    flare_flutter: false
+    rive: false
+
+  assets:
+    outputs:
+      class_name: AssetsManager
+
+  fonts:
+    enabled: false
+
+  colors:
+    enabled: false
 
 # The following section is specific to Flutter packages.
 flutter:
@@ -91,6 +110,13 @@ flutter:
     - assets/images/play/
     - assets/images/home/
     - assets/images/activities/
+    - assets/images/main/
+    - assets/images/courts/
+    - assets/images/avatars/
+    - assets/images/payment/
+    - assets/images/rank/
+    - assets/images/academy/
+    - assets/images/social/
     - assets/icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see

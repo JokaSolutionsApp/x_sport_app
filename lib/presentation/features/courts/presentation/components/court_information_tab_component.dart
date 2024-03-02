@@ -230,10 +230,10 @@ class CourtInformationComponent extends StatelessWidget {
                   width: 170.w,
                   height: 120.h,
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                        colors: [Color(0xFF2E5DD7), Color(0xFF0B3B9B)],
-                        begin: Alignment.centerRight,
-                        end: Alignment.centerLeft),
+                    gradient: LinearGradient(colors: [
+                      XColors.Submit_Button_Color,
+                      Color(0xFF0B3B9B)
+                    ], begin: Alignment.centerRight, end: Alignment.centerLeft),
                     borderRadius: BorderRadius.circular(9.sp),
                   ),
                   child: Column(
@@ -261,10 +261,10 @@ class CourtInformationComponent extends StatelessWidget {
                   width: 170.w,
                   height: 120.h,
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                        colors: [Color(0xFF2E5DD7), Color(0xFF0B3B9B)],
-                        begin: Alignment.centerRight,
-                        end: Alignment.centerLeft),
+                    gradient: LinearGradient(colors: [
+                      XColors.Submit_Button_Color,
+                      Color(0xFF0B3B9B)
+                    ], begin: Alignment.centerRight, end: Alignment.centerLeft),
                     borderRadius: BorderRadius.circular(9.sp),
                   ),
                   child: Column(

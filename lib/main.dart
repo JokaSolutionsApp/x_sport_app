@@ -9,8 +9,9 @@ import 'package:x_sport/core/services/preload_images_service.dart';
 import 'package:x_sport/firebase_options.dart';
 import 'package:x_sport/presentation/controllers/chat_bloc/chat_bloc.dart';
 import 'package:x_sport/presentation/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:x_sport/presentation/features/route_screen.dart';
-import 'core/utils/enums.dart';
+import 'package:x_sport/presentation/features/home/presentation/pages/main_screen.dart';
+import 'package:x_sport/presentation/features/profile/presentation/pages/profile_screen.dart';
+import 'package:x_sport/route_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -67,7 +68,7 @@ class MyApp extends StatelessWidget {
                     useMaterial3: true,
                   ),
                   // home: AllSettingsPrivacyScreen(),
-                  home: RouteScreen(),
+                  home: MainScreen(),
                 );
               },
             ),

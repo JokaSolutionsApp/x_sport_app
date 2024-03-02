@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
 import 'package:x_sport/core/constance/app_functions.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 import 'package:x_sport/main.dart';
 import 'package:x_sport/presentation/controllers/fileds_bloc.dart';
 import 'package:x_sport/presentation/features/auth/presentation/pages/otp_page.dart';
@@ -178,7 +179,7 @@ class _CreditCardScreenState extends State<CreditCardScreen> {
                 top: 110.h,
                 width: 271.w,
                 height: 174.h,
-                child: Image.asset('assets/images/visa-credit.png')),
+                child: AssetsManager.images.payment.creditCard.image()),
           ],
         ),
       ),

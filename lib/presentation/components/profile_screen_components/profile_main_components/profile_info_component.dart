@@ -46,14 +46,15 @@ class ProfileInfoComponent extends StatelessWidget {
                               decoration: ShapeDecoration(
                                 shape: RoundedRectangleBorder(
                                   side: const BorderSide(
-                                      width: 0.50, color: Color(0xFF2E5DD7)),
+                                      width: 0.50,
+                                      color: XColors.Submit_Button_Color),
                                   borderRadius: BorderRadius.circular(5),
                                 ),
                               ),
                               child: Icon(
                                 Icons.emoji_events,
                                 size: 30.sp,
-                                color: const Color(0xFF2E5DD7),
+                                color: XColors.Submit_Button_Color,
                               ),
                             ),
                           ),
@@ -61,7 +62,7 @@ class ProfileInfoComponent extends StatelessWidget {
                           Text(
                             points.toString(),
                             style: TextStyle(
-                              color: Color(0xFF2E5DD7),
+                              color: XColors.Submit_Button_Color,
                               fontSize: 25,
                               fontFamily: 'Tajawal',
                               fontWeight: FontWeight.w400,
@@ -86,11 +87,11 @@ class ProfileInfoComponent extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(8.0.sp),
                                     valueColor:
                                         const AlwaysStoppedAnimation<Color>(
-                                      Color(0xFF2E5DD7),
+                                      XColors.Submit_Button_Color,
                                     ),
                                     value: 0.2,
                                     minHeight: 10.h,
-                                    color: const Color(0xFF2E5DD7),
+                                    color: XColors.Submit_Button_Color,
                                   ),
                                 ),
                               ),
@@ -106,7 +107,7 @@ class ProfileInfoComponent extends StatelessWidget {
                                       shape: BoxShape.circle),
                                   child: const Icon(
                                     Icons.keyboard_double_arrow_up_outlined,
-                                    color: Color(0xFF2E5DD7),
+                                    color: XColors.Submit_Button_Color,
                                   )),
                             ),
                             Align(
@@ -116,7 +117,7 @@ class ProfileInfoComponent extends StatelessWidget {
                                 width: 25.w,
                                 height: 25.w,
                                 decoration: const BoxDecoration(
-                                    color: Color(0xFF2E5DD7),
+                                    color: XColors.Submit_Button_Color,
                                     shape: BoxShape.circle),
                                 child: Text(
                                   '2',
@@ -185,7 +186,7 @@ class ProfileInfoComponent extends StatelessWidget {
                       child: Text(
                         'تعديل الملف الشخصي',
                         style: TextStyle(
-                          color: const Color(0xFF2E5DD7),
+                          color: XColors.Submit_Button_Color,
                           fontSize: 12.sp,
                           fontFamily: 'Tajawal',
                           fontWeight: FontWeight.w400,
@@ -230,7 +231,7 @@ class ProfileInfoComponent extends StatelessWidget {
                       color: Color(0xFFECEBEB), shape: BoxShape.circle),
                   child: Icon(
                     Icons.edit,
-                    color: const Color(0xFF2E5DD7),
+                    color: XColors.Submit_Button_Color,
                     size: 18.sp,
                   )),
             )

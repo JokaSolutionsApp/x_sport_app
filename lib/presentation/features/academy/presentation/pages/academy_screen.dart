@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 import 'package:x_sport/presentation/features/academy/presentation/components/academy_components/academy_tabs_components/academy_program_component.dart';
 import 'package:x_sport/presentation/widgets/buttons/submit_button.dart';
 import 'package:x_sport/presentation/widgets/rectangle_container.dart';
@@ -93,10 +94,10 @@ class _AcademyScreenState extends State<AcademyScreen>
               height: 0.23.sh,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage(
-                        'assets/images/academy_example.png',
-                      ),
-                      fit: BoxFit.cover)),
+                fit: BoxFit.cover,
+                image:
+                    AssetsManager.images.academy.academyExample.image().image,
+              )),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -127,7 +128,7 @@ class _AcademyScreenState extends State<AcademyScreen>
                     height: 50.h,
                     width: 50.w,
                     decoration: BoxDecoration(
-                        color: Color(0xFF2E5DD7).withOpacity(0.52),
+                        color: XColors.Submit_Button_Color.withOpacity(0.52),
                         shape: BoxShape.circle),
                     child: Icon(
                       Icons.play_arrow,

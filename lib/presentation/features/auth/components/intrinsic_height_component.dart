@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 
 class IntrinsicHeightComponent extends StatelessWidget {
   final Widget child;
@@ -60,8 +61,7 @@ class IntrinsicHeightComponent extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image.asset(
-                      'assets/images/x_sport_logo.png',
+                    AssetsManager.images.main.xSportLogo.image(
                       width: 120.w,
                     ),
                     Text(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 import 'package:x_sport/presentation/widgets/text_fields/search_textfield.dart';
 
 import '../../../../components/ranking_screen_components/ranking_details.dart';
@@ -112,8 +113,9 @@ class _ProfileRankingScreenState extends State<ProfileRankingScreen> {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12.sp),
                     image: DecorationImage(
-                        fit: BoxFit.fill,
-                        image: AssetImage('assets/images/ranking.png'))),
+                      fit: BoxFit.fill,
+                      image: AssetsManager.images.rank.ranking.image().image,
+                    )),
               ),
               Padding(
                 padding: EdgeInsets.only(left: 10.w, top: 15.h),
@@ -170,7 +172,7 @@ class _ProfileRankingScreenState extends State<ProfileRankingScreen> {
                       alignment: Alignment.centerLeft,
                       height: 33.h,
                       width: 0.1.sw,
-                      child: Image.asset('assets/images/rank1.png'),
+                      child: AssetsManager.images.rank.rank1.image(),
                     ),
                   ),
                   RankingDetailsComponent(
@@ -178,18 +180,15 @@ class _ProfileRankingScreenState extends State<ProfileRankingScreen> {
                       alignment: Alignment.centerLeft,
                       height: 33.h,
                       width: 0.1.sw,
-                      child: Image.asset('assets/images/rank2.png'),
+                      child: AssetsManager.images.rank.rank2.image(),
                     ),
                   ),
                   RankingDetailsComponent(
                     child: Container(
-                      alignment: Alignment.centerLeft,
-                      height: 33.h,
-                      width: 0.1.sw,
-                      child: Image.asset(
-                        'assets/images/rank3.png',
-                      ),
-                    ),
+                        alignment: Alignment.centerLeft,
+                        height: 33.h,
+                        width: 0.1.sw,
+                        child: AssetsManager.images.rank.rank3.image()),
                   ),
                   RankingDetailsComponent(
                     child: SizedBox(
@@ -203,9 +202,11 @@ class _ProfileRankingScreenState extends State<ProfileRankingScreen> {
                             width: 16.w,
                             decoration: BoxDecoration(
                                 image: DecorationImage(
-                                    fit: BoxFit.fill,
-                                    image: AssetImage(
-                                        'assets/images/green_up_arrow.png'))),
+                              fit: BoxFit.fill,
+                              image: AssetsManager.icons.greenUpArrow
+                                  .image()
+                                  .image,
+                            )),
                           ),
                         ],
                       ),
@@ -223,9 +224,11 @@ class _ProfileRankingScreenState extends State<ProfileRankingScreen> {
                             width: 16.w,
                             decoration: BoxDecoration(
                                 image: DecorationImage(
-                                    fit: BoxFit.fill,
-                                    image: AssetImage(
-                                        'assets/images/red_down_arrow.png'))),
+                              fit: BoxFit.fill,
+                              image: AssetsManager.icons.redDownArrow
+                                  .image()
+                                  .image,
+                            )),
                           ),
                         ],
                       ),

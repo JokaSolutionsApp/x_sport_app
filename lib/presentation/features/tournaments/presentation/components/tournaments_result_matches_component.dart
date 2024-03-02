@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 
 import '../../../../widgets/rectangle_container.dart';
 
@@ -97,12 +98,11 @@ class TournamentResultMatchesComponent extends StatelessWidget {
                               Container(
                                 height: 40.w,
                                 width: 40.w,
-                                decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    image: DecorationImage(
-                                        fit: BoxFit.cover,
-                                        image: AssetImage(
-                                            'assets/images/avatar2.png'))),
+                                child: CircleAvatar(
+                                    backgroundImage: AssetsManager
+                                        .images.avatars.avatar2
+                                        .image(fit: BoxFit.cover)
+                                        .image),
                               ),
                               SizedBox(height: 4.w),
                               Text(
@@ -159,12 +159,11 @@ class TournamentResultMatchesComponent extends StatelessWidget {
                               Container(
                                 height: 40.w,
                                 width: 40.w,
-                                decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    image: DecorationImage(
-                                        fit: BoxFit.cover,
-                                        image: AssetImage(
-                                            'assets/images/avatar1.png'))),
+                                child: CircleAvatar(
+                                    backgroundImage: AssetsManager
+                                        .images.avatars.avatar2
+                                        .image(fit: BoxFit.cover)
+                                        .image),
                               ),
                               SizedBox(height: 4.w),
                               Text(

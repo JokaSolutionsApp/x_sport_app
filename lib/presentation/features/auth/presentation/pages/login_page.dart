@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 import 'package:x_sport/main.dart';
 import 'package:x_sport/presentation/features/auth/components/intrinsic_height_component.dart';
 import 'package:x_sport/presentation/controllers/fileds_bloc.dart';
@@ -82,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
                     isButtonEnabled: true,
                     fillColor: XColors.Submit_Button_Color,
                     textColor: XColors.Background_Color1,
-                    image: 'facebook.png',
+                    image: AssetsManager.icons.facebook,
                     text: 'تسجيل الدخول عبر فيسبوك',
                     onPressed: () {},
                   ),
@@ -90,7 +91,7 @@ class _LoginPageState extends State<LoginPage> {
                     isButtonEnabled: true,
                     fillColor: XColors.Submit_Button_Color,
                     textColor: XColors.Background_Color1,
-                    image: 'google.png',
+                    image: AssetsManager.icons.google,
                     text: 'تسجيل الدخول عبر جوجل',
                     onPressed: () {},
                   ),

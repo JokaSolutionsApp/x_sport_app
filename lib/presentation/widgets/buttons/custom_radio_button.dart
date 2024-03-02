@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 
 class CustomRadioButton extends StatefulWidget {
   final int value;
   final int seleceted;
   final String lable;
-  final String image;
+  final AssetGenImage image;
   final void Function(int selectedValue) onTap;
 
   CustomRadioButton({
@@ -93,7 +94,7 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
                 Container(
                   width: 45.w, // Set a fixed width
                   height: 45.w, // Set a fixed height
-                  child: Image.asset('assets/images/${widget.image}'),
+                  child: widget.image.image(),
                 ),
               ],
             ),

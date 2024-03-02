@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:x_sport/core/constance/local_data.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 import 'package:x_sport/presentation/features/profile/presentation/pages/profile_ranking_screen.dart';
 import 'package:x_sport/presentation/widgets/buttons/submit_button.dart';
 import 'package:x_sport/presentation/widgets/rectangle_container.dart';
@@ -9,38 +11,10 @@ import '../../../../core/constance/app_constance.dart';
 
 class UserProfileInformationTab extends StatelessWidget {
   final ValueNotifier<int> selectedIndex = ValueNotifier<int>(0);
-  final favoritSports = [
-    'قدم',
-    'بادل',
-  ];
-  final List<Map<String, dynamic>> levels = [
-    {
-      'points': '5000',
-      'level': 'متمرس',
-    },
-    {
-      'points': '3000',
-      'level': 'هاو',
-    },
-    {
-      'points': '1000',
-      'level': 'مبتدئ',
-    }
-  ];
-  List<Map<String, dynamic>> prefernces = [
-    {
-      'title': 'اليد المفضلة',
-      'image': 'hand.png',
-    },
-    {
-      'title': 'المركز المفضل',
-      'image': 'position.png',
-    },
-    {
-      'title': 'الوقت المفضل ل اللعب',
-      'image': 'time.png',
-    }
-  ];
+
+  final levels = LocalData.levels;
+  final List<LocalPreference> localPrefernces = LocalData.prefernces;
+  final List<String> favoritSports = LocalData.favoritSports;
 
   @override
   Widget build(BuildContext context) {
@@ -143,7 +117,7 @@ class UserProfileInformationTab extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Image.asset('assets/images/football.png'),
+                            AssetsManager.images.main.football.image(),
                             Container(
                               height: 149.h,
                               padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -172,8 +146,8 @@ class UserProfileInformationTab extends StatelessWidget {
                                           ),
                                           children: [
                                         TextSpan(
-                                          text: levels[selectedIndex.value]
-                                              ['level'],
+                                          text:
+                                              levels[selectedIndex.value].level,
                                           style: GoogleFonts.tajawal(
                                             textStyle: TextStyle(
                                                 color: Colors.black,
@@ -194,7 +168,7 @@ class UserProfileInformationTab extends StatelessWidget {
                                           children: [
                                         TextSpan(
                                           text: levels[selectedIndex.value]
-                                              ['points'],
+                                              .points,
                                           style: GoogleFonts.tajawal(
                                             textStyle: TextStyle(
                                                 color: Colors.black,
@@ -204,7 +178,7 @@ class UserProfileInformationTab extends StatelessWidget {
                                         )
                                       ])),
                                   Text(
-                                    levels[selectedIndex.value]['level'],
+                                    levels[selectedIndex.value].level,
                                     style: GoogleFonts.tajawal(
                                         color: XColors.Submit_Button_Color,
                                         fontSize: 16.sp,
@@ -350,17 +324,14 @@ class UserProfileInformationTab extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Image.asset(
-                              'assets/images/activities/${prefernces[0]['image']}',
-                              width: 30.w,
-                            ),
+                            localPrefernces[0].image.image(width: 30.w),
                             SizedBox(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 children: [
                                   Text(
                                     // widget.preferences![widget.index].name,
-                                    prefernces[0]['title'],
+                                    localPrefernces[0].title,
                                     style: GoogleFonts.tajawal(
                                       fontSize: 15.sp,
                                       color: Colors.black,

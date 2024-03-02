@@ -100,7 +100,7 @@ class ProfileAlertDialog extends StatelessWidget {
                               padding: EdgeInsets.symmetric(horizontal: 12.w),
                               alignment: Alignment.center,
                               child: Text(
-                                favoriteSports[index]['level'],
+                                favoriteSports[index],
                                 style: GoogleFonts.tajawal(
                                   textStyle: TextStyle(
                                     color: selectedText,

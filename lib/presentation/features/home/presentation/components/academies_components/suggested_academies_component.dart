@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:x_sport/core/constance/app_constance.dart';
 
 class SuggestedAcademiesComponent extends StatelessWidget {
   const SuggestedAcademiesComponent({super.key});
@@ -25,7 +26,7 @@ class SuggestedAcademiesComponent extends StatelessWidget {
                 child: Text(
                   'عرض الكل',
                   style: GoogleFonts.tajawal(
-                    color: const Color(0xFF2E5DD7),
+                    color: XColors.Submit_Button_Color,
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w400,
                     height: 0,

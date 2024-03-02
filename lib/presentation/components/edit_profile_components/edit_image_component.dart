@@ -78,7 +78,7 @@ class EditImageComponent extends StatelessWidget {
           child: Text(
             'تغيير الصورة الشخصية',
             style: TextStyle(
-              color: const Color(0xFF2E5DD7),
+              color: XColors.Submit_Button_Color,
               fontSize: 16.sp,
               fontFamily: 'Tajawal',
               fontWeight: FontWeight.w500,

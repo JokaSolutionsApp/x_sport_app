@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 import 'package:x_sport/presentation/features/paymnet/presentation/components/payment_components/payment_edit_button.dart';
 import 'package:x_sport/presentation/features/credit_card_screen.dart';
 import 'package:x_sport/presentation/features/paymnet/presentation/components/payment_components/payment_info_component.dart';
@@ -100,9 +101,10 @@ class PaymentScreen extends StatelessWidget {
                               color: Colors.transparent,
                               borderRadius: BorderRadius.circular(15.sp),
                               border: Border.all(color: Color(0xFFD0D0D0))),
-                          child: Image.asset(index % 2 != 0
-                              ? 'assets/images/master_card_logo.png'
-                              : 'assets/images/Visa_logo.png'));
+                          child: index % 2 != 0
+                              ? AssetsManager.images.payment.masterCardLogo
+                                  .image()
+                              : AssetsManager.images.payment.visaLogo.image());
                     }),
               ),
               Center(

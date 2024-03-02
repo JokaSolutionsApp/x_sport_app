@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
 import 'package:x_sport/core/constance/app_icons_icons.dart';
-import 'package:x_sport/presentation/features/courts/presentation/pages/courts_screen.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 import 'package:x_sport/presentation/features/match/presentation/pages/match_reservation_screen.dart';
 import 'package:x_sport/presentation/features/tournaments/presentation/pages/upcoming_tournaments_screen.dart';
 import 'presentation/components/play_components/banner_component.dart';
@@ -14,38 +14,38 @@ import '../../widgets/rectangle_container.dart';
 
 class PlayScreen extends StatelessWidget {
   PlayScreen({super.key});
-  final List<Map<String, dynamic>> matches = [
-    {
-      'title': 'المباريات التنافسية',
-      'subtitle': 'العب مباريات تنافسية قريبة واكسب نقط اكثر!',
-      'image': AppIcons.champion_ship,
-      'screen': UpCommingTournamentsScreen(),
-    },
-    {
-      'title': 'المباريات الودية',
-      'subtitle': 'العب مباريات ودية قريبة منك!',
-      'image': AppIcons.friendly,
-      'screen': MatchReservationScreen(),
-    },
-    {
-      'title': 'الدوريات',
-      'subtitle': 'اطلع على نتائج الدوريات المقامة واشترك في دوريات قادمة',
-      'image': AppIcons.cup_1,
-      'screen': UpCommingTournamentsScreen(),
-    },
-    {
-      'title': 'البطولات',
-      'subtitle': 'اطلع على نتائج البطولات المقامة واشترك في بطولات قادمة',
-      'image': AppIcons.championship,
-      'screen': UpCommingTournamentsScreen(),
-    }
+  final List<LocalMatch> matches = [
+    LocalMatch(
+      title: 'المباريات التنافسية',
+      subtitle: 'العب مباريات تنافسية قريبة واكسب نقط اكثر!',
+      icon: AppIcons.champion_ship,
+      screen: const UpCommingTournamentsScreen(),
+    ),
+    LocalMatch(
+      title: 'المباريات الودية',
+      subtitle: 'العب مباريات ودية قريبة منك!',
+      icon: AppIcons.friendly,
+      screen: const MatchReservationScreen(),
+    ),
+    LocalMatch(
+      title: 'الدوريات',
+      subtitle: 'اطلع على نتائج الدوريات المقامة واشترك في دوريات قادمة',
+      icon: AppIcons.cup_1,
+      screen: const UpCommingTournamentsScreen(),
+    ),
+    LocalMatch(
+      title: 'البطولات',
+      subtitle: 'اطلع على نتائج البطولات المقامة واشترك في بطولات قادمة',
+      icon: AppIcons.championship,
+      screen: const UpCommingTournamentsScreen(),
+    ),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
-      backgroundColor: Color(0xFFF6F7F9),
-      appBar: ProfileAppBarComponent(
+      backgroundColor: const Color(0xFFF6F7F9),
+      appBar: const ProfileAppBarComponent(
         isProfile: true,
       ),
       body: SingleChildScrollView(
@@ -60,8 +60,8 @@ class PlayScreen extends StatelessWidget {
                 height: 0.484.sh,
                 margin: EdgeInsets.only(right: 24.w, bottom: 12.h),
                 child: GridView.builder(
-                  physics: NeverScrollableScrollPhysics(),
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  physics: const NeverScrollableScrollPhysics(),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2),
                   itemCount: 4,
                   itemBuilder: (BuildContext context, int index) {
@@ -70,8 +70,7 @@ class PlayScreen extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) =>
-                                    matches[index]['screen']));
+                                builder: (context) => matches[index].screen));
                       },
                       child: CustomPaint(
                         painter: PlayTypesPainter(),
@@ -85,12 +84,12 @@ class PlayScreen extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
                                     Text(
-                                      matches[index]['title'],
+                                      matches[index].title,
                                       textAlign: TextAlign.end,
                                       style: GoogleFonts.tajawal(
                                         fontSize: 15.sp,
                                         fontWeight: FontWeight.w500,
-                                        color: Color(0xFF2A2A2A),
+                                        color: const Color(0xFF2A2A2A),
                                       ),
                                     ),
                                     SizedBox(width: 20.w),
@@ -98,33 +97,27 @@ class PlayScreen extends StatelessWidget {
                                         height: 35.w,
                                         width: 35.w,
                                         child: index == 0 || index == 3
-                                            ? Image.asset(
-                                                'assets/images/play/friendly.png',
+                                            ? AssetsManager.images.play.friendly
+                                                .image(
                                                 fit: BoxFit.contain,
                                               )
                                             : Icon(
-                                                matches[index]['image'],
+                                                matches[index].icon,
                                                 color:
                                                     XColors.Submit_Button_Color,
                                                 size: 30.sp,
-                                              )
-
-                                        // Image.asset(
-                                        //   'assets/images/play/${matches[index]['image']}',
-                                        //   fit: BoxFit.fill,
-                                        // ),
-                                        )
+                                              ))
                                   ],
                                 ),
                                 Container(
                                   margin: EdgeInsets.only(top: 26.w),
                                   width: 138.w,
                                   child: Text(
-                                    matches[index]['subtitle'],
+                                    matches[index].subtitle,
                                     textAlign: TextAlign.end,
                                     style: GoogleFonts.tajawal(
                                       fontSize: 13.sp,
-                                      color: Color(0xFF898989),
+                                      color: const Color(0xFF898989),
                                     ),
                                   ),
                                 ),
@@ -147,7 +140,7 @@ class PlayScreen extends StatelessWidget {
                         style: GoogleFonts.tajawal(
                           fontSize: 15.sp,
                           fontWeight: FontWeight.w500,
-                          color: Color(0xFF4B4B4B),
+                          color: const Color(0xFF4B4B4B),
                         ),
                       ),
                       SizedBox(height: 20.h),
@@ -159,11 +152,11 @@ class PlayScreen extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      MatchReservationScreen()));
+                                      const MatchReservationScreen()));
                         },
                         text: 'نظم حجز',
                         textSize: 15,
-                        fillColor: Color(0xFF2492F8),
+                        fillColor: const Color(0xFF2492F8),
                         radius: 12,
                       ),
                     ],
@@ -176,4 +169,17 @@ class PlayScreen extends StatelessWidget {
       ),
     );
   }
+}
+
+class LocalMatch {
+  LocalMatch(
+      {required this.title,
+      required this.subtitle,
+      required this.icon,
+      required this.screen});
+
+  String title;
+  String subtitle;
+  IconData icon;
+  Widget screen;
 }

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
 import 'package:x_sport/core/constance/app_icons_icons.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 import 'package:x_sport/presentation/components/profile_screen_components/profile_main_components/profile_appbar_component.dart';
 import 'package:x_sport/presentation/features/chat/my_chats_screen.dart';
 
@@ -107,6 +108,11 @@ class SocialScreen extends StatelessWidget {
                                       padding: EdgeInsets.all(3.w),
                                       height: 94.w,
                                       width: 94.w,
+                                      child: CircleAvatar(
+                                          backgroundImage: AssetsManager
+                                              .images.avatars.avatar2
+                                              .image()
+                                              .image),
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
                                         gradient: LinearGradient(
@@ -115,10 +121,6 @@ class SocialScreen extends StatelessWidget {
                                             Color(0xFFAFCDFF)
                                           ], // Replace with your desired colors
                                         ),
-                                      ),
-                                      child: Image.asset(
-                                        'assets/images/avatar2.png',
-                                        fit: BoxFit.contain,
                                       ),
                                     ),
                                     SizedBox(height: 4.w),
@@ -170,6 +172,11 @@ class SocialScreen extends StatelessWidget {
                                           padding: EdgeInsets.all(2.w),
                                           height: 64.w,
                                           width: 64.w,
+                                          child: CircleAvatar(
+                                              backgroundImage: AssetsManager
+                                                  .images.avatars.avatar1
+                                                  .image()
+                                                  .image),
                                           decoration: BoxDecoration(
                                             shape: BoxShape.circle,
                                             gradient: LinearGradient(
@@ -179,10 +186,6 @@ class SocialScreen extends StatelessWidget {
                                               ], // Replace with your desired colors
                                             ),
                                           ),
-                                          child: Image.asset(
-                                            'assets/images/avatar2.png',
-                                            fit: BoxFit.contain,
-                                          ),
                                         ),
                                       ],
                                     ),
@@ -190,7 +193,7 @@ class SocialScreen extends StatelessWidget {
                                 ),
                               ),
                               SizedBox(height: 10.w),
-                              Image.asset('assets/images/social_image.png'),
+                              AssetsManager.images.social.socialImage.image(),
                               SizedBox(height: 10.w),
                               Padding(
                                 padding: EdgeInsets.only(right: 8.w),
@@ -201,7 +204,7 @@ class SocialScreen extends StatelessWidget {
                                     Row(
                                       children: [
                                         SizedBox(
-                                            height: 40.h,
+                                            height: 50.h,
                                             width: 2 * 36.w,
                                             child: Stack(
                                               children: List.generate(
@@ -212,11 +215,13 @@ class SocialScreen extends StatelessWidget {
                                                   child: Container(
                                                     width: 40.w,
                                                     height: 40.w,
+                                                    child: CircleAvatar(
+                                                        backgroundImage:
+                                                            AssetsManager.images
+                                                                .avatars.avatar0
+                                                                .image()
+                                                                .image),
                                                     decoration: BoxDecoration(
-                                                      image: DecorationImage(
-                                                          fit: BoxFit.cover,
-                                                          image: AssetImage(
-                                                              'assets/images/avatar$index.png')),
                                                       shape: BoxShape.circle,
                                                     ),
                                                   ),

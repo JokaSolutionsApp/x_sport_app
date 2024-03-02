@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 
 import '../../../../../core/constance/app_constance.dart';
 import '../../../academy/presentation/components/academy_components/academy_tabs_components/academy_about_component.dart';
@@ -35,8 +36,9 @@ class _CourtsScreenState extends State<CourtsScreen>
             height: 300.w,
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    fit: BoxFit.fill,
-                    image: AssetImage('assets/images/courts.png'))),
+              fit: BoxFit.fill,
+              image: AssetsManager.images.courts.court.image().image,
+            )),
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
@@ -158,7 +160,7 @@ class _CourtsScreenState extends State<CourtsScreen>
                                         image: DecorationImage(
                                             fit: BoxFit.cover,
                                             image: AssetImage(
-                                                'assets/images/court${index + 1}.png')),
+                                                'assets/images/courts/court${index + 1}.png')),
                                         borderRadius:
                                             BorderRadius.circular(7.sp),
                                         border: Border.all(

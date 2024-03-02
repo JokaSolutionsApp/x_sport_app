@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 import 'package:x_sport/core/widgets/global_app_bar.dart';
 import 'package:x_sport/presentation/features/archives/presentation/components/played_games_components/played_games_details_component.dart';
 import 'package:x_sport/presentation/features/archives/presentation/components/played_games_components/played_games_filter_dialog.dart';
@@ -113,8 +114,9 @@ class PostsArchiveScreen extends StatelessWidget {
               return Container(
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: AssetImage('assets/images/social_image.png'))),
+                  fit: BoxFit.cover,
+                  image: AssetsManager.images.social.socialImage.image().image,
+                )),
               );
             }),
       ]),

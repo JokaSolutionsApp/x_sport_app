@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 
 class OutlinButton extends StatelessWidget {
   final String text;
@@ -9,7 +10,7 @@ class OutlinButton extends StatelessWidget {
   final bool isButtonEnabled;
   final Color textColor;
   final Color fillColor;
-  final String image;
+  final AssetGenImage image;
   const OutlinButton(
       {super.key,
       required this.text,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 import 'package:x_sport/presentation/features/academy/presentation/pages/academy_screen.dart';
 
 import '../../../../../../core/constance/app_constance.dart';
@@ -51,7 +52,7 @@ class AcademiesComponent extends StatelessWidget {
                                         decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(4.sp),
-                                          color: Color(0xFF2E5DD7)
+                                          color: XColors.Submit_Button_Color
                                               .withOpacity(0.22),
                                         ),
                                         child: Icon(
@@ -66,7 +67,7 @@ class AcademiesComponent extends StatelessWidget {
                                           radius: 4,
                                           textColor: Color(0xFF2B2B2B),
                                           textSize: 11,
-                                          fillColor: Color(0xFF2E5DD7)
+                                          fillColor: XColors.Submit_Button_Color
                                               .withOpacity(0.22),
                                           text: 'تابع',
                                           onPressed: () {}),
@@ -270,9 +271,11 @@ class AcademiesComponent extends StatelessWidget {
                                   topRight: Radius.circular(10.sp),
                                 ),
                                 image: DecorationImage(
-                                    image:
-                                        AssetImage('assets/images/court.png'),
-                                    fit: BoxFit.cover)),
+                                  fit: BoxFit.cover,
+                                  image: AssetsManager.images.courts.court
+                                      .image()
+                                      .image,
+                                )),
                           ),
                         ),
                       ),

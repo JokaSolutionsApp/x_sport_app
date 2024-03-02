@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 
 import 'banner_part_component.dart';
 
@@ -35,7 +36,7 @@ class BannerComponent extends StatelessWidget {
         Positioned(
           top: 10.w,
           left: 4.w,
-          child: Image.asset('assets/images/play/dots.png'),
+          child: AssetsManager.images.play.dots.image(),
         ),
         Padding(
           padding: EdgeInsets.only(right: 10.w),

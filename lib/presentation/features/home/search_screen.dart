@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
 import 'package:x_sport/core/constance/app_icons_icons.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 import 'package:x_sport/presentation/components/profile_screen_components/profile_main_components/profile_appbar_component.dart';
 import 'package:x_sport/presentation/widgets/buttons/submit_button.dart';
 
@@ -209,13 +210,11 @@ class _SearchScreenState extends State<SearchScreen>
                                 Container(
                                   height: 50.w,
                                   width: 50.w,
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      image: DecorationImage(
-                                        image: AssetImage(
-                                            'assets/images/avatar2.png'),
-                                        fit: BoxFit.cover,
-                                      )),
+                                  child: CircleAvatar(
+                                      backgroundImage: AssetsManager
+                                          .images.avatars.avatar0
+                                          .image()
+                                          .image),
                                 ),
                                 SizedBox(width: 14.w),
                                 Column(
@@ -242,12 +241,8 @@ class _SearchScreenState extends State<SearchScreen>
                                       right: 10.w, bottom: 10.w),
                                   height: 20.w,
                                   width: 20.w,
-                                  decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                    image: AssetImage(
-                                        'assets/images/verified.png'),
-                                    fit: BoxFit.cover,
-                                  )),
+                                  child: AssetsManager.images.main.verified
+                                      .image(fit: BoxFit.cover),
                                 ),
                               ],
                             ),
@@ -417,13 +412,11 @@ class _SearchScreenState extends State<SearchScreen>
                                         Container(
                                           height: 50.w,
                                           width: 50.w,
-                                          decoration: BoxDecoration(
-                                              shape: BoxShape.circle,
-                                              image: DecorationImage(
-                                                image: AssetImage(
-                                                    'assets/images/avatar2.png'),
-                                                fit: BoxFit.cover,
-                                              )),
+                                          child: CircleAvatar(
+                                              backgroundImage: AssetsManager
+                                                  .images.avatars.avatar2
+                                                  .image(fit: BoxFit.cover)
+                                                  .image),
                                         ),
                                         SizedBox(width: 14.w),
                                         Column(
@@ -451,12 +444,9 @@ class _SearchScreenState extends State<SearchScreen>
                                               right: 10.w, bottom: 10.w),
                                           height: 20.w,
                                           width: 20.w,
-                                          decoration: BoxDecoration(
-                                              image: DecorationImage(
-                                            image: AssetImage(
-                                                'assets/images/verified.png'),
-                                            fit: BoxFit.cover,
-                                          )),
+                                          child: AssetsManager
+                                              .images.main.verified
+                                              .image(fit: BoxFit.cover),
                                         ),
                                       ],
                                     ),

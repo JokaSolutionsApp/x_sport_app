@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:x_sport/core/utils/enums.dart';
+import 'package:x_sport/presentation/features/auth/data/dtos/user_dto/user_dto.dart';
 import 'package:x_sport/presentation/features/auth/presentation/bloc/auth_bloc.dart';
 
 import '../../../../components/profile_screen_components/profile_main_components/profile_appbar_component.dart';
@@ -16,11 +17,40 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: ProfileDrawerComponent(),
-      appBar: ProfileAppBarComponent(),
+      drawer: const ProfileDrawerComponent(),
+      appBar: const ProfileAppBarComponent(),
       body: BlocBuilder<AuthBloc, AuthState>(
         builder: (context, state) {
-          return SizedBox();
+          return SingleChildScrollView(
+              child: Center(
+            child: SizedBox(
+              width: 385.w,
+              child: Column(children: [
+                SizedBox(height: 12.w),
+                const ProfileInfoComponent(
+                  user: User(
+                    id: 0,
+                    name: 'name',
+                    email: 'email',
+                    isVerified: true,
+                    phone: 'phone',
+                    longitude: 'longitude',
+                    latitude: 'latitude',
+                    image: 'image',
+                  ),
+                  points: 200,
+                  favoriteSports: [],
+                ),
+                const ProfileStatsComponent(
+                  followers: 0,
+                  matchesCount: 0,
+                ),
+                ProfileTabBarComponent(
+                  favoritSports: [],
+                ),
+              ]),
+            ),
+          ));
           //   if (state.requestState == RequestState.loaded ||
           //       state.requestState == RequestState.loading ||
           //       state.requestState == RequestState.error) {

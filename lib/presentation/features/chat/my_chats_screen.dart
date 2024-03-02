@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 import 'package:x_sport/presentation/features/chat/presentation/pages/chat_screen.dart';
 import 'package:x_sport/presentation/features/home/presentation/components/search_components/user_search_bloc.dart';
 import 'package:x_sport/presentation/widgets/buttons/submit_button.dart';
@@ -189,10 +190,14 @@ class _MyChatsScreenState extends State<MyChatsScreen>
                                                 decoration: BoxDecoration(
                                                     shape: BoxShape.circle,
                                                     image: DecorationImage(
-                                                      image: AssetImage(
-                                                          'assets/images/avatar0.png'),
-                                                      fit: BoxFit.cover,
-                                                    )),
+                                                        image: AssetsManager
+                                                            .images
+                                                            .avatars
+                                                            .avatar0
+                                                            .image(
+                                                                fit: BoxFit
+                                                                    .cover)
+                                                            .image)),
                                               ),
                                               Positioned(
                                                 left: 1.w,

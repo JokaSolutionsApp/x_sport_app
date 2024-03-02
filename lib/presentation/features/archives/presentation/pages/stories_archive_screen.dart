@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 import 'package:x_sport/core/widgets/global_app_bar.dart';
 import 'package:x_sport/presentation/features/archives/presentation/components/posts_archive_components/post_archive_filter_dialog.dart';
 
@@ -117,9 +118,11 @@ class StoriesArchiveScreen extends StatelessWidget {
                     Container(
                       decoration: BoxDecoration(
                           image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: AssetImage(
-                                  'assets/images/social_image.png'))),
+                        fit: BoxFit.cover,
+                        image: AssetsManager.images.social.socialImage
+                            .image()
+                            .image,
+                      )),
                     ),
                     Positioned(
                       height: 38.w,
@@ -201,9 +204,11 @@ class StoriesArchiveScreen extends StatelessWidget {
                     Container(
                       decoration: BoxDecoration(
                           image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: AssetImage(
-                                  'assets/images/social_image.png'))),
+                        fit: BoxFit.cover,
+                        image: AssetsManager.images.social.socialImage
+                            .image()
+                            .image,
+                      )),
                     ),
                     Positioned(
                       height: 38.w,

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
 import 'package:x_sport/core/constance/app_icons_icons.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 import 'package:x_sport/main.dart';
 import 'package:x_sport/presentation/features/chat/my_chats_screen.dart';
 import 'package:x_sport/presentation/features/profile/presentation/pages/profile_screen.dart';
@@ -174,7 +175,8 @@ class UpCommingTournamentsScreen extends StatelessWidget {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(21.sp),
                 image: DecorationImage(
-                    image: AssetImage('assets/images/winner_banner.png'))),
+                  image: AssetsManager.images.main.winnerBanner.image().image,
+                )),
           ),
           SizedBox(height: 36.w),
           SizedBox(

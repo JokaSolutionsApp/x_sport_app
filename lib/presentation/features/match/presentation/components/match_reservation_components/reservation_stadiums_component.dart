@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 import 'package:x_sport/presentation/features/courts/presentation/pages/courts_screen.dart';
 
 class ReservationStadiumsComponent extends StatelessWidget {
@@ -50,8 +51,11 @@ class ReservationStadiumsComponent extends StatelessWidget {
                                 topLeft: Radius.circular(12.sp),
                                 topRight: Radius.circular(12.sp)),
                             image: DecorationImage(
-                                image: AssetImage('assets/images/court.png'),
-                                fit: BoxFit.cover)),
+                              fit: BoxFit.cover,
+                              image: AssetsManager.images.courts.court
+                                  .image()
+                                  .image,
+                            )),
                       ),
                     ),
                     Expanded(

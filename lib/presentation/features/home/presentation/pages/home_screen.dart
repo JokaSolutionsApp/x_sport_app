@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 import 'package:x_sport/presentation/features/home/presentation/components/home_components/home_stadiums_component.dart';
 import 'package:x_sport/presentation/components/profile_screen_components/profile_main_components/profile_appbar_component.dart';
 import 'package:x_sport/presentation/widgets/buttons/submit_button.dart';
@@ -12,44 +13,44 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final items = [
+    final List<HomeOptions> items = [
       HomeOptions(
         title: 'ابحث عن اكاديميات بقربك لتحول هوايتك الى احتراف',
-        image: 'assets/images/home/search.png',
+        image: AssetsManager.images.home.search,
         color: Colors.white,
-        textColor: Color(0xFF595959),
+        textColor: const Color(0xFF595959),
         btnColor: XColors.Submit_Button_Color,
         btnTextColor: Colors.white,
       ),
       HomeOptions(
           title: 'اضافة اصدقاء في منطقتك لتتنافسوا سويا',
-          image: 'assets/images/home/friends.png',
+          image: AssetsManager.images.home.friends,
           color: XColors.Submit_Button_Color,
           textColor: Colors.white,
           btnColor: Colors.white,
           btnTextColor: XColors.Submit_Button_Color,
-          fadedImage: 'assets/images/home/faded1.png'),
+          fadedImage: AssetsManager.images.home.faded1),
       HomeOptions(
           fadedTop: 10,
           title: 'استعرض الملاعب بالقرب منك ونظم حجزك القادم',
-          image: 'assets/images/home/stadiums.png',
+          image: AssetsManager.images.home.stadiums,
           color: XColors.Submit_Button_Color,
           textColor: Colors.white,
           btnColor: Colors.white,
           btnTextColor: XColors.Submit_Button_Color,
-          fadedImage: 'assets/images/home/faded2.png'),
+          fadedImage: AssetsManager.images.home.faded2),
       HomeOptions(
         title: 'انشر اعلان مباراتك لتبحث عن خصم لك!',
-        image: 'assets/images/home/post.png',
+        image: AssetsManager.images.home.post,
         color: Colors.white,
-        textColor: Color(0xFF595959),
+        textColor: const Color(0xFF595959),
         btnColor: XColors.Submit_Button_Color,
         btnTextColor: Colors.white,
       ),
     ];
     return Scaffold(
-      backgroundColor: Color(0xFFF6F7F9),
-      appBar: ProfileAppBarComponent(
+      backgroundColor: const Color(0xFFF6F7F9),
+      appBar: const ProfileAppBarComponent(
         isProfile: true,
       ),
       body: SingleChildScrollView(
@@ -134,16 +135,16 @@ class HomeScreen extends StatelessWidget {
                                 left: 9.w,
                                 height: 50.w,
                                 width: 50.w,
-                                child: Image.asset(items[index].fadedImage!),
+                                child: items[index].fadedImage!.image(),
                               )
-                            : SizedBox.shrink(),
+                            : const SizedBox.shrink(),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
-                              Image.asset(items[index].image),
+                              items[index].image.image(),
                               Text(
                                 items[index].title,
                                 textAlign: TextAlign.end,
@@ -182,12 +183,12 @@ class HomeScreen extends StatelessWidget {
 
 class HomeOptions {
   final String title;
-  final String image;
+  final AssetGenImage image;
   final Color color;
   final Color textColor;
   final Color btnTextColor;
   final Color btnColor;
-  final String? fadedImage;
+  final AssetGenImage? fadedImage;
   final double fadedTop;
 
   HomeOptions(
