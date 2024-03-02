@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:ffi';
 import 'package:location/location.dart';
 import 'package:rxdart/rxdart.dart';
 import 'fileds_validator.dart';
@@ -11,6 +10,7 @@ class Bloc extends Validators {
   final _newPassword = BehaviorSubject<String>();
   final _confpassword = BehaviorSubject<String>();
   final _forgotConfpassword = BehaviorSubject<String>();
+  final _gender = BehaviorSubject<String>();
   final _privacy = BehaviorSubject<bool>();
   final _phone = BehaviorSubject<String>();
   final _code = BehaviorSubject<String>();
@@ -19,6 +19,7 @@ class Bloc extends Validators {
   final _emailPhone = BehaviorSubject<String>();
 
   Stream<String> get name => _name.stream.transform(namevalidator);
+  Stream<String> get gender => _name.stream.transform(namevalidator);
 
   Stream<String> get email => _email.stream.transform(emailvalidator);
   Stream<String> get emailPhone =>
@@ -40,18 +41,20 @@ class Bloc extends Validators {
   Stream<bool> get loginValid =>
       Rx.combineLatest2(emailPhone, password, (e, p) => true);
 
-  Stream<bool> get registerIsValid => Rx.combineLatest8(
+  Stream<bool> get registerIsValid => Rx.combineLatest9(
       name,
       email,
       password,
       confPassword,
+      gender,
       phone,
       latitude,
       longitude,
       privacy,
-      (n, e, p, cp, ph, lat, long, pr) => true);
+      (n, e, p, cp, g, ph, lat, long, pr) => true);
 
   Function(String) get changeName => _name.sink.add;
+  Function(String) get changeGender => _gender.sink.add;
 
   Function(String) get changeEmail => _email.sink.add;
   Function(String) get changePassword => _password.sink.add;
@@ -64,6 +67,7 @@ class Bloc extends Validators {
   Function(String) get changeEmailPhone => _emailPhone.sink.add;
 
   get nameValue => _name.valueOrNull;
+  get genderValue => _gender.valueOrNull;
   get emailValue => _email.valueOrNull;
   get passwordValue => _password.valueOrNull;
   get newPasswordValue => _newPassword.valueOrNull;
@@ -78,6 +82,7 @@ class Bloc extends Validators {
 
   static void disp(Bloc bloc) {
     bloc._name.value = "";
+    bloc._gender.value = "";
     bloc._email.value = "";
     bloc._password.value = "";
     bloc._newPassword.value = "";

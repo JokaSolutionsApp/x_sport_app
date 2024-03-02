@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:x_sport/presentation/features/auth/data/dtos/user_dto/user_dto.dart';
+import 'package:x_sport/presentation/features/archives/presentation/pages/all_archive_screen.dart';
+import 'package:x_sport/presentation/features/logs/presentation/pages/all_logs_screen.dart';
+import 'package:x_sport/presentation/features/paymnet/presentation/pages/payment_info_screen.dart';
+import 'package:x_sport/presentation/features/settings/presentation/pages/all_settings_privacy_screen.dart';
 
 import '../../../../core/constance/app_constance.dart';
-import '../../../../data/dtos/user_dto/user_dto.dart';
-import '../../../screens/edit_profile_screen.dart';
+import '../../../../core/constance/app_icons_icons.dart';
+import '../../../features/profile/presentation/pages/edit_profile_screen.dart';
 import '../../../widgets/buttons/icon_text_button.dart';
 
 class ProfileDrawerComponent extends StatelessWidget {
@@ -26,6 +31,7 @@ class ProfileDrawerComponent extends StatelessWidget {
         children: [
           Container(
             alignment: Alignment.center,
+            padding: EdgeInsets.only(top: 10),
             height: 132.w,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
@@ -39,55 +45,58 @@ class ProfileDrawerComponent extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'اسم المستخدم',
-                      style: GoogleFonts.tajawal(
-                        color: Colors.white,
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                        height: 0,
+                Padding(
+                  padding: EdgeInsets.only(top: 8.0.w),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'اسم المستخدم',
+                        style: GoogleFonts.tajawal(
+                          color: Colors.white,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          height: 0,
+                        ),
                       ),
-                    ),
-                    TextButton(
-                      style: TextButton.styleFrom(
-                          padding: EdgeInsets.zero,
-                          minimumSize: Size(50.w, 30.h),
-                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                          alignment: Alignment.centerLeft),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => EditProfileScreen(
-                                      user: user,
-                                      favoriteSports: favoriteSports,
-                                    )));
-                      },
-                      child: Row(
-                        children: [
-                          Text(
-                            'تعديل الملف الشخصي',
-                            style: GoogleFonts.tajawal(
-                              color: Colors.white,
-                              fontSize: 9,
-                              fontWeight: FontWeight.w500,
-                              height: 0,
+                      TextButton(
+                        style: TextButton.styleFrom(
+                            padding: EdgeInsets.zero,
+                            minimumSize: Size(50.w, 30.h),
+                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                            alignment: Alignment.centerLeft),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => EditProfileScreen(
+                                        user: user,
+                                        favoriteSports: favoriteSports,
+                                      )));
+                        },
+                        child: Row(
+                          children: [
+                            Text(
+                              'تعديل الملف الشخصي',
+                              style: GoogleFonts.tajawal(
+                                color: Colors.white,
+                                fontSize: 9,
+                                fontWeight: FontWeight.w500,
+                                height: 0,
+                              ),
                             ),
-                          ),
-                          SizedBox(width: 3.w),
-                          Icon(
-                            Icons.edit,
-                            color: Colors.white,
-                            size: 12.sp,
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
+                            SizedBox(width: 3.w),
+                            Icon(
+                              Icons.edit,
+                              color: Colors.white,
+                              size: 12.sp,
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
                 Container(
                   margin: EdgeInsets.symmetric(horizontal: 12.w),
@@ -112,50 +121,92 @@ class ProfileDrawerComponent extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            margin: EdgeInsets.only(top: 26.h, bottom: 14.h, right: 55.w),
-            child: Text(
-              'تعديل الملف الشخصي',
-              style: GoogleFonts.tajawal(
-                color: Color(0xFF2E2E2E),
-                fontSize: 17.sp,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-          ),
+          // Container(
+          //   margin: EdgeInsets.only(top: 26.h, bottom: 14.h, right: 55.w),
+          //   child: Text(
+          //     'تعديل الملف الشخصي',
+          //     style: GoogleFonts.tajawal(
+          //       color: Color(0xFF2E2E2E),
+          //       fontSize: 17.sp,
+          //       fontWeight: FontWeight.w400,
+          //     ),
+          //   ),
+          // ),
           Padding(
             padding: EdgeInsets.only(right: 17.0.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                IconTextButton(
-                  text: 'معلومات الدفع',
-                  icon: Icons.credit_card_outlined,
-                  onPressed: () {},
+                Padding(
+                  padding: EdgeInsets.only(right: 5.w),
+                  child: IconTextButton(
+                    hasDivider: false,
+                    text: 'تعديل الملف الشخصي',
+                    icon: Icons.edit,
+                    iconSize: 21,
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => EditProfileScreen(
+                                    user: user,
+                                    favoriteSports: favoriteSports,
+                                  )));
+                    },
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(right: 5.w),
+                  child: IconTextButton(
+                    text: 'معلومات الدفع',
+                    icon: AppIcons.credit,
+                    iconSize: 21,
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => PaymentInfoScreen()));
+                    },
+                  ),
                 ),
                 IconTextButton(
                   text: 'الارشيف',
-                  icon: Icons.archive_outlined,
-                  onPressed: () {},
+                  icon: AppIcons.archive,
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => AllArchiveScreen()));
+                  },
                 ),
                 IconTextButton(
                   text: 'الانشطة',
-                  icon: Icons.av_timer_outlined,
-                  onPressed: () {},
+                  icon: AppIcons.clock_activity,
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => AllLogsScreen()));
+                  },
                 ),
                 IconTextButton(
                   text: 'الاعدادات',
-                  icon: Icons.settings_outlined,
+                  icon: AppIcons.settings,
                   onPressed: () {},
                 ),
                 IconTextButton(
                   text: 'الخصوصية',
-                  icon: Icons.shield_outlined,
-                  onPressed: () {},
+                  icon: AppIcons.privacy,
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => AllSettingsPrivacyScreen()));
+                  },
                 ),
                 IconTextButton(
                   text: 'ترقية الى بريميوم',
-                  icon: Icons.diamond_outlined,
+                  icon: AppIcons.diamond,
                   color: XColors.Submit_Button_Color,
                   onPressed: () {},
                 ),
@@ -166,6 +217,21 @@ class ProfileDrawerComponent extends StatelessWidget {
                   thickness: 0.5.w,
                 ),
               ],
+            ),
+          ),
+          Spacer(),
+          Padding(
+            padding: EdgeInsets.only(bottom: 21.h),
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: IconTextButton(
+                hasDivider: false,
+                text: 'تسجيل الخروج',
+                icon: Icons.close,
+                fontSize: 17,
+                color: Color(0xFFF44336),
+                onPressed: () {},
+              ),
             ),
           ),
         ],

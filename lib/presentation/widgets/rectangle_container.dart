@@ -9,20 +9,29 @@ class RectangleContainer extends StatelessWidget {
   final int borderColor;
   final Color containerColor;
   final double borderWidth;
+  final double? height;
+  final double? width;
+  final EdgeInsets? padding;
 
   const RectangleContainer({
     super.key,
-    required this.bottomMargin,
+    this.bottomMargin = 0,
     required this.child,
     this.radius = 14,
     this.borderColor = 0xFFE4E4E4,
     this.borderWidth = 0.5,
     this.containerColor = Colors.white,
+    this.height,
+    this.width,
+    this.padding,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: height?.w,
+      width: width?.w,
+      padding: padding,
       margin: EdgeInsets.only(bottom: bottomMargin),
       decoration: ShapeDecoration(
         color: containerColor,

@@ -1,8 +1,17 @@
 // ignore_for_file: constant_identifier_names
 
 enum RequestState {
+  initial,
   loading,
   loaded,
+  error,
+}
+
+enum State {
+  initial,
+  loading,
+  userMessage,
+  botMessage,
   error,
 }
 

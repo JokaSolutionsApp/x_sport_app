@@ -2,8 +2,9 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:x_sport/data/dtos/user_dto/user_dto.dart';
+import 'package:x_sport/presentation/components/profile_screen_components/profile_alert_dialog.dart';
 import 'package:x_sport/presentation/components/profile_screen_components/profile_tabbar_components/activity_prefrences_component.dart';
+import 'package:x_sport/presentation/features/auth/data/dtos/user_dto/user_dto.dart';
 
 import '../../../../core/constance/app_constance.dart';
 import '../../../painters/dotted_line_pianter.dart';
@@ -34,90 +35,161 @@ class ProfileActivitiesComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Directionality(
-          textDirection: TextDirection.rtl,
-          child: SizedBox(
-            height: 100.h,
-            child: GridView.builder(
-              shrinkWrap: true,
-              gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                maxCrossAxisExtent: 114.w,
-                mainAxisExtent: 40.h,
-                crossAxisSpacing: 14.0.w,
-                mainAxisSpacing: 20.0.w,
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            GestureDetector(
+              onTap: () {
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return ProfileAlertDialog(
+                        selectedIndex: selectedIndex,
+                        favoriteSports: levels,
+                        title: 'ازالة لعبة',
+                        subtitle:
+                            'تنويه: بازالتك لاحد الالعاب سيختفي المحتوى المرتبط بتلك اللعبة خلال تصفحك التطبيق',
+                        submitColor: Color(0xFFF44336),
+                        textColor: Color(0xFFF44336),
+                      );
+                    });
+              },
+              child: Container(
+                width: 80.w,
+                height: 34.w,
+                decoration: BoxDecoration(
+                  color: Color(0xFFFFD6D3),
+                  borderRadius: BorderRadius.circular(10.sp),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Text(
+                      'ازالة لعبة',
+                      style: GoogleFonts.tajawal(
+                        textStyle: TextStyle(
+                          color: Color(0xFFFF3030),
+                          fontSize: 11.sp,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ),
+                    Icon(
+                      Icons.delete_forever_outlined,
+                      color: Color(0xFFFF3030),
+                      size: 18.sp,
+                    )
+                  ],
+                ),
               ),
-              itemCount:
-                  favoritSports!.length + 1, // Add 1 for the "Add" button
-              itemBuilder: (context, index) {
-                if (index < favoritSports.length) {
-                  // Render the regular item
+            ),
+            Expanded(
+              child: Directionality(
+                textDirection: TextDirection.rtl,
+                child: SizedBox(
+                  height: 100.h,
+                  child: GridView.builder(
+                    shrinkWrap: true,
+                    gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                      maxCrossAxisExtent: 114.w,
+                      mainAxisExtent: 38.h,
+                      crossAxisSpacing: 14.0.w,
+                      mainAxisSpacing: 20.0.w,
+                    ),
+                    itemCount:
+                        favoritSports!.length + 1, // Add 1 for the "Add" button
+                    itemBuilder: (context, index) {
+                      if (index < favoritSports.length) {
+                        // Render the regular item
 
-                  return ValueListenableBuilder(
-                      valueListenable: selectedIndex,
-                      builder: (context, isSelected, child) {
-                        final isSelected = selectedIndex.value == index;
-                        final Color selectedText = isSelected
-                            ? Colors.white
-                            : XColors.Submit_Button_Color;
-                        final Color selectedButton = isSelected
-                            ? XColors.Submit_Button_Color
-                            : Color(0xFFECECFB);
-                        return GestureDetector(
-                          onTap: () {
-                            selectedIndex.value = index;
-                          },
-                          child: Container(
-                            width: 50.w,
-                            decoration: BoxDecoration(
-                              color: selectedButton,
-                              borderRadius: BorderRadius.circular(12.sp),
-                              border: Border.all(
-                                color: Colors.white,
-                                width: 1.0,
-                              ),
-                            ),
-                            child: Container(
-                              padding: EdgeInsets.symmetric(horizontal: 12.w),
-                              alignment: Alignment.center,
-                              child: Text(
-                                favoritSports![index].name,
-                                style: GoogleFonts.tajawal(
-                                  textStyle: TextStyle(
-                                    color: selectedText,
-                                    fontSize: 15.sp,
-                                    fontWeight: FontWeight.w400,
+                        return ValueListenableBuilder(
+                            valueListenable: selectedIndex,
+                            builder: (context, isSelected, child) {
+                              final isSelected = selectedIndex.value == index;
+                              final Color selectedText = isSelected
+                                  ? Colors.white
+                                  : XColors.Submit_Button_Color;
+                              final Color selectedButton = isSelected
+                                  ? XColors.Submit_Button_Color
+                                  : Color(0xFFECECFB);
+                              return GestureDetector(
+                                onTap: () {
+                                  selectedIndex.value = index;
+                                },
+                                child: Container(
+                                  width: 50.w,
+                                  decoration: BoxDecoration(
+                                    color: selectedButton,
+                                    borderRadius: BorderRadius.circular(12.sp),
+                                    border: Border.all(
+                                      color: Colors.white,
+                                      width: 1.0,
+                                    ),
+                                  ),
+                                  child: Container(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 12.w),
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      favoritSports![index].name,
+                                      style: GoogleFonts.tajawal(
+                                        textStyle: TextStyle(
+                                          color: selectedText,
+                                          fontSize: 15.sp,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                      ),
+                                    ),
                                   ),
                                 ),
+                              );
+                            });
+                      } else {
+                        // Render the "Add" button for the last index
+                        return GestureDetector(
+                          onTap: () {
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return ProfileAlertDialog(
+                                    selectedIndex: selectedIndex,
+                                    favoriteSports: levels,
+                                    title: 'اضف لعبة جديدة',
+                                    subtitle:
+                                        'تنويه: باضافتك للعبة جديدة سيظهر لك محتوى جديد خلال تصفحك مرتبط بتلك اللعبة',
+                                  );
+                                });
+                            // AppFunctions.addDeleteSportsDialog(
+                            //   context,
+                            //   selectedIndex,
+                            //   favoriteSports: levels,
+                            //   title: 'اضف لعبة جديدة',
+                            //   subtitle:
+                            // );
+                          },
+                          child: DottedBorder(
+                            borderPadding: EdgeInsets.symmetric(vertical: 2.w),
+                            borderType: BorderType.RRect,
+                            color: Color(0xFF8E8E8E),
+                            radius: Radius.circular(12.sp),
+                            strokeWidth: 1.6.w,
+                            dashPattern: [7.w],
+                            child: Container(
+                              alignment: Alignment.center,
+                              child: Icon(
+                                Icons.add,
+                                color: Color(0xFF8E8E8E),
                               ),
                             ),
                           ),
                         );
-                      });
-                } else {
-                  // Render the "Add" button for the last index
-                  return GestureDetector(
-                    onTap: () {
-                      // Handle the "Add" button tap
+                      }
                     },
-                    child: DottedBorder(
-                      borderType: BorderType.RRect,
-                      color: Color(0xFF8E8E8E),
-                      radius: Radius.circular(12.sp),
-                      strokeWidth: 1.6.w,
-                      dashPattern: [7.w],
-                      child: Container(
-                        alignment: Alignment.center,
-                        child: Icon(
-                          Icons.add,
-                          color: Color(0xFF8E8E8E),
-                        ),
-                      ),
-                    ),
-                  );
-                }
-              },
+                  ),
+                ),
+              ),
             ),
-          ),
+          ],
         ),
         ValueListenableBuilder(
             valueListenable: selectedIndex,
@@ -329,9 +401,6 @@ class ProfileActivitiesComponent extends StatelessWidget {
                     itemCount:
                         favoritSports[selectedIndex.value].preferences!.length,
                     itemBuilder: (context, index) {
-                      // Create a separate ValueNotifier for each dropdown
-                      ValueNotifier<String?> selectedValue =
-                          ValueNotifier<String?>(null);
                       return ActivityPreferncesComponent(
                         sportId: favoritSports[selectedIndex.value].sportId,
                         index: index,

@@ -20,6 +20,7 @@ class ApiService {
   static Future<Response> post(String path, Map<String, dynamic> data) async {
     try {
       final response = await _dio.post(path, data: data);
+
       return response;
     } catch (error) {
       print("post error $error");

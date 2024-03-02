@@ -1,16 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../components/search_screen_components/user_search_bloc.dart';
+import '../../features/home/presentation/components/search_components/user_search_bloc.dart';
 
 class SreachFieldWidget extends StatelessWidget {
   final TextEditingController controller;
   final UserSearchBloc userSearchBloc;
+  final Color fillColor;
+  final Widget? suffix;
 
   SreachFieldWidget({
     super.key,
     required this.controller,
     required this.userSearchBloc,
+    this.fillColor = const Color(0xFFEBEBEB),
+    this.suffix = const Icon(
+      Icons.search,
+      color: Color(0xFF4F4F4F),
+      size: 28,
+    ),
   });
 
   @override
@@ -26,14 +34,10 @@ class SreachFieldWidget extends StatelessWidget {
         },
         decoration: InputDecoration(
           contentPadding: EdgeInsets.symmetric(vertical: 8.h),
-          suffixIcon: Icon(
-            Icons.search,
-            color: Color(0xFF4F4F4F),
-            size: 28.sp,
-          ),
+          suffixIcon: suffix,
           filled: true,
           enabled: true,
-          fillColor: Color(0xFFEBEBEB),
+          fillColor: fillColor,
           suffixIconColor: Colors.black,
           hintText: '...ادخل ما تبحث عنه',
           hintStyle: TextStyle(

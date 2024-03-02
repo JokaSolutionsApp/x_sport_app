@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:x_sport/main.dart';
-import 'package:x_sport/presentation/screens/profile_screen.dart';
+import 'package:x_sport/presentation/features/chat/my_chats_screen.dart';
+import 'package:x_sport/presentation/features/profile/presentation/pages/profile_screen.dart';
 import '../../../../core/constance/app_constance.dart';
 
 class ProfileAppBarComponent extends StatelessWidget
@@ -116,32 +117,40 @@ class ProfileAppBarComponent extends StatelessWidget
                     ],
                   ),
                   SizedBox(width: 10.w),
-                  Stack(
-                    children: [
-                      Container(
-                        width: 43.w,
-                        height: 43.w,
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.white,
-                            border: Border.all(
-                                color: XColors.circle_border_color,
-                                width: 0.5.w)),
-                        child: Icon(Icons.message_outlined, size: 24.sp),
-                      ),
-                      Positioned(
-                        right: 0.w,
-                        bottom: 3.w,
-                        child: Container(
-                          width: 13.w,
-                          height: 13.w,
-                          decoration: const ShapeDecoration(
-                            color: Color(0xFFF44336),
-                            shape: OvalBorder(),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => MyChatsScreen()));
+                    },
+                    child: Stack(
+                      children: [
+                        Container(
+                          width: 43.w,
+                          height: 43.w,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.white,
+                              border: Border.all(
+                                  color: XColors.circle_border_color,
+                                  width: 0.5.w)),
+                          child: Icon(Icons.message_outlined, size: 24.sp),
+                        ),
+                        Positioned(
+                          right: 0.w,
+                          bottom: 3.w,
+                          child: Container(
+                            width: 13.w,
+                            height: 13.w,
+                            decoration: const ShapeDecoration(
+                              color: Color(0xFFF44336),
+                              shape: OvalBorder(),
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ],
               ),

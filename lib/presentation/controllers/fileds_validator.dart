@@ -52,7 +52,7 @@ class Validators {
   });
   var passvalidator =
       StreamTransformer<String, String>.fromHandlers(handleData: (pass, sink) {
-    String pattern = r'^(?=.*[a-zA-Zء-ي0-9]).{4,}$';
+    String pattern = r'^(?=.*[A-Z])(?=.*\d)(?=.*[a-zA-Zء-ي0-9]).{4,}$';
     RegExp regex = RegExp(pattern, unicode: true);
     if (regex.hasMatch(pass))
       sink.add(pass);
@@ -63,7 +63,7 @@ class Validators {
   });
   var forgotpassvalidator =
       StreamTransformer<String, String>.fromHandlers(handleData: (pass, sink) {
-    String pattern = r'^(?=.*[a-zA-Zء-ي0-9]).{4,}$';
+    String pattern = r'^(?=.*[A-Z])(?=.*\d)(?=.*[a-zA-Zء-ي0-9]).{4,}$';
     RegExp regex = RegExp(pattern);
     if (regex.hasMatch(pass))
       sink.add(pass);
@@ -98,7 +98,7 @@ class Validators {
 
   var phonevalidator = StreamTransformer<String, String>.fromHandlers(
     handleData: (phone, sink) {
-      String pattern = r'(?:\d\s?){9,17}\d$';
+      String pattern = r'\+(?:\d\s?){9,17}\d$';
 
       RegExp regex = RegExp(pattern);
       if (regex.hasMatch(phone)) {

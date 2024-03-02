@@ -3,11 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
-import 'package:x_sport/presentation/widgets/buttons/rectangle_button.dart';
+import 'package:x_sport/presentation/features/auth/data/dtos/user_dto/user_dto.dart';
 import 'package:x_sport/presentation/widgets/rectangle_container.dart';
-
-import '../../../../data/dtos/user_dto/user_dto.dart';
-import '../../../painters/dotted_line_pianter.dart';
 import '../../../widgets/buttons/submit_button.dart';
 import '../profile_tabbar_components/profile_activities_component.dart';
 import '../profile_tabbar_components/profile_society_component.dart';
@@ -67,7 +64,7 @@ class _ProfileTabBarComponentState extends State<ProfileTabBarComponent>
 
   @override
   Widget build(BuildContext context) {
-    print(widget.favoritSports![0].name);
+    // print(widget.favoritSports![0].name);
     return Column(
       children: [
         RectangleContainer(

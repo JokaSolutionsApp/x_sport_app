@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:x_sport/data/dtos/user_dto/user_dto.dart';
-import 'package:x_sport/presentation/controllers/user_bloc/user_bloc.dart';
-import 'package:x_sport/presentation/controllers/user_bloc/user_event.dart';
+import 'package:x_sport/presentation/features/auth/data/dtos/user_dto/user_dto.dart';
 
 import '../../../widgets/rectangle_container.dart';
 
@@ -73,57 +70,58 @@ class _ActivityPreferncesComponentState
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    widget.preferences![widget.index].name,
+                    // widget.preferences![widget.index].name,
+                    prefernces[0]['title'],
                     style: GoogleFonts.tajawal(
                       fontSize: 15.sp,
                       color: Colors.black,
                     ),
                   ),
-                  ValueListenableBuilder<String?>(
-                    valueListenable: selectedValue,
-                    builder: (context, value, child) {
-                      return DropdownButton<String>(
-                        padding: EdgeInsets.zero,
-                        underline: SizedBox.shrink(),
-                        value: value,
-                        icon: Icon(Icons.arrow_drop_down),
-                        iconSize: 0,
-                        elevation: 0,
-                        onChanged: (String? newValue) {
-                          selectedValue.value = newValue!;
-                          final id = widget.preferences[widget.index].options
-                              .where(
-                                  (element) => element.name.contains(newValue))
-                              .first
-                              .id;
-                          print("idNew: ${id}");
+                  // ValueListenableBuilder<String?>(
+                  //   valueListenable: selectedValue,
+                  //   builder: (context, value, child) {
+                  //     return DropdownButton<String>(
+                  //       padding: EdgeInsets.zero,
+                  //       underline: SizedBox.shrink(),
+                  //       value: value,
+                  //       icon: Icon(Icons.arrow_drop_down),
+                  //       iconSize: 0,
+                  //       elevation: 0,
+                  //       onChanged: (String? newValue) {
+                  //         selectedValue.value = newValue!;
+                  //         final id = widget.preferences[widget.index].options
+                  //             .where(
+                  //                 (element) => element.name.contains(newValue))
+                  //             .first
+                  //             .id;
+                  //         print("idNew: ${id}");
 
-                          // context.read<UserBloc>().add(
-                          //     UpdateUserPreferencesEvent(
-                          //         sportId: widget.sportId,
-                          //         favoriteHand: 0,
-                          //         favoritePos: 0,
-                          //         favoriteTime: 0));
-                          print(selectedValue.value);
-                        },
-                        items: widget.preferences![widget.index].options
-                            .map<DropdownMenuItem<String>>(
-                          (Option value) {
-                            return DropdownMenuItem<String>(
-                              value: value.name,
-                              child: Text(
-                                value.name,
-                                style: GoogleFonts.tajawal(
-                                  fontSize: 15.sp,
-                                  color: Color(0xFF2492F8),
-                                ),
-                              ),
-                            );
-                          },
-                        ).toList(),
-                      );
-                    },
-                  ),
+                  //         // context.read<UserBloc>().add(
+                  //         //     UpdateUserPreferencesEvent(
+                  //         //         sportId: widget.sportId,
+                  //         //         favoriteHand: 0,
+                  //         //         favoritePos: 0,
+                  //         //         favoriteTime: 0));
+                  //         print(selectedValue.value);
+                  //       },
+                  //       items: widget.preferences![widget.index].options
+                  //           .map<DropdownMenuItem<String>>(
+                  //         (Option value) {
+                  //           return DropdownMenuItem<String>(
+                  //             value: value.name,
+                  //             child: Text(
+                  //               value.name,
+                  //               style: GoogleFonts.tajawal(
+                  //                 fontSize: 15.sp,
+                  //                 color: Color(0xFF2492F8),
+                  //               ),
+                  //             ),
+                  //           );
+                  //         },
+                  //       ).toList(),
+                  //     );
+                  //   },
+                  // ),
                 ],
               ),
             ),
