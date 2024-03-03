@@ -18,4 +18,6 @@ class XColors {
   static const otp_subtitle_color = Color(0xFF818181);
 }
 
-class XStrings {}
+class XStrings {
+  static const String fontFamily = 'Tajawal';
+}

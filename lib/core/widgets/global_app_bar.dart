@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 import 'package:x_sport/core/constance/app_constance.dart';
 
 class GlobalAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -16,7 +16,7 @@ class GlobalAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       title: Text(
         title,
-        style: GoogleFonts.tajawal(
+        style: TextStyle(
           color: Colors.white,
           fontSize: 18.sp,
           fontWeight: FontWeight.w500,

@@ -3,15 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/core/constance/app_constance.dart';
 import 'package:x_sport/core/constance/app_functions.dart';
 import 'package:x_sport/core/services/locator/service_locator.dart';
 import 'package:x_sport/core/services/preload_images_service.dart';
 import 'package:x_sport/firebase_options.dart';
-import 'package:x_sport/presentation/controllers/chat_bloc/chat_bloc.dart';
-import 'package:x_sport/presentation/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:x_sport/presentation/features/auth/presentation/pages/register_page.dart';
-import 'package:x_sport/presentation/features/home/presentation/pages/main_screen.dart';
-import 'package:x_sport/presentation/features/profile/presentation/pages/profile_screen.dart';
+import 'package:x_sport/app/controllers/chat_bloc/chat_bloc.dart';
+import 'package:x_sport/app/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:x_sport/app/features/auth/presentation/pages/register_page.dart';
+import 'package:x_sport/app/features/home/presentation/pages/main_screen.dart';
+import 'package:x_sport/app/features/profile/presentation/pages/profile_screen.dart';
 import 'package:x_sport/route_screen.dart';
 
 void main() async {
@@ -57,6 +58,7 @@ class MyApp extends StatelessWidget {
                   builder: EasyLoading.init(),
                   debugShowCheckedModeBanner: false,
                   theme: ThemeData(
+                    fontFamily: XStrings.fontFamily,
                     dialogTheme: DialogTheme(
                       surfaceTintColor: Colors.white,
                       backgroundColor:
@@ -77,3 +79,5 @@ class MyApp extends StatelessWidget {
         });
   }
 }
+
+class FontFamily {}
