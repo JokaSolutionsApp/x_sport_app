@@ -20,7 +20,7 @@ class UserRepository extends BaseUserRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.message));
+      return Left(ServerFailure(failuar.errorModel.statusCode));
     }
   }
 
@@ -31,7 +31,7 @@ class UserRepository extends BaseUserRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.message));
+      return Left(ServerFailure(failuar.errorModel.statusCode));
     }
   }
 
@@ -42,7 +42,7 @@ class UserRepository extends BaseUserRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.message));
+      return Left(ServerFailure(failuar.errorModel.statusCode));
     }
   }
 
@@ -53,7 +53,7 @@ class UserRepository extends BaseUserRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.message));
+      return Left(ServerFailure(failuar.errorModel.statusCode));
     }
   }
 
@@ -64,7 +64,7 @@ class UserRepository extends BaseUserRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.message));
+      return Left(ServerFailure(failuar.errorModel.statusCode));
     }
   }
 
@@ -75,7 +75,7 @@ class UserRepository extends BaseUserRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.message));
+      return Left(ServerFailure(failuar.errorModel.statusCode));
     }
   }
 
@@ -88,7 +88,7 @@ class UserRepository extends BaseUserRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.message));
+      return Left(ServerFailure(failuar.errorModel.statusCode));
     }
   }
 
@@ -99,7 +99,7 @@ class UserRepository extends BaseUserRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.message));
+      return Left(ServerFailure(failuar.errorModel.statusCode));
     }
   }
 
@@ -112,7 +112,7 @@ class UserRepository extends BaseUserRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.message));
+      return Left(ServerFailure(failuar.errorModel.statusCode));
     }
   }
 
@@ -132,7 +132,7 @@ class UserRepository extends BaseUserRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.message));
+      return Left(ServerFailure(failuar.errorModel.statusCode));
     }
   }
 
@@ -145,7 +145,7 @@ class UserRepository extends BaseUserRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.message));
+      return Left(ServerFailure(failuar.errorModel.statusCode));
     }
   }
 
@@ -158,7 +158,7 @@ class UserRepository extends BaseUserRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.message));
+      return Left(ServerFailure(failuar.errorModel.statusCode));
     }
   }
 
@@ -171,7 +171,7 @@ class UserRepository extends BaseUserRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.message));
+      return Left(ServerFailure(failuar.errorModel.statusCode));
     }
   }
 
@@ -182,7 +182,7 @@ class UserRepository extends BaseUserRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.message));
+      return Left(ServerFailure(failuar.errorModel.statusCode));
     }
   }
 }

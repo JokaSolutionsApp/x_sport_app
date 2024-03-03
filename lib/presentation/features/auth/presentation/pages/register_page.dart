@@ -144,7 +144,6 @@ class _RegisterPageState extends State<RegisterPage> {
                 stream: registerStream.registerIsValid,
                 builder: (context, snapshot) {
                   final isButtonEnabled = true;
-                  // snapshot.data ?? false
                   return SubmitButton(
                     isButtonEnabled: isButtonEnabled,
                     fillColor: isButtonEnabled
@@ -153,14 +152,6 @@ class _RegisterPageState extends State<RegisterPage> {
                     textColor: Colors.white,
                     text: 'انشاء حساب',
                     onPressed: () {
-                      EasyLoadingInit.startLoading();
-                      // Future.delayed(Duration(seconds: 2), () {
-                      EasyLoading.dismiss();
-                      Navigator.of(navigatorKey.currentContext!).push(
-                        MaterialPageRoute(
-                            builder: (context) => const OtpPage()),
-                      );
-                      // });
                       context.read<AuthBloc>().add(const AuthEvent.register());
                     },
                   );

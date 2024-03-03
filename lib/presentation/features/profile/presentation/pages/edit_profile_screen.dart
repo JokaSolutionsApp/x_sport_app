@@ -195,7 +195,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                                 ),
                                 child: Text(
                                   textAlign: TextAlign.end,
-                                  // widget.favoriteSports![index].name,
                                   localFavoritSports[index],
                                   style: GoogleFonts.tajawal(
                                     textStyle: TextStyle(

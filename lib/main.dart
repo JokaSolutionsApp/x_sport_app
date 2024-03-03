@@ -9,6 +9,7 @@ import 'package:x_sport/core/services/preload_images_service.dart';
 import 'package:x_sport/firebase_options.dart';
 import 'package:x_sport/presentation/controllers/chat_bloc/chat_bloc.dart';
 import 'package:x_sport/presentation/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:x_sport/presentation/features/auth/presentation/pages/register_page.dart';
 import 'package:x_sport/presentation/features/home/presentation/pages/main_screen.dart';
 import 'package:x_sport/presentation/features/profile/presentation/pages/profile_screen.dart';
 import 'package:x_sport/route_screen.dart';
@@ -68,7 +69,7 @@ class MyApp extends StatelessWidget {
                     useMaterial3: true,
                   ),
                   // home: AllSettingsPrivacyScreen(),
-                  home: MainScreen(),
+                  home: RegisterPage(),
                 );
               },
             ),

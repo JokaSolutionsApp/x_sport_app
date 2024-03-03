@@ -10,7 +10,7 @@ class RouteScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AuthBloc, AuthState>(builder: (context, state) {
-      return WelcomePage();
+      return RegisterPage();
       // if (state.userAuthState == UserAuthState.loggedIn) {
       //   return MainScreen();
       // } else if (state.userAuthState == UserAuthState.guest) {

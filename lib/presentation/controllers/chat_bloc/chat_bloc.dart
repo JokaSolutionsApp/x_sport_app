@@ -22,7 +22,8 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
       );
       emit(_UserMessge(messages: messages));
       final result = await sl<SendMessageUseCase>().call(event.userMessage);
-      result.fold((l) => emit(_BotMessage(failure: l.message)), (r) {
+      result.fold((l) => emit(_BotMessage(failure: l.statusCode.toString())),
+          (r) {
         addMessage(r);
         emit(_BotMessage(messages: messages));
       });

@@ -19,6 +19,7 @@ import 'package:x_sport/presentation/features/auth/domain/usecase/user_usecase/u
 import 'package:x_sport/presentation/features/auth/domain/usecase/user_usecase/update_user_preferences_usecase.dart';
 import 'package:x_sport/presentation/features/auth/domain/usecase/user_usecase/update_user_profile.dart';
 import 'package:x_sport/presentation/features/auth/domain/usecase/user_usecase/validate_account_usecase.dart';
+import 'package:x_sport/presentation/features/auth/presentation/pages/otp_page.dart';
 import 'package:x_sport/presentation/features/auth/presentation/pages/welcome_page.dart';
 part 'auth_event.dart';
 part 'auth_state.dart';
@@ -77,8 +78,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         // await _updatePositionPreference(event, emit),
         updateTimePreference: (event) async => null,
         // await _updateTimePreference(event, emit),
-        validateAccount: (event) async => null,
-        // await _validateAccount(event, emit),
+        validateAccount: (event) async => await _validateAccount(event, emit),
         sendImageAndSports: (event) async => null,
         // await _sendImageAndSports(event, emit),
       );
@@ -88,23 +88,43 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     EasyLoadingInit.startLoading();
 
     emit(const AuthState.register(isLoading: true));
-    final result = await signUpUseCase(); // Adapt parameters as needed
+    final result = await signUpUseCase();
     await result.fold((failure) async {
-      emit(AuthState.register(
+      emit(const AuthState.register(
         isLoading: false,
         state: RequestState.error,
       ));
-      EasyLoading.showError('');
-    }, (welcomeData) async {
-      EasyLoading.dismiss();
-      Navigator.of(navigatorKey.currentContext!).push(
-        MaterialPageRoute(builder: (context) => WelcomePage()),
-      );
-      emit(AuthState.register(
+    }, (_) async {
+      emit(const AuthState.register(
         isLoading: false,
         state: RequestState.loaded,
       ));
+      Navigator.of(navigatorKey.currentContext!).push(
+        MaterialPageRoute(builder: (context) => const OtpPage()),
+      );
     });
+    EasyLoading.dismiss();
+  }
+
+  Future<void> _validateAccount(
+      ValidAccountEvent event, Emitter<AuthState> emit) async {
+    EasyLoadingInit.startLoading();
+
+    emit(const AuthState.validateAccount(isLoading: true));
+    final result = await validateAccountUseCase();
+    await result.fold(
+      (failure) async {
+        emit(const AuthState.validateAccount(isLoading: false));
+      },
+      (_) {
+        emit(const AuthState.validateAccount(
+            isLoading: false, state: VerifiedAccountState.isVerified));
+        Navigator.of(navigatorKey.currentContext!).push(
+          MaterialPageRoute(builder: (context) => WelcomePage()),
+        );
+      },
+    );
+    EasyLoading.dismiss();
   }
 
   Future<void> _login(LoginEvent event, Emitter<AuthState> emit) async {
@@ -131,16 +151,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     //     (_) => state.copyWith(userAuthState: UserAuthState.loggedIn),
     //   ));
     // }
-
-    Future<void> _validateAccount(event, Emitter<AuthState> emit) async {
-      //   final result = await validateAccountUseCase();
-      //   emit(result.fold(
-      //     (failure) => state.copyWith(
-      //         validateAccountState: VerifiedAccountState.isNotVerified),
-      //     (_) =>
-      //         state.copyWith(validateAccountState: VerifiedAccountState.isVerified),
-      //   ));
-    }
 
     Future<void> _sendImageAndSports(
         SendImageAndSportsEvent event, Emitter<AuthState> emit) async {

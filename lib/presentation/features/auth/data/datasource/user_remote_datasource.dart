@@ -46,8 +46,58 @@ abstract class BaseUserRemoteDataSource {
 }
 
 class UserRemoteDataSource extends BaseUserRemoteDataSource {
-  final dio = Dio();
   final token = sl<SecureStorageService>().read('token');
+
+  @override
+  Future<void> register() async {
+    final postData = {
+      'name': registerStream.nameValue,
+      'email': registerStream.emailValue,
+      'password': registerStream.passwordValue,
+      'phone': registerStream.phoneValue,
+      "gender": registerStream.genderValue,
+      'longitude': registerStream.longeValue,
+      'latitude': registerStream.latValue,
+    };
+
+    final response = await ApiService.post(ApiConstance.registerApi, postData);
+
+    if (response.statusCode == 200) {
+      await sl<SecureStorageService>()
+          .write('email', registerStream.emailValue);
+      await sl<SecureStorageService>()
+          .write('password', registerStream.passwordValue);
+      await sl<SecureStorageService>().write('otp', 'true');
+    } else {
+      throw ServerException(errorModel: ErrorModel.formJson(response.data));
+    }
+  }
+
+  @override
+  Future<bool> validateAccount() async {
+    final email = await sl<SecureStorageService>().read('email');
+    final password = await sl<SecureStorageService>().read('password');
+    final postData = {
+      'Email': email,
+      'Password': password,
+      'Code': registerStream.codeValue,
+    };
+    print('postData $postData');
+    final response =
+        await ApiService.post(ApiConstance.validateAccountApi, postData);
+    final data = response.data;
+
+    if (response.statusCode == 200) {
+      final token = data['authResult']['token'];
+      final refreshToken = data['authResult']['refreshToken'];
+      sl<SecureStorageService>().write('token', token);
+      sl<SecureStorageService>().write('refreshToken', refreshToken);
+
+      return true;
+    } else {
+      throw ServerException(errorModel: ErrorModel.formJson(data));
+    }
+  }
 
   @override
   Future<UserDto> signIn() async {
@@ -81,45 +131,6 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
       return true;
     } else {
       throw ServerException(errorModel: ErrorModel.formJson({'status': 401}));
-    }
-  }
-
-  @override
-  Future<void> register() async {
-    final postData = {
-      'name': registerStream.nameValue,
-      'email': registerStream.emailValue,
-      'password': registerStream.passwordValue,
-      'phone': registerStream.phoneValue,
-      "gender": registerStream.genderValue,
-      'longitude': registerStream.longeValue,
-      'latitude': registerStream.latValue,
-    };
-
-    final response = await ApiService.post(ApiConstance.registerApi, postData);
-
-    if (response.statusCode == 200) {
-    } else {
-      throw ServerException(errorModel: ErrorModel.formJson({'status': 0}));
-    }
-  }
-
-  @override
-  Future<bool> validateAccount() async {
-    final postData = {
-      'email': registerStream.emailValue,
-      'otp': registerStream.codeValue,
-    };
-    final response = await ApiService.post(ApiConstance.registerApi, postData);
-    final data = response.data;
-
-    if (response.statusCode == 200) {
-      final token = data['user']['token'];
-      sl<SecureStorageService>().write('token', token);
-
-      return true;
-    } else {
-      throw ServerException(errorModel: ErrorModel.formJson(data));
     }
   }
 

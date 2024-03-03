@@ -1,14 +1,14 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:x_sport/core/constance/app_icons_icons.dart';
-import 'package:x_sport/main.dart';
-import 'package:x_sport/presentation/features/auth/presentation/pages/welcome_page.dart';
+import 'package:x_sport/core/services/locator/service_locator.dart';
+import 'package:x_sport/core/services/secure_storage_service.dart.dart';
+import 'package:x_sport/presentation/features/auth/presentation/bloc/auth_bloc.dart';
 import '../../../../../core/constance/app_constance.dart';
-import '../../../../../core/constance/app_functions.dart';
 import '../../../../controllers/fileds_bloc.dart';
 import '../../../../widgets/buttons/submit_button.dart';
 
@@ -23,11 +23,16 @@ class _OtpPageState extends State<OtpPage> {
   TextEditingController code = TextEditingController();
 
   StreamController<ErrorAnimationType>? errorController;
-
+  String? email;
   @override
   void initState() {
+    getEmail();
     errorController = StreamController<ErrorAnimationType>();
     super.initState();
+  }
+
+  getEmail() async {
+    email = await sl<SecureStorageService>().read('email');
   }
 
   @override
@@ -123,7 +128,7 @@ class _OtpPageState extends State<OtpPage> {
                   border: Border.all(
                       color: XColors.otp_field_border_color, width: 0.5.w)),
               child: Text(
-                'fake.email@gmail.com',
+                email ?? 'example@gmail.com',
                 style: GoogleFonts.tajawal(
                   textStyle: TextStyle(
                       color: XColors.otp_subtitle_color,
@@ -205,14 +210,21 @@ class _OtpPageState extends State<OtpPage> {
               onPressed: null,
               child: Column(
                 children: [
-                  Text(
-                    'ارسال مرة اخرى',
-                    style: TextStyle(
-                      color: XColors.Submit_Button_Color,
-                      fontSize: 18.sp,
-                      fontFamily: 'Tajawal',
-                      fontWeight: FontWeight.w400,
-                      height: 0,
+                  TextButton(
+                    onPressed: () {
+                      context
+                          .read<AuthBloc>()
+                          .add(const AuthEvent.validateAccount());
+                    },
+                    child: Text(
+                      'ارسال مرة اخرى',
+                      style: TextStyle(
+                        color: XColors.Submit_Button_Color,
+                        fontSize: 18.sp,
+                        fontFamily: 'Tajawal',
+                        fontWeight: FontWeight.w400,
+                        height: 0,
+                      ),
                     ),
                   ),
                   Container(
@@ -238,14 +250,9 @@ class _OtpPageState extends State<OtpPage> {
                     textSize: 18,
                     text: 'تأكيد الحساب',
                     onPressed: () {
-                      EasyLoadingInit.startLoading();
-                      Future.delayed(Duration(seconds: 2), () {
-                        EasyLoading.dismiss();
-                        Navigator.of(navigatorKey.currentContext!).push(
-                          MaterialPageRoute(
-                              builder: (context) => WelcomePage()),
-                        );
-                      });
+                      context
+                          .read<AuthBloc>()
+                          .add(const AuthEvent.validateAccount());
                     },
                   );
                 }),

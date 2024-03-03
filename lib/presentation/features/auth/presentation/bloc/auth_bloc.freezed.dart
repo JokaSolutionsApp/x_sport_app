@@ -3159,6 +3159,8 @@ mixin _$AuthState {
     required TResult Function(
             bool isLoading, RequestState state, bool? registered)
         register,
+    required TResult Function(bool isLoading, VerifiedAccountState state)
+        validateAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3166,6 +3168,8 @@ mixin _$AuthState {
     TResult? Function()? initial,
     TResult? Function(bool isLoading, RequestState state, bool? registered)?
         register,
+    TResult? Function(bool isLoading, VerifiedAccountState state)?
+        validateAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3173,6 +3177,8 @@ mixin _$AuthState {
     TResult Function()? initial,
     TResult Function(bool isLoading, RequestState state, bool? registered)?
         register,
+    TResult Function(bool isLoading, VerifiedAccountState state)?
+        validateAccount,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -3180,18 +3186,21 @@ mixin _$AuthState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Register value) register,
+    required TResult Function(_ValidateAccount value) validateAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Register value)? register,
+    TResult? Function(_ValidateAccount value)? validateAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Register value)? register,
+    TResult Function(_ValidateAccount value)? validateAccount,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -3256,6 +3265,8 @@ class _$InitialImpl implements _Initial {
     required TResult Function(
             bool isLoading, RequestState state, bool? registered)
         register,
+    required TResult Function(bool isLoading, VerifiedAccountState state)
+        validateAccount,
   }) {
     return initial();
   }
@@ -3266,6 +3277,8 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function(bool isLoading, RequestState state, bool? registered)?
         register,
+    TResult? Function(bool isLoading, VerifiedAccountState state)?
+        validateAccount,
   }) {
     return initial?.call();
   }
@@ -3276,6 +3289,8 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function(bool isLoading, RequestState state, bool? registered)?
         register,
+    TResult Function(bool isLoading, VerifiedAccountState state)?
+        validateAccount,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -3289,6 +3304,7 @@ class _$InitialImpl implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Register value) register,
+    required TResult Function(_ValidateAccount value) validateAccount,
   }) {
     return initial(this);
   }
@@ -3298,6 +3314,7 @@ class _$InitialImpl implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Register value)? register,
+    TResult? Function(_ValidateAccount value)? validateAccount,
   }) {
     return initial?.call(this);
   }
@@ -3307,6 +3324,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Register value)? register,
+    TResult Function(_ValidateAccount value)? validateAccount,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -3412,6 +3430,8 @@ class _$RegisterImpl implements _Register {
     required TResult Function(
             bool isLoading, RequestState state, bool? registered)
         register,
+    required TResult Function(bool isLoading, VerifiedAccountState state)
+        validateAccount,
   }) {
     return register(isLoading, state, registered);
   }
@@ -3422,6 +3442,8 @@ class _$RegisterImpl implements _Register {
     TResult? Function()? initial,
     TResult? Function(bool isLoading, RequestState state, bool? registered)?
         register,
+    TResult? Function(bool isLoading, VerifiedAccountState state)?
+        validateAccount,
   }) {
     return register?.call(isLoading, state, registered);
   }
@@ -3432,6 +3454,8 @@ class _$RegisterImpl implements _Register {
     TResult Function()? initial,
     TResult Function(bool isLoading, RequestState state, bool? registered)?
         register,
+    TResult Function(bool isLoading, VerifiedAccountState state)?
+        validateAccount,
     required TResult orElse(),
   }) {
     if (register != null) {
@@ -3445,6 +3469,7 @@ class _$RegisterImpl implements _Register {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Register value) register,
+    required TResult Function(_ValidateAccount value) validateAccount,
   }) {
     return register(this);
   }
@@ -3454,6 +3479,7 @@ class _$RegisterImpl implements _Register {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Register value)? register,
+    TResult? Function(_ValidateAccount value)? validateAccount,
   }) {
     return register?.call(this);
   }
@@ -3463,6 +3489,7 @@ class _$RegisterImpl implements _Register {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Register value)? register,
+    TResult Function(_ValidateAccount value)? validateAccount,
     required TResult orElse(),
   }) {
     if (register != null) {
@@ -3483,5 +3510,168 @@ abstract class _Register implements AuthState {
   bool? get registered;
   @JsonKey(ignore: true)
   _$$RegisterImplCopyWith<_$RegisterImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ValidateAccountImplCopyWith<$Res> {
+  factory _$$ValidateAccountImplCopyWith(_$ValidateAccountImpl value,
+          $Res Function(_$ValidateAccountImpl) then) =
+      __$$ValidateAccountImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool isLoading, VerifiedAccountState state});
+}
+
+/// @nodoc
+class __$$ValidateAccountImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$ValidateAccountImpl>
+    implements _$$ValidateAccountImplCopyWith<$Res> {
+  __$$ValidateAccountImplCopyWithImpl(
+      _$ValidateAccountImpl _value, $Res Function(_$ValidateAccountImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isLoading = null,
+    Object? state = null,
+  }) {
+    return _then(_$ValidateAccountImpl(
+      isLoading: null == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      state: null == state
+          ? _value.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as VerifiedAccountState,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ValidateAccountImpl implements _ValidateAccount {
+  const _$ValidateAccountImpl(
+      {this.isLoading = false,
+      this.state = VerifiedAccountState.isNotVerified});
+
+  @override
+  @JsonKey()
+  final bool isLoading;
+  @override
+  @JsonKey()
+  final VerifiedAccountState state;
+
+  @override
+  String toString() {
+    return 'AuthState.validateAccount(isLoading: $isLoading, state: $state)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ValidateAccountImpl &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading) &&
+            (identical(other.state, state) || other.state == state));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, isLoading, state);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ValidateAccountImplCopyWith<_$ValidateAccountImpl> get copyWith =>
+      __$$ValidateAccountImplCopyWithImpl<_$ValidateAccountImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(
+            bool isLoading, RequestState state, bool? registered)
+        register,
+    required TResult Function(bool isLoading, VerifiedAccountState state)
+        validateAccount,
+  }) {
+    return validateAccount(isLoading, state);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(bool isLoading, RequestState state, bool? registered)?
+        register,
+    TResult? Function(bool isLoading, VerifiedAccountState state)?
+        validateAccount,
+  }) {
+    return validateAccount?.call(isLoading, state);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(bool isLoading, RequestState state, bool? registered)?
+        register,
+    TResult Function(bool isLoading, VerifiedAccountState state)?
+        validateAccount,
+    required TResult orElse(),
+  }) {
+    if (validateAccount != null) {
+      return validateAccount(isLoading, state);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Register value) register,
+    required TResult Function(_ValidateAccount value) validateAccount,
+  }) {
+    return validateAccount(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Register value)? register,
+    TResult? Function(_ValidateAccount value)? validateAccount,
+  }) {
+    return validateAccount?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Register value)? register,
+    TResult Function(_ValidateAccount value)? validateAccount,
+    required TResult orElse(),
+  }) {
+    if (validateAccount != null) {
+      return validateAccount(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ValidateAccount implements AuthState {
+  const factory _ValidateAccount(
+      {final bool isLoading,
+      final VerifiedAccountState state}) = _$ValidateAccountImpl;
+
+  bool get isLoading;
+  VerifiedAccountState get state;
+  @JsonKey(ignore: true)
+  _$$ValidateAccountImplCopyWith<_$ValidateAccountImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

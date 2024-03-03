@@ -7,7 +7,7 @@ class ApiConstance {
 
   static const signInApi = '/login';
   static const registerApi = 'User/Register';
-  static const validateAccountApi = '/Verification/emailVerification';
+  static const validateAccountApi = 'User/ConfirmUserEmail';
   static const getSportsApi = '/get_sport';
   static const sendImageAndSportsApi = '/user_details';
   static const getUserInfoApi = '/get_user_with_token';
