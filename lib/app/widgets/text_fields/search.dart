@@ -9,7 +9,7 @@ class SreachFieldWidget extends StatelessWidget {
   final Color fillColor;
   final Widget? suffix;
 
-  SreachFieldWidget({
+  const SreachFieldWidget({
     super.key,
     required this.controller,
     required this.userSearchBloc,
@@ -43,26 +43,26 @@ class SreachFieldWidget extends StatelessWidget {
           hintStyle: TextStyle(
               fontWeight: FontWeight.w400,
               fontSize: 15.sp,
-              color: Color(0xFF7C7C7C)),
+              color: const Color(0xFF7C7C7C)),
           border: OutlineInputBorder(
-            borderSide: BorderSide(color: Color(0xFFC9C9C9), width: 0.5.w),
+            borderSide: BorderSide(color: const Color(0xFFC9C9C9), width: 0.5.w),
             borderRadius: BorderRadius.all(Radius.circular(15.sp)),
           ),
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Color(0xFFC9C9C9), width: 0.5.w),
+            borderSide: BorderSide(color: const Color(0xFFC9C9C9), width: 0.5.w),
             borderRadius: BorderRadius.all(Radius.circular(15.sp)),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Color(0xFFC9C9C9), width: 0.5.w),
+            borderSide: BorderSide(color: const Color(0xFFC9C9C9), width: 0.5.w),
             borderRadius: BorderRadius.all(Radius.circular(15.sp)),
           ),
           errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(15.sp)),
-            borderSide: BorderSide(color: Color(0xFFC9C9C9), width: 0.5.w),
+            borderSide: BorderSide(color: const Color(0xFFC9C9C9), width: 0.5.w),
           ),
           focusedErrorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(15.sp)),
-            borderSide: BorderSide(color: Color(0xFFC9C9C9), width: 0.5.w),
+            borderSide: BorderSide(color: const Color(0xFFC9C9C9), width: 0.5.w),
           ),
         ),
       ),

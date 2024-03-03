@@ -51,7 +51,7 @@ class BannerComponent extends StatelessWidget {
                   alignment: Alignment.center,
                   height: 50.w,
                   width: 50.w,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       color: Colors.white, shape: BoxShape.circle),
                   child: Icon(
                     Icons.arrow_back_ios_new,

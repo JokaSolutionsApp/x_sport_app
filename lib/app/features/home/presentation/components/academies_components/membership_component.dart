@@ -38,7 +38,7 @@ class MemberShipComponent extends StatelessWidget {
                               Text(
                                 '6500',
                                 style: TextStyle(
-                                    color: Color(0xFFE3E3E3),
+                                    color: const Color(0xFFE3E3E3),
                                     fontSize: 16.sp,
                                     fontWeight: FontWeight.w300),
                               ),
@@ -65,7 +65,7 @@ class MemberShipComponent extends StatelessWidget {
               Container(
                 width: 0.5.w,
                 height: 60.h,
-                color: Color(0xFFA6A6A6),
+                color: const Color(0xFFA6A6A6),
               ),
               Expanded(
                 child: Padding(
@@ -96,7 +96,7 @@ class MemberShipComponent extends StatelessWidget {
                               Text(
                                 'اسم الاكاديمية',
                                 style: TextStyle(
-                                    color: Color(0xFFE3E3E3),
+                                    color: const Color(0xFFE3E3E3),
                                     fontSize: 16.sp,
                                     fontWeight: FontWeight.w300),
                               ),

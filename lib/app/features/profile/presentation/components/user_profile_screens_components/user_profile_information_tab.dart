@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:x_sport/core/constance/local_data.dart';
 import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
-import 'package:x_sport/app/features/profile/presentation/pages/profile_ranking_screen.dart';
+import 'package:x_sport/app/features/profile/presentation/pages/profile_ranking_page.dart';
 import 'package:x_sport/app/widgets/buttons/submit_button.dart';
 import 'package:x_sport/app/widgets/rectangle_container.dart';
 
@@ -16,6 +16,8 @@ class UserProfileInformationTab extends StatelessWidget {
   final List<LocalPreference> localPrefernces = LocalData.prefernces;
   final List<String> favoritSports = LocalData.favoritSports;
 
+  UserProfileInformationTab({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -24,12 +26,12 @@ class UserProfileInformationTab extends StatelessWidget {
           Directionality(
             textDirection: TextDirection.rtl,
             child: Container(
-              margin: EdgeInsets.only(top: 7),
-              padding: EdgeInsets.only(right: 7),
+              margin: const EdgeInsets.only(top: 7),
+              padding: const EdgeInsets.only(right: 7),
               alignment: Alignment.center,
               width: 0.96.sw,
               decoration: BoxDecoration(
-                border: Border.all(color: Color(0xFFD1D1D1), width: 0.5),
+                border: Border.all(color: const Color(0xFFD1D1D1), width: 0.5),
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(32.sp),
               ),
@@ -42,14 +44,14 @@ class UserProfileInformationTab extends StatelessWidget {
                     style: TextStyle(
                       height: 0,
                       fontSize: 12.sp,
-                      color: Color(0xFF979797),
+                      color: const Color(0xFF979797),
                       fontWeight: FontWeight.w400,
                     ),
                   ),
                   SizedBox(width: 4.w),
                   Expanded(
                     child: GridView.builder(
-                      padding: EdgeInsets.only(top: 0),
+                      padding: const EdgeInsets.only(top: 0),
                       shrinkWrap: true,
                       gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                         maxCrossAxisExtent: 94.w,
@@ -67,7 +69,7 @@ class UserProfileInformationTab extends StatelessWidget {
                                   : XColors.Submit_Button_Color;
                               final Color selectedButton = isSelected
                                   ? XColors.Submit_Button_Color
-                                  : Color(0xFFECECFB);
+                                  : const Color(0xFFECECFB);
                               return GestureDetector(
                                 onTap: () {
                                   selectedIndex.value = index;
@@ -266,7 +268,7 @@ class UserProfileInformationTab extends StatelessWidget {
                                                   context,
                                                   MaterialPageRoute(
                                                       builder: (context) =>
-                                                          ProfileRankingScreen()));
+                                                          const ProfileRankingPage()));
                                             },
                                             child: Container(
                                               width: 24.w,
@@ -379,7 +381,7 @@ class UserProfileInformationTab extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Padding(
-                            padding: EdgeInsets.only(right: 10),
+                            padding: const EdgeInsets.only(right: 10),
                             child: Text(
                               ':عضو بالفرق',
                               style: TextStyle(
@@ -391,10 +393,10 @@ class UserProfileInformationTab extends StatelessWidget {
                           Container(
                             height: 50.h,
                             alignment: Alignment.centerRight,
-                            padding: EdgeInsets.only(right: 10),
+                            padding: const EdgeInsets.only(right: 10),
                             decoration: BoxDecoration(
                               border: Border.all(
-                                  color: Color(0xFFD1D1D1), width: 0.5),
+                                  color: const Color(0xFFD1D1D1), width: 0.5),
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(32.sp),
                             ),
@@ -413,7 +415,7 @@ class UserProfileInformationTab extends StatelessWidget {
                                 'قم بدعوتي للانضمام لفريقك الخاص',
                                 style: TextStyle(
                                   fontSize: 12.sp,
-                                  color: Color(0xff979797),
+                                  color: const Color(0xff979797),
                                 ),
                               ),
                               SizedBox(width: 10.w),

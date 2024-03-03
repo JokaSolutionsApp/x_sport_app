@@ -47,14 +47,14 @@ class AcademyAboutComponent extends StatelessWidget {
                       '9:00 AM to 1:00 PM',
                       style: TextStyle(
                           height: 2.w,
-                          color: Color(0xFFA2A2A2),
+                          color: const Color(0xFFA2A2A2),
                           fontSize: 15.sp,
                           fontWeight: FontWeight.w400),
                     ),
                     Text(
                       '+96354875520557',
                       style: TextStyle(
-                          color: Color(0xFFA2A2A2),
+                          color: const Color(0xFFA2A2A2),
                           fontSize: 15.sp,
                           fontWeight: FontWeight.w400),
                     ),
@@ -70,22 +70,22 @@ class AcademyAboutComponent extends StatelessWidget {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(4.sp),
                             border: Border.all(
-                                color: Color(0xFFA2A2A2), width: 0.2.w)),
+                                color: const Color(0xFFA2A2A2), width: 0.2.w)),
                         child: Icon(
                           Icons.access_time_sharp,
                           size: 16.sp,
-                          color: Color(0xFFA2A2A2),
+                          color: const Color(0xFFA2A2A2),
                         )),
                     Container(
                         padding: EdgeInsets.all(2.w),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(4.sp),
                             border: Border.all(
-                                color: Color(0xFFA2A2A2), width: 0.2.w)),
+                                color: const Color(0xFFA2A2A2), width: 0.2.w)),
                         child: Icon(
                           Icons.call,
                           size: 16.sp,
-                          color: Color(0xFF797878),
+                          color: const Color(0xFF797878),
                         ))
                   ],
                 ),
@@ -102,7 +102,7 @@ class AcademyAboutComponent extends StatelessWidget {
                 Text(
                   'الموقع الجغرافي',
                   style: TextStyle(
-                      color: Color(0xFF797878),
+                      color: const Color(0xFF797878),
                       fontSize: 17.sp,
                       fontWeight: FontWeight.w500),
                 ),
@@ -117,7 +117,7 @@ class AcademyAboutComponent extends StatelessWidget {
           child: Text(
             'نص يمثل وصف عن الاكاديمية ومرافقها وخدماتها والانظمة التدريبية المتبعة وكل ما يمكن ان يهم العميل من معلومات بشكل مفصل من 5 اسطر الى 6',
             textAlign: TextAlign.end,
-            style: TextStyle(color: Color(0xFF6C6C6C), fontSize: 15.sp),
+            style: TextStyle(color: const Color(0xFF6C6C6C), fontSize: 15.sp),
           ),
         ),
         Container(
@@ -138,7 +138,7 @@ class AcademyAboutComponent extends StatelessWidget {
                         width: 70.w,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(9.sp),
-                            color: Color(0xFFECECFB),
+                            color: const Color(0xFFECECFB),
                             boxShadow: [
                               BoxShadow(
                                   color: Colors.black.withOpacity(0.2),
@@ -185,7 +185,7 @@ class AcademyAboutComponent extends StatelessWidget {
                   Text(
                     'يختلف الاشتراك حسب الفئات السنية ومزايا اخرى',
                     style: TextStyle(
-                        color: Color(0xFF6E6E6E),
+                        color: const Color(0xFF6E6E6E),
                         fontSize: 12.sp,
                         fontWeight: FontWeight.w400),
                   ),

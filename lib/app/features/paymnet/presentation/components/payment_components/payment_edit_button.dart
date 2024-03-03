@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:x_sport/core/constance/app_constance.dart';
-import 'package:x_sport/app/widgets/rectangle_container.dart';
 
 class PaymentEditButton extends StatelessWidget {
   final String title;
@@ -25,7 +24,7 @@ class PaymentEditButton extends StatelessWidget {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15.sp),
             color: Colors.white,
-            border: Border.all(color: Color(0xFFD0D0D0), width: 0.5.w)),
+            border: Border.all(color: const Color(0xFFD0D0D0), width: 0.5.w)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -38,10 +37,10 @@ class PaymentEditButton extends StatelessWidget {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   border: Border.all(
-                    color: Color(0xFFD0D0D0),
+                    color: const Color(0xFFD0D0D0),
                   ),
                 ),
-                child: Icon(
+                child: const Icon(
                   Icons.edit,
                   color: XColors.Submit_Button_Color,
                 ),
@@ -56,7 +55,7 @@ class PaymentEditButton extends StatelessWidget {
                       fontWeight: FontWeight.w500),
                   children: [
                     TextSpan(
-                      text: '$subTitle',
+                      text: subTitle,
                       style: TextStyle(
                           color: XColors.Submit_Button_Color,
                           fontSize: 20.sp,

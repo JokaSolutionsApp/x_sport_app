@@ -23,7 +23,7 @@ class ChatBubble extends StatelessWidget {
               // Use TextPainter to calculate the height required for the text
               final textPainter = TextPainter(
                 text: TextSpan(
-                    text: text.message, style: TextStyle(fontSize: 20)),
+                    text: text.message, style: const TextStyle(fontSize: 20)),
                 textDirection: TextDirection.ltr,
               )..layout(maxWidth: 100.w - 50.w); // Adjust maxWidth for padding
 

@@ -14,7 +14,7 @@ class OptionsButtonComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SpeedDial(
-      shape: CircleBorder(
+      shape: const CircleBorder(
         side: BorderSide(
           color: XColors.Submit_Button_Color,
         ),
@@ -31,7 +31,7 @@ class OptionsButtonComponent extends StatelessWidget {
       childrenButtonSize: Size(80.sp, 80.sp),
       children: [
         SpeedDialChild(
-          shape: CircleBorder(
+          shape: const CircleBorder(
             side: BorderSide(
               color: Colors.white,
             ),
@@ -59,11 +59,11 @@ class OptionsButtonComponent extends StatelessWidget {
                 SizedBox(width: 10.w),
                 Container(
                   alignment: Alignment.center,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       shape: BoxShape.circle, color: Colors.white),
                   height: 70.w,
                   width: 70.w,
-                  child: Icon(
+                  child: const Icon(
                     AppIcons.start_match,
                     color: Colors.black,
                   ),
@@ -73,7 +73,7 @@ class OptionsButtonComponent extends StatelessWidget {
           ),
         ),
         SpeedDialChild(
-          shape: CircleBorder(
+          shape: const CircleBorder(
             side: BorderSide(
               color: Colors.white,
             ),
@@ -102,11 +102,11 @@ class OptionsButtonComponent extends StatelessWidget {
                   },
                   child: Container(
                     alignment: Alignment.center,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         shape: BoxShape.circle, color: Colors.white),
                     height: 70.w,
                     width: 70.w,
-                    child: Icon(
+                    child: const Icon(
                       AppIcons.reserve_court,
                       color: Colors.black,
                     ),
@@ -121,7 +121,7 @@ class OptionsButtonComponent extends StatelessWidget {
           // labelStyle: TextStyle(fontSize: 14.sp, color: Colors.white),
         ),
         SpeedDialChild(
-          shape: CircleBorder(
+          shape: const CircleBorder(
             side: BorderSide(
               color: Colors.white,
             ),
@@ -150,11 +150,11 @@ class OptionsButtonComponent extends StatelessWidget {
                   },
                   child: Container(
                     alignment: Alignment.center,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         shape: BoxShape.circle, color: Colors.white),
                     height: 70.w,
                     width: 70.w,
-                    child: Icon(
+                    child: const Icon(
                       AppIcons.new_post,
                       color: Colors.black,
                     ),

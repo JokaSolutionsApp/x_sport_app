@@ -78,28 +78,28 @@ class _CreditTextFieldState extends State<CreditTextField> {
                       filled: true,
                       border: OutlineInputBorder(
                         borderSide:
-                            BorderSide(color: Color(0xFFE6E6E6), width: 0.5.w),
+                            BorderSide(color: const Color(0xFFE6E6E6), width: 0.5.w),
                         borderRadius: BorderRadius.all(Radius.circular(6.sp)),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderSide:
-                            BorderSide(color: Color(0xFFE6E6E6), width: 0.5.w),
+                            BorderSide(color: const Color(0xFFE6E6E6), width: 0.5.w),
                         borderRadius: BorderRadius.all(Radius.circular(6.sp)),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderSide:
-                            BorderSide(color: Color(0xFFE6E6E6), width: 0.5.w),
+                            BorderSide(color: const Color(0xFFE6E6E6), width: 0.5.w),
                         borderRadius: BorderRadius.all(Radius.circular(6.sp)),
                       ),
                       errorBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(6.sp)),
                         borderSide:
-                            BorderSide(color: Color(0xFFE6E6E6), width: 0.5.w),
+                            BorderSide(color: const Color(0xFFE6E6E6), width: 0.5.w),
                       ),
                       focusedErrorBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(6.sp)),
                         borderSide:
-                            BorderSide(color: Color(0xFFE6E6E6), width: 0.5.w),
+                            BorderSide(color: const Color(0xFFE6E6E6), width: 0.5.w),
                       ),
                     ),
                   ),

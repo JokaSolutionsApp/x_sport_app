@@ -27,10 +27,10 @@ class IconTextButton extends StatelessWidget {
           ? Divider(
               indent: 45.w,
               endIndent: 45.w,
-              color: Color(0xFFD7D7D7),
+              color: const Color(0xFFD7D7D7),
               thickness: 0.5.w,
             )
-          : SizedBox.shrink(),
+          : const SizedBox.shrink(),
       // SizedBox(height: 18.h),
       TextButton(
         style: TextButton.styleFrom(

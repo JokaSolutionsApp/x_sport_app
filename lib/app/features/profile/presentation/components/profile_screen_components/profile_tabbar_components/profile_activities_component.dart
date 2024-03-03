@@ -40,8 +40,8 @@ class ProfileActivitiesComponent extends StatelessWidget {
                         title: 'ازالة لعبة',
                         subtitle:
                             'تنويه: بازالتك لاحد الالعاب سيختفي المحتوى المرتبط بتلك اللعبة خلال تصفحك التطبيق',
-                        submitColor: Color(0xFFF44336),
-                        textColor: Color(0xFFF44336),
+                        submitColor: const Color(0xFFF44336),
+                        textColor: const Color(0xFFF44336),
                       );
                     });
               },
@@ -49,7 +49,7 @@ class ProfileActivitiesComponent extends StatelessWidget {
                 width: 80.w,
                 height: 34.w,
                 decoration: BoxDecoration(
-                  color: Color(0xFFFFD6D3),
+                  color: const Color(0xFFFFD6D3),
                   borderRadius: BorderRadius.circular(10.sp),
                 ),
                 child: Row(
@@ -58,14 +58,14 @@ class ProfileActivitiesComponent extends StatelessWidget {
                     Text(
                       'ازالة لعبة',
                       style: TextStyle(
-                        color: Color(0xFFFF3030),
+                        color: const Color(0xFFFF3030),
                         fontSize: 11.sp,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
                     Icon(
                       Icons.delete_forever_outlined,
-                      color: Color(0xFFFF3030),
+                      color: const Color(0xFFFF3030),
                       size: 18.sp,
                     )
                   ],
@@ -85,7 +85,7 @@ class ProfileActivitiesComponent extends StatelessWidget {
                       crossAxisSpacing: 14.0.w,
                       mainAxisSpacing: 20.0.w,
                     ),
-                    itemCount: localFavoritSports!.length +
+                    itemCount: localFavoritSports.length +
                         1, // Add 1 for the "Add" button
                     itemBuilder: (context, index) {
                       if (index < localFavoritSports.length) {
@@ -100,7 +100,7 @@ class ProfileActivitiesComponent extends StatelessWidget {
                                   : XColors.Submit_Button_Color;
                               final Color selectedButton = isSelected
                                   ? XColors.Submit_Button_Color
-                                  : Color(0xFFECECFB);
+                                  : const Color(0xFFECECFB);
                               return GestureDetector(
                                 onTap: () {
                                   selectedIndex.value = index;
@@ -120,7 +120,7 @@ class ProfileActivitiesComponent extends StatelessWidget {
                                         EdgeInsets.symmetric(horizontal: 12.w),
                                     alignment: Alignment.center,
                                     child: Text(
-                                      localFavoritSports![index],
+                                      localFavoritSports[index],
                                       style: TextStyle(
                                         color: selectedText,
                                         fontSize: 15.sp,
@@ -149,13 +149,13 @@ class ProfileActivitiesComponent extends StatelessWidget {
                           child: DottedBorder(
                             borderPadding: EdgeInsets.symmetric(vertical: 2.w),
                             borderType: BorderType.RRect,
-                            color: Color(0xFF8E8E8E),
+                            color: const Color(0xFF8E8E8E),
                             radius: Radius.circular(12.sp),
                             strokeWidth: 1.6.w,
                             dashPattern: [7.w],
                             child: Container(
                               alignment: Alignment.center,
-                              child: Icon(
+                              child: const Icon(
                                 Icons.add,
                                 color: Color(0xFF8E8E8E),
                               ),
@@ -205,7 +205,7 @@ class ProfileActivitiesComponent extends StatelessWidget {
                                             fontWeight: FontWeight.w500),
                                         children: [
                                       TextSpan(
-                                        text: localFavoritSports![
+                                        text: localFavoritSports[
                                             selectedIndex.value],
                                         style: TextStyle(
                                             color: Colors.black,
@@ -222,7 +222,7 @@ class ProfileActivitiesComponent extends StatelessWidget {
                                             fontWeight: FontWeight.w400),
                                         children: [
                                       TextSpan(
-                                        text: localFavoritSports![
+                                        text: localFavoritSports[
                                             selectedIndex.value],
                                         style: TextStyle(
                                             color: Colors.black,
@@ -239,7 +239,7 @@ class ProfileActivitiesComponent extends StatelessWidget {
                                       borderRadius:
                                           BorderRadius.circular(20.sp)),
                                   child: Text(
-                                    localFavoritSports![selectedIndex.value],
+                                    localFavoritSports[selectedIndex.value],
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 18.sp,
@@ -276,7 +276,7 @@ class ProfileActivitiesComponent extends StatelessWidget {
                           Text(
                             'احجز مباراة جديدة او ابحث عن خصم جديد!',
                             style: TextStyle(
-                                color: Color(0xFF2E2E2E),
+                                color: const Color(0xFF2E2E2E),
                                 fontSize: 12.sp,
                                 fontWeight: FontWeight.w400),
                           ),
@@ -293,7 +293,7 @@ class ProfileActivitiesComponent extends StatelessWidget {
                       child: Padding(
                         padding: EdgeInsets.symmetric(vertical: 10.w),
                         child: ListView.builder(
-                            physics: NeverScrollableScrollPhysics(),
+                            physics: const NeverScrollableScrollPhysics(),
                             shrinkWrap: true,
                             itemCount: levels.length,
                             itemBuilder: (context, index) {
@@ -317,13 +317,13 @@ class ProfileActivitiesComponent extends StatelessWidget {
                                           levels[index].points,
                                           style: TextStyle(
                                               fontSize: 16.sp,
-                                              color: Color(0xFF2C2C2C)),
+                                              color: const Color(0xFF2C2C2C)),
                                         ),
                                         Text(
                                           levels[index].level,
                                           style: TextStyle(
                                               fontSize: 15.sp,
-                                              color: Color(0xFF1B1B1B)),
+                                              color: const Color(0xFF1B1B1B)),
                                         ),
                                       ],
                                     ),
@@ -338,7 +338,7 @@ class ProfileActivitiesComponent extends StatelessWidget {
                       Container(
                         height: 18.w,
                         width: 18.w,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           boxShadow: [
                             BoxShadow(
                               blurRadius: 4,
@@ -353,16 +353,16 @@ class ProfileActivitiesComponent extends StatelessWidget {
                       Text(
                         'تفضيلات اللاعب',
                         style: TextStyle(
-                            fontSize: 22.sp, color: Color(0xFF1B1B1B)),
+                            fontSize: 22.sp, color: const Color(0xFF1B1B1B)),
                       )
                     ],
                   ),
                   ListView.builder(
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     itemCount: localFavoritSports[selectedIndex.value].length,
                     itemBuilder: (context, index) {
-                      return ActivityPreferncesComponent(
+                      return const ActivityPreferncesComponent(
                         sportId: 0,
                         index: 0,
                         initialValue: '',

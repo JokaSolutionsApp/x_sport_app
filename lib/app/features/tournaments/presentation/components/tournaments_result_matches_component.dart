@@ -74,7 +74,7 @@ class TournamentResultMatchesComponent extends StatelessWidget {
         Text(
           'الاسبوع الأول',
           style: TextStyle(
-            color: Color(0xFFA8A8A8),
+            color: const Color(0xFFA8A8A8),
             fontWeight: FontWeight.w500,
             fontSize: 18.sp,
           ),
@@ -95,7 +95,7 @@ class TournamentResultMatchesComponent extends StatelessWidget {
                         children: [
                           Column(
                             children: [
-                              Container(
+                              SizedBox(
                                 height: 40.w,
                                 width: 40.w,
                                 child: CircleAvatar(
@@ -156,7 +156,7 @@ class TournamentResultMatchesComponent extends StatelessWidget {
                           ),
                           Column(
                             children: [
-                              Container(
+                              SizedBox(
                                 height: 40.w,
                                 width: 40.w,
                                 child: CircleAvatar(
@@ -185,7 +185,7 @@ class TournamentResultMatchesComponent extends StatelessWidget {
                           Text(
                             'اللاعب 2',
                             style: TextStyle(
-                              color: Color(0xFF757575),
+                              color: const Color(0xFF757575),
                               fontWeight: FontWeight.w400,
                               fontSize: 12.sp,
                             ),
@@ -193,7 +193,7 @@ class TournamentResultMatchesComponent extends StatelessWidget {
                           Text(
                             'اللاعب 1',
                             style: TextStyle(
-                              color: Color(0xFF757575),
+                              color: const Color(0xFF757575),
                               fontWeight: FontWeight.w400,
                               fontSize: 12.sp,
                             ),
@@ -204,7 +204,7 @@ class TournamentResultMatchesComponent extends StatelessWidget {
                       Text(
                         'انتهت',
                         style: TextStyle(
-                          color: Color(0xFF757575),
+                          color: const Color(0xFF757575),
                           fontWeight: FontWeight.w500,
                           fontSize: 15.sp,
                         ),

@@ -41,7 +41,7 @@ class EditImageComponent extends StatelessWidget {
               alignment: Alignment.center,
               height: 94.w,
               width: 94.w,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   color: XColors.Background_Color1, shape: BoxShape.circle),
               child: pickedImage == null
                   ? Text(

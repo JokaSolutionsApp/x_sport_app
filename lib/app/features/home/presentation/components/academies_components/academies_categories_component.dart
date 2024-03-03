@@ -43,7 +43,7 @@ class AcademeiesCategoriesComponent extends StatelessWidget {
                     radius: 14,
                     containerColor: isSelected
                         ? XColors.Background_Color1
-                        : Color(0xFFD1DBF6),
+                        : const Color(0xFFD1DBF6),
                     bottomMargin: 0,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -55,7 +55,7 @@ class AcademeiesCategoriesComponent extends StatelessWidget {
                           items[index],
                           style: TextStyle(
                             color:
-                                isSelected ? Colors.white : Color(0xFF7373AD),
+                                isSelected ? Colors.white : const Color(0xFF7373AD),
                             fontWeight: FontWeight.w400,
                             fontSize: 12.sp,
                           ),

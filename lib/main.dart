@@ -11,9 +11,6 @@ import 'package:x_sport/firebase_options.dart';
 import 'package:x_sport/app/controllers/chat_bloc/chat_bloc.dart';
 import 'package:x_sport/app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:x_sport/app/features/auth/presentation/pages/register_page.dart';
-import 'package:x_sport/app/features/home/presentation/pages/main_screen.dart';
-import 'package:x_sport/app/features/profile/presentation/pages/profile_screen.dart';
-import 'package:x_sport/route_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -59,19 +56,19 @@ class MyApp extends StatelessWidget {
                   debugShowCheckedModeBanner: false,
                   theme: ThemeData(
                     fontFamily: XStrings.fontFamily,
-                    dialogTheme: DialogTheme(
+                    dialogTheme: const DialogTheme(
                       surfaceTintColor: Colors.white,
                       backgroundColor:
                           Colors.white, // Set your desired color here
                     ),
                     colorScheme: ColorScheme.fromSeed(
-                      seedColor: Color(0xFFF6F7F9),
-                      secondary: Color(0xFFF6F7F9),
+                      seedColor: const Color(0xFFF6F7F9),
+                      secondary: const Color(0xFFF6F7F9),
                     ),
                     useMaterial3: true,
                   ),
-                  // home: AllSettingsPrivacyScreen(),
-                  home: RegisterPage(),
+                  // home: AllSettingsPrivacyPage(),
+                  home: const RegisterPage(),
                 );
               },
             ),

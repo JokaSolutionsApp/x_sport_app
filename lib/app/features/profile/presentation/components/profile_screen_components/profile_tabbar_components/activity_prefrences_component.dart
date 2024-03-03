@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:x_sport/core/constance/local_data.dart';
-import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
-import 'package:x_sport/app/features/auth/data/dtos/user_dto/user_dto.dart';
 
 import '../../../../../../widgets/rectangle_container.dart';
 

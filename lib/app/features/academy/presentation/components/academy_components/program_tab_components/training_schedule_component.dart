@@ -33,12 +33,12 @@ class TrainingScheduleComponent extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Container(
+                        SizedBox(
                           width: 0.7.sw,
                           child: RectangleContainer(
                               radius: 10,
                               containerColor:
-                                  isSelected ? Colors.black : Color(0xFFDAE9FF),
+                                  isSelected ? Colors.black : const Color(0xFFDAE9FF),
                               bottomMargin: 0,
                               child: Padding(
                                 padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -79,7 +79,7 @@ class TrainingScheduleComponent extends StatelessWidget {
                                           fontSize: 12.sp,
                                           color: isSelected
                                               ? Colors.white
-                                              : Color(0xFF99A7C9),
+                                              : const Color(0xFF99A7C9),
                                           fontWeight: FontWeight.w500),
                                     ),
                                     Text(
@@ -89,7 +89,7 @@ class TrainingScheduleComponent extends StatelessWidget {
                                           fontSize: 12.sp,
                                           color: isSelected
                                               ? Colors.white
-                                              : Color(0xFF99A7C9),
+                                              : const Color(0xFF99A7C9),
                                           fontWeight: FontWeight.w500),
                                     )
                                   ],
@@ -98,13 +98,13 @@ class TrainingScheduleComponent extends StatelessWidget {
                         ),
                         Container(
                           margin: EdgeInsets.only(right: 6.w, left: 12.w),
-                          child: Text('9:00 AM'),
+                          child: const Text('9:00 AM'),
                         ),
                         Container(
                           margin: EdgeInsets.only(top: 10.w),
                           width: 30.w,
                           height: 0.8.w,
-                          color: Color(0xFF797979),
+                          color: const Color(0xFF797979),
                         ),
                       ],
                     ),

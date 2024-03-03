@@ -2,7 +2,6 @@ import 'package:dartz/dartz.dart';
 import 'package:x_sport/core/error/exceptions.dart';
 import 'package:x_sport/core/error/failure.dart';
 import 'package:x_sport/app/features/auth/data/dtos/sport_dto/sport_dto.dart';
-import 'package:x_sport/app/features/auth/domain/enitites/welcome_enitty.dart';
 import 'package:x_sport/app/features/auth/domain/repository/base_user_repository.dart';
 
 import '../datasource/user_remote_datasource.dart';

@@ -80,7 +80,7 @@ class ProfileAlertDialog extends StatelessWidget {
                             : XColors.Submit_Button_Color;
                         final Color selectedButton = isSelected
                             ? XColors.Submit_Button_Color
-                            : Color(0xFFECECFB);
+                            : const Color(0xFFECECFB);
                         return GestureDetector(
                           onTap: () {
                             selectedIndex.value = index;

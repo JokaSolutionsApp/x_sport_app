@@ -21,7 +21,7 @@ class RankingDetailsComponent extends StatelessWidget {
       margin: EdgeInsets.only(bottom: 20.h),
       height: 70.h,
       decoration: BoxDecoration(
-        border: Border.all(color: Color(0xFFDDDDDD), width: 1.w),
+        border: Border.all(color: const Color(0xFFDDDDDD), width: 1.w),
         borderRadius: BorderRadius.circular(9.sp),
         color: boxColor,
         boxShadow: [
@@ -39,7 +39,7 @@ class RankingDetailsComponent extends StatelessWidget {
               onPressed: () {},
               color: iconColor,
               iconSize: 28.sp,
-              icon: Icon(Icons.more_vert)),
+              icon: const Icon(Icons.more_vert)),
           Text(
             'اسم اللاعب',
             style: TextStyle(
@@ -50,7 +50,7 @@ class RankingDetailsComponent extends StatelessWidget {
               height: 0,
             ),
           ),
-          Container(
+          SizedBox(
             height: 50.h,
             width: 50.w,
             child: CircleAvatar(

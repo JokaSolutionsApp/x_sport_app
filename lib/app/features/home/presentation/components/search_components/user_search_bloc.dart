@@ -3,7 +3,7 @@ import 'package:rxdart/rxdart.dart';
 class UserSearchBloc {
   final _userController = BehaviorSubject<List<UserSearch>>();
   Stream<List<UserSearch>> get userStream => _userController.stream;
-  List<UserSearch> _users = [
+  final List<UserSearch> _users = [
     UserSearch(name: 'Raied Shehadeh', username: 'Raied')
   ];
 

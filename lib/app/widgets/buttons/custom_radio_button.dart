@@ -10,7 +10,7 @@ class CustomRadioButton extends StatefulWidget {
   final AssetGenImage image;
   final void Function(int selectedValue) onTap;
 
-  CustomRadioButton({
+  const CustomRadioButton({
     super.key,
     required this.value,
     required this.lable,
@@ -41,7 +41,7 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
         margin: EdgeInsets.only(bottom: 20.h),
         decoration: BoxDecoration(
             color: Colors.white,
-            border: Border.all(color: Color(0xFFDDDDDD), width: 0.5.w),
+            border: Border.all(color: const Color(0xFFDDDDDD), width: 0.5.w),
             borderRadius: BorderRadius.circular(6.sp)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -55,9 +55,9 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
                 height: 24.w, // Adjust the height as needed
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Color(0xFFF6F6F6),
+                  color: const Color(0xFFF6F6F6),
                   border: Border.all(
-                    color: Color(0xFFB6B6B6),
+                    color: const Color(0xFFB6B6B6),
                     width: 0.5.w,
                   ),
                 ),
@@ -69,10 +69,10 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             color: selectedValue.value == widget.seleceted
-                                ? Color(0xFF50ABFF)
-                                : Color(0xFFF6F6F6),
+                                ? const Color(0xFF50ABFF)
+                                : const Color(0xFFF6F6F6),
                             border: Border.all(
-                              color: Color(0xFFB6B6B6),
+                              color: const Color(0xFFB6B6B6),
                               width: 0.5.w,
                             ),
                           ),
@@ -91,7 +91,7 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
                       fontWeight: FontWeight.w500),
                 ),
                 SizedBox(width: 20.w),
-                Container(
+                SizedBox(
                   width: 45.w, // Set a fixed width
                   height: 45.w, // Set a fixed height
                   child: widget.image.image(),

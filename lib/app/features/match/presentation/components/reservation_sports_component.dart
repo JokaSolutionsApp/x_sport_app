@@ -14,6 +14,8 @@ class ReservationSportsComponent extends StatelessWidget {
   ];
   final ValueNotifier<int> selectedIdx = ValueNotifier<int>(0);
 
+  ReservationSportsComponent({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -47,12 +49,12 @@ class ReservationSportsComponent extends StatelessWidget {
                         ],
                         color: isSelected
                             ? XColors.Submit_Button_Color
-                            : Color(0xFFECECFB),
+                            : const Color(0xFFECECFB),
                         borderRadius: BorderRadius.circular(16.sp)),
                     child: Text(
                       items[index],
                       style: TextStyle(
-                        color: isSelected ? Colors.white : Color(0xFF7373AD),
+                        color: isSelected ? Colors.white : const Color(0xFF7373AD),
                         fontWeight: FontWeight.w400,
                         fontSize: 12.sp,
                       ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:x_sport/app/features/auth/data/dtos/user_dto/user_dto.dart';
-import 'package:x_sport/app/features/profile/presentation/pages/edit_profile_screen.dart';
-import 'package:x_sport/app/features/profile/presentation/pages/profile_ranking_screen.dart';
+import 'package:x_sport/app/features/profile/presentation/pages/edit_profile_page.dart';
+import 'package:x_sport/app/features/profile/presentation/pages/profile_ranking_page.dart';
 import '../../../../../../../core/constance/app_constance.dart';
 import '../../../../../../widgets/rectangle_container.dart';
 
@@ -38,7 +38,7 @@ class ProfileInfoComponent extends StatelessWidget {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          ProfileRankingScreen()));
+                                          const ProfileRankingPage()));
                             },
                             child: Container(
                               width: 34.w,
@@ -61,7 +61,7 @@ class ProfileInfoComponent extends StatelessWidget {
                           SizedBox(width: 17.h),
                           Text(
                             points.toString(),
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: XColors.Submit_Button_Color,
                               fontSize: 25,
                               fontFamily: 'Tajawal',
@@ -150,7 +150,7 @@ class ProfileInfoComponent extends StatelessWidget {
                     ),
                     Text(
                       user!.email,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Color(0xFF7E7E7E),
                         fontSize: 10,
                         fontFamily: 'Tajawal',
@@ -178,7 +178,7 @@ class ProfileInfoComponent extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => EditProfileScreen(
+                                builder: (context) => EditProfilePage(
                                       user: user,
                                       favoriteSports: favoriteSports,
                                     )));

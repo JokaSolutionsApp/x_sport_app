@@ -17,7 +17,7 @@ class PaymentInfoComponent extends StatelessWidget {
           decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(15.sp),
-              border: Border.all(color: Color(0xFFD0D0D0), width: 0.5.w)),
+              border: Border.all(color: const Color(0xFFD0D0D0), width: 0.5.w)),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -41,7 +41,7 @@ class PaymentInfoComponent extends StatelessWidget {
           decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(15.sp),
-              border: Border.all(color: Color(0xFFD0D0D0), width: 0.5.w)),
+              border: Border.all(color: const Color(0xFFD0D0D0), width: 0.5.w)),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [

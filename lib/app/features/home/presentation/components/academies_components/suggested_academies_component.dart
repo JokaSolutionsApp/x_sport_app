@@ -47,7 +47,7 @@ class SuggestedAcademiesComponent extends StatelessWidget {
           Text(
             'حول هوايتك الى مستوى من الاحتراف',
             style: TextStyle(
-              color: Color(0xFF5C5C5C),
+              color: const Color(0xFF5C5C5C),
               fontSize: 16.sp,
               fontWeight: FontWeight.w400,
               height: 0,

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:x_sport/main.dart';
-import 'package:x_sport/app/features/chat/my_chats_screen.dart';
-import 'package:x_sport/app/features/profile/presentation/pages/profile_screen.dart';
+import 'package:x_sport/app/features/chat/presentation/pages/my_chats_page..dart';
+import 'package:x_sport/app/features/profile/presentation/pages/profile_page.dart';
 import '../../../../../../../core/constance/app_constance.dart';
 
 class ProfileAppBarComponent extends StatelessWidget
@@ -15,13 +15,13 @@ class ProfileAppBarComponent extends StatelessWidget
   Widget build(BuildContext context) {
     return AppBar(
       // toolbarHeight: 100.h,
-      backgroundColor: Color(0xFFF6F7F9),
-      surfaceTintColor: Color(0xFFF6F7F9),
+      backgroundColor: const Color(0xFFF6F7F9),
+      surfaceTintColor: const Color(0xFFF6F7F9),
       automaticallyImplyLeading: false,
       elevation: 0,
       flexibleSpace: Container(
         alignment: Alignment.bottomCenter,
-        color: Color(0xFFF6F7F9),
+        color: const Color(0xFFF6F7F9),
         padding: EdgeInsets.symmetric(horizontal: 15.h),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -31,7 +31,7 @@ class ProfileAppBarComponent extends StatelessWidget
                 isProfile
                     ? Navigator.of(navigatorKey.currentContext!).push(
                         MaterialPageRoute(
-                            builder: (context) => ProfileScreen()),
+                            builder: (context) => const ProfilePage()),
                       )
                     : Scaffold.of(context).openDrawer();
               },
@@ -57,7 +57,7 @@ class ProfileAppBarComponent extends StatelessWidget
               ),
             ),
             isProfile
-                ? SizedBox.shrink()
+                ? const SizedBox.shrink()
                 : Padding(
                     padding: EdgeInsets.only(left: 18.w),
                     child: Container(
@@ -120,7 +120,7 @@ class ProfileAppBarComponent extends StatelessWidget
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => MyChatsScreen()));
+                              builder: (context) => const MyChatsPage()));
                     },
                     child: Stack(
                       children: [

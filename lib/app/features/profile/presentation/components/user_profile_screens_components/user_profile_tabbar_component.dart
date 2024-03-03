@@ -31,7 +31,7 @@ class _UserProfileTabBarComponentState extends State<UserProfileTabBarComponent>
           height: 54.h,
           width: 0.9.sw,
           decoration: BoxDecoration(
-            border: Border.all(color: Color(0xFFD1D1D1), width: 0.5),
+            border: Border.all(color: const Color(0xFFD1D1D1), width: 0.5),
             color: Colors.white,
             borderRadius: BorderRadius.circular(32.sp),
           ),
@@ -46,7 +46,7 @@ class _UserProfileTabBarComponentState extends State<UserProfileTabBarComponent>
                 color: Colors.white,
                 fontSize: 18.sp,
                 fontWeight: FontWeight.w400),
-            unselectedLabelStyle: TextStyle(
+            unselectedLabelStyle: const TextStyle(
               color: Color(0xFF8F8F8F),
             ),
             tabs: [

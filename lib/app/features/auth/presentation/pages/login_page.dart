@@ -65,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
                       // Future.delayed(Duration(seconds: 2), () {
                       //   EasyLoading.dismiss();
                       //   Navigator.of(navigatorKey.currentContext!).push(
-                      //     MaterialPageRoute(builder: (context) => MainScreen()),
+                      //     MaterialPageRoute(builder: (context) => MainPage()),
                       //   );
                       // });
                       context.read<AuthBloc>().add(const AuthEvent.login());
@@ -103,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
               buttonText: 'ليس لديك حساب؟! سجل الان!',
               onPressed: () {
                 Navigator.of(navigatorKey.currentContext!).push(
-                  MaterialPageRoute(builder: (context) => RegisterPage()),
+                  MaterialPageRoute(builder: (context) => const RegisterPage()),
                 );
               },
             ),

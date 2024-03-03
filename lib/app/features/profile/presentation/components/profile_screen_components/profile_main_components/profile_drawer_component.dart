@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:x_sport/app/features/auth/data/dtos/user_dto/user_dto.dart';
-import 'package:x_sport/app/features/archives/presentation/pages/all_archive_screen.dart';
-import 'package:x_sport/app/features/logs/presentation/pages/all_logs_screen.dart';
-import 'package:x_sport/app/features/paymnet/presentation/pages/payment_info_screen.dart';
-import 'package:x_sport/app/features/settings/presentation/pages/all_settings_privacy_screen.dart';
+import 'package:x_sport/app/features/archives/presentation/pages/all_archive_page..dart';
+import 'package:x_sport/app/features/logs/presentation/pages/all_logs_page.dart';
+import 'package:x_sport/app/features/paymnet/presentation/pages/payment_info_page.dart';
+import 'package:x_sport/app/features/settings/presentation/pages/all_settings_privacy_page.dart';
 
 import '../../../../../../../core/constance/app_constance.dart';
 import '../../../../../../../core/constance/app_icons_icons.dart';
-import '../../../pages/edit_profile_screen.dart';
+import '../../../pages/edit_profile_page.dart';
 import '../../../../../../widgets/buttons/icon_text_button.dart';
 
 class ProfileDrawerComponent extends StatelessWidget {
@@ -20,7 +20,7 @@ class ProfileDrawerComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.zero,
       ),
       width: 321.w,
@@ -31,14 +31,14 @@ class ProfileDrawerComponent extends StatelessWidget {
         children: [
           Container(
             alignment: Alignment.center,
-            padding: EdgeInsets.only(top: 10),
+            padding: const EdgeInsets.only(top: 10),
             height: 132.w,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(14.sp),
                   bottomRight: Radius.circular(14.sp),
                 ),
-                gradient: LinearGradient(colors: [
+                gradient: const LinearGradient(colors: [
                   XColors.Background_Color1,
                   XColors.Background_Color2
                 ], begin: Alignment.centerLeft, end: Alignment.centerRight)),
@@ -51,7 +51,7 @@ class ProfileDrawerComponent extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         'اسم المستخدم',
                         style: TextStyle(
                           color: Colors.white,
@@ -70,14 +70,14 @@ class ProfileDrawerComponent extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => EditProfileScreen(
+                                  builder: (context) => EditProfilePage(
                                         user: user,
                                         favoriteSports: favoriteSports,
                                       )));
                         },
                         child: Row(
                           children: [
-                            Text(
+                            const Text(
                               'تعديل الملف الشخصي',
                               style: TextStyle(
                                 color: Colors.white,
@@ -103,7 +103,7 @@ class ProfileDrawerComponent extends StatelessWidget {
                   alignment: Alignment.center,
                   width: 80.w,
                   height: 80.w,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     // image: DecorationImage(image: NetworkImage(user!.image)),
                     color: Colors.white,
                     shape: BoxShape.circle,
@@ -137,7 +137,7 @@ class ProfileDrawerComponent extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => EditProfileScreen(
+                              builder: (context) => EditProfilePage(
                                     user: user,
                                     favoriteSports: favoriteSports,
                                   )));
@@ -154,7 +154,7 @@ class ProfileDrawerComponent extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => PaymentInfoScreen()));
+                              builder: (context) => const PaymentInfoPage()));
                     },
                   ),
                 ),
@@ -165,7 +165,7 @@ class ProfileDrawerComponent extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => AllArchiveScreen()));
+                            builder: (context) => const AllArchivePage()));
                   },
                 ),
                 IconTextButton(
@@ -175,7 +175,7 @@ class ProfileDrawerComponent extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => AllLogsScreen()));
+                            builder: (context) => const AllLogsPage()));
                   },
                 ),
                 IconTextButton(
@@ -190,7 +190,8 @@ class ProfileDrawerComponent extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => AllSettingsPrivacyScreen()));
+                            builder: (context) =>
+                                const AllSettingsPrivacyPage()));
                   },
                 ),
                 IconTextButton(
@@ -202,13 +203,13 @@ class ProfileDrawerComponent extends StatelessWidget {
                 Divider(
                   indent: 45.w,
                   endIndent: 45.w,
-                  color: Color(0xFFD7D7D7),
+                  color: const Color(0xFFD7D7D7),
                   thickness: 0.5.w,
                 ),
               ],
             ),
           ),
-          Spacer(),
+          const Spacer(),
           Padding(
             padding: EdgeInsets.only(bottom: 21.h),
             child: Align(
@@ -218,7 +219,7 @@ class ProfileDrawerComponent extends StatelessWidget {
                 text: 'تسجيل الخروج',
                 icon: Icons.close,
                 fontSize: 17,
-                color: Color(0xFFF44336),
+                color: const Color(0xFFF44336),
                 onPressed: () {},
               ),
             ),

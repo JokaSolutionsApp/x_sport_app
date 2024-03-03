@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
-import 'package:x_sport/app/features/academy/presentation/pages/academy_screen.dart';
+import 'package:x_sport/app/features/academy/presentation/pages/academy_page..dart';
 
 import '../../../../../../core/constance/app_constance.dart';
 import '../../../../../../core/constance/app_icons_icons.dart';
@@ -21,7 +21,7 @@ class AcademiesComponent extends StatelessWidget {
           return GestureDetector(
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => AcademyScreen()));
+                  MaterialPageRoute(builder: (context) => const AcademyPage()));
             },
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 0.02.sw),
@@ -65,7 +65,7 @@ class AcademiesComponent extends StatelessWidget {
                                           minWidth: 70,
                                           height: 30,
                                           radius: 4,
-                                          textColor: Color(0xFF2B2B2B),
+                                          textColor: const Color(0xFF2B2B2B),
                                           textSize: 11,
                                           fillColor: XColors.Submit_Button_Color
                                               .withOpacity(0.22),
@@ -91,7 +91,7 @@ class AcademiesComponent extends StatelessWidget {
                                       Text(
                                         '9:00 AM to 1:00 PM',
                                         style: TextStyle(
-                                            color: Color(0xFF797878),
+                                            color: const Color(0xFF797878),
                                             fontSize: 11.sp,
                                             fontWeight: FontWeight.w500),
                                       ),
@@ -115,7 +115,7 @@ class AcademiesComponent extends StatelessWidget {
                                   Text(
                                     'الموقع الجغرافي',
                                     style: TextStyle(
-                                        color: Color(0xFF797878),
+                                        color: const Color(0xFF797878),
                                         fontSize: 14.sp,
                                         fontWeight: FontWeight.w500),
                                   ),
@@ -124,7 +124,7 @@ class AcademiesComponent extends StatelessWidget {
                               Text(
                                 'بدءا من 15\$ شهريا',
                                 style: TextStyle(
-                                    color: Color(0xFF797878),
+                                    color: const Color(0xFF797878),
                                     fontSize: 14.sp,
                                     fontWeight: FontWeight.w500),
                               ),
@@ -137,7 +137,7 @@ class AcademiesComponent extends StatelessWidget {
                                     Text(
                                       '196 مراجعة',
                                       style: TextStyle(
-                                          color: Color(0xFF767676),
+                                          color: const Color(0xFF767676),
                                           fontSize: 10.sp,
                                           fontWeight: FontWeight.w500),
                                     ),
@@ -234,7 +234,7 @@ class AcademiesComponent extends StatelessWidget {
                         flex: 5,
                         child: ShaderMask(
                           shaderCallback: (Rect bounds) {
-                            return LinearGradient(
+                            return const LinearGradient(
                               colors: [Colors.transparent, Colors.black],
                               stops: [
                                 0.02,

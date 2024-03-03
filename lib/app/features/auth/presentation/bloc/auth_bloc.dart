@@ -152,7 +152,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     //   ));
     // }
 
-    Future<void> _sendImageAndSports(
+    Future<void> sendImageAndSports(
         SendImageAndSportsEvent event, Emitter<AuthState> emit) async {
       // emit(state.copyWith(isLoading: true));
       // final result = await sendImageAndSportsUseCase(
@@ -171,7 +171,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       // ));
     }
 
-    Future<void> _getUserInfo(
+    Future<void> getUserInfo(
         GetUserInfoEvent event, Emitter<AuthState> emit) async {
       // emit(state.copyWith(isLoading: true));
       // final result = await getUserInfoUseCase();
@@ -189,7 +189,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       // ));
     }
 
-    Future<void> _updateUserProfile(
+    Future<void> updateUserProfile(
         UpdateUserProfileEvent event, Emitter<AuthState> emit) async {
       // emit(state.copyWith(isLoading: true));
       // final result = await updateUserProfileUseCase(
@@ -216,7 +216,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       // ));
     }
 
-    Future<void> _getSports(
+    Future<void> getSports(
         GetSportsEvent event, Emitter<AuthState> emit) async {
       // emit(state.copyWith(isLoading: true));
       // final result = await getsportsUseCase();
@@ -234,7 +234,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       // ));
     }
 
-    Future<void> _updateUserPreferences(
+    Future<void> updateUserPreferences(
         UpdateUserPreferencesEvent event, Emitter<AuthState> emit) async {
       // emit(state.copyWith(isLoading: true));
       // final result = await updateUserPreferencesUseCase(event.sportId,
@@ -253,7 +253,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       // ));
     }
 
-    Future<void> _updateHandPreference(
+    Future<void> updateHandPreference(
         UpdateHandPreferenceEvent event, Emitter<AuthState> emit) async {
       // emit(state.copyWith(isLoading: true));
       // final result =
@@ -272,7 +272,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       // ));
     }
 
-    Future<void> _updatePositionPreference(
+    Future<void> updatePositionPreference(
         UpdatePositionPreferenceEvent event, Emitter<AuthState> emit) async {
       // emit(state.copyWith(isLoading: true));
       // final result =
@@ -291,7 +291,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       // ));
     }
 
-    Future<void> _updateTimePreference(
+    Future<void> updateTimePreference(
         UpdateTimePreferenceEvent event, Emitter<AuthState> emit) async {
       // emit(state.copyWith(isLoading: true));
       // final result =

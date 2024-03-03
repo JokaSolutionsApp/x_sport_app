@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/core/constance/app_constance.dart';
 import 'package:x_sport/app/widgets/rectangle_container.dart';
 
 class ReservationTimesComponent extends StatelessWidget {
@@ -59,7 +58,7 @@ class ReservationTimesComponent extends StatelessWidget {
                             color: isSelected ? Colors.black : Colors.white,
                             borderRadius: BorderRadius.circular(4.sp),
                             border: Border.all(
-                              color: Color(0xFFB2B2B2),
+                              color: const Color(0xFFB2B2B2),
                               width: 0.5.w,
                             ),
                           ),

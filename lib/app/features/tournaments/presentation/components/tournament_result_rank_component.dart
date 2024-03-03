@@ -25,7 +25,7 @@ class TournamentResultRankComponent extends StatelessWidget {
                   child: Text(
                     groups[index],
                     style: TextStyle(
-                        color: Color(0xFF969696),
+                        color: const Color(0xFF969696),
                         fontSize: 15.sp,
                         fontWeight: FontWeight.w500),
                   ),
@@ -34,7 +34,7 @@ class TournamentResultRankComponent extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 12.w),
                   height: 45.h,
                   width: 1.sw,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.white,
                   ),
                   child: Row(
@@ -48,39 +48,39 @@ class TournamentResultRankComponent extends StatelessWidget {
                             Text(
                               'pts',
                               style: TextStyle(
-                                  color: Color(0xFF969696),
+                                  color: const Color(0xFF969696),
                                   fontSize: 16.sp,
                                   fontWeight: FontWeight.w500),
                             ),
                             Text(
                               'خسر',
                               style: TextStyle(
-                                  color: Color(0xFF969696),
+                                  color: const Color(0xFF969696),
                                   fontSize: 16.sp,
                                   fontWeight: FontWeight.w500),
                             ),
                             Text(
                               'فاز',
                               style: TextStyle(
-                                  color: Color(0xFF969696),
+                                  color: const Color(0xFF969696),
                                   fontSize: 16.sp,
                                   fontWeight: FontWeight.w500),
                             ),
                             Text(
                               'لعب',
                               style: TextStyle(
-                                  color: Color(0xFF969696),
+                                  color: const Color(0xFF969696),
                                   fontSize: 16.sp,
                                   fontWeight: FontWeight.w500),
                             ),
                           ],
                         ),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Text(
                         'اسم اللاعب',
                         style: TextStyle(
-                            color: Color(0xFF969696),
+                            color: const Color(0xFF969696),
                             fontSize: 15.sp,
                             fontWeight: FontWeight.w500),
                       ),
@@ -88,7 +88,7 @@ class TournamentResultRankComponent extends StatelessWidget {
                       Text(
                         '#',
                         style: TextStyle(
-                            color: Color(0xFF969696),
+                            color: const Color(0xFF969696),
                             fontSize: 15.sp,
                             fontWeight: FontWeight.w500),
                       ),
@@ -158,7 +158,7 @@ class TournamentResultRankComponent extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                              Spacer(),
+                              const Spacer(),
                               Text(
                                 '${index + 1}اللاعب',
                                 style: TextStyle(

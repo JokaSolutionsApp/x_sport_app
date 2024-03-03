@@ -38,12 +38,12 @@ class PaymentHistoryComponent extends StatelessWidget {
                               blurRadius: 4)
                         ],
                         border:
-                            Border.all(color: Color(0xFFD9D9D9), width: 0.5.w),
+                            Border.all(color: const Color(0xFFD9D9D9), width: 0.5.w),
                         borderRadius: BorderRadius.circular(5.sp),
                       ),
                       child: Icon(
                         Icons.filter_tilt_shift,
-                        color: Color(0xFF595959),
+                        color: const Color(0xFF595959),
                         size: 22.sp,
                       ),
                     ),
@@ -109,7 +109,7 @@ class PaymentHistoryComponent extends StatelessWidget {
                             margin: EdgeInsets.only(left: 10.w),
                             height: 8.w,
                             width: 8.w,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               shape: BoxShape.circle,
                               color: Colors.black,
                             ),

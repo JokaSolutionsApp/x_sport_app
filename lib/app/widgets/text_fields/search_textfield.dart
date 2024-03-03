@@ -73,23 +73,23 @@ class _SearchFieldState extends State<SearchField> {
                     hintText: widget.hintText,
                     enabledBorder: OutlineInputBorder(
                       borderSide:
-                          BorderSide(color: Color(0xFFDDDDDD), width: 1.w),
+                          BorderSide(color: const Color(0xFFDDDDDD), width: 1.w),
                       borderRadius: BorderRadius.all(Radius.circular(8.0.sp)),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide:
-                          BorderSide(color: Color(0xFFDDDDDD), width: 1.w),
+                          BorderSide(color: const Color(0xFFDDDDDD), width: 1.w),
                       borderRadius: BorderRadius.all(Radius.circular(8.0.sp)),
                     ),
                     errorBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(8.0.sp)),
                       borderSide:
-                          BorderSide(color: Color(0xFFDDDDDD), width: 1.w),
+                          BorderSide(color: const Color(0xFFDDDDDD), width: 1.w),
                     ),
                     focusedErrorBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(8.0.sp)),
                       borderSide:
-                          BorderSide(color: Color(0xFFDDDDDD), width: 1.w),
+                          BorderSide(color: const Color(0xFFDDDDDD), width: 1.w),
                     ),
                   ),
                 ),
@@ -99,7 +99,7 @@ class _SearchFieldState extends State<SearchField> {
           margin: EdgeInsets.only(left: 10.w),
           height: 60.h,
           decoration: BoxDecoration(
-            border: Border.all(color: Color(0xFFDDDDDD), width: 1.w),
+            border: Border.all(color: const Color(0xFFDDDDDD), width: 1.w),
             borderRadius: BorderRadius.circular(9.sp),
             color: Colors.white,
             boxShadow: [
@@ -111,7 +111,7 @@ class _SearchFieldState extends State<SearchField> {
             ],
           ),
           child: IconButton(
-            color: Color(0xFF7F7F7F),
+            color: const Color(0xFF7F7F7F),
             iconSize: 34.sp,
             onPressed: () {},
             icon: const Icon(Icons.search),

@@ -18,7 +18,7 @@ class EditButton extends StatelessWidget {
             child: Text(
               labelText,
               style: TextStyle(
-                  color: Color(0xFF979797),
+                  color: const Color(0xFF979797),
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w400),
             ),

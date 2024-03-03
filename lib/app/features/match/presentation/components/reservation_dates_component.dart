@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:intl/intl.dart';
-import '../../../../../../core/constance/app_constance.dart';
 
 class ReservationDatesComponent extends StatefulWidget {
+  const ReservationDatesComponent({super.key});
+
   @override
   State<ReservationDatesComponent> createState() =>
       _ReservationDatesComponentState();
@@ -78,7 +78,7 @@ class _ReservationDatesComponentState extends State<ReservationDatesComponent> {
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                         color: isSelected ? Colors.black : Colors.white,
-                        border: Border.all(color: Color(0xFFE5E5E5)),
+                        border: Border.all(color: const Color(0xFFE5E5E5)),
                         borderRadius: BorderRadius.circular(28.sp)),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,

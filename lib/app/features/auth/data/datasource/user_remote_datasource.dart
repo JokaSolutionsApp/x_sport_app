@@ -3,7 +3,6 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
 import 'package:x_sport/core/constance/api_constance.dart';
 import 'package:x_sport/core/error/exceptions.dart';
 import 'package:x_sport/core/network/error_message_model.dart';
@@ -120,7 +119,7 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
         throw ServerException(errorModel: ErrorModel.formJson(data));
       }
     } catch (e) {
-      throw ServerException(errorModel: ErrorModel.formJson({}));
+      throw ServerException(errorModel: ErrorModel.formJson(const {}));
     }
   }
 
@@ -130,7 +129,7 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
     if (isLogged) {
       return true;
     } else {
-      throw ServerException(errorModel: ErrorModel.formJson({'status': 401}));
+      throw ServerException(errorModel: ErrorModel.formJson(const {'status': 401}));
     }
   }
 
@@ -206,7 +205,7 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
         throw ServerException(errorModel: ErrorModel.formJson(data));
       }
     } catch (e) {
-      throw ServerException(errorModel: ErrorModel.formJson({}));
+      throw ServerException(errorModel: ErrorModel.formJson(const {}));
     }
   }
 
@@ -233,7 +232,7 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
         throw ServerException(errorModel: ErrorModel.formJson(data));
       }
     } catch (e) {
-      throw ServerException(errorModel: ErrorModel.formJson({}));
+      throw ServerException(errorModel: ErrorModel.formJson(const {}));
     }
   }
 
@@ -298,7 +297,7 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
         throw ServerException(errorModel: ErrorModel.formJson(data));
       }
     } catch (e) {
-      throw ServerException(errorModel: ErrorModel.formJson({}));
+      throw ServerException(errorModel: ErrorModel.formJson(const {}));
     }
   }
 
@@ -321,7 +320,7 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
         throw ServerException(errorModel: ErrorModel.formJson(data));
       }
     } catch (e) {
-      throw ServerException(errorModel: ErrorModel.formJson({}));
+      throw ServerException(errorModel: ErrorModel.formJson(const {}));
     }
   }
 
@@ -344,7 +343,7 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
         throw ServerException(errorModel: ErrorModel.formJson(data));
       }
     } catch (e) {
-      throw ServerException(errorModel: ErrorModel.formJson({}));
+      throw ServerException(errorModel: ErrorModel.formJson(const {}));
     }
   }
 

@@ -23,7 +23,7 @@ class GenderComponent extends StatelessWidget {
           BoxShadow(
             color: Colors.black.withOpacity(0.1),
             blurRadius: 4,
-            offset: Offset(0, 4),
+            offset: const Offset(0, 4),
           ),
         ],
       ),
@@ -41,7 +41,7 @@ class GenderComponent extends StatelessWidget {
                   fontWeight: FontWeight.w400),
               icon: Icon(
                 Icons.keyboard_arrow_down_sharp,
-                color: Color(0xFF616161),
+                color: const Color(0xFF616161),
                 size: 20.sp,
               ),
               iconSize: 26.sp,
@@ -52,19 +52,19 @@ class GenderComponent extends StatelessWidget {
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8.sp),
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Color(0xFFCFCFCF),
                   ),
                 ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8.sp),
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Color(0xFFCFCFCF),
                   ),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8.sp),
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Color(0xFFCFCFCF),
                   ),
                 ),

@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:x_sport/core/constance/app_constance.dart';
-import 'package:x_sport/core/constance/app_icons_icons.dart';
-import 'package:x_sport/app/widgets/buttons/submit_button.dart';
 import 'package:x_sport/app/widgets/rectangle_container.dart';
 
 class FilterComponent extends StatelessWidget {
@@ -39,7 +37,7 @@ class FilterComponent extends StatelessWidget {
             textDirection: TextDirection.rtl,
             child: GridView.builder(
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(), // Disable scrolling
+                physics: const NeverScrollableScrollPhysics(), // Disable scrolling
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                   maxCrossAxisExtent: 110.w,
                   mainAxisExtent: 40.h,
@@ -60,7 +58,7 @@ class FilterComponent extends StatelessWidget {
                             selectedIndex.value = index;
                           },
                           child: RectangleContainer(
-                            containerColor: Color(0xFFF9F9F9),
+                            containerColor: const Color(0xFFF9F9F9),
                             radius: 12,
                             child: Directionality(
                               textDirection: TextDirection.ltr,
@@ -71,11 +69,11 @@ class FilterComponent extends StatelessWidget {
                                   Container(
                                     height: 16.w,
                                     width: 16.w,
-                                    padding: EdgeInsets.all(1),
+                                    padding: const EdgeInsets.all(1),
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                       border: Border.all(
-                                        color: Color(0xFFBBBBBB),
+                                        color: const Color(0xFFBBBBBB),
                                         width: 1.0,
                                       ),
                                     ),

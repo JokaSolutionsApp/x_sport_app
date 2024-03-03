@@ -49,7 +49,7 @@ class _NoBorderTextFieldWidgetState extends State<NoBorderTextFieldWidget> {
             Text(
               widget.labelText,
               style: TextStyle(
-                  color: Color(0xFF979797),
+                  color: const Color(0xFF979797),
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w400),
             ),

@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:intl/intl.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
 
 class ProgramDatesComponent extends StatelessWidget {
@@ -14,6 +13,8 @@ class ProgramDatesComponent extends StatelessWidget {
   final ValueNotifier<String> selectedAge = ValueNotifier<String>('تحت 7 سنين');
 
   final ValueNotifier<int?> isSelectedIndex = ValueNotifier<int?>(null);
+
+  ProgramDatesComponent({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,19 +47,19 @@ class ProgramDatesComponent extends StatelessWidget {
                         decoration: BoxDecoration(
                             color: isSelected
                                 ? XColors.Submit_Button_Color
-                                : Color(0xFFD1DBF6),
-                            border: Border.all(color: Color(0xFFE5E5E5)),
+                                : const Color(0xFFD1DBF6),
+                            border: Border.all(color: const Color(0xFFE5E5E5)),
                             borderRadius: BorderRadius.circular(7.sp)),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              '${dayMaps[index]}',
+                              dayMaps[index],
                               style: TextStyle(
                                   fontSize: 13.sp,
                                   color: isSelected
                                       ? Colors.white
-                                      : Color(0xFF7373AD),
+                                      : const Color(0xFF7373AD),
                                   fontWeight: FontWeight.w500),
                             ),
                           ],
@@ -75,7 +76,7 @@ class ProgramDatesComponent extends StatelessWidget {
         Container(
           height: 30.h,
           width: 0.5.w,
-          color: Color(0xFF969696),
+          color: const Color(0xFF969696),
         ),
         SizedBox(width: 6.w),
         ValueListenableBuilder<String>(
@@ -92,7 +93,7 @@ class ProgramDatesComponent extends StatelessWidget {
                   BoxShadow(
                     color: Colors.black.withOpacity(0.1),
                     blurRadius: 4,
-                    offset: Offset(0, 4),
+                    offset: const Offset(0, 4),
                   ),
                 ],
               ),
@@ -104,11 +105,11 @@ class ProgramDatesComponent extends StatelessWidget {
                     style: TextStyle(
                         height: 1.8.w,
                         fontSize: 12.sp,
-                        color: Color(0xFF616161),
+                        color: const Color(0xFF616161),
                         fontWeight: FontWeight.w500),
                     icon: Icon(
                       Icons.keyboard_arrow_down_sharp,
-                      color: Color(0xFF616161),
+                      color: const Color(0xFF616161),
                       size: 20.sp,
                     ),
                     iconSize: 26.sp,
@@ -119,19 +120,19 @@ class ProgramDatesComponent extends StatelessWidget {
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8.sp),
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Color(0xFFCFCFCF),
                         ),
                       ),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8.sp),
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Color(0xFFCFCFCF),
                         ),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8.sp),
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Color(0xFFCFCFCF),
                         ),
                       ),

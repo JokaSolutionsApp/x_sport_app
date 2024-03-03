@@ -5,7 +5,7 @@ class PlayTypesPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final Paint paint = Paint()
       ..color = Colors.white
-      ..maskFilter = MaskFilter.blur(BlurStyle.normal, 0.1)
+      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 0.1)
       ..style = PaintingStyle.fill;
 
     final double width = size.width;

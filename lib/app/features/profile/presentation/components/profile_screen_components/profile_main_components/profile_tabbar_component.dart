@@ -10,7 +10,7 @@ import '../profile_tabbar_components/profile_society_component.dart';
 
 class ProfileTabBarComponent extends StatefulWidget {
   final List<FavoritSport>? favoritSports;
-  ProfileTabBarComponent({super.key, this.favoritSports});
+  const ProfileTabBarComponent({super.key, this.favoritSports});
 
   @override
   State<ProfileTabBarComponent> createState() => _ProfileTabBarComponentState();
@@ -82,17 +82,17 @@ class _ProfileTabBarComponentState extends State<ProfileTabBarComponent>
                                   color: XColors.Submit_Button_Color,
                                   width: 4.sp))),
                       controller: tabBar,
-                      labelStyle: TextStyle(
+                      labelStyle: const TextStyle(
                         color: Colors.black,
                         fontSize: 18,
                         fontFamily: 'Tajawal',
                         fontWeight: FontWeight.w500,
                         height: 0,
                       ),
-                      unselectedLabelStyle: TextStyle(
+                      unselectedLabelStyle: const TextStyle(
                         color: Color(0xFF8F8F8F),
                       ),
-                      tabs: [
+                      tabs: const [
                         Tab(
                           text: 'المجتمع',
                         ),
@@ -117,7 +117,7 @@ class _ProfileTabBarComponentState extends State<ProfileTabBarComponent>
         SizedBox(
           height: 0.68.sh,
           child: TabBarView(controller: tabBar, children: [
-            ProfileSocietyComponent(),
+            const ProfileSocietyComponent(),
             SingleChildScrollView(
               child: Column(
                 children: [
@@ -128,7 +128,7 @@ class _ProfileTabBarComponentState extends State<ProfileTabBarComponent>
                       radius: Radius.circular(12.sp),
                       strokeWidth: 1.4.w,
                       dashPattern: [10.w, 9],
-                      color: Color(0xFF3D3D3D),
+                      color: const Color(0xFF3D3D3D),
                       child: SizedBox(
                         width: 1.sw,
                         height: 230.h,
@@ -149,7 +149,7 @@ class _ProfileTabBarComponentState extends State<ProfileTabBarComponent>
                                 style: TextStyle(
                                     fontWeight: FontWeight.w500,
                                     fontSize: 18.sp,
-                                    color: Color(0xFF4B4B4B)),
+                                    color: const Color(0xFF4B4B4B)),
                                 textAlign: TextAlign.center,
                               ),
                             ),

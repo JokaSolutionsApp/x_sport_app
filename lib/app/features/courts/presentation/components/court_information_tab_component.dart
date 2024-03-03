@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:x_sport/core/constance/app_constance.dart';
-import 'package:x_sport/app/widgets/buttons/submit_button.dart';
 
 import '../../../../../core/constance/app_icons_icons.dart';
 import '../../../../widgets/rectangle_container.dart';
@@ -66,7 +65,7 @@ class CourtInformationComponent extends StatelessWidget {
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.timer_outlined,
                         color: XColors.Submit_Button_Color,
                       ),
@@ -85,13 +84,13 @@ class CourtInformationComponent extends StatelessWidget {
                       Text(
                         'الموقع الجغرافي',
                         style: TextStyle(
-                            color: Color(0xFF989898),
+                            color: const Color(0xFF989898),
                             fontSize: 17.sp,
                             fontWeight: FontWeight.w500),
                       ),
                       Icon(
                         Icons.location_pin,
-                        color: Color(0xFF989898),
+                        color: const Color(0xFF989898),
                         size: 30.sp,
                       ),
                     ],
@@ -119,7 +118,7 @@ class CourtInformationComponent extends StatelessWidget {
                         width: 70.w,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(9.sp),
-                            color: Color(0xFFECECFB),
+                            color: const Color(0xFFECECFB),
                             boxShadow: [
                               BoxShadow(
                                   color: Colors.black.withOpacity(0.2),
@@ -149,7 +148,7 @@ class CourtInformationComponent extends StatelessWidget {
           child: Text(
             'وصف عن الملعب من 5 اسطر الى 6\nوصف عن الملعب من 5 اسطر الى 6\nوصف عن الملعب من 5 اسطر الى 6\nوصف عن الملعب من 5 اسطر الى 6',
             textAlign: TextAlign.end,
-            style: TextStyle(color: Color(0xFF6C6C6C), fontSize: 15.sp),
+            style: TextStyle(color: const Color(0xFF6C6C6C), fontSize: 15.sp),
           ),
         ),
         SizedBox(
@@ -209,7 +208,7 @@ class CourtInformationComponent extends StatelessWidget {
                         'قم باختيار موعد مناسب بسهولة \nونظم مباراتك التالية',
                         textAlign: TextAlign.end,
                         style: TextStyle(
-                            color: Color(0xFF6E6E6E),
+                            color: const Color(0xFF6E6E6E),
                             fontSize: 15.sp,
                             fontWeight: FontWeight.w500),
                       ),
@@ -229,7 +228,7 @@ class CourtInformationComponent extends StatelessWidget {
                   width: 170.w,
                   height: 120.h,
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: [
+                    gradient: const LinearGradient(colors: [
                       XColors.Submit_Button_Color,
                       Color(0xFF0B3B9B)
                     ], begin: Alignment.centerRight, end: Alignment.centerLeft),
@@ -260,7 +259,7 @@ class CourtInformationComponent extends StatelessWidget {
                   width: 170.w,
                   height: 120.h,
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: [
+                    gradient: const LinearGradient(colors: [
                       XColors.Submit_Button_Color,
                       Color(0xFF0B3B9B)
                     ], begin: Alignment.centerRight, end: Alignment.centerLeft),

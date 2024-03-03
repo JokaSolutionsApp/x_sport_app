@@ -21,7 +21,7 @@ class MatchTypeComponent extends StatelessWidget {
               final isSelected = index == selectedIndex;
 
               return Padding(
-                padding: EdgeInsets.only(bottom: 10),
+                padding: const EdgeInsets.only(bottom: 10),
                 child: MaterialButton(
                   splashColor: Colors.transparent,
                   highlightColor: Colors.transparent,
@@ -35,7 +35,7 @@ class MatchTypeComponent extends StatelessWidget {
                     side: BorderSide(
                         color: isSelected
                             ? XColors.Submit_Button_Color
-                            : Color(0xFF828282),
+                            : const Color(0xFF828282),
                         width: isSelected ? 1.5.w : 1.w),
                     borderRadius: BorderRadius.circular(15.sp),
                   ),
@@ -65,7 +65,7 @@ class MatchTypeComponent extends StatelessWidget {
                                     height: 2.2.w,
                                     fontSize: 15.sp,
                                     fontWeight: FontWeight.w500,
-                                    color: Color(0xFF959595),
+                                    color: const Color(0xFF959595),
                                   ),
                                 ),
                               ],

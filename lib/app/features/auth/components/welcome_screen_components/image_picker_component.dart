@@ -37,8 +37,8 @@ class ImagePcikerComponent extends StatelessWidget {
         borderType: BorderType.Circle,
         color: Colors.white,
         strokeWidth: 1,
-        padding: EdgeInsets.all(20),
-        dashPattern: [10],
+        padding: const EdgeInsets.all(20),
+        dashPattern: const [10],
         child: ValueListenableBuilder<XFile?>(
           valueListenable: _pickedImageNotifier,
           builder: (context, pickedImage, child) {
@@ -46,7 +46,7 @@ class ImagePcikerComponent extends StatelessWidget {
               alignment: Alignment.center,
               height: 150.w,
               child: pickedImage == null
-                  ? Text(
+                  ? const Text(
                       'اختر صورة شخصية',
                       textAlign: TextAlign.center,
                       style: TextStyle(

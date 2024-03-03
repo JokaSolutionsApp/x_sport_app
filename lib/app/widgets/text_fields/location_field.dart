@@ -43,7 +43,7 @@ class _LocationFieldState extends State<LocationField> {
           return Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(8.0.sp)),
-              color: Color(0xFFE0E4EE),
+              color: const Color(0xFFE0E4EE),
               boxShadow: [
                 BoxShadow(
                   color: const Color(0xFF000000).withOpacity(0.1),
@@ -70,29 +70,29 @@ class _LocationFieldState extends State<LocationField> {
                 suffixIcon: Icon(
                   Icons.location_on_outlined,
                   size: 30.sp,
-                  color: Color(0xFF828282),
+                  color: const Color(0xFF828282),
                 ),
                 hintText: widget.hintText,
                 hintStyle: TextStyle(
                   height: 1.w,
-                  color: Color(0xFF828282),
+                  color: const Color(0xFF828282),
                   fontSize: 15.sp,
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Color(0xFFDDDDDD), width: 1.w),
+                  borderSide: BorderSide(color: const Color(0xFFDDDDDD), width: 1.w),
                   borderRadius: BorderRadius.all(Radius.circular(8.0.sp)),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Color(0xFFDDDDDD), width: 1.w),
+                  borderSide: BorderSide(color: const Color(0xFFDDDDDD), width: 1.w),
                   borderRadius: BorderRadius.all(Radius.circular(8.0.sp)),
                 ),
                 errorBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(8.0.sp)),
-                  borderSide: BorderSide(color: Color(0xFFDDDDDD), width: 1.w),
+                  borderSide: BorderSide(color: const Color(0xFFDDDDDD), width: 1.w),
                 ),
                 focusedErrorBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(8.0.sp)),
-                  borderSide: BorderSide(color: Color(0xFFDDDDDD), width: 1.w),
+                  borderSide: BorderSide(color: const Color(0xFFDDDDDD), width: 1.w),
                 ),
               ),
             ),

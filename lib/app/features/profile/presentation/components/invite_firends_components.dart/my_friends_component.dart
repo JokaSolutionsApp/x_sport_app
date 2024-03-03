@@ -48,7 +48,7 @@ class MyFirendsComponent extends StatelessWidget {
                   builder: (context, value, child) {
                     return value
                         ? GestureDetector(
-                            child: Icon(
+                            child: const Icon(
                             Icons.done,
                             color: Color(0xFF2492F8),
                             size: 28,
@@ -56,7 +56,7 @@ class MyFirendsComponent extends StatelessWidget {
                         : Text(
                             leadingTitle,
                             style: TextStyle(
-                              color: Color(0xFF2492F8),
+                              color: const Color(0xFF2492F8),
                               fontSize: 18.sp,
                               fontWeight: FontWeight.w500,
                             ),
@@ -81,14 +81,14 @@ class MyFirendsComponent extends StatelessWidget {
                       Container(
                         height: 43.w,
                         width: 43.w,
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                        ),
                         child: CircleAvatar(
                             backgroundImage: AssetsManager
                                 .images.avatars.avatar0
                                 .image()
                                 .image),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                        ),
                       ),
                     ],
                   ),
