@@ -3,6 +3,9 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:dio/dio.dart';
+import 'package:x_sport/app/features/auth/data/models/sport_model.dart';
+import 'package:x_sport/app/features/auth/domain/enitites/sport_entity.dart';
+import 'package:x_sport/app/features/auth/domain/enitites/user_entity.dart';
 import 'package:x_sport/core/constance/api_constance.dart';
 import 'package:x_sport/core/error/exceptions.dart';
 import 'package:x_sport/core/network/error_message_model.dart';
@@ -10,18 +13,16 @@ import 'package:x_sport/core/services/api_service.dart';
 import 'package:x_sport/core/services/locator/service_locator.dart';
 import 'package:x_sport/core/services/secure_storage_service.dart.dart';
 import 'package:x_sport/app/controllers/fileds_bloc.dart';
-import 'package:x_sport/app/features/auth/data/dtos/sport_dto/sport_dto.dart';
-import 'package:x_sport/app/features/auth/data/dtos/user_dto/user_dto.dart';
 
 abstract class BaseUserRemoteDataSource {
-  Future<UserDto> signIn();
+  Future<UserEntity> signIn();
 
   Future<void> register();
-  Future<UserDto> getUserInfo();
-  Future<UserDto> updateUserPreferences(
+  Future<UserEntity> getUserInfo();
+  Future<UserEntity> updateUserPreferences(
       int sportId, int favoriteHand, int favoritePos, int favoriteTime);
 
-  Future<UserDto> updateUserProfile(
+  Future<UserEntity> updateUserProfile(
     String userName,
     String phone,
     List<int> image,
@@ -37,8 +38,8 @@ abstract class BaseUserRemoteDataSource {
   Future<bool> checkUserLogged();
   Future<bool> validateAccount();
   Future<bool> logoutUser();
-  Future<List<SportDto>> getSports();
-  Future<UserDto> sendImageAndSports(
+  Future<List<SportEntity>> getSports();
+  Future<UserEntity> sendImageAndSports(
       List<int> imageBytes, String imageType, List<int> selectedSports);
 
   Future<String> sendMessage(String userMessage);
@@ -99,7 +100,7 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
   }
 
   @override
-  Future<UserDto> signIn() async {
+  Future<UserEntity> signIn() async {
     final postData = {
       'email_or_phone': signInStream.emailPhoneValue,
       'password': signInStream.passwordValue,
@@ -114,7 +115,7 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
         final token = data['token'];
         await sl<SecureStorageService>().write('token', token);
 
-        return userDtoFromJson(stringData);
+        return data;
       } else {
         throw ServerException(errorModel: ErrorModel.formJson(data));
       }
@@ -129,7 +130,8 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
     if (isLogged) {
       return true;
     } else {
-      throw ServerException(errorModel: ErrorModel.formJson(const {'status': 401}));
+      throw ServerException(
+          errorModel: ErrorModel.formJson(const {'status': 401}));
     }
   }
 
@@ -148,19 +150,19 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
   }
 
   @override
-  Future<List<SportDto>> getSports() async {
+  Future<List<SportEntity>> getSports() async {
     final response = await ApiService.get(ApiConstance.getSportsApi);
     final data = response.data;
 
     if (response.statusCode == 200) {
-      return sportDtoFromJson(json.encode(data));
+      return data;
     } else {
       throw ServerException(errorModel: ErrorModel.formJson(data));
     }
   }
 
   @override
-  Future<UserDto> sendImageAndSports(
+  Future<UserEntity> sendImageAndSports(
       List<int> imageBytes, String imageType, List<int> selectedSports) async {
     FormData formData = FormData();
     formData.files.add(MapEntry(
@@ -185,14 +187,14 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
     final data = response.data;
 
     if (response.statusCode == 200) {
-      return userDtoFromJson(json.encode(data));
+      return data;
     } else {
       throw ServerException(errorModel: ErrorModel.formJson(data));
     }
   }
 
   @override
-  Future<UserDto> getUserInfo() async {
+  Future<UserEntity> getUserInfo() async {
     try {
       final response = await ApiService.get(ApiConstance.getUserInfoApi);
 
@@ -200,7 +202,7 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
 
       final stringData = json.encode(data);
       if (response.statusCode == 200) {
-        return userDtoFromJson(stringData);
+        return data;
       } else {
         throw ServerException(errorModel: ErrorModel.formJson(data));
       }
@@ -210,7 +212,7 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
   }
 
   @override
-  Future<UserDto> updateUserPreferences(
+  Future<UserEntity> updateUserPreferences(
       int sportId, int favoriteHand, int favoritePos, int favoriteTime) async {
     final postData = {
       'sport_id': sportId,
@@ -227,7 +229,7 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
 
       final stringData = json.encode(data);
       if (response.statusCode == 200) {
-        return userDtoFromJson(stringData);
+        return data;
       } else {
         throw ServerException(errorModel: ErrorModel.formJson(data));
       }
@@ -237,7 +239,7 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
   }
 
   @override
-  Future<UserDto> updateUserProfile(
+  Future<UserEntity> updateUserProfile(
       String userName,
       String phone,
       List<int> image,
@@ -272,7 +274,7 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
     final data = response.data;
 
     if (response.statusCode == 200) {
-      return userDtoFromJson(json.encode(data));
+      return data;
     } else {
       throw ServerException(errorModel: ErrorModel.formJson(data));
     }

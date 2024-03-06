@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/auth/data/dtos/user_dto/user_dto.dart';
 import 'package:x_sport/app/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:x_sport/app/features/profile/presentation/pages/edit_profile_page.dart';
 
 import '../components/profile_screen_components/profile_main_components/profile_appbar_component.dart';
 import '../components/profile_screen_components/profile_main_components/profile_drawer_component.dart';
@@ -26,17 +26,8 @@ class ProfilePage extends StatelessWidget {
               width: 385.w,
               child: Column(children: [
                 SizedBox(height: 12.w),
-                const ProfileInfoComponent(
-                  user: User(
-                    id: 0,
-                    name: 'name',
-                    email: 'email',
-                    isVerified: true,
-                    phone: 'phone',
-                    longitude: 'longitude',
-                    latitude: 'latitude',
-                    image: 'image',
-                  ),
+                ProfileInfoComponent(
+                  user: User(),
                   points: 200,
                   favoriteSports: [],
                 ),

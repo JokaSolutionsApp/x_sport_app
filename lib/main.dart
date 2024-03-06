@@ -11,6 +11,7 @@ import 'package:x_sport/firebase_options.dart';
 import 'package:x_sport/app/controllers/chat_bloc/chat_bloc.dart';
 import 'package:x_sport/app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:x_sport/app/features/auth/presentation/pages/register_page.dart';
+import 'package:x_sport/presentation/controllers/chat_bloc/chat_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

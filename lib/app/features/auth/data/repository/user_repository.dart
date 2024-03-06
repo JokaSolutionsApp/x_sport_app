@@ -1,11 +1,11 @@
 import 'package:dartz/dartz.dart';
+import 'package:x_sport/app/features/auth/domain/enitites/sport_entity.dart';
+import 'package:x_sport/app/features/auth/domain/enitites/user_entity.dart';
 import 'package:x_sport/core/error/exceptions.dart';
 import 'package:x_sport/core/error/failure.dart';
-import 'package:x_sport/app/features/auth/data/dtos/sport_dto/sport_dto.dart';
 import 'package:x_sport/app/features/auth/domain/repository/base_user_repository.dart';
 
 import '../datasource/user_remote_datasource.dart';
-import '../dtos/user_dto/user_dto.dart';
 
 class UserRepository extends BaseUserRepository {
   final BaseUserRemoteDataSource baseUsersRemoteDataSource;
@@ -13,7 +13,7 @@ class UserRepository extends BaseUserRepository {
   UserRepository(this.baseUsersRemoteDataSource);
 
   @override
-  Future<Either<Failure, UserDto>> signIn() async {
+  Future<Either<Failure, UserEntity>> signIn() async {
     try {
       final result = await baseUsersRemoteDataSource.signIn();
 
@@ -68,7 +68,7 @@ class UserRepository extends BaseUserRepository {
   }
 
   @override
-  Future<Either<Failure, List<SportDto>>> getSports() async {
+  Future<Either<Failure, List<SportEntity>>> getSports() async {
     try {
       final result = await baseUsersRemoteDataSource.getSports();
 
@@ -79,7 +79,7 @@ class UserRepository extends BaseUserRepository {
   }
 
   @override
-  Future<Either<Failure, UserDto>> sendImageAndSports(
+  Future<Either<Failure, UserEntity>> sendImageAndSports(
       List<int> imageBytes, String imageType, List<int> selectedSports) async {
     try {
       final result = await baseUsersRemoteDataSource.sendImageAndSports(
@@ -92,7 +92,7 @@ class UserRepository extends BaseUserRepository {
   }
 
   @override
-  Future<Either<Failure, UserDto>> getUserInfo() async {
+  Future<Either<Failure, UserEntity>> getUserInfo() async {
     try {
       final result = await baseUsersRemoteDataSource.getUserInfo();
 
@@ -103,7 +103,7 @@ class UserRepository extends BaseUserRepository {
   }
 
   @override
-  Future<Either<Failure, UserDto>> updateUserPreferences(
+  Future<Either<Failure, UserEntity>> updateUserPreferences(
       int sportId, int favoriteHand, int favoritePos, int favoriteTime) async {
     try {
       final result = await baseUsersRemoteDataSource.updateUserPreferences(
@@ -116,7 +116,7 @@ class UserRepository extends BaseUserRepository {
   }
 
   @override
-  Future<Either<Failure, UserDto>> updateUserProfile(
+  Future<Either<Failure, UserEntity>> updateUserProfile(
       String userName,
       String phone,
       List<int> image,

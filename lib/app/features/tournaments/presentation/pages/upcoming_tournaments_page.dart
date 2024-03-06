@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/chat/presentation/pages/my_chats_page.dart';
 
 import 'package:x_sport/core/constance/app_constance.dart';
 import 'package:x_sport/core/constance/app_icons_icons.dart';
 import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 import 'package:x_sport/main.dart';
-import 'package:x_sport/app/features/chat/presentation/pages/my_chats_page..dart';
 import 'package:x_sport/app/features/profile/presentation/pages/profile_page.dart';
 import 'package:x_sport/app/features/tournaments/presentation/pages/tournament_page.dart';
 import 'package:x_sport/app/widgets/buttons/submit_button.dart';

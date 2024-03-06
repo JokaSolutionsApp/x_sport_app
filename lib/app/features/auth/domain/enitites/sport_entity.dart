@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:x_sport/app/features/auth/domain/enitites/josn_keys/welcome_keys.dart';
+import 'package:x_sport/app/features/auth/domain/enitites/josn_keys/auth_keys.dart';
 
 class SportEntity extends Equatable {
   @JsonKey(name: Welcomekeys.sportId)

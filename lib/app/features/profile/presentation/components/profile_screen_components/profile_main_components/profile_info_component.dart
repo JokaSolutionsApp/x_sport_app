@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/auth/data/dtos/user_dto/user_dto.dart';
 import 'package:x_sport/app/features/profile/presentation/pages/edit_profile_page.dart';
 import 'package:x_sport/app/features/profile/presentation/pages/profile_ranking_page.dart';
 import '../../../../../../../core/constance/app_constance.dart';
@@ -9,7 +8,7 @@ import '../../../../../../widgets/rectangle_container.dart';
 class ProfileInfoComponent extends StatelessWidget {
   final User? user;
   final int? points;
-  final List<FavoritSport>? favoriteSports;
+  final List<String>? favoriteSports;
   const ProfileInfoComponent(
       {super.key,
       required this.user,
@@ -139,7 +138,8 @@ class ProfileInfoComponent extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(
-                      user!.name,
+                      '',
+                      // user!.name,
                       style: TextStyle(
                         color: const Color(0xFF111C32),
                         fontSize: 16.sp,
@@ -149,7 +149,8 @@ class ProfileInfoComponent extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      user!.email,
+                      '',
+                      // user!.email,
                       style: const TextStyle(
                         color: Color(0xFF7E7E7E),
                         fontSize: 10,

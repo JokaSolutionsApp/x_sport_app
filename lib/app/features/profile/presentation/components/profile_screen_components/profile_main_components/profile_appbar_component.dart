@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/chat/presentation/pages/my_chats_page.dart';
 
 import 'package:x_sport/main.dart';
-import 'package:x_sport/app/features/chat/presentation/pages/my_chats_page..dart';
 import 'package:x_sport/app/features/profile/presentation/pages/profile_page.dart';
 import '../../../../../../../core/constance/app_constance.dart';
 

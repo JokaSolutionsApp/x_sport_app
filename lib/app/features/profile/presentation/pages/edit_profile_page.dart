@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
 import 'package:x_sport/core/constance/local_data.dart';
 import 'package:x_sport/app/features/profile/presentation/components/edit_profile_components/edit_image_component.dart';
-import 'package:x_sport/app/features/auth/data/dtos/user_dto/user_dto.dart';
 import 'package:x_sport/app/features/auth/presentation/bloc/auth_bloc.dart';
 import '../../../../controllers/fileds_bloc.dart';
 import '../../../../widgets/buttons/edit_button.dart';
@@ -13,13 +12,15 @@ import '../../../../widgets/text_fields/no_border_textfield_widget.dart';
 
 class EditProfilePage extends StatefulWidget {
   final User? user;
-  final List<FavoritSport>? favoriteSports;
+  final List<String>? favoriteSports;
   const EditProfilePage(
       {super.key, required this.user, required this.favoriteSports});
 
   @override
   State<EditProfilePage> createState() => _EditProfilePageState();
 }
+
+class User {}
 
 class _EditProfilePageState extends State<EditProfilePage> {
   TextEditingController name = TextEditingController();

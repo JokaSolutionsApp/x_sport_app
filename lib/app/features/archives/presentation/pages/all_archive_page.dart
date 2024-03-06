@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/app/features/archives/presentation/pages/academies_archive_page..dart';
-import 'package:x_sport/app/features/archives/presentation/pages/played_games_archive_page..dart';
-import 'package:x_sport/app/features/archives/presentation/pages/stories_archive_page..dart';
-import 'package:x_sport/app/features/archives/presentation/pages/tournemets_archive_page..dart';
+import 'package:x_sport/app/features/archives/presentation/pages/academies_archive_page.dart';
+import 'package:x_sport/app/features/archives/presentation/pages/played_games_archive_page.dart';
+import 'package:x_sport/app/features/archives/presentation/pages/stories_archive_page.dart';
+import 'package:x_sport/app/features/archives/presentation/pages/tournemets_archive_page.dart';
 
 class AllArchivePage extends StatelessWidget {
   const AllArchivePage({super.key});

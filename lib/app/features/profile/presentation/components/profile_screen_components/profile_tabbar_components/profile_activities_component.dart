@@ -6,7 +6,6 @@ import 'package:x_sport/core/constance/local_data.dart';
 import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 import 'package:x_sport/app/features/profile/presentation/components/profile_screen_components/profile_alert_dialog.dart';
 import 'package:x_sport/app/features/profile/presentation/components/profile_screen_components/profile_tabbar_components/activity_prefrences_component.dart';
-import 'package:x_sport/app/features/auth/data/dtos/user_dto/user_dto.dart';
 
 import '../../../../../../../core/constance/app_constance.dart';
 import '../../../../../../painters/dotted_line_pianter.dart';
@@ -14,7 +13,7 @@ import '../../../../../../widgets/buttons/submit_button.dart';
 import '../../../../../../widgets/rectangle_container.dart';
 
 class ProfileActivitiesComponent extends StatelessWidget {
-  final List<FavoritSport> favoritSports;
+  final List<String> favoritSports;
   ProfileActivitiesComponent({super.key, required this.favoritSports});
   final ValueNotifier<int> selectedIndex = ValueNotifier<int>(0);
 

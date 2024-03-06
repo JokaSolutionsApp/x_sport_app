@@ -17,6 +17,7 @@ import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/update_use
 import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/update_user_profile.dart';
 import 'package:x_sport/app/controllers/chat_bloc/chat_bloc.dart';
 import 'package:x_sport/app/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:x_sport/presentation/controllers/chat_bloc/chat_bloc.dart';
 import '../../../app/features/auth/domain/repository/base_user_repository.dart';
 import '../../../app/features/auth/domain/usecase/user_usecase/check_user_logged_usecase.dart';
 import '../../../app/features/auth/domain/usecase/user_usecase/sign_in_usecase.dart';

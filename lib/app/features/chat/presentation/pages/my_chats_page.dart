@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 import 'package:x_sport/app/features/home/presentation/components/search_components/user_search_bloc.dart';
-import 'package:x_sport/app/features/chat/presentation/pages/chat_page..dart';
+import 'package:x_sport/app/features/chat/presentation/pages/chat_page.dart';
 import 'package:x_sport/app/widgets/rectangle_container.dart';
 import 'package:x_sport/app/widgets/text_fields/search.dart';
 

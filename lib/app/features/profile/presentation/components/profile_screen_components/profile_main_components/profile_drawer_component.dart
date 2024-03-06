@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/app/features/auth/data/dtos/user_dto/user_dto.dart';
-import 'package:x_sport/app/features/archives/presentation/pages/all_archive_page..dart';
+import 'package:x_sport/app/features/archives/presentation/pages/all_archive_page.dart';
 import 'package:x_sport/app/features/logs/presentation/pages/all_logs_page.dart';
 import 'package:x_sport/app/features/paymnet/presentation/pages/payment_info_page.dart';
 import 'package:x_sport/app/features/settings/presentation/pages/all_settings_privacy_page.dart';
@@ -14,7 +13,7 @@ import '../../../../../../widgets/buttons/icon_text_button.dart';
 
 class ProfileDrawerComponent extends StatelessWidget {
   final User? user;
-  final List<FavoritSport>? favoriteSports;
+  final List<String>? favoriteSports;
   const ProfileDrawerComponent({super.key, this.user, this.favoriteSports});
 
   @override
