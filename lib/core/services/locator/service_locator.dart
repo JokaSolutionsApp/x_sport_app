@@ -93,7 +93,6 @@ class ServiceLocator {
           sl(),
           sl(),
           sl(),
-          sl(),
         ));
     sl.registerFactory(() => ChatBloc());
 

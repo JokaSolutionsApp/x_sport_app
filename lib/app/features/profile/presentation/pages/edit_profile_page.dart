@@ -47,16 +47,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
           automaticallyImplyLeading: false,
           leading: IconButton(
               onPressed: () {
-                context.read<AuthBloc>().add(AuthEvent.updateUserProfile(
-                      userName: editProfileStream.nameValue ?? '',
-                      phone: editProfileStream.phoneValue ?? '',
-                      image: imageBytes,
-                      type: imageType,
-                      latitude: editProfileStream.latValue ?? 0,
-                      longitude: editProfileStream.longeValue ?? 0,
-                      selectedSports: selectedSport,
-                      gender: gender,
-                    ));
                 Navigator.of(context).pop();
               },
               icon: Icon(
