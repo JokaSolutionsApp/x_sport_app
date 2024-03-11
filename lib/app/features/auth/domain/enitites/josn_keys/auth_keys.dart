@@ -1,11 +1,12 @@
 class Welcomekeys {
-  static const sportId = 'sports/sportId';
-  static const name = 'sports/name';
+  static const sportId = 'sportId';
+  static const name = 'sportName';
   static const token = 'authResult/token';
 }
 
 class AuthKeys {
-  // UserEntity keys
+  // UserProfileEntity keys
+  static const String user = 'user';
   static const String userId = 'userId';
   static const String loyaltyPoints = 'loyaltyPoints';
   static const String name = 'name';
@@ -42,6 +43,9 @@ class AuthKeys {
   static const String points = 'points';
   static const String levelPercent = 'levelPercent';
   static const String userLevel = 'userLevel';
-  static const String numOfMatches =
-      'numOfMatches'; // Corrected the key as numOfMatchs might be a typo
+  static const String numOfMatches = 'numOfMatchs';
+  // Level Keys
+  static const String levelName = 'levelName';
+  static const String levelMaxPoints = 'levelMaxPoints';
+  static const String levels = 'levels';
 }

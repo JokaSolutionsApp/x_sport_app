@@ -23,6 +23,8 @@ Map<String, dynamic> _$SportPreferenceModelToJson(
     <String, dynamic>{
       'sportPreferenceId': instance.sportPreferenceId,
       'sportPreferenceName': instance.sportPreferenceName,
-      'sportPreferenceValues': instance.sportPreferenceValues,
+      'sportPreferenceValues': instance.sportPreferenceValues
+          .map(const SportPregernceValueJsonConverter().toJson)
+          .toList(),
       'selectedPreferenceValueId': instance.selectedPreferenceValueId,
     };

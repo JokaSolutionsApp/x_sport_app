@@ -1,10 +1,11 @@
 import 'package:dartz/dartz.dart';
+import 'package:x_sport/app/features/auth/data/datasource/params/auth_params.dart';
 import 'package:x_sport/app/features/auth/domain/enitites/sport_entity.dart';
-import 'package:x_sport/app/features/auth/domain/enitites/user_entity.dart';
+import 'package:x_sport/app/features/auth/domain/enitites/user_profile_entity.dart';
+import 'package:x_sport/app/features/auth/domain/params/edit_preferences_params.dart';
 import 'package:x_sport/core/error/exceptions.dart';
 import 'package:x_sport/core/error/failure.dart';
 import 'package:x_sport/app/features/auth/domain/repository/base_user_repository.dart';
-
 import '../datasource/user_remote_datasource.dart';
 
 class UserRepository extends BaseUserRepository {
@@ -13,9 +14,9 @@ class UserRepository extends BaseUserRepository {
   UserRepository(this.baseUsersRemoteDataSource);
 
   @override
-  Future<Either<Failure, UserEntity>> signIn() async {
+  Future<Either<Failure, UserProfileEntity>> login() async {
     try {
-      final result = await baseUsersRemoteDataSource.signIn();
+      final result = await baseUsersRemoteDataSource.login();
 
       return Right(result);
     } on ServerException catch (failuar) {
@@ -24,7 +25,7 @@ class UserRepository extends BaseUserRepository {
   }
 
   @override
-  Future<Either<Failure, void>> register() async {
+  Future<Either<Failure, bool>> register() async {
     try {
       final result = await baseUsersRemoteDataSource.register();
 
@@ -46,9 +47,20 @@ class UserRepository extends BaseUserRepository {
   }
 
   @override
-  Future<Either<Failure, bool>> validateAccount() async {
+  Future<Either<Failure, List<SportEntity>>> confirmUserEmail() async {
     try {
-      final result = await baseUsersRemoteDataSource.validateAccount();
+      final result = await baseUsersRemoteDataSource.confirmUserEmail();
+
+      return Right(result);
+    } on ServerException catch (failuar) {
+      return Left(ServerFailure(failuar.errorModel.statusCode));
+    }
+  }
+
+  @override
+  Future<Either<Failure, void>> resendConfirmUserEmail() async {
+    try {
+      final result = await baseUsersRemoteDataSource.resendConfirmUserEmail();
 
       return Right(result);
     } on ServerException catch (failuar) {
@@ -79,10 +91,10 @@ class UserRepository extends BaseUserRepository {
   }
 
   @override
-  Future<Either<Failure, UserEntity>> sendImageAndSports(
+  Future<Either<Failure, UserProfileEntity>> completeRegistration(
       List<int> imageBytes, String imageType, List<int> selectedSports) async {
     try {
-      final result = await baseUsersRemoteDataSource.sendImageAndSports(
+      final result = await baseUsersRemoteDataSource.completeRegistration(
           imageBytes, imageType, selectedSports);
 
       return Right(result);
@@ -92,9 +104,9 @@ class UserRepository extends BaseUserRepository {
   }
 
   @override
-  Future<Either<Failure, UserEntity>> getUserInfo() async {
+  Future<Either<Failure, UserProfileEntity>> getUserProfile() async {
     try {
-      final result = await baseUsersRemoteDataSource.getUserInfo();
+      final result = await baseUsersRemoteDataSource.getUserProfile();
 
       return Right(result);
     } on ServerException catch (failuar) {
@@ -103,70 +115,11 @@ class UserRepository extends BaseUserRepository {
   }
 
   @override
-  Future<Either<Failure, UserEntity>> updateUserPreferences(
-      int sportId, int favoriteHand, int favoritePos, int favoriteTime) async {
+  Future<Either<Failure, UserProfileEntity>> editPreferences(
+      {required List<PreferenceValue> params}) async {
     try {
-      final result = await baseUsersRemoteDataSource.updateUserPreferences(
-          sportId, favoriteHand, favoritePos, favoriteTime);
-
-      return Right(result);
-    } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.statusCode));
-    }
-  }
-
-  @override
-  Future<Either<Failure, UserEntity>> updateUserProfile(
-      String userName,
-      String phone,
-      List<int> image,
-      String type,
-      double latitude,
-      double longitude,
-      List<int> selectedSports,
-      String gender) async {
-    try {
-      final result = await baseUsersRemoteDataSource.updateUserProfile(userName,
-          phone, image, type, latitude, longitude, selectedSports, gender);
-
-      return Right(result);
-    } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.statusCode));
-    }
-  }
-
-  @override
-  Future<Either<Failure, void>> updateHandPreference(
-      int sportId, String optionName) async {
-    try {
-      final result = await baseUsersRemoteDataSource.updateHandPreference(
-          sportId, optionName);
-
-      return Right(result);
-    } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.statusCode));
-    }
-  }
-
-  @override
-  Future<Either<Failure, void>> updatePositionPreference(
-      int sportId, String optionName) async {
-    try {
-      final result = await baseUsersRemoteDataSource.updatePositionPreference(
-          sportId, optionName);
-
-      return Right(result);
-    } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.statusCode));
-    }
-  }
-
-  @override
-  Future<Either<Failure, void>> updateTimePreference(
-      int sportId, String optionName) async {
-    try {
-      final result = await baseUsersRemoteDataSource.updateTimePreference(
-          sportId, optionName);
+      final result =
+          await baseUsersRemoteDataSource.editPreferences(params: params);
 
       return Right(result);
     } on ServerException catch (failuar) {
@@ -178,6 +131,58 @@ class UserRepository extends BaseUserRepository {
   Future<Either<Failure, String>> sendMessage(String userMessage) async {
     try {
       final result = await baseUsersRemoteDataSource.sendMessage(userMessage);
+
+      return Right(result);
+    } on ServerException catch (failuar) {
+      return Left(ServerFailure(failuar.errorModel.statusCode));
+    }
+  }
+
+  @override
+  Future<Either<Failure, UserProfileEntity>> addFavoriteSports(
+      {required List<int> sportsIds}) async {
+    try {
+      final result = await baseUsersRemoteDataSource.addFavoriteSports(
+          sportsIds: sportsIds);
+
+      return Right(result);
+    } on ServerException catch (failuar) {
+      return Left(ServerFailure(failuar.errorModel.statusCode));
+    }
+  }
+
+  @override
+  Future<Either<Failure, UserProfileEntity>> deleteFavoriteSports(
+      {required List<int> sportsIds}) async {
+    try {
+      final result = await baseUsersRemoteDataSource.deleteFavoriteSports(
+          sportsIds: sportsIds);
+
+      return Right(result);
+    } on ServerException catch (failuar) {
+      return Left(ServerFailure(failuar.errorModel.statusCode));
+    }
+  }
+
+  @override
+  Future<Either<Failure, UserProfileEntity>> editUserProfile(
+      {required EditUserProfileParams params}) async {
+    try {
+      final result =
+          await baseUsersRemoteDataSource.editUserProfile(params: params);
+
+      return Right(result);
+    } on ServerException catch (failuar) {
+      return Left(ServerFailure(failuar.errorModel.statusCode));
+    }
+  }
+
+  @override
+  Future<Either<Failure, UserProfileEntity>> selectCurrentSport(
+      {required int sportId}) async {
+    try {
+      final result =
+          await baseUsersRemoteDataSource.selectCurrentSport(sportId: sportId);
 
       return Right(result);
     } on ServerException catch (failuar) {

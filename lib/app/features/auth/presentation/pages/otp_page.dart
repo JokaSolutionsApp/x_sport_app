@@ -8,6 +8,7 @@ import 'package:x_sport/core/constance/app_icons_icons.dart';
 import 'package:x_sport/core/services/locator/service_locator.dart';
 import 'package:x_sport/core/services/secure_storage_service.dart.dart';
 import 'package:x_sport/app/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:x_sport/main.dart';
 import '../../../../../core/constance/app_constance.dart';
 import '../../../../controllers/fileds_bloc.dart';
 import '../../../../widgets/buttons/submit_button.dart';
@@ -23,7 +24,7 @@ class _OtpPageState extends State<OtpPage> {
   TextEditingController code = TextEditingController();
 
   StreamController<ErrorAnimationType>? errorController;
-  String? email;
+  String email = '';
   @override
   void initState() {
     getEmail();
@@ -32,7 +33,9 @@ class _OtpPageState extends State<OtpPage> {
   }
 
   getEmail() async {
-    email = await sl<SecureStorageService>().read('email');
+    email =
+        await sl<SecureStorageService>().read('email') ?? 'example@gmail.com';
+    setState(() {});
   }
 
   @override
@@ -58,7 +61,7 @@ class _OtpPageState extends State<OtpPage> {
                 child: IconButton(
                   iconSize: 30.sp,
                   onPressed: () {
-                    Navigator.of(context).pop();
+                    Navigator.of(navigatorKey.currentContext!).pop();
                   },
                   icon: const Icon(Icons.arrow_back_ios_new_outlined),
                 ),
@@ -122,7 +125,7 @@ class _OtpPageState extends State<OtpPage> {
                   border: Border.all(
                       color: XColors.otp_field_border_color, width: 0.5.w)),
               child: Text(
-                email ?? 'example@gmail.com',
+                email,
                 style: TextStyle(
                     color: XColors.otp_subtitle_color,
                     fontSize: 18.sp,
@@ -187,7 +190,11 @@ class _OtpPageState extends State<OtpPage> {
                         spreadRadius: 2.sp)
                   ],
                   onCompleted: (v) {},
-                  onChanged: (value) => registerStream.changecode(value),
+                  onChanged: (value) {
+                    print(value);
+
+                    registerStream.changecode(value);
+                  },
                   beforeTextPaste: (text) {
                     return true;
                   },
@@ -206,7 +213,7 @@ class _OtpPageState extends State<OtpPage> {
                     onPressed: () {
                       context
                           .read<AuthBloc>()
-                          .add(const AuthEvent.validateAccount());
+                          .add(const AuthEvent.resendconfirmUserEmail());
                     },
                     child: Text(
                       'ارسال مرة اخرى',
@@ -228,26 +235,20 @@ class _OtpPageState extends State<OtpPage> {
               ),
             ),
             SizedBox(height: 56.h),
-            StreamBuilder(
-                stream: registerStream.registerIsValid,
-                builder: (context, snapshot) {
-                  final isButtonEnabled = snapshot.data ?? false;
-
-                  return SubmitButton(
-                    radius: 24,
-                    isButtonEnabled: isButtonEnabled,
-                    fillColor: XColors.otp_button_color,
-                    minWidth: 210,
-                    height: 52,
-                    textSize: 18,
-                    text: 'تأكيد الحساب',
-                    onPressed: () {
-                      context
-                          .read<AuthBloc>()
-                          .add(const AuthEvent.validateAccount());
-                    },
-                  );
-                }),
+            SubmitButton(
+              radius: 24,
+              isButtonEnabled: true,
+              fillColor: XColors.otp_button_color,
+              minWidth: 210,
+              height: 52,
+              textSize: 18,
+              text: 'تأكيد الحساب',
+              onPressed: () {
+                context
+                    .read<AuthBloc>()
+                    .add(const AuthEvent.confirmUserEmail());
+              },
+            ),
           ],
         ),
       ),

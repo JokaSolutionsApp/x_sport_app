@@ -12,7 +12,10 @@ CurrentSportModel _$CurrentSportModelFromJson(Map<String, dynamic> json) =>
       points: json['points'] as int,
       levelPercent: (json['levelPercent'] as num).toDouble(),
       userLevel: json['userLevel'] as String,
-      numOfMatches: json['numOfMatches'] as int,
+      numOfMatches: json['numOfMatchs'] as int,
+      levels: (json['levels'] as List<dynamic>)
+          .map((e) => LevelModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$CurrentSportModelToJson(CurrentSportModel instance) =>
@@ -21,5 +24,6 @@ Map<String, dynamic> _$CurrentSportModelToJson(CurrentSportModel instance) =>
       'points': instance.points,
       'levelPercent': instance.levelPercent,
       'userLevel': instance.userLevel,
-      'numOfMatches': instance.numOfMatches,
+      'numOfMatchs': instance.numOfMatches,
+      'levels': instance.levels,
     };

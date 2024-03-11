@@ -35,7 +35,7 @@ class OutlinButton extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Image.asset('assets/icons/$image'),
+          image.image(),
           Text(
             text,
             style: TextStyle(

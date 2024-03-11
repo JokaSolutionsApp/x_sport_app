@@ -19,13 +19,9 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   TextEditingController name = TextEditingController();
-
   TextEditingController email = TextEditingController();
-
   TextEditingController password = TextEditingController();
-
   TextEditingController confirmPassword = TextEditingController();
-
   TextEditingController phone = TextEditingController();
 
   var isChecked = ValueNotifier(false);
@@ -137,12 +133,10 @@ class _RegisterPageState extends State<RegisterPage> {
               StreamBuilder(
                 stream: registerStream.registerIsValid,
                 builder: (context, snapshot) {
-                  const isButtonEnabled = true;
+                  // final isButtonEnabled = snapshot.data ?? false;
                   return SubmitButton(
-                    isButtonEnabled: isButtonEnabled,
-                    fillColor: isButtonEnabled
-                        ? XColors.Submit_Button_Color
-                        : Colors.grey,
+                    isButtonEnabled: true,
+                    fillColor: true ? XColors.Submit_Button_Color : Colors.grey,
                     textColor: Colors.white,
                     text: 'انشاء حساب',
                     onPressed: () {
