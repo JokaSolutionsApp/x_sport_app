@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/core/constance/app_constance.dart';
-import 'package:x_sport/app/widgets/buttons/submit_button.dart';
-import 'package:x_sport/app/widgets/rectangle_container.dart';
+import '../../../../../../core/constance/app_constance.dart';
+import '../../../../../widgets/buttons/submit_button.dart';
+import '../../../../../widgets/rectangle_container.dart';
 
 class PlayedGamesArchiveComponent extends StatelessWidget {
   final String state;

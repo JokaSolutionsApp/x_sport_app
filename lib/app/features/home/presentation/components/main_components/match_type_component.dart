@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/core/constance/app_constance.dart';
-import 'package:x_sport/core/constance/app_icons_icons.dart';
-import 'package:x_sport/core/constance/local_data.dart';
+import '../../../../../../core/constance/app_constance.dart';
+import '../../../../../../core/constance/app_icons_icons.dart';
+import '../../../../../../core/constance/local_data.dart';
 
 class MatchTypeComponent extends StatelessWidget {
   MatchTypeComponent({super.key});

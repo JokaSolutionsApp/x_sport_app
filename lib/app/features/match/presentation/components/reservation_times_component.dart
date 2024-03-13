@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/app/widgets/rectangle_container.dart';
+import '../../../../widgets/rectangle_container.dart';
 
 class ReservationTimesComponent extends StatelessWidget {
   ReservationTimesComponent({super.key});

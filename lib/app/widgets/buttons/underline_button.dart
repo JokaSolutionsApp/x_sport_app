@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/core/constance/app_constance.dart';
+import '../../../core/constance/app_constance.dart';
 
 class UnderlinButton extends StatelessWidget {
   final String buttonText;

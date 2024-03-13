@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/core/widgets/global_app_bar.dart';
-import 'package:x_sport/app/features/archives/presentation/components/played_games_components/played_games_details_component.dart';
+import '../../../../../core/widgets/global_app_bar.dart';
+import '../components/played_games_components/played_games_details_component.dart';
 
 class ActiveGamesArchivePage extends StatelessWidget {
   const ActiveGamesArchivePage({super.key});

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/core/widgets/global_app_bar.dart';
-import 'package:x_sport/app/features/profile/presentation/components/invite_firends_components.dart/my_friends_component.dart';
-import 'package:x_sport/app/features/chat/presentation/pages/create_group_page..dart';
+import '../../../../../core/widgets/global_app_bar.dart';
+import '../../../profile/presentation/components/invite_firends_components.dart/my_friends_component.dart';
+import 'create_group_page.dart';
 
 class InviteFirendsPage extends StatelessWidget {
   const InviteFirendsPage({super.key});

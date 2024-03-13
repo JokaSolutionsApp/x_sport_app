@@ -4,10 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:pin_code_fields/pin_code_fields.dart';
-import 'package:x_sport/core/constance/app_icons_icons.dart';
-import 'package:x_sport/core/services/locator/service_locator.dart';
-import 'package:x_sport/core/services/secure_storage_service.dart.dart';
-import 'package:x_sport/app/features/auth/presentation/bloc/auth_bloc.dart';
+import '../../../../../core/constance/app_icons_icons.dart';
+import '../../../../../core/services/locator/service_locator.dart';
+import '../../../../../core/services/secure_storage_service.dart.dart';
+import '../bloc/auth_bloc.dart';
 import '../../../../../core/constance/app_constance.dart';
 import '../../../../controllers/fileds_bloc.dart';
 import '../../../../widgets/buttons/submit_button.dart';

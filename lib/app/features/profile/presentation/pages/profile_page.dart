@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/auth/data/dtos/user_dto/user_dto.dart';
-import 'package:x_sport/app/features/auth/presentation/bloc/auth_bloc.dart';
+import '../../../auth/data/dtos/user_dto/user_dto.dart';
+import '../../../auth/presentation/bloc/auth_bloc.dart';
 
 import '../components/profile_screen_components/profile_main_components/profile_appbar_component.dart';
 import '../components/profile_screen_components/profile_main_components/profile_drawer_component.dart';

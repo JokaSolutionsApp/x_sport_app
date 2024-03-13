@@ -16,6 +16,13 @@ class XColors {
   static const otp_field_hint_color = Color(0xFFCBCBCB);
   static const otp_button_color = Color(0xFF172748);
   static const otp_subtitle_color = Color(0xFF818181);
+  static const primary_text_color = Color(0xFF2E2E2E);
+  static const secondary_text_color = Color(0xFF979797);
+  static const scaffold_background = Color(0xFFFFFFFF);
+  static const success_green = Color(0xFF66BB6A);
+  static const fail_red = Color(0xFFF44336);
+  static const white = Color(0xFFFFFFFF);
+  static const black = Color(0xff000000);
 }
 
 class XStrings {

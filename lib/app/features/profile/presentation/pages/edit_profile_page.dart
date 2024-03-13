@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/core/constance/app_constance.dart';
-import 'package:x_sport/core/constance/local_data.dart';
-import 'package:x_sport/app/features/profile/presentation/components/edit_profile_components/edit_image_component.dart';
-import 'package:x_sport/app/features/auth/data/dtos/user_dto/user_dto.dart';
-import 'package:x_sport/app/features/auth/presentation/bloc/auth_bloc.dart';
+import '../../../../../core/constance/app_constance.dart';
+import '../../../../../core/constance/local_data.dart';
+import '../components/edit_profile_components/edit_image_component.dart';
+import '../../../auth/data/dtos/user_dto/user_dto.dart';
+import '../../../auth/presentation/bloc/auth_bloc.dart';
 import '../../../../controllers/fileds_bloc.dart';
 import '../../../../widgets/buttons/edit_button.dart';
 import '../../../../widgets/text_fields/no_border_textfield_widget.dart';

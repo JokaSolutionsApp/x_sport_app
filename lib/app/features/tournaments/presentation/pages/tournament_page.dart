@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/core/constance/app_constance.dart';
-import 'package:x_sport/core/constance/app_icons_icons.dart';
-import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
-import 'package:x_sport/main.dart';
-import 'package:x_sport/app/features/tournaments/presentation/pages/tournaments_result_page.dart';
-import 'package:x_sport/app/widgets/buttons/submit_button.dart';
-import 'package:x_sport/app/widgets/rectangle_container.dart';
+import '../../../../../core/constance/app_constance.dart';
+import '../../../../../core/constance/app_icons_icons.dart';
+import '../../../../../core/utils/assets_managers/assets.gen.dart';
+import '../../../../../main.dart';
+import 'tournaments_result_page.dart';
+import '../../../../widgets/buttons/submit_button.dart';
+import '../../../../widgets/rectangle_container.dart';
 
 class TournamentPage extends StatelessWidget {
   const TournamentPage({super.key});

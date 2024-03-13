@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/core/constance/app_constance.dart';
-import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
-import 'package:x_sport/app/widgets/text_fields/search_textfield.dart';
+import '../../../../../core/constance/app_constance.dart';
+import '../../../../../core/utils/assets_managers/assets.gen.dart';
+import '../../../../widgets/text_fields/search_textfield.dart';
 
 import '../components/ranking_screen_components/ranking_details.dart';
 import '../../../../controllers/fileds_bloc.dart';

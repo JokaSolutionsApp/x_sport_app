@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/app/features/logs/presentation/pages/comments_log_page.dart';
-import 'package:x_sport/app/features/logs/presentation/pages/likes_log_page.dart';
-import 'package:x_sport/app/features/logs/presentation/pages/search_log_page.dart';
+import 'comments_log_page.dart';
+import 'likes_log_page.dart';
+import 'search_log_page.dart';
 
 class AllLogsPage extends StatelessWidget {
   const AllLogsPage({super.key});

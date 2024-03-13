@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
-import 'package:x_sport/app/features/chat/presentation/components/chat_section.dart';
-import 'package:x_sport/app/features/chat/presentation/components/message_input.dart';
+import '../../../../../core/utils/assets_managers/assets.gen.dart';
+import '../components/chat_section.dart';
+import '../components/message_input.dart';
 
 class ChatPage extends StatefulWidget {
   const ChatPage({super.key});

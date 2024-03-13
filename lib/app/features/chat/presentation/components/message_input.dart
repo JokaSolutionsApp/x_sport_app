@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/app/controllers/chat_bloc/chat_bloc.dart';
+import '../../../../controllers/chat_bloc/chat_bloc.dart';
 
 class MessageInputComponent extends StatefulWidget {
   const MessageInputComponent({super.key});
@@ -87,8 +87,8 @@ class _MessageInputComponentState extends State<MessageInputComponent> {
                   decoration: InputDecoration(
                     hintTextDirection: TextDirection.rtl,
                     hintText: 'اكتب رسالة...',
-                    hintStyle:
-                        TextStyle(color: const Color(0xFFA3A3A3), fontSize: 16.sp),
+                    hintStyle: TextStyle(
+                        color: const Color(0xFFA3A3A3), fontSize: 16.sp),
                     fillColor: Colors.white,
                     filled: true,
                     prefixIcon: Icon(
@@ -102,29 +102,29 @@ class _MessageInputComponentState extends State<MessageInputComponent> {
                       color: const Color(0xFFA3A3A3),
                     ),
                     border: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: const Color(0xFFE6E6E6), width: 0.5.w),
+                      borderSide: BorderSide(
+                          color: const Color(0xFFE6E6E6), width: 0.5.w),
                       borderRadius: BorderRadius.all(Radius.circular(50.sp)),
                     ),
                     enabledBorder: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: const Color(0xFFE6E6E6), width: 0.5.w),
+                      borderSide: BorderSide(
+                          color: const Color(0xFFE6E6E6), width: 0.5.w),
                       borderRadius: BorderRadius.all(Radius.circular(50.sp)),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: const Color(0xFFE6E6E6), width: 0.5.w),
+                      borderSide: BorderSide(
+                          color: const Color(0xFFE6E6E6), width: 0.5.w),
                       borderRadius: BorderRadius.all(Radius.circular(50.sp)),
                     ),
                     errorBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(50.sp)),
-                      borderSide:
-                          BorderSide(color: const Color(0xFFE6E6E6), width: 0.5.w),
+                      borderSide: BorderSide(
+                          color: const Color(0xFFE6E6E6), width: 0.5.w),
                     ),
                     focusedErrorBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(50.sp)),
-                      borderSide:
-                          BorderSide(color: const Color(0xFFE6E6E6), width: 0.5.w),
+                      borderSide: BorderSide(
+                          color: const Color(0xFFE6E6E6), width: 0.5.w),
                     ),
                   ),
                 ),

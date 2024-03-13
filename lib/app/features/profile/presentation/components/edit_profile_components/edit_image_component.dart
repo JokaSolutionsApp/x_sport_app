@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:image_picker/image_picker.dart';
-import 'package:x_sport/core/constance/app_constance.dart';
+import '../../../../../../core/constance/app_constance.dart';
 
 class EditImageComponent extends StatelessWidget {
   final void Function(List<int>, String) getImage;

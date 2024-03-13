@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
+import '../../../../../../core/utils/assets_managers/assets.gen.dart';
 
 import '../../../../../../core/constance/app_constance.dart';
 import '../../../../../widgets/rectangle_container.dart';
@@ -54,8 +54,9 @@ class AcademeiesCategoriesComponent extends StatelessWidget {
                         Text(
                           items[index],
                           style: TextStyle(
-                            color:
-                                isSelected ? Colors.white : const Color(0xFF7373AD),
+                            color: isSelected
+                                ? Colors.white
+                                : const Color(0xFF7373AD),
                             fontWeight: FontWeight.w400,
                             fontSize: 12.sp,
                           ),

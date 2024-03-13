@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/chat/presentation/pages/my_chats_page2..dart';
 
-import 'package:x_sport/core/constance/app_constance.dart';
-import 'package:x_sport/core/constance/app_icons_icons.dart';
-import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
-import 'package:x_sport/app/features/profile/presentation/components/profile_screen_components/profile_main_components/profile_appbar_component.dart';
-import 'package:x_sport/app/features/chat/presentation/pages/my_chats_page..dart';
+import '../../../../../core/constance/app_constance.dart';
+import '../../../../../core/constance/app_icons_icons.dart';
+import '../../../../../core/utils/assets_managers/assets.gen.dart';
+import '../../../profile/presentation/components/profile_screen_components/profile_main_components/profile_appbar_component.dart';
 
 class SocialPage extends StatelessWidget {
   const SocialPage({super.key});
@@ -254,7 +254,7 @@ class SocialPage extends StatelessWidget {
                                                   context,
                                                   MaterialPageRoute(
                                                       builder: (context) =>
-                                                          const MyChatsPage()));
+                                                          const MyChatsPage2()));
                                             },
                                             child: Icon(
                                               Icons.message_outlined,

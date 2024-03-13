@@ -3,14 +3,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/core/constance/app_constance.dart';
-import 'package:x_sport/core/constance/app_functions.dart';
-import 'package:x_sport/core/services/locator/service_locator.dart';
-import 'package:x_sport/core/services/preload_images_service.dart';
-import 'package:x_sport/firebase_options.dart';
-import 'package:x_sport/app/controllers/chat_bloc/chat_bloc.dart';
-import 'package:x_sport/app/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:x_sport/app/features/auth/presentation/pages/register_page.dart';
+import 'package:x_sport/app/features/archives/presentation/pages/active_games_archive_page.dart';
+import 'package:x_sport/app/features/courts/presentation/pages/championship_page.dart';
+import 'package:x_sport/app/features/courts/presentation/pages/courts_page.dart';
+import 'package:x_sport/app/features/logs/presentation/pages/likes_log_page.dart';
+import 'package:x_sport/app/features/settings/presentation/pages/all_settings_privacy_page.dart';
+import 'app/features/paymnet/presentation/pages/credit_card_page.dart';
+import 'app/features/profile/presentation/pages/profile_page.dart';
+import 'app/features/profile/presentation/pages/user_profile_page.dart';
+import 'app/features/social/presentation/pages/social_page.dart';
+import 'app/features/social/presentation/pages/social_profile_page.dart';
+import 'core/constance/app_constance.dart';
+import 'core/constance/app_functions.dart';
+import 'core/services/locator/service_locator.dart';
+import 'core/services/preload_images_service.dart';
+import 'firebase_options.dart';
+import 'app/controllers/chat_bloc/chat_bloc.dart';
+import 'app/features/auth/presentation/bloc/auth_bloc.dart';
+import 'app/features/auth/presentation/pages/register_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -68,7 +78,7 @@ class MyApp extends StatelessWidget {
                     useMaterial3: true,
                   ),
                   // home: AllSettingsPrivacyPage(),
-                  home: const RegisterPage(),
+                  home: const ChampionshipPage(),
                 );
               },
             ),

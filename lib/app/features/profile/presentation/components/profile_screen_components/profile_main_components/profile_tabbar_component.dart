@@ -1,9 +1,9 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/core/constance/app_constance.dart';
-import 'package:x_sport/app/features/auth/data/dtos/user_dto/user_dto.dart';
-import 'package:x_sport/app/widgets/rectangle_container.dart';
+import '../../../../../../../core/constance/app_constance.dart';
+import '../../../../../auth/data/dtos/user_dto/user_dto.dart';
+import '../../../../../../widgets/rectangle_container.dart';
 import '../../../../../../widgets/buttons/submit_button.dart';
 import '../profile_tabbar_components/profile_activities_component.dart';
 import '../profile_tabbar_components/profile_society_component.dart';

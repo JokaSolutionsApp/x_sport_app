@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:x_sport/app/features/auth/data/models/sport_model.dart';
-import 'package:x_sport/app/features/auth/domain/enitites/sport_entity.dart';
+import '../sport_model.dart';
+import '../../../domain/enitites/sport_entity.dart';
 
 class SportJsonConverter
     extends JsonConverter<SportEntity, Map<String, dynamic>> {

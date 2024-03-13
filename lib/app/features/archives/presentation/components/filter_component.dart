@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/core/constance/app_constance.dart';
-import 'package:x_sport/app/widgets/rectangle_container.dart';
+import '../../../../../core/constance/app_constance.dart';
+import '../../../../widgets/rectangle_container.dart';
 
 class FilterComponent extends StatelessWidget {
   final List data;
@@ -37,7 +37,8 @@ class FilterComponent extends StatelessWidget {
             textDirection: TextDirection.rtl,
             child: GridView.builder(
                 shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(), // Disable scrolling
+                physics:
+                    const NeverScrollableScrollPhysics(), // Disable scrolling
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                   maxCrossAxisExtent: 110.w,
                   mainAxisExtent: 40.h,

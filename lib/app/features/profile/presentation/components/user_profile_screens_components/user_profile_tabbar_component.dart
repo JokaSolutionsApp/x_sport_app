@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/core/constance/app_constance.dart';
-import 'package:x_sport/app/features/profile/presentation/components/user_profile_screens_components/user_profile_information_tab.dart';
+import '../../../../../../core/constance/app_constance.dart';
+import 'user_profile_information_tab.dart';
 
 class UserProfileTabBarComponent extends StatefulWidget {
   const UserProfileTabBarComponent({super.key});

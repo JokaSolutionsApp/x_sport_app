@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/core/widgets/global_app_bar.dart';
-import 'package:x_sport/app/features/archives/presentation/components/played_games_components/played_games_details_component.dart';
-import 'package:x_sport/app/features/archives/presentation/components/played_games_components/played_games_filter_dialog.dart';
+import '../../../../../core/widgets/global_app_bar.dart';
+import '../components/played_games_components/played_games_details_component.dart';
+import '../components/played_games_components/played_games_filter_dialog.dart';
 
-class TournementsArchivePage extends StatelessWidget {
-  const TournementsArchivePage({super.key});
+class PlayedGamesArchivePage extends StatelessWidget {
+  const PlayedGamesArchivePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class TournementsArchivePage extends StatelessWidget {
       backgroundColor: const Color(0xFFF6F7F9),
       appBar: const GlobalAppBar(
         hasSearch: false,
-        title: 'ارشيف البطولات',
+        title: 'ارشيف المباريات الملعوبة',
       ),
       body: Padding(
         padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 30.w),
@@ -42,7 +42,7 @@ class TournementsArchivePage extends StatelessWidget {
                     )),
               ),
               Text(
-                'يمكنك مراجعة البطولات التي قمت بالاشتراك بها',
+                'يمكنك مراجعة المباريات التي لعبتها سابقاََ',
                 style: TextStyle(
                     fontSize: 13.sp,
                     fontWeight: FontWeight.w500,
@@ -92,8 +92,8 @@ class TournementsArchivePage extends StatelessWidget {
             ],
           ),
           const PlayedGamesArchiveComponent(
-            state: 'منتهية',
-            title: ':اسم البطولة',
+            state: 'فوز',
+            title: ':مباراة تنافسية',
           ),
           // PlayedGamesFilterDialog()
         ]),

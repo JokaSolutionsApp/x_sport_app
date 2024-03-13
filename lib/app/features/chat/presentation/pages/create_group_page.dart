@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
-import 'package:x_sport/core/widgets/floating_action_button.dart';
-import 'package:x_sport/core/widgets/global_app_bar.dart';
-import 'package:x_sport/app/features/profile/presentation/components/invite_firends_components.dart/my_friends_component.dart';
+import '../../../../../core/utils/assets_managers/assets.gen.dart';
+import '../../../../../core/widgets/floating_action_button.dart';
+import '../../../../../core/widgets/global_app_bar.dart';
+import '../../../profile/presentation/components/invite_firends_components.dart/my_friends_component.dart';
 
 class CreateGroupPage extends StatelessWidget {
   const CreateGroupPage({super.key});

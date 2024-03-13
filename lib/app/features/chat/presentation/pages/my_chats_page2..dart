@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
-import 'package:x_sport/app/features/chat/presentation/pages/chat_page..dart';
-import 'package:x_sport/app/features/home/presentation/components/search_components/user_search_bloc.dart';
-import 'package:x_sport/app/widgets/rectangle_container.dart';
-import 'package:x_sport/app/widgets/text_fields/search.dart';
+import '../../../../../core/utils/assets_managers/assets.gen.dart';
+import 'chat_page.dart';
+import '../../../home/presentation/components/search_components/user_search_bloc.dart';
+import '../../../../widgets/rectangle_container.dart';
+import '../../../../widgets/text_fields/search.dart';
 
-class MyChatsPage extends StatefulWidget {
-  const MyChatsPage({super.key});
+class MyChatsPage2 extends StatefulWidget {
+  const MyChatsPage2({super.key});
 
   @override
-  State<MyChatsPage> createState() => _MyChatsScreenState();
+  State<MyChatsPage2> createState() => _MyChatsScreenState();
 }
 
-class _MyChatsScreenState extends State<MyChatsPage>
+class _MyChatsScreenState extends State<MyChatsPage2>
     with TickerProviderStateMixin {
   late TabController tabController;
   final UserSearchBloc _userSearchBloc = UserSearchBloc();

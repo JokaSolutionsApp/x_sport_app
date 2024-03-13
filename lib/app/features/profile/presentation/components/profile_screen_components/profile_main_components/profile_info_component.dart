@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/auth/data/dtos/user_dto/user_dto.dart';
-import 'package:x_sport/app/features/profile/presentation/pages/edit_profile_page.dart';
-import 'package:x_sport/app/features/profile/presentation/pages/profile_ranking_page.dart';
+import '../../../../../auth/data/dtos/user_dto/user_dto.dart';
+import '../../../pages/edit_profile_page.dart';
+import '../../../pages/profile_ranking_page.dart';
 import '../../../../../../../core/constance/app_constance.dart';
 import '../../../../../../widgets/rectangle_container.dart';
 

@@ -8,7 +8,7 @@ class TextFieldWidget extends StatefulWidget {
   final String labelText;
   final TextInputType keyboardType;
   final Function onChanged;
-
+  final Color? color;
   final Stream textStream;
   final bool isObscureText;
 
@@ -19,6 +19,7 @@ class TextFieldWidget extends StatefulWidget {
     required this.keyboardType,
     required this.textStream,
     required this.onChanged,
+    this.color,
     this.isObscureText = false,
   });
 
@@ -58,7 +59,7 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
                   height: 50.h,
                   child: TextFormField(
                     cursorHeight: 21.w,
-                    cursorColor: XColors.Background_Color1,
+                    cursorColor: widget.color ?? XColors.Background_Color1,
                     textDirection: TextDirection.rtl,
                     keyboardType: widget.keyboardType,
                     style: TextStyle(

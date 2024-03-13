@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/core/constance/app_constance.dart';
-import 'package:x_sport/app/features/tournaments/presentation/components/tournament_result_rank_component.dart';
-import 'package:x_sport/app/features/tournaments/presentation/components/tournaments_result_matches_component.dart';
+import '../../../../../core/constance/app_constance.dart';
+import '../components/tournament_result_rank_component.dart';
+import '../components/tournaments_result_matches_component.dart';
 
 class TournamentsResultPage extends StatelessWidget {
   const TournamentsResultPage({super.key});

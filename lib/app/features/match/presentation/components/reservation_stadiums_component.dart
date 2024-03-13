@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
-import 'package:x_sport/app/features/courts/presentation/pages/courts_page.dart';
+import '../../../../../core/utils/assets_managers/assets.gen.dart';
+import '../../../courts/presentation/pages/courts_page.dart';
 
 class ReservationStadiumsComponent extends StatelessWidget {
   final ValueNotifier<int> selectedIdx = ValueNotifier<int>(0);

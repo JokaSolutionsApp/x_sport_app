@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
+import '../../../../../../core/utils/assets_managers/assets.gen.dart';
 
 import 'banner_part_component.dart';
 

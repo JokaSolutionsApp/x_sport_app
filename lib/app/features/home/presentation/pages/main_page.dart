@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/home/presentation/pages/play_page.dart';
+import 'play_page.dart';
 
-import 'package:x_sport/core/constance/app_constance.dart';
-import 'package:x_sport/core/constance/app_icons_icons.dart';
-import 'package:x_sport/main.dart';
-import 'package:x_sport/app/features/home/presentation/components/main_components/match_type_component.dart';
-import 'package:x_sport/app/features/home/presentation/components/main_components/options_component.dart';
-import 'package:x_sport/app/features/home/presentation/pages/academies_page.dart';
-import 'package:x_sport/app/features/match/presentation/pages/match_reservation_page.dart';
-import 'package:x_sport/app/widgets/buttons/submit_button.dart';
+import '../../../../../core/constance/app_constance.dart';
+import '../../../../../core/constance/app_icons_icons.dart';
+import '../../../../../main.dart';
+import '../components/main_components/match_type_component.dart';
+import '../components/main_components/options_component.dart';
+import 'academies_page.dart';
+import '../../../match/presentation/pages/match_reservation_page.dart';
+import '../../../../widgets/buttons/submit_button.dart';
 import 'home_page.dart';
-import 'social_page.dart';
+import '../../../social/presentation/pages/social_page.dart';
 import 'search_page.dart';
 
 class MainPage extends StatefulWidget {

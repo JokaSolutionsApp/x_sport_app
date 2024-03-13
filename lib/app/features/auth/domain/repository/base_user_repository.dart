@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:x_sport/app/features/auth/data/dtos/sport_dto/sport_dto.dart';
-import 'package:x_sport/app/features/auth/data/dtos/user_dto/user_dto.dart';
+import '../../data/dtos/sport_dto/sport_dto.dart';
+import '../../data/dtos/user_dto/user_dto.dart';
 
 import '../../../../../core/error/failure.dart';
 

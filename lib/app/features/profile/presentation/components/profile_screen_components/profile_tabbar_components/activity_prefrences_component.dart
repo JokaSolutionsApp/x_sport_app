@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/core/constance/local_data.dart';
+import '../../../../../../../core/constance/local_data.dart';
 
 import '../../../../../../widgets/rectangle_container.dart';
 

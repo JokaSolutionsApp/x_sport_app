@@ -1,4 +1,4 @@
-import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
+import '../utils/assets_managers/assets.gen.dart';
 
 class UserLevels {
   String points;

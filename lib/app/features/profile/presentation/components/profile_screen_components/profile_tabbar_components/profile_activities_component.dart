@@ -2,11 +2,11 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/core/constance/local_data.dart';
-import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
-import 'package:x_sport/app/features/profile/presentation/components/profile_screen_components/profile_alert_dialog.dart';
-import 'package:x_sport/app/features/profile/presentation/components/profile_screen_components/profile_tabbar_components/activity_prefrences_component.dart';
-import 'package:x_sport/app/features/auth/data/dtos/user_dto/user_dto.dart';
+import '../../../../../../../core/constance/local_data.dart';
+import '../../../../../../../core/utils/assets_managers/assets.gen.dart';
+import '../profile_alert_dialog.dart';
+import 'activity_prefrences_component.dart';
+import '../../../../../auth/data/dtos/user_dto/user_dto.dart';
 
 import '../../../../../../../core/constance/app_constance.dart';
 import '../../../../../../painters/dotted_line_pianter.dart';
