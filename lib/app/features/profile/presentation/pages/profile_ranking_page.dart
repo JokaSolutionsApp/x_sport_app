@@ -267,7 +267,7 @@ class _ProfileRankingPageState extends State<ProfileRankingPage> {
                   RankingDetailsComponent(
                     iconColor: Colors.white,
                     textColor: Colors.white,
-                    boxColor: XColors.Submit_Button_Color,
+                    boxColor: XColors.primary,
                     child: SizedBox(
                       width: 0.09.sw,
                       child: Row(

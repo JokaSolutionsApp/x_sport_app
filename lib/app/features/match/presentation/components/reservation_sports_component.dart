@@ -48,13 +48,14 @@ class ReservationSportsComponent extends StatelessWidget {
                               offset: Offset(0, 4.w))
                         ],
                         color: isSelected
-                            ? XColors.Submit_Button_Color
+                            ? XColors.primary
                             : const Color(0xFFECECFB),
                         borderRadius: BorderRadius.circular(16.sp)),
                     child: Text(
                       items[index],
                       style: TextStyle(
-                        color: isSelected ? Colors.white : const Color(0xFF7373AD),
+                        color:
+                            isSelected ? Colors.white : const Color(0xFF7373AD),
                         fontWeight: FontWeight.w400,
                         fontSize: 12.sp,
                       ),

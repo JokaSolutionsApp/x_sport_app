@@ -12,7 +12,7 @@ class GlobalAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: false,
-      backgroundColor: XColors.Submit_Button_Color,
+      backgroundColor: XColors.primary,
       centerTitle: true,
       title: Text(
         title,

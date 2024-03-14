@@ -218,7 +218,7 @@ class _OtpPageState extends State<OtpPage> {
                     child: Text(
                       'ارسال مرة اخرى',
                       style: TextStyle(
-                        color: XColors.Submit_Button_Color,
+                        color: XColors.primary,
                         fontSize: 18.sp,
                         fontFamily: 'Tajawal',
                         fontWeight: FontWeight.w400,
@@ -229,7 +229,7 @@ class _OtpPageState extends State<OtpPage> {
                   Container(
                     width: 114.w,
                     height: 1,
-                    color: XColors.Submit_Button_Color,
+                    color: XColors.primary,
                   )
                 ],
               ),
@@ -238,7 +238,7 @@ class _OtpPageState extends State<OtpPage> {
             SubmitButton(
               radius: 24,
               isButtonEnabled: true,
-              fillColor: XColors.otp_button_color,
+              fillColor: XColors.otp_primary,
               minWidth: 210,
               height: 52,
               textSize: 18,

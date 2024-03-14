@@ -227,7 +227,7 @@ class WelcomePage extends StatelessWidget {
                             SubmitButton(
                               radius: 28,
                               isButtonEnabled: true,
-                              fillColor: XColors.Submit_Button_Color,
+                              fillColor: XColors.primary,
                               textColor: Colors.white,
                               text: 'ابدأ الان',
                               onPressed: () {

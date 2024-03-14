@@ -110,13 +110,14 @@ class UserRepository extends BaseUserRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
+      print(failuar.errorModel);
       return Left(ServerFailure(failuar.errorModel.statusCode));
     }
   }
 
   @override
   Future<Either<Failure, UserProfileEntity>> editPreferences(
-      {required List<PreferenceValue> params}) async {
+      {required PreferenceValue params}) async {
     try {
       final result =
           await baseUsersRemoteDataSource.editPreferences(params: params);
@@ -183,6 +184,17 @@ class UserRepository extends BaseUserRepository {
     try {
       final result =
           await baseUsersRemoteDataSource.selectCurrentSport(sportId: sportId);
+
+      return Right(result);
+    } on ServerException catch (failuar) {
+      return Left(ServerFailure(failuar.errorModel.statusCode));
+    }
+  }
+
+  @override
+  Future<Either<Failure, bool>> deleteUserProfile() async {
+    try {
+      final result = await baseUsersRemoteDataSource.deleteUserProfile();
 
       return Right(result);
     } on ServerException catch (failuar) {

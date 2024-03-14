@@ -97,7 +97,7 @@ class _CreditCardPageState extends State<CreditCardPage> {
                                   textAlign: TextAlign.end,
                                   'حفظ معلومات الدفع لهذا الحساب',
                                   style: TextStyle(
-                                      color: XColors.Outline_Button_Color,
+                                      color: XColors.Outline_primary,
                                       fontSize: 17.sp,
                                       fontWeight: FontWeight.w500),
                                 ),
@@ -149,7 +149,7 @@ class _CreditCardPageState extends State<CreditCardPage> {
                               radius: 12,
                               isButtonEnabled: isButtonEnabled,
                               fillColor: isButtonEnabled
-                                  ? XColors.Submit_Button_Color
+                                  ? XColors.primary
                                   : Colors.grey,
                               textColor: Colors.white,
                               text: 'انشر',

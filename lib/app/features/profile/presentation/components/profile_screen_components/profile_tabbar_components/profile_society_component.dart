@@ -34,7 +34,7 @@ class ProfileSocietyComponent extends StatelessWidget {
                         Text(
                           'لايوجد مباريات بعد',
                           style: TextStyle(
-                              color: XColors.Submit_Button_Color,
+                              color: XColors.primary,
                               fontSize: 15.sp,
                               fontWeight: FontWeight.w500),
                         ),
@@ -60,7 +60,7 @@ class ProfileSocietyComponent extends StatelessWidget {
                         Text(
                           'لايوجد منشورات بعد',
                           style: TextStyle(
-                              color: XColors.Submit_Button_Color,
+                              color: XColors.primary,
                               fontSize: 15.sp,
                               fontWeight: FontWeight.w500),
                         ),
@@ -92,7 +92,7 @@ class ProfileSocietyComponent extends StatelessWidget {
                       Text(
                         'لايوجد مباريات بعد',
                         style: TextStyle(
-                            color: XColors.Submit_Button_Color,
+                            color: XColors.primary,
                             fontSize: 15.sp,
                             fontWeight: FontWeight.w500),
                       ),

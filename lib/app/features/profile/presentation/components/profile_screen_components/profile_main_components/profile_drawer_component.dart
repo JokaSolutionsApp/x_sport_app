@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:x_sport/app/features/archives/presentation/pages/all_archive_page.dart';
+import 'package:x_sport/app/features/auth/domain/enitites/favorite_sport_entity.dart';
+import 'package:x_sport/app/features/auth/domain/enitites/user_entity.dart';
 import 'package:x_sport/app/features/logs/presentation/pages/all_logs_page.dart';
 import 'package:x_sport/app/features/paymnet/presentation/pages/payment_info_page.dart';
 import 'package:x_sport/app/features/settings/presentation/pages/all_settings_privacy_page.dart';
@@ -12,9 +14,10 @@ import '../../../pages/edit_profile_page.dart';
 import '../../../../../../widgets/buttons/icon_text_button.dart';
 
 class ProfileDrawerComponent extends StatelessWidget {
-  final User? user;
-  final List<String>? favoriteSports;
-  const ProfileDrawerComponent({super.key, this.user, this.favoriteSports});
+  final UserEntity user;
+  final List<FavoriteSportEntity> favoriteSports;
+  const ProfileDrawerComponent(
+      {super.key, required this.user, required this.favoriteSports});
 
   @override
   Widget build(BuildContext context) {
@@ -196,7 +199,7 @@ class ProfileDrawerComponent extends StatelessWidget {
                 IconTextButton(
                   text: 'ترقية الى بريميوم',
                   icon: AppIcons.diamond,
-                  color: XColors.Submit_Button_Color,
+                  color: XColors.primary,
                   onPressed: () {},
                 ),
                 Divider(

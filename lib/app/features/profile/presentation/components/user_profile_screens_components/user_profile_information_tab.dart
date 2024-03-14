@@ -64,11 +64,10 @@ class UserProfileInformationTab extends StatelessWidget {
                             valueListenable: selectedIndex,
                             builder: (context, isSelected, child) {
                               final isSelected = selectedIndex.value == index;
-                              final Color selectedText = isSelected
-                                  ? Colors.white
-                                  : XColors.Submit_Button_Color;
+                              final Color selectedText =
+                                  isSelected ? Colors.white : XColors.primary;
                               final Color selectedButton = isSelected
-                                  ? XColors.Submit_Button_Color
+                                  ? XColors.primary
                                   : const Color(0xFFECECFB);
                               return GestureDetector(
                                 onTap: () {
@@ -168,7 +167,7 @@ class UserProfileInformationTab extends StatelessWidget {
                                   Text(
                                     levels[selectedIndex.value].level,
                                     style: TextStyle(
-                                        color: XColors.Submit_Button_Color,
+                                        color: XColors.primary,
                                         fontSize: 16.sp,
                                         fontWeight: FontWeight.w500),
                                   ),
@@ -193,12 +192,11 @@ class UserProfileInformationTab extends StatelessWidget {
                                                   valueColor:
                                                       const AlwaysStoppedAnimation<
                                                           Color>(
-                                                    XColors.Submit_Button_Color,
+                                                    XColors.primary,
                                                   ),
                                                   value: 0.3,
                                                   minHeight: 8.h,
-                                                  color: XColors
-                                                      .Submit_Button_Color,
+                                                  color: XColors.primary,
                                                 ),
                                               ),
                                             ),
@@ -217,8 +215,7 @@ class UserProfileInformationTab extends StatelessWidget {
                                                   child: const Icon(
                                                     Icons
                                                         .keyboard_double_arrow_up_outlined,
-                                                    color: XColors
-                                                        .Submit_Button_Color,
+                                                    color: XColors.primary,
                                                     size: 20,
                                                   )),
                                             ),
@@ -229,8 +226,7 @@ class UserProfileInformationTab extends StatelessWidget {
                                                 width: 20.w,
                                                 height: 20.w,
                                                 decoration: const BoxDecoration(
-                                                    color: XColors
-                                                        .Submit_Button_Color,
+                                                    color: XColors.primary,
                                                     shape: BoxShape.circle),
                                                 child: Text(
                                                   '2',
@@ -253,8 +249,7 @@ class UserProfileInformationTab extends StatelessWidget {
                                           Text(
                                             '847',
                                             style: TextStyle(
-                                              color:
-                                                  XColors.Submit_Button_Color,
+                                              color: XColors.primary,
                                               fontSize: 13.sp,
                                               fontFamily: 'Tajawal',
                                               fontWeight: FontWeight.w400,
@@ -277,8 +272,7 @@ class UserProfileInformationTab extends StatelessWidget {
                                                 shape: RoundedRectangleBorder(
                                                   side: const BorderSide(
                                                     width: 0.50,
-                                                    color: XColors
-                                                        .Submit_Button_Color,
+                                                    color: XColors.primary,
                                                   ),
                                                   borderRadius:
                                                       BorderRadius.circular(5),
@@ -287,8 +281,7 @@ class UserProfileInformationTab extends StatelessWidget {
                                               child: Icon(
                                                 Icons.emoji_events,
                                                 size: 20.sp,
-                                                color:
-                                                    XColors.Submit_Button_Color,
+                                                color: XColors.primary,
                                               ),
                                             ),
                                           ),
@@ -421,7 +414,7 @@ class UserProfileInformationTab extends StatelessWidget {
                               SizedBox(width: 10.w),
                               SubmitButton(
                                 text: 'دعوة',
-                                fillColor: XColors.Submit_Button_Color,
+                                fillColor: XColors.primary,
                                 radius: 32,
                                 height: 42,
                                 minWidth: 124,

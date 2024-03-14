@@ -37,8 +37,9 @@ class TrainingScheduleComponent extends StatelessWidget {
                           width: 0.7.sw,
                           child: RectangleContainer(
                               radius: 10,
-                              containerColor:
-                                  isSelected ? Colors.black : const Color(0xFFDAE9FF),
+                              containerColor: isSelected
+                                  ? Colors.black
+                                  : const Color(0xFFDAE9FF),
                               bottomMargin: 0,
                               child: Padding(
                                 padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -59,8 +60,7 @@ class TrainingScheduleComponent extends StatelessWidget {
                                                   fontSize: 16.sp,
                                                   color: isSelected
                                                       ? Colors.white
-                                                      : XColors
-                                                          .Submit_Button_Color,
+                                                      : XColors.primary,
                                                   fontWeight: FontWeight.w500),
                                             )),
                                         Icon(
@@ -68,7 +68,7 @@ class TrainingScheduleComponent extends StatelessWidget {
                                           size: 34.sp,
                                           color: isSelected
                                               ? Colors.white
-                                              : XColors.Submit_Button_Color,
+                                              : XColors.primary,
                                         ),
                                       ],
                                     ),

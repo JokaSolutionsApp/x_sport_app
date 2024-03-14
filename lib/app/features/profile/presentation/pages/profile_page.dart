@@ -15,53 +15,50 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: const ProfileDrawerComponent(),
-      appBar: const ProfileAppBarComponent(),
-      body: BlocBuilder<AuthBloc, AuthState>(
-        buildWhen: (prev, cur) {
-          if (cur.runtimeType !=
-              const AuthState.userProfileLocalLoading().runtimeType) {
-            return true;
-          }
-          return false;
-        },
-        builder: (context, state) {
-          context.read<AuthBloc>().add(const AuthEvent.getUserProfile());
+    return BlocBuilder<AuthBloc, AuthState>(
+      buildWhen: (prev, cur) {
+        if (cur.runtimeType !=
+            const AuthState.userProfileLocalLoading().runtimeType) {
+          return true;
+        }
+        return false;
+      },
+      builder: (context, state) {
+        return state.maybeMap(
+          orElse: () => const Offstage(),
+          userProfileFailure: (_) => const Offstage(),
+          userProfileLocalLoading: (_) => const Offstage(),
+          userProfileLoading: (_) => const CircularProgressIndicator.adaptive(),
+          userProfileFetched: (value) {
+            UserProfileEntity userProfile = value.userProfile!;
 
-          return state.maybeMap(
-            orElse: () => const Offstage(),
-            userProfileFailure: (_) => const Offstage(),
-            userProfileLocalLoading: (_) => const Offstage(),
-            userProfileLoading: (_) =>
-                const CircularProgressIndicator.adaptive(),
-            userProfileFetched: (value) {
-              UserProfileEntity user = value.userProfile!;
-              return SingleChildScrollView(
+            return Scaffold(
+              drawer: ProfileDrawerComponent(
+                user: userProfile.user,
+                favoriteSports: userProfile.favoriteSports,
+              ),
+              appBar: const ProfileAppBarComponent(),
+              body: SingleChildScrollView(
                   child: Center(
                 child: SizedBox(
                   width: 385.w,
                   child: Column(children: [
                     SizedBox(height: 12.w),
                     ProfileInfoComponent(
-                      user: User(),
+                      userProfile: userProfile,
                       points: 200,
-                      favoriteSports: const [],
+                      favoriteSports: userProfile.favoriteSports,
                     ),
-                    const ProfileStatsComponent(
-                      followers: 0,
-                      matchesCount: 0,
-                    ),
-                    const ProfileTabBarComponent(
-                      favoritSports: [],
+                    ProfileTabBarComponent(
+                      userProfile: userProfile,
                     ),
                   ]),
                 ),
-              ));
-            },
-          );
-        },
-      ),
+              )),
+            );
+          },
+        );
+      },
     );
   }
 }

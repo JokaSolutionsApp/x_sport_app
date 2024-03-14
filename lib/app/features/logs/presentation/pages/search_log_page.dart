@@ -76,7 +76,7 @@ class SearchLogPage extends StatelessWidget {
                                     final isSelected =
                                         selectedIndex.value == index;
                                     final Color selectedButton = isSelected
-                                        ? XColors.Submit_Button_Color
+                                        ? XColors.primary
                                         : Colors.white;
                                     return GestureDetector(
                                       onTap: () {

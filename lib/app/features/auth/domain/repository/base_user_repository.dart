@@ -11,9 +11,11 @@ abstract class BaseUserRepository {
   Future<Either<Failure, UserProfileEntity>> editUserProfile(
       {required EditUserProfileParams params});
 
+  Future<Either<Failure, bool>> deleteUserProfile();
+
   Future<Either<Failure, UserProfileEntity>> getUserProfile();
   Future<Either<Failure, UserProfileEntity>> editPreferences(
-      {required List<PreferenceValue> params});
+      {required PreferenceValue params});
 
   Future<Either<Failure, UserProfileEntity>> deleteFavoriteSports(
       {required List<int> sportsIds});

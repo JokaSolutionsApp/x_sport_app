@@ -11,15 +11,3 @@ class PreferenceValue {
     };
   }
 }
-
-class EditPreferencesParams {
-  final List<PreferenceValue> preferenceValues;
-
-  EditPreferencesParams({required this.preferenceValues});
-
-  Map<String, dynamic> toMap() {
-    return {
-      "preferenceValues": preferenceValues.map((pv) => pv.toMap()).toList(),
-    };
-  }
-}

@@ -28,6 +28,17 @@ class ApiService {
     }
   }
 
+  static Future<Response> delete(String path) async {
+    try {
+      final response = await _dio.delete(path);
+
+      return response;
+    } catch (error) {
+      throw ServerException(
+          errorModel: ErrorModel.formJson(const {'statusCode': 0}));
+    }
+  }
+
   static Future<Response> postFormData(
     String path,
     FormData formData,

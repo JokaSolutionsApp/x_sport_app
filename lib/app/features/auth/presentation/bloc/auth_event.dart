@@ -5,10 +5,11 @@ class AuthEvent with _$AuthEvent {
   const factory AuthEvent.login() = _LoginEvent;
   const factory AuthEvent.register() = _RegisterEvent;
   const factory AuthEvent.getUserProfile() = _GetUserProfileEvent;
+  const factory AuthEvent.deleteUserProfile() = _DeleteUserProfileEvent;
   const factory AuthEvent.editUserProfile(
       {required EditUserProfileParams params}) = _EditUserProfileEvent;
-  const factory AuthEvent.editPreferences(
-      {required List<PreferenceValue> params}) = _EditPreferencesEvent;
+  const factory AuthEvent.editPreferences({required PreferenceValue params}) =
+      _EditPreferencesEvent;
 
   const factory AuthEvent.checkUserLogged() = _CheckUserLoggedEvent;
   const factory AuthEvent.confirmUserEmail() = _ConfirmUserEmailEvent;

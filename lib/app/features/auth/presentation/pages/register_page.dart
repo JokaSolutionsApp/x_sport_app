@@ -107,7 +107,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   textAlign: TextAlign.end,
                   'اوافق على شروط الاستخدام والخصوصية',
                   style: TextStyle(
-                      color: XColors.Outline_Button_Color,
+                      color: XColors.Outline_primary,
                       fontSize: 17.sp,
                       fontWeight: FontWeight.w500),
                 ),
@@ -136,7 +136,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   // final isButtonEnabled = snapshot.data ?? false;
                   return SubmitButton(
                     isButtonEnabled: true,
-                    fillColor: true ? XColors.Submit_Button_Color : Colors.grey,
+                    fillColor: true ? XColors.primary : Colors.grey,
                     textColor: Colors.white,
                     text: 'انشاء حساب',
                     onPressed: () {

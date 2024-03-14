@@ -1,25 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/auth/domain/enitites/favorite_sport_entity.dart';
+import 'package:x_sport/app/features/auth/domain/enitites/sport_entity.dart';
+import 'package:x_sport/app/features/auth/presentation/bloc/auth_bloc.dart';
 
 import 'package:x_sport/core/constance/app_constance.dart';
 import 'package:x_sport/core/constance/app_icons_icons.dart';
 import 'package:x_sport/app/widgets/buttons/submit_button.dart';
 
-class ProfileAlertDialog extends StatelessWidget {
-  final ValueNotifier<int> selectedIndex;
-  final List favoriteSports;
+class DeleteFavoriteSports extends StatefulWidget {
+  final List<FavoriteSportEntity> favoriteSports;
+  final List<SportEntity> allSports;
+  final void Function(List<int> sportsIds) deleteSports;
+
   final String title;
   final String subtitle;
   final Color submitColor;
   final Color textColor;
-  const ProfileAlertDialog(
+  DeleteFavoriteSports(
       {super.key,
-      required this.selectedIndex,
       required this.favoriteSports,
+      required this.allSports,
       required this.title,
       required this.subtitle,
-      this.submitColor = XColors.Submit_Button_Color,
-      this.textColor = Colors.black});
+      this.submitColor = XColors.primary,
+      this.textColor = Colors.black,
+      required this.deleteSports});
+
+  @override
+  State<DeleteFavoriteSports> createState() => _DeleteFavoriteSportsState();
+}
+
+class _DeleteFavoriteSportsState extends State<DeleteFavoriteSports> {
+  late final ValueNotifier<List<bool>> selectedIndices;
+  final List<int> sportsIds = [];
+
+  @override
+  void initState() {
+    selectedIndices = ValueNotifier<List<bool>>(
+        List<bool>.filled(widget.allSports.length, false));
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,12 +54,12 @@ class ProfileAlertDialog extends StatelessWidget {
         alignment: Alignment.center,
         children: [
           Text(
-            title,
+            widget.title,
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 17.sp,
               fontWeight: FontWeight.w500,
-              color: textColor,
+              color: widget.textColor,
             ),
           ),
           Align(
@@ -64,26 +86,33 @@ class ProfileAlertDialog extends StatelessWidget {
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                   maxCrossAxisExtent: 80.w,
                   mainAxisExtent: 40.h,
-                  crossAxisSpacing: 14.0.w,
                   mainAxisSpacing: 20.0.w,
                 ),
-                itemCount: favoriteSports.length,
+                itemCount: widget.allSports.length,
                 itemBuilder: (context, index) {
                   // Render the regular item
 
                   return ValueListenableBuilder(
-                      valueListenable: selectedIndex,
-                      builder: (context, isSelected, child) {
-                        final isSelected = selectedIndex.value == index;
-                        final Color selectedText = isSelected
-                            ? Colors.white
-                            : XColors.Submit_Button_Color;
+                      valueListenable: selectedIndices,
+                      builder: (context, isSelectedList, child) {
+                        final isSelected = isSelectedList[index];
+                        final Color selectedText =
+                            isSelected ? Colors.white : XColors.primary;
                         final Color selectedButton = isSelected
-                            ? XColors.Submit_Button_Color
+                            ? XColors.primary
                             : const Color(0xFFECECFB);
                         return GestureDetector(
                           onTap: () {
-                            selectedIndex.value = index;
+                            final updatedSelection =
+                                List<bool>.from(isSelectedList);
+                            updatedSelection[index] = !updatedSelection[index];
+                            selectedIndices.value = updatedSelection;
+                            final int sportId = widget.allSports[index].sportId;
+                            if (!sportsIds.contains(sportId)) {
+                              sportsIds.add(sportId);
+                            } else {
+                              sportsIds.remove(sportId);
+                            }
                           },
                           child: Container(
                             decoration: BoxDecoration(
@@ -95,10 +124,9 @@ class ProfileAlertDialog extends StatelessWidget {
                               ),
                             ),
                             child: Container(
-                              padding: EdgeInsets.symmetric(horizontal: 12.w),
                               alignment: Alignment.center,
                               child: Text(
-                                favoriteSports[index],
+                                widget.allSports[index].name,
                                 style: TextStyle(
                                   color: selectedText,
                                   fontSize: 14.sp,
@@ -113,16 +141,19 @@ class ProfileAlertDialog extends StatelessWidget {
             SizedBox(height: 10.w),
             SubmitButton(
                 text: 'تأكيد',
-                fillColor: submitColor,
+                fillColor: widget.submitColor,
                 minWidth: 80.w,
                 height: 40.h,
                 textSize: 15,
                 onPressed: () {
+                  context.read<AuthBloc>().add(
+                      AuthEvent.deleteFavoriteSports(sportsIds: sportsIds));
+                  widget.deleteSports(sportsIds);
                   Navigator.of(context).pop();
                 }),
             SizedBox(height: 10.w),
             Text(
-              subtitle,
+              widget.subtitle,
               textAlign: TextAlign.end,
               style: TextStyle(
                 fontSize: 12.sp,
@@ -134,5 +165,14 @@ class ProfileAlertDialog extends StatelessWidget {
       ),
       actionsAlignment: MainAxisAlignment.center,
     );
+  }
+
+  List<int> getSelectedIndices() {
+    return selectedIndices.value
+        .asMap()
+        .entries
+        .where((e) => e.value)
+        .map((e) => e.key)
+        .toList();
   }
 }

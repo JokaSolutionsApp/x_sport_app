@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:crypto/crypto.dart';
 import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
 import 'package:get_it/get_it.dart';
@@ -12,6 +13,7 @@ import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/check_user
 import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/complete_resgisteration_usecase.dart';
 import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/confirm_user_email_usecase.dart';
 import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/delete_favorite_sports_usecse.dart';
+import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/delete_user_profile.dart';
 import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/edit__user_profile_usecase.dart';
 import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/edit_preferences_usecase.dart';
 import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/get_sports_usecase.dart';
@@ -53,12 +55,31 @@ class ServiceLocator {
           return status! < 600;
         };
 
-      (dio.httpClientAdapter as IOHttpClientAdapter).onHttpClientCreate =
-          (HttpClient client) {
-        client.badCertificateCallback =
-            (X509Certificate cert, String host, int port) => true;
-        return client;
-      };
+      // Your server's SHA256 fingerprint
+      String fingerprint =
+          '1D16E832256AA9BB617E601291A12E10097C61017C7212204AD6CB0F5396D3FB'
+              .toLowerCase();
+
+      dio.httpClientAdapter = IOHttpClientAdapter(
+        createHttpClient: () {
+          // Don't trust any certificate just because their root cert is trusted.
+          final HttpClient client =
+              HttpClient(context: SecurityContext(withTrustedRoots: false));
+          // You can test the intermediate / root cert here. We just ignore it.
+          client.badCertificateCallback = (cert, host, port) => true;
+          return client;
+        },
+        validateCertificate: (cert, host, port) {
+          // Check that the cert fingerprint matches the one we expect.
+          // We definitely require _some_ certificate.
+          if (cert == null) {
+            return false;
+          }
+          // Validate it any way you want. Here we only check that
+          // the fingerprint matches the OpenSSL SHA256.
+          return fingerprint == sha256.convert(cert.der).toString();
+        },
+      );
       dio.interceptors.add(LogInterceptor(
         requestBody: true,
         responseBody: true,
@@ -71,6 +92,7 @@ class ServiceLocator {
             options.headers['Content-Type'] = 'application/json';
             options.headers['Authorization'] = 'Bearer $token';
             options.headers['Accept'] = 'text/plain';
+            options.headers['culture'] = 'ar';
           }
           return handler.next(options);
         },
@@ -80,6 +102,7 @@ class ServiceLocator {
     });
 
     sl.registerFactory(() => AuthBloc(
+          sl(),
           sl(),
           sl(),
           sl(),
@@ -111,6 +134,7 @@ class ServiceLocator {
     sl.registerLazySingleton(() => LogoutUserUseCase(sl()));
     sl.registerLazySingleton(() => AddFavoriteSportsUseCase(sl()));
     sl.registerLazySingleton(() => DeleteFavoriteSportsUseCase(sl()));
+    sl.registerLazySingleton(() => DeleteUserProfileUseCase(sl()));
 
     // chat bloc usecases
     sl.registerLazySingleton(() => SendMessageUseCase(sl()));

@@ -11,7 +11,7 @@ class EditPreferencesUseCase {
   EditPreferencesUseCase(this.repository);
 
   Future<Either<Failure, UserProfileEntity>> call(
-      {required List<PreferenceValue> params}) async {
+      {required PreferenceValue params}) async {
     return await repository.editPreferences(params: params);
   }
 }

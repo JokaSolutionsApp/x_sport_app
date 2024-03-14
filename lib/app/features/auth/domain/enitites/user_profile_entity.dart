@@ -11,8 +11,8 @@ class UserProfileEntity extends Equatable {
   final UserEntity user;
   @JsonKey(name: AuthKeys.favoriteSports)
   final List<FavoriteSportEntity> favoriteSports;
-  @JsonKey(name: AuthKeys.currentSport)
-  final CurrentSportEntity currentSport;
+  // @JsonKey(name: AuthKeys.currentSport)
+  // final CurrentSportEntity currentSport;
   @JsonKey(name: AuthKeys.followers)
   final int followers;
   @JsonKey(name: AuthKeys.following)
@@ -21,7 +21,7 @@ class UserProfileEntity extends Equatable {
   const UserProfileEntity({
     required this.user,
     required this.favoriteSports,
-    required this.currentSport,
+    // required this.currentSport,
     required this.followers,
     required this.following,
   });
@@ -30,7 +30,7 @@ class UserProfileEntity extends Equatable {
   List<Object?> get props => [
         user,
         favoriteSports,
-        currentSport,
+        // currentSport,
         followers,
         following,
       ];

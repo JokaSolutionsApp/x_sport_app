@@ -46,7 +46,7 @@ class ProgramDatesComponent extends StatelessWidget {
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
                             color: isSelected
-                                ? XColors.Submit_Button_Color
+                                ? XColors.primary
                                 : const Color(0xFFD1DBF6),
                             border: Border.all(color: const Color(0xFFE5E5E5)),
                             borderRadius: BorderRadius.circular(7.sp)),

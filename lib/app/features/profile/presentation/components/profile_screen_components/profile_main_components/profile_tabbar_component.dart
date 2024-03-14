@@ -1,6 +1,7 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/auth/domain/enitites/user_profile_entity.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
 import 'package:x_sport/app/widgets/rectangle_container.dart';
 import '../../../../../../widgets/buttons/submit_button.dart';
@@ -8,8 +9,8 @@ import '../profile_tabbar_components/profile_activities_component.dart';
 import '../profile_tabbar_components/profile_society_component.dart';
 
 class ProfileTabBarComponent extends StatefulWidget {
-  final List<String>? favoritSports;
-  const ProfileTabBarComponent({super.key, this.favoritSports});
+  final UserProfileEntity userProfile;
+  const ProfileTabBarComponent({super.key, required this.userProfile});
 
   @override
   State<ProfileTabBarComponent> createState() => _ProfileTabBarComponentState();
@@ -66,50 +67,45 @@ class _ProfileTabBarComponentState extends State<ProfileTabBarComponent>
       children: [
         RectangleContainer(
           bottomMargin: 10,
+          radius: 24,
+          height: 60.h,
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 4.w),
-            child: SizedBox(
-              height: 54.h,
-              child: Stack(
-                children: [
-                  TabBar(
-                      splashBorderRadius: BorderRadius.circular(14.sp),
-                      indicatorSize: TabBarIndicatorSize.tab,
-                      indicator: BoxDecoration(
-                          border: Border(
-                              bottom: BorderSide(
-                                  color: XColors.Submit_Button_Color,
-                                  width: 4.sp))),
-                      controller: tabBar,
-                      labelStyle: const TextStyle(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontFamily: 'Tajawal',
-                        fontWeight: FontWeight.w500,
-                        height: 0,
-                      ),
-                      unselectedLabelStyle: const TextStyle(
-                        color: Color(0xFF8F8F8F),
-                      ),
-                      tabs: const [
-                        Tab(
-                          text: 'المجتمع',
-                        ),
-                        Tab(
-                          text: 'الانشطة',
-                        ),
-                      ]),
-                  Align(
-                    alignment: Alignment.center,
-                    child: Container(
-                      width: 0.3.w,
-                      height: 40.h,
-                      color: Colors.black,
-                    ),
-                  )
-                ],
-              ),
-            ),
+            child: TabBar(
+                indicatorPadding:
+                    EdgeInsets.symmetric(horizontal: 12.w, vertical: 5.h),
+                splashBorderRadius: BorderRadius.circular(11.sp),
+                unselectedLabelColor: const Color(0xFFB4B4B4),
+                indicatorSize: TabBarIndicatorSize.tab,
+                splashFactory: NoSplash.splashFactory,
+                overlayColor: MaterialStateProperty.resolveWith<Color?>(
+                  (Set<MaterialState> states) {
+                    return states.contains(MaterialState.focused)
+                        ? null
+                        : Colors.transparent;
+                  },
+                ),
+                labelStyle: TextStyle(
+                    color: Colors.white,
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w700),
+                unselectedLabelStyle: TextStyle(
+                    color: const Color(0xFFB4B4B4),
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w700),
+                dividerColor: Colors.transparent,
+                indicator: BoxDecoration(
+                    color: XColors.primary,
+                    borderRadius: BorderRadius.circular(24.sp)),
+                controller: tabBar,
+                tabs: const [
+                  Tab(
+                    text: 'المجتمع',
+                  ),
+                  Tab(
+                    text: 'الانشطة',
+                  ),
+                ]),
           ),
         ),
         SizedBox(height: 0.021.sh),
@@ -121,7 +117,8 @@ class _ProfileTabBarComponentState extends State<ProfileTabBarComponent>
               child: Column(
                 children: [
                   ProfileActivitiesComponent(
-                      favoritSports: widget.favoritSports!),
+                      userProfile: widget.userProfile,
+                      favoritSports: widget.userProfile.favoriteSports),
                   DottedBorder(
                       borderType: BorderType.RRect,
                       radius: Radius.circular(12.sp),
@@ -156,7 +153,7 @@ class _ProfileTabBarComponentState extends State<ProfileTabBarComponent>
                                 radius: 7,
                                 height: 49,
                                 minWidth: 220,
-                                fillColor: XColors.Submit_Button_Color,
+                                fillColor: XColors.primary,
                                 text: 'مجموعة جديدة',
                                 textSize: 19.sp,
                                 onPressed: () {}),

@@ -127,7 +127,7 @@ class _AcademyScreenState extends State<AcademyPage>
                     height: 50.h,
                     width: 50.w,
                     decoration: BoxDecoration(
-                        color: XColors.Submit_Button_Color.withOpacity(0.52),
+                        color: XColors.primary.withOpacity(0.52),
                         shape: BoxShape.circle),
                     child: Icon(
                       Icons.play_arrow,
@@ -173,7 +173,7 @@ class _AcademyScreenState extends State<AcademyPage>
                           fontWeight: FontWeight.w700),
                       dividerColor: Colors.transparent,
                       indicator: BoxDecoration(
-                          color: XColors.Submit_Button_Color,
+                          color: XColors.primary,
                           borderRadius: BorderRadius.circular(11.sp)),
                       controller: _tabController,
                       tabs: [
@@ -222,7 +222,7 @@ class _AcademyScreenState extends State<AcademyPage>
                         text: 'سجل الان',
                         height: 54.w,
                         textSize: 15,
-                        fillColor: XColors.Submit_Button_Color,
+                        fillColor: XColors.primary,
                         radius: 6,
                         onPressed: () {}),
                   )

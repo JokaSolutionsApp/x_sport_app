@@ -83,7 +83,7 @@ class PlayedGamesFilterDialog extends StatelessWidget {
             SubmitButton(
               text: 'تطبيق التغييرات',
               textSize: 12,
-              fillColor: XColors.Submit_Button_Color,
+              fillColor: XColors.primary,
               minWidth: 147,
               height: 34,
               radius: 4,

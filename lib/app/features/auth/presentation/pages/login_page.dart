@@ -55,9 +55,7 @@ class _LoginPageState extends State<LoginPage> {
                   final isButtonEnabled = snapshot.data ?? false;
                   return SubmitButton(
                     isButtonEnabled: isButtonEnabled,
-                    fillColor: isButtonEnabled
-                        ? XColors.Submit_Button_Color
-                        : Colors.grey,
+                    fillColor: isButtonEnabled ? XColors.primary : Colors.grey,
                     textColor: Colors.white,
                     text: 'تسجيل الدخول',
                     onPressed: () {
@@ -81,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   OutlinButton(
                     isButtonEnabled: true,
-                    fillColor: XColors.Submit_Button_Color,
+                    fillColor: XColors.primary,
                     textColor: XColors.Background_Color1,
                     image: AssetsManager.icons.facebook,
                     text: 'تسجيل الدخول عبر فيسبوك',
@@ -89,7 +87,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   OutlinButton(
                     isButtonEnabled: true,
-                    fillColor: XColors.Submit_Button_Color,
+                    fillColor: XColors.primary,
                     textColor: XColors.Background_Color1,
                     image: AssetsManager.icons.google,
                     text: 'تسجيل الدخول عبر جوجل',

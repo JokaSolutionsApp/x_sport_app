@@ -83,7 +83,7 @@ class HomeStadiumsComponent extends StatelessWidget {
                       alignment: Alignment.topCenter,
                       child: SubmitButton(
                           textColor: Colors.white,
-                          fillColor: XColors.Submit_Button_Color,
+                          fillColor: XColors.primary,
                           radius: 4,
                           minWidth: 88,
                           height: 18,

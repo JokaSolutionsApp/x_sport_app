@@ -149,7 +149,7 @@ class _MainScreenState extends State<MainPage>
                               radius: 6,
                               height: 28.w,
                               minWidth: 170.w,
-                              fillColor: XColors.Submit_Button_Color,
+                              fillColor: XColors.primary,
                               text: 'التالي',
                               onPressed: () {
                                 Navigator.of(navigatorKey.currentContext!).push(
@@ -189,7 +189,7 @@ class _MainScreenState extends State<MainPage>
                             ),
                             controller: _tabController,
                             unselectedLabelColor: const Color(0xFF9F9F9F),
-                            labelColor: XColors.Submit_Button_Color,
+                            labelColor: XColors.primary,
                             dividerHeight: 0,
                             labelStyle: TextStyle(
                               fontSize: 13.sp,
@@ -241,7 +241,7 @@ class _MainScreenState extends State<MainPage>
                                   text: 'العب'),
                             ],
 
-                            // activeColor: XColors.Submit_Button_Color,
+                            // activeColor: XColors.primary,
                             // backgroundColor: Colors.white,
                             // initialActiveIndex: 0,
                             // height: 0.07.sh,

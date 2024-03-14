@@ -21,8 +21,9 @@ mixin _$AuthEvent {
     required TResult Function() login,
     required TResult Function() register,
     required TResult Function() getUserProfile,
+    required TResult Function() deleteUserProfile,
     required TResult Function(EditUserProfileParams params) editUserProfile,
-    required TResult Function(List<PreferenceValue> params) editPreferences,
+    required TResult Function(PreferenceValue params) editPreferences,
     required TResult Function() checkUserLogged,
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
@@ -39,8 +40,9 @@ mixin _$AuthEvent {
     TResult? Function()? login,
     TResult? Function()? register,
     TResult? Function()? getUserProfile,
+    TResult? Function()? deleteUserProfile,
     TResult? Function(EditUserProfileParams params)? editUserProfile,
-    TResult? Function(List<PreferenceValue> params)? editPreferences,
+    TResult? Function(PreferenceValue params)? editPreferences,
     TResult? Function()? checkUserLogged,
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
@@ -57,8 +59,9 @@ mixin _$AuthEvent {
     TResult Function()? login,
     TResult Function()? register,
     TResult Function()? getUserProfile,
+    TResult Function()? deleteUserProfile,
     TResult Function(EditUserProfileParams params)? editUserProfile,
-    TResult Function(List<PreferenceValue> params)? editPreferences,
+    TResult Function(PreferenceValue params)? editPreferences,
     TResult Function()? checkUserLogged,
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
@@ -76,6 +79,7 @@ mixin _$AuthEvent {
     required TResult Function(_LoginEvent value) login,
     required TResult Function(_RegisterEvent value) register,
     required TResult Function(_GetUserProfileEvent value) getUserProfile,
+    required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
     required TResult Function(_EditUserProfileEvent value) editUserProfile,
     required TResult Function(_EditPreferencesEvent value) editPreferences,
     required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
@@ -95,6 +99,7 @@ mixin _$AuthEvent {
     TResult? Function(_LoginEvent value)? login,
     TResult? Function(_RegisterEvent value)? register,
     TResult? Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult? Function(_EditUserProfileEvent value)? editUserProfile,
     TResult? Function(_EditPreferencesEvent value)? editPreferences,
     TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
@@ -112,6 +117,7 @@ mixin _$AuthEvent {
     TResult Function(_LoginEvent value)? login,
     TResult Function(_RegisterEvent value)? register,
     TResult Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult Function(_EditUserProfileEvent value)? editUserProfile,
     TResult Function(_EditPreferencesEvent value)? editPreferences,
     TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
@@ -185,8 +191,9 @@ class _$LoginEventImpl implements _LoginEvent {
     required TResult Function() login,
     required TResult Function() register,
     required TResult Function() getUserProfile,
+    required TResult Function() deleteUserProfile,
     required TResult Function(EditUserProfileParams params) editUserProfile,
-    required TResult Function(List<PreferenceValue> params) editPreferences,
+    required TResult Function(PreferenceValue params) editPreferences,
     required TResult Function() checkUserLogged,
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
@@ -206,8 +213,9 @@ class _$LoginEventImpl implements _LoginEvent {
     TResult? Function()? login,
     TResult? Function()? register,
     TResult? Function()? getUserProfile,
+    TResult? Function()? deleteUserProfile,
     TResult? Function(EditUserProfileParams params)? editUserProfile,
-    TResult? Function(List<PreferenceValue> params)? editPreferences,
+    TResult? Function(PreferenceValue params)? editPreferences,
     TResult? Function()? checkUserLogged,
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
@@ -227,8 +235,9 @@ class _$LoginEventImpl implements _LoginEvent {
     TResult Function()? login,
     TResult Function()? register,
     TResult Function()? getUserProfile,
+    TResult Function()? deleteUserProfile,
     TResult Function(EditUserProfileParams params)? editUserProfile,
-    TResult Function(List<PreferenceValue> params)? editPreferences,
+    TResult Function(PreferenceValue params)? editPreferences,
     TResult Function()? checkUserLogged,
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
@@ -252,6 +261,7 @@ class _$LoginEventImpl implements _LoginEvent {
     required TResult Function(_LoginEvent value) login,
     required TResult Function(_RegisterEvent value) register,
     required TResult Function(_GetUserProfileEvent value) getUserProfile,
+    required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
     required TResult Function(_EditUserProfileEvent value) editUserProfile,
     required TResult Function(_EditPreferencesEvent value) editPreferences,
     required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
@@ -274,6 +284,7 @@ class _$LoginEventImpl implements _LoginEvent {
     TResult? Function(_LoginEvent value)? login,
     TResult? Function(_RegisterEvent value)? register,
     TResult? Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult? Function(_EditUserProfileEvent value)? editUserProfile,
     TResult? Function(_EditPreferencesEvent value)? editPreferences,
     TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
@@ -294,6 +305,7 @@ class _$LoginEventImpl implements _LoginEvent {
     TResult Function(_LoginEvent value)? login,
     TResult Function(_RegisterEvent value)? register,
     TResult Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult Function(_EditUserProfileEvent value)? editUserProfile,
     TResult Function(_EditPreferencesEvent value)? editPreferences,
     TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
@@ -358,8 +370,9 @@ class _$RegisterEventImpl implements _RegisterEvent {
     required TResult Function() login,
     required TResult Function() register,
     required TResult Function() getUserProfile,
+    required TResult Function() deleteUserProfile,
     required TResult Function(EditUserProfileParams params) editUserProfile,
-    required TResult Function(List<PreferenceValue> params) editPreferences,
+    required TResult Function(PreferenceValue params) editPreferences,
     required TResult Function() checkUserLogged,
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
@@ -379,8 +392,9 @@ class _$RegisterEventImpl implements _RegisterEvent {
     TResult? Function()? login,
     TResult? Function()? register,
     TResult? Function()? getUserProfile,
+    TResult? Function()? deleteUserProfile,
     TResult? Function(EditUserProfileParams params)? editUserProfile,
-    TResult? Function(List<PreferenceValue> params)? editPreferences,
+    TResult? Function(PreferenceValue params)? editPreferences,
     TResult? Function()? checkUserLogged,
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
@@ -400,8 +414,9 @@ class _$RegisterEventImpl implements _RegisterEvent {
     TResult Function()? login,
     TResult Function()? register,
     TResult Function()? getUserProfile,
+    TResult Function()? deleteUserProfile,
     TResult Function(EditUserProfileParams params)? editUserProfile,
-    TResult Function(List<PreferenceValue> params)? editPreferences,
+    TResult Function(PreferenceValue params)? editPreferences,
     TResult Function()? checkUserLogged,
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
@@ -425,6 +440,7 @@ class _$RegisterEventImpl implements _RegisterEvent {
     required TResult Function(_LoginEvent value) login,
     required TResult Function(_RegisterEvent value) register,
     required TResult Function(_GetUserProfileEvent value) getUserProfile,
+    required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
     required TResult Function(_EditUserProfileEvent value) editUserProfile,
     required TResult Function(_EditPreferencesEvent value) editPreferences,
     required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
@@ -447,6 +463,7 @@ class _$RegisterEventImpl implements _RegisterEvent {
     TResult? Function(_LoginEvent value)? login,
     TResult? Function(_RegisterEvent value)? register,
     TResult? Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult? Function(_EditUserProfileEvent value)? editUserProfile,
     TResult? Function(_EditPreferencesEvent value)? editPreferences,
     TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
@@ -467,6 +484,7 @@ class _$RegisterEventImpl implements _RegisterEvent {
     TResult Function(_LoginEvent value)? login,
     TResult Function(_RegisterEvent value)? register,
     TResult Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult Function(_EditUserProfileEvent value)? editUserProfile,
     TResult Function(_EditPreferencesEvent value)? editPreferences,
     TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
@@ -532,8 +550,9 @@ class _$GetUserProfileEventImpl implements _GetUserProfileEvent {
     required TResult Function() login,
     required TResult Function() register,
     required TResult Function() getUserProfile,
+    required TResult Function() deleteUserProfile,
     required TResult Function(EditUserProfileParams params) editUserProfile,
-    required TResult Function(List<PreferenceValue> params) editPreferences,
+    required TResult Function(PreferenceValue params) editPreferences,
     required TResult Function() checkUserLogged,
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
@@ -553,8 +572,9 @@ class _$GetUserProfileEventImpl implements _GetUserProfileEvent {
     TResult? Function()? login,
     TResult? Function()? register,
     TResult? Function()? getUserProfile,
+    TResult? Function()? deleteUserProfile,
     TResult? Function(EditUserProfileParams params)? editUserProfile,
-    TResult? Function(List<PreferenceValue> params)? editPreferences,
+    TResult? Function(PreferenceValue params)? editPreferences,
     TResult? Function()? checkUserLogged,
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
@@ -574,8 +594,9 @@ class _$GetUserProfileEventImpl implements _GetUserProfileEvent {
     TResult Function()? login,
     TResult Function()? register,
     TResult Function()? getUserProfile,
+    TResult Function()? deleteUserProfile,
     TResult Function(EditUserProfileParams params)? editUserProfile,
-    TResult Function(List<PreferenceValue> params)? editPreferences,
+    TResult Function(PreferenceValue params)? editPreferences,
     TResult Function()? checkUserLogged,
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
@@ -599,6 +620,7 @@ class _$GetUserProfileEventImpl implements _GetUserProfileEvent {
     required TResult Function(_LoginEvent value) login,
     required TResult Function(_RegisterEvent value) register,
     required TResult Function(_GetUserProfileEvent value) getUserProfile,
+    required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
     required TResult Function(_EditUserProfileEvent value) editUserProfile,
     required TResult Function(_EditPreferencesEvent value) editPreferences,
     required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
@@ -621,6 +643,7 @@ class _$GetUserProfileEventImpl implements _GetUserProfileEvent {
     TResult? Function(_LoginEvent value)? login,
     TResult? Function(_RegisterEvent value)? register,
     TResult? Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult? Function(_EditUserProfileEvent value)? editUserProfile,
     TResult? Function(_EditPreferencesEvent value)? editPreferences,
     TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
@@ -641,6 +664,7 @@ class _$GetUserProfileEventImpl implements _GetUserProfileEvent {
     TResult Function(_LoginEvent value)? login,
     TResult Function(_RegisterEvent value)? register,
     TResult Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult Function(_EditUserProfileEvent value)? editUserProfile,
     TResult Function(_EditPreferencesEvent value)? editPreferences,
     TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
@@ -662,6 +686,188 @@ class _$GetUserProfileEventImpl implements _GetUserProfileEvent {
 
 abstract class _GetUserProfileEvent implements AuthEvent {
   const factory _GetUserProfileEvent() = _$GetUserProfileEventImpl;
+}
+
+/// @nodoc
+abstract class _$$DeleteUserProfileEventImplCopyWith<$Res> {
+  factory _$$DeleteUserProfileEventImplCopyWith(
+          _$DeleteUserProfileEventImpl value,
+          $Res Function(_$DeleteUserProfileEventImpl) then) =
+      __$$DeleteUserProfileEventImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$DeleteUserProfileEventImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$DeleteUserProfileEventImpl>
+    implements _$$DeleteUserProfileEventImplCopyWith<$Res> {
+  __$$DeleteUserProfileEventImplCopyWithImpl(
+      _$DeleteUserProfileEventImpl _value,
+      $Res Function(_$DeleteUserProfileEventImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$DeleteUserProfileEventImpl implements _DeleteUserProfileEvent {
+  const _$DeleteUserProfileEventImpl();
+
+  @override
+  String toString() {
+    return 'AuthEvent.deleteUserProfile()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteUserProfileEventImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() login,
+    required TResult Function() register,
+    required TResult Function() getUserProfile,
+    required TResult Function() deleteUserProfile,
+    required TResult Function(EditUserProfileParams params) editUserProfile,
+    required TResult Function(PreferenceValue params) editPreferences,
+    required TResult Function() checkUserLogged,
+    required TResult Function() confirmUserEmail,
+    required TResult Function() resendconfirmUserEmail,
+    required TResult Function() getSports,
+    required TResult Function(
+            List<int> imageBytes, String imageType, List<int> selectedSports)
+        completeRegistration,
+    required TResult Function(List<int> sportsIds) addFavoriteSports,
+    required TResult Function(List<int> sportsIds) deleteFavoriteSports,
+  }) {
+    return deleteUserProfile();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? login,
+    TResult? Function()? register,
+    TResult? Function()? getUserProfile,
+    TResult? Function()? deleteUserProfile,
+    TResult? Function(EditUserProfileParams params)? editUserProfile,
+    TResult? Function(PreferenceValue params)? editPreferences,
+    TResult? Function()? checkUserLogged,
+    TResult? Function()? confirmUserEmail,
+    TResult? Function()? resendconfirmUserEmail,
+    TResult? Function()? getSports,
+    TResult? Function(
+            List<int> imageBytes, String imageType, List<int> selectedSports)?
+        completeRegistration,
+    TResult? Function(List<int> sportsIds)? addFavoriteSports,
+    TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
+  }) {
+    return deleteUserProfile?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? login,
+    TResult Function()? register,
+    TResult Function()? getUserProfile,
+    TResult Function()? deleteUserProfile,
+    TResult Function(EditUserProfileParams params)? editUserProfile,
+    TResult Function(PreferenceValue params)? editPreferences,
+    TResult Function()? checkUserLogged,
+    TResult Function()? confirmUserEmail,
+    TResult Function()? resendconfirmUserEmail,
+    TResult Function()? getSports,
+    TResult Function(
+            List<int> imageBytes, String imageType, List<int> selectedSports)?
+        completeRegistration,
+    TResult Function(List<int> sportsIds)? addFavoriteSports,
+    TResult Function(List<int> sportsIds)? deleteFavoriteSports,
+    required TResult orElse(),
+  }) {
+    if (deleteUserProfile != null) {
+      return deleteUserProfile();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoginEvent value) login,
+    required TResult Function(_RegisterEvent value) register,
+    required TResult Function(_GetUserProfileEvent value) getUserProfile,
+    required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
+    required TResult Function(_EditUserProfileEvent value) editUserProfile,
+    required TResult Function(_EditPreferencesEvent value) editPreferences,
+    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
+    required TResult Function(_ResendConfirmUserEmailEvent value)
+        resendconfirmUserEmail,
+    required TResult Function(_GetSportsEvent value) getSports,
+    required TResult Function(_CompleteRegistrationEvent value)
+        completeRegistration,
+    required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
+    required TResult Function(_DeleteFavoriteSportsEvent value)
+        deleteFavoriteSports,
+  }) {
+    return deleteUserProfile(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_RegisterEvent value)? register,
+    TResult? Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult? Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult? Function(_EditPreferencesEvent value)? editPreferences,
+    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult? Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult? Function(_GetSportsEvent value)? getSports,
+    TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+  }) {
+    return deleteUserProfile?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoginEvent value)? login,
+    TResult Function(_RegisterEvent value)? register,
+    TResult Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult Function(_EditPreferencesEvent value)? editPreferences,
+    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult Function(_GetSportsEvent value)? getSports,
+    TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    required TResult orElse(),
+  }) {
+    if (deleteUserProfile != null) {
+      return deleteUserProfile(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DeleteUserProfileEvent implements AuthEvent {
+  const factory _DeleteUserProfileEvent() = _$DeleteUserProfileEventImpl;
 }
 
 /// @nodoc
@@ -733,8 +939,9 @@ class _$EditUserProfileEventImpl implements _EditUserProfileEvent {
     required TResult Function() login,
     required TResult Function() register,
     required TResult Function() getUserProfile,
+    required TResult Function() deleteUserProfile,
     required TResult Function(EditUserProfileParams params) editUserProfile,
-    required TResult Function(List<PreferenceValue> params) editPreferences,
+    required TResult Function(PreferenceValue params) editPreferences,
     required TResult Function() checkUserLogged,
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
@@ -754,8 +961,9 @@ class _$EditUserProfileEventImpl implements _EditUserProfileEvent {
     TResult? Function()? login,
     TResult? Function()? register,
     TResult? Function()? getUserProfile,
+    TResult? Function()? deleteUserProfile,
     TResult? Function(EditUserProfileParams params)? editUserProfile,
-    TResult? Function(List<PreferenceValue> params)? editPreferences,
+    TResult? Function(PreferenceValue params)? editPreferences,
     TResult? Function()? checkUserLogged,
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
@@ -775,8 +983,9 @@ class _$EditUserProfileEventImpl implements _EditUserProfileEvent {
     TResult Function()? login,
     TResult Function()? register,
     TResult Function()? getUserProfile,
+    TResult Function()? deleteUserProfile,
     TResult Function(EditUserProfileParams params)? editUserProfile,
-    TResult Function(List<PreferenceValue> params)? editPreferences,
+    TResult Function(PreferenceValue params)? editPreferences,
     TResult Function()? checkUserLogged,
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
@@ -800,6 +1009,7 @@ class _$EditUserProfileEventImpl implements _EditUserProfileEvent {
     required TResult Function(_LoginEvent value) login,
     required TResult Function(_RegisterEvent value) register,
     required TResult Function(_GetUserProfileEvent value) getUserProfile,
+    required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
     required TResult Function(_EditUserProfileEvent value) editUserProfile,
     required TResult Function(_EditPreferencesEvent value) editPreferences,
     required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
@@ -822,6 +1032,7 @@ class _$EditUserProfileEventImpl implements _EditUserProfileEvent {
     TResult? Function(_LoginEvent value)? login,
     TResult? Function(_RegisterEvent value)? register,
     TResult? Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult? Function(_EditUserProfileEvent value)? editUserProfile,
     TResult? Function(_EditPreferencesEvent value)? editPreferences,
     TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
@@ -842,6 +1053,7 @@ class _$EditUserProfileEventImpl implements _EditUserProfileEvent {
     TResult Function(_LoginEvent value)? login,
     TResult Function(_RegisterEvent value)? register,
     TResult Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult Function(_EditUserProfileEvent value)? editUserProfile,
     TResult Function(_EditPreferencesEvent value)? editPreferences,
     TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
@@ -878,7 +1090,7 @@ abstract class _$$EditPreferencesEventImplCopyWith<$Res> {
           $Res Function(_$EditPreferencesEventImpl) then) =
       __$$EditPreferencesEventImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<PreferenceValue> params});
+  $Res call({PreferenceValue params});
 }
 
 /// @nodoc
@@ -896,9 +1108,9 @@ class __$$EditPreferencesEventImplCopyWithImpl<$Res>
   }) {
     return _then(_$EditPreferencesEventImpl(
       params: null == params
-          ? _value._params
+          ? _value.params
           : params // ignore: cast_nullable_to_non_nullable
-              as List<PreferenceValue>,
+              as PreferenceValue,
     ));
   }
 }
@@ -906,17 +1118,10 @@ class __$$EditPreferencesEventImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
-  const _$EditPreferencesEventImpl(
-      {required final List<PreferenceValue> params})
-      : _params = params;
+  const _$EditPreferencesEventImpl({required this.params});
 
-  final List<PreferenceValue> _params;
   @override
-  List<PreferenceValue> get params {
-    if (_params is EqualUnmodifiableListView) return _params;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_params);
-  }
+  final PreferenceValue params;
 
   @override
   String toString() {
@@ -928,12 +1133,11 @@ class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$EditPreferencesEventImpl &&
-            const DeepCollectionEquality().equals(other._params, _params));
+            (identical(other.params, params) || other.params == params));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_params));
+  int get hashCode => Object.hash(runtimeType, params);
 
   @JsonKey(ignore: true)
   @override
@@ -949,8 +1153,9 @@ class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
     required TResult Function() login,
     required TResult Function() register,
     required TResult Function() getUserProfile,
+    required TResult Function() deleteUserProfile,
     required TResult Function(EditUserProfileParams params) editUserProfile,
-    required TResult Function(List<PreferenceValue> params) editPreferences,
+    required TResult Function(PreferenceValue params) editPreferences,
     required TResult Function() checkUserLogged,
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
@@ -970,8 +1175,9 @@ class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
     TResult? Function()? login,
     TResult? Function()? register,
     TResult? Function()? getUserProfile,
+    TResult? Function()? deleteUserProfile,
     TResult? Function(EditUserProfileParams params)? editUserProfile,
-    TResult? Function(List<PreferenceValue> params)? editPreferences,
+    TResult? Function(PreferenceValue params)? editPreferences,
     TResult? Function()? checkUserLogged,
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
@@ -991,8 +1197,9 @@ class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
     TResult Function()? login,
     TResult Function()? register,
     TResult Function()? getUserProfile,
+    TResult Function()? deleteUserProfile,
     TResult Function(EditUserProfileParams params)? editUserProfile,
-    TResult Function(List<PreferenceValue> params)? editPreferences,
+    TResult Function(PreferenceValue params)? editPreferences,
     TResult Function()? checkUserLogged,
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
@@ -1016,6 +1223,7 @@ class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
     required TResult Function(_LoginEvent value) login,
     required TResult Function(_RegisterEvent value) register,
     required TResult Function(_GetUserProfileEvent value) getUserProfile,
+    required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
     required TResult Function(_EditUserProfileEvent value) editUserProfile,
     required TResult Function(_EditPreferencesEvent value) editPreferences,
     required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
@@ -1038,6 +1246,7 @@ class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
     TResult? Function(_LoginEvent value)? login,
     TResult? Function(_RegisterEvent value)? register,
     TResult? Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult? Function(_EditUserProfileEvent value)? editUserProfile,
     TResult? Function(_EditPreferencesEvent value)? editPreferences,
     TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
@@ -1058,6 +1267,7 @@ class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
     TResult Function(_LoginEvent value)? login,
     TResult Function(_RegisterEvent value)? register,
     TResult Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult Function(_EditUserProfileEvent value)? editUserProfile,
     TResult Function(_EditPreferencesEvent value)? editPreferences,
     TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
@@ -1078,11 +1288,10 @@ class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
 }
 
 abstract class _EditPreferencesEvent implements AuthEvent {
-  const factory _EditPreferencesEvent(
-          {required final List<PreferenceValue> params}) =
+  const factory _EditPreferencesEvent({required final PreferenceValue params}) =
       _$EditPreferencesEventImpl;
 
-  List<PreferenceValue> get params;
+  PreferenceValue get params;
   @JsonKey(ignore: true)
   _$$EditPreferencesEventImplCopyWith<_$EditPreferencesEventImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -1130,8 +1339,9 @@ class _$CheckUserLoggedEventImpl implements _CheckUserLoggedEvent {
     required TResult Function() login,
     required TResult Function() register,
     required TResult Function() getUserProfile,
+    required TResult Function() deleteUserProfile,
     required TResult Function(EditUserProfileParams params) editUserProfile,
-    required TResult Function(List<PreferenceValue> params) editPreferences,
+    required TResult Function(PreferenceValue params) editPreferences,
     required TResult Function() checkUserLogged,
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
@@ -1151,8 +1361,9 @@ class _$CheckUserLoggedEventImpl implements _CheckUserLoggedEvent {
     TResult? Function()? login,
     TResult? Function()? register,
     TResult? Function()? getUserProfile,
+    TResult? Function()? deleteUserProfile,
     TResult? Function(EditUserProfileParams params)? editUserProfile,
-    TResult? Function(List<PreferenceValue> params)? editPreferences,
+    TResult? Function(PreferenceValue params)? editPreferences,
     TResult? Function()? checkUserLogged,
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
@@ -1172,8 +1383,9 @@ class _$CheckUserLoggedEventImpl implements _CheckUserLoggedEvent {
     TResult Function()? login,
     TResult Function()? register,
     TResult Function()? getUserProfile,
+    TResult Function()? deleteUserProfile,
     TResult Function(EditUserProfileParams params)? editUserProfile,
-    TResult Function(List<PreferenceValue> params)? editPreferences,
+    TResult Function(PreferenceValue params)? editPreferences,
     TResult Function()? checkUserLogged,
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
@@ -1197,6 +1409,7 @@ class _$CheckUserLoggedEventImpl implements _CheckUserLoggedEvent {
     required TResult Function(_LoginEvent value) login,
     required TResult Function(_RegisterEvent value) register,
     required TResult Function(_GetUserProfileEvent value) getUserProfile,
+    required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
     required TResult Function(_EditUserProfileEvent value) editUserProfile,
     required TResult Function(_EditPreferencesEvent value) editPreferences,
     required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
@@ -1219,6 +1432,7 @@ class _$CheckUserLoggedEventImpl implements _CheckUserLoggedEvent {
     TResult? Function(_LoginEvent value)? login,
     TResult? Function(_RegisterEvent value)? register,
     TResult? Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult? Function(_EditUserProfileEvent value)? editUserProfile,
     TResult? Function(_EditPreferencesEvent value)? editPreferences,
     TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
@@ -1239,6 +1453,7 @@ class _$CheckUserLoggedEventImpl implements _CheckUserLoggedEvent {
     TResult Function(_LoginEvent value)? login,
     TResult Function(_RegisterEvent value)? register,
     TResult Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult Function(_EditUserProfileEvent value)? editUserProfile,
     TResult Function(_EditPreferencesEvent value)? editPreferences,
     TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
@@ -1305,8 +1520,9 @@ class _$ConfirmUserEmailEventImpl implements _ConfirmUserEmailEvent {
     required TResult Function() login,
     required TResult Function() register,
     required TResult Function() getUserProfile,
+    required TResult Function() deleteUserProfile,
     required TResult Function(EditUserProfileParams params) editUserProfile,
-    required TResult Function(List<PreferenceValue> params) editPreferences,
+    required TResult Function(PreferenceValue params) editPreferences,
     required TResult Function() checkUserLogged,
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
@@ -1326,8 +1542,9 @@ class _$ConfirmUserEmailEventImpl implements _ConfirmUserEmailEvent {
     TResult? Function()? login,
     TResult? Function()? register,
     TResult? Function()? getUserProfile,
+    TResult? Function()? deleteUserProfile,
     TResult? Function(EditUserProfileParams params)? editUserProfile,
-    TResult? Function(List<PreferenceValue> params)? editPreferences,
+    TResult? Function(PreferenceValue params)? editPreferences,
     TResult? Function()? checkUserLogged,
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
@@ -1347,8 +1564,9 @@ class _$ConfirmUserEmailEventImpl implements _ConfirmUserEmailEvent {
     TResult Function()? login,
     TResult Function()? register,
     TResult Function()? getUserProfile,
+    TResult Function()? deleteUserProfile,
     TResult Function(EditUserProfileParams params)? editUserProfile,
-    TResult Function(List<PreferenceValue> params)? editPreferences,
+    TResult Function(PreferenceValue params)? editPreferences,
     TResult Function()? checkUserLogged,
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
@@ -1372,6 +1590,7 @@ class _$ConfirmUserEmailEventImpl implements _ConfirmUserEmailEvent {
     required TResult Function(_LoginEvent value) login,
     required TResult Function(_RegisterEvent value) register,
     required TResult Function(_GetUserProfileEvent value) getUserProfile,
+    required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
     required TResult Function(_EditUserProfileEvent value) editUserProfile,
     required TResult Function(_EditPreferencesEvent value) editPreferences,
     required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
@@ -1394,6 +1613,7 @@ class _$ConfirmUserEmailEventImpl implements _ConfirmUserEmailEvent {
     TResult? Function(_LoginEvent value)? login,
     TResult? Function(_RegisterEvent value)? register,
     TResult? Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult? Function(_EditUserProfileEvent value)? editUserProfile,
     TResult? Function(_EditPreferencesEvent value)? editPreferences,
     TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
@@ -1414,6 +1634,7 @@ class _$ConfirmUserEmailEventImpl implements _ConfirmUserEmailEvent {
     TResult Function(_LoginEvent value)? login,
     TResult Function(_RegisterEvent value)? register,
     TResult Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult Function(_EditUserProfileEvent value)? editUserProfile,
     TResult Function(_EditPreferencesEvent value)? editPreferences,
     TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
@@ -1482,8 +1703,9 @@ class _$ResendConfirmUserEmailEventImpl
     required TResult Function() login,
     required TResult Function() register,
     required TResult Function() getUserProfile,
+    required TResult Function() deleteUserProfile,
     required TResult Function(EditUserProfileParams params) editUserProfile,
-    required TResult Function(List<PreferenceValue> params) editPreferences,
+    required TResult Function(PreferenceValue params) editPreferences,
     required TResult Function() checkUserLogged,
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
@@ -1503,8 +1725,9 @@ class _$ResendConfirmUserEmailEventImpl
     TResult? Function()? login,
     TResult? Function()? register,
     TResult? Function()? getUserProfile,
+    TResult? Function()? deleteUserProfile,
     TResult? Function(EditUserProfileParams params)? editUserProfile,
-    TResult? Function(List<PreferenceValue> params)? editPreferences,
+    TResult? Function(PreferenceValue params)? editPreferences,
     TResult? Function()? checkUserLogged,
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
@@ -1524,8 +1747,9 @@ class _$ResendConfirmUserEmailEventImpl
     TResult Function()? login,
     TResult Function()? register,
     TResult Function()? getUserProfile,
+    TResult Function()? deleteUserProfile,
     TResult Function(EditUserProfileParams params)? editUserProfile,
-    TResult Function(List<PreferenceValue> params)? editPreferences,
+    TResult Function(PreferenceValue params)? editPreferences,
     TResult Function()? checkUserLogged,
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
@@ -1549,6 +1773,7 @@ class _$ResendConfirmUserEmailEventImpl
     required TResult Function(_LoginEvent value) login,
     required TResult Function(_RegisterEvent value) register,
     required TResult Function(_GetUserProfileEvent value) getUserProfile,
+    required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
     required TResult Function(_EditUserProfileEvent value) editUserProfile,
     required TResult Function(_EditPreferencesEvent value) editPreferences,
     required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
@@ -1571,6 +1796,7 @@ class _$ResendConfirmUserEmailEventImpl
     TResult? Function(_LoginEvent value)? login,
     TResult? Function(_RegisterEvent value)? register,
     TResult? Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult? Function(_EditUserProfileEvent value)? editUserProfile,
     TResult? Function(_EditPreferencesEvent value)? editPreferences,
     TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
@@ -1591,6 +1817,7 @@ class _$ResendConfirmUserEmailEventImpl
     TResult Function(_LoginEvent value)? login,
     TResult Function(_RegisterEvent value)? register,
     TResult Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult Function(_EditUserProfileEvent value)? editUserProfile,
     TResult Function(_EditPreferencesEvent value)? editPreferences,
     TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
@@ -1656,8 +1883,9 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
     required TResult Function() login,
     required TResult Function() register,
     required TResult Function() getUserProfile,
+    required TResult Function() deleteUserProfile,
     required TResult Function(EditUserProfileParams params) editUserProfile,
-    required TResult Function(List<PreferenceValue> params) editPreferences,
+    required TResult Function(PreferenceValue params) editPreferences,
     required TResult Function() checkUserLogged,
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
@@ -1677,8 +1905,9 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
     TResult? Function()? login,
     TResult? Function()? register,
     TResult? Function()? getUserProfile,
+    TResult? Function()? deleteUserProfile,
     TResult? Function(EditUserProfileParams params)? editUserProfile,
-    TResult? Function(List<PreferenceValue> params)? editPreferences,
+    TResult? Function(PreferenceValue params)? editPreferences,
     TResult? Function()? checkUserLogged,
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
@@ -1698,8 +1927,9 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
     TResult Function()? login,
     TResult Function()? register,
     TResult Function()? getUserProfile,
+    TResult Function()? deleteUserProfile,
     TResult Function(EditUserProfileParams params)? editUserProfile,
-    TResult Function(List<PreferenceValue> params)? editPreferences,
+    TResult Function(PreferenceValue params)? editPreferences,
     TResult Function()? checkUserLogged,
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
@@ -1723,6 +1953,7 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
     required TResult Function(_LoginEvent value) login,
     required TResult Function(_RegisterEvent value) register,
     required TResult Function(_GetUserProfileEvent value) getUserProfile,
+    required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
     required TResult Function(_EditUserProfileEvent value) editUserProfile,
     required TResult Function(_EditPreferencesEvent value) editPreferences,
     required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
@@ -1745,6 +1976,7 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
     TResult? Function(_LoginEvent value)? login,
     TResult? Function(_RegisterEvent value)? register,
     TResult? Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult? Function(_EditUserProfileEvent value)? editUserProfile,
     TResult? Function(_EditPreferencesEvent value)? editPreferences,
     TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
@@ -1765,6 +1997,7 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
     TResult Function(_LoginEvent value)? login,
     TResult Function(_RegisterEvent value)? register,
     TResult Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult Function(_EditUserProfileEvent value)? editUserProfile,
     TResult Function(_EditPreferencesEvent value)? editPreferences,
     TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
@@ -1897,8 +2130,9 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
     required TResult Function() login,
     required TResult Function() register,
     required TResult Function() getUserProfile,
+    required TResult Function() deleteUserProfile,
     required TResult Function(EditUserProfileParams params) editUserProfile,
-    required TResult Function(List<PreferenceValue> params) editPreferences,
+    required TResult Function(PreferenceValue params) editPreferences,
     required TResult Function() checkUserLogged,
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
@@ -1918,8 +2152,9 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
     TResult? Function()? login,
     TResult? Function()? register,
     TResult? Function()? getUserProfile,
+    TResult? Function()? deleteUserProfile,
     TResult? Function(EditUserProfileParams params)? editUserProfile,
-    TResult? Function(List<PreferenceValue> params)? editPreferences,
+    TResult? Function(PreferenceValue params)? editPreferences,
     TResult? Function()? checkUserLogged,
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
@@ -1939,8 +2174,9 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
     TResult Function()? login,
     TResult Function()? register,
     TResult Function()? getUserProfile,
+    TResult Function()? deleteUserProfile,
     TResult Function(EditUserProfileParams params)? editUserProfile,
-    TResult Function(List<PreferenceValue> params)? editPreferences,
+    TResult Function(PreferenceValue params)? editPreferences,
     TResult Function()? checkUserLogged,
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
@@ -1964,6 +2200,7 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
     required TResult Function(_LoginEvent value) login,
     required TResult Function(_RegisterEvent value) register,
     required TResult Function(_GetUserProfileEvent value) getUserProfile,
+    required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
     required TResult Function(_EditUserProfileEvent value) editUserProfile,
     required TResult Function(_EditPreferencesEvent value) editPreferences,
     required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
@@ -1986,6 +2223,7 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
     TResult? Function(_LoginEvent value)? login,
     TResult? Function(_RegisterEvent value)? register,
     TResult? Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult? Function(_EditUserProfileEvent value)? editUserProfile,
     TResult? Function(_EditPreferencesEvent value)? editPreferences,
     TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
@@ -2006,6 +2244,7 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
     TResult Function(_LoginEvent value)? login,
     TResult Function(_RegisterEvent value)? register,
     TResult Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult Function(_EditUserProfileEvent value)? editUserProfile,
     TResult Function(_EditPreferencesEvent value)? editPreferences,
     TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
@@ -2118,8 +2357,9 @@ class _$AddFavoriteSportsEventImpl implements _AddFavoriteSportsEvent {
     required TResult Function() login,
     required TResult Function() register,
     required TResult Function() getUserProfile,
+    required TResult Function() deleteUserProfile,
     required TResult Function(EditUserProfileParams params) editUserProfile,
-    required TResult Function(List<PreferenceValue> params) editPreferences,
+    required TResult Function(PreferenceValue params) editPreferences,
     required TResult Function() checkUserLogged,
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
@@ -2139,8 +2379,9 @@ class _$AddFavoriteSportsEventImpl implements _AddFavoriteSportsEvent {
     TResult? Function()? login,
     TResult? Function()? register,
     TResult? Function()? getUserProfile,
+    TResult? Function()? deleteUserProfile,
     TResult? Function(EditUserProfileParams params)? editUserProfile,
-    TResult? Function(List<PreferenceValue> params)? editPreferences,
+    TResult? Function(PreferenceValue params)? editPreferences,
     TResult? Function()? checkUserLogged,
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
@@ -2160,8 +2401,9 @@ class _$AddFavoriteSportsEventImpl implements _AddFavoriteSportsEvent {
     TResult Function()? login,
     TResult Function()? register,
     TResult Function()? getUserProfile,
+    TResult Function()? deleteUserProfile,
     TResult Function(EditUserProfileParams params)? editUserProfile,
-    TResult Function(List<PreferenceValue> params)? editPreferences,
+    TResult Function(PreferenceValue params)? editPreferences,
     TResult Function()? checkUserLogged,
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
@@ -2185,6 +2427,7 @@ class _$AddFavoriteSportsEventImpl implements _AddFavoriteSportsEvent {
     required TResult Function(_LoginEvent value) login,
     required TResult Function(_RegisterEvent value) register,
     required TResult Function(_GetUserProfileEvent value) getUserProfile,
+    required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
     required TResult Function(_EditUserProfileEvent value) editUserProfile,
     required TResult Function(_EditPreferencesEvent value) editPreferences,
     required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
@@ -2207,6 +2450,7 @@ class _$AddFavoriteSportsEventImpl implements _AddFavoriteSportsEvent {
     TResult? Function(_LoginEvent value)? login,
     TResult? Function(_RegisterEvent value)? register,
     TResult? Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult? Function(_EditUserProfileEvent value)? editUserProfile,
     TResult? Function(_EditPreferencesEvent value)? editPreferences,
     TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
@@ -2227,6 +2471,7 @@ class _$AddFavoriteSportsEventImpl implements _AddFavoriteSportsEvent {
     TResult Function(_LoginEvent value)? login,
     TResult Function(_RegisterEvent value)? register,
     TResult Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult Function(_EditUserProfileEvent value)? editUserProfile,
     TResult Function(_EditPreferencesEvent value)? editPreferences,
     TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
@@ -2334,8 +2579,9 @@ class _$DeleteFavoriteSportsEventImpl implements _DeleteFavoriteSportsEvent {
     required TResult Function() login,
     required TResult Function() register,
     required TResult Function() getUserProfile,
+    required TResult Function() deleteUserProfile,
     required TResult Function(EditUserProfileParams params) editUserProfile,
-    required TResult Function(List<PreferenceValue> params) editPreferences,
+    required TResult Function(PreferenceValue params) editPreferences,
     required TResult Function() checkUserLogged,
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
@@ -2355,8 +2601,9 @@ class _$DeleteFavoriteSportsEventImpl implements _DeleteFavoriteSportsEvent {
     TResult? Function()? login,
     TResult? Function()? register,
     TResult? Function()? getUserProfile,
+    TResult? Function()? deleteUserProfile,
     TResult? Function(EditUserProfileParams params)? editUserProfile,
-    TResult? Function(List<PreferenceValue> params)? editPreferences,
+    TResult? Function(PreferenceValue params)? editPreferences,
     TResult? Function()? checkUserLogged,
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
@@ -2376,8 +2623,9 @@ class _$DeleteFavoriteSportsEventImpl implements _DeleteFavoriteSportsEvent {
     TResult Function()? login,
     TResult Function()? register,
     TResult Function()? getUserProfile,
+    TResult Function()? deleteUserProfile,
     TResult Function(EditUserProfileParams params)? editUserProfile,
-    TResult Function(List<PreferenceValue> params)? editPreferences,
+    TResult Function(PreferenceValue params)? editPreferences,
     TResult Function()? checkUserLogged,
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
@@ -2401,6 +2649,7 @@ class _$DeleteFavoriteSportsEventImpl implements _DeleteFavoriteSportsEvent {
     required TResult Function(_LoginEvent value) login,
     required TResult Function(_RegisterEvent value) register,
     required TResult Function(_GetUserProfileEvent value) getUserProfile,
+    required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
     required TResult Function(_EditUserProfileEvent value) editUserProfile,
     required TResult Function(_EditPreferencesEvent value) editPreferences,
     required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
@@ -2423,6 +2672,7 @@ class _$DeleteFavoriteSportsEventImpl implements _DeleteFavoriteSportsEvent {
     TResult? Function(_LoginEvent value)? login,
     TResult? Function(_RegisterEvent value)? register,
     TResult? Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult? Function(_EditUserProfileEvent value)? editUserProfile,
     TResult? Function(_EditPreferencesEvent value)? editPreferences,
     TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
@@ -2443,6 +2693,7 @@ class _$DeleteFavoriteSportsEventImpl implements _DeleteFavoriteSportsEvent {
     TResult Function(_LoginEvent value)? login,
     TResult Function(_RegisterEvent value)? register,
     TResult Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult Function(_EditUserProfileEvent value)? editUserProfile,
     TResult Function(_EditPreferencesEvent value)? editPreferences,
     TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,

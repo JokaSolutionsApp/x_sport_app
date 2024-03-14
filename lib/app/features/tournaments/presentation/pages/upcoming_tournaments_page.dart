@@ -277,7 +277,7 @@ class UpCommingTournamentsPage extends StatelessWidget {
                                     Text(
                                       'الانضمام للبطولة متاح',
                                       style: TextStyle(
-                                          color: XColors.Submit_Button_Color,
+                                          color: XColors.primary,
                                           fontSize: 12.sp,
                                           fontWeight: FontWeight.w700),
                                     ),
@@ -286,7 +286,7 @@ class UpCommingTournamentsPage extends StatelessWidget {
                                       height: 22,
                                       radius: 0,
                                       textSize: 10,
-                                      fillColor: XColors.Submit_Button_Color,
+                                      fillColor: XColors.primary,
                                       textColor: Colors.white,
                                       text: 'عرض المزيد',
                                       onPressed: () {},

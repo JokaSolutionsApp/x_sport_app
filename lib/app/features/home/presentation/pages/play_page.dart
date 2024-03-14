@@ -101,8 +101,7 @@ class PlayPage extends StatelessWidget {
                                                 .image()
                                             : Icon(
                                                 matches[index].icon,
-                                                color:
-                                                    XColors.Submit_Button_Color,
+                                                color: XColors.primary,
                                                 size: 30.sp,
                                               ))
                                   ],

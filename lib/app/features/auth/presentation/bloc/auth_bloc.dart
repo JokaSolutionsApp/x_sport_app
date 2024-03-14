@@ -10,12 +10,14 @@ import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/add_favori
 import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/complete_resgisteration_usecase.dart';
 import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/confirm_user_email_usecase.dart';
 import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/delete_favorite_sports_usecse.dart';
+import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/delete_user_profile.dart';
 import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/edit__user_profile_usecase.dart';
 import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/edit_preferences_usecase.dart';
 import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/get_user_profile_usecase.dart';
 import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/login_usecase.dart';
 import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/register_usecase.dart';
 import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/resend_confirm_user_email_usecase.dart';
+import 'package:x_sport/app/features/auth/presentation/pages/login_page.dart';
 import 'package:x_sport/app/features/home/presentation/pages/main_page.dart';
 import 'package:x_sport/core/constance/app_functions.dart';
 import 'package:x_sport/core/error/failure.dart';
@@ -46,6 +48,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final ResendConfirmUserEmailUseCase resendConfirmUserEmailUseCase;
   final AddFavoriteSportsUseCase addFavoriteSportsUseCase;
   final DeleteFavoriteSportsUseCase deleteFavoriteSportsUseCase;
+  final DeleteUserProfileUseCase deleteUserProfileUseCase;
 
   AuthBloc(
     this.registerUseCase,
@@ -61,11 +64,14 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     this.resendConfirmUserEmailUseCase,
     this.addFavoriteSportsUseCase,
     this.deleteFavoriteSportsUseCase,
+    this.deleteUserProfileUseCase,
   ) : super(const AuthState.initial()) {
     on<AuthEvent>((event, emit) async {
       await event.map(
         login: (event) async => await _login(event, emit),
         register: (event) async => await _register(event, emit),
+        deleteUserProfile: (event) async =>
+            await _deleteUserProfile(event, emit),
         editUserProfile: (event) async => await _editUserProfile(event, emit),
         confirmUserEmail: (event) async => await _confirmUserEmail(event, emit),
         checkUserLogged: (event) async => await _checkUserLogged(event, emit),
@@ -73,19 +79,19 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             await _resendconfirmUserEmail(event, emit),
         completeRegistration: (event) async =>
             await _completeRegistration(event, emit),
-        getSports: (event) async => null,
-        // await _getSports(event, emit),
-        getUserProfile: (event) async => null,
-        // await _getUserProfile(event, emit),
-        editPreferences: (event) async => null,
-        // await _editPreferences(event, emit),
-        addFavoriteSports: (event) async => null,
-        // await _addFavoriteSports(event, emit),
-        deleteFavoriteSports: (event) async => null,
-        // await _deleteFavoriteSports(event, emit),
+        getSports: (event) async => await _getSports(event, emit),
+        getUserProfile: (event) async => await _getUserProfile(event, emit),
+        editPreferences: (event) async => await _editPreferences(event, emit),
+        addFavoriteSports: (event) async =>
+            await _addFavoriteSports(event, emit),
+        deleteFavoriteSports: (event) async =>
+            await _deleteFavoriteSports(event, emit),
       );
     });
   }
+
+  List<SportEntity> sports = [];
+
   Future<void> _register(event, Emitter<AuthState> emit) async {
     event as _$RegisterEventImpl;
     emit(const AuthState.registerLoading());
@@ -164,7 +170,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     final result = await loginUseCase();
 
     await result.fold((failure) async {
-      await EasyLoading.dismiss();
       if (failure.statusCode == 500) {
         EasyLoading.showError('معلرمات الحساب خاطئة');
       } else {
@@ -172,10 +177,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       }
       emit(const AuthState.logginFailure());
     }, (r) async {
-      await EasyLoading
-          .dismiss(); // Dismiss the loading indicator on success as well
+      await EasyLoading.dismiss();
       if (r.toString().isNotEmpty) {
         emit(AuthState.loggedIn(user: r));
+        emit(AuthState.userProfileFetched(userProfile: r));
+
         Navigator.of(navigatorKey.currentContext!).push(
           MaterialPageRoute(builder: (context) => const MainPage()),
         );
@@ -227,11 +233,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   Future<void> _editUserProfile(event, Emitter<AuthState> emit) async {
-    event as _$LoginEventImpl;
+    event as _$EditUserProfileEventImpl;
     emit(const AuthState.userProfileLoading());
     EasyLoadingInit.startLoading();
 
-    final result = await loginUseCase();
+    final result = await editUserProfileUseCase(params: event.params);
 
     await result.fold((failure) async {
       await EasyLoading.dismiss();
@@ -250,11 +256,14 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     });
   }
 
-  Future<void> getUserProfile(event, Emitter<AuthState> emit) async {
+  Future<void> _getUserProfile(event, Emitter<AuthState> emit) async {
     event as _$GetUserProfileEventImpl;
     emit(const AuthState.userProfileLoading());
     final result = await getUserProfileUseCase();
     result.fold((failure) {
+      if (failure.statusCode == 401) {
+        add(const AuthEvent.checkUserLogged());
+      }
       emit(const AuthState.userProfileFailure());
     }, (UserProfileEntity? userProfile) {
       if (userProfile != null) {
@@ -263,7 +272,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     });
   }
 
-  Future<void> editPreferences(event, Emitter<AuthState> emit) async {
+  Future<void> _editPreferences(event, Emitter<AuthState> emit) async {
     event as _$EditPreferencesEventImpl;
     emit(const AuthState.userProfileLocalLoading());
     final result = await editPreferencesUseCase(params: event.params);
@@ -274,7 +283,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     });
   }
 
-  Future<void> addFavoriteSports(event, Emitter<AuthState> emit) async {
+  Future<void> _addFavoriteSports(event, Emitter<AuthState> emit) async {
     event as _$AddFavoriteSportsEventImpl;
     emit(const AuthState.userProfileLocalLoading());
     final result = await addFavoriteSportsUseCase(sportsIds: event.sportsIds);
@@ -285,7 +294,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     });
   }
 
-  Future<void> deleteFavoriteSports(event, Emitter<AuthState> emit) async {
+  Future<void> _deleteFavoriteSports(event, Emitter<AuthState> emit) async {
     event as _$DeleteFavoriteSportsEventImpl;
     emit(const AuthState.userProfileLocalLoading());
     final result =
@@ -297,15 +306,33 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     });
   }
 
-  Future<void> getSports(event, Emitter<AuthState> emit) async {
+  Future<void> _getSports(event, Emitter<AuthState> emit) async {
     event as _$GetSportsEventImpl;
-    event as _$DeleteFavoriteSportsEventImpl;
     emit(const AuthState.getSportsLoading());
     final result = await getsportsUseCase();
     result.fold((f) {
       emit(AuthState.getSportsFailure(failure: f));
     }, (r) {
+      print('getSports Bloc');
+
+      sports = r;
       emit(AuthState.sportsFetched(sports: r));
+    });
+  }
+
+  Future<void> _deleteUserProfile(event, Emitter<AuthState> emit) async {
+    event as _$DeleteUserProfileEventImpl;
+    EasyLoadingInit.startLoading();
+    emit(const AuthState.userProfileLocalLoading());
+    final result = await deleteUserProfileUseCase();
+    result.fold((f) {
+      EasyLoading.showError(f.statusCode.toString());
+    }, (r) {
+      EasyLoading.dismiss();
+      Navigator.of(navigatorKey.currentContext!).pushAndRemoveUntil(
+        MaterialPageRoute(builder: (context) => const LoginPage()),
+        ModalRoute.withName('/'),
+      );
     });
   }
 }

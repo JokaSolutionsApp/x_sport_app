@@ -37,7 +37,8 @@ class FilterComponent extends StatelessWidget {
             textDirection: TextDirection.rtl,
             child: GridView.builder(
                 shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(), // Disable scrolling
+                physics:
+                    const NeverScrollableScrollPhysics(), // Disable scrolling
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                   maxCrossAxisExtent: 110.w,
                   mainAxisExtent: 40.h,
@@ -50,9 +51,8 @@ class FilterComponent extends StatelessWidget {
                       valueListenable: selectedIndex,
                       builder: (context, isSelected, child) {
                         final isSelected = selectedIndex.value == index;
-                        final Color selectedButton = isSelected
-                            ? XColors.Submit_Button_Color
-                            : Colors.white;
+                        final Color selectedButton =
+                            isSelected ? XColors.primary : Colors.white;
                         return GestureDetector(
                           onTap: () {
                             selectedIndex.value = index;

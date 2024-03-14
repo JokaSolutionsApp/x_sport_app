@@ -21,10 +21,9 @@ abstract class BaseUserRemoteDataSource {
   Future<bool> register();
   Future<UserProfileEntity> editUserProfile(
       {required EditUserProfileParams params});
-
+  Future<bool> deleteUserProfile();
   Future<UserProfileEntity> getUserProfile();
-  Future<UserProfileEntity> editPreferences(
-      {required List<PreferenceValue> params});
+  Future<UserProfileEntity> editPreferences({required PreferenceValue params});
 
   Future<UserProfileEntity> deleteFavoriteSports(
       {required List<int> sportsIds});
@@ -144,7 +143,7 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
     print(formData);
     print(data);
     if (response.statusCode == 200) {
-      return UserProfileModel.fromJson(data);
+      return UserProfileModel.fromJson(data['data']);
     } else {
       throw ServerException(errorModel: ErrorModel.formJson(data));
     }
@@ -159,17 +158,15 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
 
     final response = await ApiService.post(ApiConstance.loginApi, postData);
 
-    final data = response.data['data'];
-    print(response.statusCode);
-    print(response.data);
-    //
+    final data = response.data;
+
     if (response.statusCode == 200) {
-      final token = data['authResult']['token'];
-      final refreshToken = data['authResult']['refreshToken'];
+      final token = data['data']['authResult']['token'];
+      final refreshToken = data['data']['authResult']['refreshToken'];
       sl<SecureStorageService>().write('token', token);
       sl<SecureStorageService>().write('refreshToken', refreshToken);
 
-      return UserProfileModel.fromJson(data['userProfile']);
+      return UserProfileModel.fromJson(data['data']['userProfile']);
     } else if (response.statusCode == 500) {
       throw ServerException(errorModel: ErrorModel.formJson(data));
     } else {
@@ -206,9 +203,12 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
   Future<List<SportEntity>> getSports() async {
     final response = await ApiService.get(ApiConstance.getSportsApi);
     final data = response.data;
+    print('$data getSports');
 
     if (response.statusCode == 200) {
-      return data.map<SportEntity>((e) => SportModel.fromJson(e)).toList();
+      return data['data']
+          .map<SportEntity>((e) => SportModel.fromJson(e))
+          .toList();
     } else {
       throw ServerException(errorModel: ErrorModel.formJson(data));
     }
@@ -216,25 +216,19 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
 
   @override
   Future<UserProfileEntity> editPreferences(
-      {required List<PreferenceValue> params}) async {
-    final editPreferencesParams =
-        EditPreferencesParams(preferenceValues: params);
+      {required PreferenceValue params}) async {
+    final postData = params.toMap();
 
-    final postData = editPreferencesParams.toMap();
+    final response =
+        await ApiService.post(ApiConstance.editPreferencesApi, postData);
 
-    try {
-      final response =
-          await ApiService.post(ApiConstance.editPreferencesApi, postData);
+    final data = response.data;
+    print('editPreferences $data');
 
-      final data = response.data;
-
-      if (response.statusCode == 200) {
-        return data;
-      } else {
-        throw ServerException(errorModel: ErrorModel.formJson({}));
-      }
-    } catch (e) {
-      throw ServerException(errorModel: ErrorModel.formJson({}));
+    if (response.statusCode == 200) {
+      return UserProfileModel.fromJson(data['data']);
+    } else {
+      throw ServerException(errorModel: ErrorModel.formJson(data));
     }
   }
 
@@ -255,18 +249,17 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
   @override
   Future<UserProfileEntity> addFavoriteSports(
       {required List<int> sportsIds}) async {
-    FormData formData = FormData();
+    final postData = {
+      'sportsIds': sportsIds,
+    };
 
-    for (int sportId in sportsIds) {
-      formData.fields.add(MapEntry('sportsIds[]', sportId.toString()));
-    }
-
-    final response = await ApiService.postFormData(
-        ApiConstance.addFavoriteSportsApi, formData);
-    final data = response.data;
+    final response =
+        await ApiService.post(ApiConstance.addFavoriteSportsApi, postData);
+    final data = response.data['data'];
+    print('addFavoriteSports $data');
 
     if (response.statusCode == 200) {
-      return data;
+      return UserProfileModel.fromJson(data);
     } else {
       throw ServerException(errorModel: ErrorModel.formJson(data));
     }
@@ -275,18 +268,16 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
   @override
   Future<UserProfileEntity> deleteFavoriteSports(
       {required List<int> sportsIds}) async {
-    FormData formData = FormData();
+    final postData = {
+      'sportsIds': sportsIds,
+    };
 
-    for (int sportId in sportsIds) {
-      formData.fields.add(MapEntry('sportsIds[]', sportId.toString()));
-    }
-
-    final response = await ApiService.postFormData(
-        ApiConstance.addFavoriteSportsApi, formData);
-    final data = response.data;
-
+    final response =
+        await ApiService.post(ApiConstance.deleteFavoriteSports, postData);
+    final data = response.data['data'];
+    print('deleteFavoriteSports $data');
     if (response.statusCode == 200) {
-      return data;
+      return UserProfileModel.fromJson(data);
     } else {
       throw ServerException(errorModel: ErrorModel.formJson(data));
     }
@@ -294,18 +285,20 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
 
   @override
   Future<UserProfileEntity> getUserProfile() async {
-    try {
-      final response = await ApiService.get(ApiConstance.getUserProfileApi);
+    print('object');
+    final response = await ApiService.get(ApiConstance.getUserProfileApi);
 
-      final data = response.data;
-
-      if (response.statusCode == 200) {
-        return UserProfileModel.fromJson(data);
-      } else {
-        throw ServerException(errorModel: ErrorModel.formJson(data));
-      }
-    } catch (e) {
-      throw ServerException(errorModel: ErrorModel.formJson(const {}));
+    final data = response.data['data'];
+    print("getUserProfile $data");
+    if (response.statusCode == 200) {
+      return UserProfileModel.fromJson(data);
+    } else if (response.statusCode == 401) {
+      await sl<SecureStorageService>().delete('token');
+      await sl<SecureStorageService>().delete('refreshToken');
+      throw ServerException(
+          errorModel: ErrorModel.formJson({'statusCode': 401}));
+    } else {
+      throw ServerException(errorModel: ErrorModel.formJson(data));
     }
   }
 
@@ -326,9 +319,9 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
     formData.fields.add(MapEntry('Name', params.name));
     formData.fields.add(MapEntry('Phone', params.phone));
     formData.fields.add(MapEntry('Gender', params.gender));
-    formData.fields.add(MapEntry('Longitude', params.gender));
-    formData.fields.add(MapEntry('Latitude', params.gender));
-
+    formData.fields.add(MapEntry('Longitude', params.lat.toString()));
+    formData.fields.add(MapEntry('Latitude', params.long.toString()));
+    print("int sportId in params.sportIds ${params.sportIds}");
     for (int sportId in params.sportIds) {
       formData.fields.add(MapEntry('SportsIds[]', sportId.toString()));
     }
@@ -338,7 +331,7 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
     final data = response.data;
 
     if (response.statusCode == 200) {
-      return UserProfileModel.fromJson(data);
+      return UserProfileModel.fromJson(data['data']);
     } else {
       throw ServerException(errorModel: ErrorModel.formJson(data));
     }
@@ -355,6 +348,23 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
 
       if (response.statusCode == 200) {
         return UserProfileModel.fromJson(data);
+      } else {
+        throw ServerException(errorModel: ErrorModel.formJson(data));
+      }
+    } catch (e) {
+      throw ServerException(errorModel: ErrorModel.formJson(const {}));
+    }
+  }
+
+  @override
+  Future<bool> deleteUserProfile() async {
+    try {
+      final response = await ApiService.delete(ApiConstance.deleteUserProfile);
+
+      final data = response.data['data'];
+
+      if (response.statusCode == 200) {
+        return data;
       } else {
         throw ServerException(errorModel: ErrorModel.formJson(data));
       }

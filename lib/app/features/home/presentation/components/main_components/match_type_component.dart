@@ -34,7 +34,7 @@ class MatchTypeComponent extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     side: BorderSide(
                         color: isSelected
-                            ? XColors.Submit_Button_Color
+                            ? XColors.primary
                             : const Color(0xFF828282),
                         width: isSelected ? 1.5.w : 1.w),
                     borderRadius: BorderRadius.circular(15.sp),

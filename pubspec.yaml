@@ -42,7 +42,8 @@ dependencies:
   go_router: ^12.1.1
   dotted_border: ^2.1.0
   location: ^5.0.3
-  dio: ^5.4.0
+  dio: ^5.4.1
+  crypto: ^3.0.3
   equatable: ^2.0.5
   dartz: ^0.10.1
   bloc: ^8.1.2
@@ -61,6 +62,7 @@ dependencies:
   intl: ^0.19.0
   image_picker: ^1.0.5
   dialog_flowtter:
+  intl_phone_number_input: ^0.7.4
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -117,6 +119,7 @@ flutter:
     - assets/images/academy/
     - assets/images/social/
     - assets/icons/
+    - assets/icons/gifts.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

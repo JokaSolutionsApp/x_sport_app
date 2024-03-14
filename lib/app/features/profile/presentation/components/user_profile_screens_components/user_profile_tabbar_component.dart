@@ -41,7 +41,7 @@ class _UserProfileTabBarComponentState extends State<UserProfileTabBarComponent>
             labelPadding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 20.w),
             indicator: BoxDecoration(
                 borderRadius: BorderRadius.circular(32.sp),
-                color: XColors.Submit_Button_Color),
+                color: XColors.primary),
             labelStyle: TextStyle(
                 color: Colors.white,
                 fontSize: 18.sp,

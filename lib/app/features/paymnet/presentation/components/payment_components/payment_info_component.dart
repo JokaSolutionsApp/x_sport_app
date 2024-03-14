@@ -30,7 +30,7 @@ class PaymentInfoComponent extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 30.sp,
                     fontWeight: FontWeight.w400,
-                    color: XColors.Submit_Button_Color),
+                    color: XColors.primary),
               ),
             ],
           ),
@@ -54,7 +54,7 @@ class PaymentInfoComponent extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 30.sp,
                     fontWeight: FontWeight.w400,
-                    color: XColors.Submit_Button_Color),
+                    color: XColors.primary),
               ),
             ],
           ),

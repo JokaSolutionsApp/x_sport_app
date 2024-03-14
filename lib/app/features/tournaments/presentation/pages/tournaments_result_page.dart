@@ -47,8 +47,7 @@ class TournamentsResultPage extends StatelessWidget {
             indicatorPadding: EdgeInsets.symmetric(horizontal: 16.w),
             indicator: BoxDecoration(
                 border: Border(
-                    bottom: BorderSide(
-                        color: XColors.Submit_Button_Color, width: 4.sp))),
+                    bottom: BorderSide(color: XColors.primary, width: 4.sp))),
             labelStyle: TextStyle(
                 color: Colors.black,
                 fontSize: 15.sp,

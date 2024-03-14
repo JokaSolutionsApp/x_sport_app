@@ -27,7 +27,7 @@ class PlayedGamesArchiveComponent extends StatelessWidget {
             minWidth: 83,
             height: 23,
             radius: 4,
-            fillColor: XColors.Submit_Button_Color,
+            fillColor: XColors.primary,
             textSize: 13,
           ),
           SizedBox(
