@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/chat/presentation/pages/my_chats_page.dart';
+import '../../../chat/presentation/pages/my_chats_page.dart';
 import 'story_page.dart';
 
 import '../../../../../core/constance/app_constance.dart';

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/core/constance/app_constance.dart';
-import 'package:x_sport/core/constance/app_icons_icons.dart';
-import 'package:x_sport/app/widgets/buttons/submit_button.dart';
+import '../../../../../../core/constance/app_constance.dart';
+import '../../../../../../core/constance/app_icons_icons.dart';
+import '../../../../../widgets/buttons/submit_button.dart';
 
 class EditGenderAlertDialog extends StatefulWidget {
   final String gender;

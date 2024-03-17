@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/paymnet/presentation/components/payment_fail_dialog.dart';
-import 'package:x_sport/app/features/paymnet/presentation/components/payment_success_dialog.dart';
+import '../components/payment_fail_dialog.dart';
+import '../components/payment_success_dialog.dart';
 
 import '../../../../../core/constance/app_constance.dart';
 import '../../../../../core/constance/app_functions.dart';

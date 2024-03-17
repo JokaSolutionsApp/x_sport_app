@@ -1,11 +1,11 @@
 import 'package:dartz/dartz.dart';
 
 import '../../../../../core/error/failure.dart';
-import 'package:x_sport/app/features/auth/data/datasource/params/auth_params.dart';
-import 'package:x_sport/app/features/auth/domain/enitites/sport_entity.dart';
-import 'package:x_sport/app/features/auth/domain/enitites/user_profile_entity.dart';
-import 'package:x_sport/app/features/auth/domain/params/edit_preferences_params.dart';
-import 'package:x_sport/core/error/failure.dart';
+import '../../data/datasource/params/auth_params.dart';
+import '../enitites/sport_entity.dart';
+import '../enitites/user_profile_entity.dart';
+import '../params/edit_preferences_params.dart';
+import '../../../../../core/error/failure.dart';
 
 abstract class BaseUserRepository {
   Future<Either<Failure, UserProfileEntity>> login();

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/auth/domain/enitites/sport_preference_entity.dart';
-import 'package:x_sport/app/features/auth/domain/enitites/sport_preference_value_entity.dart';
-import 'package:x_sport/app/features/auth/domain/params/edit_preferences_params.dart';
-import 'package:x_sport/app/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:x_sport/app/widgets/rectangle_container.dart';
-import 'package:x_sport/core/constance/local_data.dart';
+import '../../../../../auth/domain/enitites/sport_preference_entity.dart';
+import '../../../../../auth/domain/enitites/sport_preference_value_entity.dart';
+import '../../../../../auth/domain/params/edit_preferences_params.dart';
+import '../../../../../auth/presentation/bloc/auth_bloc.dart';
+import '../../../../../../widgets/rectangle_container.dart';
+import '../../../../../../../core/constance/local_data.dart';
 
 class ActivityPreferncesComponent extends StatefulWidget {
   final int initialValueId;
