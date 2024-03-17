@@ -37,7 +37,7 @@ class TextButtonWidget extends StatelessWidget {
           ),
         ),
         backgroundColor: MaterialStatePropertyAll(
-          backgroundColor ?? XColors.Button_Color,
+          backgroundColor ?? XColors.primary,
         ),
         padding: MaterialStateProperty.all(
           EdgeInsets.symmetric(

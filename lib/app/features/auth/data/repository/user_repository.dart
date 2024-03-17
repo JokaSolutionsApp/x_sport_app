@@ -1,7 +1,10 @@
 import 'package:dartz/dartz.dart';
+import 'package:x_sport/app/features/auth/data/datasource/params/auth_params.dart';
+import 'package:x_sport/app/features/auth/domain/enitites/sport_entity.dart';
+import 'package:x_sport/app/features/auth/domain/enitites/user_profile_entity.dart';
+import 'package:x_sport/app/features/auth/domain/params/edit_preferences_params.dart';
 import '../../../../../core/error/exceptions.dart';
 import '../../../../../core/error/failure.dart';
-import '../dtos/sport_dto/sport_dto.dart';
 import '../../domain/repository/base_user_repository.dart';
 
 import '../datasource/user_remote_datasource.dart';

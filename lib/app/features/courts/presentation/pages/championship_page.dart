@@ -54,7 +54,7 @@ class _ChampionshipPageState extends State<ChampionshipPage>
               ),
               indicator: BoxDecoration(
                   borderRadius: BorderRadius.circular(32.sp),
-                  color: XColors.Submit_Button_Color),
+                  color: XColors.primary),
               labelStyle: TextStyle(
                 color: Colors.white,
                 fontSize: 18.sp,

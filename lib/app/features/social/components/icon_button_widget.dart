@@ -32,7 +32,7 @@ class IconButtonWidget extends StatelessWidget {
             child: Icon(
               icon,
               size: 20.0,
-              color: XColors.Button_Color,
+              color: XColors.primary,
             ),
           ),
         ),

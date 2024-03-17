@@ -137,7 +137,7 @@ class ChampionshipCard extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
-                        color: XColors.Submit_Button_Color,
+                        color: XColors.primary,
                       ),
                     ),
                   ),
@@ -157,7 +157,7 @@ class ChampionshipCard extends StatelessWidget {
                     child: ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: XColors.Submit_Button_Color,
+                        backgroundColor: XColors.primary,
                         foregroundColor: XColors.white,
                         shape: const RoundedRectangleBorder(),
                       ),

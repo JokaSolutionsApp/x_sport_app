@@ -254,7 +254,7 @@ class SocialPage extends StatelessWidget {
                                                   context,
                                                   MaterialPageRoute(
                                                       builder: (context) =>
-                                                          const MyChatsPage2()));
+                                                          const MyChatsPage()));
                                             },
                                             child: Icon(
                                               Icons.message_outlined,

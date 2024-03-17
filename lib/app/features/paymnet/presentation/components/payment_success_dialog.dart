@@ -21,7 +21,7 @@ class PaymentSuccessDialog extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(100),
-                color: XColors.Submit_Button_Color,
+                color: XColors.primary,
               ),
               child: const Icon(
                 Icons.check,
@@ -32,7 +32,7 @@ class PaymentSuccessDialog extends StatelessWidget {
             const Text(
               '!تهانينا',
               style: TextStyle(
-                color: XColors.Submit_Button_Color,
+                color: XColors.primary,
               ),
             ),
             SizedBox(height: 10.h),
@@ -50,9 +50,9 @@ class PaymentSuccessDialog extends StatelessWidget {
                 style: OutlinedButton.styleFrom(
                   side: const BorderSide(
                     width: 1,
-                    color: XColors.Submit_Button_Color,
+                    color: XColors.primary,
                   ),
-                  foregroundColor: XColors.Submit_Button_Color,
+                  foregroundColor: XColors.primary,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(4.r),
                   ),
