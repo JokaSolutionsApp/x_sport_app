@@ -26,7 +26,7 @@ class SuggestedAcademiesComponent extends StatelessWidget {
                 child: Text(
                   'عرض الكل',
                   style: TextStyle(
-                    color: XColors.Submit_Button_Color,
+                    color: XColors.primary,
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w400,
                     height: 0,

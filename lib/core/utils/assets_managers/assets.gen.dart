@@ -24,6 +24,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/config.json
   String get config => 'assets/icons/config.json';
 
+  /// File path: assets/icons/delete.png
+  AssetGenImage get delete => const AssetGenImage('assets/icons/delete.png');
+
   /// File path: assets/icons/facebook.png
   AssetGenImage get facebook =>
       const AssetGenImage('assets/icons/facebook.png');
@@ -31,6 +34,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/file_lock.png
   AssetGenImage get fileLock =>
       const AssetGenImage('assets/icons/file_lock.png');
+
+  /// File path: assets/icons/gifts.png
+  AssetGenImage get gifts => const AssetGenImage('assets/icons/gifts.png');
 
   /// File path: assets/icons/google.png
   AssetGenImage get google => const AssetGenImage('assets/icons/google.png');
@@ -55,8 +61,10 @@ class $AssetsIconsGen {
         car,
         clock,
         config,
+        delete,
         facebook,
         fileLock,
+        gifts,
         google,
         grass,
         greenUpArrow,

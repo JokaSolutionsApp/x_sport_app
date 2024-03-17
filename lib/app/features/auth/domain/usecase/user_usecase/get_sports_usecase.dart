@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import '../../../data/dtos/sport_dto/sport_dto.dart';
+import 'package:x_sport/app/features/auth/domain/enitites/sport_entity.dart';
 
 import '../../../../../../core/error/failure.dart';
 import '../../repository/base_user_repository.dart';
@@ -9,7 +9,7 @@ class GetsportsUseCase {
 
   GetsportsUseCase(this.repository);
 
-  Future<Either<Failure, List<SportDto>>> call() async {
+  Future<Either<Failure, List<SportEntity>>> call() async {
     return await repository.getSports();
   }
 }

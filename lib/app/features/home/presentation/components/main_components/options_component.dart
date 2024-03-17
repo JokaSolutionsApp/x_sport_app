@@ -16,14 +16,14 @@ class OptionsButtonComponent extends StatelessWidget {
     return SpeedDial(
       shape: const CircleBorder(
         side: BorderSide(
-          color: XColors.Submit_Button_Color,
+          color: XColors.primary,
         ),
       ),
       icon: Icons.add,
       iconTheme: IconThemeData(color: Colors.white, size: 24.sp),
       spacing: 0.01.sh,
       switchLabelPosition: true,
-      backgroundColor: XColors.Submit_Button_Color,
+      backgroundColor: XColors.primary,
       overlayColor: Colors.black,
       overlayOpacity: 0.6,
       openCloseDial: openCloseDial,

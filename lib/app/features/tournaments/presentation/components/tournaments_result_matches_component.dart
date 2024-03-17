@@ -44,9 +44,7 @@ class TournamentResultMatchesComponent extends StatelessWidget {
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(13.sp),
-                            color: isSelected
-                                ? XColors.Submit_Button_Color
-                                : Colors.white,
+                            color: isSelected ? XColors.primary : Colors.white,
                             boxShadow: [
                               BoxShadow(
                                   color: Colors.black.withOpacity(0.06),
@@ -56,9 +54,7 @@ class TournamentResultMatchesComponent extends StatelessWidget {
                         child: Text(
                           groups[index],
                           style: TextStyle(
-                            color: isSelected
-                                ? Colors.white
-                                : XColors.Submit_Button_Color,
+                            color: isSelected ? Colors.white : XColors.primary,
                             fontWeight: FontWeight.w500,
                             fontSize: 15.sp,
                           ),
@@ -128,7 +124,7 @@ class TournamentResultMatchesComponent extends StatelessWidget {
                                       decoration: BoxDecoration(
                                         borderRadius:
                                             BorderRadius.circular(7.sp),
-                                        color: XColors.Submit_Button_Color,
+                                        color: XColors.primary,
                                       ),
                                       child: Row(
                                         mainAxisAlignment:

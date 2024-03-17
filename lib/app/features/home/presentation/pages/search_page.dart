@@ -73,8 +73,7 @@ class _SearchScreenState extends State<SearchPage>
           indicatorPadding: EdgeInsets.symmetric(horizontal: 16.w),
           indicator: BoxDecoration(
               border: Border(
-                  bottom: BorderSide(
-                      color: XColors.Submit_Button_Color, width: 4.sp))),
+                  bottom: BorderSide(color: XColors.primary, width: 4.sp))),
           labelStyle: TextStyle(
               color: Colors.black,
               fontSize: 15.sp,
@@ -91,9 +90,8 @@ class _SearchScreenState extends State<SearchPage>
                   Text(
                     'ملاعب/اكاديميات',
                     style: TextStyle(
-                        color: _selectedTab == 1
-                            ? Colors.black
-                            : XColors.Submit_Button_Color,
+                        color:
+                            _selectedTab == 1 ? Colors.black : XColors.primary,
                         fontSize: 15.sp,
                         fontWeight: FontWeight.w500),
                   ),
@@ -101,9 +99,7 @@ class _SearchScreenState extends State<SearchPage>
                   Icon(
                     size: 30.sp,
                     AppIcons.flag,
-                    color: _selectedTab == 1
-                        ? Colors.black
-                        : XColors.Submit_Button_Color,
+                    color: _selectedTab == 1 ? Colors.black : XColors.primary,
                   ),
                 ],
               ),
@@ -116,9 +112,8 @@ class _SearchScreenState extends State<SearchPage>
                   Text(
                     'اشخاص',
                     style: TextStyle(
-                        color: _selectedTab == 0
-                            ? Colors.black
-                            : XColors.Submit_Button_Color,
+                        color:
+                            _selectedTab == 0 ? Colors.black : XColors.primary,
                         fontSize: 15.sp,
                         fontWeight: FontWeight.w500),
                   ),
@@ -126,9 +121,7 @@ class _SearchScreenState extends State<SearchPage>
                   Icon(
                     size: 30.sp,
                     Icons.person,
-                    color: _selectedTab == 0
-                        ? Colors.black
-                        : XColors.Submit_Button_Color,
+                    color: _selectedTab == 0 ? Colors.black : XColors.primary,
                   ),
                 ],
               ),
@@ -452,7 +445,7 @@ class _SearchScreenState extends State<SearchPage>
                                       minWidth: 88.w,
                                       height: 32.w,
                                       radius: 6,
-                                      fillColor: XColors.Submit_Button_Color,
+                                      fillColor: XColors.primary,
                                       textSize: 15,
                                       text: 'تابع',
                                       onPressed: () {},

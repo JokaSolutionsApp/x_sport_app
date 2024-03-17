@@ -28,14 +28,14 @@ class OutlinButton extends StatelessWidget {
       height: 58.h,
       color: Colors.white,
       shape: RoundedRectangleBorder(
-        side: BorderSide(color: XColors.Outline_Button_Color, width: 1.w),
+        side: BorderSide(color: XColors.Outline_primary, width: 1.w),
         borderRadius: BorderRadius.circular(15.sp),
       ),
       onPressed: isButtonEnabled ? onPressed : () {},
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Image.asset('assets/icons/$image'),
+          image.image(),
           Text(
             text,
             style: TextStyle(

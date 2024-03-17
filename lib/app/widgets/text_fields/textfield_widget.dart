@@ -54,13 +54,27 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
           StreamBuilder(
               stream: widget.textStream,
               builder: (context, snapshot) {
+                TextDirection textDirection = TextDirection.rtl;
+                if (widget.controller.text.isNotEmpty) {
+                  // Check if the text starts with a digit or '+' sign
+                  bool startsWithDigitOrPlus =
+                      RegExp(r'^[\d+]').hasMatch(widget.controller.text);
+                  // Check if the text ends with '@'
+                  bool endsWithAtSign = widget.controller.text.endsWith('@');
+
+                  if (startsWithDigitOrPlus || endsWithAtSign) {
+                    textDirection = TextDirection.ltr;
+                  } else {
+                    textDirection = TextDirection.rtl;
+                  }
+                }
                 return SizedBox(
                   width: 0.83.sw,
                   height: 50.h,
                   child: TextFormField(
                     cursorHeight: 21.w,
                     cursorColor: widget.color ?? XColors.Background_Color1,
-                    textDirection: TextDirection.rtl,
+                    textDirection: textDirection,
                     keyboardType: widget.keyboardType,
                     style: TextStyle(
                         height: 1.w,
@@ -69,7 +83,7 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
                         fontWeight: FontWeight.w400),
                     controller: widget.controller,
                     obscureText: isHidden,
-                    textAlign: TextAlign.start,
+                    textAlign: TextAlign.right,
                     textInputAction: TextInputAction.next,
                     onChanged: (value) => widget.onChanged(value),
                     decoration: InputDecoration(
@@ -119,9 +133,10 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
                 final hasError = snapshot.hasError;
                 return hasError
                     ? Text(
-                        textAlign: TextAlign.center,
+                        textAlign: TextAlign.end,
                         snapshot.error.toString(),
-                        style: const TextStyle(
+                        style: TextStyle(
+                            fontSize: 14.sp,
                             color: Color.fromARGB(201, 244, 67, 54)),
                       )
                     : const SizedBox.shrink();

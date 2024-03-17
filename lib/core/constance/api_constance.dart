@@ -1,19 +1,19 @@
 class ApiConstance {
-  // home 192.168.2.10
-  // work 192.168.1.90
-
   static const baseUrl =
-      'http://xsportapi-dev.us-east-1.elasticbeanstalk.com/api/';
+      'https://xsportapi-dev.us-east-1.elasticbeanstalk.com/api/';
 
-  static const signInApi = '/login';
+  static const loginApi = 'User/Login';
   static const registerApi = 'User/Register';
-  static const validateAccountApi = 'User/ConfirmUserEmail';
-  static const getSportsApi = '/get_sport';
-  static const sendImageAndSportsApi = '/user_details';
-  static const getUserInfoApi = '/get_user_with_token';
-  static const updateUserPreferncesApi = '/preferences';
-  static const updateUserProfileApi = '/update_user_prodile';
-  static const updateHandPreferenceApi = '/hand_preference';
-  static const updatePositionPreferenceApi = '//postion_preference';
-  static const updateTimePreferenceApi = '/time_preference';
+  static const editUserProfileApi = 'User/EditUserProfile';
+  static const confirmEmailApi = 'User/ConfirmUserEmail';
+  static const resendConfirmEmailApi = 'User/ResendEmailConfirmationCode';
+  static const getUserProfileApi = 'User/GetUserProfile';
+  static const selectCurrentSportApi = 'User/SelectCurrentSport';
+
+  static const completeRegistrationApi = 'User/CompleteRegistration';
+  static const addFavoriteSportsApi = 'User/AddFavoriteSports';
+  static const deleteFavoriteSports = 'User/DeleteFavoriteSports';
+  static const editPreferencesApi = 'User/EditPreferences';
+  static const deleteUserProfile = 'User/DeleteAccount';
+  static const getSportsApi = 'Sport/GetSports';
 }

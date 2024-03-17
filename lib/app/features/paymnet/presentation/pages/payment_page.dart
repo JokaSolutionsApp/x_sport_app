@@ -115,7 +115,7 @@ class PaymentPage extends StatelessWidget {
                         MaterialPageRoute(
                             builder: (context) => const CreditCardPage()));
                   },
-                  fillColor: XColors.Submit_Button_Color,
+                  fillColor: XColors.primary,
                   radius: 21,
                   minWidth: 239.w,
                   height: 52.w,

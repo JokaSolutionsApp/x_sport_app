@@ -160,7 +160,7 @@ class TournamentPage extends StatelessWidget {
                             Text(
                               '100 USD',
                               style: TextStyle(
-                                  color: XColors.Submit_Button_Color,
+                                  color: XColors.primary,
                                   fontSize: 14.sp,
                                   fontWeight: FontWeight.w500),
                             ),
@@ -180,7 +180,7 @@ class TournamentPage extends StatelessWidget {
                             Text(
                               'مبتدئ-متوسط',
                               style: TextStyle(
-                                  color: XColors.Submit_Button_Color,
+                                  color: XColors.primary,
                                   fontSize: 14.sp,
                                   fontWeight: FontWeight.w500),
                             ),
@@ -282,7 +282,7 @@ class TournamentPage extends StatelessWidget {
                                     Text(
                                       '2000\$',
                                       style: TextStyle(
-                                          color: XColors.Submit_Button_Color,
+                                          color: XColors.primary,
                                           fontSize: 36.sp,
                                           fontWeight: FontWeight.w500),
                                     ),
@@ -309,7 +309,7 @@ class TournamentPage extends StatelessWidget {
                                     Text(
                                       '1000\$',
                                       style: TextStyle(
-                                          color: XColors.Submit_Button_Color,
+                                          color: XColors.primary,
                                           fontSize: 31.sp,
                                           fontWeight: FontWeight.w500),
                                     ),
@@ -336,7 +336,7 @@ class TournamentPage extends StatelessWidget {
                                     Text(
                                       '500\$',
                                       style: TextStyle(
-                                          color: XColors.Submit_Button_Color,
+                                          color: XColors.primary,
                                           fontSize: 21.sp,
                                           fontWeight: FontWeight.w500),
                                     ),
@@ -353,7 +353,7 @@ class TournamentPage extends StatelessWidget {
                   radius: 12,
                   height: 60.w,
                   minWidth: 420.w,
-                  fillColor: XColors.Submit_Button_Color,
+                  fillColor: XColors.primary,
                   text: 'عرض النتائج',
                   onPressed: () {
                     Navigator.of(navigatorKey.currentContext!).push(

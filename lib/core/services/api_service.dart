@@ -13,7 +13,7 @@ class ApiService {
       return response;
     } catch (error) {
       throw ServerException(
-          errorModel: ErrorModel.formJson(const {'status': 0}));
+          errorModel: ErrorModel.formJson(const {'statusCode': 0}));
     }
   }
 
@@ -24,7 +24,18 @@ class ApiService {
       return response;
     } catch (error) {
       throw ServerException(
-          errorModel: ErrorModel.formJson(const {'status': 0}));
+          errorModel: ErrorModel.formJson(const {'statusCode': 0}));
+    }
+  }
+
+  static Future<Response> delete(String path) async {
+    try {
+      final response = await _dio.delete(path);
+
+      return response;
+    } catch (error) {
+      throw ServerException(
+          errorModel: ErrorModel.formJson(const {'statusCode': 0}));
     }
   }
 
@@ -37,7 +48,7 @@ class ApiService {
       return response;
     } catch (error) {
       throw ServerException(
-          errorModel: ErrorModel.formJson(const {'status': 0}));
+          errorModel: ErrorModel.formJson(const {'statusCode': 0}));
     }
   }
 

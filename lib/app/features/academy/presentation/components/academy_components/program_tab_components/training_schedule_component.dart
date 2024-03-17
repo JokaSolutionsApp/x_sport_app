@@ -60,8 +60,7 @@ class TrainingScheduleComponent extends StatelessWidget {
                                                   fontSize: 16.sp,
                                                   color: isSelected
                                                       ? Colors.white
-                                                      : XColors
-                                                          .Submit_Button_Color,
+                                                      : XColors.primary,
                                                   fontWeight: FontWeight.w500),
                                             )),
                                         Icon(
@@ -69,7 +68,7 @@ class TrainingScheduleComponent extends StatelessWidget {
                                           size: 34.sp,
                                           color: isSelected
                                               ? Colors.white
-                                              : XColors.Submit_Button_Color,
+                                              : XColors.primary,
                                         ),
                                       ],
                                     ),

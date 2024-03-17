@@ -106,9 +106,8 @@ class TournamentResultRankComponent extends StatelessWidget {
                           height: 45.h,
                           width: 1.sw,
                           decoration: BoxDecoration(
-                            color: index % 2 == 0
-                                ? XColors.Submit_Button_Color
-                                : Colors.white,
+                            color:
+                                index % 2 == 0 ? XColors.primary : Colors.white,
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.end,

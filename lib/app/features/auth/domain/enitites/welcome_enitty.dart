@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'josn_keys/welcome_keys.dart';
-import 'sport_entity.dart';
+import 'package:x_sport/app/features/auth/domain/enitites/josn_keys/auth_keys.dart';
+import 'package:x_sport/app/features/auth/domain/enitites/sport_entity.dart';
 
 class WelcomeEntity extends Equatable {
   final List<SportEntity> sports;

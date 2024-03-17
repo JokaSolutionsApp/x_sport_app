@@ -40,6 +40,7 @@ class Bloc extends Validators {
 
   Stream<bool> get loginValid =>
       Rx.combineLatest2(emailPhone, password, (e, p) => true);
+  bool get otpValid => codeValue.isNotEmpty ? true : false;
 
   Stream<bool> get registerIsValid => Rx.combineLatest9(
       name,

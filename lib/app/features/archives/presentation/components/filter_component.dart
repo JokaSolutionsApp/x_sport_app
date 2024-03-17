@@ -51,9 +51,8 @@ class FilterComponent extends StatelessWidget {
                       valueListenable: selectedIndex,
                       builder: (context, isSelected, child) {
                         final isSelected = selectedIndex.value == index;
-                        final Color selectedButton = isSelected
-                            ? XColors.Submit_Button_Color
-                            : Colors.white;
+                        final Color selectedButton =
+                            isSelected ? XColors.primary : Colors.white;
                         return GestureDetector(
                           onTap: () {
                             selectedIndex.value = index;

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/academy/presentation/pages/academy_page..dart';
 
-import '../../../../../../core/utils/assets_managers/assets.gen.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
+import 'package:x_sport/app/features/academy/presentation/pages/academy_page.dart';
 
 import '../../../../../../core/constance/app_constance.dart';
 import '../../../../../../core/constance/app_icons_icons.dart';
@@ -52,8 +52,8 @@ class AcademiesComponent extends StatelessWidget {
                                         decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(4.sp),
-                                          color: XColors.Submit_Button_Color
-                                              .withOpacity(0.22),
+                                          color:
+                                              XColors.primary.withOpacity(0.22),
                                         ),
                                         child: Icon(
                                           Icons.access_alarm,
@@ -67,8 +67,8 @@ class AcademiesComponent extends StatelessWidget {
                                           radius: 4,
                                           textColor: const Color(0xFF2B2B2B),
                                           textSize: 11,
-                                          fillColor: XColors.Submit_Button_Color
-                                              .withOpacity(0.22),
+                                          fillColor:
+                                              XColors.primary.withOpacity(0.22),
                                           text: 'تابع',
                                           onPressed: () {}),
                                     ],
@@ -147,8 +147,7 @@ class AcademiesComponent extends StatelessWidget {
                                           (int index) => Icon(
                                                 size: 17.sp,
                                                 Icons.star,
-                                                color:
-                                                    XColors.Submit_Button_Color,
+                                                color: XColors.primary,
                                               )),
                                     ),
                                     RectangleContainer(
@@ -160,8 +159,7 @@ class AcademiesComponent extends StatelessWidget {
                                         child: Text(
                                           '4.8',
                                           style: TextStyle(
-                                              color:
-                                                  XColors.Submit_Button_Color,
+                                              color: XColors.primary,
                                               fontSize: 13.sp,
                                               fontWeight: FontWeight.w500),
                                         ),
@@ -185,8 +183,7 @@ class AcademiesComponent extends StatelessWidget {
                                           child: Text(
                                             'U12',
                                             style: TextStyle(
-                                                color:
-                                                    XColors.Submit_Button_Color,
+                                                color: XColors.primary,
                                                 fontSize: 13.sp,
                                                 fontWeight: FontWeight.w500),
                                           ),
@@ -201,8 +198,7 @@ class AcademiesComponent extends StatelessWidget {
                                           child: Text(
                                             'U10',
                                             style: TextStyle(
-                                                color:
-                                                    XColors.Submit_Button_Color,
+                                                color: XColors.primary,
                                                 fontSize: 13.sp,
                                                 fontWeight: FontWeight.w500),
                                           ),
@@ -217,8 +213,7 @@ class AcademiesComponent extends StatelessWidget {
                                           child: Text(
                                             'U7 ',
                                             style: TextStyle(
-                                                color:
-                                                    XColors.Submit_Button_Color,
+                                                color: XColors.primary,
                                                 fontSize: 13.sp,
                                                 fontWeight: FontWeight.w500),
                                           ),

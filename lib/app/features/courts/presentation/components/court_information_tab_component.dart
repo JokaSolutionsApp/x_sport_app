@@ -67,13 +67,13 @@ class CourtInformationComponent extends StatelessWidget {
                     children: [
                       const Icon(
                         Icons.timer_outlined,
-                        color: XColors.Submit_Button_Color,
+                        color: XColors.primary,
                       ),
                       SizedBox(width: 4.w),
                       Text(
                         '8:00 AM - 11:00 PM',
                         style: TextStyle(
-                            color: XColors.Submit_Button_Color,
+                            color: XColors.primary,
                             fontSize: 15.sp,
                             fontWeight: FontWeight.w500),
                       ),
@@ -127,7 +127,7 @@ class CourtInformationComponent extends StatelessWidget {
                             ]),
                         child: Icon(
                           courtServices[index]['image'] as IconData,
-                          color: XColors.Submit_Button_Color,
+                          color: XColors.primary,
                         )),
                     Text(
                       courtServices[index]['title'].toString(),
@@ -175,13 +175,11 @@ class CourtInformationComponent extends StatelessWidget {
                         height: 58.w,
                         width: 58.w,
                         decoration: BoxDecoration(
-                            color: XColors.Submit_Button_Color,
+                            color: XColors.primary,
                             shape: BoxShape.circle,
                             boxShadow: [
                               BoxShadow(
-                                  color:
-                                      XColors.Submit_Button_Color.withOpacity(
-                                          0.65),
+                                  color: XColors.primary.withOpacity(0.65),
                                   blurRadius: 8,
                                   offset: Offset(0, 4.w))
                             ]),
@@ -228,10 +226,10 @@ class CourtInformationComponent extends StatelessWidget {
                   width: 170.w,
                   height: 120.h,
                   decoration: BoxDecoration(
-                    gradient: const LinearGradient(colors: [
-                      XColors.Submit_Button_Color,
-                      Color(0xFF0B3B9B)
-                    ], begin: Alignment.centerRight, end: Alignment.centerLeft),
+                    gradient: const LinearGradient(
+                        colors: [XColors.primary, Color(0xFF0B3B9B)],
+                        begin: Alignment.centerRight,
+                        end: Alignment.centerLeft),
                     borderRadius: BorderRadius.circular(9.sp),
                   ),
                   child: Column(
@@ -259,10 +257,10 @@ class CourtInformationComponent extends StatelessWidget {
                   width: 170.w,
                   height: 120.h,
                   decoration: BoxDecoration(
-                    gradient: const LinearGradient(colors: [
-                      XColors.Submit_Button_Color,
-                      Color(0xFF0B3B9B)
-                    ], begin: Alignment.centerRight, end: Alignment.centerLeft),
+                    gradient: const LinearGradient(
+                        colors: [XColors.primary, Color(0xFF0B3B9B)],
+                        begin: Alignment.centerRight,
+                        end: Alignment.centerLeft),
                     borderRadius: BorderRadius.circular(9.sp),
                   ),
                   child: Column(

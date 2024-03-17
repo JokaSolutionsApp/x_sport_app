@@ -140,7 +140,7 @@ class _MatchReservationPageState extends State<MatchReservationPage> {
                   radius: 22,
                   height: 28.w,
                   minWidth: 170.w,
-                  fillColor: XColors.Submit_Button_Color,
+                  fillColor: XColors.primary,
                   text: 'التالي',
                   onPressed: () {
                     Navigator.of(navigatorKey.currentContext!).push(

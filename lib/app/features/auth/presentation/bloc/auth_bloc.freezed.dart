@@ -20,145 +20,114 @@ mixin _$AuthEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() login,
     required TResult Function() register,
-    required TResult Function() getUserInfo,
-    required TResult Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)
-        updateUserPreferences,
-    required TResult Function(int sportId, String optionName)
-        updateHandPreference,
-    required TResult Function(int sportId, String optionName)
-        updatePositionPreference,
-    required TResult Function(int sportId, String optionName)
-        updateTimePreference,
-    required TResult Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)
-        updateUserProfile,
+    required TResult Function() getUserProfile,
+    required TResult Function() deleteUserProfile,
+    required TResult Function(EditUserProfileParams params) editUserProfile,
+    required TResult Function(PreferenceValue params) editPreferences,
     required TResult Function() checkUserLogged,
-    required TResult Function() validateAccount,
+    required TResult Function() confirmUserEmail,
+    required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
     required TResult Function(
             List<int> imageBytes, String imageType, List<int> selectedSports)
-        sendImageAndSports,
+        completeRegistration,
+    required TResult Function(List<int> sportsIds) addFavoriteSports,
+    required TResult Function(List<int> sportsIds) deleteFavoriteSports,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? login,
     TResult? Function()? register,
-    TResult? Function()? getUserInfo,
-    TResult? Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)?
-        updateUserPreferences,
-    TResult? Function(int sportId, String optionName)? updateHandPreference,
-    TResult? Function(int sportId, String optionName)? updatePositionPreference,
-    TResult? Function(int sportId, String optionName)? updateTimePreference,
-    TResult? Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)?
-        updateUserProfile,
+    TResult? Function()? getUserProfile,
+    TResult? Function()? deleteUserProfile,
+    TResult? Function(EditUserProfileParams params)? editUserProfile,
+    TResult? Function(PreferenceValue params)? editPreferences,
     TResult? Function()? checkUserLogged,
-    TResult? Function()? validateAccount,
+    TResult? Function()? confirmUserEmail,
+    TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
     TResult? Function(
             List<int> imageBytes, String imageType, List<int> selectedSports)?
-        sendImageAndSports,
+        completeRegistration,
+    TResult? Function(List<int> sportsIds)? addFavoriteSports,
+    TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? login,
     TResult Function()? register,
-    TResult Function()? getUserInfo,
-    TResult Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)?
-        updateUserPreferences,
-    TResult Function(int sportId, String optionName)? updateHandPreference,
-    TResult Function(int sportId, String optionName)? updatePositionPreference,
-    TResult Function(int sportId, String optionName)? updateTimePreference,
-    TResult Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)?
-        updateUserProfile,
+    TResult Function()? getUserProfile,
+    TResult Function()? deleteUserProfile,
+    TResult Function(EditUserProfileParams params)? editUserProfile,
+    TResult Function(PreferenceValue params)? editPreferences,
     TResult Function()? checkUserLogged,
-    TResult Function()? validateAccount,
+    TResult Function()? confirmUserEmail,
+    TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
     TResult Function(
             List<int> imageBytes, String imageType, List<int> selectedSports)?
-        sendImageAndSports,
+        completeRegistration,
+    TResult Function(List<int> sportsIds)? addFavoriteSports,
+    TResult Function(List<int> sportsIds)? deleteFavoriteSports,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoginEvent value) login,
-    required TResult Function(RegisterEvent value) register,
-    required TResult Function(GetUserInfoEvent value) getUserInfo,
-    required TResult Function(UpdateUserPreferencesEvent value)
-        updateUserPreferences,
-    required TResult Function(UpdateHandPreferenceEvent value)
-        updateHandPreference,
-    required TResult Function(UpdatePositionPreferenceEvent value)
-        updatePositionPreference,
-    required TResult Function(UpdateTimePreferenceEvent value)
-        updateTimePreference,
-    required TResult Function(UpdateUserProfileEvent value) updateUserProfile,
-    required TResult Function(CheckUserLoggedEvent value) checkUserLogged,
-    required TResult Function(ValidAccountEvent value) validateAccount,
-    required TResult Function(GetSportsEvent value) getSports,
-    required TResult Function(SendImageAndSportsEvent value) sendImageAndSports,
+    required TResult Function(_LoginEvent value) login,
+    required TResult Function(_RegisterEvent value) register,
+    required TResult Function(_GetUserProfileEvent value) getUserProfile,
+    required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
+    required TResult Function(_EditUserProfileEvent value) editUserProfile,
+    required TResult Function(_EditPreferencesEvent value) editPreferences,
+    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
+    required TResult Function(_ResendConfirmUserEmailEvent value)
+        resendconfirmUserEmail,
+    required TResult Function(_GetSportsEvent value) getSports,
+    required TResult Function(_CompleteRegistrationEvent value)
+        completeRegistration,
+    required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
+    required TResult Function(_DeleteFavoriteSportsEvent value)
+        deleteFavoriteSports,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoginEvent value)? login,
-    TResult? Function(RegisterEvent value)? register,
-    TResult? Function(GetUserInfoEvent value)? getUserInfo,
-    TResult? Function(UpdateUserPreferencesEvent value)? updateUserPreferences,
-    TResult? Function(UpdateHandPreferenceEvent value)? updateHandPreference,
-    TResult? Function(UpdatePositionPreferenceEvent value)?
-        updatePositionPreference,
-    TResult? Function(UpdateTimePreferenceEvent value)? updateTimePreference,
-    TResult? Function(UpdateUserProfileEvent value)? updateUserProfile,
-    TResult? Function(CheckUserLoggedEvent value)? checkUserLogged,
-    TResult? Function(ValidAccountEvent value)? validateAccount,
-    TResult? Function(GetSportsEvent value)? getSports,
-    TResult? Function(SendImageAndSportsEvent value)? sendImageAndSports,
+    TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_RegisterEvent value)? register,
+    TResult? Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult? Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult? Function(_EditPreferencesEvent value)? editPreferences,
+    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult? Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult? Function(_GetSportsEvent value)? getSports,
+    TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoginEvent value)? login,
-    TResult Function(RegisterEvent value)? register,
-    TResult Function(GetUserInfoEvent value)? getUserInfo,
-    TResult Function(UpdateUserPreferencesEvent value)? updateUserPreferences,
-    TResult Function(UpdateHandPreferenceEvent value)? updateHandPreference,
-    TResult Function(UpdatePositionPreferenceEvent value)?
-        updatePositionPreference,
-    TResult Function(UpdateTimePreferenceEvent value)? updateTimePreference,
-    TResult Function(UpdateUserProfileEvent value)? updateUserProfile,
-    TResult Function(CheckUserLoggedEvent value)? checkUserLogged,
-    TResult Function(ValidAccountEvent value)? validateAccount,
-    TResult Function(GetSportsEvent value)? getSports,
-    TResult Function(SendImageAndSportsEvent value)? sendImageAndSports,
+    TResult Function(_LoginEvent value)? login,
+    TResult Function(_RegisterEvent value)? register,
+    TResult Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult Function(_EditPreferencesEvent value)? editPreferences,
+    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult Function(_GetSportsEvent value)? getSports,
+    TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -199,7 +168,7 @@ class __$$LoginEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoginEventImpl implements LoginEvent {
+class _$LoginEventImpl implements _LoginEvent {
   const _$LoginEventImpl();
 
   @override
@@ -221,32 +190,19 @@ class _$LoginEventImpl implements LoginEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() login,
     required TResult Function() register,
-    required TResult Function() getUserInfo,
-    required TResult Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)
-        updateUserPreferences,
-    required TResult Function(int sportId, String optionName)
-        updateHandPreference,
-    required TResult Function(int sportId, String optionName)
-        updatePositionPreference,
-    required TResult Function(int sportId, String optionName)
-        updateTimePreference,
-    required TResult Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)
-        updateUserProfile,
+    required TResult Function() getUserProfile,
+    required TResult Function() deleteUserProfile,
+    required TResult Function(EditUserProfileParams params) editUserProfile,
+    required TResult Function(PreferenceValue params) editPreferences,
     required TResult Function() checkUserLogged,
-    required TResult Function() validateAccount,
+    required TResult Function() confirmUserEmail,
+    required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
     required TResult Function(
             List<int> imageBytes, String imageType, List<int> selectedSports)
-        sendImageAndSports,
+        completeRegistration,
+    required TResult Function(List<int> sportsIds) addFavoriteSports,
+    required TResult Function(List<int> sportsIds) deleteFavoriteSports,
   }) {
     return login();
   }
@@ -256,29 +212,19 @@ class _$LoginEventImpl implements LoginEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? login,
     TResult? Function()? register,
-    TResult? Function()? getUserInfo,
-    TResult? Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)?
-        updateUserPreferences,
-    TResult? Function(int sportId, String optionName)? updateHandPreference,
-    TResult? Function(int sportId, String optionName)? updatePositionPreference,
-    TResult? Function(int sportId, String optionName)? updateTimePreference,
-    TResult? Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)?
-        updateUserProfile,
+    TResult? Function()? getUserProfile,
+    TResult? Function()? deleteUserProfile,
+    TResult? Function(EditUserProfileParams params)? editUserProfile,
+    TResult? Function(PreferenceValue params)? editPreferences,
     TResult? Function()? checkUserLogged,
-    TResult? Function()? validateAccount,
+    TResult? Function()? confirmUserEmail,
+    TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
     TResult? Function(
             List<int> imageBytes, String imageType, List<int> selectedSports)?
-        sendImageAndSports,
+        completeRegistration,
+    TResult? Function(List<int> sportsIds)? addFavoriteSports,
+    TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
   }) {
     return login?.call();
   }
@@ -288,29 +234,19 @@ class _$LoginEventImpl implements LoginEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? login,
     TResult Function()? register,
-    TResult Function()? getUserInfo,
-    TResult Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)?
-        updateUserPreferences,
-    TResult Function(int sportId, String optionName)? updateHandPreference,
-    TResult Function(int sportId, String optionName)? updatePositionPreference,
-    TResult Function(int sportId, String optionName)? updateTimePreference,
-    TResult Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)?
-        updateUserProfile,
+    TResult Function()? getUserProfile,
+    TResult Function()? deleteUserProfile,
+    TResult Function(EditUserProfileParams params)? editUserProfile,
+    TResult Function(PreferenceValue params)? editPreferences,
     TResult Function()? checkUserLogged,
-    TResult Function()? validateAccount,
+    TResult Function()? confirmUserEmail,
+    TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
     TResult Function(
             List<int> imageBytes, String imageType, List<int> selectedSports)?
-        sendImageAndSports,
+        completeRegistration,
+    TResult Function(List<int> sportsIds)? addFavoriteSports,
+    TResult Function(List<int> sportsIds)? deleteFavoriteSports,
     required TResult orElse(),
   }) {
     if (login != null) {
@@ -322,22 +258,22 @@ class _$LoginEventImpl implements LoginEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoginEvent value) login,
-    required TResult Function(RegisterEvent value) register,
-    required TResult Function(GetUserInfoEvent value) getUserInfo,
-    required TResult Function(UpdateUserPreferencesEvent value)
-        updateUserPreferences,
-    required TResult Function(UpdateHandPreferenceEvent value)
-        updateHandPreference,
-    required TResult Function(UpdatePositionPreferenceEvent value)
-        updatePositionPreference,
-    required TResult Function(UpdateTimePreferenceEvent value)
-        updateTimePreference,
-    required TResult Function(UpdateUserProfileEvent value) updateUserProfile,
-    required TResult Function(CheckUserLoggedEvent value) checkUserLogged,
-    required TResult Function(ValidAccountEvent value) validateAccount,
-    required TResult Function(GetSportsEvent value) getSports,
-    required TResult Function(SendImageAndSportsEvent value) sendImageAndSports,
+    required TResult Function(_LoginEvent value) login,
+    required TResult Function(_RegisterEvent value) register,
+    required TResult Function(_GetUserProfileEvent value) getUserProfile,
+    required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
+    required TResult Function(_EditUserProfileEvent value) editUserProfile,
+    required TResult Function(_EditPreferencesEvent value) editPreferences,
+    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
+    required TResult Function(_ResendConfirmUserEmailEvent value)
+        resendconfirmUserEmail,
+    required TResult Function(_GetSportsEvent value) getSports,
+    required TResult Function(_CompleteRegistrationEvent value)
+        completeRegistration,
+    required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
+    required TResult Function(_DeleteFavoriteSportsEvent value)
+        deleteFavoriteSports,
   }) {
     return login(this);
   }
@@ -345,19 +281,20 @@ class _$LoginEventImpl implements LoginEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoginEvent value)? login,
-    TResult? Function(RegisterEvent value)? register,
-    TResult? Function(GetUserInfoEvent value)? getUserInfo,
-    TResult? Function(UpdateUserPreferencesEvent value)? updateUserPreferences,
-    TResult? Function(UpdateHandPreferenceEvent value)? updateHandPreference,
-    TResult? Function(UpdatePositionPreferenceEvent value)?
-        updatePositionPreference,
-    TResult? Function(UpdateTimePreferenceEvent value)? updateTimePreference,
-    TResult? Function(UpdateUserProfileEvent value)? updateUserProfile,
-    TResult? Function(CheckUserLoggedEvent value)? checkUserLogged,
-    TResult? Function(ValidAccountEvent value)? validateAccount,
-    TResult? Function(GetSportsEvent value)? getSports,
-    TResult? Function(SendImageAndSportsEvent value)? sendImageAndSports,
+    TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_RegisterEvent value)? register,
+    TResult? Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult? Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult? Function(_EditPreferencesEvent value)? editPreferences,
+    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult? Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult? Function(_GetSportsEvent value)? getSports,
+    TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
   }) {
     return login?.call(this);
   }
@@ -365,19 +302,20 @@ class _$LoginEventImpl implements LoginEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoginEvent value)? login,
-    TResult Function(RegisterEvent value)? register,
-    TResult Function(GetUserInfoEvent value)? getUserInfo,
-    TResult Function(UpdateUserPreferencesEvent value)? updateUserPreferences,
-    TResult Function(UpdateHandPreferenceEvent value)? updateHandPreference,
-    TResult Function(UpdatePositionPreferenceEvent value)?
-        updatePositionPreference,
-    TResult Function(UpdateTimePreferenceEvent value)? updateTimePreference,
-    TResult Function(UpdateUserProfileEvent value)? updateUserProfile,
-    TResult Function(CheckUserLoggedEvent value)? checkUserLogged,
-    TResult Function(ValidAccountEvent value)? validateAccount,
-    TResult Function(GetSportsEvent value)? getSports,
-    TResult Function(SendImageAndSportsEvent value)? sendImageAndSports,
+    TResult Function(_LoginEvent value)? login,
+    TResult Function(_RegisterEvent value)? register,
+    TResult Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult Function(_EditPreferencesEvent value)? editPreferences,
+    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult Function(_GetSportsEvent value)? getSports,
+    TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     required TResult orElse(),
   }) {
     if (login != null) {
@@ -387,8 +325,8 @@ class _$LoginEventImpl implements LoginEvent {
   }
 }
 
-abstract class LoginEvent implements AuthEvent {
-  const factory LoginEvent() = _$LoginEventImpl;
+abstract class _LoginEvent implements AuthEvent {
+  const factory _LoginEvent() = _$LoginEventImpl;
 }
 
 /// @nodoc
@@ -409,7 +347,7 @@ class __$$RegisterEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$RegisterEventImpl implements RegisterEvent {
+class _$RegisterEventImpl implements _RegisterEvent {
   const _$RegisterEventImpl();
 
   @override
@@ -431,32 +369,19 @@ class _$RegisterEventImpl implements RegisterEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() login,
     required TResult Function() register,
-    required TResult Function() getUserInfo,
-    required TResult Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)
-        updateUserPreferences,
-    required TResult Function(int sportId, String optionName)
-        updateHandPreference,
-    required TResult Function(int sportId, String optionName)
-        updatePositionPreference,
-    required TResult Function(int sportId, String optionName)
-        updateTimePreference,
-    required TResult Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)
-        updateUserProfile,
+    required TResult Function() getUserProfile,
+    required TResult Function() deleteUserProfile,
+    required TResult Function(EditUserProfileParams params) editUserProfile,
+    required TResult Function(PreferenceValue params) editPreferences,
     required TResult Function() checkUserLogged,
-    required TResult Function() validateAccount,
+    required TResult Function() confirmUserEmail,
+    required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
     required TResult Function(
             List<int> imageBytes, String imageType, List<int> selectedSports)
-        sendImageAndSports,
+        completeRegistration,
+    required TResult Function(List<int> sportsIds) addFavoriteSports,
+    required TResult Function(List<int> sportsIds) deleteFavoriteSports,
   }) {
     return register();
   }
@@ -466,29 +391,19 @@ class _$RegisterEventImpl implements RegisterEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? login,
     TResult? Function()? register,
-    TResult? Function()? getUserInfo,
-    TResult? Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)?
-        updateUserPreferences,
-    TResult? Function(int sportId, String optionName)? updateHandPreference,
-    TResult? Function(int sportId, String optionName)? updatePositionPreference,
-    TResult? Function(int sportId, String optionName)? updateTimePreference,
-    TResult? Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)?
-        updateUserProfile,
+    TResult? Function()? getUserProfile,
+    TResult? Function()? deleteUserProfile,
+    TResult? Function(EditUserProfileParams params)? editUserProfile,
+    TResult? Function(PreferenceValue params)? editPreferences,
     TResult? Function()? checkUserLogged,
-    TResult? Function()? validateAccount,
+    TResult? Function()? confirmUserEmail,
+    TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
     TResult? Function(
             List<int> imageBytes, String imageType, List<int> selectedSports)?
-        sendImageAndSports,
+        completeRegistration,
+    TResult? Function(List<int> sportsIds)? addFavoriteSports,
+    TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
   }) {
     return register?.call();
   }
@@ -498,29 +413,19 @@ class _$RegisterEventImpl implements RegisterEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? login,
     TResult Function()? register,
-    TResult Function()? getUserInfo,
-    TResult Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)?
-        updateUserPreferences,
-    TResult Function(int sportId, String optionName)? updateHandPreference,
-    TResult Function(int sportId, String optionName)? updatePositionPreference,
-    TResult Function(int sportId, String optionName)? updateTimePreference,
-    TResult Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)?
-        updateUserProfile,
+    TResult Function()? getUserProfile,
+    TResult Function()? deleteUserProfile,
+    TResult Function(EditUserProfileParams params)? editUserProfile,
+    TResult Function(PreferenceValue params)? editPreferences,
     TResult Function()? checkUserLogged,
-    TResult Function()? validateAccount,
+    TResult Function()? confirmUserEmail,
+    TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
     TResult Function(
             List<int> imageBytes, String imageType, List<int> selectedSports)?
-        sendImageAndSports,
+        completeRegistration,
+    TResult Function(List<int> sportsIds)? addFavoriteSports,
+    TResult Function(List<int> sportsIds)? deleteFavoriteSports,
     required TResult orElse(),
   }) {
     if (register != null) {
@@ -532,22 +437,22 @@ class _$RegisterEventImpl implements RegisterEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoginEvent value) login,
-    required TResult Function(RegisterEvent value) register,
-    required TResult Function(GetUserInfoEvent value) getUserInfo,
-    required TResult Function(UpdateUserPreferencesEvent value)
-        updateUserPreferences,
-    required TResult Function(UpdateHandPreferenceEvent value)
-        updateHandPreference,
-    required TResult Function(UpdatePositionPreferenceEvent value)
-        updatePositionPreference,
-    required TResult Function(UpdateTimePreferenceEvent value)
-        updateTimePreference,
-    required TResult Function(UpdateUserProfileEvent value) updateUserProfile,
-    required TResult Function(CheckUserLoggedEvent value) checkUserLogged,
-    required TResult Function(ValidAccountEvent value) validateAccount,
-    required TResult Function(GetSportsEvent value) getSports,
-    required TResult Function(SendImageAndSportsEvent value) sendImageAndSports,
+    required TResult Function(_LoginEvent value) login,
+    required TResult Function(_RegisterEvent value) register,
+    required TResult Function(_GetUserProfileEvent value) getUserProfile,
+    required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
+    required TResult Function(_EditUserProfileEvent value) editUserProfile,
+    required TResult Function(_EditPreferencesEvent value) editPreferences,
+    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
+    required TResult Function(_ResendConfirmUserEmailEvent value)
+        resendconfirmUserEmail,
+    required TResult Function(_GetSportsEvent value) getSports,
+    required TResult Function(_CompleteRegistrationEvent value)
+        completeRegistration,
+    required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
+    required TResult Function(_DeleteFavoriteSportsEvent value)
+        deleteFavoriteSports,
   }) {
     return register(this);
   }
@@ -555,19 +460,20 @@ class _$RegisterEventImpl implements RegisterEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoginEvent value)? login,
-    TResult? Function(RegisterEvent value)? register,
-    TResult? Function(GetUserInfoEvent value)? getUserInfo,
-    TResult? Function(UpdateUserPreferencesEvent value)? updateUserPreferences,
-    TResult? Function(UpdateHandPreferenceEvent value)? updateHandPreference,
-    TResult? Function(UpdatePositionPreferenceEvent value)?
-        updatePositionPreference,
-    TResult? Function(UpdateTimePreferenceEvent value)? updateTimePreference,
-    TResult? Function(UpdateUserProfileEvent value)? updateUserProfile,
-    TResult? Function(CheckUserLoggedEvent value)? checkUserLogged,
-    TResult? Function(ValidAccountEvent value)? validateAccount,
-    TResult? Function(GetSportsEvent value)? getSports,
-    TResult? Function(SendImageAndSportsEvent value)? sendImageAndSports,
+    TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_RegisterEvent value)? register,
+    TResult? Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult? Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult? Function(_EditPreferencesEvent value)? editPreferences,
+    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult? Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult? Function(_GetSportsEvent value)? getSports,
+    TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
   }) {
     return register?.call(this);
   }
@@ -575,19 +481,20 @@ class _$RegisterEventImpl implements RegisterEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoginEvent value)? login,
-    TResult Function(RegisterEvent value)? register,
-    TResult Function(GetUserInfoEvent value)? getUserInfo,
-    TResult Function(UpdateUserPreferencesEvent value)? updateUserPreferences,
-    TResult Function(UpdateHandPreferenceEvent value)? updateHandPreference,
-    TResult Function(UpdatePositionPreferenceEvent value)?
-        updatePositionPreference,
-    TResult Function(UpdateTimePreferenceEvent value)? updateTimePreference,
-    TResult Function(UpdateUserProfileEvent value)? updateUserProfile,
-    TResult Function(CheckUserLoggedEvent value)? checkUserLogged,
-    TResult Function(ValidAccountEvent value)? validateAccount,
-    TResult Function(GetSportsEvent value)? getSports,
-    TResult Function(SendImageAndSportsEvent value)? sendImageAndSports,
+    TResult Function(_LoginEvent value)? login,
+    TResult Function(_RegisterEvent value)? register,
+    TResult Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult Function(_EditPreferencesEvent value)? editPreferences,
+    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult Function(_GetSportsEvent value)? getSports,
+    TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     required TResult orElse(),
   }) {
     if (register != null) {
@@ -597,40 +504,41 @@ class _$RegisterEventImpl implements RegisterEvent {
   }
 }
 
-abstract class RegisterEvent implements AuthEvent {
-  const factory RegisterEvent() = _$RegisterEventImpl;
+abstract class _RegisterEvent implements AuthEvent {
+  const factory _RegisterEvent() = _$RegisterEventImpl;
 }
 
 /// @nodoc
-abstract class _$$GetUserInfoEventImplCopyWith<$Res> {
-  factory _$$GetUserInfoEventImplCopyWith(_$GetUserInfoEventImpl value,
-          $Res Function(_$GetUserInfoEventImpl) then) =
-      __$$GetUserInfoEventImplCopyWithImpl<$Res>;
+abstract class _$$GetUserProfileEventImplCopyWith<$Res> {
+  factory _$$GetUserProfileEventImplCopyWith(_$GetUserProfileEventImpl value,
+          $Res Function(_$GetUserProfileEventImpl) then) =
+      __$$GetUserProfileEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetUserInfoEventImplCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$GetUserInfoEventImpl>
-    implements _$$GetUserInfoEventImplCopyWith<$Res> {
-  __$$GetUserInfoEventImplCopyWithImpl(_$GetUserInfoEventImpl _value,
-      $Res Function(_$GetUserInfoEventImpl) _then)
+class __$$GetUserProfileEventImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$GetUserProfileEventImpl>
+    implements _$$GetUserProfileEventImplCopyWith<$Res> {
+  __$$GetUserProfileEventImplCopyWithImpl(_$GetUserProfileEventImpl _value,
+      $Res Function(_$GetUserProfileEventImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$GetUserInfoEventImpl implements GetUserInfoEvent {
-  const _$GetUserInfoEventImpl();
+class _$GetUserProfileEventImpl implements _GetUserProfileEvent {
+  const _$GetUserProfileEventImpl();
 
   @override
   String toString() {
-    return 'AuthEvent.getUserInfo()';
+    return 'AuthEvent.getUserProfile()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetUserInfoEventImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$GetUserProfileEventImpl);
   }
 
   @override
@@ -641,34 +549,21 @@ class _$GetUserInfoEventImpl implements GetUserInfoEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() login,
     required TResult Function() register,
-    required TResult Function() getUserInfo,
-    required TResult Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)
-        updateUserPreferences,
-    required TResult Function(int sportId, String optionName)
-        updateHandPreference,
-    required TResult Function(int sportId, String optionName)
-        updatePositionPreference,
-    required TResult Function(int sportId, String optionName)
-        updateTimePreference,
-    required TResult Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)
-        updateUserProfile,
+    required TResult Function() getUserProfile,
+    required TResult Function() deleteUserProfile,
+    required TResult Function(EditUserProfileParams params) editUserProfile,
+    required TResult Function(PreferenceValue params) editPreferences,
     required TResult Function() checkUserLogged,
-    required TResult Function() validateAccount,
+    required TResult Function() confirmUserEmail,
+    required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
     required TResult Function(
             List<int> imageBytes, String imageType, List<int> selectedSports)
-        sendImageAndSports,
+        completeRegistration,
+    required TResult Function(List<int> sportsIds) addFavoriteSports,
+    required TResult Function(List<int> sportsIds) deleteFavoriteSports,
   }) {
-    return getUserInfo();
+    return getUserProfile();
   }
 
   @override
@@ -676,31 +571,21 @@ class _$GetUserInfoEventImpl implements GetUserInfoEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? login,
     TResult? Function()? register,
-    TResult? Function()? getUserInfo,
-    TResult? Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)?
-        updateUserPreferences,
-    TResult? Function(int sportId, String optionName)? updateHandPreference,
-    TResult? Function(int sportId, String optionName)? updatePositionPreference,
-    TResult? Function(int sportId, String optionName)? updateTimePreference,
-    TResult? Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)?
-        updateUserProfile,
+    TResult? Function()? getUserProfile,
+    TResult? Function()? deleteUserProfile,
+    TResult? Function(EditUserProfileParams params)? editUserProfile,
+    TResult? Function(PreferenceValue params)? editPreferences,
     TResult? Function()? checkUserLogged,
-    TResult? Function()? validateAccount,
+    TResult? Function()? confirmUserEmail,
+    TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
     TResult? Function(
             List<int> imageBytes, String imageType, List<int> selectedSports)?
-        sendImageAndSports,
+        completeRegistration,
+    TResult? Function(List<int> sportsIds)? addFavoriteSports,
+    TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
   }) {
-    return getUserInfo?.call();
+    return getUserProfile?.call();
   }
 
   @override
@@ -708,33 +593,23 @@ class _$GetUserInfoEventImpl implements GetUserInfoEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? login,
     TResult Function()? register,
-    TResult Function()? getUserInfo,
-    TResult Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)?
-        updateUserPreferences,
-    TResult Function(int sportId, String optionName)? updateHandPreference,
-    TResult Function(int sportId, String optionName)? updatePositionPreference,
-    TResult Function(int sportId, String optionName)? updateTimePreference,
-    TResult Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)?
-        updateUserProfile,
+    TResult Function()? getUserProfile,
+    TResult Function()? deleteUserProfile,
+    TResult Function(EditUserProfileParams params)? editUserProfile,
+    TResult Function(PreferenceValue params)? editPreferences,
     TResult Function()? checkUserLogged,
-    TResult Function()? validateAccount,
+    TResult Function()? confirmUserEmail,
+    TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
     TResult Function(
             List<int> imageBytes, String imageType, List<int> selectedSports)?
-        sendImageAndSports,
+        completeRegistration,
+    TResult Function(List<int> sportsIds)? addFavoriteSports,
+    TResult Function(List<int> sportsIds)? deleteFavoriteSports,
     required TResult orElse(),
   }) {
-    if (getUserInfo != null) {
-      return getUserInfo();
+    if (getUserProfile != null) {
+      return getUserProfile();
     }
     return orElse();
   }
@@ -742,205 +617,135 @@ class _$GetUserInfoEventImpl implements GetUserInfoEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoginEvent value) login,
-    required TResult Function(RegisterEvent value) register,
-    required TResult Function(GetUserInfoEvent value) getUserInfo,
-    required TResult Function(UpdateUserPreferencesEvent value)
-        updateUserPreferences,
-    required TResult Function(UpdateHandPreferenceEvent value)
-        updateHandPreference,
-    required TResult Function(UpdatePositionPreferenceEvent value)
-        updatePositionPreference,
-    required TResult Function(UpdateTimePreferenceEvent value)
-        updateTimePreference,
-    required TResult Function(UpdateUserProfileEvent value) updateUserProfile,
-    required TResult Function(CheckUserLoggedEvent value) checkUserLogged,
-    required TResult Function(ValidAccountEvent value) validateAccount,
-    required TResult Function(GetSportsEvent value) getSports,
-    required TResult Function(SendImageAndSportsEvent value) sendImageAndSports,
+    required TResult Function(_LoginEvent value) login,
+    required TResult Function(_RegisterEvent value) register,
+    required TResult Function(_GetUserProfileEvent value) getUserProfile,
+    required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
+    required TResult Function(_EditUserProfileEvent value) editUserProfile,
+    required TResult Function(_EditPreferencesEvent value) editPreferences,
+    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
+    required TResult Function(_ResendConfirmUserEmailEvent value)
+        resendconfirmUserEmail,
+    required TResult Function(_GetSportsEvent value) getSports,
+    required TResult Function(_CompleteRegistrationEvent value)
+        completeRegistration,
+    required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
+    required TResult Function(_DeleteFavoriteSportsEvent value)
+        deleteFavoriteSports,
   }) {
-    return getUserInfo(this);
+    return getUserProfile(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoginEvent value)? login,
-    TResult? Function(RegisterEvent value)? register,
-    TResult? Function(GetUserInfoEvent value)? getUserInfo,
-    TResult? Function(UpdateUserPreferencesEvent value)? updateUserPreferences,
-    TResult? Function(UpdateHandPreferenceEvent value)? updateHandPreference,
-    TResult? Function(UpdatePositionPreferenceEvent value)?
-        updatePositionPreference,
-    TResult? Function(UpdateTimePreferenceEvent value)? updateTimePreference,
-    TResult? Function(UpdateUserProfileEvent value)? updateUserProfile,
-    TResult? Function(CheckUserLoggedEvent value)? checkUserLogged,
-    TResult? Function(ValidAccountEvent value)? validateAccount,
-    TResult? Function(GetSportsEvent value)? getSports,
-    TResult? Function(SendImageAndSportsEvent value)? sendImageAndSports,
+    TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_RegisterEvent value)? register,
+    TResult? Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult? Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult? Function(_EditPreferencesEvent value)? editPreferences,
+    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult? Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult? Function(_GetSportsEvent value)? getSports,
+    TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
   }) {
-    return getUserInfo?.call(this);
+    return getUserProfile?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoginEvent value)? login,
-    TResult Function(RegisterEvent value)? register,
-    TResult Function(GetUserInfoEvent value)? getUserInfo,
-    TResult Function(UpdateUserPreferencesEvent value)? updateUserPreferences,
-    TResult Function(UpdateHandPreferenceEvent value)? updateHandPreference,
-    TResult Function(UpdatePositionPreferenceEvent value)?
-        updatePositionPreference,
-    TResult Function(UpdateTimePreferenceEvent value)? updateTimePreference,
-    TResult Function(UpdateUserProfileEvent value)? updateUserProfile,
-    TResult Function(CheckUserLoggedEvent value)? checkUserLogged,
-    TResult Function(ValidAccountEvent value)? validateAccount,
-    TResult Function(GetSportsEvent value)? getSports,
-    TResult Function(SendImageAndSportsEvent value)? sendImageAndSports,
+    TResult Function(_LoginEvent value)? login,
+    TResult Function(_RegisterEvent value)? register,
+    TResult Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult Function(_EditPreferencesEvent value)? editPreferences,
+    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult Function(_GetSportsEvent value)? getSports,
+    TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     required TResult orElse(),
   }) {
-    if (getUserInfo != null) {
-      return getUserInfo(this);
+    if (getUserProfile != null) {
+      return getUserProfile(this);
     }
     return orElse();
   }
 }
 
-abstract class GetUserInfoEvent implements AuthEvent {
-  const factory GetUserInfoEvent() = _$GetUserInfoEventImpl;
+abstract class _GetUserProfileEvent implements AuthEvent {
+  const factory _GetUserProfileEvent() = _$GetUserProfileEventImpl;
 }
 
 /// @nodoc
-abstract class _$$UpdateUserPreferencesEventImplCopyWith<$Res> {
-  factory _$$UpdateUserPreferencesEventImplCopyWith(
-          _$UpdateUserPreferencesEventImpl value,
-          $Res Function(_$UpdateUserPreferencesEventImpl) then) =
-      __$$UpdateUserPreferencesEventImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({int sportId, int favoriteHand, int favoritePos, int favoriteTime});
+abstract class _$$DeleteUserProfileEventImplCopyWith<$Res> {
+  factory _$$DeleteUserProfileEventImplCopyWith(
+          _$DeleteUserProfileEventImpl value,
+          $Res Function(_$DeleteUserProfileEventImpl) then) =
+      __$$DeleteUserProfileEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UpdateUserPreferencesEventImplCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$UpdateUserPreferencesEventImpl>
-    implements _$$UpdateUserPreferencesEventImplCopyWith<$Res> {
-  __$$UpdateUserPreferencesEventImplCopyWithImpl(
-      _$UpdateUserPreferencesEventImpl _value,
-      $Res Function(_$UpdateUserPreferencesEventImpl) _then)
+class __$$DeleteUserProfileEventImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$DeleteUserProfileEventImpl>
+    implements _$$DeleteUserProfileEventImplCopyWith<$Res> {
+  __$$DeleteUserProfileEventImplCopyWithImpl(
+      _$DeleteUserProfileEventImpl _value,
+      $Res Function(_$DeleteUserProfileEventImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? sportId = null,
-    Object? favoriteHand = null,
-    Object? favoritePos = null,
-    Object? favoriteTime = null,
-  }) {
-    return _then(_$UpdateUserPreferencesEventImpl(
-      sportId: null == sportId
-          ? _value.sportId
-          : sportId // ignore: cast_nullable_to_non_nullable
-              as int,
-      favoriteHand: null == favoriteHand
-          ? _value.favoriteHand
-          : favoriteHand // ignore: cast_nullable_to_non_nullable
-              as int,
-      favoritePos: null == favoritePos
-          ? _value.favoritePos
-          : favoritePos // ignore: cast_nullable_to_non_nullable
-              as int,
-      favoriteTime: null == favoriteTime
-          ? _value.favoriteTime
-          : favoriteTime // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$UpdateUserPreferencesEventImpl implements UpdateUserPreferencesEvent {
-  const _$UpdateUserPreferencesEventImpl(
-      {required this.sportId,
-      required this.favoriteHand,
-      required this.favoritePos,
-      required this.favoriteTime});
-
-  @override
-  final int sportId;
-  @override
-  final int favoriteHand;
-  @override
-  final int favoritePos;
-  @override
-  final int favoriteTime;
+class _$DeleteUserProfileEventImpl implements _DeleteUserProfileEvent {
+  const _$DeleteUserProfileEventImpl();
 
   @override
   String toString() {
-    return 'AuthEvent.updateUserPreferences(sportId: $sportId, favoriteHand: $favoriteHand, favoritePos: $favoritePos, favoriteTime: $favoriteTime)';
+    return 'AuthEvent.deleteUserProfile()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateUserPreferencesEventImpl &&
-            (identical(other.sportId, sportId) || other.sportId == sportId) &&
-            (identical(other.favoriteHand, favoriteHand) ||
-                other.favoriteHand == favoriteHand) &&
-            (identical(other.favoritePos, favoritePos) ||
-                other.favoritePos == favoritePos) &&
-            (identical(other.favoriteTime, favoriteTime) ||
-                other.favoriteTime == favoriteTime));
+            other is _$DeleteUserProfileEventImpl);
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, sportId, favoriteHand, favoritePos, favoriteTime);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateUserPreferencesEventImplCopyWith<_$UpdateUserPreferencesEventImpl>
-      get copyWith => __$$UpdateUserPreferencesEventImplCopyWithImpl<
-          _$UpdateUserPreferencesEventImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() login,
     required TResult Function() register,
-    required TResult Function() getUserInfo,
-    required TResult Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)
-        updateUserPreferences,
-    required TResult Function(int sportId, String optionName)
-        updateHandPreference,
-    required TResult Function(int sportId, String optionName)
-        updatePositionPreference,
-    required TResult Function(int sportId, String optionName)
-        updateTimePreference,
-    required TResult Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)
-        updateUserProfile,
+    required TResult Function() getUserProfile,
+    required TResult Function() deleteUserProfile,
+    required TResult Function(EditUserProfileParams params) editUserProfile,
+    required TResult Function(PreferenceValue params) editPreferences,
     required TResult Function() checkUserLogged,
-    required TResult Function() validateAccount,
+    required TResult Function() confirmUserEmail,
+    required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
     required TResult Function(
             List<int> imageBytes, String imageType, List<int> selectedSports)
-        sendImageAndSports,
+        completeRegistration,
+    required TResult Function(List<int> sportsIds) addFavoriteSports,
+    required TResult Function(List<int> sportsIds) deleteFavoriteSports,
   }) {
-    return updateUserPreferences(
-        sportId, favoriteHand, favoritePos, favoriteTime);
+    return deleteUserProfile();
   }
 
   @override
@@ -948,32 +753,21 @@ class _$UpdateUserPreferencesEventImpl implements UpdateUserPreferencesEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? login,
     TResult? Function()? register,
-    TResult? Function()? getUserInfo,
-    TResult? Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)?
-        updateUserPreferences,
-    TResult? Function(int sportId, String optionName)? updateHandPreference,
-    TResult? Function(int sportId, String optionName)? updatePositionPreference,
-    TResult? Function(int sportId, String optionName)? updateTimePreference,
-    TResult? Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)?
-        updateUserProfile,
+    TResult? Function()? getUserProfile,
+    TResult? Function()? deleteUserProfile,
+    TResult? Function(EditUserProfileParams params)? editUserProfile,
+    TResult? Function(PreferenceValue params)? editPreferences,
     TResult? Function()? checkUserLogged,
-    TResult? Function()? validateAccount,
+    TResult? Function()? confirmUserEmail,
+    TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
     TResult? Function(
             List<int> imageBytes, String imageType, List<int> selectedSports)?
-        sendImageAndSports,
+        completeRegistration,
+    TResult? Function(List<int> sportsIds)? addFavoriteSports,
+    TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
   }) {
-    return updateUserPreferences?.call(
-        sportId, favoriteHand, favoritePos, favoriteTime);
+    return deleteUserProfile?.call();
   }
 
   @override
@@ -981,34 +775,23 @@ class _$UpdateUserPreferencesEventImpl implements UpdateUserPreferencesEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? login,
     TResult Function()? register,
-    TResult Function()? getUserInfo,
-    TResult Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)?
-        updateUserPreferences,
-    TResult Function(int sportId, String optionName)? updateHandPreference,
-    TResult Function(int sportId, String optionName)? updatePositionPreference,
-    TResult Function(int sportId, String optionName)? updateTimePreference,
-    TResult Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)?
-        updateUserProfile,
+    TResult Function()? getUserProfile,
+    TResult Function()? deleteUserProfile,
+    TResult Function(EditUserProfileParams params)? editUserProfile,
+    TResult Function(PreferenceValue params)? editPreferences,
     TResult Function()? checkUserLogged,
-    TResult Function()? validateAccount,
+    TResult Function()? confirmUserEmail,
+    TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
     TResult Function(
             List<int> imageBytes, String imageType, List<int> selectedSports)?
-        sendImageAndSports,
+        completeRegistration,
+    TResult Function(List<int> sportsIds)? addFavoriteSports,
+    TResult Function(List<int> sportsIds)? deleteFavoriteSports,
     required TResult orElse(),
   }) {
-    if (updateUserPreferences != null) {
-      return updateUserPreferences(
-          sportId, favoriteHand, favoritePos, favoriteTime);
+    if (deleteUserProfile != null) {
+      return deleteUserProfile();
     }
     return orElse();
   }
@@ -1016,194 +799,374 @@ class _$UpdateUserPreferencesEventImpl implements UpdateUserPreferencesEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoginEvent value) login,
-    required TResult Function(RegisterEvent value) register,
-    required TResult Function(GetUserInfoEvent value) getUserInfo,
-    required TResult Function(UpdateUserPreferencesEvent value)
-        updateUserPreferences,
-    required TResult Function(UpdateHandPreferenceEvent value)
-        updateHandPreference,
-    required TResult Function(UpdatePositionPreferenceEvent value)
-        updatePositionPreference,
-    required TResult Function(UpdateTimePreferenceEvent value)
-        updateTimePreference,
-    required TResult Function(UpdateUserProfileEvent value) updateUserProfile,
-    required TResult Function(CheckUserLoggedEvent value) checkUserLogged,
-    required TResult Function(ValidAccountEvent value) validateAccount,
-    required TResult Function(GetSportsEvent value) getSports,
-    required TResult Function(SendImageAndSportsEvent value) sendImageAndSports,
+    required TResult Function(_LoginEvent value) login,
+    required TResult Function(_RegisterEvent value) register,
+    required TResult Function(_GetUserProfileEvent value) getUserProfile,
+    required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
+    required TResult Function(_EditUserProfileEvent value) editUserProfile,
+    required TResult Function(_EditPreferencesEvent value) editPreferences,
+    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
+    required TResult Function(_ResendConfirmUserEmailEvent value)
+        resendconfirmUserEmail,
+    required TResult Function(_GetSportsEvent value) getSports,
+    required TResult Function(_CompleteRegistrationEvent value)
+        completeRegistration,
+    required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
+    required TResult Function(_DeleteFavoriteSportsEvent value)
+        deleteFavoriteSports,
   }) {
-    return updateUserPreferences(this);
+    return deleteUserProfile(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoginEvent value)? login,
-    TResult? Function(RegisterEvent value)? register,
-    TResult? Function(GetUserInfoEvent value)? getUserInfo,
-    TResult? Function(UpdateUserPreferencesEvent value)? updateUserPreferences,
-    TResult? Function(UpdateHandPreferenceEvent value)? updateHandPreference,
-    TResult? Function(UpdatePositionPreferenceEvent value)?
-        updatePositionPreference,
-    TResult? Function(UpdateTimePreferenceEvent value)? updateTimePreference,
-    TResult? Function(UpdateUserProfileEvent value)? updateUserProfile,
-    TResult? Function(CheckUserLoggedEvent value)? checkUserLogged,
-    TResult? Function(ValidAccountEvent value)? validateAccount,
-    TResult? Function(GetSportsEvent value)? getSports,
-    TResult? Function(SendImageAndSportsEvent value)? sendImageAndSports,
+    TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_RegisterEvent value)? register,
+    TResult? Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult? Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult? Function(_EditPreferencesEvent value)? editPreferences,
+    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult? Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult? Function(_GetSportsEvent value)? getSports,
+    TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
   }) {
-    return updateUserPreferences?.call(this);
+    return deleteUserProfile?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoginEvent value)? login,
-    TResult Function(RegisterEvent value)? register,
-    TResult Function(GetUserInfoEvent value)? getUserInfo,
-    TResult Function(UpdateUserPreferencesEvent value)? updateUserPreferences,
-    TResult Function(UpdateHandPreferenceEvent value)? updateHandPreference,
-    TResult Function(UpdatePositionPreferenceEvent value)?
-        updatePositionPreference,
-    TResult Function(UpdateTimePreferenceEvent value)? updateTimePreference,
-    TResult Function(UpdateUserProfileEvent value)? updateUserProfile,
-    TResult Function(CheckUserLoggedEvent value)? checkUserLogged,
-    TResult Function(ValidAccountEvent value)? validateAccount,
-    TResult Function(GetSportsEvent value)? getSports,
-    TResult Function(SendImageAndSportsEvent value)? sendImageAndSports,
+    TResult Function(_LoginEvent value)? login,
+    TResult Function(_RegisterEvent value)? register,
+    TResult Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult Function(_EditPreferencesEvent value)? editPreferences,
+    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult Function(_GetSportsEvent value)? getSports,
+    TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     required TResult orElse(),
   }) {
-    if (updateUserPreferences != null) {
-      return updateUserPreferences(this);
+    if (deleteUserProfile != null) {
+      return deleteUserProfile(this);
     }
     return orElse();
   }
 }
 
-abstract class UpdateUserPreferencesEvent implements AuthEvent {
-  const factory UpdateUserPreferencesEvent(
-      {required final int sportId,
-      required final int favoriteHand,
-      required final int favoritePos,
-      required final int favoriteTime}) = _$UpdateUserPreferencesEventImpl;
+abstract class _DeleteUserProfileEvent implements AuthEvent {
+  const factory _DeleteUserProfileEvent() = _$DeleteUserProfileEventImpl;
+}
 
-  int get sportId;
-  int get favoriteHand;
-  int get favoritePos;
-  int get favoriteTime;
+/// @nodoc
+abstract class _$$EditUserProfileEventImplCopyWith<$Res> {
+  factory _$$EditUserProfileEventImplCopyWith(_$EditUserProfileEventImpl value,
+          $Res Function(_$EditUserProfileEventImpl) then) =
+      __$$EditUserProfileEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({EditUserProfileParams params});
+}
+
+/// @nodoc
+class __$$EditUserProfileEventImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$EditUserProfileEventImpl>
+    implements _$$EditUserProfileEventImplCopyWith<$Res> {
+  __$$EditUserProfileEventImplCopyWithImpl(_$EditUserProfileEventImpl _value,
+      $Res Function(_$EditUserProfileEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? params = null,
+  }) {
+    return _then(_$EditUserProfileEventImpl(
+      params: null == params
+          ? _value.params
+          : params // ignore: cast_nullable_to_non_nullable
+              as EditUserProfileParams,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$EditUserProfileEventImpl implements _EditUserProfileEvent {
+  const _$EditUserProfileEventImpl({required this.params});
+
+  @override
+  final EditUserProfileParams params;
+
+  @override
+  String toString() {
+    return 'AuthEvent.editUserProfile(params: $params)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$EditUserProfileEventImpl &&
+            (identical(other.params, params) || other.params == params));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, params);
+
   @JsonKey(ignore: true)
-  _$$UpdateUserPreferencesEventImplCopyWith<_$UpdateUserPreferencesEventImpl>
+  @override
+  @pragma('vm:prefer-inline')
+  _$$EditUserProfileEventImplCopyWith<_$EditUserProfileEventImpl>
+      get copyWith =>
+          __$$EditUserProfileEventImplCopyWithImpl<_$EditUserProfileEventImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() login,
+    required TResult Function() register,
+    required TResult Function() getUserProfile,
+    required TResult Function() deleteUserProfile,
+    required TResult Function(EditUserProfileParams params) editUserProfile,
+    required TResult Function(PreferenceValue params) editPreferences,
+    required TResult Function() checkUserLogged,
+    required TResult Function() confirmUserEmail,
+    required TResult Function() resendconfirmUserEmail,
+    required TResult Function() getSports,
+    required TResult Function(
+            List<int> imageBytes, String imageType, List<int> selectedSports)
+        completeRegistration,
+    required TResult Function(List<int> sportsIds) addFavoriteSports,
+    required TResult Function(List<int> sportsIds) deleteFavoriteSports,
+  }) {
+    return editUserProfile(params);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? login,
+    TResult? Function()? register,
+    TResult? Function()? getUserProfile,
+    TResult? Function()? deleteUserProfile,
+    TResult? Function(EditUserProfileParams params)? editUserProfile,
+    TResult? Function(PreferenceValue params)? editPreferences,
+    TResult? Function()? checkUserLogged,
+    TResult? Function()? confirmUserEmail,
+    TResult? Function()? resendconfirmUserEmail,
+    TResult? Function()? getSports,
+    TResult? Function(
+            List<int> imageBytes, String imageType, List<int> selectedSports)?
+        completeRegistration,
+    TResult? Function(List<int> sportsIds)? addFavoriteSports,
+    TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
+  }) {
+    return editUserProfile?.call(params);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? login,
+    TResult Function()? register,
+    TResult Function()? getUserProfile,
+    TResult Function()? deleteUserProfile,
+    TResult Function(EditUserProfileParams params)? editUserProfile,
+    TResult Function(PreferenceValue params)? editPreferences,
+    TResult Function()? checkUserLogged,
+    TResult Function()? confirmUserEmail,
+    TResult Function()? resendconfirmUserEmail,
+    TResult Function()? getSports,
+    TResult Function(
+            List<int> imageBytes, String imageType, List<int> selectedSports)?
+        completeRegistration,
+    TResult Function(List<int> sportsIds)? addFavoriteSports,
+    TResult Function(List<int> sportsIds)? deleteFavoriteSports,
+    required TResult orElse(),
+  }) {
+    if (editUserProfile != null) {
+      return editUserProfile(params);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoginEvent value) login,
+    required TResult Function(_RegisterEvent value) register,
+    required TResult Function(_GetUserProfileEvent value) getUserProfile,
+    required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
+    required TResult Function(_EditUserProfileEvent value) editUserProfile,
+    required TResult Function(_EditPreferencesEvent value) editPreferences,
+    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
+    required TResult Function(_ResendConfirmUserEmailEvent value)
+        resendconfirmUserEmail,
+    required TResult Function(_GetSportsEvent value) getSports,
+    required TResult Function(_CompleteRegistrationEvent value)
+        completeRegistration,
+    required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
+    required TResult Function(_DeleteFavoriteSportsEvent value)
+        deleteFavoriteSports,
+  }) {
+    return editUserProfile(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_RegisterEvent value)? register,
+    TResult? Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult? Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult? Function(_EditPreferencesEvent value)? editPreferences,
+    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult? Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult? Function(_GetSportsEvent value)? getSports,
+    TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+  }) {
+    return editUserProfile?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoginEvent value)? login,
+    TResult Function(_RegisterEvent value)? register,
+    TResult Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult Function(_EditPreferencesEvent value)? editPreferences,
+    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult Function(_GetSportsEvent value)? getSports,
+    TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    required TResult orElse(),
+  }) {
+    if (editUserProfile != null) {
+      return editUserProfile(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EditUserProfileEvent implements AuthEvent {
+  const factory _EditUserProfileEvent(
+          {required final EditUserProfileParams params}) =
+      _$EditUserProfileEventImpl;
+
+  EditUserProfileParams get params;
+  @JsonKey(ignore: true)
+  _$$EditUserProfileEventImplCopyWith<_$EditUserProfileEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UpdateHandPreferenceEventImplCopyWith<$Res> {
-  factory _$$UpdateHandPreferenceEventImplCopyWith(
-          _$UpdateHandPreferenceEventImpl value,
-          $Res Function(_$UpdateHandPreferenceEventImpl) then) =
-      __$$UpdateHandPreferenceEventImplCopyWithImpl<$Res>;
+abstract class _$$EditPreferencesEventImplCopyWith<$Res> {
+  factory _$$EditPreferencesEventImplCopyWith(_$EditPreferencesEventImpl value,
+          $Res Function(_$EditPreferencesEventImpl) then) =
+      __$$EditPreferencesEventImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int sportId, String optionName});
+  $Res call({PreferenceValue params});
 }
 
 /// @nodoc
-class __$$UpdateHandPreferenceEventImplCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$UpdateHandPreferenceEventImpl>
-    implements _$$UpdateHandPreferenceEventImplCopyWith<$Res> {
-  __$$UpdateHandPreferenceEventImplCopyWithImpl(
-      _$UpdateHandPreferenceEventImpl _value,
-      $Res Function(_$UpdateHandPreferenceEventImpl) _then)
+class __$$EditPreferencesEventImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$EditPreferencesEventImpl>
+    implements _$$EditPreferencesEventImplCopyWith<$Res> {
+  __$$EditPreferencesEventImplCopyWithImpl(_$EditPreferencesEventImpl _value,
+      $Res Function(_$EditPreferencesEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? sportId = null,
-    Object? optionName = null,
+    Object? params = null,
   }) {
-    return _then(_$UpdateHandPreferenceEventImpl(
-      sportId: null == sportId
-          ? _value.sportId
-          : sportId // ignore: cast_nullable_to_non_nullable
-              as int,
-      optionName: null == optionName
-          ? _value.optionName
-          : optionName // ignore: cast_nullable_to_non_nullable
-              as String,
+    return _then(_$EditPreferencesEventImpl(
+      params: null == params
+          ? _value.params
+          : params // ignore: cast_nullable_to_non_nullable
+              as PreferenceValue,
     ));
   }
 }
 
 /// @nodoc
 
-class _$UpdateHandPreferenceEventImpl implements UpdateHandPreferenceEvent {
-  const _$UpdateHandPreferenceEventImpl(
-      {required this.sportId, required this.optionName});
+class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
+  const _$EditPreferencesEventImpl({required this.params});
 
   @override
-  final int sportId;
-  @override
-  final String optionName;
+  final PreferenceValue params;
 
   @override
   String toString() {
-    return 'AuthEvent.updateHandPreference(sportId: $sportId, optionName: $optionName)';
+    return 'AuthEvent.editPreferences(params: $params)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateHandPreferenceEventImpl &&
-            (identical(other.sportId, sportId) || other.sportId == sportId) &&
-            (identical(other.optionName, optionName) ||
-                other.optionName == optionName));
+            other is _$EditPreferencesEventImpl &&
+            (identical(other.params, params) || other.params == params));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, sportId, optionName);
+  int get hashCode => Object.hash(runtimeType, params);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateHandPreferenceEventImplCopyWith<_$UpdateHandPreferenceEventImpl>
-      get copyWith => __$$UpdateHandPreferenceEventImplCopyWithImpl<
-          _$UpdateHandPreferenceEventImpl>(this, _$identity);
+  _$$EditPreferencesEventImplCopyWith<_$EditPreferencesEventImpl>
+      get copyWith =>
+          __$$EditPreferencesEventImplCopyWithImpl<_$EditPreferencesEventImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() login,
     required TResult Function() register,
-    required TResult Function() getUserInfo,
-    required TResult Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)
-        updateUserPreferences,
-    required TResult Function(int sportId, String optionName)
-        updateHandPreference,
-    required TResult Function(int sportId, String optionName)
-        updatePositionPreference,
-    required TResult Function(int sportId, String optionName)
-        updateTimePreference,
-    required TResult Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)
-        updateUserProfile,
+    required TResult Function() getUserProfile,
+    required TResult Function() deleteUserProfile,
+    required TResult Function(EditUserProfileParams params) editUserProfile,
+    required TResult Function(PreferenceValue params) editPreferences,
     required TResult Function() checkUserLogged,
-    required TResult Function() validateAccount,
+    required TResult Function() confirmUserEmail,
+    required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
     required TResult Function(
             List<int> imageBytes, String imageType, List<int> selectedSports)
-        sendImageAndSports,
+        completeRegistration,
+    required TResult Function(List<int> sportsIds) addFavoriteSports,
+    required TResult Function(List<int> sportsIds) deleteFavoriteSports,
   }) {
-    return updateHandPreference(sportId, optionName);
+    return editPreferences(params);
   }
 
   @override
@@ -1211,31 +1174,21 @@ class _$UpdateHandPreferenceEventImpl implements UpdateHandPreferenceEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? login,
     TResult? Function()? register,
-    TResult? Function()? getUserInfo,
-    TResult? Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)?
-        updateUserPreferences,
-    TResult? Function(int sportId, String optionName)? updateHandPreference,
-    TResult? Function(int sportId, String optionName)? updatePositionPreference,
-    TResult? Function(int sportId, String optionName)? updateTimePreference,
-    TResult? Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)?
-        updateUserProfile,
+    TResult? Function()? getUserProfile,
+    TResult? Function()? deleteUserProfile,
+    TResult? Function(EditUserProfileParams params)? editUserProfile,
+    TResult? Function(PreferenceValue params)? editPreferences,
     TResult? Function()? checkUserLogged,
-    TResult? Function()? validateAccount,
+    TResult? Function()? confirmUserEmail,
+    TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
     TResult? Function(
             List<int> imageBytes, String imageType, List<int> selectedSports)?
-        sendImageAndSports,
+        completeRegistration,
+    TResult? Function(List<int> sportsIds)? addFavoriteSports,
+    TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
   }) {
-    return updateHandPreference?.call(sportId, optionName);
+    return editPreferences?.call(params);
   }
 
   @override
@@ -1243,33 +1196,23 @@ class _$UpdateHandPreferenceEventImpl implements UpdateHandPreferenceEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? login,
     TResult Function()? register,
-    TResult Function()? getUserInfo,
-    TResult Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)?
-        updateUserPreferences,
-    TResult Function(int sportId, String optionName)? updateHandPreference,
-    TResult Function(int sportId, String optionName)? updatePositionPreference,
-    TResult Function(int sportId, String optionName)? updateTimePreference,
-    TResult Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)?
-        updateUserProfile,
+    TResult Function()? getUserProfile,
+    TResult Function()? deleteUserProfile,
+    TResult Function(EditUserProfileParams params)? editUserProfile,
+    TResult Function(PreferenceValue params)? editPreferences,
     TResult Function()? checkUserLogged,
-    TResult Function()? validateAccount,
+    TResult Function()? confirmUserEmail,
+    TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
     TResult Function(
             List<int> imageBytes, String imageType, List<int> selectedSports)?
-        sendImageAndSports,
+        completeRegistration,
+    TResult Function(List<int> sportsIds)? addFavoriteSports,
+    TResult Function(List<int> sportsIds)? deleteFavoriteSports,
     required TResult orElse(),
   }) {
-    if (updateHandPreference != null) {
-      return updateHandPreference(sportId, optionName);
+    if (editPreferences != null) {
+      return editPreferences(params);
     }
     return orElse();
   }
@@ -1277,958 +1220,80 @@ class _$UpdateHandPreferenceEventImpl implements UpdateHandPreferenceEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoginEvent value) login,
-    required TResult Function(RegisterEvent value) register,
-    required TResult Function(GetUserInfoEvent value) getUserInfo,
-    required TResult Function(UpdateUserPreferencesEvent value)
-        updateUserPreferences,
-    required TResult Function(UpdateHandPreferenceEvent value)
-        updateHandPreference,
-    required TResult Function(UpdatePositionPreferenceEvent value)
-        updatePositionPreference,
-    required TResult Function(UpdateTimePreferenceEvent value)
-        updateTimePreference,
-    required TResult Function(UpdateUserProfileEvent value) updateUserProfile,
-    required TResult Function(CheckUserLoggedEvent value) checkUserLogged,
-    required TResult Function(ValidAccountEvent value) validateAccount,
-    required TResult Function(GetSportsEvent value) getSports,
-    required TResult Function(SendImageAndSportsEvent value) sendImageAndSports,
+    required TResult Function(_LoginEvent value) login,
+    required TResult Function(_RegisterEvent value) register,
+    required TResult Function(_GetUserProfileEvent value) getUserProfile,
+    required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
+    required TResult Function(_EditUserProfileEvent value) editUserProfile,
+    required TResult Function(_EditPreferencesEvent value) editPreferences,
+    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
+    required TResult Function(_ResendConfirmUserEmailEvent value)
+        resendconfirmUserEmail,
+    required TResult Function(_GetSportsEvent value) getSports,
+    required TResult Function(_CompleteRegistrationEvent value)
+        completeRegistration,
+    required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
+    required TResult Function(_DeleteFavoriteSportsEvent value)
+        deleteFavoriteSports,
   }) {
-    return updateHandPreference(this);
+    return editPreferences(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoginEvent value)? login,
-    TResult? Function(RegisterEvent value)? register,
-    TResult? Function(GetUserInfoEvent value)? getUserInfo,
-    TResult? Function(UpdateUserPreferencesEvent value)? updateUserPreferences,
-    TResult? Function(UpdateHandPreferenceEvent value)? updateHandPreference,
-    TResult? Function(UpdatePositionPreferenceEvent value)?
-        updatePositionPreference,
-    TResult? Function(UpdateTimePreferenceEvent value)? updateTimePreference,
-    TResult? Function(UpdateUserProfileEvent value)? updateUserProfile,
-    TResult? Function(CheckUserLoggedEvent value)? checkUserLogged,
-    TResult? Function(ValidAccountEvent value)? validateAccount,
-    TResult? Function(GetSportsEvent value)? getSports,
-    TResult? Function(SendImageAndSportsEvent value)? sendImageAndSports,
+    TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_RegisterEvent value)? register,
+    TResult? Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult? Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult? Function(_EditPreferencesEvent value)? editPreferences,
+    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult? Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult? Function(_GetSportsEvent value)? getSports,
+    TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
   }) {
-    return updateHandPreference?.call(this);
+    return editPreferences?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoginEvent value)? login,
-    TResult Function(RegisterEvent value)? register,
-    TResult Function(GetUserInfoEvent value)? getUserInfo,
-    TResult Function(UpdateUserPreferencesEvent value)? updateUserPreferences,
-    TResult Function(UpdateHandPreferenceEvent value)? updateHandPreference,
-    TResult Function(UpdatePositionPreferenceEvent value)?
-        updatePositionPreference,
-    TResult Function(UpdateTimePreferenceEvent value)? updateTimePreference,
-    TResult Function(UpdateUserProfileEvent value)? updateUserProfile,
-    TResult Function(CheckUserLoggedEvent value)? checkUserLogged,
-    TResult Function(ValidAccountEvent value)? validateAccount,
-    TResult Function(GetSportsEvent value)? getSports,
-    TResult Function(SendImageAndSportsEvent value)? sendImageAndSports,
+    TResult Function(_LoginEvent value)? login,
+    TResult Function(_RegisterEvent value)? register,
+    TResult Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult Function(_EditPreferencesEvent value)? editPreferences,
+    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult Function(_GetSportsEvent value)? getSports,
+    TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     required TResult orElse(),
   }) {
-    if (updateHandPreference != null) {
-      return updateHandPreference(this);
+    if (editPreferences != null) {
+      return editPreferences(this);
     }
     return orElse();
   }
 }
 
-abstract class UpdateHandPreferenceEvent implements AuthEvent {
-  const factory UpdateHandPreferenceEvent(
-      {required final int sportId,
-      required final String optionName}) = _$UpdateHandPreferenceEventImpl;
+abstract class _EditPreferencesEvent implements AuthEvent {
+  const factory _EditPreferencesEvent({required final PreferenceValue params}) =
+      _$EditPreferencesEventImpl;
 
-  int get sportId;
-  String get optionName;
+  PreferenceValue get params;
   @JsonKey(ignore: true)
-  _$$UpdateHandPreferenceEventImplCopyWith<_$UpdateHandPreferenceEventImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$UpdatePositionPreferenceEventImplCopyWith<$Res> {
-  factory _$$UpdatePositionPreferenceEventImplCopyWith(
-          _$UpdatePositionPreferenceEventImpl value,
-          $Res Function(_$UpdatePositionPreferenceEventImpl) then) =
-      __$$UpdatePositionPreferenceEventImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({int sportId, String optionName});
-}
-
-/// @nodoc
-class __$$UpdatePositionPreferenceEventImplCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$UpdatePositionPreferenceEventImpl>
-    implements _$$UpdatePositionPreferenceEventImplCopyWith<$Res> {
-  __$$UpdatePositionPreferenceEventImplCopyWithImpl(
-      _$UpdatePositionPreferenceEventImpl _value,
-      $Res Function(_$UpdatePositionPreferenceEventImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? sportId = null,
-    Object? optionName = null,
-  }) {
-    return _then(_$UpdatePositionPreferenceEventImpl(
-      sportId: null == sportId
-          ? _value.sportId
-          : sportId // ignore: cast_nullable_to_non_nullable
-              as int,
-      optionName: null == optionName
-          ? _value.optionName
-          : optionName // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$UpdatePositionPreferenceEventImpl
-    implements UpdatePositionPreferenceEvent {
-  const _$UpdatePositionPreferenceEventImpl(
-      {required this.sportId, required this.optionName});
-
-  @override
-  final int sportId;
-  @override
-  final String optionName;
-
-  @override
-  String toString() {
-    return 'AuthEvent.updatePositionPreference(sportId: $sportId, optionName: $optionName)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdatePositionPreferenceEventImpl &&
-            (identical(other.sportId, sportId) || other.sportId == sportId) &&
-            (identical(other.optionName, optionName) ||
-                other.optionName == optionName));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, sportId, optionName);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdatePositionPreferenceEventImplCopyWith<
-          _$UpdatePositionPreferenceEventImpl>
-      get copyWith => __$$UpdatePositionPreferenceEventImplCopyWithImpl<
-          _$UpdatePositionPreferenceEventImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() login,
-    required TResult Function() register,
-    required TResult Function() getUserInfo,
-    required TResult Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)
-        updateUserPreferences,
-    required TResult Function(int sportId, String optionName)
-        updateHandPreference,
-    required TResult Function(int sportId, String optionName)
-        updatePositionPreference,
-    required TResult Function(int sportId, String optionName)
-        updateTimePreference,
-    required TResult Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)
-        updateUserProfile,
-    required TResult Function() checkUserLogged,
-    required TResult Function() validateAccount,
-    required TResult Function() getSports,
-    required TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)
-        sendImageAndSports,
-  }) {
-    return updatePositionPreference(sportId, optionName);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? login,
-    TResult? Function()? register,
-    TResult? Function()? getUserInfo,
-    TResult? Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)?
-        updateUserPreferences,
-    TResult? Function(int sportId, String optionName)? updateHandPreference,
-    TResult? Function(int sportId, String optionName)? updatePositionPreference,
-    TResult? Function(int sportId, String optionName)? updateTimePreference,
-    TResult? Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)?
-        updateUserProfile,
-    TResult? Function()? checkUserLogged,
-    TResult? Function()? validateAccount,
-    TResult? Function()? getSports,
-    TResult? Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
-        sendImageAndSports,
-  }) {
-    return updatePositionPreference?.call(sportId, optionName);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? login,
-    TResult Function()? register,
-    TResult Function()? getUserInfo,
-    TResult Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)?
-        updateUserPreferences,
-    TResult Function(int sportId, String optionName)? updateHandPreference,
-    TResult Function(int sportId, String optionName)? updatePositionPreference,
-    TResult Function(int sportId, String optionName)? updateTimePreference,
-    TResult Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)?
-        updateUserProfile,
-    TResult Function()? checkUserLogged,
-    TResult Function()? validateAccount,
-    TResult Function()? getSports,
-    TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
-        sendImageAndSports,
-    required TResult orElse(),
-  }) {
-    if (updatePositionPreference != null) {
-      return updatePositionPreference(sportId, optionName);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(LoginEvent value) login,
-    required TResult Function(RegisterEvent value) register,
-    required TResult Function(GetUserInfoEvent value) getUserInfo,
-    required TResult Function(UpdateUserPreferencesEvent value)
-        updateUserPreferences,
-    required TResult Function(UpdateHandPreferenceEvent value)
-        updateHandPreference,
-    required TResult Function(UpdatePositionPreferenceEvent value)
-        updatePositionPreference,
-    required TResult Function(UpdateTimePreferenceEvent value)
-        updateTimePreference,
-    required TResult Function(UpdateUserProfileEvent value) updateUserProfile,
-    required TResult Function(CheckUserLoggedEvent value) checkUserLogged,
-    required TResult Function(ValidAccountEvent value) validateAccount,
-    required TResult Function(GetSportsEvent value) getSports,
-    required TResult Function(SendImageAndSportsEvent value) sendImageAndSports,
-  }) {
-    return updatePositionPreference(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoginEvent value)? login,
-    TResult? Function(RegisterEvent value)? register,
-    TResult? Function(GetUserInfoEvent value)? getUserInfo,
-    TResult? Function(UpdateUserPreferencesEvent value)? updateUserPreferences,
-    TResult? Function(UpdateHandPreferenceEvent value)? updateHandPreference,
-    TResult? Function(UpdatePositionPreferenceEvent value)?
-        updatePositionPreference,
-    TResult? Function(UpdateTimePreferenceEvent value)? updateTimePreference,
-    TResult? Function(UpdateUserProfileEvent value)? updateUserProfile,
-    TResult? Function(CheckUserLoggedEvent value)? checkUserLogged,
-    TResult? Function(ValidAccountEvent value)? validateAccount,
-    TResult? Function(GetSportsEvent value)? getSports,
-    TResult? Function(SendImageAndSportsEvent value)? sendImageAndSports,
-  }) {
-    return updatePositionPreference?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoginEvent value)? login,
-    TResult Function(RegisterEvent value)? register,
-    TResult Function(GetUserInfoEvent value)? getUserInfo,
-    TResult Function(UpdateUserPreferencesEvent value)? updateUserPreferences,
-    TResult Function(UpdateHandPreferenceEvent value)? updateHandPreference,
-    TResult Function(UpdatePositionPreferenceEvent value)?
-        updatePositionPreference,
-    TResult Function(UpdateTimePreferenceEvent value)? updateTimePreference,
-    TResult Function(UpdateUserProfileEvent value)? updateUserProfile,
-    TResult Function(CheckUserLoggedEvent value)? checkUserLogged,
-    TResult Function(ValidAccountEvent value)? validateAccount,
-    TResult Function(GetSportsEvent value)? getSports,
-    TResult Function(SendImageAndSportsEvent value)? sendImageAndSports,
-    required TResult orElse(),
-  }) {
-    if (updatePositionPreference != null) {
-      return updatePositionPreference(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class UpdatePositionPreferenceEvent implements AuthEvent {
-  const factory UpdatePositionPreferenceEvent(
-      {required final int sportId,
-      required final String optionName}) = _$UpdatePositionPreferenceEventImpl;
-
-  int get sportId;
-  String get optionName;
-  @JsonKey(ignore: true)
-  _$$UpdatePositionPreferenceEventImplCopyWith<
-          _$UpdatePositionPreferenceEventImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$UpdateTimePreferenceEventImplCopyWith<$Res> {
-  factory _$$UpdateTimePreferenceEventImplCopyWith(
-          _$UpdateTimePreferenceEventImpl value,
-          $Res Function(_$UpdateTimePreferenceEventImpl) then) =
-      __$$UpdateTimePreferenceEventImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({int sportId, String optionName});
-}
-
-/// @nodoc
-class __$$UpdateTimePreferenceEventImplCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$UpdateTimePreferenceEventImpl>
-    implements _$$UpdateTimePreferenceEventImplCopyWith<$Res> {
-  __$$UpdateTimePreferenceEventImplCopyWithImpl(
-      _$UpdateTimePreferenceEventImpl _value,
-      $Res Function(_$UpdateTimePreferenceEventImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? sportId = null,
-    Object? optionName = null,
-  }) {
-    return _then(_$UpdateTimePreferenceEventImpl(
-      sportId: null == sportId
-          ? _value.sportId
-          : sportId // ignore: cast_nullable_to_non_nullable
-              as int,
-      optionName: null == optionName
-          ? _value.optionName
-          : optionName // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$UpdateTimePreferenceEventImpl implements UpdateTimePreferenceEvent {
-  const _$UpdateTimePreferenceEventImpl(
-      {required this.sportId, required this.optionName});
-
-  @override
-  final int sportId;
-  @override
-  final String optionName;
-
-  @override
-  String toString() {
-    return 'AuthEvent.updateTimePreference(sportId: $sportId, optionName: $optionName)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateTimePreferenceEventImpl &&
-            (identical(other.sportId, sportId) || other.sportId == sportId) &&
-            (identical(other.optionName, optionName) ||
-                other.optionName == optionName));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, sportId, optionName);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateTimePreferenceEventImplCopyWith<_$UpdateTimePreferenceEventImpl>
-      get copyWith => __$$UpdateTimePreferenceEventImplCopyWithImpl<
-          _$UpdateTimePreferenceEventImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() login,
-    required TResult Function() register,
-    required TResult Function() getUserInfo,
-    required TResult Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)
-        updateUserPreferences,
-    required TResult Function(int sportId, String optionName)
-        updateHandPreference,
-    required TResult Function(int sportId, String optionName)
-        updatePositionPreference,
-    required TResult Function(int sportId, String optionName)
-        updateTimePreference,
-    required TResult Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)
-        updateUserProfile,
-    required TResult Function() checkUserLogged,
-    required TResult Function() validateAccount,
-    required TResult Function() getSports,
-    required TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)
-        sendImageAndSports,
-  }) {
-    return updateTimePreference(sportId, optionName);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? login,
-    TResult? Function()? register,
-    TResult? Function()? getUserInfo,
-    TResult? Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)?
-        updateUserPreferences,
-    TResult? Function(int sportId, String optionName)? updateHandPreference,
-    TResult? Function(int sportId, String optionName)? updatePositionPreference,
-    TResult? Function(int sportId, String optionName)? updateTimePreference,
-    TResult? Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)?
-        updateUserProfile,
-    TResult? Function()? checkUserLogged,
-    TResult? Function()? validateAccount,
-    TResult? Function()? getSports,
-    TResult? Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
-        sendImageAndSports,
-  }) {
-    return updateTimePreference?.call(sportId, optionName);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? login,
-    TResult Function()? register,
-    TResult Function()? getUserInfo,
-    TResult Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)?
-        updateUserPreferences,
-    TResult Function(int sportId, String optionName)? updateHandPreference,
-    TResult Function(int sportId, String optionName)? updatePositionPreference,
-    TResult Function(int sportId, String optionName)? updateTimePreference,
-    TResult Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)?
-        updateUserProfile,
-    TResult Function()? checkUserLogged,
-    TResult Function()? validateAccount,
-    TResult Function()? getSports,
-    TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
-        sendImageAndSports,
-    required TResult orElse(),
-  }) {
-    if (updateTimePreference != null) {
-      return updateTimePreference(sportId, optionName);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(LoginEvent value) login,
-    required TResult Function(RegisterEvent value) register,
-    required TResult Function(GetUserInfoEvent value) getUserInfo,
-    required TResult Function(UpdateUserPreferencesEvent value)
-        updateUserPreferences,
-    required TResult Function(UpdateHandPreferenceEvent value)
-        updateHandPreference,
-    required TResult Function(UpdatePositionPreferenceEvent value)
-        updatePositionPreference,
-    required TResult Function(UpdateTimePreferenceEvent value)
-        updateTimePreference,
-    required TResult Function(UpdateUserProfileEvent value) updateUserProfile,
-    required TResult Function(CheckUserLoggedEvent value) checkUserLogged,
-    required TResult Function(ValidAccountEvent value) validateAccount,
-    required TResult Function(GetSportsEvent value) getSports,
-    required TResult Function(SendImageAndSportsEvent value) sendImageAndSports,
-  }) {
-    return updateTimePreference(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoginEvent value)? login,
-    TResult? Function(RegisterEvent value)? register,
-    TResult? Function(GetUserInfoEvent value)? getUserInfo,
-    TResult? Function(UpdateUserPreferencesEvent value)? updateUserPreferences,
-    TResult? Function(UpdateHandPreferenceEvent value)? updateHandPreference,
-    TResult? Function(UpdatePositionPreferenceEvent value)?
-        updatePositionPreference,
-    TResult? Function(UpdateTimePreferenceEvent value)? updateTimePreference,
-    TResult? Function(UpdateUserProfileEvent value)? updateUserProfile,
-    TResult? Function(CheckUserLoggedEvent value)? checkUserLogged,
-    TResult? Function(ValidAccountEvent value)? validateAccount,
-    TResult? Function(GetSportsEvent value)? getSports,
-    TResult? Function(SendImageAndSportsEvent value)? sendImageAndSports,
-  }) {
-    return updateTimePreference?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoginEvent value)? login,
-    TResult Function(RegisterEvent value)? register,
-    TResult Function(GetUserInfoEvent value)? getUserInfo,
-    TResult Function(UpdateUserPreferencesEvent value)? updateUserPreferences,
-    TResult Function(UpdateHandPreferenceEvent value)? updateHandPreference,
-    TResult Function(UpdatePositionPreferenceEvent value)?
-        updatePositionPreference,
-    TResult Function(UpdateTimePreferenceEvent value)? updateTimePreference,
-    TResult Function(UpdateUserProfileEvent value)? updateUserProfile,
-    TResult Function(CheckUserLoggedEvent value)? checkUserLogged,
-    TResult Function(ValidAccountEvent value)? validateAccount,
-    TResult Function(GetSportsEvent value)? getSports,
-    TResult Function(SendImageAndSportsEvent value)? sendImageAndSports,
-    required TResult orElse(),
-  }) {
-    if (updateTimePreference != null) {
-      return updateTimePreference(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class UpdateTimePreferenceEvent implements AuthEvent {
-  const factory UpdateTimePreferenceEvent(
-      {required final int sportId,
-      required final String optionName}) = _$UpdateTimePreferenceEventImpl;
-
-  int get sportId;
-  String get optionName;
-  @JsonKey(ignore: true)
-  _$$UpdateTimePreferenceEventImplCopyWith<_$UpdateTimePreferenceEventImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$UpdateUserProfileEventImplCopyWith<$Res> {
-  factory _$$UpdateUserProfileEventImplCopyWith(
-          _$UpdateUserProfileEventImpl value,
-          $Res Function(_$UpdateUserProfileEventImpl) then) =
-      __$$UpdateUserProfileEventImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call(
-      {String userName,
-      String phone,
-      List<int> image,
-      String type,
-      double latitude,
-      double longitude,
-      List<int> selectedSports,
-      String gender});
-}
-
-/// @nodoc
-class __$$UpdateUserProfileEventImplCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$UpdateUserProfileEventImpl>
-    implements _$$UpdateUserProfileEventImplCopyWith<$Res> {
-  __$$UpdateUserProfileEventImplCopyWithImpl(
-      _$UpdateUserProfileEventImpl _value,
-      $Res Function(_$UpdateUserProfileEventImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? userName = null,
-    Object? phone = null,
-    Object? image = null,
-    Object? type = null,
-    Object? latitude = null,
-    Object? longitude = null,
-    Object? selectedSports = null,
-    Object? gender = null,
-  }) {
-    return _then(_$UpdateUserProfileEventImpl(
-      userName: null == userName
-          ? _value.userName
-          : userName // ignore: cast_nullable_to_non_nullable
-              as String,
-      phone: null == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as String,
-      image: null == image
-          ? _value._image
-          : image // ignore: cast_nullable_to_non_nullable
-              as List<int>,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      latitude: null == latitude
-          ? _value.latitude
-          : latitude // ignore: cast_nullable_to_non_nullable
-              as double,
-      longitude: null == longitude
-          ? _value.longitude
-          : longitude // ignore: cast_nullable_to_non_nullable
-              as double,
-      selectedSports: null == selectedSports
-          ? _value._selectedSports
-          : selectedSports // ignore: cast_nullable_to_non_nullable
-              as List<int>,
-      gender: null == gender
-          ? _value.gender
-          : gender // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$UpdateUserProfileEventImpl implements UpdateUserProfileEvent {
-  const _$UpdateUserProfileEventImpl(
-      {required this.userName,
-      required this.phone,
-      required final List<int> image,
-      required this.type,
-      required this.latitude,
-      required this.longitude,
-      required final List<int> selectedSports,
-      required this.gender})
-      : _image = image,
-        _selectedSports = selectedSports;
-
-  @override
-  final String userName;
-  @override
-  final String phone;
-  final List<int> _image;
-  @override
-  List<int> get image {
-    if (_image is EqualUnmodifiableListView) return _image;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_image);
-  }
-
-  @override
-  final String type;
-  @override
-  final double latitude;
-  @override
-  final double longitude;
-  final List<int> _selectedSports;
-  @override
-  List<int> get selectedSports {
-    if (_selectedSports is EqualUnmodifiableListView) return _selectedSports;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_selectedSports);
-  }
-
-  @override
-  final String gender;
-
-  @override
-  String toString() {
-    return 'AuthEvent.updateUserProfile(userName: $userName, phone: $phone, image: $image, type: $type, latitude: $latitude, longitude: $longitude, selectedSports: $selectedSports, gender: $gender)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateUserProfileEventImpl &&
-            (identical(other.userName, userName) ||
-                other.userName == userName) &&
-            (identical(other.phone, phone) || other.phone == phone) &&
-            const DeepCollectionEquality().equals(other._image, _image) &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.latitude, latitude) ||
-                other.latitude == latitude) &&
-            (identical(other.longitude, longitude) ||
-                other.longitude == longitude) &&
-            const DeepCollectionEquality()
-                .equals(other._selectedSports, _selectedSports) &&
-            (identical(other.gender, gender) || other.gender == gender));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      userName,
-      phone,
-      const DeepCollectionEquality().hash(_image),
-      type,
-      latitude,
-      longitude,
-      const DeepCollectionEquality().hash(_selectedSports),
-      gender);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateUserProfileEventImplCopyWith<_$UpdateUserProfileEventImpl>
-      get copyWith => __$$UpdateUserProfileEventImplCopyWithImpl<
-          _$UpdateUserProfileEventImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() login,
-    required TResult Function() register,
-    required TResult Function() getUserInfo,
-    required TResult Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)
-        updateUserPreferences,
-    required TResult Function(int sportId, String optionName)
-        updateHandPreference,
-    required TResult Function(int sportId, String optionName)
-        updatePositionPreference,
-    required TResult Function(int sportId, String optionName)
-        updateTimePreference,
-    required TResult Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)
-        updateUserProfile,
-    required TResult Function() checkUserLogged,
-    required TResult Function() validateAccount,
-    required TResult Function() getSports,
-    required TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)
-        sendImageAndSports,
-  }) {
-    return updateUserProfile(userName, phone, image, type, latitude, longitude,
-        selectedSports, gender);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? login,
-    TResult? Function()? register,
-    TResult? Function()? getUserInfo,
-    TResult? Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)?
-        updateUserPreferences,
-    TResult? Function(int sportId, String optionName)? updateHandPreference,
-    TResult? Function(int sportId, String optionName)? updatePositionPreference,
-    TResult? Function(int sportId, String optionName)? updateTimePreference,
-    TResult? Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)?
-        updateUserProfile,
-    TResult? Function()? checkUserLogged,
-    TResult? Function()? validateAccount,
-    TResult? Function()? getSports,
-    TResult? Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
-        sendImageAndSports,
-  }) {
-    return updateUserProfile?.call(userName, phone, image, type, latitude,
-        longitude, selectedSports, gender);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? login,
-    TResult Function()? register,
-    TResult Function()? getUserInfo,
-    TResult Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)?
-        updateUserPreferences,
-    TResult Function(int sportId, String optionName)? updateHandPreference,
-    TResult Function(int sportId, String optionName)? updatePositionPreference,
-    TResult Function(int sportId, String optionName)? updateTimePreference,
-    TResult Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)?
-        updateUserProfile,
-    TResult Function()? checkUserLogged,
-    TResult Function()? validateAccount,
-    TResult Function()? getSports,
-    TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
-        sendImageAndSports,
-    required TResult orElse(),
-  }) {
-    if (updateUserProfile != null) {
-      return updateUserProfile(userName, phone, image, type, latitude,
-          longitude, selectedSports, gender);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(LoginEvent value) login,
-    required TResult Function(RegisterEvent value) register,
-    required TResult Function(GetUserInfoEvent value) getUserInfo,
-    required TResult Function(UpdateUserPreferencesEvent value)
-        updateUserPreferences,
-    required TResult Function(UpdateHandPreferenceEvent value)
-        updateHandPreference,
-    required TResult Function(UpdatePositionPreferenceEvent value)
-        updatePositionPreference,
-    required TResult Function(UpdateTimePreferenceEvent value)
-        updateTimePreference,
-    required TResult Function(UpdateUserProfileEvent value) updateUserProfile,
-    required TResult Function(CheckUserLoggedEvent value) checkUserLogged,
-    required TResult Function(ValidAccountEvent value) validateAccount,
-    required TResult Function(GetSportsEvent value) getSports,
-    required TResult Function(SendImageAndSportsEvent value) sendImageAndSports,
-  }) {
-    return updateUserProfile(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoginEvent value)? login,
-    TResult? Function(RegisterEvent value)? register,
-    TResult? Function(GetUserInfoEvent value)? getUserInfo,
-    TResult? Function(UpdateUserPreferencesEvent value)? updateUserPreferences,
-    TResult? Function(UpdateHandPreferenceEvent value)? updateHandPreference,
-    TResult? Function(UpdatePositionPreferenceEvent value)?
-        updatePositionPreference,
-    TResult? Function(UpdateTimePreferenceEvent value)? updateTimePreference,
-    TResult? Function(UpdateUserProfileEvent value)? updateUserProfile,
-    TResult? Function(CheckUserLoggedEvent value)? checkUserLogged,
-    TResult? Function(ValidAccountEvent value)? validateAccount,
-    TResult? Function(GetSportsEvent value)? getSports,
-    TResult? Function(SendImageAndSportsEvent value)? sendImageAndSports,
-  }) {
-    return updateUserProfile?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoginEvent value)? login,
-    TResult Function(RegisterEvent value)? register,
-    TResult Function(GetUserInfoEvent value)? getUserInfo,
-    TResult Function(UpdateUserPreferencesEvent value)? updateUserPreferences,
-    TResult Function(UpdateHandPreferenceEvent value)? updateHandPreference,
-    TResult Function(UpdatePositionPreferenceEvent value)?
-        updatePositionPreference,
-    TResult Function(UpdateTimePreferenceEvent value)? updateTimePreference,
-    TResult Function(UpdateUserProfileEvent value)? updateUserProfile,
-    TResult Function(CheckUserLoggedEvent value)? checkUserLogged,
-    TResult Function(ValidAccountEvent value)? validateAccount,
-    TResult Function(GetSportsEvent value)? getSports,
-    TResult Function(SendImageAndSportsEvent value)? sendImageAndSports,
-    required TResult orElse(),
-  }) {
-    if (updateUserProfile != null) {
-      return updateUserProfile(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class UpdateUserProfileEvent implements AuthEvent {
-  const factory UpdateUserProfileEvent(
-      {required final String userName,
-      required final String phone,
-      required final List<int> image,
-      required final String type,
-      required final double latitude,
-      required final double longitude,
-      required final List<int> selectedSports,
-      required final String gender}) = _$UpdateUserProfileEventImpl;
-
-  String get userName;
-  String get phone;
-  List<int> get image;
-  String get type;
-  double get latitude;
-  double get longitude;
-  List<int> get selectedSports;
-  String get gender;
-  @JsonKey(ignore: true)
-  _$$UpdateUserProfileEventImplCopyWith<_$UpdateUserProfileEventImpl>
+  _$$EditPreferencesEventImplCopyWith<_$EditPreferencesEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -2250,7 +1315,7 @@ class __$$CheckUserLoggedEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CheckUserLoggedEventImpl implements CheckUserLoggedEvent {
+class _$CheckUserLoggedEventImpl implements _CheckUserLoggedEvent {
   const _$CheckUserLoggedEventImpl();
 
   @override
@@ -2273,32 +1338,19 @@ class _$CheckUserLoggedEventImpl implements CheckUserLoggedEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() login,
     required TResult Function() register,
-    required TResult Function() getUserInfo,
-    required TResult Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)
-        updateUserPreferences,
-    required TResult Function(int sportId, String optionName)
-        updateHandPreference,
-    required TResult Function(int sportId, String optionName)
-        updatePositionPreference,
-    required TResult Function(int sportId, String optionName)
-        updateTimePreference,
-    required TResult Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)
-        updateUserProfile,
+    required TResult Function() getUserProfile,
+    required TResult Function() deleteUserProfile,
+    required TResult Function(EditUserProfileParams params) editUserProfile,
+    required TResult Function(PreferenceValue params) editPreferences,
     required TResult Function() checkUserLogged,
-    required TResult Function() validateAccount,
+    required TResult Function() confirmUserEmail,
+    required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
     required TResult Function(
             List<int> imageBytes, String imageType, List<int> selectedSports)
-        sendImageAndSports,
+        completeRegistration,
+    required TResult Function(List<int> sportsIds) addFavoriteSports,
+    required TResult Function(List<int> sportsIds) deleteFavoriteSports,
   }) {
     return checkUserLogged();
   }
@@ -2308,29 +1360,19 @@ class _$CheckUserLoggedEventImpl implements CheckUserLoggedEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? login,
     TResult? Function()? register,
-    TResult? Function()? getUserInfo,
-    TResult? Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)?
-        updateUserPreferences,
-    TResult? Function(int sportId, String optionName)? updateHandPreference,
-    TResult? Function(int sportId, String optionName)? updatePositionPreference,
-    TResult? Function(int sportId, String optionName)? updateTimePreference,
-    TResult? Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)?
-        updateUserProfile,
+    TResult? Function()? getUserProfile,
+    TResult? Function()? deleteUserProfile,
+    TResult? Function(EditUserProfileParams params)? editUserProfile,
+    TResult? Function(PreferenceValue params)? editPreferences,
     TResult? Function()? checkUserLogged,
-    TResult? Function()? validateAccount,
+    TResult? Function()? confirmUserEmail,
+    TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
     TResult? Function(
             List<int> imageBytes, String imageType, List<int> selectedSports)?
-        sendImageAndSports,
+        completeRegistration,
+    TResult? Function(List<int> sportsIds)? addFavoriteSports,
+    TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
   }) {
     return checkUserLogged?.call();
   }
@@ -2340,29 +1382,19 @@ class _$CheckUserLoggedEventImpl implements CheckUserLoggedEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? login,
     TResult Function()? register,
-    TResult Function()? getUserInfo,
-    TResult Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)?
-        updateUserPreferences,
-    TResult Function(int sportId, String optionName)? updateHandPreference,
-    TResult Function(int sportId, String optionName)? updatePositionPreference,
-    TResult Function(int sportId, String optionName)? updateTimePreference,
-    TResult Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)?
-        updateUserProfile,
+    TResult Function()? getUserProfile,
+    TResult Function()? deleteUserProfile,
+    TResult Function(EditUserProfileParams params)? editUserProfile,
+    TResult Function(PreferenceValue params)? editPreferences,
     TResult Function()? checkUserLogged,
-    TResult Function()? validateAccount,
+    TResult Function()? confirmUserEmail,
+    TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
     TResult Function(
             List<int> imageBytes, String imageType, List<int> selectedSports)?
-        sendImageAndSports,
+        completeRegistration,
+    TResult Function(List<int> sportsIds)? addFavoriteSports,
+    TResult Function(List<int> sportsIds)? deleteFavoriteSports,
     required TResult orElse(),
   }) {
     if (checkUserLogged != null) {
@@ -2374,22 +1406,22 @@ class _$CheckUserLoggedEventImpl implements CheckUserLoggedEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoginEvent value) login,
-    required TResult Function(RegisterEvent value) register,
-    required TResult Function(GetUserInfoEvent value) getUserInfo,
-    required TResult Function(UpdateUserPreferencesEvent value)
-        updateUserPreferences,
-    required TResult Function(UpdateHandPreferenceEvent value)
-        updateHandPreference,
-    required TResult Function(UpdatePositionPreferenceEvent value)
-        updatePositionPreference,
-    required TResult Function(UpdateTimePreferenceEvent value)
-        updateTimePreference,
-    required TResult Function(UpdateUserProfileEvent value) updateUserProfile,
-    required TResult Function(CheckUserLoggedEvent value) checkUserLogged,
-    required TResult Function(ValidAccountEvent value) validateAccount,
-    required TResult Function(GetSportsEvent value) getSports,
-    required TResult Function(SendImageAndSportsEvent value) sendImageAndSports,
+    required TResult Function(_LoginEvent value) login,
+    required TResult Function(_RegisterEvent value) register,
+    required TResult Function(_GetUserProfileEvent value) getUserProfile,
+    required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
+    required TResult Function(_EditUserProfileEvent value) editUserProfile,
+    required TResult Function(_EditPreferencesEvent value) editPreferences,
+    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
+    required TResult Function(_ResendConfirmUserEmailEvent value)
+        resendconfirmUserEmail,
+    required TResult Function(_GetSportsEvent value) getSports,
+    required TResult Function(_CompleteRegistrationEvent value)
+        completeRegistration,
+    required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
+    required TResult Function(_DeleteFavoriteSportsEvent value)
+        deleteFavoriteSports,
   }) {
     return checkUserLogged(this);
   }
@@ -2397,19 +1429,20 @@ class _$CheckUserLoggedEventImpl implements CheckUserLoggedEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoginEvent value)? login,
-    TResult? Function(RegisterEvent value)? register,
-    TResult? Function(GetUserInfoEvent value)? getUserInfo,
-    TResult? Function(UpdateUserPreferencesEvent value)? updateUserPreferences,
-    TResult? Function(UpdateHandPreferenceEvent value)? updateHandPreference,
-    TResult? Function(UpdatePositionPreferenceEvent value)?
-        updatePositionPreference,
-    TResult? Function(UpdateTimePreferenceEvent value)? updateTimePreference,
-    TResult? Function(UpdateUserProfileEvent value)? updateUserProfile,
-    TResult? Function(CheckUserLoggedEvent value)? checkUserLogged,
-    TResult? Function(ValidAccountEvent value)? validateAccount,
-    TResult? Function(GetSportsEvent value)? getSports,
-    TResult? Function(SendImageAndSportsEvent value)? sendImageAndSports,
+    TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_RegisterEvent value)? register,
+    TResult? Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult? Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult? Function(_EditPreferencesEvent value)? editPreferences,
+    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult? Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult? Function(_GetSportsEvent value)? getSports,
+    TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
   }) {
     return checkUserLogged?.call(this);
   }
@@ -2417,19 +1450,20 @@ class _$CheckUserLoggedEventImpl implements CheckUserLoggedEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoginEvent value)? login,
-    TResult Function(RegisterEvent value)? register,
-    TResult Function(GetUserInfoEvent value)? getUserInfo,
-    TResult Function(UpdateUserPreferencesEvent value)? updateUserPreferences,
-    TResult Function(UpdateHandPreferenceEvent value)? updateHandPreference,
-    TResult Function(UpdatePositionPreferenceEvent value)?
-        updatePositionPreference,
-    TResult Function(UpdateTimePreferenceEvent value)? updateTimePreference,
-    TResult Function(UpdateUserProfileEvent value)? updateUserProfile,
-    TResult Function(CheckUserLoggedEvent value)? checkUserLogged,
-    TResult Function(ValidAccountEvent value)? validateAccount,
-    TResult Function(GetSportsEvent value)? getSports,
-    TResult Function(SendImageAndSportsEvent value)? sendImageAndSports,
+    TResult Function(_LoginEvent value)? login,
+    TResult Function(_RegisterEvent value)? register,
+    TResult Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult Function(_EditPreferencesEvent value)? editPreferences,
+    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult Function(_GetSportsEvent value)? getSports,
+    TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     required TResult orElse(),
   }) {
     if (checkUserLogged != null) {
@@ -2439,40 +1473,42 @@ class _$CheckUserLoggedEventImpl implements CheckUserLoggedEvent {
   }
 }
 
-abstract class CheckUserLoggedEvent implements AuthEvent {
-  const factory CheckUserLoggedEvent() = _$CheckUserLoggedEventImpl;
+abstract class _CheckUserLoggedEvent implements AuthEvent {
+  const factory _CheckUserLoggedEvent() = _$CheckUserLoggedEventImpl;
 }
 
 /// @nodoc
-abstract class _$$ValidAccountEventImplCopyWith<$Res> {
-  factory _$$ValidAccountEventImplCopyWith(_$ValidAccountEventImpl value,
-          $Res Function(_$ValidAccountEventImpl) then) =
-      __$$ValidAccountEventImplCopyWithImpl<$Res>;
+abstract class _$$ConfirmUserEmailEventImplCopyWith<$Res> {
+  factory _$$ConfirmUserEmailEventImplCopyWith(
+          _$ConfirmUserEmailEventImpl value,
+          $Res Function(_$ConfirmUserEmailEventImpl) then) =
+      __$$ConfirmUserEmailEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ValidAccountEventImplCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$ValidAccountEventImpl>
-    implements _$$ValidAccountEventImplCopyWith<$Res> {
-  __$$ValidAccountEventImplCopyWithImpl(_$ValidAccountEventImpl _value,
-      $Res Function(_$ValidAccountEventImpl) _then)
+class __$$ConfirmUserEmailEventImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$ConfirmUserEmailEventImpl>
+    implements _$$ConfirmUserEmailEventImplCopyWith<$Res> {
+  __$$ConfirmUserEmailEventImplCopyWithImpl(_$ConfirmUserEmailEventImpl _value,
+      $Res Function(_$ConfirmUserEmailEventImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ValidAccountEventImpl implements ValidAccountEvent {
-  const _$ValidAccountEventImpl();
+class _$ConfirmUserEmailEventImpl implements _ConfirmUserEmailEvent {
+  const _$ConfirmUserEmailEventImpl();
 
   @override
   String toString() {
-    return 'AuthEvent.validateAccount()';
+    return 'AuthEvent.confirmUserEmail()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ValidAccountEventImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$ConfirmUserEmailEventImpl);
   }
 
   @override
@@ -2483,34 +1519,21 @@ class _$ValidAccountEventImpl implements ValidAccountEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() login,
     required TResult Function() register,
-    required TResult Function() getUserInfo,
-    required TResult Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)
-        updateUserPreferences,
-    required TResult Function(int sportId, String optionName)
-        updateHandPreference,
-    required TResult Function(int sportId, String optionName)
-        updatePositionPreference,
-    required TResult Function(int sportId, String optionName)
-        updateTimePreference,
-    required TResult Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)
-        updateUserProfile,
+    required TResult Function() getUserProfile,
+    required TResult Function() deleteUserProfile,
+    required TResult Function(EditUserProfileParams params) editUserProfile,
+    required TResult Function(PreferenceValue params) editPreferences,
     required TResult Function() checkUserLogged,
-    required TResult Function() validateAccount,
+    required TResult Function() confirmUserEmail,
+    required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
     required TResult Function(
             List<int> imageBytes, String imageType, List<int> selectedSports)
-        sendImageAndSports,
+        completeRegistration,
+    required TResult Function(List<int> sportsIds) addFavoriteSports,
+    required TResult Function(List<int> sportsIds) deleteFavoriteSports,
   }) {
-    return validateAccount();
+    return confirmUserEmail();
   }
 
   @override
@@ -2518,31 +1541,21 @@ class _$ValidAccountEventImpl implements ValidAccountEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? login,
     TResult? Function()? register,
-    TResult? Function()? getUserInfo,
-    TResult? Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)?
-        updateUserPreferences,
-    TResult? Function(int sportId, String optionName)? updateHandPreference,
-    TResult? Function(int sportId, String optionName)? updatePositionPreference,
-    TResult? Function(int sportId, String optionName)? updateTimePreference,
-    TResult? Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)?
-        updateUserProfile,
+    TResult? Function()? getUserProfile,
+    TResult? Function()? deleteUserProfile,
+    TResult? Function(EditUserProfileParams params)? editUserProfile,
+    TResult? Function(PreferenceValue params)? editPreferences,
     TResult? Function()? checkUserLogged,
-    TResult? Function()? validateAccount,
+    TResult? Function()? confirmUserEmail,
+    TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
     TResult? Function(
             List<int> imageBytes, String imageType, List<int> selectedSports)?
-        sendImageAndSports,
+        completeRegistration,
+    TResult? Function(List<int> sportsIds)? addFavoriteSports,
+    TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
   }) {
-    return validateAccount?.call();
+    return confirmUserEmail?.call();
   }
 
   @override
@@ -2550,33 +1563,23 @@ class _$ValidAccountEventImpl implements ValidAccountEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? login,
     TResult Function()? register,
-    TResult Function()? getUserInfo,
-    TResult Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)?
-        updateUserPreferences,
-    TResult Function(int sportId, String optionName)? updateHandPreference,
-    TResult Function(int sportId, String optionName)? updatePositionPreference,
-    TResult Function(int sportId, String optionName)? updateTimePreference,
-    TResult Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)?
-        updateUserProfile,
+    TResult Function()? getUserProfile,
+    TResult Function()? deleteUserProfile,
+    TResult Function(EditUserProfileParams params)? editUserProfile,
+    TResult Function(PreferenceValue params)? editPreferences,
     TResult Function()? checkUserLogged,
-    TResult Function()? validateAccount,
+    TResult Function()? confirmUserEmail,
+    TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
     TResult Function(
             List<int> imageBytes, String imageType, List<int> selectedSports)?
-        sendImageAndSports,
+        completeRegistration,
+    TResult Function(List<int> sportsIds)? addFavoriteSports,
+    TResult Function(List<int> sportsIds)? deleteFavoriteSports,
     required TResult orElse(),
   }) {
-    if (validateAccount != null) {
-      return validateAccount();
+    if (confirmUserEmail != null) {
+      return confirmUserEmail();
     }
     return orElse();
   }
@@ -2584,73 +1587,259 @@ class _$ValidAccountEventImpl implements ValidAccountEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoginEvent value) login,
-    required TResult Function(RegisterEvent value) register,
-    required TResult Function(GetUserInfoEvent value) getUserInfo,
-    required TResult Function(UpdateUserPreferencesEvent value)
-        updateUserPreferences,
-    required TResult Function(UpdateHandPreferenceEvent value)
-        updateHandPreference,
-    required TResult Function(UpdatePositionPreferenceEvent value)
-        updatePositionPreference,
-    required TResult Function(UpdateTimePreferenceEvent value)
-        updateTimePreference,
-    required TResult Function(UpdateUserProfileEvent value) updateUserProfile,
-    required TResult Function(CheckUserLoggedEvent value) checkUserLogged,
-    required TResult Function(ValidAccountEvent value) validateAccount,
-    required TResult Function(GetSportsEvent value) getSports,
-    required TResult Function(SendImageAndSportsEvent value) sendImageAndSports,
+    required TResult Function(_LoginEvent value) login,
+    required TResult Function(_RegisterEvent value) register,
+    required TResult Function(_GetUserProfileEvent value) getUserProfile,
+    required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
+    required TResult Function(_EditUserProfileEvent value) editUserProfile,
+    required TResult Function(_EditPreferencesEvent value) editPreferences,
+    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
+    required TResult Function(_ResendConfirmUserEmailEvent value)
+        resendconfirmUserEmail,
+    required TResult Function(_GetSportsEvent value) getSports,
+    required TResult Function(_CompleteRegistrationEvent value)
+        completeRegistration,
+    required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
+    required TResult Function(_DeleteFavoriteSportsEvent value)
+        deleteFavoriteSports,
   }) {
-    return validateAccount(this);
+    return confirmUserEmail(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoginEvent value)? login,
-    TResult? Function(RegisterEvent value)? register,
-    TResult? Function(GetUserInfoEvent value)? getUserInfo,
-    TResult? Function(UpdateUserPreferencesEvent value)? updateUserPreferences,
-    TResult? Function(UpdateHandPreferenceEvent value)? updateHandPreference,
-    TResult? Function(UpdatePositionPreferenceEvent value)?
-        updatePositionPreference,
-    TResult? Function(UpdateTimePreferenceEvent value)? updateTimePreference,
-    TResult? Function(UpdateUserProfileEvent value)? updateUserProfile,
-    TResult? Function(CheckUserLoggedEvent value)? checkUserLogged,
-    TResult? Function(ValidAccountEvent value)? validateAccount,
-    TResult? Function(GetSportsEvent value)? getSports,
-    TResult? Function(SendImageAndSportsEvent value)? sendImageAndSports,
+    TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_RegisterEvent value)? register,
+    TResult? Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult? Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult? Function(_EditPreferencesEvent value)? editPreferences,
+    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult? Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult? Function(_GetSportsEvent value)? getSports,
+    TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
   }) {
-    return validateAccount?.call(this);
+    return confirmUserEmail?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoginEvent value)? login,
-    TResult Function(RegisterEvent value)? register,
-    TResult Function(GetUserInfoEvent value)? getUserInfo,
-    TResult Function(UpdateUserPreferencesEvent value)? updateUserPreferences,
-    TResult Function(UpdateHandPreferenceEvent value)? updateHandPreference,
-    TResult Function(UpdatePositionPreferenceEvent value)?
-        updatePositionPreference,
-    TResult Function(UpdateTimePreferenceEvent value)? updateTimePreference,
-    TResult Function(UpdateUserProfileEvent value)? updateUserProfile,
-    TResult Function(CheckUserLoggedEvent value)? checkUserLogged,
-    TResult Function(ValidAccountEvent value)? validateAccount,
-    TResult Function(GetSportsEvent value)? getSports,
-    TResult Function(SendImageAndSportsEvent value)? sendImageAndSports,
+    TResult Function(_LoginEvent value)? login,
+    TResult Function(_RegisterEvent value)? register,
+    TResult Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult Function(_EditPreferencesEvent value)? editPreferences,
+    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult Function(_GetSportsEvent value)? getSports,
+    TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     required TResult orElse(),
   }) {
-    if (validateAccount != null) {
-      return validateAccount(this);
+    if (confirmUserEmail != null) {
+      return confirmUserEmail(this);
     }
     return orElse();
   }
 }
 
-abstract class ValidAccountEvent implements AuthEvent {
-  const factory ValidAccountEvent() = _$ValidAccountEventImpl;
+abstract class _ConfirmUserEmailEvent implements AuthEvent {
+  const factory _ConfirmUserEmailEvent() = _$ConfirmUserEmailEventImpl;
+}
+
+/// @nodoc
+abstract class _$$ResendConfirmUserEmailEventImplCopyWith<$Res> {
+  factory _$$ResendConfirmUserEmailEventImplCopyWith(
+          _$ResendConfirmUserEmailEventImpl value,
+          $Res Function(_$ResendConfirmUserEmailEventImpl) then) =
+      __$$ResendConfirmUserEmailEventImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ResendConfirmUserEmailEventImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$ResendConfirmUserEmailEventImpl>
+    implements _$$ResendConfirmUserEmailEventImplCopyWith<$Res> {
+  __$$ResendConfirmUserEmailEventImplCopyWithImpl(
+      _$ResendConfirmUserEmailEventImpl _value,
+      $Res Function(_$ResendConfirmUserEmailEventImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ResendConfirmUserEmailEventImpl
+    implements _ResendConfirmUserEmailEvent {
+  const _$ResendConfirmUserEmailEventImpl();
+
+  @override
+  String toString() {
+    return 'AuthEvent.resendconfirmUserEmail()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ResendConfirmUserEmailEventImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() login,
+    required TResult Function() register,
+    required TResult Function() getUserProfile,
+    required TResult Function() deleteUserProfile,
+    required TResult Function(EditUserProfileParams params) editUserProfile,
+    required TResult Function(PreferenceValue params) editPreferences,
+    required TResult Function() checkUserLogged,
+    required TResult Function() confirmUserEmail,
+    required TResult Function() resendconfirmUserEmail,
+    required TResult Function() getSports,
+    required TResult Function(
+            List<int> imageBytes, String imageType, List<int> selectedSports)
+        completeRegistration,
+    required TResult Function(List<int> sportsIds) addFavoriteSports,
+    required TResult Function(List<int> sportsIds) deleteFavoriteSports,
+  }) {
+    return resendconfirmUserEmail();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? login,
+    TResult? Function()? register,
+    TResult? Function()? getUserProfile,
+    TResult? Function()? deleteUserProfile,
+    TResult? Function(EditUserProfileParams params)? editUserProfile,
+    TResult? Function(PreferenceValue params)? editPreferences,
+    TResult? Function()? checkUserLogged,
+    TResult? Function()? confirmUserEmail,
+    TResult? Function()? resendconfirmUserEmail,
+    TResult? Function()? getSports,
+    TResult? Function(
+            List<int> imageBytes, String imageType, List<int> selectedSports)?
+        completeRegistration,
+    TResult? Function(List<int> sportsIds)? addFavoriteSports,
+    TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
+  }) {
+    return resendconfirmUserEmail?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? login,
+    TResult Function()? register,
+    TResult Function()? getUserProfile,
+    TResult Function()? deleteUserProfile,
+    TResult Function(EditUserProfileParams params)? editUserProfile,
+    TResult Function(PreferenceValue params)? editPreferences,
+    TResult Function()? checkUserLogged,
+    TResult Function()? confirmUserEmail,
+    TResult Function()? resendconfirmUserEmail,
+    TResult Function()? getSports,
+    TResult Function(
+            List<int> imageBytes, String imageType, List<int> selectedSports)?
+        completeRegistration,
+    TResult Function(List<int> sportsIds)? addFavoriteSports,
+    TResult Function(List<int> sportsIds)? deleteFavoriteSports,
+    required TResult orElse(),
+  }) {
+    if (resendconfirmUserEmail != null) {
+      return resendconfirmUserEmail();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoginEvent value) login,
+    required TResult Function(_RegisterEvent value) register,
+    required TResult Function(_GetUserProfileEvent value) getUserProfile,
+    required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
+    required TResult Function(_EditUserProfileEvent value) editUserProfile,
+    required TResult Function(_EditPreferencesEvent value) editPreferences,
+    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
+    required TResult Function(_ResendConfirmUserEmailEvent value)
+        resendconfirmUserEmail,
+    required TResult Function(_GetSportsEvent value) getSports,
+    required TResult Function(_CompleteRegistrationEvent value)
+        completeRegistration,
+    required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
+    required TResult Function(_DeleteFavoriteSportsEvent value)
+        deleteFavoriteSports,
+  }) {
+    return resendconfirmUserEmail(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_RegisterEvent value)? register,
+    TResult? Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult? Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult? Function(_EditPreferencesEvent value)? editPreferences,
+    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult? Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult? Function(_GetSportsEvent value)? getSports,
+    TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+  }) {
+    return resendconfirmUserEmail?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoginEvent value)? login,
+    TResult Function(_RegisterEvent value)? register,
+    TResult Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult Function(_EditPreferencesEvent value)? editPreferences,
+    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult Function(_GetSportsEvent value)? getSports,
+    TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    required TResult orElse(),
+  }) {
+    if (resendconfirmUserEmail != null) {
+      return resendconfirmUserEmail(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ResendConfirmUserEmailEvent implements AuthEvent {
+  const factory _ResendConfirmUserEmailEvent() =
+      _$ResendConfirmUserEmailEventImpl;
 }
 
 /// @nodoc
@@ -2671,7 +1860,7 @@ class __$$GetSportsEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetSportsEventImpl implements GetSportsEvent {
+class _$GetSportsEventImpl implements _GetSportsEvent {
   const _$GetSportsEventImpl();
 
   @override
@@ -2693,32 +1882,19 @@ class _$GetSportsEventImpl implements GetSportsEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() login,
     required TResult Function() register,
-    required TResult Function() getUserInfo,
-    required TResult Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)
-        updateUserPreferences,
-    required TResult Function(int sportId, String optionName)
-        updateHandPreference,
-    required TResult Function(int sportId, String optionName)
-        updatePositionPreference,
-    required TResult Function(int sportId, String optionName)
-        updateTimePreference,
-    required TResult Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)
-        updateUserProfile,
+    required TResult Function() getUserProfile,
+    required TResult Function() deleteUserProfile,
+    required TResult Function(EditUserProfileParams params) editUserProfile,
+    required TResult Function(PreferenceValue params) editPreferences,
     required TResult Function() checkUserLogged,
-    required TResult Function() validateAccount,
+    required TResult Function() confirmUserEmail,
+    required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
     required TResult Function(
             List<int> imageBytes, String imageType, List<int> selectedSports)
-        sendImageAndSports,
+        completeRegistration,
+    required TResult Function(List<int> sportsIds) addFavoriteSports,
+    required TResult Function(List<int> sportsIds) deleteFavoriteSports,
   }) {
     return getSports();
   }
@@ -2728,29 +1904,19 @@ class _$GetSportsEventImpl implements GetSportsEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? login,
     TResult? Function()? register,
-    TResult? Function()? getUserInfo,
-    TResult? Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)?
-        updateUserPreferences,
-    TResult? Function(int sportId, String optionName)? updateHandPreference,
-    TResult? Function(int sportId, String optionName)? updatePositionPreference,
-    TResult? Function(int sportId, String optionName)? updateTimePreference,
-    TResult? Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)?
-        updateUserProfile,
+    TResult? Function()? getUserProfile,
+    TResult? Function()? deleteUserProfile,
+    TResult? Function(EditUserProfileParams params)? editUserProfile,
+    TResult? Function(PreferenceValue params)? editPreferences,
     TResult? Function()? checkUserLogged,
-    TResult? Function()? validateAccount,
+    TResult? Function()? confirmUserEmail,
+    TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
     TResult? Function(
             List<int> imageBytes, String imageType, List<int> selectedSports)?
-        sendImageAndSports,
+        completeRegistration,
+    TResult? Function(List<int> sportsIds)? addFavoriteSports,
+    TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
   }) {
     return getSports?.call();
   }
@@ -2760,29 +1926,19 @@ class _$GetSportsEventImpl implements GetSportsEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? login,
     TResult Function()? register,
-    TResult Function()? getUserInfo,
-    TResult Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)?
-        updateUserPreferences,
-    TResult Function(int sportId, String optionName)? updateHandPreference,
-    TResult Function(int sportId, String optionName)? updatePositionPreference,
-    TResult Function(int sportId, String optionName)? updateTimePreference,
-    TResult Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)?
-        updateUserProfile,
+    TResult Function()? getUserProfile,
+    TResult Function()? deleteUserProfile,
+    TResult Function(EditUserProfileParams params)? editUserProfile,
+    TResult Function(PreferenceValue params)? editPreferences,
     TResult Function()? checkUserLogged,
-    TResult Function()? validateAccount,
+    TResult Function()? confirmUserEmail,
+    TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
     TResult Function(
             List<int> imageBytes, String imageType, List<int> selectedSports)?
-        sendImageAndSports,
+        completeRegistration,
+    TResult Function(List<int> sportsIds)? addFavoriteSports,
+    TResult Function(List<int> sportsIds)? deleteFavoriteSports,
     required TResult orElse(),
   }) {
     if (getSports != null) {
@@ -2794,22 +1950,22 @@ class _$GetSportsEventImpl implements GetSportsEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoginEvent value) login,
-    required TResult Function(RegisterEvent value) register,
-    required TResult Function(GetUserInfoEvent value) getUserInfo,
-    required TResult Function(UpdateUserPreferencesEvent value)
-        updateUserPreferences,
-    required TResult Function(UpdateHandPreferenceEvent value)
-        updateHandPreference,
-    required TResult Function(UpdatePositionPreferenceEvent value)
-        updatePositionPreference,
-    required TResult Function(UpdateTimePreferenceEvent value)
-        updateTimePreference,
-    required TResult Function(UpdateUserProfileEvent value) updateUserProfile,
-    required TResult Function(CheckUserLoggedEvent value) checkUserLogged,
-    required TResult Function(ValidAccountEvent value) validateAccount,
-    required TResult Function(GetSportsEvent value) getSports,
-    required TResult Function(SendImageAndSportsEvent value) sendImageAndSports,
+    required TResult Function(_LoginEvent value) login,
+    required TResult Function(_RegisterEvent value) register,
+    required TResult Function(_GetUserProfileEvent value) getUserProfile,
+    required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
+    required TResult Function(_EditUserProfileEvent value) editUserProfile,
+    required TResult Function(_EditPreferencesEvent value) editPreferences,
+    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
+    required TResult Function(_ResendConfirmUserEmailEvent value)
+        resendconfirmUserEmail,
+    required TResult Function(_GetSportsEvent value) getSports,
+    required TResult Function(_CompleteRegistrationEvent value)
+        completeRegistration,
+    required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
+    required TResult Function(_DeleteFavoriteSportsEvent value)
+        deleteFavoriteSports,
   }) {
     return getSports(this);
   }
@@ -2817,19 +1973,20 @@ class _$GetSportsEventImpl implements GetSportsEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoginEvent value)? login,
-    TResult? Function(RegisterEvent value)? register,
-    TResult? Function(GetUserInfoEvent value)? getUserInfo,
-    TResult? Function(UpdateUserPreferencesEvent value)? updateUserPreferences,
-    TResult? Function(UpdateHandPreferenceEvent value)? updateHandPreference,
-    TResult? Function(UpdatePositionPreferenceEvent value)?
-        updatePositionPreference,
-    TResult? Function(UpdateTimePreferenceEvent value)? updateTimePreference,
-    TResult? Function(UpdateUserProfileEvent value)? updateUserProfile,
-    TResult? Function(CheckUserLoggedEvent value)? checkUserLogged,
-    TResult? Function(ValidAccountEvent value)? validateAccount,
-    TResult? Function(GetSportsEvent value)? getSports,
-    TResult? Function(SendImageAndSportsEvent value)? sendImageAndSports,
+    TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_RegisterEvent value)? register,
+    TResult? Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult? Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult? Function(_EditPreferencesEvent value)? editPreferences,
+    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult? Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult? Function(_GetSportsEvent value)? getSports,
+    TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
   }) {
     return getSports?.call(this);
   }
@@ -2837,19 +1994,20 @@ class _$GetSportsEventImpl implements GetSportsEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoginEvent value)? login,
-    TResult Function(RegisterEvent value)? register,
-    TResult Function(GetUserInfoEvent value)? getUserInfo,
-    TResult Function(UpdateUserPreferencesEvent value)? updateUserPreferences,
-    TResult Function(UpdateHandPreferenceEvent value)? updateHandPreference,
-    TResult Function(UpdatePositionPreferenceEvent value)?
-        updatePositionPreference,
-    TResult Function(UpdateTimePreferenceEvent value)? updateTimePreference,
-    TResult Function(UpdateUserProfileEvent value)? updateUserProfile,
-    TResult Function(CheckUserLoggedEvent value)? checkUserLogged,
-    TResult Function(ValidAccountEvent value)? validateAccount,
-    TResult Function(GetSportsEvent value)? getSports,
-    TResult Function(SendImageAndSportsEvent value)? sendImageAndSports,
+    TResult Function(_LoginEvent value)? login,
+    TResult Function(_RegisterEvent value)? register,
+    TResult Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult Function(_EditPreferencesEvent value)? editPreferences,
+    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult Function(_GetSportsEvent value)? getSports,
+    TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     required TResult orElse(),
   }) {
     if (getSports != null) {
@@ -2859,27 +2017,27 @@ class _$GetSportsEventImpl implements GetSportsEvent {
   }
 }
 
-abstract class GetSportsEvent implements AuthEvent {
-  const factory GetSportsEvent() = _$GetSportsEventImpl;
+abstract class _GetSportsEvent implements AuthEvent {
+  const factory _GetSportsEvent() = _$GetSportsEventImpl;
 }
 
 /// @nodoc
-abstract class _$$SendImageAndSportsEventImplCopyWith<$Res> {
-  factory _$$SendImageAndSportsEventImplCopyWith(
-          _$SendImageAndSportsEventImpl value,
-          $Res Function(_$SendImageAndSportsEventImpl) then) =
-      __$$SendImageAndSportsEventImplCopyWithImpl<$Res>;
+abstract class _$$CompleteRegistrationEventImplCopyWith<$Res> {
+  factory _$$CompleteRegistrationEventImplCopyWith(
+          _$CompleteRegistrationEventImpl value,
+          $Res Function(_$CompleteRegistrationEventImpl) then) =
+      __$$CompleteRegistrationEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<int> imageBytes, String imageType, List<int> selectedSports});
 }
 
 /// @nodoc
-class __$$SendImageAndSportsEventImplCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$SendImageAndSportsEventImpl>
-    implements _$$SendImageAndSportsEventImplCopyWith<$Res> {
-  __$$SendImageAndSportsEventImplCopyWithImpl(
-      _$SendImageAndSportsEventImpl _value,
-      $Res Function(_$SendImageAndSportsEventImpl) _then)
+class __$$CompleteRegistrationEventImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$CompleteRegistrationEventImpl>
+    implements _$$CompleteRegistrationEventImplCopyWith<$Res> {
+  __$$CompleteRegistrationEventImplCopyWithImpl(
+      _$CompleteRegistrationEventImpl _value,
+      $Res Function(_$CompleteRegistrationEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2889,7 +2047,7 @@ class __$$SendImageAndSportsEventImplCopyWithImpl<$Res>
     Object? imageType = null,
     Object? selectedSports = null,
   }) {
-    return _then(_$SendImageAndSportsEventImpl(
+    return _then(_$CompleteRegistrationEventImpl(
       imageBytes: null == imageBytes
           ? _value._imageBytes
           : imageBytes // ignore: cast_nullable_to_non_nullable
@@ -2908,8 +2066,8 @@ class __$$SendImageAndSportsEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SendImageAndSportsEventImpl implements SendImageAndSportsEvent {
-  const _$SendImageAndSportsEventImpl(
+class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
+  const _$CompleteRegistrationEventImpl(
       {required final List<int> imageBytes,
       required this.imageType,
       required final List<int> selectedSports})
@@ -2936,14 +2094,14 @@ class _$SendImageAndSportsEventImpl implements SendImageAndSportsEvent {
 
   @override
   String toString() {
-    return 'AuthEvent.sendImageAndSports(imageBytes: $imageBytes, imageType: $imageType, selectedSports: $selectedSports)';
+    return 'AuthEvent.completeRegistration(imageBytes: $imageBytes, imageType: $imageType, selectedSports: $selectedSports)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SendImageAndSportsEventImpl &&
+            other is _$CompleteRegistrationEventImpl &&
             const DeepCollectionEquality()
                 .equals(other._imageBytes, _imageBytes) &&
             (identical(other.imageType, imageType) ||
@@ -2962,43 +2120,30 @@ class _$SendImageAndSportsEventImpl implements SendImageAndSportsEvent {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SendImageAndSportsEventImplCopyWith<_$SendImageAndSportsEventImpl>
-      get copyWith => __$$SendImageAndSportsEventImplCopyWithImpl<
-          _$SendImageAndSportsEventImpl>(this, _$identity);
+  _$$CompleteRegistrationEventImplCopyWith<_$CompleteRegistrationEventImpl>
+      get copyWith => __$$CompleteRegistrationEventImplCopyWithImpl<
+          _$CompleteRegistrationEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() login,
     required TResult Function() register,
-    required TResult Function() getUserInfo,
-    required TResult Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)
-        updateUserPreferences,
-    required TResult Function(int sportId, String optionName)
-        updateHandPreference,
-    required TResult Function(int sportId, String optionName)
-        updatePositionPreference,
-    required TResult Function(int sportId, String optionName)
-        updateTimePreference,
-    required TResult Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)
-        updateUserProfile,
+    required TResult Function() getUserProfile,
+    required TResult Function() deleteUserProfile,
+    required TResult Function(EditUserProfileParams params) editUserProfile,
+    required TResult Function(PreferenceValue params) editPreferences,
     required TResult Function() checkUserLogged,
-    required TResult Function() validateAccount,
+    required TResult Function() confirmUserEmail,
+    required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
     required TResult Function(
             List<int> imageBytes, String imageType, List<int> selectedSports)
-        sendImageAndSports,
+        completeRegistration,
+    required TResult Function(List<int> sportsIds) addFavoriteSports,
+    required TResult Function(List<int> sportsIds) deleteFavoriteSports,
   }) {
-    return sendImageAndSports(imageBytes, imageType, selectedSports);
+    return completeRegistration(imageBytes, imageType, selectedSports);
   }
 
   @override
@@ -3006,31 +2151,21 @@ class _$SendImageAndSportsEventImpl implements SendImageAndSportsEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? login,
     TResult? Function()? register,
-    TResult? Function()? getUserInfo,
-    TResult? Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)?
-        updateUserPreferences,
-    TResult? Function(int sportId, String optionName)? updateHandPreference,
-    TResult? Function(int sportId, String optionName)? updatePositionPreference,
-    TResult? Function(int sportId, String optionName)? updateTimePreference,
-    TResult? Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)?
-        updateUserProfile,
+    TResult? Function()? getUserProfile,
+    TResult? Function()? deleteUserProfile,
+    TResult? Function(EditUserProfileParams params)? editUserProfile,
+    TResult? Function(PreferenceValue params)? editPreferences,
     TResult? Function()? checkUserLogged,
-    TResult? Function()? validateAccount,
+    TResult? Function()? confirmUserEmail,
+    TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
     TResult? Function(
             List<int> imageBytes, String imageType, List<int> selectedSports)?
-        sendImageAndSports,
+        completeRegistration,
+    TResult? Function(List<int> sportsIds)? addFavoriteSports,
+    TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
   }) {
-    return sendImageAndSports?.call(imageBytes, imageType, selectedSports);
+    return completeRegistration?.call(imageBytes, imageType, selectedSports);
   }
 
   @override
@@ -3038,33 +2173,23 @@ class _$SendImageAndSportsEventImpl implements SendImageAndSportsEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? login,
     TResult Function()? register,
-    TResult Function()? getUserInfo,
-    TResult Function(
-            int sportId, int favoriteHand, int favoritePos, int favoriteTime)?
-        updateUserPreferences,
-    TResult Function(int sportId, String optionName)? updateHandPreference,
-    TResult Function(int sportId, String optionName)? updatePositionPreference,
-    TResult Function(int sportId, String optionName)? updateTimePreference,
-    TResult Function(
-            String userName,
-            String phone,
-            List<int> image,
-            String type,
-            double latitude,
-            double longitude,
-            List<int> selectedSports,
-            String gender)?
-        updateUserProfile,
+    TResult Function()? getUserProfile,
+    TResult Function()? deleteUserProfile,
+    TResult Function(EditUserProfileParams params)? editUserProfile,
+    TResult Function(PreferenceValue params)? editPreferences,
     TResult Function()? checkUserLogged,
-    TResult Function()? validateAccount,
+    TResult Function()? confirmUserEmail,
+    TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
     TResult Function(
             List<int> imageBytes, String imageType, List<int> selectedSports)?
-        sendImageAndSports,
+        completeRegistration,
+    TResult Function(List<int> sportsIds)? addFavoriteSports,
+    TResult Function(List<int> sportsIds)? deleteFavoriteSports,
     required TResult orElse(),
   }) {
-    if (sendImageAndSports != null) {
-      return sendImageAndSports(imageBytes, imageType, selectedSports);
+    if (completeRegistration != null) {
+      return completeRegistration(imageBytes, imageType, selectedSports);
     }
     return orElse();
   }
@@ -3072,82 +2197,529 @@ class _$SendImageAndSportsEventImpl implements SendImageAndSportsEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoginEvent value) login,
-    required TResult Function(RegisterEvent value) register,
-    required TResult Function(GetUserInfoEvent value) getUserInfo,
-    required TResult Function(UpdateUserPreferencesEvent value)
-        updateUserPreferences,
-    required TResult Function(UpdateHandPreferenceEvent value)
-        updateHandPreference,
-    required TResult Function(UpdatePositionPreferenceEvent value)
-        updatePositionPreference,
-    required TResult Function(UpdateTimePreferenceEvent value)
-        updateTimePreference,
-    required TResult Function(UpdateUserProfileEvent value) updateUserProfile,
-    required TResult Function(CheckUserLoggedEvent value) checkUserLogged,
-    required TResult Function(ValidAccountEvent value) validateAccount,
-    required TResult Function(GetSportsEvent value) getSports,
-    required TResult Function(SendImageAndSportsEvent value) sendImageAndSports,
+    required TResult Function(_LoginEvent value) login,
+    required TResult Function(_RegisterEvent value) register,
+    required TResult Function(_GetUserProfileEvent value) getUserProfile,
+    required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
+    required TResult Function(_EditUserProfileEvent value) editUserProfile,
+    required TResult Function(_EditPreferencesEvent value) editPreferences,
+    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
+    required TResult Function(_ResendConfirmUserEmailEvent value)
+        resendconfirmUserEmail,
+    required TResult Function(_GetSportsEvent value) getSports,
+    required TResult Function(_CompleteRegistrationEvent value)
+        completeRegistration,
+    required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
+    required TResult Function(_DeleteFavoriteSportsEvent value)
+        deleteFavoriteSports,
   }) {
-    return sendImageAndSports(this);
+    return completeRegistration(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoginEvent value)? login,
-    TResult? Function(RegisterEvent value)? register,
-    TResult? Function(GetUserInfoEvent value)? getUserInfo,
-    TResult? Function(UpdateUserPreferencesEvent value)? updateUserPreferences,
-    TResult? Function(UpdateHandPreferenceEvent value)? updateHandPreference,
-    TResult? Function(UpdatePositionPreferenceEvent value)?
-        updatePositionPreference,
-    TResult? Function(UpdateTimePreferenceEvent value)? updateTimePreference,
-    TResult? Function(UpdateUserProfileEvent value)? updateUserProfile,
-    TResult? Function(CheckUserLoggedEvent value)? checkUserLogged,
-    TResult? Function(ValidAccountEvent value)? validateAccount,
-    TResult? Function(GetSportsEvent value)? getSports,
-    TResult? Function(SendImageAndSportsEvent value)? sendImageAndSports,
+    TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_RegisterEvent value)? register,
+    TResult? Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult? Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult? Function(_EditPreferencesEvent value)? editPreferences,
+    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult? Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult? Function(_GetSportsEvent value)? getSports,
+    TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
   }) {
-    return sendImageAndSports?.call(this);
+    return completeRegistration?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoginEvent value)? login,
-    TResult Function(RegisterEvent value)? register,
-    TResult Function(GetUserInfoEvent value)? getUserInfo,
-    TResult Function(UpdateUserPreferencesEvent value)? updateUserPreferences,
-    TResult Function(UpdateHandPreferenceEvent value)? updateHandPreference,
-    TResult Function(UpdatePositionPreferenceEvent value)?
-        updatePositionPreference,
-    TResult Function(UpdateTimePreferenceEvent value)? updateTimePreference,
-    TResult Function(UpdateUserProfileEvent value)? updateUserProfile,
-    TResult Function(CheckUserLoggedEvent value)? checkUserLogged,
-    TResult Function(ValidAccountEvent value)? validateAccount,
-    TResult Function(GetSportsEvent value)? getSports,
-    TResult Function(SendImageAndSportsEvent value)? sendImageAndSports,
+    TResult Function(_LoginEvent value)? login,
+    TResult Function(_RegisterEvent value)? register,
+    TResult Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult Function(_EditPreferencesEvent value)? editPreferences,
+    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult Function(_GetSportsEvent value)? getSports,
+    TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     required TResult orElse(),
   }) {
-    if (sendImageAndSports != null) {
-      return sendImageAndSports(this);
+    if (completeRegistration != null) {
+      return completeRegistration(this);
     }
     return orElse();
   }
 }
 
-abstract class SendImageAndSportsEvent implements AuthEvent {
-  const factory SendImageAndSportsEvent(
-      {required final List<int> imageBytes,
-      required final String imageType,
-      required final List<int> selectedSports}) = _$SendImageAndSportsEventImpl;
+abstract class _CompleteRegistrationEvent implements AuthEvent {
+  const factory _CompleteRegistrationEvent(
+          {required final List<int> imageBytes,
+          required final String imageType,
+          required final List<int> selectedSports}) =
+      _$CompleteRegistrationEventImpl;
 
   List<int> get imageBytes;
   String get imageType;
   List<int> get selectedSports;
   @JsonKey(ignore: true)
-  _$$SendImageAndSportsEventImplCopyWith<_$SendImageAndSportsEventImpl>
+  _$$CompleteRegistrationEventImplCopyWith<_$CompleteRegistrationEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddFavoriteSportsEventImplCopyWith<$Res> {
+  factory _$$AddFavoriteSportsEventImplCopyWith(
+          _$AddFavoriteSportsEventImpl value,
+          $Res Function(_$AddFavoriteSportsEventImpl) then) =
+      __$$AddFavoriteSportsEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<int> sportsIds});
+}
+
+/// @nodoc
+class __$$AddFavoriteSportsEventImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$AddFavoriteSportsEventImpl>
+    implements _$$AddFavoriteSportsEventImplCopyWith<$Res> {
+  __$$AddFavoriteSportsEventImplCopyWithImpl(
+      _$AddFavoriteSportsEventImpl _value,
+      $Res Function(_$AddFavoriteSportsEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? sportsIds = null,
+  }) {
+    return _then(_$AddFavoriteSportsEventImpl(
+      sportsIds: null == sportsIds
+          ? _value._sportsIds
+          : sportsIds // ignore: cast_nullable_to_non_nullable
+              as List<int>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddFavoriteSportsEventImpl implements _AddFavoriteSportsEvent {
+  const _$AddFavoriteSportsEventImpl({required final List<int> sportsIds})
+      : _sportsIds = sportsIds;
+
+  final List<int> _sportsIds;
+  @override
+  List<int> get sportsIds {
+    if (_sportsIds is EqualUnmodifiableListView) return _sportsIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_sportsIds);
+  }
+
+  @override
+  String toString() {
+    return 'AuthEvent.addFavoriteSports(sportsIds: $sportsIds)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddFavoriteSportsEventImpl &&
+            const DeepCollectionEquality()
+                .equals(other._sportsIds, _sportsIds));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_sportsIds));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddFavoriteSportsEventImplCopyWith<_$AddFavoriteSportsEventImpl>
+      get copyWith => __$$AddFavoriteSportsEventImplCopyWithImpl<
+          _$AddFavoriteSportsEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() login,
+    required TResult Function() register,
+    required TResult Function() getUserProfile,
+    required TResult Function() deleteUserProfile,
+    required TResult Function(EditUserProfileParams params) editUserProfile,
+    required TResult Function(PreferenceValue params) editPreferences,
+    required TResult Function() checkUserLogged,
+    required TResult Function() confirmUserEmail,
+    required TResult Function() resendconfirmUserEmail,
+    required TResult Function() getSports,
+    required TResult Function(
+            List<int> imageBytes, String imageType, List<int> selectedSports)
+        completeRegistration,
+    required TResult Function(List<int> sportsIds) addFavoriteSports,
+    required TResult Function(List<int> sportsIds) deleteFavoriteSports,
+  }) {
+    return addFavoriteSports(sportsIds);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? login,
+    TResult? Function()? register,
+    TResult? Function()? getUserProfile,
+    TResult? Function()? deleteUserProfile,
+    TResult? Function(EditUserProfileParams params)? editUserProfile,
+    TResult? Function(PreferenceValue params)? editPreferences,
+    TResult? Function()? checkUserLogged,
+    TResult? Function()? confirmUserEmail,
+    TResult? Function()? resendconfirmUserEmail,
+    TResult? Function()? getSports,
+    TResult? Function(
+            List<int> imageBytes, String imageType, List<int> selectedSports)?
+        completeRegistration,
+    TResult? Function(List<int> sportsIds)? addFavoriteSports,
+    TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
+  }) {
+    return addFavoriteSports?.call(sportsIds);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? login,
+    TResult Function()? register,
+    TResult Function()? getUserProfile,
+    TResult Function()? deleteUserProfile,
+    TResult Function(EditUserProfileParams params)? editUserProfile,
+    TResult Function(PreferenceValue params)? editPreferences,
+    TResult Function()? checkUserLogged,
+    TResult Function()? confirmUserEmail,
+    TResult Function()? resendconfirmUserEmail,
+    TResult Function()? getSports,
+    TResult Function(
+            List<int> imageBytes, String imageType, List<int> selectedSports)?
+        completeRegistration,
+    TResult Function(List<int> sportsIds)? addFavoriteSports,
+    TResult Function(List<int> sportsIds)? deleteFavoriteSports,
+    required TResult orElse(),
+  }) {
+    if (addFavoriteSports != null) {
+      return addFavoriteSports(sportsIds);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoginEvent value) login,
+    required TResult Function(_RegisterEvent value) register,
+    required TResult Function(_GetUserProfileEvent value) getUserProfile,
+    required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
+    required TResult Function(_EditUserProfileEvent value) editUserProfile,
+    required TResult Function(_EditPreferencesEvent value) editPreferences,
+    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
+    required TResult Function(_ResendConfirmUserEmailEvent value)
+        resendconfirmUserEmail,
+    required TResult Function(_GetSportsEvent value) getSports,
+    required TResult Function(_CompleteRegistrationEvent value)
+        completeRegistration,
+    required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
+    required TResult Function(_DeleteFavoriteSportsEvent value)
+        deleteFavoriteSports,
+  }) {
+    return addFavoriteSports(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_RegisterEvent value)? register,
+    TResult? Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult? Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult? Function(_EditPreferencesEvent value)? editPreferences,
+    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult? Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult? Function(_GetSportsEvent value)? getSports,
+    TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+  }) {
+    return addFavoriteSports?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoginEvent value)? login,
+    TResult Function(_RegisterEvent value)? register,
+    TResult Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult Function(_EditPreferencesEvent value)? editPreferences,
+    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult Function(_GetSportsEvent value)? getSports,
+    TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    required TResult orElse(),
+  }) {
+    if (addFavoriteSports != null) {
+      return addFavoriteSports(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AddFavoriteSportsEvent implements AuthEvent {
+  const factory _AddFavoriteSportsEvent({required final List<int> sportsIds}) =
+      _$AddFavoriteSportsEventImpl;
+
+  List<int> get sportsIds;
+  @JsonKey(ignore: true)
+  _$$AddFavoriteSportsEventImplCopyWith<_$AddFavoriteSportsEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteFavoriteSportsEventImplCopyWith<$Res> {
+  factory _$$DeleteFavoriteSportsEventImplCopyWith(
+          _$DeleteFavoriteSportsEventImpl value,
+          $Res Function(_$DeleteFavoriteSportsEventImpl) then) =
+      __$$DeleteFavoriteSportsEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<int> sportsIds});
+}
+
+/// @nodoc
+class __$$DeleteFavoriteSportsEventImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$DeleteFavoriteSportsEventImpl>
+    implements _$$DeleteFavoriteSportsEventImplCopyWith<$Res> {
+  __$$DeleteFavoriteSportsEventImplCopyWithImpl(
+      _$DeleteFavoriteSportsEventImpl _value,
+      $Res Function(_$DeleteFavoriteSportsEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? sportsIds = null,
+  }) {
+    return _then(_$DeleteFavoriteSportsEventImpl(
+      sportsIds: null == sportsIds
+          ? _value._sportsIds
+          : sportsIds // ignore: cast_nullable_to_non_nullable
+              as List<int>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteFavoriteSportsEventImpl implements _DeleteFavoriteSportsEvent {
+  const _$DeleteFavoriteSportsEventImpl({required final List<int> sportsIds})
+      : _sportsIds = sportsIds;
+
+  final List<int> _sportsIds;
+  @override
+  List<int> get sportsIds {
+    if (_sportsIds is EqualUnmodifiableListView) return _sportsIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_sportsIds);
+  }
+
+  @override
+  String toString() {
+    return 'AuthEvent.deleteFavoriteSports(sportsIds: $sportsIds)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteFavoriteSportsEventImpl &&
+            const DeepCollectionEquality()
+                .equals(other._sportsIds, _sportsIds));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_sportsIds));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteFavoriteSportsEventImplCopyWith<_$DeleteFavoriteSportsEventImpl>
+      get copyWith => __$$DeleteFavoriteSportsEventImplCopyWithImpl<
+          _$DeleteFavoriteSportsEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() login,
+    required TResult Function() register,
+    required TResult Function() getUserProfile,
+    required TResult Function() deleteUserProfile,
+    required TResult Function(EditUserProfileParams params) editUserProfile,
+    required TResult Function(PreferenceValue params) editPreferences,
+    required TResult Function() checkUserLogged,
+    required TResult Function() confirmUserEmail,
+    required TResult Function() resendconfirmUserEmail,
+    required TResult Function() getSports,
+    required TResult Function(
+            List<int> imageBytes, String imageType, List<int> selectedSports)
+        completeRegistration,
+    required TResult Function(List<int> sportsIds) addFavoriteSports,
+    required TResult Function(List<int> sportsIds) deleteFavoriteSports,
+  }) {
+    return deleteFavoriteSports(sportsIds);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? login,
+    TResult? Function()? register,
+    TResult? Function()? getUserProfile,
+    TResult? Function()? deleteUserProfile,
+    TResult? Function(EditUserProfileParams params)? editUserProfile,
+    TResult? Function(PreferenceValue params)? editPreferences,
+    TResult? Function()? checkUserLogged,
+    TResult? Function()? confirmUserEmail,
+    TResult? Function()? resendconfirmUserEmail,
+    TResult? Function()? getSports,
+    TResult? Function(
+            List<int> imageBytes, String imageType, List<int> selectedSports)?
+        completeRegistration,
+    TResult? Function(List<int> sportsIds)? addFavoriteSports,
+    TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
+  }) {
+    return deleteFavoriteSports?.call(sportsIds);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? login,
+    TResult Function()? register,
+    TResult Function()? getUserProfile,
+    TResult Function()? deleteUserProfile,
+    TResult Function(EditUserProfileParams params)? editUserProfile,
+    TResult Function(PreferenceValue params)? editPreferences,
+    TResult Function()? checkUserLogged,
+    TResult Function()? confirmUserEmail,
+    TResult Function()? resendconfirmUserEmail,
+    TResult Function()? getSports,
+    TResult Function(
+            List<int> imageBytes, String imageType, List<int> selectedSports)?
+        completeRegistration,
+    TResult Function(List<int> sportsIds)? addFavoriteSports,
+    TResult Function(List<int> sportsIds)? deleteFavoriteSports,
+    required TResult orElse(),
+  }) {
+    if (deleteFavoriteSports != null) {
+      return deleteFavoriteSports(sportsIds);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoginEvent value) login,
+    required TResult Function(_RegisterEvent value) register,
+    required TResult Function(_GetUserProfileEvent value) getUserProfile,
+    required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
+    required TResult Function(_EditUserProfileEvent value) editUserProfile,
+    required TResult Function(_EditPreferencesEvent value) editPreferences,
+    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
+    required TResult Function(_ResendConfirmUserEmailEvent value)
+        resendconfirmUserEmail,
+    required TResult Function(_GetSportsEvent value) getSports,
+    required TResult Function(_CompleteRegistrationEvent value)
+        completeRegistration,
+    required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
+    required TResult Function(_DeleteFavoriteSportsEvent value)
+        deleteFavoriteSports,
+  }) {
+    return deleteFavoriteSports(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_RegisterEvent value)? register,
+    TResult? Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult? Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult? Function(_EditPreferencesEvent value)? editPreferences,
+    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult? Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult? Function(_GetSportsEvent value)? getSports,
+    TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+  }) {
+    return deleteFavoriteSports?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoginEvent value)? login,
+    TResult Function(_RegisterEvent value)? register,
+    TResult Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult Function(_EditPreferencesEvent value)? editPreferences,
+    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult Function(_GetSportsEvent value)? getSports,
+    TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    required TResult orElse(),
+  }) {
+    if (deleteFavoriteSports != null) {
+      return deleteFavoriteSports(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DeleteFavoriteSportsEvent implements AuthEvent {
+  const factory _DeleteFavoriteSportsEvent(
+      {required final List<int> sportsIds}) = _$DeleteFavoriteSportsEventImpl;
+
+  List<int> get sportsIds;
+  @JsonKey(ignore: true)
+  _$$DeleteFavoriteSportsEventImplCopyWith<_$DeleteFavoriteSportsEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -3156,51 +2728,199 @@ mixin _$AuthState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(
-            bool isLoading, RequestState state, bool? registered)
-        register,
-    required TResult Function(bool isLoading, VerifiedAccountState state)
-        validateAccount,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(bool isLoading, RequestState state, bool? registered)?
-        register,
-    TResult? Function(bool isLoading, VerifiedAccountState state)?
-        validateAccount,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(bool isLoading, RequestState state, bool? registered)?
-        register,
-    TResult Function(bool isLoading, VerifiedAccountState state)?
-        validateAccount,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Register value) register,
-    required TResult Function(_ValidateAccount value) validateAccount,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_Register value)? register,
-    TResult? Function(_ValidateAccount value)? validateAccount,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Register value)? register,
-    TResult Function(_ValidateAccount value)? validateAccount,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -3262,11 +2982,33 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(
-            bool isLoading, RequestState state, bool? registered)
-        register,
-    required TResult Function(bool isLoading, VerifiedAccountState state)
-        validateAccount,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
   }) {
     return initial();
   }
@@ -3275,10 +3017,31 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(bool isLoading, RequestState state, bool? registered)?
-        register,
-    TResult? Function(bool isLoading, VerifiedAccountState state)?
-        validateAccount,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
   }) {
     return initial?.call();
   }
@@ -3287,10 +3050,31 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(bool isLoading, RequestState state, bool? registered)?
-        register,
-    TResult Function(bool isLoading, VerifiedAccountState state)?
-        validateAccount,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -3303,8 +3087,38 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Register value) register,
-    required TResult Function(_ValidateAccount value) validateAccount,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
   }) {
     return initial(this);
   }
@@ -3313,8 +3127,35 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_Register value)? register,
-    TResult? Function(_ValidateAccount value)? validateAccount,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
   }) {
     return initial?.call(this);
   }
@@ -3323,8 +3164,35 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Register value)? register,
-    TResult Function(_ValidateAccount value)? validateAccount,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -3339,127 +3207,141 @@ abstract class _Initial implements AuthState {
 }
 
 /// @nodoc
-abstract class _$$RegisterImplCopyWith<$Res> {
-  factory _$$RegisterImplCopyWith(
-          _$RegisterImpl value, $Res Function(_$RegisterImpl) then) =
-      __$$RegisterImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({bool isLoading, RequestState state, bool? registered});
+abstract class _$$RegisterLoadingImplCopyWith<$Res> {
+  factory _$$RegisterLoadingImplCopyWith(_$RegisterLoadingImpl value,
+          $Res Function(_$RegisterLoadingImpl) then) =
+      __$$RegisterLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$RegisterImplCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res, _$RegisterImpl>
-    implements _$$RegisterImplCopyWith<$Res> {
-  __$$RegisterImplCopyWithImpl(
-      _$RegisterImpl _value, $Res Function(_$RegisterImpl) _then)
+class __$$RegisterLoadingImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$RegisterLoadingImpl>
+    implements _$$RegisterLoadingImplCopyWith<$Res> {
+  __$$RegisterLoadingImplCopyWithImpl(
+      _$RegisterLoadingImpl _value, $Res Function(_$RegisterLoadingImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? isLoading = null,
-    Object? state = null,
-    Object? registered = freezed,
-  }) {
-    return _then(_$RegisterImpl(
-      isLoading: null == isLoading
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
-              as bool,
-      state: null == state
-          ? _value.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as RequestState,
-      registered: freezed == registered
-          ? _value.registered
-          : registered // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$RegisterImpl implements _Register {
-  const _$RegisterImpl(
-      {this.isLoading = false,
-      this.state = RequestState.initial,
-      this.registered = null});
-
-  @override
-  @JsonKey()
-  final bool isLoading;
-  @override
-  @JsonKey()
-  final RequestState state;
-  @override
-  @JsonKey()
-  final bool? registered;
+class _$RegisterLoadingImpl implements _RegisterLoading {
+  const _$RegisterLoadingImpl();
 
   @override
   String toString() {
-    return 'AuthState.register(isLoading: $isLoading, state: $state, registered: $registered)';
+    return 'AuthState.registerLoading()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$RegisterImpl &&
-            (identical(other.isLoading, isLoading) ||
-                other.isLoading == isLoading) &&
-            (identical(other.state, state) || other.state == state) &&
-            (identical(other.registered, registered) ||
-                other.registered == registered));
+        (other.runtimeType == runtimeType && other is _$RegisterLoadingImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isLoading, state, registered);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$RegisterImplCopyWith<_$RegisterImpl> get copyWith =>
-      __$$RegisterImplCopyWithImpl<_$RegisterImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(
-            bool isLoading, RequestState state, bool? registered)
-        register,
-    required TResult Function(bool isLoading, VerifiedAccountState state)
-        validateAccount,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
   }) {
-    return register(isLoading, state, registered);
+    return registerLoading();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(bool isLoading, RequestState state, bool? registered)?
-        register,
-    TResult? Function(bool isLoading, VerifiedAccountState state)?
-        validateAccount,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
   }) {
-    return register?.call(isLoading, state, registered);
+    return registerLoading?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(bool isLoading, RequestState state, bool? registered)?
-        register,
-    TResult Function(bool isLoading, VerifiedAccountState state)?
-        validateAccount,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
     required TResult orElse(),
   }) {
-    if (register != null) {
-      return register(isLoading, state, registered);
+    if (registerLoading != null) {
+      return registerLoading();
     }
     return orElse();
   }
@@ -3468,163 +3350,289 @@ class _$RegisterImpl implements _Register {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Register value) register,
-    required TResult Function(_ValidateAccount value) validateAccount,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
   }) {
-    return register(this);
+    return registerLoading(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_Register value)? register,
-    TResult? Function(_ValidateAccount value)? validateAccount,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
   }) {
-    return register?.call(this);
+    return registerLoading?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Register value)? register,
-    TResult Function(_ValidateAccount value)? validateAccount,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
     required TResult orElse(),
   }) {
-    if (register != null) {
-      return register(this);
+    if (registerLoading != null) {
+      return registerLoading(this);
     }
     return orElse();
   }
 }
 
-abstract class _Register implements AuthState {
-  const factory _Register(
-      {final bool isLoading,
-      final RequestState state,
-      final bool? registered}) = _$RegisterImpl;
-
-  bool get isLoading;
-  RequestState get state;
-  bool? get registered;
-  @JsonKey(ignore: true)
-  _$$RegisterImplCopyWith<_$RegisterImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class _RegisterLoading implements AuthState {
+  const factory _RegisterLoading() = _$RegisterLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$ValidateAccountImplCopyWith<$Res> {
-  factory _$$ValidateAccountImplCopyWith(_$ValidateAccountImpl value,
-          $Res Function(_$ValidateAccountImpl) then) =
-      __$$ValidateAccountImplCopyWithImpl<$Res>;
+abstract class _$$RegisterFailureImplCopyWith<$Res> {
+  factory _$$RegisterFailureImplCopyWith(_$RegisterFailureImpl value,
+          $Res Function(_$RegisterFailureImpl) then) =
+      __$$RegisterFailureImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({bool isLoading, VerifiedAccountState state});
+  $Res call({Failure? failure});
 }
 
 /// @nodoc
-class __$$ValidateAccountImplCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res, _$ValidateAccountImpl>
-    implements _$$ValidateAccountImplCopyWith<$Res> {
-  __$$ValidateAccountImplCopyWithImpl(
-      _$ValidateAccountImpl _value, $Res Function(_$ValidateAccountImpl) _then)
+class __$$RegisterFailureImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$RegisterFailureImpl>
+    implements _$$RegisterFailureImplCopyWith<$Res> {
+  __$$RegisterFailureImplCopyWithImpl(
+      _$RegisterFailureImpl _value, $Res Function(_$RegisterFailureImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isLoading = null,
-    Object? state = null,
+    Object? failure = freezed,
   }) {
-    return _then(_$ValidateAccountImpl(
-      isLoading: null == isLoading
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
-              as bool,
-      state: null == state
-          ? _value.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as VerifiedAccountState,
+    return _then(_$RegisterFailureImpl(
+      failure: freezed == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$ValidateAccountImpl implements _ValidateAccount {
-  const _$ValidateAccountImpl(
-      {this.isLoading = false,
-      this.state = VerifiedAccountState.isNotVerified});
+class _$RegisterFailureImpl implements _RegisterFailure {
+  const _$RegisterFailureImpl({this.failure = null});
 
   @override
   @JsonKey()
-  final bool isLoading;
-  @override
-  @JsonKey()
-  final VerifiedAccountState state;
+  final Failure? failure;
 
   @override
   String toString() {
-    return 'AuthState.validateAccount(isLoading: $isLoading, state: $state)';
+    return 'AuthState.registerFailure(failure: $failure)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ValidateAccountImpl &&
-            (identical(other.isLoading, isLoading) ||
-                other.isLoading == isLoading) &&
-            (identical(other.state, state) || other.state == state));
+            other is _$RegisterFailureImpl &&
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isLoading, state);
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ValidateAccountImplCopyWith<_$ValidateAccountImpl> get copyWith =>
-      __$$ValidateAccountImplCopyWithImpl<_$ValidateAccountImpl>(
+  _$$RegisterFailureImplCopyWith<_$RegisterFailureImpl> get copyWith =>
+      __$$RegisterFailureImplCopyWithImpl<_$RegisterFailureImpl>(
           this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(
-            bool isLoading, RequestState state, bool? registered)
-        register,
-    required TResult Function(bool isLoading, VerifiedAccountState state)
-        validateAccount,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
   }) {
-    return validateAccount(isLoading, state);
+    return registerFailure(failure);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(bool isLoading, RequestState state, bool? registered)?
-        register,
-    TResult? Function(bool isLoading, VerifiedAccountState state)?
-        validateAccount,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
   }) {
-    return validateAccount?.call(isLoading, state);
+    return registerFailure?.call(failure);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(bool isLoading, RequestState state, bool? registered)?
-        register,
-    TResult Function(bool isLoading, VerifiedAccountState state)?
-        validateAccount,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
     required TResult orElse(),
   }) {
-    if (validateAccount != null) {
-      return validateAccount(isLoading, state);
+    if (registerFailure != null) {
+      return registerFailure(failure);
     }
     return orElse();
   }
@@ -3633,45 +3641,6683 @@ class _$ValidateAccountImpl implements _ValidateAccount {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Register value) register,
-    required TResult Function(_ValidateAccount value) validateAccount,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
   }) {
-    return validateAccount(this);
+    return registerFailure(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_Register value)? register,
-    TResult? Function(_ValidateAccount value)? validateAccount,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
   }) {
-    return validateAccount?.call(this);
+    return registerFailure?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Register value)? register,
-    TResult Function(_ValidateAccount value)? validateAccount,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
     required TResult orElse(),
   }) {
-    if (validateAccount != null) {
-      return validateAccount(this);
+    if (registerFailure != null) {
+      return registerFailure(this);
     }
     return orElse();
   }
 }
 
-abstract class _ValidateAccount implements AuthState {
-  const factory _ValidateAccount(
-      {final bool isLoading,
-      final VerifiedAccountState state}) = _$ValidateAccountImpl;
+abstract class _RegisterFailure implements AuthState {
+  const factory _RegisterFailure({final Failure? failure}) =
+      _$RegisterFailureImpl;
 
-  bool get isLoading;
-  VerifiedAccountState get state;
+  Failure? get failure;
   @JsonKey(ignore: true)
-  _$$ValidateAccountImplCopyWith<_$ValidateAccountImpl> get copyWith =>
+  _$$RegisterFailureImplCopyWith<_$RegisterFailureImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RegisteredImplCopyWith<$Res> {
+  factory _$$RegisteredImplCopyWith(
+          _$RegisteredImpl value, $Res Function(_$RegisteredImpl) then) =
+      __$$RegisteredImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool registered});
+}
+
+/// @nodoc
+class __$$RegisteredImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$RegisteredImpl>
+    implements _$$RegisteredImplCopyWith<$Res> {
+  __$$RegisteredImplCopyWithImpl(
+      _$RegisteredImpl _value, $Res Function(_$RegisteredImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? registered = null,
+  }) {
+    return _then(_$RegisteredImpl(
+      registered: null == registered
+          ? _value.registered
+          : registered // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RegisteredImpl implements _Registered {
+  const _$RegisteredImpl({this.registered = false});
+
+  @override
+  @JsonKey()
+  final bool registered;
+
+  @override
+  String toString() {
+    return 'AuthState.registered(registered: $registered)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RegisteredImpl &&
+            (identical(other.registered, registered) ||
+                other.registered == registered));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, registered);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RegisteredImplCopyWith<_$RegisteredImpl> get copyWith =>
+      __$$RegisteredImplCopyWithImpl<_$RegisteredImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+  }) {
+    return registered(this.registered);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+  }) {
+    return registered?.call(this.registered);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (registered != null) {
+      return registered(this.registered);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+  }) {
+    return registered(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+  }) {
+    return registered?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (registered != null) {
+      return registered(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Registered implements AuthState {
+  const factory _Registered({final bool registered}) = _$RegisteredImpl;
+
+  bool get registered;
+  @JsonKey(ignore: true)
+  _$$RegisteredImplCopyWith<_$RegisteredImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LoginLoadingImplCopyWith<$Res> {
+  factory _$$LoginLoadingImplCopyWith(
+          _$LoginLoadingImpl value, $Res Function(_$LoginLoadingImpl) then) =
+      __$$LoginLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoginLoadingImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$LoginLoadingImpl>
+    implements _$$LoginLoadingImplCopyWith<$Res> {
+  __$$LoginLoadingImplCopyWithImpl(
+      _$LoginLoadingImpl _value, $Res Function(_$LoginLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LoginLoadingImpl implements _LoginLoading {
+  const _$LoginLoadingImpl();
+
+  @override
+  String toString() {
+    return 'AuthState.logginLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoginLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+  }) {
+    return logginLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+  }) {
+    return logginLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (logginLoading != null) {
+      return logginLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+  }) {
+    return logginLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+  }) {
+    return logginLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (logginLoading != null) {
+      return logginLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoginLoading implements AuthState {
+  const factory _LoginLoading() = _$LoginLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$LoginFailureImplCopyWith<$Res> {
+  factory _$$LoginFailureImplCopyWith(
+          _$LoginFailureImpl value, $Res Function(_$LoginFailureImpl) then) =
+      __$$LoginFailureImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Failure? failure});
+}
+
+/// @nodoc
+class __$$LoginFailureImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$LoginFailureImpl>
+    implements _$$LoginFailureImplCopyWith<$Res> {
+  __$$LoginFailureImplCopyWithImpl(
+      _$LoginFailureImpl _value, $Res Function(_$LoginFailureImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? failure = freezed,
+  }) {
+    return _then(_$LoginFailureImpl(
+      failure: freezed == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LoginFailureImpl implements _LoginFailure {
+  const _$LoginFailureImpl({this.failure = null});
+
+  @override
+  @JsonKey()
+  final Failure? failure;
+
+  @override
+  String toString() {
+    return 'AuthState.logginFailure(failure: $failure)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoginFailureImpl &&
+            (identical(other.failure, failure) || other.failure == failure));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, failure);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoginFailureImplCopyWith<_$LoginFailureImpl> get copyWith =>
+      __$$LoginFailureImplCopyWithImpl<_$LoginFailureImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+  }) {
+    return logginFailure(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+  }) {
+    return logginFailure?.call(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (logginFailure != null) {
+      return logginFailure(failure);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+  }) {
+    return logginFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+  }) {
+    return logginFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (logginFailure != null) {
+      return logginFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoginFailure implements AuthState {
+  const factory _LoginFailure({final Failure? failure}) = _$LoginFailureImpl;
+
+  Failure? get failure;
+  @JsonKey(ignore: true)
+  _$$LoginFailureImplCopyWith<_$LoginFailureImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LoggedInImplCopyWith<$Res> {
+  factory _$$LoggedInImplCopyWith(
+          _$LoggedInImpl value, $Res Function(_$LoggedInImpl) then) =
+      __$$LoggedInImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({UserProfileEntity? user});
+}
+
+/// @nodoc
+class __$$LoggedInImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$LoggedInImpl>
+    implements _$$LoggedInImplCopyWith<$Res> {
+  __$$LoggedInImplCopyWithImpl(
+      _$LoggedInImpl _value, $Res Function(_$LoggedInImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? user = freezed,
+  }) {
+    return _then(_$LoggedInImpl(
+      user: freezed == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserProfileEntity?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LoggedInImpl implements _LoggedIn {
+  const _$LoggedInImpl({this.user = null});
+
+  @override
+  @JsonKey()
+  final UserProfileEntity? user;
+
+  @override
+  String toString() {
+    return 'AuthState.loggedIn(user: $user)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoggedInImpl &&
+            (identical(other.user, user) || other.user == user));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, user);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoggedInImplCopyWith<_$LoggedInImpl> get copyWith =>
+      __$$LoggedInImplCopyWithImpl<_$LoggedInImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+  }) {
+    return loggedIn(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+  }) {
+    return loggedIn?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (loggedIn != null) {
+      return loggedIn(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+  }) {
+    return loggedIn(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+  }) {
+    return loggedIn?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (loggedIn != null) {
+      return loggedIn(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoggedIn implements AuthState {
+  const factory _LoggedIn({final UserProfileEntity? user}) = _$LoggedInImpl;
+
+  UserProfileEntity? get user;
+  @JsonKey(ignore: true)
+  _$$LoggedInImplCopyWith<_$LoggedInImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ConfirmEmailLoadingImplCopyWith<$Res> {
+  factory _$$ConfirmEmailLoadingImplCopyWith(_$ConfirmEmailLoadingImpl value,
+          $Res Function(_$ConfirmEmailLoadingImpl) then) =
+      __$$ConfirmEmailLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ConfirmEmailLoadingImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$ConfirmEmailLoadingImpl>
+    implements _$$ConfirmEmailLoadingImplCopyWith<$Res> {
+  __$$ConfirmEmailLoadingImplCopyWithImpl(_$ConfirmEmailLoadingImpl _value,
+      $Res Function(_$ConfirmEmailLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ConfirmEmailLoadingImpl implements _ConfirmEmailLoading {
+  const _$ConfirmEmailLoadingImpl();
+
+  @override
+  String toString() {
+    return 'AuthState.confirmEmailLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ConfirmEmailLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+  }) {
+    return confirmEmailLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+  }) {
+    return confirmEmailLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (confirmEmailLoading != null) {
+      return confirmEmailLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+  }) {
+    return confirmEmailLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+  }) {
+    return confirmEmailLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (confirmEmailLoading != null) {
+      return confirmEmailLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ConfirmEmailLoading implements AuthState {
+  const factory _ConfirmEmailLoading() = _$ConfirmEmailLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$ConfirmEmailFailureImplCopyWith<$Res> {
+  factory _$$ConfirmEmailFailureImplCopyWith(_$ConfirmEmailFailureImpl value,
+          $Res Function(_$ConfirmEmailFailureImpl) then) =
+      __$$ConfirmEmailFailureImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Failure? failure});
+}
+
+/// @nodoc
+class __$$ConfirmEmailFailureImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$ConfirmEmailFailureImpl>
+    implements _$$ConfirmEmailFailureImplCopyWith<$Res> {
+  __$$ConfirmEmailFailureImplCopyWithImpl(_$ConfirmEmailFailureImpl _value,
+      $Res Function(_$ConfirmEmailFailureImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? failure = freezed,
+  }) {
+    return _then(_$ConfirmEmailFailureImpl(
+      failure: freezed == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ConfirmEmailFailureImpl implements _ConfirmEmailFailure {
+  const _$ConfirmEmailFailureImpl({this.failure = null});
+
+  @override
+  @JsonKey()
+  final Failure? failure;
+
+  @override
+  String toString() {
+    return 'AuthState.confirmEmailFailure(failure: $failure)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ConfirmEmailFailureImpl &&
+            (identical(other.failure, failure) || other.failure == failure));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, failure);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ConfirmEmailFailureImplCopyWith<_$ConfirmEmailFailureImpl> get copyWith =>
+      __$$ConfirmEmailFailureImplCopyWithImpl<_$ConfirmEmailFailureImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+  }) {
+    return confirmEmailFailure(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+  }) {
+    return confirmEmailFailure?.call(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (confirmEmailFailure != null) {
+      return confirmEmailFailure(failure);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+  }) {
+    return confirmEmailFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+  }) {
+    return confirmEmailFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (confirmEmailFailure != null) {
+      return confirmEmailFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ConfirmEmailFailure implements AuthState {
+  const factory _ConfirmEmailFailure({final Failure? failure}) =
+      _$ConfirmEmailFailureImpl;
+
+  Failure? get failure;
+  @JsonKey(ignore: true)
+  _$$ConfirmEmailFailureImplCopyWith<_$ConfirmEmailFailureImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$EmailConfirmedImplCopyWith<$Res> {
+  factory _$$EmailConfirmedImplCopyWith(_$EmailConfirmedImpl value,
+          $Res Function(_$EmailConfirmedImpl) then) =
+      __$$EmailConfirmedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<SportEntity> sports});
+}
+
+/// @nodoc
+class __$$EmailConfirmedImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$EmailConfirmedImpl>
+    implements _$$EmailConfirmedImplCopyWith<$Res> {
+  __$$EmailConfirmedImplCopyWithImpl(
+      _$EmailConfirmedImpl _value, $Res Function(_$EmailConfirmedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? sports = null,
+  }) {
+    return _then(_$EmailConfirmedImpl(
+      sports: null == sports
+          ? _value._sports
+          : sports // ignore: cast_nullable_to_non_nullable
+              as List<SportEntity>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$EmailConfirmedImpl implements _EmailConfirmed {
+  const _$EmailConfirmedImpl({final List<SportEntity> sports = const []})
+      : _sports = sports;
+
+  final List<SportEntity> _sports;
+  @override
+  @JsonKey()
+  List<SportEntity> get sports {
+    if (_sports is EqualUnmodifiableListView) return _sports;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_sports);
+  }
+
+  @override
+  String toString() {
+    return 'AuthState.emailConfirmed(sports: $sports)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$EmailConfirmedImpl &&
+            const DeepCollectionEquality().equals(other._sports, _sports));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_sports));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$EmailConfirmedImplCopyWith<_$EmailConfirmedImpl> get copyWith =>
+      __$$EmailConfirmedImplCopyWithImpl<_$EmailConfirmedImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+  }) {
+    return emailConfirmed(sports);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+  }) {
+    return emailConfirmed?.call(sports);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (emailConfirmed != null) {
+      return emailConfirmed(sports);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+  }) {
+    return emailConfirmed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+  }) {
+    return emailConfirmed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (emailConfirmed != null) {
+      return emailConfirmed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EmailConfirmed implements AuthState {
+  const factory _EmailConfirmed({final List<SportEntity> sports}) =
+      _$EmailConfirmedImpl;
+
+  List<SportEntity> get sports;
+  @JsonKey(ignore: true)
+  _$$EmailConfirmedImplCopyWith<_$EmailConfirmedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ResendConfirmEmailLoadingImplCopyWith<$Res> {
+  factory _$$ResendConfirmEmailLoadingImplCopyWith(
+          _$ResendConfirmEmailLoadingImpl value,
+          $Res Function(_$ResendConfirmEmailLoadingImpl) then) =
+      __$$ResendConfirmEmailLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ResendConfirmEmailLoadingImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$ResendConfirmEmailLoadingImpl>
+    implements _$$ResendConfirmEmailLoadingImplCopyWith<$Res> {
+  __$$ResendConfirmEmailLoadingImplCopyWithImpl(
+      _$ResendConfirmEmailLoadingImpl _value,
+      $Res Function(_$ResendConfirmEmailLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ResendConfirmEmailLoadingImpl implements _ResendConfirmEmailLoading {
+  const _$ResendConfirmEmailLoadingImpl();
+
+  @override
+  String toString() {
+    return 'AuthState.resendConfirmEmailLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ResendConfirmEmailLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+  }) {
+    return resendConfirmEmailLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+  }) {
+    return resendConfirmEmailLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (resendConfirmEmailLoading != null) {
+      return resendConfirmEmailLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+  }) {
+    return resendConfirmEmailLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+  }) {
+    return resendConfirmEmailLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (resendConfirmEmailLoading != null) {
+      return resendConfirmEmailLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ResendConfirmEmailLoading implements AuthState {
+  const factory _ResendConfirmEmailLoading() = _$ResendConfirmEmailLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$ResendConfirmEmailFailureImplCopyWith<$Res> {
+  factory _$$ResendConfirmEmailFailureImplCopyWith(
+          _$ResendConfirmEmailFailureImpl value,
+          $Res Function(_$ResendConfirmEmailFailureImpl) then) =
+      __$$ResendConfirmEmailFailureImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Failure? failure});
+}
+
+/// @nodoc
+class __$$ResendConfirmEmailFailureImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$ResendConfirmEmailFailureImpl>
+    implements _$$ResendConfirmEmailFailureImplCopyWith<$Res> {
+  __$$ResendConfirmEmailFailureImplCopyWithImpl(
+      _$ResendConfirmEmailFailureImpl _value,
+      $Res Function(_$ResendConfirmEmailFailureImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? failure = freezed,
+  }) {
+    return _then(_$ResendConfirmEmailFailureImpl(
+      failure: freezed == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ResendConfirmEmailFailureImpl implements _ResendConfirmEmailFailure {
+  const _$ResendConfirmEmailFailureImpl({this.failure = null});
+
+  @override
+  @JsonKey()
+  final Failure? failure;
+
+  @override
+  String toString() {
+    return 'AuthState.resendConfirmEmailFailure(failure: $failure)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ResendConfirmEmailFailureImpl &&
+            (identical(other.failure, failure) || other.failure == failure));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, failure);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ResendConfirmEmailFailureImplCopyWith<_$ResendConfirmEmailFailureImpl>
+      get copyWith => __$$ResendConfirmEmailFailureImplCopyWithImpl<
+          _$ResendConfirmEmailFailureImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+  }) {
+    return resendConfirmEmailFailure(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+  }) {
+    return resendConfirmEmailFailure?.call(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (resendConfirmEmailFailure != null) {
+      return resendConfirmEmailFailure(failure);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+  }) {
+    return resendConfirmEmailFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+  }) {
+    return resendConfirmEmailFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (resendConfirmEmailFailure != null) {
+      return resendConfirmEmailFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ResendConfirmEmailFailure implements AuthState {
+  const factory _ResendConfirmEmailFailure({final Failure? failure}) =
+      _$ResendConfirmEmailFailureImpl;
+
+  Failure? get failure;
+  @JsonKey(ignore: true)
+  _$$ResendConfirmEmailFailureImplCopyWith<_$ResendConfirmEmailFailureImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$EmailConfirmationSentImplCopyWith<$Res> {
+  factory _$$EmailConfirmationSentImplCopyWith(
+          _$EmailConfirmationSentImpl value,
+          $Res Function(_$EmailConfirmationSentImpl) then) =
+      __$$EmailConfirmationSentImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$EmailConfirmationSentImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$EmailConfirmationSentImpl>
+    implements _$$EmailConfirmationSentImplCopyWith<$Res> {
+  __$$EmailConfirmationSentImplCopyWithImpl(_$EmailConfirmationSentImpl _value,
+      $Res Function(_$EmailConfirmationSentImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$EmailConfirmationSentImpl implements _EmailConfirmationSent {
+  const _$EmailConfirmationSentImpl();
+
+  @override
+  String toString() {
+    return 'AuthState.emailConfirmationSent()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$EmailConfirmationSentImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+  }) {
+    return emailConfirmationSent();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+  }) {
+    return emailConfirmationSent?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (emailConfirmationSent != null) {
+      return emailConfirmationSent();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+  }) {
+    return emailConfirmationSent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+  }) {
+    return emailConfirmationSent?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (emailConfirmationSent != null) {
+      return emailConfirmationSent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EmailConfirmationSent implements AuthState {
+  const factory _EmailConfirmationSent() = _$EmailConfirmationSentImpl;
+}
+
+/// @nodoc
+abstract class _$$CompleteRegistrationLoadingImplCopyWith<$Res> {
+  factory _$$CompleteRegistrationLoadingImplCopyWith(
+          _$CompleteRegistrationLoadingImpl value,
+          $Res Function(_$CompleteRegistrationLoadingImpl) then) =
+      __$$CompleteRegistrationLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CompleteRegistrationLoadingImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$CompleteRegistrationLoadingImpl>
+    implements _$$CompleteRegistrationLoadingImplCopyWith<$Res> {
+  __$$CompleteRegistrationLoadingImplCopyWithImpl(
+      _$CompleteRegistrationLoadingImpl _value,
+      $Res Function(_$CompleteRegistrationLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$CompleteRegistrationLoadingImpl
+    implements _CompleteRegistrationLoading {
+  const _$CompleteRegistrationLoadingImpl();
+
+  @override
+  String toString() {
+    return 'AuthState.completeRegistrationLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CompleteRegistrationLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+  }) {
+    return completeRegistrationLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+  }) {
+    return completeRegistrationLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (completeRegistrationLoading != null) {
+      return completeRegistrationLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+  }) {
+    return completeRegistrationLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+  }) {
+    return completeRegistrationLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (completeRegistrationLoading != null) {
+      return completeRegistrationLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CompleteRegistrationLoading implements AuthState {
+  const factory _CompleteRegistrationLoading() =
+      _$CompleteRegistrationLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$CompleteRegistrationFailureImplCopyWith<$Res> {
+  factory _$$CompleteRegistrationFailureImplCopyWith(
+          _$CompleteRegistrationFailureImpl value,
+          $Res Function(_$CompleteRegistrationFailureImpl) then) =
+      __$$CompleteRegistrationFailureImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Failure? failure});
+}
+
+/// @nodoc
+class __$$CompleteRegistrationFailureImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$CompleteRegistrationFailureImpl>
+    implements _$$CompleteRegistrationFailureImplCopyWith<$Res> {
+  __$$CompleteRegistrationFailureImplCopyWithImpl(
+      _$CompleteRegistrationFailureImpl _value,
+      $Res Function(_$CompleteRegistrationFailureImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? failure = freezed,
+  }) {
+    return _then(_$CompleteRegistrationFailureImpl(
+      failure: freezed == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CompleteRegistrationFailureImpl
+    implements _CompleteRegistrationFailure {
+  const _$CompleteRegistrationFailureImpl({this.failure = null});
+
+  @override
+  @JsonKey()
+  final Failure? failure;
+
+  @override
+  String toString() {
+    return 'AuthState.completeRegistrationailure(failure: $failure)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CompleteRegistrationFailureImpl &&
+            (identical(other.failure, failure) || other.failure == failure));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, failure);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CompleteRegistrationFailureImplCopyWith<_$CompleteRegistrationFailureImpl>
+      get copyWith => __$$CompleteRegistrationFailureImplCopyWithImpl<
+          _$CompleteRegistrationFailureImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+  }) {
+    return completeRegistrationailure(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+  }) {
+    return completeRegistrationailure?.call(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (completeRegistrationailure != null) {
+      return completeRegistrationailure(failure);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+  }) {
+    return completeRegistrationailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+  }) {
+    return completeRegistrationailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (completeRegistrationailure != null) {
+      return completeRegistrationailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CompleteRegistrationFailure implements AuthState {
+  const factory _CompleteRegistrationFailure({final Failure? failure}) =
+      _$CompleteRegistrationFailureImpl;
+
+  Failure? get failure;
+  @JsonKey(ignore: true)
+  _$$CompleteRegistrationFailureImplCopyWith<_$CompleteRegistrationFailureImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RegistrationCompletedImplCopyWith<$Res> {
+  factory _$$RegistrationCompletedImplCopyWith(
+          _$RegistrationCompletedImpl value,
+          $Res Function(_$RegistrationCompletedImpl) then) =
+      __$$RegistrationCompletedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({UserProfileEntity? userProfile});
+}
+
+/// @nodoc
+class __$$RegistrationCompletedImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$RegistrationCompletedImpl>
+    implements _$$RegistrationCompletedImplCopyWith<$Res> {
+  __$$RegistrationCompletedImplCopyWithImpl(_$RegistrationCompletedImpl _value,
+      $Res Function(_$RegistrationCompletedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? userProfile = freezed,
+  }) {
+    return _then(_$RegistrationCompletedImpl(
+      userProfile: freezed == userProfile
+          ? _value.userProfile
+          : userProfile // ignore: cast_nullable_to_non_nullable
+              as UserProfileEntity?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RegistrationCompletedImpl implements _RegistrationCompleted {
+  const _$RegistrationCompletedImpl({this.userProfile = null});
+
+  @override
+  @JsonKey()
+  final UserProfileEntity? userProfile;
+
+  @override
+  String toString() {
+    return 'AuthState.registrationCompleted(userProfile: $userProfile)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RegistrationCompletedImpl &&
+            (identical(other.userProfile, userProfile) ||
+                other.userProfile == userProfile));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, userProfile);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RegistrationCompletedImplCopyWith<_$RegistrationCompletedImpl>
+      get copyWith => __$$RegistrationCompletedImplCopyWithImpl<
+          _$RegistrationCompletedImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+  }) {
+    return registrationCompleted(userProfile);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+  }) {
+    return registrationCompleted?.call(userProfile);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (registrationCompleted != null) {
+      return registrationCompleted(userProfile);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+  }) {
+    return registrationCompleted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+  }) {
+    return registrationCompleted?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (registrationCompleted != null) {
+      return registrationCompleted(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _RegistrationCompleted implements AuthState {
+  const factory _RegistrationCompleted({final UserProfileEntity? userProfile}) =
+      _$RegistrationCompletedImpl;
+
+  UserProfileEntity? get userProfile;
+  @JsonKey(ignore: true)
+  _$$RegistrationCompletedImplCopyWith<_$RegistrationCompletedImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CheckUserLoadingImplCopyWith<$Res> {
+  factory _$$CheckUserLoadingImplCopyWith(_$CheckUserLoadingImpl value,
+          $Res Function(_$CheckUserLoadingImpl) then) =
+      __$$CheckUserLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CheckUserLoadingImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$CheckUserLoadingImpl>
+    implements _$$CheckUserLoadingImplCopyWith<$Res> {
+  __$$CheckUserLoadingImplCopyWithImpl(_$CheckUserLoadingImpl _value,
+      $Res Function(_$CheckUserLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$CheckUserLoadingImpl implements _CheckUserLoading {
+  const _$CheckUserLoadingImpl();
+
+  @override
+  String toString() {
+    return 'AuthState.checkUserLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$CheckUserLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+  }) {
+    return checkUserLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+  }) {
+    return checkUserLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (checkUserLoading != null) {
+      return checkUserLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+  }) {
+    return checkUserLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+  }) {
+    return checkUserLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (checkUserLoading != null) {
+      return checkUserLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CheckUserLoading implements AuthState {
+  const factory _CheckUserLoading() = _$CheckUserLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$CheckUserLoggedImplCopyWith<$Res> {
+  factory _$$CheckUserLoggedImplCopyWith(_$CheckUserLoggedImpl value,
+          $Res Function(_$CheckUserLoggedImpl) then) =
+      __$$CheckUserLoggedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({UserAuthState userAuthState});
+}
+
+/// @nodoc
+class __$$CheckUserLoggedImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$CheckUserLoggedImpl>
+    implements _$$CheckUserLoggedImplCopyWith<$Res> {
+  __$$CheckUserLoggedImplCopyWithImpl(
+      _$CheckUserLoggedImpl _value, $Res Function(_$CheckUserLoggedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? userAuthState = null,
+  }) {
+    return _then(_$CheckUserLoggedImpl(
+      userAuthState: null == userAuthState
+          ? _value.userAuthState
+          : userAuthState // ignore: cast_nullable_to_non_nullable
+              as UserAuthState,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CheckUserLoggedImpl implements _CheckUserLogged {
+  const _$CheckUserLoggedImpl({this.userAuthState = UserAuthState.guest});
+
+  @override
+  @JsonKey()
+  final UserAuthState userAuthState;
+
+  @override
+  String toString() {
+    return 'AuthState.checkUserLogged(userAuthState: $userAuthState)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CheckUserLoggedImpl &&
+            (identical(other.userAuthState, userAuthState) ||
+                other.userAuthState == userAuthState));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, userAuthState);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CheckUserLoggedImplCopyWith<_$CheckUserLoggedImpl> get copyWith =>
+      __$$CheckUserLoggedImplCopyWithImpl<_$CheckUserLoggedImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+  }) {
+    return checkUserLogged(userAuthState);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+  }) {
+    return checkUserLogged?.call(userAuthState);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (checkUserLogged != null) {
+      return checkUserLogged(userAuthState);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+  }) {
+    return checkUserLogged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+  }) {
+    return checkUserLogged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (checkUserLogged != null) {
+      return checkUserLogged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CheckUserLogged implements AuthState {
+  const factory _CheckUserLogged({final UserAuthState userAuthState}) =
+      _$CheckUserLoggedImpl;
+
+  UserAuthState get userAuthState;
+  @JsonKey(ignore: true)
+  _$$CheckUserLoggedImplCopyWith<_$CheckUserLoggedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CeckUserFailureImplCopyWith<$Res> {
+  factory _$$CeckUserFailureImplCopyWith(_$CeckUserFailureImpl value,
+          $Res Function(_$CeckUserFailureImpl) then) =
+      __$$CeckUserFailureImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Failure? failure});
+}
+
+/// @nodoc
+class __$$CeckUserFailureImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$CeckUserFailureImpl>
+    implements _$$CeckUserFailureImplCopyWith<$Res> {
+  __$$CeckUserFailureImplCopyWithImpl(
+      _$CeckUserFailureImpl _value, $Res Function(_$CeckUserFailureImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? failure = freezed,
+  }) {
+    return _then(_$CeckUserFailureImpl(
+      failure: freezed == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CeckUserFailureImpl implements _CeckUserFailure {
+  const _$CeckUserFailureImpl({this.failure = null});
+
+  @override
+  @JsonKey()
+  final Failure? failure;
+
+  @override
+  String toString() {
+    return 'AuthState.checkUserFailure(failure: $failure)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CeckUserFailureImpl &&
+            (identical(other.failure, failure) || other.failure == failure));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, failure);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CeckUserFailureImplCopyWith<_$CeckUserFailureImpl> get copyWith =>
+      __$$CeckUserFailureImplCopyWithImpl<_$CeckUserFailureImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+  }) {
+    return checkUserFailure(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+  }) {
+    return checkUserFailure?.call(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (checkUserFailure != null) {
+      return checkUserFailure(failure);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+  }) {
+    return checkUserFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+  }) {
+    return checkUserFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (checkUserFailure != null) {
+      return checkUserFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CeckUserFailure implements AuthState {
+  const factory _CeckUserFailure({final Failure? failure}) =
+      _$CeckUserFailureImpl;
+
+  Failure? get failure;
+  @JsonKey(ignore: true)
+  _$$CeckUserFailureImplCopyWith<_$CeckUserFailureImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UserProfileLocalLoadingImplCopyWith<$Res> {
+  factory _$$UserProfileLocalLoadingImplCopyWith(
+          _$UserProfileLocalLoadingImpl value,
+          $Res Function(_$UserProfileLocalLoadingImpl) then) =
+      __$$UserProfileLocalLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UserProfileLocalLoadingImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$UserProfileLocalLoadingImpl>
+    implements _$$UserProfileLocalLoadingImplCopyWith<$Res> {
+  __$$UserProfileLocalLoadingImplCopyWithImpl(
+      _$UserProfileLocalLoadingImpl _value,
+      $Res Function(_$UserProfileLocalLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UserProfileLocalLoadingImpl implements _UserProfileLocalLoading {
+  const _$UserProfileLocalLoadingImpl();
+
+  @override
+  String toString() {
+    return 'AuthState.userProfileLocalLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserProfileLocalLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+  }) {
+    return userProfileLocalLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+  }) {
+    return userProfileLocalLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (userProfileLocalLoading != null) {
+      return userProfileLocalLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+  }) {
+    return userProfileLocalLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+  }) {
+    return userProfileLocalLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (userProfileLocalLoading != null) {
+      return userProfileLocalLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UserProfileLocalLoading implements AuthState {
+  const factory _UserProfileLocalLoading() = _$UserProfileLocalLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$UserProfileLoadingImplCopyWith<$Res> {
+  factory _$$UserProfileLoadingImplCopyWith(_$UserProfileLoadingImpl value,
+          $Res Function(_$UserProfileLoadingImpl) then) =
+      __$$UserProfileLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UserProfileLoadingImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$UserProfileLoadingImpl>
+    implements _$$UserProfileLoadingImplCopyWith<$Res> {
+  __$$UserProfileLoadingImplCopyWithImpl(_$UserProfileLoadingImpl _value,
+      $Res Function(_$UserProfileLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UserProfileLoadingImpl implements _UserProfileLoading {
+  const _$UserProfileLoadingImpl();
+
+  @override
+  String toString() {
+    return 'AuthState.userProfileLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$UserProfileLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+  }) {
+    return userProfileLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+  }) {
+    return userProfileLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (userProfileLoading != null) {
+      return userProfileLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+  }) {
+    return userProfileLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+  }) {
+    return userProfileLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (userProfileLoading != null) {
+      return userProfileLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UserProfileLoading implements AuthState {
+  const factory _UserProfileLoading() = _$UserProfileLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$UserProfileFailureImplCopyWith<$Res> {
+  factory _$$UserProfileFailureImplCopyWith(_$UserProfileFailureImpl value,
+          $Res Function(_$UserProfileFailureImpl) then) =
+      __$$UserProfileFailureImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Failure? failure});
+}
+
+/// @nodoc
+class __$$UserProfileFailureImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$UserProfileFailureImpl>
+    implements _$$UserProfileFailureImplCopyWith<$Res> {
+  __$$UserProfileFailureImplCopyWithImpl(_$UserProfileFailureImpl _value,
+      $Res Function(_$UserProfileFailureImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? failure = freezed,
+  }) {
+    return _then(_$UserProfileFailureImpl(
+      failure: freezed == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UserProfileFailureImpl implements _UserProfileFailure {
+  const _$UserProfileFailureImpl({this.failure = null});
+
+  @override
+  @JsonKey()
+  final Failure? failure;
+
+  @override
+  String toString() {
+    return 'AuthState.userProfileFailure(failure: $failure)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserProfileFailureImpl &&
+            (identical(other.failure, failure) || other.failure == failure));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, failure);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UserProfileFailureImplCopyWith<_$UserProfileFailureImpl> get copyWith =>
+      __$$UserProfileFailureImplCopyWithImpl<_$UserProfileFailureImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+  }) {
+    return userProfileFailure(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+  }) {
+    return userProfileFailure?.call(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (userProfileFailure != null) {
+      return userProfileFailure(failure);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+  }) {
+    return userProfileFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+  }) {
+    return userProfileFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (userProfileFailure != null) {
+      return userProfileFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UserProfileFailure implements AuthState {
+  const factory _UserProfileFailure({final Failure? failure}) =
+      _$UserProfileFailureImpl;
+
+  Failure? get failure;
+  @JsonKey(ignore: true)
+  _$$UserProfileFailureImplCopyWith<_$UserProfileFailureImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UserProfileFetchedImplCopyWith<$Res> {
+  factory _$$UserProfileFetchedImplCopyWith(_$UserProfileFetchedImpl value,
+          $Res Function(_$UserProfileFetchedImpl) then) =
+      __$$UserProfileFetchedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({UserProfileEntity? userProfile});
+}
+
+/// @nodoc
+class __$$UserProfileFetchedImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$UserProfileFetchedImpl>
+    implements _$$UserProfileFetchedImplCopyWith<$Res> {
+  __$$UserProfileFetchedImplCopyWithImpl(_$UserProfileFetchedImpl _value,
+      $Res Function(_$UserProfileFetchedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? userProfile = freezed,
+  }) {
+    return _then(_$UserProfileFetchedImpl(
+      userProfile: freezed == userProfile
+          ? _value.userProfile
+          : userProfile // ignore: cast_nullable_to_non_nullable
+              as UserProfileEntity?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UserProfileFetchedImpl implements _UserProfileFetched {
+  const _$UserProfileFetchedImpl({this.userProfile = null});
+
+  @override
+  @JsonKey()
+  final UserProfileEntity? userProfile;
+
+  @override
+  String toString() {
+    return 'AuthState.userProfileFetched(userProfile: $userProfile)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserProfileFetchedImpl &&
+            (identical(other.userProfile, userProfile) ||
+                other.userProfile == userProfile));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, userProfile);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UserProfileFetchedImplCopyWith<_$UserProfileFetchedImpl> get copyWith =>
+      __$$UserProfileFetchedImplCopyWithImpl<_$UserProfileFetchedImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+  }) {
+    return userProfileFetched(userProfile);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+  }) {
+    return userProfileFetched?.call(userProfile);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (userProfileFetched != null) {
+      return userProfileFetched(userProfile);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+  }) {
+    return userProfileFetched(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+  }) {
+    return userProfileFetched?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (userProfileFetched != null) {
+      return userProfileFetched(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UserProfileFetched implements AuthState {
+  const factory _UserProfileFetched({final UserProfileEntity? userProfile}) =
+      _$UserProfileFetchedImpl;
+
+  UserProfileEntity? get userProfile;
+  @JsonKey(ignore: true)
+  _$$UserProfileFetchedImplCopyWith<_$UserProfileFetchedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetSportsLoadingImplCopyWith<$Res> {
+  factory _$$GetSportsLoadingImplCopyWith(_$GetSportsLoadingImpl value,
+          $Res Function(_$GetSportsLoadingImpl) then) =
+      __$$GetSportsLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetSportsLoadingImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$GetSportsLoadingImpl>
+    implements _$$GetSportsLoadingImplCopyWith<$Res> {
+  __$$GetSportsLoadingImplCopyWithImpl(_$GetSportsLoadingImpl _value,
+      $Res Function(_$GetSportsLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetSportsLoadingImpl implements _GetSportsLoading {
+  const _$GetSportsLoadingImpl();
+
+  @override
+  String toString() {
+    return 'AuthState.getSportsLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetSportsLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+  }) {
+    return getSportsLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+  }) {
+    return getSportsLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (getSportsLoading != null) {
+      return getSportsLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+  }) {
+    return getSportsLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+  }) {
+    return getSportsLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (getSportsLoading != null) {
+      return getSportsLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetSportsLoading implements AuthState {
+  const factory _GetSportsLoading() = _$GetSportsLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$GetSportsFailureImplCopyWith<$Res> {
+  factory _$$GetSportsFailureImplCopyWith(_$GetSportsFailureImpl value,
+          $Res Function(_$GetSportsFailureImpl) then) =
+      __$$GetSportsFailureImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Failure? failure});
+}
+
+/// @nodoc
+class __$$GetSportsFailureImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$GetSportsFailureImpl>
+    implements _$$GetSportsFailureImplCopyWith<$Res> {
+  __$$GetSportsFailureImplCopyWithImpl(_$GetSportsFailureImpl _value,
+      $Res Function(_$GetSportsFailureImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? failure = freezed,
+  }) {
+    return _then(_$GetSportsFailureImpl(
+      failure: freezed == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetSportsFailureImpl implements _GetSportsFailure {
+  const _$GetSportsFailureImpl({this.failure = null});
+
+  @override
+  @JsonKey()
+  final Failure? failure;
+
+  @override
+  String toString() {
+    return 'AuthState.getSportsFailure(failure: $failure)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetSportsFailureImpl &&
+            (identical(other.failure, failure) || other.failure == failure));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, failure);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetSportsFailureImplCopyWith<_$GetSportsFailureImpl> get copyWith =>
+      __$$GetSportsFailureImplCopyWithImpl<_$GetSportsFailureImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+  }) {
+    return getSportsFailure(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+  }) {
+    return getSportsFailure?.call(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (getSportsFailure != null) {
+      return getSportsFailure(failure);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+  }) {
+    return getSportsFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+  }) {
+    return getSportsFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (getSportsFailure != null) {
+      return getSportsFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetSportsFailure implements AuthState {
+  const factory _GetSportsFailure({final Failure? failure}) =
+      _$GetSportsFailureImpl;
+
+  Failure? get failure;
+  @JsonKey(ignore: true)
+  _$$GetSportsFailureImplCopyWith<_$GetSportsFailureImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SportsFetchedImplCopyWith<$Res> {
+  factory _$$SportsFetchedImplCopyWith(
+          _$SportsFetchedImpl value, $Res Function(_$SportsFetchedImpl) then) =
+      __$$SportsFetchedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<SportEntity> sports});
+}
+
+/// @nodoc
+class __$$SportsFetchedImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$SportsFetchedImpl>
+    implements _$$SportsFetchedImplCopyWith<$Res> {
+  __$$SportsFetchedImplCopyWithImpl(
+      _$SportsFetchedImpl _value, $Res Function(_$SportsFetchedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? sports = null,
+  }) {
+    return _then(_$SportsFetchedImpl(
+      sports: null == sports
+          ? _value._sports
+          : sports // ignore: cast_nullable_to_non_nullable
+              as List<SportEntity>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SportsFetchedImpl implements _SportsFetched {
+  const _$SportsFetchedImpl({final List<SportEntity> sports = const []})
+      : _sports = sports;
+
+  final List<SportEntity> _sports;
+  @override
+  @JsonKey()
+  List<SportEntity> get sports {
+    if (_sports is EqualUnmodifiableListView) return _sports;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_sports);
+  }
+
+  @override
+  String toString() {
+    return 'AuthState.sportsFetched(sports: $sports)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SportsFetchedImpl &&
+            const DeepCollectionEquality().equals(other._sports, _sports));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_sports));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SportsFetchedImplCopyWith<_$SportsFetchedImpl> get copyWith =>
+      __$$SportsFetchedImplCopyWithImpl<_$SportsFetchedImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+  }) {
+    return sportsFetched(sports);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+  }) {
+    return sportsFetched?.call(sports);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (sportsFetched != null) {
+      return sportsFetched(sports);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+  }) {
+    return sportsFetched(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+  }) {
+    return sportsFetched?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (sportsFetched != null) {
+      return sportsFetched(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SportsFetched implements AuthState {
+  const factory _SportsFetched({final List<SportEntity> sports}) =
+      _$SportsFetchedImpl;
+
+  List<SportEntity> get sports;
+  @JsonKey(ignore: true)
+  _$$SportsFetchedImplCopyWith<_$SportsFetchedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

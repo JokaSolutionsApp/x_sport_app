@@ -19,13 +19,9 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   TextEditingController name = TextEditingController();
-
   TextEditingController email = TextEditingController();
-
   TextEditingController password = TextEditingController();
-
   TextEditingController confirmPassword = TextEditingController();
-
   TextEditingController phone = TextEditingController();
 
   var isChecked = ValueNotifier(false);
@@ -111,7 +107,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   textAlign: TextAlign.end,
                   'اوافق على شروط الاستخدام والخصوصية',
                   style: TextStyle(
-                      color: XColors.Outline_Button_Color,
+                      color: XColors.Outline_primary,
                       fontSize: 17.sp,
                       fontWeight: FontWeight.w500),
                 ),
@@ -137,12 +133,10 @@ class _RegisterPageState extends State<RegisterPage> {
               StreamBuilder(
                 stream: registerStream.registerIsValid,
                 builder: (context, snapshot) {
-                  const isButtonEnabled = true;
+                  // final isButtonEnabled = snapshot.data ?? false;
                   return SubmitButton(
-                    isButtonEnabled: isButtonEnabled,
-                    fillColor: isButtonEnabled
-                        ? XColors.Submit_Button_Color
-                        : Colors.grey,
+                    isButtonEnabled: true,
+                    fillColor: true ? XColors.primary : Colors.grey,
                     textColor: Colors.white,
                     text: 'انشاء حساب',
                     onPressed: () {

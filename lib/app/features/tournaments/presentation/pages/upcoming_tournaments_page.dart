@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:x_sport/app/features/chat/presentation/pages/my_chats_page.dart';
-import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 
-import '../../../../../core/constance/app_constance.dart';
-import '../../../../../core/constance/app_icons_icons.dart';
-import '../../../../../main.dart';
-import '../../../profile/presentation/pages/profile_page.dart';
-import 'tournament_page.dart';
-import '../../../../widgets/buttons/submit_button.dart';
-import '../../../../widgets/rectangle_container.dart';
+import 'package:x_sport/core/constance/app_constance.dart';
+import 'package:x_sport/core/constance/app_icons_icons.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
+import 'package:x_sport/main.dart';
+import 'package:x_sport/app/features/profile/presentation/pages/profile_page.dart';
+import 'package:x_sport/app/features/tournaments/presentation/pages/tournament_page.dart';
+import 'package:x_sport/app/widgets/buttons/submit_button.dart';
+import 'package:x_sport/app/widgets/rectangle_container.dart';
 
 class UpCommingTournamentsPage extends StatelessWidget {
   const UpCommingTournamentsPage({super.key});
@@ -277,7 +277,7 @@ class UpCommingTournamentsPage extends StatelessWidget {
                                     Text(
                                       'الانضمام للبطولة متاح',
                                       style: TextStyle(
-                                          color: XColors.Submit_Button_Color,
+                                          color: XColors.primary,
                                           fontSize: 12.sp,
                                           fontWeight: FontWeight.w700),
                                     ),
@@ -286,7 +286,7 @@ class UpCommingTournamentsPage extends StatelessWidget {
                                       height: 22,
                                       radius: 0,
                                       textSize: 10,
-                                      fillColor: XColors.Submit_Button_Color,
+                                      fillColor: XColors.primary,
                                       textColor: Colors.white,
                                       text: 'عرض المزيد',
                                       onPressed: () {},

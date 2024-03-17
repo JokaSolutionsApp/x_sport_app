@@ -147,7 +147,7 @@ class AcademyAboutComponent extends StatelessWidget {
                             ]),
                         child: Icon(
                           academyServices[index]['image'] as IconData,
-                          color: XColors.Submit_Button_Color,
+                          color: XColors.primary,
                         )),
                     Text(
                       academyServices[index]['title'].toString(),

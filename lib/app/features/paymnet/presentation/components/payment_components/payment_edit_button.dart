@@ -42,7 +42,7 @@ class PaymentEditButton extends StatelessWidget {
                 ),
                 child: const Icon(
                   Icons.edit,
-                  color: XColors.Submit_Button_Color,
+                  color: XColors.primary,
                 ),
               ),
             ),
@@ -57,7 +57,7 @@ class PaymentEditButton extends StatelessWidget {
                     TextSpan(
                       text: subTitle,
                       style: TextStyle(
-                          color: XColors.Submit_Button_Color,
+                          color: XColors.primary,
                           fontSize: 20.sp,
                           fontWeight: FontWeight.w500),
                     )

@@ -1,19 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/auth/data/datasource/params/auth_params.dart';
+import 'package:x_sport/app/features/auth/domain/enitites/favorite_sport_entity.dart';
+import 'package:x_sport/app/features/auth/domain/enitites/sport_entity.dart';
+import 'package:x_sport/app/features/auth/domain/enitites/user_entity.dart';
+import 'package:x_sport/app/features/profile/presentation/components/edit_profile_components/edit_gender.dart';
+import 'package:x_sport/app/features/profile/presentation/components/edit_profile_components/edit_sports.dart';
+import 'package:x_sport/app/features/profile/presentation/components/profile_screen_components/delete_favorite_sports.dart';
 
-import '../../../../../core/constance/app_constance.dart';
-import '../../../../../core/constance/local_data.dart';
-import '../components/edit_profile_components/edit_image_component.dart';
-import '../../../auth/data/dtos/user_dto/user_dto.dart';
-import '../../../auth/presentation/bloc/auth_bloc.dart';
+import 'package:x_sport/core/constance/app_constance.dart';
+import 'package:x_sport/core/constance/local_data.dart';
+import 'package:x_sport/app/features/profile/presentation/components/edit_profile_components/edit_image_component.dart';
+import 'package:x_sport/app/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
+import 'package:x_sport/main.dart';
 import '../../../../controllers/fileds_bloc.dart';
 import '../../../../widgets/buttons/edit_button.dart';
 import '../../../../widgets/text_fields/no_border_textfield_widget.dart';
 
 class EditProfilePage extends StatefulWidget {
-  final User? user;
-  final List<FavoritSport>? favoriteSports;
+  final UserEntity user;
+  final List<FavoriteSportEntity> favoriteSports;
   const EditProfilePage(
       {super.key, required this.user, required this.favoriteSports});
 
@@ -21,20 +29,36 @@ class EditProfilePage extends StatefulWidget {
   State<EditProfilePage> createState() => _EditProfilePageState();
 }
 
+class User {}
+
 class _EditProfilePageState extends State<EditProfilePage> {
-  TextEditingController name = TextEditingController();
-  TextEditingController phone = TextEditingController();
+  late TextEditingController name;
+  late TextEditingController phone;
+  late final List<SportEntity> allSports;
+
   String imageType = '';
   List<int> imageBytes = [];
-  List<int> selectedSport = [];
+  late List<SportEntity> sportsIds;
+  List<int> selectedIds = [];
+
   String gender = 'ذكر';
+  late String updateGender;
+  late final UserEntity user;
   getUserLocation() async {
     await editProfileStream.updateLocation();
   }
 
   @override
   void initState() {
-    // selectedSport = widget.favoriteSports!.map((e) => e.sportId).toList();
+    user = widget.user;
+    updateGender = widget.user.gender!;
+    allSports = context.read<AuthBloc>().sports;
+    sportsIds = widget.favoriteSports
+        .map((e) => SportEntity(sportId: e.id, name: e.name))
+        .toList();
+    name = TextEditingController(text: user.name);
+    phone = TextEditingController(text: user.phone);
+    getUserLocation();
     super.initState();
   }
 
@@ -46,22 +70,19 @@ class _EditProfilePageState extends State<EditProfilePage> {
           automaticallyImplyLeading: false,
           leading: IconButton(
               onPressed: () {
-                context.read<AuthBloc>().add(AuthEvent.updateUserProfile(
-                      userName: editProfileStream.nameValue ?? '',
-                      phone: editProfileStream.phoneValue ?? '',
-                      image: imageBytes,
-                      type: imageType,
-                      latitude: editProfileStream.latValue ?? 0,
-                      longitude: editProfileStream.longeValue ?? 0,
-                      selectedSports: selectedSport,
-                      gender: gender,
-                    ));
-                Navigator.of(context).pop();
+                context.read<AuthBloc>().add(AuthEvent.editUserProfile(
+                    params: EditUserProfileParams(
+                        name: name.text,
+                        phone: phone.text,
+                        gender: updateGender,
+                        sportIds: selectedIds,
+                        lat: editProfileStream.latValue,
+                        long: editProfileStream.longeValue)));
               },
               icon: Icon(
                 Icons.done,
                 size: 36.sp,
-                color: XColors.Submit_Button_Color,
+                color: XColors.primary,
               )),
           actions: [
             Row(
@@ -75,7 +96,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 ),
                 IconButton(
                     onPressed: () {
-                      Navigator.of(context).pop();
+                      Navigator.of(navigatorKey.currentContext!).pop();
                     },
                     icon: Icon(
                       Icons.close,
@@ -158,7 +179,26 @@ class _EditProfilePageState extends State<EditProfilePage> {
                             minimumSize: Size(50.w, 30.h),
                             tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                             alignment: Alignment.centerLeft),
-                        onPressed: null,
+                        onPressed: () {
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext ctx) {
+                                return EditSportAlertDialog(
+                                  favoriteSports: sportsIds,
+                                  title: 'ازالة لعبة',
+                                  subtitle:
+                                      'تنويه: بازالتك لاحد الالعاب سيختفي المحتوى المرتبط بتلك اللعبة خلال تصفحك التطبيق',
+                                  allSports: allSports,
+                                  getSportsIds: (List<SportEntity> ids) {
+                                    setState(() {
+                                      sportsIds = ids;
+                                      selectedIds =
+                                          ids.map((e) => e.sportId).toList();
+                                    });
+                                  },
+                                );
+                              });
+                        },
                         child: Text(
                           'حذف او اضافة',
                           style: TextStyle(
@@ -172,33 +212,37 @@ class _EditProfilePageState extends State<EditProfilePage> {
                       ),
                       SizedBox(
                         height: 38.h,
-                        child: ListView.builder(
-                            shrinkWrap: true,
-                            scrollDirection: Axis.horizontal,
-                            itemCount: localFavoritSports.length,
-                            itemBuilder: (context, index) {
-                              return Container(
-                                margin: EdgeInsets.only(left: 4.w),
-                                alignment: Alignment.center,
-                                width: 60.w,
-                                decoration: BoxDecoration(
-                                  color: XColors.Background_Color1,
-                                  borderRadius: BorderRadius.circular(10.sp),
-                                  border: Border.all(
-                                    color: Colors.white,
-                                    width: 1.0,
-                                  ),
-                                ),
-                                child: Text(
-                                  textAlign: TextAlign.end,
-                                  localFavoritSports[index],
-                                  style: TextStyle(
+                        width: 0.62.sw,
+                        child: Directionality(
+                          textDirection: TextDirection.rtl,
+                          child: ListView.builder(
+                              shrinkWrap: true,
+                              itemExtent: 80.w,
+                              scrollDirection: Axis.horizontal,
+                              itemCount: sportsIds.length,
+                              itemBuilder: (context, index) {
+                                return Container(
+                                  margin: EdgeInsets.only(left: 4.w),
+                                  alignment: Alignment.center,
+                                  decoration: BoxDecoration(
+                                    color: XColors.Background_Color1,
+                                    borderRadius: BorderRadius.circular(10.sp),
+                                    border: Border.all(
                                       color: Colors.white,
-                                      fontSize: 14.sp,
-                                      fontWeight: FontWeight.w400),
-                                ),
-                              );
-                            }),
+                                      width: 1.0,
+                                    ),
+                                  ),
+                                  child: Text(
+                                    textAlign: TextAlign.end,
+                                    sportsIds[index].name,
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 14.sp,
+                                        fontWeight: FontWeight.w400),
+                                  ),
+                                );
+                              }),
+                        ),
                       )
                     ],
                   ),
@@ -214,7 +258,21 @@ class _EditProfilePageState extends State<EditProfilePage> {
                             minimumSize: Size(50.w, 30.h),
                             tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                             alignment: Alignment.centerLeft),
-                        onPressed: null,
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext ctx) {
+                              return EditGenderAlertDialog(
+                                gender: updateGender,
+                                getGender: (newValue) {
+                                  setState(() {
+                                    updateGender = newValue;
+                                  });
+                                },
+                              );
+                            },
+                          );
+                        },
                         child: Text(
                           'تغيير',
                           style: TextStyle(
@@ -227,7 +285,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                         ),
                       ),
                       Text(
-                        gender,
+                        updateGender ?? 'ذكر',
                         style: TextStyle(
                             color: XColors.Background_Color1,
                             fontSize: 18.sp,
@@ -249,12 +307,42 @@ class _EditProfilePageState extends State<EditProfilePage> {
                     child: Text(
                       'ترقية حسابك (نسخة بريميوم)',
                       style: TextStyle(
-                        color: XColors.Submit_Button_Color,
+                        color: XColors.primary,
                         fontSize: 16.sp,
                         fontFamily: 'Tajawal',
                         fontWeight: FontWeight.w500,
                         height: 0,
                       ),
+                    ),
+                  ),
+                ),
+                Container(
+                  alignment: Alignment.centerRight,
+                  child: TextButton(
+                    style: TextButton.styleFrom(
+                        minimumSize: Size(50.w, 30.h),
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        alignment: Alignment.centerLeft),
+                    onPressed: () {
+                      context
+                          .read<AuthBloc>()
+                          .add(const AuthEvent.deleteUserProfile());
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text(
+                          'حذف الحساب',
+                          style: TextStyle(
+                            color: const Color(0xFFF44336),
+                            fontSize: 19.sp,
+                            fontFamily: 'Tajawal',
+                            fontWeight: FontWeight.w500,
+                            height: 2.h,
+                          ),
+                        ),
+                        AssetsManager.icons.delete.image(height: 15.h),
+                      ],
                     ),
                   ),
                 ),

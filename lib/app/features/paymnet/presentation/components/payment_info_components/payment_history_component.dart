@@ -37,8 +37,8 @@ class PaymentHistoryComponent extends StatelessWidget {
                               offset: Offset(0, 4.w),
                               blurRadius: 4)
                         ],
-                        border:
-                            Border.all(color: const Color(0xFFD9D9D9), width: 0.5.w),
+                        border: Border.all(
+                            color: const Color(0xFFD9D9D9), width: 0.5.w),
                         borderRadius: BorderRadius.circular(5.sp),
                       ),
                       child: Icon(
@@ -52,7 +52,7 @@ class PaymentHistoryComponent extends StatelessWidget {
                   Text(
                     'عرض الكل',
                     style: TextStyle(
-                        color: XColors.Submit_Button_Color,
+                        color: XColors.primary,
                         fontSize: 12.sp,
                         fontWeight: FontWeight.w500),
                   ),

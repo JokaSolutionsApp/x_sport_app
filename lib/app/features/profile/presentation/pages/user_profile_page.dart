@@ -195,7 +195,7 @@ class UserProfilePage extends StatelessWidget {
                                         ),
                                         child: Icon(
                                           Icons.message,
-                                          color: XColors.Submit_Button_Color,
+                                          color: XColors.primary,
                                           size: 24.sp,
                                         ),
                                       ),
@@ -203,7 +203,7 @@ class UserProfilePage extends StatelessWidget {
                                     SizedBox(width: 24.w),
                                     SubmitButton(
                                       text: 'متابعة',
-                                      fillColor: XColors.Submit_Button_Color,
+                                      fillColor: XColors.primary,
                                       radius: 32,
                                       height: 38,
                                       minWidth: 134,
@@ -222,7 +222,7 @@ class UserProfilePage extends StatelessWidget {
                                         ),
                                         child: Icon(
                                           Icons.share,
-                                          color: XColors.Submit_Button_Color,
+                                          color: XColors.primary,
                                           size: 24.sp,
                                         ),
                                       ),

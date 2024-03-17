@@ -26,13 +26,13 @@ class Validators {
   final emailvalidator =
       StreamTransformer<String, String>.fromHandlers(handleData: (email, sink) {
     String epattern =
-        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&*'+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+";
+        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9]+\.[a-zA-Z]+";
     RegExp eregex = RegExp(epattern);
 
     if (eregex.hasMatch(email))
       sink.add(email);
     else if (email == null || email.isEmpty)
-      sink.addError(" ");
+      sink.addError("ادخل البربد الالكتروني");
     else
       sink.addError("البريد الالكتروني غير صحيح");
   });
@@ -52,29 +52,31 @@ class Validators {
   });
   var passvalidator =
       StreamTransformer<String, String>.fromHandlers(handleData: (pass, sink) {
-    String pattern = r'^(?=.*[A-Z])(?=.*\d)(?=.*[a-zA-Zء-ي0-9]).{4,}$';
+    String pattern = r'^(?=.*[A-Z])(?=.*\d)(?=.*\W).{4,}$';
     RegExp regex = RegExp(pattern, unicode: true);
     if (regex.hasMatch(pass))
       sink.add(pass);
     else if (pass == null || pass.isEmpty)
       sink.addError(" ");
     else
-      sink.addError("يرجى ادخال كلمة مرور من ٤ احرف على الاقل");
+      sink.addError(
+          "كلمة المرور يجب أن تحتوي على ٤ احرف على الاقل، رقم، وحرف كبير");
   });
   var forgotpassvalidator =
       StreamTransformer<String, String>.fromHandlers(handleData: (pass, sink) {
-    String pattern = r'^(?=.*[A-Z])(?=.*\d)(?=.*[a-zA-Zء-ي0-9]).{4,}$';
+    String pattern = r'^(?=.*[A-Z])(?=.*\d)(?=.*\W).{4,}$';
     RegExp regex = RegExp(pattern);
     if (regex.hasMatch(pass))
       sink.add(pass);
     else if (pass == null || pass.isEmpty)
       sink.addError(" ");
     else
-      sink.addError("LocaleKeys.field_error_password.tr()");
+      sink.addError(
+          "كلمة المرور يجب أن تحتوي على ٤ احرف على الاقل، رقم، وحرف كبير");
   });
   var confValidator =
       StreamTransformer<String, String>.fromHandlers(handleData: (conf, sink) {
-    String pattern = r'^(?=.*[a-zA-Zء-ي0-9]).{4,}$';
+    String pattern = r'^(?=.*[A-Z])(?=.*\d)(?=.*\W).{4,}$';
     RegExp regex = RegExp(pattern);
     if (regex.hasMatch(conf) &&
         registerStream.passwordValue == registerStream.confValue)

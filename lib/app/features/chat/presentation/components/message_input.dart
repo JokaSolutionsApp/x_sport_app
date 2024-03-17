@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../controllers/chat_bloc/chat_bloc.dart';
+import 'package:x_sport/app/controllers/chat_bloc/chat_bloc.dart';
+import 'package:x_sport/presentation/controllers/chat_bloc/chat_bloc.dart';
 
 class MessageInputComponent extends StatefulWidget {
   const MessageInputComponent({super.key});

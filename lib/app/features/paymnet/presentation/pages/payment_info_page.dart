@@ -76,7 +76,7 @@ class PaymentInfoPage extends StatelessWidget {
                   minWidth: 150.w,
                   text: 'اضافة وسيلة دفع',
                   fillColor: const Color(0xFFDAEDFF),
-                  textColor: XColors.Submit_Button_Color,
+                  textColor: XColors.primary,
                   textSize: 15,
                   onPressed: () {
                     Navigator.push(
@@ -93,7 +93,7 @@ class PaymentInfoPage extends StatelessWidget {
                   minWidth: 150.w,
                   text: 'تعديل',
                   fillColor: const Color(0xFFDAEDFF),
-                  textColor: XColors.Submit_Button_Color,
+                  textColor: XColors.primary,
                   textSize: 15,
                   onPressed: () {},
                 )

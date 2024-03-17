@@ -16,8 +16,7 @@ class FloatingButton extends StatelessWidget {
         height: 62.w,
         width: 62.w,
         decoration: BoxDecoration(
-            color: XColors.Submit_Button_Color,
-            borderRadius: BorderRadius.circular(7.sp)),
+            color: XColors.primary, borderRadius: BorderRadius.circular(7.sp)),
         child: Icon(
           iconData,
           color: Colors.white,
