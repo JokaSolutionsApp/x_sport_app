@@ -1,14 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:video_player/video_player.dart';
+import '../components/video_player_full_screen_widget.dart';
 
 import '../../../../../core/constance/app_constance.dart';
-import '../../../../../core/utils/assets_managers/assets.gen.dart';
 import '../components/academy_components/academy_tabs_components/academy_program_component.dart';
 import '../../../../widgets/buttons/submit_button.dart';
 
@@ -24,7 +21,6 @@ class AcademyPage extends StatefulWidget {
 class _AcademyScreenState extends State<AcademyPage>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
-  VideoPlayerController? videoPlayerController;
   int activeIndex = 0;
 
   var carouselImages = [
@@ -35,23 +31,8 @@ class _AcademyScreenState extends State<AcademyPage>
 
   @override
   void initState() {
-    videoPlayerController = VideoPlayerController.networkUrl(
-      Uri.parse(
-          'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'),
-    )
-      ..addListener(() => setState(() {}))
-      ..setLooping(true)
-      ..initialize().then(
-        (value) => videoPlayerController!.play(),
-      );
     _tabController = TabController(length: 3, vsync: this, initialIndex: 2);
     super.initState();
-  }
-
-  @override
-  void dispose() {
-    videoPlayerController!.dispose();
-    super.dispose();
   }
 
   @override
@@ -159,7 +140,15 @@ class _AcademyScreenState extends State<AcademyPage>
                             color: XColors.primary.withOpacity(0.52),
                             shape: BoxShape.circle),
                         child: IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const VideoPlayerFullScreenWidget(),
+                              ),
+                            );
+                          },
                           icon: Icon(
                             Icons.play_arrow,
                             color: Colors.white.withOpacity(0.52),
@@ -341,12 +330,3 @@ Widget buildImage(String carouselImage, int index) => Container(
         fit: BoxFit.fill,
       ),
     );
-
-class VideoPlayerFullScreenWidget extends StatelessWidget {
-  const VideoPlayerFullScreenWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
-}

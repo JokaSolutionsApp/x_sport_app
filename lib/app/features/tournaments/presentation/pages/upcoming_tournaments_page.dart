@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../chat/presentation/pages/my_chats_page.dart';
 
 import '../../../../../core/constance/app_constance.dart';
 import '../../../../../core/constance/app_icons_icons.dart';
 import '../../../../../core/utils/assets_managers/assets.gen.dart';
 import '../../../../../main.dart';
-import '../../../profile/presentation/pages/profile_page.dart';
-import 'tournament_page.dart';
 import '../../../../widgets/buttons/submit_button.dart';
 import '../../../../widgets/rectangle_container.dart';
+import '../../../chat/presentation/pages/my_chats_page.dart';
+import '../../../profile/presentation/pages/profile_page.dart';
+import 'tournament_page.dart';
 
 class UpCommingTournamentsPage extends StatelessWidget {
   const UpCommingTournamentsPage({super.key});

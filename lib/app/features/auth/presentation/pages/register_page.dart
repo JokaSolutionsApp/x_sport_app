@@ -3,12 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/constance/app_constance.dart';
-import '../../components/intrinsic_height_component.dart';
 import '../../../../controllers/fileds_bloc.dart';
-import '../../components/register_components/gender_component.dart';
-import '../bloc/auth_bloc.dart';
 import '../../../../widgets/buttons/submit_button.dart';
 import '../../../../widgets/text_fields/textfield_widget.dart';
+import '../../components/intrinsic_height_component.dart';
+import '../../components/register_components/gender_component.dart';
+import '../bloc/auth_bloc.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});

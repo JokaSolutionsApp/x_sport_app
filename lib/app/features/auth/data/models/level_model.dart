@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+
 import '../../domain/enitites/level_entity.dart';
 
 part 'level_model.g.dart';

@@ -4,13 +4,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/constance/app_constance.dart';
 import '../../../../../core/constance/app_icons_icons.dart';
 import '../../../../../core/utils/assets_managers/assets.gen.dart';
-import '../components/play_components/banner_component.dart';
-import '../../../profile/presentation/components/profile_screen_components/profile_main_components/profile_appbar_component.dart';
-import '../../../match/presentation/pages/match_reservation_page.dart';
-import '../../../tournaments/presentation/pages/upcoming_tournaments_page.dart';
 import '../../../../painters/play_types_painter.dart';
 import '../../../../widgets/buttons/submit_button.dart';
 import '../../../../widgets/rectangle_container.dart';
+import '../../../match/presentation/pages/match_reservation_page.dart';
+import '../../../profile/presentation/components/profile_screen_components/profile_main_components/profile_appbar_component.dart';
+import '../../../tournaments/presentation/pages/upcoming_tournaments_page.dart';
+import '../components/play_components/banner_component.dart';
 
 class PlayPage extends StatelessWidget {
   PlayPage({super.key});

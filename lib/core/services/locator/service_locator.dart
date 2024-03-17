@@ -4,6 +4,7 @@ import 'package:crypto/crypto.dart';
 import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
 import 'package:get_it/get_it.dart';
+
 import '../../../app/features/auth/data/datasource/user_remote_datasource.dart';
 import '../../../app/features/auth/data/repository/user_repository.dart';
 import '../../../app/features/auth/domain/repository/base_user_repository.dart';
@@ -24,10 +25,10 @@ import '../../../app/features/auth/domain/usecase/user_usecase/register_usecase.
 import '../../../app/features/auth/domain/usecase/user_usecase/resend_confirm_user_email_usecase.dart';
 import '../../../app/features/auth/domain/usecase/user_usecase/select_current_sport_usecase.dart';
 import '../../../app/features/auth/presentation/bloc/auth_bloc.dart';
+import '../../../presentation/controllers/chat_bloc/chat_bloc.dart';
 import '../../constance/api_constance.dart';
 import '../preload_images_service.dart';
 import '../secure_storage_service.dart.dart';
-import '../../../presentation/controllers/chat_bloc/chat_bloc.dart';
 
 final GetIt sl = GetIt.instance;
 

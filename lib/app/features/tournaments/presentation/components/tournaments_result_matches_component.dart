@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/constance/app_constance.dart';
 import '../../../../../core/utils/assets_managers/assets.gen.dart';
-
 import '../../../../widgets/rectangle_container.dart';
 
 class TournamentResultMatchesComponent extends StatelessWidget {

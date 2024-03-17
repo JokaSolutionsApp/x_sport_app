@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../../core/constance/app_constance.dart';
 import '../../../profile/presentation/components/user_profile_screens_components/user_profile_tabbar_component.dart';
 import '../../components/icon_button_widget.dart';
 import '../../components/social_intrinsic_height_component.dart';
 import '../../components/text_button_widget.dart';
-import '../../../../../core/constance/app_constance.dart';
 
 class SocialProfilePage extends StatefulWidget {
   const SocialProfilePage({super.key});
