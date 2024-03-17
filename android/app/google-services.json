@@ -12,7 +12,28 @@
           "package_name": "com.example.x_sports"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "774921767039-mi5gniudplj74tei68qvrjscb8qel5a9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.x_sports",
+            "certificate_hash": "41c951cb5c37741f7807ddd384c827063bbb1201"
+          }
+        },
+        {
+          "client_id": "774921767039-ukd594ometv67kgvta7e33jc93v7ntb5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.x_sports",
+            "certificate_hash": "4b8766783a0c67d8a2e4e7341814e11b4903985a"
+          }
+        },
+        {
+          "client_id": "774921767039-sn00keu663aojdge48k8fdlgti2ja08d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBX3qlq6JKR36rX3syys784cDLzMS-6-tc"
@@ -20,7 +41,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "774921767039-sn00keu663aojdge48k8fdlgti2ja08d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "774921767039-6mbsnrds15q7v9ekdv6ctt3sc5ncntis.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.xSport.RunnerTests"
+              }
+            }
+          ]
         }
       }
     }
