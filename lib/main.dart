@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/academy/presentation/pages/academy_page..dart';
+import 'package:x_sport/app/features/home/presentation/pages/academies_page.dart';
 import 'package:x_sport/app/features/paymnet/presentation/pages/payment_page.dart';
 import 'core/constance/app_constance.dart';
 import 'core/constance/app_functions.dart';
@@ -68,7 +70,7 @@ class MyApp extends StatelessWidget {
                     useMaterial3: true,
                   ),
                   // home: AllSettingsPrivacyPage(),
-                  home: const PaymentPage(),
+                  home: AcademyPage(),
                 );
               },
             ),
