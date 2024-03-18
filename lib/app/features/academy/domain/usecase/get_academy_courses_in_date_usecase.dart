@@ -4,12 +4,12 @@ import 'package:x_sport/app/features/auth/domain/enitites/sport_entity.dart';
 import '../../../../../core/error/failure.dart';
 import '../repository/base_academy_repository.dart';
 
-class GetSportsMembershipUseCase {
+class GetAcademyCoursesInDateUseCase {
   final BaseAcademyRepository repository;
 
-  GetSportsMembershipUseCase(this.repository);
+  GetAcademyCoursesInDateUseCase(this.repository);
 
   Future<Either<Failure, List<SportEntity>>> call() async {
-    return await repository.getSportsMembership();
+    return await repository.getAcademyCoursesInDate();
   }
 }

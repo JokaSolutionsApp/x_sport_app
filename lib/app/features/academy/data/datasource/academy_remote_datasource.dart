@@ -7,11 +7,14 @@ import 'package:x_sport/core/constance/api_constance.dart';
 import 'package:x_sport/core/error/exceptions.dart';
 import 'package:x_sport/core/network/error_message_model.dart';
 import 'package:x_sport/core/services/api_service.dart';
-import 'package:x_sport/core/services/locator/service_locator.dart';
-import 'package:x_sport/core/services/secure_storage_service.dart.dart';
 
 abstract class BaseAcademyRemoteDataSource {
   Future<List<SportEntity>> getSportsMembership();
+  Future<List<SportEntity>> getSuggestedAcademies();
+  Future<List<SportEntity>> getAboutAcademy();
+  Future<List<SportEntity>> getAcademyCourses();
+  Future<List<SportEntity>> getAcademyCoursesInDate();
+  Future<List<SportEntity>> getAcademyReview();
 }
 
 class AcademyRemoteDataSource extends BaseAcademyRemoteDataSource {
@@ -28,5 +31,35 @@ class AcademyRemoteDataSource extends BaseAcademyRemoteDataSource {
     } else {
       throw ServerException(errorModel: ErrorModel.formJson(data));
     }
+  }
+
+  @override
+  Future<List<SportEntity>> getSuggestedAcademies() {
+    // TODO: implement getSuggestedAcademies
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<List<SportEntity>> getAboutAcademy() {
+    // TODO: implement getAboutAcademy
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<List<SportEntity>> getAcademyCourses() {
+    // TODO: implement getAcademyCourses
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<List<SportEntity>> getAcademyCoursesInDate() {
+    // TODO: implement getAcademyCoursesInDate
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<List<SportEntity>> getAcademyReview() {
+    // TODO: implement getAcademyReview
+    throw UnimplementedError();
   }
 }
