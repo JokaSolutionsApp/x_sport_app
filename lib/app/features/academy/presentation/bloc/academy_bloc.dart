@@ -8,6 +8,7 @@ import 'package:x_sport/app/features/academy/domain/usecase/get_sports_membershi
 import 'package:x_sport/app/features/academy/domain/usecase/get_suggested_academies_usecase.dart';
 import 'package:x_sport/app/features/auth/domain/enitites/sport_entity.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:x_sport/core/error/failure.dart';
 part 'academy_event.dart';
 part 'academy_state.dart';
 part 'academy_bloc.freezed.dart';
