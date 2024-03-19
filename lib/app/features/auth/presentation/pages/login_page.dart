@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../../../../core/constance/app_constance.dart';
 import '../../../../../core/utils/assets_managers/assets.gen.dart';
 import '../../../../../main.dart';
-import '../../components/intrinsic_height_component.dart';
 import '../../../../controllers/fileds_bloc.dart';
-import '../bloc/auth_bloc.dart';
-import 'register_page.dart';
 import '../../../../widgets/buttons/outlined_button.dart';
 import '../../../../widgets/buttons/submit_button.dart';
 import '../../../../widgets/buttons/underline_button.dart';
 import '../../../../widgets/text_fields/textfield_widget.dart';
+import '../../components/intrinsic_height_component.dart';
+import '../bloc/auth_bloc.dart';
+import 'register_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});

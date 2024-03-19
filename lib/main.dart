@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'core/constance/app_constance.dart';
 import 'core/constance/app_functions.dart';
 import 'core/services/locator/service_locator.dart';
 import 'core/services/preload_images_service.dart';
 import 'firebase_options.dart';
-import 'app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'presentation/controllers/chat_bloc/chat_bloc.dart';
 import 'route_page.dart';
 

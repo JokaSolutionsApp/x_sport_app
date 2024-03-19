@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../components/championship_card.dart';
+
 import '../../../../../core/constance/app_constance.dart';
 import '../../../../../core/widgets/global_app_bar.dart';
+import '../components/championship_card.dart';
 
 class ChampionshipPage extends StatefulWidget {
   const ChampionshipPage({super.key});

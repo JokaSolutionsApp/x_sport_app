@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../chat/presentation/pages/my_chats_page.dart';
-import 'story_page.dart';
 
 import '../../../../../core/constance/app_constance.dart';
 import '../../../../../core/constance/app_icons_icons.dart';
-import '../../../profile/presentation/components/profile_screen_components/profile_main_components/profile_appbar_component.dart';
 import '../../../../../core/utils/assets_managers/assets.gen.dart';
 import '../../../../../main.dart';
+import '../../../chat/presentation/pages/my_chats_page.dart';
+import '../../../profile/presentation/components/profile_screen_components/profile_main_components/profile_appbar_component.dart';
+import 'story_page.dart';
 
 class SocialPage extends StatelessWidget {
   const SocialPage({super.key});

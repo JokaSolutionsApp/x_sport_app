@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:video_player/video_player.dart';
+
 import '../../components/animated_bar.dart';
 import '../../components/input_widget.dart';
 import '../../components/user_info.dart';

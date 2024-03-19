@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+
 import '../../domain/enitites/sport_entity.dart';
 
 part 'sport_model.g.dart';

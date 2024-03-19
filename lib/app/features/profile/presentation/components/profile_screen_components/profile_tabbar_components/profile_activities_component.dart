@@ -1,21 +1,21 @@
 import 'package:dotted_border/dotted_border.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../../../../core/constance/app_constance.dart';
+import '../../../../../../../core/utils/assets_managers/assets.gen.dart';
+import '../../../../../../painters/dotted_line_pianter.dart';
+import '../../../../../../widgets/buttons/submit_button.dart';
+import '../../../../../../widgets/rectangle_container.dart';
 import '../../../../../auth/domain/enitites/favorite_sport_entity.dart';
 import '../../../../../auth/domain/enitites/sport_entity.dart';
 import '../../../../../auth/domain/enitites/user_profile_entity.dart';
 import '../../../../../auth/presentation/bloc/auth_bloc.dart';
-import '../delete_favorite_sports.dart';
-import '../add_favorite_sport.dart';
 import '../../../pages/profile_ranking_page.dart';
-import '../../../../../../../core/utils/assets_managers/assets.gen.dart';
+import '../add_favorite_sport.dart';
+import '../delete_favorite_sports.dart';
 import 'activity_prefrences_component.dart';
-import '../../../../../../../core/constance/app_constance.dart';
-import '../../../../../../painters/dotted_line_pianter.dart';
-import '../../../../../../widgets/buttons/submit_button.dart';
-import '../../../../../../widgets/rectangle_container.dart';
 
 class ProfileActivitiesComponent extends StatefulWidget {
   final List<FavoriteSportEntity> favoritSports;

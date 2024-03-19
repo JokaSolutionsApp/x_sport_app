@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'credit_card_page.dart';
 
 import '../../../../../core/constance/app_constance.dart';
 import '../../../../../core/utils/assets_managers/assets.gen.dart';
+import '../../../../widgets/buttons/submit_button.dart';
 import '../components/payment_components/payment_edit_button.dart';
 import '../components/payment_components/payment_info_component.dart';
-import '../../../../widgets/buttons/submit_button.dart';
+import 'credit_card_page.dart';
 
 class PaymentPage extends StatelessWidget {
   const PaymentPage({super.key});

@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+
 import 'josn_keys/auth_keys.dart';
 
 @JsonSerializable()

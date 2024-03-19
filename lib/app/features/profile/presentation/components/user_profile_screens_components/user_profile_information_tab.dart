@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../../../core/constance/app_constance.dart';
 import '../../../../../../core/constance/local_data.dart';
 import '../../../../../../core/utils/assets_managers/assets.gen.dart';
-import '../../pages/profile_ranking_page.dart';
 import '../../../../../widgets/buttons/submit_button.dart';
 import '../../../../../widgets/rectangle_container.dart';
-
-import '../../../../../../../core/constance/app_constance.dart';
+import '../../pages/profile_ranking_page.dart';
 
 class UserProfileInformationTab extends StatelessWidget {
   final ValueNotifier<int> selectedIndex = ValueNotifier<int>(0);
