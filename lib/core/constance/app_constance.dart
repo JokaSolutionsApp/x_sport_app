@@ -24,6 +24,7 @@ class XColors {
   static const fail_red = Color(0xFFF44336);
   static const white = Color(0xFFFFFFFF);
   static const black = Color(0xff000000);
+  static const borderColor = Color(0xffDDDDDD);
 }
 
 class XStrings {

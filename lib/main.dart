@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'app/features/academy/presentation/pages/academy_page.dart';
 import 'core/constance/app_constance.dart';
 import 'core/constance/app_functions.dart';
 import 'core/services/locator/service_locator.dart';
@@ -63,7 +62,7 @@ class MyApp extends StatelessWidget {
                 ),
                 useMaterial3: true,
               ),
-              home: const AcademyPage(),
+              home: const RoutePage(),
             ),
           );
         });
