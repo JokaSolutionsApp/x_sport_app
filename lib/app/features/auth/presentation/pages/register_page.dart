@@ -23,7 +23,6 @@ class _RegisterPageState extends State<RegisterPage> {
   TextEditingController password = TextEditingController();
   TextEditingController confirmPassword = TextEditingController();
   TextEditingController phone = TextEditingController();
-
   var isChecked = ValueNotifier(false);
   @override
   void initState() {
@@ -43,109 +42,115 @@ class _RegisterPageState extends State<RegisterPage> {
         width: 329.w,
         height: 1.sh,
         child: SingleChildScrollView(
-          child: Column(
-            children: [
-              TextFieldWidget(
-                labelText: 'الاسم الكامل',
-                controller: name,
-                keyboardType: TextInputType.emailAddress,
-                textStream: registerStream.name,
-                onChanged: registerStream.changeName,
-              ),
-              TextFieldWidget(
-                labelText: 'البريد الالكتروني',
-                controller: email,
-                keyboardType: TextInputType.emailAddress,
-                textStream: registerStream.email,
-                onChanged: registerStream.changeEmail,
-              ),
-              TextFieldWidget(
-                labelText: 'كلمة المرور',
-                controller: password,
-                keyboardType: TextInputType.name,
-                textStream: registerStream.password,
-                onChanged: registerStream.changePassword,
-                isObscureText: true,
-              ),
-              TextFieldWidget(
-                labelText: 'تأكيد كلمة المرور',
-                controller: confirmPassword,
-                keyboardType: TextInputType.emailAddress,
-                textStream: registerStream.confPassword,
-                onChanged: registerStream.changeConfPassword,
-                isObscureText: true,
-              ),
-              TextFieldWidget(
-                labelText: 'رقم الموبايل',
-                controller: phone,
-                keyboardType: TextInputType.number,
-                textStream: registerStream.phone,
-                onChanged: registerStream.changePhone,
-              ),
-              Container(
-                height: 50.h,
-                width: 0.83.sw,
-                alignment: Alignment.centerRight,
-                padding: const EdgeInsets.only(right: 10),
-                margin: EdgeInsets.only(top: 34.0.h),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(15.sp),
-                    border:
-                        Border.all(color: XColors.Field_Color1, width: 0.5.w)),
-                child: const Text('تفعيل الموقع الجغرافي'),
-              ),
-              SizedBox(height: 30.h),
-              GenderComponent(
-                getGender: (newValue) {
-                  registerStream.changeGender(newValue);
-                },
-              ),
-              SizedBox(height: 10.h),
-              Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-                Text(
-                  textAlign: TextAlign.end,
-                  'اوافق على شروط الاستخدام والخصوصية',
-                  style: TextStyle(
-                      color: XColors.Outline_primary,
-                      fontSize: 17.sp,
-                      fontWeight: FontWeight.w500),
+          child: Form(
+            child: Column(
+              children: [
+                TextFieldWidget(
+                  labelText: 'الاسم الكامل',
+                  controller: name,
+                  keyboardType: TextInputType.emailAddress,
+                  textStream: registerStream.name,
+                  onChanged: registerStream.changeName,
                 ),
-                Expanded(
-                  child: ValueListenableBuilder(
-                      valueListenable: isChecked,
-                      builder: (context, value, child) {
-                        return Transform.scale(
-                          scale: 0.9.w,
-                          child: Checkbox(
-                            activeColor: XColors.Background_Color2,
-                            value: isChecked.value,
-                            onChanged: (value) {
-                              isChecked.value = !isChecked.value;
-                              registerStream.changePrivacy(value!);
-                            },
-                          ),
-                        );
-                      }),
+                TextFieldWidget(
+                  labelText: 'البريد الالكتروني',
+                  controller: email,
+                  keyboardType: TextInputType.emailAddress,
+                  textStream: registerStream.email,
+                  onChanged: registerStream.changeEmail,
                 ),
-              ]),
-              SizedBox(height: 8.h),
-              StreamBuilder(
-                stream: registerStream.registerIsValid,
-                builder: (context, snapshot) {
-                  // final isButtonEnabled = snapshot.data ?? false;
-                  return SubmitButton(
-                    isButtonEnabled: true,
-                    fillColor: true ? XColors.primary : Colors.grey,
-                    textColor: Colors.white,
-                    text: 'انشاء حساب',
-                    onPressed: () {
-                      context.read<AuthBloc>().add(const AuthEvent.register());
-                    },
-                  );
-                },
-              ),
-            ],
+                TextFieldWidget(
+                  labelText: 'كلمة المرور',
+                  controller: password,
+                  keyboardType: TextInputType.name,
+                  textStream: registerStream.password,
+                  onChanged: registerStream.changePassword,
+                  isObscureText: true,
+                ),
+                TextFieldWidget(
+                  labelText: 'تأكيد كلمة المرور',
+                  controller: confirmPassword,
+                  keyboardType: TextInputType.emailAddress,
+                  textStream: registerStream.confPassword,
+                  onChanged: registerStream.changeConfPassword,
+                  isObscureText: true,
+                ),
+                TextFieldWidget(
+                  labelText: 'رقم الموبايل',
+                  controller: phone,
+                  keyboardType: TextInputType.number,
+                  textStream: registerStream.phone,
+                  onChanged: registerStream.changePhone,
+                ),
+                Container(
+                  height: 50.h,
+                  width: 0.83.sw,
+                  alignment: Alignment.centerRight,
+                  padding: const EdgeInsets.only(right: 10),
+                  margin: EdgeInsets.only(top: 34.0.h),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(15.sp),
+                      border: Border.all(
+                          color: XColors.Field_Color1, width: 0.5.w)),
+                  child: const Text('تفعيل الموقع الجغرافي'),
+                ),
+                SizedBox(height: 30.h),
+                GenderComponent(
+                  getGender: (newValue) {
+                    registerStream.changeGender(newValue);
+                  },
+                ),
+                SizedBox(height: 10.h),
+                Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+                  Text(
+                    textAlign: TextAlign.end,
+                    'اوافق على شروط الاستخدام والخصوصية',
+                    style: TextStyle(
+                        color: XColors.Outline_primary,
+                        fontSize: 17.sp,
+                        fontWeight: FontWeight.w500),
+                  ),
+                  Expanded(
+                    child: ValueListenableBuilder(
+                        valueListenable: isChecked,
+                        builder: (context, value, child) {
+                          return Transform.scale(
+                            scale: 0.9.w,
+                            child: Checkbox(
+                              activeColor: XColors.Background_Color2,
+                              value: isChecked.value,
+                              onChanged: (value) {
+                                isChecked.value = !isChecked.value;
+                                registerStream.changePrivacy(value!);
+                              },
+                            ),
+                          );
+                        }),
+                  ),
+                ]),
+                SizedBox(height: 8.h),
+                StreamBuilder(
+                  stream: registerStream.registerIsValid,
+                  builder: (context, snapshot) {
+                    final isButtonEnabled = snapshot.data ?? false;
+                    return SubmitButton(
+                      isButtonEnabled: true,
+                      fillColor: XColors.primary,
+                      textColor: Colors.white,
+                      text: 'انشاء حساب',
+                      onPressed: () {
+                        if (isButtonEnabled) {
+                          context
+                              .read<AuthBloc>()
+                              .add(const AuthEvent.register());
+                        } else {}
+                      },
+                    );
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),
