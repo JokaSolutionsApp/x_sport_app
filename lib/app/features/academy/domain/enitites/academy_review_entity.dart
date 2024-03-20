@@ -1,8 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-// part 'review.g.dart';
-
 @JsonSerializable()
 class AcademyReviewEntity extends Equatable {
   @JsonKey(name: 'reviewId')
@@ -30,10 +28,6 @@ class AcademyReviewEntity extends Equatable {
     required this.evaluation,
     required this.reviewDateTime,
   });
-
-  factory AcademyReviewEntity.fromJson(Map<String, dynamic> json) =>
-      _$AcademyReviewEntityFromJson(json);
-  Map<String, dynamic> toJson() => _$AcademyReviewEntityToJson(this);
 
   @override
   List<Object?> get props => [

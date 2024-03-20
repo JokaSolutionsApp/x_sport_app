@@ -3,7 +3,7 @@ import 'package:x_sport/app/features/academy/data/models/academy_course_model.da
 import 'package:x_sport/app/features/academy/domain/enitites/age_category_with_cources.dart';
 // import 'course.dart';
 
-// part 'age_category_with_courses.g.dart';
+part 'age_category_with_courses_model.g.dart';
 
 @JsonSerializable()
 class AgeCategoryWithCoursesModel extends AgeCategoryWithCoursesEntity {
