@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/core/constance/app_icons_icons.dart';
-import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
-import 'package:x_sport/app/features/paymnet/presentation/pages/payment_add_method_info_page.dart';
-import 'package:x_sport/app/widgets/buttons/custom_radio_button.dart';
-import 'package:x_sport/app/widgets/buttons/submit_button.dart';
+import '../../../../../core/constance/app_icons_icons.dart';
+import '../../../../../core/utils/assets_managers/assets.gen.dart';
+import 'payment_add_method_info_page.dart';
+import '../../../../widgets/buttons/custom_radio_button.dart';
+import '../../../../widgets/buttons/submit_button.dart';
 
 class PaymentMethodPage extends StatelessWidget {
   PaymentMethodPage({super.key});

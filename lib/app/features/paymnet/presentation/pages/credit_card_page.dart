@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/core/constance/app_constance.dart';
-import 'package:x_sport/core/constance/app_functions.dart';
-import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
-import 'package:x_sport/main.dart';
-import 'package:x_sport/app/controllers/fileds_bloc.dart';
-import 'package:x_sport/app/features/auth/presentation/pages/otp_page.dart';
-import 'package:x_sport/app/widgets/buttons/submit_button.dart';
-import 'package:x_sport/app/widgets/text_fields/credit_text_field.dart';
+import '../../../../../core/constance/app_constance.dart';
+import '../../../../../core/constance/app_functions.dart';
+import '../../../../../core/utils/assets_managers/assets.gen.dart';
+import '../../../../../main.dart';
+import '../../../../controllers/fileds_bloc.dart';
+import '../../../../widgets/buttons/submit_button.dart';
+import '../../../../widgets/text_fields/credit_text_field.dart';
+import '../../../auth/presentation/pages/otp_page.dart';
+import '../components/payment_fail_dialog.dart';
+import '../components/payment_success_dialog.dart';
 
 class CreditCardPage extends StatefulWidget {
   const CreditCardPage({super.key});
@@ -157,6 +159,18 @@ class _CreditCardPageState extends State<CreditCardPage> {
                                 EasyLoadingInit.startLoading();
                                 Future.delayed(const Duration(seconds: 2), () {
                                   EasyLoading.dismiss();
+                                  showDialog(
+                                    context: context,
+                                    builder: (context) {
+                                      return const PaymentFailDialog();
+                                    },
+                                  );
+                                  showDialog(
+                                    context: context,
+                                    builder: (context) {
+                                      return const PaymentSuccessDialog();
+                                    },
+                                  );
                                   Navigator.of(navigatorKey.currentContext!)
                                       .push(
                                     MaterialPageRoute(

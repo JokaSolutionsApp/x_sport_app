@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:x_sport/app/features/auth/data/models/converter/welcome_converter.dart';
-import 'package:x_sport/app/features/auth/domain/enitites/welcome_enitty.dart';
+import 'converter/welcome_converter.dart';
+import '../../domain/enitites/welcome_enitty.dart';
 
 part 'welcome_model.g.dart';
 

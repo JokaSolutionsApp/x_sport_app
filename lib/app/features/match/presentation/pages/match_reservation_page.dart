@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/core/constance/app_constance.dart';
-import 'package:x_sport/main.dart';
-import 'package:x_sport/app/features/match/presentation/components/reservation_dates_component.dart';
-import 'package:x_sport/app/features/match/presentation/components/reservation_sports_component.dart';
-import 'package:x_sport/app/features/match/presentation/components/reservation_times_component.dart';
-import 'package:x_sport/app/features/paymnet/presentation/pages/payment_page.dart';
-import 'package:x_sport/app/widgets/buttons/submit_button.dart';
-import 'package:x_sport/app/widgets/rectangle_container.dart';
-
-import '../components/match_reservation_components/reservation_stadiums_component.dart';
+import '../../../../../core/constance/app_constance.dart';
+import '../../../../../main.dart';
 import '../../../../controllers/fileds_bloc.dart';
+import '../../../../widgets/buttons/submit_button.dart';
+import '../../../../widgets/rectangle_container.dart';
 import '../../../../widgets/text_fields/location_field.dart';
+import '../../../paymnet/presentation/pages/payment_page.dart';
+import '../components/match_reservation_components/reservation_stadiums_component.dart';
+import '../components/reservation_dates_component.dart';
+import '../components/reservation_sports_component.dart';
+import '../components/reservation_times_component.dart';
 
 class MatchReservationPage extends StatefulWidget {
   const MatchReservationPage({super.key});

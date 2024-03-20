@@ -1,8 +1,9 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:x_sport/app/features/auth/domain/enitites/josn_keys/auth_keys.dart';
-import 'package:x_sport/app/features/auth/domain/enitites/level_entity.dart';
-import 'package:x_sport/app/features/auth/domain/enitites/sport_preference_entity.dart';
+
+import 'josn_keys/auth_keys.dart';
+import 'level_entity.dart';
+import 'sport_preference_entity.dart';
 
 @JsonSerializable()
 class FavoriteSportEntity extends Equatable {

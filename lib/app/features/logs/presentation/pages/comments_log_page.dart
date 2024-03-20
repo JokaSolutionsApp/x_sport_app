@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
-import 'package:x_sport/core/widgets/global_app_bar.dart';
-import 'package:x_sport/app/features/archives/presentation/components/posts_archive_components/post_archive_filter_dialog.dart';
+import '../../../../../core/utils/assets_managers/assets.gen.dart';
+import '../../../../../core/widgets/global_app_bar.dart';
+import '../../../archives/presentation/components/posts_archive_components/post_archive_filter_dialog.dart';
 
 class CommentsLogPage extends StatelessWidget {
   const CommentsLogPage({super.key});

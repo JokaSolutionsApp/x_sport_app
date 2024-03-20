@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
-
+import '../../../../../core/utils/assets_managers/assets.gen.dart';
 import '../../../academy/presentation/components/academy_components/academy_tabs_components/academy_program_component.dart';
 import '../components/court_information_tab_component.dart';
 

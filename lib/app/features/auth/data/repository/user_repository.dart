@@ -1,11 +1,12 @@
 import 'package:dartz/dartz.dart';
-import 'package:x_sport/app/features/auth/data/datasource/params/auth_params.dart';
-import 'package:x_sport/app/features/auth/domain/enitites/sport_entity.dart';
-import 'package:x_sport/app/features/auth/domain/enitites/user_profile_entity.dart';
-import 'package:x_sport/app/features/auth/domain/params/edit_preferences_params.dart';
-import 'package:x_sport/core/error/exceptions.dart';
-import 'package:x_sport/core/error/failure.dart';
-import 'package:x_sport/app/features/auth/domain/repository/base_user_repository.dart';
+
+import '../../../../../core/error/exceptions.dart';
+import '../../../../../core/error/failure.dart';
+import '../../domain/enitites/sport_entity.dart';
+import '../../domain/enitites/user_profile_entity.dart';
+import '../../domain/params/edit_preferences_params.dart';
+import '../../domain/repository/base_user_repository.dart';
+import '../datasource/params/auth_params.dart';
 import '../datasource/user_remote_datasource.dart';
 
 class UserRepository extends BaseUserRepository {

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/home/presentation/components/academies_components/academies_component.dart';
-import 'package:x_sport/app/features/home/presentation/components/academies_components/membership_component.dart';
-import 'package:x_sport/app/features/home/presentation/components/academies_components/suggested_academies_component.dart';
-import 'package:x_sport/app/features/profile/presentation/components/profile_screen_components/profile_main_components/profile_appbar_component.dart';
-import 'package:x_sport/app/features/home/presentation/components/academies_components/academies_categories_component.dart';
-import 'package:x_sport/app/controllers/fileds_bloc.dart';
-import 'package:x_sport/app/widgets/text_fields/search_textfield.dart';
+import '../components/academies_components/academies_component.dart';
+import '../components/academies_components/membership_component.dart';
+import '../components/academies_components/suggested_academies_component.dart';
+import '../../../profile/presentation/components/profile_screen_components/profile_main_components/profile_appbar_component.dart';
+import '../components/academies_components/academies_categories_component.dart';
+import '../../../../controllers/fileds_bloc.dart';
+import '../../../../widgets/text_fields/search_textfield.dart';
 
 class AcademiesPage extends StatelessWidget {
   AcademiesPage({super.key});

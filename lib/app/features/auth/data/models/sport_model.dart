@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:x_sport/app/features/auth/domain/enitites/sport_entity.dart';
+
+import '../../domain/enitites/sport_entity.dart';
 
 part 'sport_model.g.dart';
 

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/core/constance/app_constance.dart';
-import 'package:x_sport/core/constance/app_icons_icons.dart';
-import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
-import 'package:x_sport/app/features/paymnet/presentation/pages/payment_method_page.dart';
-import 'package:x_sport/app/features/paymnet/presentation/components/payment_info_components/payment_history_component.dart';
-import 'package:x_sport/app/widgets/buttons/submit_button.dart';
+import '../../../../../core/constance/app_constance.dart';
+import '../../../../../core/constance/app_icons_icons.dart';
+import '../../../../../core/utils/assets_managers/assets.gen.dart';
+import 'payment_method_page.dart';
+import '../components/payment_info_components/payment_history_component.dart';
+import '../../../../widgets/buttons/submit_button.dart';
 
 class PaymentInfoPage extends StatelessWidget {
   const PaymentInfoPage({super.key});

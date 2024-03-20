@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:x_sport/app/features/auth/domain/enitites/level_entity.dart';
+
+import '../../domain/enitites/level_entity.dart';
 
 part 'level_model.g.dart';
 

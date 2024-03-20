@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/auth/domain/enitites/chat_entity.dart';
-import 'package:x_sport/app/painters/chat_bubble_painter.dart';
+
+import '../../../../painters/chat_bubble_painter.dart';
+import '../../../auth/domain/enitites/chat_entity.dart';
 
 class ChatBubble extends StatelessWidget {
   final ChatEnity text;

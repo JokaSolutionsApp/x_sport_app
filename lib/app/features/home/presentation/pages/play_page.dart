@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/core/constance/app_constance.dart';
-import 'package:x_sport/core/constance/app_icons_icons.dart';
-import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
-import 'package:x_sport/app/features/home/presentation/components/play_components/banner_component.dart';
-import 'package:x_sport/app/features/profile/presentation/components/profile_screen_components/profile_main_components/profile_appbar_component.dart';
-import 'package:x_sport/app/features/match/presentation/pages/match_reservation_page.dart';
-import 'package:x_sport/app/features/tournaments/presentation/pages/upcoming_tournaments_page.dart';
-import 'package:x_sport/app/painters/play_types_painter.dart';
-import 'package:x_sport/app/widgets/buttons/submit_button.dart';
-import 'package:x_sport/app/widgets/rectangle_container.dart';
+import '../../../../../core/constance/app_constance.dart';
+import '../../../../../core/constance/app_icons_icons.dart';
+import '../../../../../core/utils/assets_managers/assets.gen.dart';
+import '../../../../painters/play_types_painter.dart';
+import '../../../../widgets/buttons/submit_button.dart';
+import '../../../../widgets/rectangle_container.dart';
+import '../../../match/presentation/pages/match_reservation_page.dart';
+import '../../../profile/presentation/components/profile_screen_components/profile_main_components/profile_appbar_component.dart';
+import '../../../tournaments/presentation/pages/upcoming_tournaments_page.dart';
+import '../components/play_components/banner_component.dart';
 
 class PlayPage extends StatelessWidget {
   PlayPage({super.key});

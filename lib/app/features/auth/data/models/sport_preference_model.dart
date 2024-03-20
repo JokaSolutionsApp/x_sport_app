@@ -1,7 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:x_sport/app/features/auth/data/models/converter/sport_preference_value_converter.dart';
-import 'package:x_sport/app/features/auth/data/models/sport_preference_value_model.dart';
-import 'package:x_sport/app/features/auth/domain/enitites/sport_preference_entity.dart';
+import 'converter/sport_preference_value_converter.dart';
+import 'sport_preference_value_model.dart';
+import '../../domain/enitites/sport_preference_entity.dart';
 
 part 'sport_preference_model.g.dart';
 

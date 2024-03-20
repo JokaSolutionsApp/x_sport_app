@@ -1,10 +1,13 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import '../components/video_player_full_screen_widget.dart';
 
-import 'package:x_sport/core/constance/app_constance.dart';
-import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
-import 'package:x_sport/app/features/academy/presentation/components/academy_components/academy_tabs_components/academy_program_component.dart';
-import 'package:x_sport/app/widgets/buttons/submit_button.dart';
+import '../../../../../core/constance/app_constance.dart';
+import '../components/academy_components/academy_tabs_components/academy_program_component.dart';
+import '../../../../widgets/buttons/submit_button.dart';
 
 import '../components/academy_components/academy_tabs_components/academy_about_component.dart';
 
@@ -18,6 +21,14 @@ class AcademyPage extends StatefulWidget {
 class _AcademyScreenState extends State<AcademyPage>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  int activeIndex = 0;
+
+  var carouselImages = [
+    'https://picsum.photos/1920/1080',
+    'https://picsum.photos/1920/1080',
+    'https://picsum.photos/1920/1080',
+  ];
+
   @override
   void initState() {
     _tabController = TabController(length: 3, vsync: this, initialIndex: 2);
@@ -88,55 +99,116 @@ class _AcademyScreenState extends State<AcademyPage>
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              padding: EdgeInsets.only(bottom: 10.w, right: 20.w),
+            SizedBox(
               height: 0.23.sh,
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                fit: BoxFit.cover,
-                image:
-                    AssetsManager.images.academy.academyExample.image().image,
-              )),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                mainAxisAlignment: MainAxisAlignment.end,
+              width: double.infinity,
+              child: Stack(
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text(
-                        'مشاهدة الفيديو',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w500),
+                  CarouselSlider.builder(
+                    itemCount: carouselImages.length,
+                    itemBuilder: (context, index, realIndex) {
+                      final carouselImage = carouselImages[index];
+                      return buildImage(carouselImage, index);
+                    },
+                    options: CarouselOptions(
+                      height: 0.23.sh,
+                      autoPlay: true,
+                      viewportFraction: 1,
+                      onPageChanged: (index, reason) => setState(
+                        () => activeIndex = index,
                       ),
-                      Text(
-                        '1:47',
-                        textAlign: TextAlign.start,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w500),
-                      )
-                    ],
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(left: 5.w),
-                    height: 50.h,
-                    width: 50.w,
-                    decoration: BoxDecoration(
-                        color: XColors.primary.withOpacity(0.52),
-                        shape: BoxShape.circle),
-                    child: Icon(
-                      Icons.play_arrow,
-                      color: Colors.white.withOpacity(0.52),
                     ),
-                  )
+                  ),
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: buildIndicator(),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.bottomRight,
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                        right: 4.0,
+                        bottom: 6.0,
+                      ),
+                      child: Container(
+                        height: 50.h,
+                        width: 50.w,
+                        decoration: BoxDecoration(
+                            color: XColors.primary.withOpacity(0.52),
+                            shape: BoxShape.circle),
+                        child: IconButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const VideoPlayerFullScreenWidget(),
+                              ),
+                            );
+                          },
+                          icon: Icon(
+                            Icons.play_arrow,
+                            color: Colors.white.withOpacity(0.52),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
+            // Container(
+            //   padding: EdgeInsets.only(bottom: 10.w, right: 20.w),
+            //   height: 0.23.sh,
+            //   decoration: BoxDecoration(
+            //       image: DecorationImage(
+            //     fit: BoxFit.cover,
+            //     image:
+            //         AssetsManager.images.academy.academyExample.image().image,
+            //   )),
+            //   child: Row(
+            //     crossAxisAlignment: CrossAxisAlignment.end,
+            //     mainAxisAlignment: MainAxisAlignment.end,
+            //     children: [
+            //       Column(
+            //         crossAxisAlignment: CrossAxisAlignment.end,
+            //         mainAxisAlignment: MainAxisAlignment.end,
+            //         children: [
+            //           Text(
+            //             'مشاهدة الفيديو',
+            //             style: TextStyle(
+            //                 color: Colors.white,
+            //                 fontSize: 12.sp,
+            //                 fontWeight: FontWeight.w500),
+            //           ),
+            //           Text(
+            //             '1:47',
+            //             textAlign: TextAlign.start,
+            //             style: TextStyle(
+            //                 color: Colors.white,
+            //                 fontSize: 10.sp,
+            //                 fontWeight: FontWeight.w500),
+            //           )
+            //         ],
+            //       ),
+            //       Container(
+            //         margin: EdgeInsets.only(left: 5.w),
+            //         height: 50.h,
+            //         width: 50.w,
+            //         decoration: BoxDecoration(
+            //             color: XColors.primary.withOpacity(0.52),
+            //             shape: BoxShape.circle),
+            //         child: Icon(
+            //           Icons.play_arrow,
+            //           color: Colors.white.withOpacity(0.52),
+            //         ),
+            //       )
+            //     ],
+            //   ),
+            // ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 8.w),
               child: Column(
@@ -218,14 +290,15 @@ class _AcademyScreenState extends State<AcademyPage>
                   Align(
                     alignment: Alignment.center,
                     child: SubmitButton(
-                        minWidth: 190.w,
-                        text: 'سجل الان',
-                        height: 54.w,
-                        textSize: 15,
-                        fillColor: XColors.primary,
-                        radius: 6,
-                        onPressed: () {}),
-                  )
+                      minWidth: 190.w,
+                      text: 'سجل الان',
+                      height: 54.w,
+                      textSize: 15,
+                      fillColor: XColors.primary,
+                      radius: 6,
+                      onPressed: () {},
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -234,4 +307,26 @@ class _AcademyScreenState extends State<AcademyPage>
       ),
     );
   }
+
+  Widget buildIndicator() => AnimatedSmoothIndicator(
+        activeIndex: activeIndex,
+        count: carouselImages.length,
+        effect: const ExpandingDotsEffect(
+          dotWidth: 7,
+          dotHeight: 7,
+          activeDotColor: Colors.white,
+          dotColor: Colors.grey,
+        ),
+      );
 }
+
+Widget buildImage(String carouselImage, int index) => Container(
+      width: double.infinity,
+      color: Colors.grey[300],
+      child: CachedNetworkImage(
+        imageUrl: carouselImage,
+        placeholder: (context, url) => const Icon(Icons.image),
+        errorWidget: (context, url, error) => const Icon(Icons.image),
+        fit: BoxFit.fill,
+      ),
+    );

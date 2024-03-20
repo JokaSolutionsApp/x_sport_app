@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
-import 'package:x_sport/core/widgets/global_app_bar.dart';
+import '../../../../../core/utils/assets_managers/assets.gen.dart';
+import '../../../../../core/widgets/global_app_bar.dart';
 
 class StoriesArchivePage extends StatelessWidget {
   const StoriesArchivePage({super.key});

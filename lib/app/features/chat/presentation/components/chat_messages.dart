@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:x_sport/app/features/auth/domain/enitites/chat_entity.dart';
-import 'package:x_sport/app/features/chat/presentation/components/chat_bubble.dart';
+import '../../../auth/domain/enitites/chat_entity.dart';
+import 'chat_bubble.dart';
 
 class ChatMessagesComponent extends StatelessWidget {
   final List<ChatEnity> messages;

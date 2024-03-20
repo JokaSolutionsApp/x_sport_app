@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/core/constance/app_icons_icons.dart';
-
 import '../../../../../../../core/constance/app_constance.dart';
+import '../../../../../../../core/constance/app_icons_icons.dart';
 import '../../../../../../widgets/rectangle_container.dart';
 
 class TrainingScheduleComponent extends StatelessWidget {

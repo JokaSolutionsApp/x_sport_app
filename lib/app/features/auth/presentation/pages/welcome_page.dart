@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
-import 'package:x_sport/app/features/auth/domain/enitites/sport_entity.dart';
-import 'package:x_sport/app/features/auth/presentation/bloc/auth_bloc.dart';
+import '../../../../../core/utils/assets_managers/assets.gen.dart';
+import '../../domain/enitites/sport_entity.dart';
+import '../bloc/auth_bloc.dart';
 import '../../../../../core/constance/app_constance.dart';
 import '../../components/welcome_screen_components/image_picker_component.dart';
 import '../../../../widgets/buttons/submit_button.dart';
