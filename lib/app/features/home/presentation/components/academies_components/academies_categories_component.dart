@@ -40,15 +40,17 @@ class AcademeiesCategoriesComponent extends StatelessWidget {
                   },
                   child: RectangleContainer(
                     radius: 14,
-                    containerColor: isSelected
-                        ? XColors.Background_Color1
-                        : const Color(0xFFD1DBF6),
+                    containerColor:
+                        isSelected ? XColors.primary : XColors.secondary,
                     bottomMargin: 0,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         AssetsManager.images.main.tennisGame.image(
                           height: 55.w,
+                          color: isSelected
+                              ? Colors.white
+                              : const Color(0xFF595959),
                         ),
                         Text(
                           items[index],

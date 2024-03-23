@@ -6,6 +6,7 @@ class XColors {
   static const Background_Color1 = Color(0xFF1D1D1D);
   static const Background_Color2 = Color(0xFF0C0C0C);
   static const primary = Color(0xFF2DD881);
+  static const secondary = Color(0xFFE6FFF2);
   static const Field_Color1 = Color(0xFF919191);
   static const Field_Color2 = Color(0xFFF9F9F9);
   static const Outline_primary = Color(0xFFBDBDBD);
