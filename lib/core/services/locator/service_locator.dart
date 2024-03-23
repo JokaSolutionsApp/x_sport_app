@@ -4,6 +4,17 @@ import 'package:crypto/crypto.dart';
 import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
 import 'package:get_it/get_it.dart';
+import 'package:x_sport/app/features/academy/data/datasource/academy_remote_datasource.dart';
+import 'package:x_sport/app/features/academy/data/repository/academy_repository.dart';
+import 'package:x_sport/app/features/academy/domain/repository/base_academy_repository.dart';
+import 'package:x_sport/app/features/academy/domain/usecase/get_about_academy_usecase.dart';
+import 'package:x_sport/app/features/academy/domain/usecase/get_academy_courses_in_date_usecase.dart';
+import 'package:x_sport/app/features/academy/domain/usecase/get_academy_courses_usecase.dart';
+import 'package:x_sport/app/features/academy/domain/usecase/get_academy_review_usecase.dart';
+import 'package:x_sport/app/features/academy/domain/usecase/get_sports_membership_usecase.dart';
+import 'package:x_sport/app/features/academy/domain/usecase/get_suggested_academies_usecase.dart';
+import 'package:x_sport/app/features/academy/presentation/bloc/academy_bloc.dart';
+import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/google_login_usecase.dart';
 
 import '../../../app/features/auth/data/datasource/user_remote_datasource.dart';
 import '../../../app/features/auth/data/repository/user_repository.dart';
@@ -117,11 +128,21 @@ class ServiceLocator {
           sl(),
           sl(),
           sl(),
+          sl(),
         ));
     sl.registerFactory(() => ChatBloc());
+    sl.registerFactory(() => AcademyBloc(
+          sl(),
+          sl(),
+          sl(),
+          sl(),
+          sl(),
+          sl(),
+        ));
 
     // User UseCases
     sl.registerLazySingleton(() => LoginUseCase(sl()));
+    sl.registerLazySingleton(() => GoogleLoginUseCase(sl()));
     sl.registerLazySingleton(() => RegisterUseCase(sl()));
     sl.registerLazySingleton(() => EditUserProfileUseCase(sl()));
     sl.registerLazySingleton(() => CheckUserLoggedUseCase(sl()));
@@ -140,9 +161,21 @@ class ServiceLocator {
     // chat bloc usecases
     sl.registerLazySingleton(() => SendMessageUseCase(sl()));
 
+    // academy bloc usecases
+    sl.registerLazySingleton(() => GetSuggestedAcademiesUseCase(sl()));
+    sl.registerLazySingleton(() => GetAboutAcademyUseCase(sl()));
+    sl.registerLazySingleton(() => GetAcademyCoursesUseCase(sl()));
+    sl.registerLazySingleton(() => GetAcademyCoursesInDateUseCase(sl()));
+    sl.registerLazySingleton(() => GetAcademyReviewUseCase(sl()));
+    sl.registerLazySingleton(() => GetSportsMembershipUseCase(sl()));
+
     sl.registerLazySingleton<BaseUserRepository>(() => UserRepository(sl()));
+    sl.registerLazySingleton<BaseAcademyRepository>(
+        () => AcademyRepository(sl()));
 
     sl.registerLazySingleton<BaseUserRemoteDataSource>(
         () => UserRemoteDataSource());
+    sl.registerLazySingleton<BaseAcademyRemoteDataSource>(
+        () => AcademyRemoteDataSource());
   }
 }

@@ -2,6 +2,8 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:injectable/injectable.dart';
+import 'package:x_sport/app/features/auth/domain/params/google_login_params.dart';
+import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/google_login_usecase.dart';
 import '../../data/datasource/params/auth_params.dart';
 import '../../domain/enitites/sport_entity.dart';
 import '../../domain/enitites/user_profile_entity.dart';
@@ -36,6 +38,7 @@ part 'auth_bloc.freezed.dart';
 @singleton
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final LoginUseCase loginUseCase;
+  final GoogleLoginUseCase googleLoginUseCase;
   final RegisterUseCase registerUseCase;
   final EditUserProfileUseCase editUserProfileUseCase;
   final GetsportsUseCase getsportsUseCase;
@@ -52,6 +55,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   AuthBloc(
     this.registerUseCase,
+    this.googleLoginUseCase,
     this.loginUseCase,
     this.editUserProfileUseCase,
     this.getsportsUseCase,
@@ -69,6 +73,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<AuthEvent>((event, emit) async {
       await event.map(
         login: (event) async => await _login(event, emit),
+        googleLogin: (event) async => await _googleLogin(event, emit),
         register: (event) async => await _register(event, emit),
         deleteUserProfile: (event) async =>
             await _deleteUserProfile(event, emit),
@@ -180,6 +185,37 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       await EasyLoading.dismiss();
       if (r.toString().isNotEmpty) {
         emit(AuthState.loggedIn(user: r));
+        emit(AuthState.userProfileFetched(userProfile: r));
+
+        Navigator.of(navigatorKey.currentContext!).push(
+          MaterialPageRoute(builder: (context) => const MainPage()),
+        );
+      }
+    });
+  }
+
+  Future<void> _googleLogin(event, Emitter<AuthState> emit) async {
+    event as _$GoogleLoginEventImpl;
+    print('entered _googleLogin');
+    emit(const AuthState.googleLogginLoading());
+    EasyLoadingInit.startLoading();
+
+    final result = await googleLoginUseCase();
+
+    await result.fold((failure) async {
+      print(failure);
+      if (failure.statusCode == 500) {
+        EasyLoading.showError('معلرمات الحساب خاطئة');
+      } else {
+        EasyLoading.showError('حدث خطأ اعد المحاولة مجدداً');
+      }
+      emit(const AuthState.googleLogginFailure());
+    }, (r) async {
+      print('_googleLogin $r');
+
+      await EasyLoading.dismiss();
+      if (r.toString().isNotEmpty) {
+        emit(AuthState.googleLoggedIn(user: r));
         emit(AuthState.userProfileFetched(userProfile: r));
 
         Navigator.of(navigatorKey.currentContext!).push(

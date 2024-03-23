@@ -1,8 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:x_sport/app/features/academy/domain/enitites/params/acedemy_params.dart';
+import 'package:x_sport/app/features/academy/domain/enitites/suggested_academy_entity.dart';
+import 'package:x_sport/app/features/academy/presentation/bloc/academy_bloc.dart';
 import '../components/video_player_full_screen_widget.dart';
 
 import '../../../../../core/constance/app_constance.dart';
@@ -12,7 +16,8 @@ import '../../../../widgets/buttons/submit_button.dart';
 import '../components/academy_components/academy_tabs_components/academy_about_component.dart';
 
 class AcademyPage extends StatefulWidget {
-  const AcademyPage({super.key});
+  final SuggestedAcademyEntity academy;
+  const AcademyPage({super.key, required this.academy});
 
   @override
   State<AcademyPage> createState() => _AcademyScreenState();
@@ -32,6 +37,7 @@ class _AcademyScreenState extends State<AcademyPage>
   @override
   void initState() {
     _tabController = TabController(length: 3, vsync: this, initialIndex: 2);
+
     super.initState();
   }
 
@@ -58,7 +64,7 @@ class _AcademyScreenState extends State<AcademyPage>
                       color: Colors.white,
                     ),
                     Text(
-                      'اسم الاكاديمية',
+                      widget.academy.name,
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 15.sp,
@@ -283,8 +289,12 @@ class _AcademyScreenState extends State<AcademyPage>
                     height: 0.49.sh,
                     child: TabBarView(controller: _tabController, children: [
                       const Text('data'),
-                      const AcademyProgramtComponent(),
-                      AcademyAboutComponent(),
+                      AcademyProgramtComponent(
+                        academyId: widget.academy.academyId,
+                      ),
+                      AcademyAboutComponent(
+                        academyId: widget.academy.academyId,
+                      ),
                     ]),
                   ),
                   Align(

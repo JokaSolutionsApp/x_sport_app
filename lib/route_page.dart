@@ -3,8 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'app/features/auth/presentation/pages/login_page.dart';
 import 'app/features/home/presentation/pages/main_page.dart';
-import 'core/services/locator/service_locator.dart';
-import 'core/services/secure_storage_service.dart.dart';
 import 'core/utils/enums.dart';
 
 class RoutePage extends StatelessWidget {
@@ -12,7 +10,7 @@ class RoutePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    sl<SecureStorageService>().write('email', 'ammarkseibati97@gmail.com');
+    // sl<SecureStorageService>().write('email', 'ammarkseibati97@gmail.com');
     return BlocBuilder<AuthBloc, AuthState>(buildWhen: (prev, cur) {
       if (cur.runtimeType == const AuthState.checkUserLogged().runtimeType) {
         return true;

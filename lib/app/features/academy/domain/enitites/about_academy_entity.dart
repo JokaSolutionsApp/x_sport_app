@@ -18,9 +18,9 @@ class AboutAcademyEntity extends Equatable {
   @JsonKey(name: 'long')
   final double long;
   @JsonKey(name: 'minPrice')
-  final int minPrice;
+  final double minPrice;
   @JsonKey(name: 'maxPrice')
-  final int maxPrice;
+  final double maxPrice;
   @JsonKey(name: 'phone')
   final String phone;
   @JsonKey(name: 'openAt')

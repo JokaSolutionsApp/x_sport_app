@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:x_sport/app/features/auth/domain/params/google_login_params.dart';
 
 import '../../../../../core/error/exceptions.dart';
 import '../../../../../core/error/failure.dart';
@@ -18,6 +19,17 @@ class UserRepository extends BaseUserRepository {
   Future<Either<Failure, UserProfileEntity>> login() async {
     try {
       final result = await baseUsersRemoteDataSource.login();
+
+      return Right(result);
+    } on ServerException catch (failuar) {
+      return Left(ServerFailure(failuar.errorModel.statusCode));
+    }
+  }
+
+  @override
+  Future<Either<Failure, UserProfileEntity>> googleLogin() async {
+    try {
+      final result = await baseUsersRemoteDataSource.googleLogin();
 
       return Right(result);
     } on ServerException catch (failuar) {

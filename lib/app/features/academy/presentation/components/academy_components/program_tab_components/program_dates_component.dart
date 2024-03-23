@@ -2,19 +2,21 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/academy/domain/enitites/age_category_with_cources.dart';
 
 import '../../../../../../../core/constance/app_constance.dart';
 
 class ProgramDatesComponent extends StatelessWidget {
+  final List<AgeCategoryWithCoursesEntity> program;
   final List<String> dayMaps = ['sun', 'mon', 'tus', 'wed', 'thu', 'fri'];
 
   final List<String> ages = ['تحت 7 سنين', 'Item 2', 'Item 3', 'Item 4'];
 
-  final ValueNotifier<String> selectedAge = ValueNotifier<String>('تحت 7 سنين');
+  final ValueNotifier<String?> selectedAge = ValueNotifier<String?>(null);
 
   final ValueNotifier<int?> isSelectedIndex = ValueNotifier<int?>(null);
 
-  ProgramDatesComponent({super.key});
+  ProgramDatesComponent({super.key, required this.program});
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +81,7 @@ class ProgramDatesComponent extends StatelessWidget {
           color: const Color(0xFF969696),
         ),
         SizedBox(width: 6.w),
-        ValueListenableBuilder<String>(
+        ValueListenableBuilder<String?>(
           valueListenable: selectedAge,
           builder: (context, selectedValue, child) {
             return Container(
@@ -142,10 +144,10 @@ class ProgramDatesComponent extends StatelessWidget {
                     onChanged: (newValue) {
                       selectedAge.value = newValue!;
                     },
-                    items: ages.map((item) {
+                    items: program.map((item) {
                       return DropdownMenuItem<String>(
-                        value: item,
-                        child: Text(item),
+                        value: item.toAge.toString(),
+                        child: Text(item.toAge.toString()),
                       );
                     }).toList(),
                   ),

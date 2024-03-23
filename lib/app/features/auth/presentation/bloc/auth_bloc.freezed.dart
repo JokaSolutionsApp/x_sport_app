@@ -19,6 +19,7 @@ mixin _$AuthEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() login,
+    required TResult Function() googleLogin,
     required TResult Function() register,
     required TResult Function() getUserProfile,
     required TResult Function() deleteUserProfile,
@@ -38,6 +39,7 @@ mixin _$AuthEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? login,
+    TResult? Function()? googleLogin,
     TResult? Function()? register,
     TResult? Function()? getUserProfile,
     TResult? Function()? deleteUserProfile,
@@ -57,6 +59,7 @@ mixin _$AuthEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? login,
+    TResult Function()? googleLogin,
     TResult Function()? register,
     TResult Function()? getUserProfile,
     TResult Function()? deleteUserProfile,
@@ -77,6 +80,7 @@ mixin _$AuthEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoginEvent value) login,
+    required TResult Function(_GoogleLoginEvent value) googleLogin,
     required TResult Function(_RegisterEvent value) register,
     required TResult Function(_GetUserProfileEvent value) getUserProfile,
     required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
@@ -97,6 +101,7 @@ mixin _$AuthEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_GoogleLoginEvent value)? googleLogin,
     TResult? Function(_RegisterEvent value)? register,
     TResult? Function(_GetUserProfileEvent value)? getUserProfile,
     TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
@@ -115,6 +120,7 @@ mixin _$AuthEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoginEvent value)? login,
+    TResult Function(_GoogleLoginEvent value)? googleLogin,
     TResult Function(_RegisterEvent value)? register,
     TResult Function(_GetUserProfileEvent value)? getUserProfile,
     TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
@@ -189,6 +195,7 @@ class _$LoginEventImpl implements _LoginEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() login,
+    required TResult Function() googleLogin,
     required TResult Function() register,
     required TResult Function() getUserProfile,
     required TResult Function() deleteUserProfile,
@@ -211,6 +218,7 @@ class _$LoginEventImpl implements _LoginEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? login,
+    TResult? Function()? googleLogin,
     TResult? Function()? register,
     TResult? Function()? getUserProfile,
     TResult? Function()? deleteUserProfile,
@@ -233,6 +241,7 @@ class _$LoginEventImpl implements _LoginEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? login,
+    TResult Function()? googleLogin,
     TResult Function()? register,
     TResult Function()? getUserProfile,
     TResult Function()? deleteUserProfile,
@@ -259,6 +268,7 @@ class _$LoginEventImpl implements _LoginEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoginEvent value) login,
+    required TResult Function(_GoogleLoginEvent value) googleLogin,
     required TResult Function(_RegisterEvent value) register,
     required TResult Function(_GetUserProfileEvent value) getUserProfile,
     required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
@@ -282,6 +292,7 @@ class _$LoginEventImpl implements _LoginEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_GoogleLoginEvent value)? googleLogin,
     TResult? Function(_RegisterEvent value)? register,
     TResult? Function(_GetUserProfileEvent value)? getUserProfile,
     TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
@@ -303,6 +314,7 @@ class _$LoginEventImpl implements _LoginEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoginEvent value)? login,
+    TResult Function(_GoogleLoginEvent value)? googleLogin,
     TResult Function(_RegisterEvent value)? register,
     TResult Function(_GetUserProfileEvent value)? getUserProfile,
     TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
@@ -327,6 +339,191 @@ class _$LoginEventImpl implements _LoginEvent {
 
 abstract class _LoginEvent implements AuthEvent {
   const factory _LoginEvent() = _$LoginEventImpl;
+}
+
+/// @nodoc
+abstract class _$$GoogleLoginEventImplCopyWith<$Res> {
+  factory _$$GoogleLoginEventImplCopyWith(_$GoogleLoginEventImpl value,
+          $Res Function(_$GoogleLoginEventImpl) then) =
+      __$$GoogleLoginEventImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GoogleLoginEventImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$GoogleLoginEventImpl>
+    implements _$$GoogleLoginEventImplCopyWith<$Res> {
+  __$$GoogleLoginEventImplCopyWithImpl(_$GoogleLoginEventImpl _value,
+      $Res Function(_$GoogleLoginEventImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GoogleLoginEventImpl implements _GoogleLoginEvent {
+  const _$GoogleLoginEventImpl();
+
+  @override
+  String toString() {
+    return 'AuthEvent.googleLogin()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GoogleLoginEventImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() login,
+    required TResult Function() googleLogin,
+    required TResult Function() register,
+    required TResult Function() getUserProfile,
+    required TResult Function() deleteUserProfile,
+    required TResult Function(EditUserProfileParams params) editUserProfile,
+    required TResult Function(PreferenceValue params) editPreferences,
+    required TResult Function() checkUserLogged,
+    required TResult Function() confirmUserEmail,
+    required TResult Function() resendconfirmUserEmail,
+    required TResult Function() getSports,
+    required TResult Function(
+            List<int> imageBytes, String imageType, List<int> selectedSports)
+        completeRegistration,
+    required TResult Function(List<int> sportsIds) addFavoriteSports,
+    required TResult Function(List<int> sportsIds) deleteFavoriteSports,
+  }) {
+    return googleLogin();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? login,
+    TResult? Function()? googleLogin,
+    TResult? Function()? register,
+    TResult? Function()? getUserProfile,
+    TResult? Function()? deleteUserProfile,
+    TResult? Function(EditUserProfileParams params)? editUserProfile,
+    TResult? Function(PreferenceValue params)? editPreferences,
+    TResult? Function()? checkUserLogged,
+    TResult? Function()? confirmUserEmail,
+    TResult? Function()? resendconfirmUserEmail,
+    TResult? Function()? getSports,
+    TResult? Function(
+            List<int> imageBytes, String imageType, List<int> selectedSports)?
+        completeRegistration,
+    TResult? Function(List<int> sportsIds)? addFavoriteSports,
+    TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
+  }) {
+    return googleLogin?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? login,
+    TResult Function()? googleLogin,
+    TResult Function()? register,
+    TResult Function()? getUserProfile,
+    TResult Function()? deleteUserProfile,
+    TResult Function(EditUserProfileParams params)? editUserProfile,
+    TResult Function(PreferenceValue params)? editPreferences,
+    TResult Function()? checkUserLogged,
+    TResult Function()? confirmUserEmail,
+    TResult Function()? resendconfirmUserEmail,
+    TResult Function()? getSports,
+    TResult Function(
+            List<int> imageBytes, String imageType, List<int> selectedSports)?
+        completeRegistration,
+    TResult Function(List<int> sportsIds)? addFavoriteSports,
+    TResult Function(List<int> sportsIds)? deleteFavoriteSports,
+    required TResult orElse(),
+  }) {
+    if (googleLogin != null) {
+      return googleLogin();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoginEvent value) login,
+    required TResult Function(_GoogleLoginEvent value) googleLogin,
+    required TResult Function(_RegisterEvent value) register,
+    required TResult Function(_GetUserProfileEvent value) getUserProfile,
+    required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
+    required TResult Function(_EditUserProfileEvent value) editUserProfile,
+    required TResult Function(_EditPreferencesEvent value) editPreferences,
+    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
+    required TResult Function(_ResendConfirmUserEmailEvent value)
+        resendconfirmUserEmail,
+    required TResult Function(_GetSportsEvent value) getSports,
+    required TResult Function(_CompleteRegistrationEvent value)
+        completeRegistration,
+    required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
+    required TResult Function(_DeleteFavoriteSportsEvent value)
+        deleteFavoriteSports,
+  }) {
+    return googleLogin(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_GoogleLoginEvent value)? googleLogin,
+    TResult? Function(_RegisterEvent value)? register,
+    TResult? Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult? Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult? Function(_EditPreferencesEvent value)? editPreferences,
+    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult? Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult? Function(_GetSportsEvent value)? getSports,
+    TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+  }) {
+    return googleLogin?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoginEvent value)? login,
+    TResult Function(_GoogleLoginEvent value)? googleLogin,
+    TResult Function(_RegisterEvent value)? register,
+    TResult Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult Function(_EditPreferencesEvent value)? editPreferences,
+    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult Function(_GetSportsEvent value)? getSports,
+    TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    required TResult orElse(),
+  }) {
+    if (googleLogin != null) {
+      return googleLogin(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GoogleLoginEvent implements AuthEvent {
+  const factory _GoogleLoginEvent() = _$GoogleLoginEventImpl;
 }
 
 /// @nodoc
@@ -368,6 +565,7 @@ class _$RegisterEventImpl implements _RegisterEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() login,
+    required TResult Function() googleLogin,
     required TResult Function() register,
     required TResult Function() getUserProfile,
     required TResult Function() deleteUserProfile,
@@ -390,6 +588,7 @@ class _$RegisterEventImpl implements _RegisterEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? login,
+    TResult? Function()? googleLogin,
     TResult? Function()? register,
     TResult? Function()? getUserProfile,
     TResult? Function()? deleteUserProfile,
@@ -412,6 +611,7 @@ class _$RegisterEventImpl implements _RegisterEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? login,
+    TResult Function()? googleLogin,
     TResult Function()? register,
     TResult Function()? getUserProfile,
     TResult Function()? deleteUserProfile,
@@ -438,6 +638,7 @@ class _$RegisterEventImpl implements _RegisterEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoginEvent value) login,
+    required TResult Function(_GoogleLoginEvent value) googleLogin,
     required TResult Function(_RegisterEvent value) register,
     required TResult Function(_GetUserProfileEvent value) getUserProfile,
     required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
@@ -461,6 +662,7 @@ class _$RegisterEventImpl implements _RegisterEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_GoogleLoginEvent value)? googleLogin,
     TResult? Function(_RegisterEvent value)? register,
     TResult? Function(_GetUserProfileEvent value)? getUserProfile,
     TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
@@ -482,6 +684,7 @@ class _$RegisterEventImpl implements _RegisterEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoginEvent value)? login,
+    TResult Function(_GoogleLoginEvent value)? googleLogin,
     TResult Function(_RegisterEvent value)? register,
     TResult Function(_GetUserProfileEvent value)? getUserProfile,
     TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
@@ -548,6 +751,7 @@ class _$GetUserProfileEventImpl implements _GetUserProfileEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() login,
+    required TResult Function() googleLogin,
     required TResult Function() register,
     required TResult Function() getUserProfile,
     required TResult Function() deleteUserProfile,
@@ -570,6 +774,7 @@ class _$GetUserProfileEventImpl implements _GetUserProfileEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? login,
+    TResult? Function()? googleLogin,
     TResult? Function()? register,
     TResult? Function()? getUserProfile,
     TResult? Function()? deleteUserProfile,
@@ -592,6 +797,7 @@ class _$GetUserProfileEventImpl implements _GetUserProfileEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? login,
+    TResult Function()? googleLogin,
     TResult Function()? register,
     TResult Function()? getUserProfile,
     TResult Function()? deleteUserProfile,
@@ -618,6 +824,7 @@ class _$GetUserProfileEventImpl implements _GetUserProfileEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoginEvent value) login,
+    required TResult Function(_GoogleLoginEvent value) googleLogin,
     required TResult Function(_RegisterEvent value) register,
     required TResult Function(_GetUserProfileEvent value) getUserProfile,
     required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
@@ -641,6 +848,7 @@ class _$GetUserProfileEventImpl implements _GetUserProfileEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_GoogleLoginEvent value)? googleLogin,
     TResult? Function(_RegisterEvent value)? register,
     TResult? Function(_GetUserProfileEvent value)? getUserProfile,
     TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
@@ -662,6 +870,7 @@ class _$GetUserProfileEventImpl implements _GetUserProfileEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoginEvent value)? login,
+    TResult Function(_GoogleLoginEvent value)? googleLogin,
     TResult Function(_RegisterEvent value)? register,
     TResult Function(_GetUserProfileEvent value)? getUserProfile,
     TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
@@ -730,6 +939,7 @@ class _$DeleteUserProfileEventImpl implements _DeleteUserProfileEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() login,
+    required TResult Function() googleLogin,
     required TResult Function() register,
     required TResult Function() getUserProfile,
     required TResult Function() deleteUserProfile,
@@ -752,6 +962,7 @@ class _$DeleteUserProfileEventImpl implements _DeleteUserProfileEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? login,
+    TResult? Function()? googleLogin,
     TResult? Function()? register,
     TResult? Function()? getUserProfile,
     TResult? Function()? deleteUserProfile,
@@ -774,6 +985,7 @@ class _$DeleteUserProfileEventImpl implements _DeleteUserProfileEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? login,
+    TResult Function()? googleLogin,
     TResult Function()? register,
     TResult Function()? getUserProfile,
     TResult Function()? deleteUserProfile,
@@ -800,6 +1012,7 @@ class _$DeleteUserProfileEventImpl implements _DeleteUserProfileEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoginEvent value) login,
+    required TResult Function(_GoogleLoginEvent value) googleLogin,
     required TResult Function(_RegisterEvent value) register,
     required TResult Function(_GetUserProfileEvent value) getUserProfile,
     required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
@@ -823,6 +1036,7 @@ class _$DeleteUserProfileEventImpl implements _DeleteUserProfileEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_GoogleLoginEvent value)? googleLogin,
     TResult? Function(_RegisterEvent value)? register,
     TResult? Function(_GetUserProfileEvent value)? getUserProfile,
     TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
@@ -844,6 +1058,7 @@ class _$DeleteUserProfileEventImpl implements _DeleteUserProfileEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoginEvent value)? login,
+    TResult Function(_GoogleLoginEvent value)? googleLogin,
     TResult Function(_RegisterEvent value)? register,
     TResult Function(_GetUserProfileEvent value)? getUserProfile,
     TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
@@ -937,6 +1152,7 @@ class _$EditUserProfileEventImpl implements _EditUserProfileEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() login,
+    required TResult Function() googleLogin,
     required TResult Function() register,
     required TResult Function() getUserProfile,
     required TResult Function() deleteUserProfile,
@@ -959,6 +1175,7 @@ class _$EditUserProfileEventImpl implements _EditUserProfileEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? login,
+    TResult? Function()? googleLogin,
     TResult? Function()? register,
     TResult? Function()? getUserProfile,
     TResult? Function()? deleteUserProfile,
@@ -981,6 +1198,7 @@ class _$EditUserProfileEventImpl implements _EditUserProfileEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? login,
+    TResult Function()? googleLogin,
     TResult Function()? register,
     TResult Function()? getUserProfile,
     TResult Function()? deleteUserProfile,
@@ -1007,6 +1225,7 @@ class _$EditUserProfileEventImpl implements _EditUserProfileEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoginEvent value) login,
+    required TResult Function(_GoogleLoginEvent value) googleLogin,
     required TResult Function(_RegisterEvent value) register,
     required TResult Function(_GetUserProfileEvent value) getUserProfile,
     required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
@@ -1030,6 +1249,7 @@ class _$EditUserProfileEventImpl implements _EditUserProfileEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_GoogleLoginEvent value)? googleLogin,
     TResult? Function(_RegisterEvent value)? register,
     TResult? Function(_GetUserProfileEvent value)? getUserProfile,
     TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
@@ -1051,6 +1271,7 @@ class _$EditUserProfileEventImpl implements _EditUserProfileEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoginEvent value)? login,
+    TResult Function(_GoogleLoginEvent value)? googleLogin,
     TResult Function(_RegisterEvent value)? register,
     TResult Function(_GetUserProfileEvent value)? getUserProfile,
     TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
@@ -1151,6 +1372,7 @@ class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() login,
+    required TResult Function() googleLogin,
     required TResult Function() register,
     required TResult Function() getUserProfile,
     required TResult Function() deleteUserProfile,
@@ -1173,6 +1395,7 @@ class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? login,
+    TResult? Function()? googleLogin,
     TResult? Function()? register,
     TResult? Function()? getUserProfile,
     TResult? Function()? deleteUserProfile,
@@ -1195,6 +1418,7 @@ class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? login,
+    TResult Function()? googleLogin,
     TResult Function()? register,
     TResult Function()? getUserProfile,
     TResult Function()? deleteUserProfile,
@@ -1221,6 +1445,7 @@ class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoginEvent value) login,
+    required TResult Function(_GoogleLoginEvent value) googleLogin,
     required TResult Function(_RegisterEvent value) register,
     required TResult Function(_GetUserProfileEvent value) getUserProfile,
     required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
@@ -1244,6 +1469,7 @@ class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_GoogleLoginEvent value)? googleLogin,
     TResult? Function(_RegisterEvent value)? register,
     TResult? Function(_GetUserProfileEvent value)? getUserProfile,
     TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
@@ -1265,6 +1491,7 @@ class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoginEvent value)? login,
+    TResult Function(_GoogleLoginEvent value)? googleLogin,
     TResult Function(_RegisterEvent value)? register,
     TResult Function(_GetUserProfileEvent value)? getUserProfile,
     TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
@@ -1337,6 +1564,7 @@ class _$CheckUserLoggedEventImpl implements _CheckUserLoggedEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() login,
+    required TResult Function() googleLogin,
     required TResult Function() register,
     required TResult Function() getUserProfile,
     required TResult Function() deleteUserProfile,
@@ -1359,6 +1587,7 @@ class _$CheckUserLoggedEventImpl implements _CheckUserLoggedEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? login,
+    TResult? Function()? googleLogin,
     TResult? Function()? register,
     TResult? Function()? getUserProfile,
     TResult? Function()? deleteUserProfile,
@@ -1381,6 +1610,7 @@ class _$CheckUserLoggedEventImpl implements _CheckUserLoggedEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? login,
+    TResult Function()? googleLogin,
     TResult Function()? register,
     TResult Function()? getUserProfile,
     TResult Function()? deleteUserProfile,
@@ -1407,6 +1637,7 @@ class _$CheckUserLoggedEventImpl implements _CheckUserLoggedEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoginEvent value) login,
+    required TResult Function(_GoogleLoginEvent value) googleLogin,
     required TResult Function(_RegisterEvent value) register,
     required TResult Function(_GetUserProfileEvent value) getUserProfile,
     required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
@@ -1430,6 +1661,7 @@ class _$CheckUserLoggedEventImpl implements _CheckUserLoggedEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_GoogleLoginEvent value)? googleLogin,
     TResult? Function(_RegisterEvent value)? register,
     TResult? Function(_GetUserProfileEvent value)? getUserProfile,
     TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
@@ -1451,6 +1683,7 @@ class _$CheckUserLoggedEventImpl implements _CheckUserLoggedEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoginEvent value)? login,
+    TResult Function(_GoogleLoginEvent value)? googleLogin,
     TResult Function(_RegisterEvent value)? register,
     TResult Function(_GetUserProfileEvent value)? getUserProfile,
     TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
@@ -1518,6 +1751,7 @@ class _$ConfirmUserEmailEventImpl implements _ConfirmUserEmailEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() login,
+    required TResult Function() googleLogin,
     required TResult Function() register,
     required TResult Function() getUserProfile,
     required TResult Function() deleteUserProfile,
@@ -1540,6 +1774,7 @@ class _$ConfirmUserEmailEventImpl implements _ConfirmUserEmailEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? login,
+    TResult? Function()? googleLogin,
     TResult? Function()? register,
     TResult? Function()? getUserProfile,
     TResult? Function()? deleteUserProfile,
@@ -1562,6 +1797,7 @@ class _$ConfirmUserEmailEventImpl implements _ConfirmUserEmailEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? login,
+    TResult Function()? googleLogin,
     TResult Function()? register,
     TResult Function()? getUserProfile,
     TResult Function()? deleteUserProfile,
@@ -1588,6 +1824,7 @@ class _$ConfirmUserEmailEventImpl implements _ConfirmUserEmailEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoginEvent value) login,
+    required TResult Function(_GoogleLoginEvent value) googleLogin,
     required TResult Function(_RegisterEvent value) register,
     required TResult Function(_GetUserProfileEvent value) getUserProfile,
     required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
@@ -1611,6 +1848,7 @@ class _$ConfirmUserEmailEventImpl implements _ConfirmUserEmailEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_GoogleLoginEvent value)? googleLogin,
     TResult? Function(_RegisterEvent value)? register,
     TResult? Function(_GetUserProfileEvent value)? getUserProfile,
     TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
@@ -1632,6 +1870,7 @@ class _$ConfirmUserEmailEventImpl implements _ConfirmUserEmailEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoginEvent value)? login,
+    TResult Function(_GoogleLoginEvent value)? googleLogin,
     TResult Function(_RegisterEvent value)? register,
     TResult Function(_GetUserProfileEvent value)? getUserProfile,
     TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
@@ -1701,6 +1940,7 @@ class _$ResendConfirmUserEmailEventImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() login,
+    required TResult Function() googleLogin,
     required TResult Function() register,
     required TResult Function() getUserProfile,
     required TResult Function() deleteUserProfile,
@@ -1723,6 +1963,7 @@ class _$ResendConfirmUserEmailEventImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? login,
+    TResult? Function()? googleLogin,
     TResult? Function()? register,
     TResult? Function()? getUserProfile,
     TResult? Function()? deleteUserProfile,
@@ -1745,6 +1986,7 @@ class _$ResendConfirmUserEmailEventImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? login,
+    TResult Function()? googleLogin,
     TResult Function()? register,
     TResult Function()? getUserProfile,
     TResult Function()? deleteUserProfile,
@@ -1771,6 +2013,7 @@ class _$ResendConfirmUserEmailEventImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoginEvent value) login,
+    required TResult Function(_GoogleLoginEvent value) googleLogin,
     required TResult Function(_RegisterEvent value) register,
     required TResult Function(_GetUserProfileEvent value) getUserProfile,
     required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
@@ -1794,6 +2037,7 @@ class _$ResendConfirmUserEmailEventImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_GoogleLoginEvent value)? googleLogin,
     TResult? Function(_RegisterEvent value)? register,
     TResult? Function(_GetUserProfileEvent value)? getUserProfile,
     TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
@@ -1815,6 +2059,7 @@ class _$ResendConfirmUserEmailEventImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoginEvent value)? login,
+    TResult Function(_GoogleLoginEvent value)? googleLogin,
     TResult Function(_RegisterEvent value)? register,
     TResult Function(_GetUserProfileEvent value)? getUserProfile,
     TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
@@ -1881,6 +2126,7 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() login,
+    required TResult Function() googleLogin,
     required TResult Function() register,
     required TResult Function() getUserProfile,
     required TResult Function() deleteUserProfile,
@@ -1903,6 +2149,7 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? login,
+    TResult? Function()? googleLogin,
     TResult? Function()? register,
     TResult? Function()? getUserProfile,
     TResult? Function()? deleteUserProfile,
@@ -1925,6 +2172,7 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? login,
+    TResult Function()? googleLogin,
     TResult Function()? register,
     TResult Function()? getUserProfile,
     TResult Function()? deleteUserProfile,
@@ -1951,6 +2199,7 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoginEvent value) login,
+    required TResult Function(_GoogleLoginEvent value) googleLogin,
     required TResult Function(_RegisterEvent value) register,
     required TResult Function(_GetUserProfileEvent value) getUserProfile,
     required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
@@ -1974,6 +2223,7 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_GoogleLoginEvent value)? googleLogin,
     TResult? Function(_RegisterEvent value)? register,
     TResult? Function(_GetUserProfileEvent value)? getUserProfile,
     TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
@@ -1995,6 +2245,7 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoginEvent value)? login,
+    TResult Function(_GoogleLoginEvent value)? googleLogin,
     TResult Function(_RegisterEvent value)? register,
     TResult Function(_GetUserProfileEvent value)? getUserProfile,
     TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
@@ -2128,6 +2379,7 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() login,
+    required TResult Function() googleLogin,
     required TResult Function() register,
     required TResult Function() getUserProfile,
     required TResult Function() deleteUserProfile,
@@ -2150,6 +2402,7 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? login,
+    TResult? Function()? googleLogin,
     TResult? Function()? register,
     TResult? Function()? getUserProfile,
     TResult? Function()? deleteUserProfile,
@@ -2172,6 +2425,7 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? login,
+    TResult Function()? googleLogin,
     TResult Function()? register,
     TResult Function()? getUserProfile,
     TResult Function()? deleteUserProfile,
@@ -2198,6 +2452,7 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoginEvent value) login,
+    required TResult Function(_GoogleLoginEvent value) googleLogin,
     required TResult Function(_RegisterEvent value) register,
     required TResult Function(_GetUserProfileEvent value) getUserProfile,
     required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
@@ -2221,6 +2476,7 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_GoogleLoginEvent value)? googleLogin,
     TResult? Function(_RegisterEvent value)? register,
     TResult? Function(_GetUserProfileEvent value)? getUserProfile,
     TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
@@ -2242,6 +2498,7 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoginEvent value)? login,
+    TResult Function(_GoogleLoginEvent value)? googleLogin,
     TResult Function(_RegisterEvent value)? register,
     TResult Function(_GetUserProfileEvent value)? getUserProfile,
     TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
@@ -2355,6 +2612,7 @@ class _$AddFavoriteSportsEventImpl implements _AddFavoriteSportsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() login,
+    required TResult Function() googleLogin,
     required TResult Function() register,
     required TResult Function() getUserProfile,
     required TResult Function() deleteUserProfile,
@@ -2377,6 +2635,7 @@ class _$AddFavoriteSportsEventImpl implements _AddFavoriteSportsEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? login,
+    TResult? Function()? googleLogin,
     TResult? Function()? register,
     TResult? Function()? getUserProfile,
     TResult? Function()? deleteUserProfile,
@@ -2399,6 +2658,7 @@ class _$AddFavoriteSportsEventImpl implements _AddFavoriteSportsEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? login,
+    TResult Function()? googleLogin,
     TResult Function()? register,
     TResult Function()? getUserProfile,
     TResult Function()? deleteUserProfile,
@@ -2425,6 +2685,7 @@ class _$AddFavoriteSportsEventImpl implements _AddFavoriteSportsEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoginEvent value) login,
+    required TResult Function(_GoogleLoginEvent value) googleLogin,
     required TResult Function(_RegisterEvent value) register,
     required TResult Function(_GetUserProfileEvent value) getUserProfile,
     required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
@@ -2448,6 +2709,7 @@ class _$AddFavoriteSportsEventImpl implements _AddFavoriteSportsEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_GoogleLoginEvent value)? googleLogin,
     TResult? Function(_RegisterEvent value)? register,
     TResult? Function(_GetUserProfileEvent value)? getUserProfile,
     TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
@@ -2469,6 +2731,7 @@ class _$AddFavoriteSportsEventImpl implements _AddFavoriteSportsEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoginEvent value)? login,
+    TResult Function(_GoogleLoginEvent value)? googleLogin,
     TResult Function(_RegisterEvent value)? register,
     TResult Function(_GetUserProfileEvent value)? getUserProfile,
     TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
@@ -2577,6 +2840,7 @@ class _$DeleteFavoriteSportsEventImpl implements _DeleteFavoriteSportsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() login,
+    required TResult Function() googleLogin,
     required TResult Function() register,
     required TResult Function() getUserProfile,
     required TResult Function() deleteUserProfile,
@@ -2599,6 +2863,7 @@ class _$DeleteFavoriteSportsEventImpl implements _DeleteFavoriteSportsEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? login,
+    TResult? Function()? googleLogin,
     TResult? Function()? register,
     TResult? Function()? getUserProfile,
     TResult? Function()? deleteUserProfile,
@@ -2621,6 +2886,7 @@ class _$DeleteFavoriteSportsEventImpl implements _DeleteFavoriteSportsEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? login,
+    TResult Function()? googleLogin,
     TResult Function()? register,
     TResult Function()? getUserProfile,
     TResult Function()? deleteUserProfile,
@@ -2647,6 +2913,7 @@ class _$DeleteFavoriteSportsEventImpl implements _DeleteFavoriteSportsEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoginEvent value) login,
+    required TResult Function(_GoogleLoginEvent value) googleLogin,
     required TResult Function(_RegisterEvent value) register,
     required TResult Function(_GetUserProfileEvent value) getUserProfile,
     required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
@@ -2670,6 +2937,7 @@ class _$DeleteFavoriteSportsEventImpl implements _DeleteFavoriteSportsEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_GoogleLoginEvent value)? googleLogin,
     TResult? Function(_RegisterEvent value)? register,
     TResult? Function(_GetUserProfileEvent value)? getUserProfile,
     TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
@@ -2691,6 +2959,7 @@ class _$DeleteFavoriteSportsEventImpl implements _DeleteFavoriteSportsEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoginEvent value)? login,
+    TResult Function(_GoogleLoginEvent value)? googleLogin,
     TResult Function(_RegisterEvent value)? register,
     TResult Function(_GetUserProfileEvent value)? getUserProfile,
     TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
@@ -2734,6 +3003,9 @@ mixin _$AuthState {
     required TResult Function() logginLoading,
     required TResult Function(Failure? failure) logginFailure,
     required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
     required TResult Function() confirmEmailLoading,
     required TResult Function(Failure? failure) confirmEmailFailure,
     required TResult Function(List<SportEntity> sports) emailConfirmed,
@@ -2766,6 +3038,9 @@ mixin _$AuthState {
     TResult? Function()? logginLoading,
     TResult? Function(Failure? failure)? logginFailure,
     TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
     TResult? Function()? confirmEmailLoading,
     TResult? Function(Failure? failure)? confirmEmailFailure,
     TResult? Function(List<SportEntity> sports)? emailConfirmed,
@@ -2796,6 +3071,9 @@ mixin _$AuthState {
     TResult Function()? logginLoading,
     TResult Function(Failure? failure)? logginFailure,
     TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
     TResult Function()? confirmEmailLoading,
     TResult Function(Failure? failure)? confirmEmailFailure,
     TResult Function(List<SportEntity> sports)? emailConfirmed,
@@ -2827,6 +3105,9 @@ mixin _$AuthState {
     required TResult Function(_LoginLoading value) logginLoading,
     required TResult Function(_LoginFailure value) logginFailure,
     required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
     required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
     required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
     required TResult Function(_EmailConfirmed value) emailConfirmed,
@@ -2864,6 +3145,9 @@ mixin _$AuthState {
     TResult? Function(_LoginLoading value)? logginLoading,
     TResult? Function(_LoginFailure value)? logginFailure,
     TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult? Function(_EmailConfirmed value)? emailConfirmed,
@@ -2898,6 +3182,9 @@ mixin _$AuthState {
     TResult Function(_LoginLoading value)? logginLoading,
     TResult Function(_LoginFailure value)? logginFailure,
     TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult Function(_EmailConfirmed value)? emailConfirmed,
@@ -2988,6 +3275,9 @@ class _$InitialImpl implements _Initial {
     required TResult Function() logginLoading,
     required TResult Function(Failure? failure) logginFailure,
     required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
     required TResult Function() confirmEmailLoading,
     required TResult Function(Failure? failure) confirmEmailFailure,
     required TResult Function(List<SportEntity> sports) emailConfirmed,
@@ -3023,6 +3313,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? logginLoading,
     TResult? Function(Failure? failure)? logginFailure,
     TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
     TResult? Function()? confirmEmailLoading,
     TResult? Function(Failure? failure)? confirmEmailFailure,
     TResult? Function(List<SportEntity> sports)? emailConfirmed,
@@ -3056,6 +3349,9 @@ class _$InitialImpl implements _Initial {
     TResult Function()? logginLoading,
     TResult Function(Failure? failure)? logginFailure,
     TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
     TResult Function()? confirmEmailLoading,
     TResult Function(Failure? failure)? confirmEmailFailure,
     TResult Function(List<SportEntity> sports)? emailConfirmed,
@@ -3093,6 +3389,9 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_LoginLoading value) logginLoading,
     required TResult Function(_LoginFailure value) logginFailure,
     required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
     required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
     required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
     required TResult Function(_EmailConfirmed value) emailConfirmed,
@@ -3133,6 +3432,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_LoginLoading value)? logginLoading,
     TResult? Function(_LoginFailure value)? logginFailure,
     TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult? Function(_EmailConfirmed value)? emailConfirmed,
@@ -3170,6 +3472,9 @@ class _$InitialImpl implements _Initial {
     TResult Function(_LoginLoading value)? logginLoading,
     TResult Function(_LoginFailure value)? logginFailure,
     TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult Function(_EmailConfirmed value)? emailConfirmed,
@@ -3251,6 +3556,9 @@ class _$RegisterLoadingImpl implements _RegisterLoading {
     required TResult Function() logginLoading,
     required TResult Function(Failure? failure) logginFailure,
     required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
     required TResult Function() confirmEmailLoading,
     required TResult Function(Failure? failure) confirmEmailFailure,
     required TResult Function(List<SportEntity> sports) emailConfirmed,
@@ -3286,6 +3594,9 @@ class _$RegisterLoadingImpl implements _RegisterLoading {
     TResult? Function()? logginLoading,
     TResult? Function(Failure? failure)? logginFailure,
     TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
     TResult? Function()? confirmEmailLoading,
     TResult? Function(Failure? failure)? confirmEmailFailure,
     TResult? Function(List<SportEntity> sports)? emailConfirmed,
@@ -3319,6 +3630,9 @@ class _$RegisterLoadingImpl implements _RegisterLoading {
     TResult Function()? logginLoading,
     TResult Function(Failure? failure)? logginFailure,
     TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
     TResult Function()? confirmEmailLoading,
     TResult Function(Failure? failure)? confirmEmailFailure,
     TResult Function(List<SportEntity> sports)? emailConfirmed,
@@ -3356,6 +3670,9 @@ class _$RegisterLoadingImpl implements _RegisterLoading {
     required TResult Function(_LoginLoading value) logginLoading,
     required TResult Function(_LoginFailure value) logginFailure,
     required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
     required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
     required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
     required TResult Function(_EmailConfirmed value) emailConfirmed,
@@ -3396,6 +3713,9 @@ class _$RegisterLoadingImpl implements _RegisterLoading {
     TResult? Function(_LoginLoading value)? logginLoading,
     TResult? Function(_LoginFailure value)? logginFailure,
     TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult? Function(_EmailConfirmed value)? emailConfirmed,
@@ -3433,6 +3753,9 @@ class _$RegisterLoadingImpl implements _RegisterLoading {
     TResult Function(_LoginLoading value)? logginLoading,
     TResult Function(_LoginFailure value)? logginFailure,
     TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult Function(_EmailConfirmed value)? emailConfirmed,
@@ -3542,6 +3865,9 @@ class _$RegisterFailureImpl implements _RegisterFailure {
     required TResult Function() logginLoading,
     required TResult Function(Failure? failure) logginFailure,
     required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
     required TResult Function() confirmEmailLoading,
     required TResult Function(Failure? failure) confirmEmailFailure,
     required TResult Function(List<SportEntity> sports) emailConfirmed,
@@ -3577,6 +3903,9 @@ class _$RegisterFailureImpl implements _RegisterFailure {
     TResult? Function()? logginLoading,
     TResult? Function(Failure? failure)? logginFailure,
     TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
     TResult? Function()? confirmEmailLoading,
     TResult? Function(Failure? failure)? confirmEmailFailure,
     TResult? Function(List<SportEntity> sports)? emailConfirmed,
@@ -3610,6 +3939,9 @@ class _$RegisterFailureImpl implements _RegisterFailure {
     TResult Function()? logginLoading,
     TResult Function(Failure? failure)? logginFailure,
     TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
     TResult Function()? confirmEmailLoading,
     TResult Function(Failure? failure)? confirmEmailFailure,
     TResult Function(List<SportEntity> sports)? emailConfirmed,
@@ -3647,6 +3979,9 @@ class _$RegisterFailureImpl implements _RegisterFailure {
     required TResult Function(_LoginLoading value) logginLoading,
     required TResult Function(_LoginFailure value) logginFailure,
     required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
     required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
     required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
     required TResult Function(_EmailConfirmed value) emailConfirmed,
@@ -3687,6 +4022,9 @@ class _$RegisterFailureImpl implements _RegisterFailure {
     TResult? Function(_LoginLoading value)? logginLoading,
     TResult? Function(_LoginFailure value)? logginFailure,
     TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult? Function(_EmailConfirmed value)? emailConfirmed,
@@ -3724,6 +4062,9 @@ class _$RegisterFailureImpl implements _RegisterFailure {
     TResult Function(_LoginLoading value)? logginLoading,
     TResult Function(_LoginFailure value)? logginFailure,
     TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult Function(_EmailConfirmed value)? emailConfirmed,
@@ -3839,6 +4180,9 @@ class _$RegisteredImpl implements _Registered {
     required TResult Function() logginLoading,
     required TResult Function(Failure? failure) logginFailure,
     required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
     required TResult Function() confirmEmailLoading,
     required TResult Function(Failure? failure) confirmEmailFailure,
     required TResult Function(List<SportEntity> sports) emailConfirmed,
@@ -3874,6 +4218,9 @@ class _$RegisteredImpl implements _Registered {
     TResult? Function()? logginLoading,
     TResult? Function(Failure? failure)? logginFailure,
     TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
     TResult? Function()? confirmEmailLoading,
     TResult? Function(Failure? failure)? confirmEmailFailure,
     TResult? Function(List<SportEntity> sports)? emailConfirmed,
@@ -3907,6 +4254,9 @@ class _$RegisteredImpl implements _Registered {
     TResult Function()? logginLoading,
     TResult Function(Failure? failure)? logginFailure,
     TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
     TResult Function()? confirmEmailLoading,
     TResult Function(Failure? failure)? confirmEmailFailure,
     TResult Function(List<SportEntity> sports)? emailConfirmed,
@@ -3944,6 +4294,9 @@ class _$RegisteredImpl implements _Registered {
     required TResult Function(_LoginLoading value) logginLoading,
     required TResult Function(_LoginFailure value) logginFailure,
     required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
     required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
     required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
     required TResult Function(_EmailConfirmed value) emailConfirmed,
@@ -3984,6 +4337,9 @@ class _$RegisteredImpl implements _Registered {
     TResult? Function(_LoginLoading value)? logginLoading,
     TResult? Function(_LoginFailure value)? logginFailure,
     TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult? Function(_EmailConfirmed value)? emailConfirmed,
@@ -4021,6 +4377,9 @@ class _$RegisteredImpl implements _Registered {
     TResult Function(_LoginLoading value)? logginLoading,
     TResult Function(_LoginFailure value)? logginFailure,
     TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult Function(_EmailConfirmed value)? emailConfirmed,
@@ -4107,6 +4466,9 @@ class _$LoginLoadingImpl implements _LoginLoading {
     required TResult Function() logginLoading,
     required TResult Function(Failure? failure) logginFailure,
     required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
     required TResult Function() confirmEmailLoading,
     required TResult Function(Failure? failure) confirmEmailFailure,
     required TResult Function(List<SportEntity> sports) emailConfirmed,
@@ -4142,6 +4504,9 @@ class _$LoginLoadingImpl implements _LoginLoading {
     TResult? Function()? logginLoading,
     TResult? Function(Failure? failure)? logginFailure,
     TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
     TResult? Function()? confirmEmailLoading,
     TResult? Function(Failure? failure)? confirmEmailFailure,
     TResult? Function(List<SportEntity> sports)? emailConfirmed,
@@ -4175,6 +4540,9 @@ class _$LoginLoadingImpl implements _LoginLoading {
     TResult Function()? logginLoading,
     TResult Function(Failure? failure)? logginFailure,
     TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
     TResult Function()? confirmEmailLoading,
     TResult Function(Failure? failure)? confirmEmailFailure,
     TResult Function(List<SportEntity> sports)? emailConfirmed,
@@ -4212,6 +4580,9 @@ class _$LoginLoadingImpl implements _LoginLoading {
     required TResult Function(_LoginLoading value) logginLoading,
     required TResult Function(_LoginFailure value) logginFailure,
     required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
     required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
     required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
     required TResult Function(_EmailConfirmed value) emailConfirmed,
@@ -4252,6 +4623,9 @@ class _$LoginLoadingImpl implements _LoginLoading {
     TResult? Function(_LoginLoading value)? logginLoading,
     TResult? Function(_LoginFailure value)? logginFailure,
     TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult? Function(_EmailConfirmed value)? emailConfirmed,
@@ -4289,6 +4663,9 @@ class _$LoginLoadingImpl implements _LoginLoading {
     TResult Function(_LoginLoading value)? logginLoading,
     TResult Function(_LoginFailure value)? logginFailure,
     TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult Function(_EmailConfirmed value)? emailConfirmed,
@@ -4397,6 +4774,9 @@ class _$LoginFailureImpl implements _LoginFailure {
     required TResult Function() logginLoading,
     required TResult Function(Failure? failure) logginFailure,
     required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
     required TResult Function() confirmEmailLoading,
     required TResult Function(Failure? failure) confirmEmailFailure,
     required TResult Function(List<SportEntity> sports) emailConfirmed,
@@ -4432,6 +4812,9 @@ class _$LoginFailureImpl implements _LoginFailure {
     TResult? Function()? logginLoading,
     TResult? Function(Failure? failure)? logginFailure,
     TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
     TResult? Function()? confirmEmailLoading,
     TResult? Function(Failure? failure)? confirmEmailFailure,
     TResult? Function(List<SportEntity> sports)? emailConfirmed,
@@ -4465,6 +4848,9 @@ class _$LoginFailureImpl implements _LoginFailure {
     TResult Function()? logginLoading,
     TResult Function(Failure? failure)? logginFailure,
     TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
     TResult Function()? confirmEmailLoading,
     TResult Function(Failure? failure)? confirmEmailFailure,
     TResult Function(List<SportEntity> sports)? emailConfirmed,
@@ -4502,6 +4888,9 @@ class _$LoginFailureImpl implements _LoginFailure {
     required TResult Function(_LoginLoading value) logginLoading,
     required TResult Function(_LoginFailure value) logginFailure,
     required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
     required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
     required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
     required TResult Function(_EmailConfirmed value) emailConfirmed,
@@ -4542,6 +4931,9 @@ class _$LoginFailureImpl implements _LoginFailure {
     TResult? Function(_LoginLoading value)? logginLoading,
     TResult? Function(_LoginFailure value)? logginFailure,
     TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult? Function(_EmailConfirmed value)? emailConfirmed,
@@ -4579,6 +4971,9 @@ class _$LoginFailureImpl implements _LoginFailure {
     TResult Function(_LoginLoading value)? logginLoading,
     TResult Function(_LoginFailure value)? logginFailure,
     TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult Function(_EmailConfirmed value)? emailConfirmed,
@@ -4692,6 +5087,9 @@ class _$LoggedInImpl implements _LoggedIn {
     required TResult Function() logginLoading,
     required TResult Function(Failure? failure) logginFailure,
     required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
     required TResult Function() confirmEmailLoading,
     required TResult Function(Failure? failure) confirmEmailFailure,
     required TResult Function(List<SportEntity> sports) emailConfirmed,
@@ -4727,6 +5125,9 @@ class _$LoggedInImpl implements _LoggedIn {
     TResult? Function()? logginLoading,
     TResult? Function(Failure? failure)? logginFailure,
     TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
     TResult? Function()? confirmEmailLoading,
     TResult? Function(Failure? failure)? confirmEmailFailure,
     TResult? Function(List<SportEntity> sports)? emailConfirmed,
@@ -4760,6 +5161,9 @@ class _$LoggedInImpl implements _LoggedIn {
     TResult Function()? logginLoading,
     TResult Function(Failure? failure)? logginFailure,
     TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
     TResult Function()? confirmEmailLoading,
     TResult Function(Failure? failure)? confirmEmailFailure,
     TResult Function(List<SportEntity> sports)? emailConfirmed,
@@ -4797,6 +5201,9 @@ class _$LoggedInImpl implements _LoggedIn {
     required TResult Function(_LoginLoading value) logginLoading,
     required TResult Function(_LoginFailure value) logginFailure,
     required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
     required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
     required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
     required TResult Function(_EmailConfirmed value) emailConfirmed,
@@ -4837,6 +5244,9 @@ class _$LoggedInImpl implements _LoggedIn {
     TResult? Function(_LoginLoading value)? logginLoading,
     TResult? Function(_LoginFailure value)? logginFailure,
     TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult? Function(_EmailConfirmed value)? emailConfirmed,
@@ -4874,6 +5284,9 @@ class _$LoggedInImpl implements _LoggedIn {
     TResult Function(_LoginLoading value)? logginLoading,
     TResult Function(_LoginFailure value)? logginFailure,
     TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult Function(_EmailConfirmed value)? emailConfirmed,
@@ -4912,6 +5325,917 @@ abstract class _LoggedIn implements AuthState {
   UserProfileEntity? get user;
   @JsonKey(ignore: true)
   _$$LoggedInImplCopyWith<_$LoggedInImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GoogleLoginLoadingImplCopyWith<$Res> {
+  factory _$$GoogleLoginLoadingImplCopyWith(_$GoogleLoginLoadingImpl value,
+          $Res Function(_$GoogleLoginLoadingImpl) then) =
+      __$$GoogleLoginLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GoogleLoginLoadingImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$GoogleLoginLoadingImpl>
+    implements _$$GoogleLoginLoadingImplCopyWith<$Res> {
+  __$$GoogleLoginLoadingImplCopyWithImpl(_$GoogleLoginLoadingImpl _value,
+      $Res Function(_$GoogleLoginLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GoogleLoginLoadingImpl implements _GoogleLoginLoading {
+  const _$GoogleLoginLoadingImpl();
+
+  @override
+  String toString() {
+    return 'AuthState.googleLogginLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GoogleLoginLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+  }) {
+    return googleLogginLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+  }) {
+    return googleLogginLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (googleLogginLoading != null) {
+      return googleLogginLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+  }) {
+    return googleLogginLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+  }) {
+    return googleLogginLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (googleLogginLoading != null) {
+      return googleLogginLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GoogleLoginLoading implements AuthState {
+  const factory _GoogleLoginLoading() = _$GoogleLoginLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$GoogleLoginFailureImplCopyWith<$Res> {
+  factory _$$GoogleLoginFailureImplCopyWith(_$GoogleLoginFailureImpl value,
+          $Res Function(_$GoogleLoginFailureImpl) then) =
+      __$$GoogleLoginFailureImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Failure? failure});
+}
+
+/// @nodoc
+class __$$GoogleLoginFailureImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$GoogleLoginFailureImpl>
+    implements _$$GoogleLoginFailureImplCopyWith<$Res> {
+  __$$GoogleLoginFailureImplCopyWithImpl(_$GoogleLoginFailureImpl _value,
+      $Res Function(_$GoogleLoginFailureImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? failure = freezed,
+  }) {
+    return _then(_$GoogleLoginFailureImpl(
+      failure: freezed == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GoogleLoginFailureImpl implements _GoogleLoginFailure {
+  const _$GoogleLoginFailureImpl({this.failure = null});
+
+  @override
+  @JsonKey()
+  final Failure? failure;
+
+  @override
+  String toString() {
+    return 'AuthState.googleLogginFailure(failure: $failure)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GoogleLoginFailureImpl &&
+            (identical(other.failure, failure) || other.failure == failure));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, failure);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GoogleLoginFailureImplCopyWith<_$GoogleLoginFailureImpl> get copyWith =>
+      __$$GoogleLoginFailureImplCopyWithImpl<_$GoogleLoginFailureImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+  }) {
+    return googleLogginFailure(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+  }) {
+    return googleLogginFailure?.call(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (googleLogginFailure != null) {
+      return googleLogginFailure(failure);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+  }) {
+    return googleLogginFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+  }) {
+    return googleLogginFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (googleLogginFailure != null) {
+      return googleLogginFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GoogleLoginFailure implements AuthState {
+  const factory _GoogleLoginFailure({final Failure? failure}) =
+      _$GoogleLoginFailureImpl;
+
+  Failure? get failure;
+  @JsonKey(ignore: true)
+  _$$GoogleLoginFailureImplCopyWith<_$GoogleLoginFailureImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GoogleLoggedInImplCopyWith<$Res> {
+  factory _$$GoogleLoggedInImplCopyWith(_$GoogleLoggedInImpl value,
+          $Res Function(_$GoogleLoggedInImpl) then) =
+      __$$GoogleLoggedInImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({UserProfileEntity? user});
+}
+
+/// @nodoc
+class __$$GoogleLoggedInImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$GoogleLoggedInImpl>
+    implements _$$GoogleLoggedInImplCopyWith<$Res> {
+  __$$GoogleLoggedInImplCopyWithImpl(
+      _$GoogleLoggedInImpl _value, $Res Function(_$GoogleLoggedInImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? user = freezed,
+  }) {
+    return _then(_$GoogleLoggedInImpl(
+      user: freezed == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserProfileEntity?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GoogleLoggedInImpl implements _GoogleLoggedIn {
+  const _$GoogleLoggedInImpl({this.user = null});
+
+  @override
+  @JsonKey()
+  final UserProfileEntity? user;
+
+  @override
+  String toString() {
+    return 'AuthState.googleLoggedIn(user: $user)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GoogleLoggedInImpl &&
+            (identical(other.user, user) || other.user == user));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, user);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GoogleLoggedInImplCopyWith<_$GoogleLoggedInImpl> get copyWith =>
+      __$$GoogleLoggedInImplCopyWithImpl<_$GoogleLoggedInImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+  }) {
+    return googleLoggedIn(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+  }) {
+    return googleLoggedIn?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (googleLoggedIn != null) {
+      return googleLoggedIn(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+  }) {
+    return googleLoggedIn(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+  }) {
+    return googleLoggedIn?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    required TResult orElse(),
+  }) {
+    if (googleLoggedIn != null) {
+      return googleLoggedIn(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GoogleLoggedIn implements AuthState {
+  const factory _GoogleLoggedIn({final UserProfileEntity? user}) =
+      _$GoogleLoggedInImpl;
+
+  UserProfileEntity? get user;
+  @JsonKey(ignore: true)
+  _$$GoogleLoggedInImplCopyWith<_$GoogleLoggedInImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -4961,6 +6285,9 @@ class _$ConfirmEmailLoadingImpl implements _ConfirmEmailLoading {
     required TResult Function() logginLoading,
     required TResult Function(Failure? failure) logginFailure,
     required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
     required TResult Function() confirmEmailLoading,
     required TResult Function(Failure? failure) confirmEmailFailure,
     required TResult Function(List<SportEntity> sports) emailConfirmed,
@@ -4996,6 +6323,9 @@ class _$ConfirmEmailLoadingImpl implements _ConfirmEmailLoading {
     TResult? Function()? logginLoading,
     TResult? Function(Failure? failure)? logginFailure,
     TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
     TResult? Function()? confirmEmailLoading,
     TResult? Function(Failure? failure)? confirmEmailFailure,
     TResult? Function(List<SportEntity> sports)? emailConfirmed,
@@ -5029,6 +6359,9 @@ class _$ConfirmEmailLoadingImpl implements _ConfirmEmailLoading {
     TResult Function()? logginLoading,
     TResult Function(Failure? failure)? logginFailure,
     TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
     TResult Function()? confirmEmailLoading,
     TResult Function(Failure? failure)? confirmEmailFailure,
     TResult Function(List<SportEntity> sports)? emailConfirmed,
@@ -5066,6 +6399,9 @@ class _$ConfirmEmailLoadingImpl implements _ConfirmEmailLoading {
     required TResult Function(_LoginLoading value) logginLoading,
     required TResult Function(_LoginFailure value) logginFailure,
     required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
     required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
     required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
     required TResult Function(_EmailConfirmed value) emailConfirmed,
@@ -5106,6 +6442,9 @@ class _$ConfirmEmailLoadingImpl implements _ConfirmEmailLoading {
     TResult? Function(_LoginLoading value)? logginLoading,
     TResult? Function(_LoginFailure value)? logginFailure,
     TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult? Function(_EmailConfirmed value)? emailConfirmed,
@@ -5143,6 +6482,9 @@ class _$ConfirmEmailLoadingImpl implements _ConfirmEmailLoading {
     TResult Function(_LoginLoading value)? logginLoading,
     TResult Function(_LoginFailure value)? logginFailure,
     TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult Function(_EmailConfirmed value)? emailConfirmed,
@@ -5252,6 +6594,9 @@ class _$ConfirmEmailFailureImpl implements _ConfirmEmailFailure {
     required TResult Function() logginLoading,
     required TResult Function(Failure? failure) logginFailure,
     required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
     required TResult Function() confirmEmailLoading,
     required TResult Function(Failure? failure) confirmEmailFailure,
     required TResult Function(List<SportEntity> sports) emailConfirmed,
@@ -5287,6 +6632,9 @@ class _$ConfirmEmailFailureImpl implements _ConfirmEmailFailure {
     TResult? Function()? logginLoading,
     TResult? Function(Failure? failure)? logginFailure,
     TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
     TResult? Function()? confirmEmailLoading,
     TResult? Function(Failure? failure)? confirmEmailFailure,
     TResult? Function(List<SportEntity> sports)? emailConfirmed,
@@ -5320,6 +6668,9 @@ class _$ConfirmEmailFailureImpl implements _ConfirmEmailFailure {
     TResult Function()? logginLoading,
     TResult Function(Failure? failure)? logginFailure,
     TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
     TResult Function()? confirmEmailLoading,
     TResult Function(Failure? failure)? confirmEmailFailure,
     TResult Function(List<SportEntity> sports)? emailConfirmed,
@@ -5357,6 +6708,9 @@ class _$ConfirmEmailFailureImpl implements _ConfirmEmailFailure {
     required TResult Function(_LoginLoading value) logginLoading,
     required TResult Function(_LoginFailure value) logginFailure,
     required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
     required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
     required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
     required TResult Function(_EmailConfirmed value) emailConfirmed,
@@ -5397,6 +6751,9 @@ class _$ConfirmEmailFailureImpl implements _ConfirmEmailFailure {
     TResult? Function(_LoginLoading value)? logginLoading,
     TResult? Function(_LoginFailure value)? logginFailure,
     TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult? Function(_EmailConfirmed value)? emailConfirmed,
@@ -5434,6 +6791,9 @@ class _$ConfirmEmailFailureImpl implements _ConfirmEmailFailure {
     TResult Function(_LoginLoading value)? logginLoading,
     TResult Function(_LoginFailure value)? logginFailure,
     TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult Function(_EmailConfirmed value)? emailConfirmed,
@@ -5556,6 +6916,9 @@ class _$EmailConfirmedImpl implements _EmailConfirmed {
     required TResult Function() logginLoading,
     required TResult Function(Failure? failure) logginFailure,
     required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
     required TResult Function() confirmEmailLoading,
     required TResult Function(Failure? failure) confirmEmailFailure,
     required TResult Function(List<SportEntity> sports) emailConfirmed,
@@ -5591,6 +6954,9 @@ class _$EmailConfirmedImpl implements _EmailConfirmed {
     TResult? Function()? logginLoading,
     TResult? Function(Failure? failure)? logginFailure,
     TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
     TResult? Function()? confirmEmailLoading,
     TResult? Function(Failure? failure)? confirmEmailFailure,
     TResult? Function(List<SportEntity> sports)? emailConfirmed,
@@ -5624,6 +6990,9 @@ class _$EmailConfirmedImpl implements _EmailConfirmed {
     TResult Function()? logginLoading,
     TResult Function(Failure? failure)? logginFailure,
     TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
     TResult Function()? confirmEmailLoading,
     TResult Function(Failure? failure)? confirmEmailFailure,
     TResult Function(List<SportEntity> sports)? emailConfirmed,
@@ -5661,6 +7030,9 @@ class _$EmailConfirmedImpl implements _EmailConfirmed {
     required TResult Function(_LoginLoading value) logginLoading,
     required TResult Function(_LoginFailure value) logginFailure,
     required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
     required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
     required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
     required TResult Function(_EmailConfirmed value) emailConfirmed,
@@ -5701,6 +7073,9 @@ class _$EmailConfirmedImpl implements _EmailConfirmed {
     TResult? Function(_LoginLoading value)? logginLoading,
     TResult? Function(_LoginFailure value)? logginFailure,
     TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult? Function(_EmailConfirmed value)? emailConfirmed,
@@ -5738,6 +7113,9 @@ class _$EmailConfirmedImpl implements _EmailConfirmed {
     TResult Function(_LoginLoading value)? logginLoading,
     TResult Function(_LoginFailure value)? logginFailure,
     TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult Function(_EmailConfirmed value)? emailConfirmed,
@@ -5828,6 +7206,9 @@ class _$ResendConfirmEmailLoadingImpl implements _ResendConfirmEmailLoading {
     required TResult Function() logginLoading,
     required TResult Function(Failure? failure) logginFailure,
     required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
     required TResult Function() confirmEmailLoading,
     required TResult Function(Failure? failure) confirmEmailFailure,
     required TResult Function(List<SportEntity> sports) emailConfirmed,
@@ -5863,6 +7244,9 @@ class _$ResendConfirmEmailLoadingImpl implements _ResendConfirmEmailLoading {
     TResult? Function()? logginLoading,
     TResult? Function(Failure? failure)? logginFailure,
     TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
     TResult? Function()? confirmEmailLoading,
     TResult? Function(Failure? failure)? confirmEmailFailure,
     TResult? Function(List<SportEntity> sports)? emailConfirmed,
@@ -5896,6 +7280,9 @@ class _$ResendConfirmEmailLoadingImpl implements _ResendConfirmEmailLoading {
     TResult Function()? logginLoading,
     TResult Function(Failure? failure)? logginFailure,
     TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
     TResult Function()? confirmEmailLoading,
     TResult Function(Failure? failure)? confirmEmailFailure,
     TResult Function(List<SportEntity> sports)? emailConfirmed,
@@ -5933,6 +7320,9 @@ class _$ResendConfirmEmailLoadingImpl implements _ResendConfirmEmailLoading {
     required TResult Function(_LoginLoading value) logginLoading,
     required TResult Function(_LoginFailure value) logginFailure,
     required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
     required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
     required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
     required TResult Function(_EmailConfirmed value) emailConfirmed,
@@ -5973,6 +7363,9 @@ class _$ResendConfirmEmailLoadingImpl implements _ResendConfirmEmailLoading {
     TResult? Function(_LoginLoading value)? logginLoading,
     TResult? Function(_LoginFailure value)? logginFailure,
     TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult? Function(_EmailConfirmed value)? emailConfirmed,
@@ -6010,6 +7403,9 @@ class _$ResendConfirmEmailLoadingImpl implements _ResendConfirmEmailLoading {
     TResult Function(_LoginLoading value)? logginLoading,
     TResult Function(_LoginFailure value)? logginFailure,
     TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult Function(_EmailConfirmed value)? emailConfirmed,
@@ -6121,6 +7517,9 @@ class _$ResendConfirmEmailFailureImpl implements _ResendConfirmEmailFailure {
     required TResult Function() logginLoading,
     required TResult Function(Failure? failure) logginFailure,
     required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
     required TResult Function() confirmEmailLoading,
     required TResult Function(Failure? failure) confirmEmailFailure,
     required TResult Function(List<SportEntity> sports) emailConfirmed,
@@ -6156,6 +7555,9 @@ class _$ResendConfirmEmailFailureImpl implements _ResendConfirmEmailFailure {
     TResult? Function()? logginLoading,
     TResult? Function(Failure? failure)? logginFailure,
     TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
     TResult? Function()? confirmEmailLoading,
     TResult? Function(Failure? failure)? confirmEmailFailure,
     TResult? Function(List<SportEntity> sports)? emailConfirmed,
@@ -6189,6 +7591,9 @@ class _$ResendConfirmEmailFailureImpl implements _ResendConfirmEmailFailure {
     TResult Function()? logginLoading,
     TResult Function(Failure? failure)? logginFailure,
     TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
     TResult Function()? confirmEmailLoading,
     TResult Function(Failure? failure)? confirmEmailFailure,
     TResult Function(List<SportEntity> sports)? emailConfirmed,
@@ -6226,6 +7631,9 @@ class _$ResendConfirmEmailFailureImpl implements _ResendConfirmEmailFailure {
     required TResult Function(_LoginLoading value) logginLoading,
     required TResult Function(_LoginFailure value) logginFailure,
     required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
     required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
     required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
     required TResult Function(_EmailConfirmed value) emailConfirmed,
@@ -6266,6 +7674,9 @@ class _$ResendConfirmEmailFailureImpl implements _ResendConfirmEmailFailure {
     TResult? Function(_LoginLoading value)? logginLoading,
     TResult? Function(_LoginFailure value)? logginFailure,
     TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult? Function(_EmailConfirmed value)? emailConfirmed,
@@ -6303,6 +7714,9 @@ class _$ResendConfirmEmailFailureImpl implements _ResendConfirmEmailFailure {
     TResult Function(_LoginLoading value)? logginLoading,
     TResult Function(_LoginFailure value)? logginFailure,
     TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult Function(_EmailConfirmed value)? emailConfirmed,
@@ -6392,6 +7806,9 @@ class _$EmailConfirmationSentImpl implements _EmailConfirmationSent {
     required TResult Function() logginLoading,
     required TResult Function(Failure? failure) logginFailure,
     required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
     required TResult Function() confirmEmailLoading,
     required TResult Function(Failure? failure) confirmEmailFailure,
     required TResult Function(List<SportEntity> sports) emailConfirmed,
@@ -6427,6 +7844,9 @@ class _$EmailConfirmationSentImpl implements _EmailConfirmationSent {
     TResult? Function()? logginLoading,
     TResult? Function(Failure? failure)? logginFailure,
     TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
     TResult? Function()? confirmEmailLoading,
     TResult? Function(Failure? failure)? confirmEmailFailure,
     TResult? Function(List<SportEntity> sports)? emailConfirmed,
@@ -6460,6 +7880,9 @@ class _$EmailConfirmationSentImpl implements _EmailConfirmationSent {
     TResult Function()? logginLoading,
     TResult Function(Failure? failure)? logginFailure,
     TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
     TResult Function()? confirmEmailLoading,
     TResult Function(Failure? failure)? confirmEmailFailure,
     TResult Function(List<SportEntity> sports)? emailConfirmed,
@@ -6497,6 +7920,9 @@ class _$EmailConfirmationSentImpl implements _EmailConfirmationSent {
     required TResult Function(_LoginLoading value) logginLoading,
     required TResult Function(_LoginFailure value) logginFailure,
     required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
     required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
     required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
     required TResult Function(_EmailConfirmed value) emailConfirmed,
@@ -6537,6 +7963,9 @@ class _$EmailConfirmationSentImpl implements _EmailConfirmationSent {
     TResult? Function(_LoginLoading value)? logginLoading,
     TResult? Function(_LoginFailure value)? logginFailure,
     TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult? Function(_EmailConfirmed value)? emailConfirmed,
@@ -6574,6 +8003,9 @@ class _$EmailConfirmationSentImpl implements _EmailConfirmationSent {
     TResult Function(_LoginLoading value)? logginLoading,
     TResult Function(_LoginFailure value)? logginFailure,
     TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult Function(_EmailConfirmed value)? emailConfirmed,
@@ -6659,6 +8091,9 @@ class _$CompleteRegistrationLoadingImpl
     required TResult Function() logginLoading,
     required TResult Function(Failure? failure) logginFailure,
     required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
     required TResult Function() confirmEmailLoading,
     required TResult Function(Failure? failure) confirmEmailFailure,
     required TResult Function(List<SportEntity> sports) emailConfirmed,
@@ -6694,6 +8129,9 @@ class _$CompleteRegistrationLoadingImpl
     TResult? Function()? logginLoading,
     TResult? Function(Failure? failure)? logginFailure,
     TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
     TResult? Function()? confirmEmailLoading,
     TResult? Function(Failure? failure)? confirmEmailFailure,
     TResult? Function(List<SportEntity> sports)? emailConfirmed,
@@ -6727,6 +8165,9 @@ class _$CompleteRegistrationLoadingImpl
     TResult Function()? logginLoading,
     TResult Function(Failure? failure)? logginFailure,
     TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
     TResult Function()? confirmEmailLoading,
     TResult Function(Failure? failure)? confirmEmailFailure,
     TResult Function(List<SportEntity> sports)? emailConfirmed,
@@ -6764,6 +8205,9 @@ class _$CompleteRegistrationLoadingImpl
     required TResult Function(_LoginLoading value) logginLoading,
     required TResult Function(_LoginFailure value) logginFailure,
     required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
     required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
     required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
     required TResult Function(_EmailConfirmed value) emailConfirmed,
@@ -6804,6 +8248,9 @@ class _$CompleteRegistrationLoadingImpl
     TResult? Function(_LoginLoading value)? logginLoading,
     TResult? Function(_LoginFailure value)? logginFailure,
     TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult? Function(_EmailConfirmed value)? emailConfirmed,
@@ -6841,6 +8288,9 @@ class _$CompleteRegistrationLoadingImpl
     TResult Function(_LoginLoading value)? logginLoading,
     TResult Function(_LoginFailure value)? logginFailure,
     TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult Function(_EmailConfirmed value)? emailConfirmed,
@@ -6954,6 +8404,9 @@ class _$CompleteRegistrationFailureImpl
     required TResult Function() logginLoading,
     required TResult Function(Failure? failure) logginFailure,
     required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
     required TResult Function() confirmEmailLoading,
     required TResult Function(Failure? failure) confirmEmailFailure,
     required TResult Function(List<SportEntity> sports) emailConfirmed,
@@ -6989,6 +8442,9 @@ class _$CompleteRegistrationFailureImpl
     TResult? Function()? logginLoading,
     TResult? Function(Failure? failure)? logginFailure,
     TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
     TResult? Function()? confirmEmailLoading,
     TResult? Function(Failure? failure)? confirmEmailFailure,
     TResult? Function(List<SportEntity> sports)? emailConfirmed,
@@ -7022,6 +8478,9 @@ class _$CompleteRegistrationFailureImpl
     TResult Function()? logginLoading,
     TResult Function(Failure? failure)? logginFailure,
     TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
     TResult Function()? confirmEmailLoading,
     TResult Function(Failure? failure)? confirmEmailFailure,
     TResult Function(List<SportEntity> sports)? emailConfirmed,
@@ -7059,6 +8518,9 @@ class _$CompleteRegistrationFailureImpl
     required TResult Function(_LoginLoading value) logginLoading,
     required TResult Function(_LoginFailure value) logginFailure,
     required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
     required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
     required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
     required TResult Function(_EmailConfirmed value) emailConfirmed,
@@ -7099,6 +8561,9 @@ class _$CompleteRegistrationFailureImpl
     TResult? Function(_LoginLoading value)? logginLoading,
     TResult? Function(_LoginFailure value)? logginFailure,
     TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult? Function(_EmailConfirmed value)? emailConfirmed,
@@ -7136,6 +8601,9 @@ class _$CompleteRegistrationFailureImpl
     TResult Function(_LoginLoading value)? logginLoading,
     TResult Function(_LoginFailure value)? logginFailure,
     TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult Function(_EmailConfirmed value)? emailConfirmed,
@@ -7253,6 +8721,9 @@ class _$RegistrationCompletedImpl implements _RegistrationCompleted {
     required TResult Function() logginLoading,
     required TResult Function(Failure? failure) logginFailure,
     required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
     required TResult Function() confirmEmailLoading,
     required TResult Function(Failure? failure) confirmEmailFailure,
     required TResult Function(List<SportEntity> sports) emailConfirmed,
@@ -7288,6 +8759,9 @@ class _$RegistrationCompletedImpl implements _RegistrationCompleted {
     TResult? Function()? logginLoading,
     TResult? Function(Failure? failure)? logginFailure,
     TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
     TResult? Function()? confirmEmailLoading,
     TResult? Function(Failure? failure)? confirmEmailFailure,
     TResult? Function(List<SportEntity> sports)? emailConfirmed,
@@ -7321,6 +8795,9 @@ class _$RegistrationCompletedImpl implements _RegistrationCompleted {
     TResult Function()? logginLoading,
     TResult Function(Failure? failure)? logginFailure,
     TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
     TResult Function()? confirmEmailLoading,
     TResult Function(Failure? failure)? confirmEmailFailure,
     TResult Function(List<SportEntity> sports)? emailConfirmed,
@@ -7358,6 +8835,9 @@ class _$RegistrationCompletedImpl implements _RegistrationCompleted {
     required TResult Function(_LoginLoading value) logginLoading,
     required TResult Function(_LoginFailure value) logginFailure,
     required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
     required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
     required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
     required TResult Function(_EmailConfirmed value) emailConfirmed,
@@ -7398,6 +8878,9 @@ class _$RegistrationCompletedImpl implements _RegistrationCompleted {
     TResult? Function(_LoginLoading value)? logginLoading,
     TResult? Function(_LoginFailure value)? logginFailure,
     TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult? Function(_EmailConfirmed value)? emailConfirmed,
@@ -7435,6 +8918,9 @@ class _$RegistrationCompletedImpl implements _RegistrationCompleted {
     TResult Function(_LoginLoading value)? logginLoading,
     TResult Function(_LoginFailure value)? logginFailure,
     TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult Function(_EmailConfirmed value)? emailConfirmed,
@@ -7522,6 +9008,9 @@ class _$CheckUserLoadingImpl implements _CheckUserLoading {
     required TResult Function() logginLoading,
     required TResult Function(Failure? failure) logginFailure,
     required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
     required TResult Function() confirmEmailLoading,
     required TResult Function(Failure? failure) confirmEmailFailure,
     required TResult Function(List<SportEntity> sports) emailConfirmed,
@@ -7557,6 +9046,9 @@ class _$CheckUserLoadingImpl implements _CheckUserLoading {
     TResult? Function()? logginLoading,
     TResult? Function(Failure? failure)? logginFailure,
     TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
     TResult? Function()? confirmEmailLoading,
     TResult? Function(Failure? failure)? confirmEmailFailure,
     TResult? Function(List<SportEntity> sports)? emailConfirmed,
@@ -7590,6 +9082,9 @@ class _$CheckUserLoadingImpl implements _CheckUserLoading {
     TResult Function()? logginLoading,
     TResult Function(Failure? failure)? logginFailure,
     TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
     TResult Function()? confirmEmailLoading,
     TResult Function(Failure? failure)? confirmEmailFailure,
     TResult Function(List<SportEntity> sports)? emailConfirmed,
@@ -7627,6 +9122,9 @@ class _$CheckUserLoadingImpl implements _CheckUserLoading {
     required TResult Function(_LoginLoading value) logginLoading,
     required TResult Function(_LoginFailure value) logginFailure,
     required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
     required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
     required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
     required TResult Function(_EmailConfirmed value) emailConfirmed,
@@ -7667,6 +9165,9 @@ class _$CheckUserLoadingImpl implements _CheckUserLoading {
     TResult? Function(_LoginLoading value)? logginLoading,
     TResult? Function(_LoginFailure value)? logginFailure,
     TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult? Function(_EmailConfirmed value)? emailConfirmed,
@@ -7704,6 +9205,9 @@ class _$CheckUserLoadingImpl implements _CheckUserLoading {
     TResult Function(_LoginLoading value)? logginLoading,
     TResult Function(_LoginFailure value)? logginFailure,
     TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult Function(_EmailConfirmed value)? emailConfirmed,
@@ -7814,6 +9318,9 @@ class _$CheckUserLoggedImpl implements _CheckUserLogged {
     required TResult Function() logginLoading,
     required TResult Function(Failure? failure) logginFailure,
     required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
     required TResult Function() confirmEmailLoading,
     required TResult Function(Failure? failure) confirmEmailFailure,
     required TResult Function(List<SportEntity> sports) emailConfirmed,
@@ -7849,6 +9356,9 @@ class _$CheckUserLoggedImpl implements _CheckUserLogged {
     TResult? Function()? logginLoading,
     TResult? Function(Failure? failure)? logginFailure,
     TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
     TResult? Function()? confirmEmailLoading,
     TResult? Function(Failure? failure)? confirmEmailFailure,
     TResult? Function(List<SportEntity> sports)? emailConfirmed,
@@ -7882,6 +9392,9 @@ class _$CheckUserLoggedImpl implements _CheckUserLogged {
     TResult Function()? logginLoading,
     TResult Function(Failure? failure)? logginFailure,
     TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
     TResult Function()? confirmEmailLoading,
     TResult Function(Failure? failure)? confirmEmailFailure,
     TResult Function(List<SportEntity> sports)? emailConfirmed,
@@ -7919,6 +9432,9 @@ class _$CheckUserLoggedImpl implements _CheckUserLogged {
     required TResult Function(_LoginLoading value) logginLoading,
     required TResult Function(_LoginFailure value) logginFailure,
     required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
     required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
     required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
     required TResult Function(_EmailConfirmed value) emailConfirmed,
@@ -7959,6 +9475,9 @@ class _$CheckUserLoggedImpl implements _CheckUserLogged {
     TResult? Function(_LoginLoading value)? logginLoading,
     TResult? Function(_LoginFailure value)? logginFailure,
     TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult? Function(_EmailConfirmed value)? emailConfirmed,
@@ -7996,6 +9515,9 @@ class _$CheckUserLoggedImpl implements _CheckUserLogged {
     TResult Function(_LoginLoading value)? logginLoading,
     TResult Function(_LoginFailure value)? logginFailure,
     TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult Function(_EmailConfirmed value)? emailConfirmed,
@@ -8111,6 +9633,9 @@ class _$CeckUserFailureImpl implements _CeckUserFailure {
     required TResult Function() logginLoading,
     required TResult Function(Failure? failure) logginFailure,
     required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
     required TResult Function() confirmEmailLoading,
     required TResult Function(Failure? failure) confirmEmailFailure,
     required TResult Function(List<SportEntity> sports) emailConfirmed,
@@ -8146,6 +9671,9 @@ class _$CeckUserFailureImpl implements _CeckUserFailure {
     TResult? Function()? logginLoading,
     TResult? Function(Failure? failure)? logginFailure,
     TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
     TResult? Function()? confirmEmailLoading,
     TResult? Function(Failure? failure)? confirmEmailFailure,
     TResult? Function(List<SportEntity> sports)? emailConfirmed,
@@ -8179,6 +9707,9 @@ class _$CeckUserFailureImpl implements _CeckUserFailure {
     TResult Function()? logginLoading,
     TResult Function(Failure? failure)? logginFailure,
     TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
     TResult Function()? confirmEmailLoading,
     TResult Function(Failure? failure)? confirmEmailFailure,
     TResult Function(List<SportEntity> sports)? emailConfirmed,
@@ -8216,6 +9747,9 @@ class _$CeckUserFailureImpl implements _CeckUserFailure {
     required TResult Function(_LoginLoading value) logginLoading,
     required TResult Function(_LoginFailure value) logginFailure,
     required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
     required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
     required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
     required TResult Function(_EmailConfirmed value) emailConfirmed,
@@ -8256,6 +9790,9 @@ class _$CeckUserFailureImpl implements _CeckUserFailure {
     TResult? Function(_LoginLoading value)? logginLoading,
     TResult? Function(_LoginFailure value)? logginFailure,
     TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult? Function(_EmailConfirmed value)? emailConfirmed,
@@ -8293,6 +9830,9 @@ class _$CeckUserFailureImpl implements _CeckUserFailure {
     TResult Function(_LoginLoading value)? logginLoading,
     TResult Function(_LoginFailure value)? logginFailure,
     TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult Function(_EmailConfirmed value)? emailConfirmed,
@@ -8383,6 +9923,9 @@ class _$UserProfileLocalLoadingImpl implements _UserProfileLocalLoading {
     required TResult Function() logginLoading,
     required TResult Function(Failure? failure) logginFailure,
     required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
     required TResult Function() confirmEmailLoading,
     required TResult Function(Failure? failure) confirmEmailFailure,
     required TResult Function(List<SportEntity> sports) emailConfirmed,
@@ -8418,6 +9961,9 @@ class _$UserProfileLocalLoadingImpl implements _UserProfileLocalLoading {
     TResult? Function()? logginLoading,
     TResult? Function(Failure? failure)? logginFailure,
     TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
     TResult? Function()? confirmEmailLoading,
     TResult? Function(Failure? failure)? confirmEmailFailure,
     TResult? Function(List<SportEntity> sports)? emailConfirmed,
@@ -8451,6 +9997,9 @@ class _$UserProfileLocalLoadingImpl implements _UserProfileLocalLoading {
     TResult Function()? logginLoading,
     TResult Function(Failure? failure)? logginFailure,
     TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
     TResult Function()? confirmEmailLoading,
     TResult Function(Failure? failure)? confirmEmailFailure,
     TResult Function(List<SportEntity> sports)? emailConfirmed,
@@ -8488,6 +10037,9 @@ class _$UserProfileLocalLoadingImpl implements _UserProfileLocalLoading {
     required TResult Function(_LoginLoading value) logginLoading,
     required TResult Function(_LoginFailure value) logginFailure,
     required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
     required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
     required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
     required TResult Function(_EmailConfirmed value) emailConfirmed,
@@ -8528,6 +10080,9 @@ class _$UserProfileLocalLoadingImpl implements _UserProfileLocalLoading {
     TResult? Function(_LoginLoading value)? logginLoading,
     TResult? Function(_LoginFailure value)? logginFailure,
     TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult? Function(_EmailConfirmed value)? emailConfirmed,
@@ -8565,6 +10120,9 @@ class _$UserProfileLocalLoadingImpl implements _UserProfileLocalLoading {
     TResult Function(_LoginLoading value)? logginLoading,
     TResult Function(_LoginFailure value)? logginFailure,
     TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult Function(_EmailConfirmed value)? emailConfirmed,
@@ -8646,6 +10204,9 @@ class _$UserProfileLoadingImpl implements _UserProfileLoading {
     required TResult Function() logginLoading,
     required TResult Function(Failure? failure) logginFailure,
     required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
     required TResult Function() confirmEmailLoading,
     required TResult Function(Failure? failure) confirmEmailFailure,
     required TResult Function(List<SportEntity> sports) emailConfirmed,
@@ -8681,6 +10242,9 @@ class _$UserProfileLoadingImpl implements _UserProfileLoading {
     TResult? Function()? logginLoading,
     TResult? Function(Failure? failure)? logginFailure,
     TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
     TResult? Function()? confirmEmailLoading,
     TResult? Function(Failure? failure)? confirmEmailFailure,
     TResult? Function(List<SportEntity> sports)? emailConfirmed,
@@ -8714,6 +10278,9 @@ class _$UserProfileLoadingImpl implements _UserProfileLoading {
     TResult Function()? logginLoading,
     TResult Function(Failure? failure)? logginFailure,
     TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
     TResult Function()? confirmEmailLoading,
     TResult Function(Failure? failure)? confirmEmailFailure,
     TResult Function(List<SportEntity> sports)? emailConfirmed,
@@ -8751,6 +10318,9 @@ class _$UserProfileLoadingImpl implements _UserProfileLoading {
     required TResult Function(_LoginLoading value) logginLoading,
     required TResult Function(_LoginFailure value) logginFailure,
     required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
     required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
     required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
     required TResult Function(_EmailConfirmed value) emailConfirmed,
@@ -8791,6 +10361,9 @@ class _$UserProfileLoadingImpl implements _UserProfileLoading {
     TResult? Function(_LoginLoading value)? logginLoading,
     TResult? Function(_LoginFailure value)? logginFailure,
     TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult? Function(_EmailConfirmed value)? emailConfirmed,
@@ -8828,6 +10401,9 @@ class _$UserProfileLoadingImpl implements _UserProfileLoading {
     TResult Function(_LoginLoading value)? logginLoading,
     TResult Function(_LoginFailure value)? logginFailure,
     TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult Function(_EmailConfirmed value)? emailConfirmed,
@@ -8937,6 +10513,9 @@ class _$UserProfileFailureImpl implements _UserProfileFailure {
     required TResult Function() logginLoading,
     required TResult Function(Failure? failure) logginFailure,
     required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
     required TResult Function() confirmEmailLoading,
     required TResult Function(Failure? failure) confirmEmailFailure,
     required TResult Function(List<SportEntity> sports) emailConfirmed,
@@ -8972,6 +10551,9 @@ class _$UserProfileFailureImpl implements _UserProfileFailure {
     TResult? Function()? logginLoading,
     TResult? Function(Failure? failure)? logginFailure,
     TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
     TResult? Function()? confirmEmailLoading,
     TResult? Function(Failure? failure)? confirmEmailFailure,
     TResult? Function(List<SportEntity> sports)? emailConfirmed,
@@ -9005,6 +10587,9 @@ class _$UserProfileFailureImpl implements _UserProfileFailure {
     TResult Function()? logginLoading,
     TResult Function(Failure? failure)? logginFailure,
     TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
     TResult Function()? confirmEmailLoading,
     TResult Function(Failure? failure)? confirmEmailFailure,
     TResult Function(List<SportEntity> sports)? emailConfirmed,
@@ -9042,6 +10627,9 @@ class _$UserProfileFailureImpl implements _UserProfileFailure {
     required TResult Function(_LoginLoading value) logginLoading,
     required TResult Function(_LoginFailure value) logginFailure,
     required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
     required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
     required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
     required TResult Function(_EmailConfirmed value) emailConfirmed,
@@ -9082,6 +10670,9 @@ class _$UserProfileFailureImpl implements _UserProfileFailure {
     TResult? Function(_LoginLoading value)? logginLoading,
     TResult? Function(_LoginFailure value)? logginFailure,
     TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult? Function(_EmailConfirmed value)? emailConfirmed,
@@ -9119,6 +10710,9 @@ class _$UserProfileFailureImpl implements _UserProfileFailure {
     TResult Function(_LoginLoading value)? logginLoading,
     TResult Function(_LoginFailure value)? logginFailure,
     TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult Function(_EmailConfirmed value)? emailConfirmed,
@@ -9235,6 +10829,9 @@ class _$UserProfileFetchedImpl implements _UserProfileFetched {
     required TResult Function() logginLoading,
     required TResult Function(Failure? failure) logginFailure,
     required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
     required TResult Function() confirmEmailLoading,
     required TResult Function(Failure? failure) confirmEmailFailure,
     required TResult Function(List<SportEntity> sports) emailConfirmed,
@@ -9270,6 +10867,9 @@ class _$UserProfileFetchedImpl implements _UserProfileFetched {
     TResult? Function()? logginLoading,
     TResult? Function(Failure? failure)? logginFailure,
     TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
     TResult? Function()? confirmEmailLoading,
     TResult? Function(Failure? failure)? confirmEmailFailure,
     TResult? Function(List<SportEntity> sports)? emailConfirmed,
@@ -9303,6 +10903,9 @@ class _$UserProfileFetchedImpl implements _UserProfileFetched {
     TResult Function()? logginLoading,
     TResult Function(Failure? failure)? logginFailure,
     TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
     TResult Function()? confirmEmailLoading,
     TResult Function(Failure? failure)? confirmEmailFailure,
     TResult Function(List<SportEntity> sports)? emailConfirmed,
@@ -9340,6 +10943,9 @@ class _$UserProfileFetchedImpl implements _UserProfileFetched {
     required TResult Function(_LoginLoading value) logginLoading,
     required TResult Function(_LoginFailure value) logginFailure,
     required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
     required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
     required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
     required TResult Function(_EmailConfirmed value) emailConfirmed,
@@ -9380,6 +10986,9 @@ class _$UserProfileFetchedImpl implements _UserProfileFetched {
     TResult? Function(_LoginLoading value)? logginLoading,
     TResult? Function(_LoginFailure value)? logginFailure,
     TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult? Function(_EmailConfirmed value)? emailConfirmed,
@@ -9417,6 +11026,9 @@ class _$UserProfileFetchedImpl implements _UserProfileFetched {
     TResult Function(_LoginLoading value)? logginLoading,
     TResult Function(_LoginFailure value)? logginFailure,
     TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult Function(_EmailConfirmed value)? emailConfirmed,
@@ -9504,6 +11116,9 @@ class _$GetSportsLoadingImpl implements _GetSportsLoading {
     required TResult Function() logginLoading,
     required TResult Function(Failure? failure) logginFailure,
     required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
     required TResult Function() confirmEmailLoading,
     required TResult Function(Failure? failure) confirmEmailFailure,
     required TResult Function(List<SportEntity> sports) emailConfirmed,
@@ -9539,6 +11154,9 @@ class _$GetSportsLoadingImpl implements _GetSportsLoading {
     TResult? Function()? logginLoading,
     TResult? Function(Failure? failure)? logginFailure,
     TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
     TResult? Function()? confirmEmailLoading,
     TResult? Function(Failure? failure)? confirmEmailFailure,
     TResult? Function(List<SportEntity> sports)? emailConfirmed,
@@ -9572,6 +11190,9 @@ class _$GetSportsLoadingImpl implements _GetSportsLoading {
     TResult Function()? logginLoading,
     TResult Function(Failure? failure)? logginFailure,
     TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
     TResult Function()? confirmEmailLoading,
     TResult Function(Failure? failure)? confirmEmailFailure,
     TResult Function(List<SportEntity> sports)? emailConfirmed,
@@ -9609,6 +11230,9 @@ class _$GetSportsLoadingImpl implements _GetSportsLoading {
     required TResult Function(_LoginLoading value) logginLoading,
     required TResult Function(_LoginFailure value) logginFailure,
     required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
     required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
     required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
     required TResult Function(_EmailConfirmed value) emailConfirmed,
@@ -9649,6 +11273,9 @@ class _$GetSportsLoadingImpl implements _GetSportsLoading {
     TResult? Function(_LoginLoading value)? logginLoading,
     TResult? Function(_LoginFailure value)? logginFailure,
     TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult? Function(_EmailConfirmed value)? emailConfirmed,
@@ -9686,6 +11313,9 @@ class _$GetSportsLoadingImpl implements _GetSportsLoading {
     TResult Function(_LoginLoading value)? logginLoading,
     TResult Function(_LoginFailure value)? logginFailure,
     TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult Function(_EmailConfirmed value)? emailConfirmed,
@@ -9795,6 +11425,9 @@ class _$GetSportsFailureImpl implements _GetSportsFailure {
     required TResult Function() logginLoading,
     required TResult Function(Failure? failure) logginFailure,
     required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
     required TResult Function() confirmEmailLoading,
     required TResult Function(Failure? failure) confirmEmailFailure,
     required TResult Function(List<SportEntity> sports) emailConfirmed,
@@ -9830,6 +11463,9 @@ class _$GetSportsFailureImpl implements _GetSportsFailure {
     TResult? Function()? logginLoading,
     TResult? Function(Failure? failure)? logginFailure,
     TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
     TResult? Function()? confirmEmailLoading,
     TResult? Function(Failure? failure)? confirmEmailFailure,
     TResult? Function(List<SportEntity> sports)? emailConfirmed,
@@ -9863,6 +11499,9 @@ class _$GetSportsFailureImpl implements _GetSportsFailure {
     TResult Function()? logginLoading,
     TResult Function(Failure? failure)? logginFailure,
     TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
     TResult Function()? confirmEmailLoading,
     TResult Function(Failure? failure)? confirmEmailFailure,
     TResult Function(List<SportEntity> sports)? emailConfirmed,
@@ -9900,6 +11539,9 @@ class _$GetSportsFailureImpl implements _GetSportsFailure {
     required TResult Function(_LoginLoading value) logginLoading,
     required TResult Function(_LoginFailure value) logginFailure,
     required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
     required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
     required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
     required TResult Function(_EmailConfirmed value) emailConfirmed,
@@ -9940,6 +11582,9 @@ class _$GetSportsFailureImpl implements _GetSportsFailure {
     TResult? Function(_LoginLoading value)? logginLoading,
     TResult? Function(_LoginFailure value)? logginFailure,
     TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult? Function(_EmailConfirmed value)? emailConfirmed,
@@ -9977,6 +11622,9 @@ class _$GetSportsFailureImpl implements _GetSportsFailure {
     TResult Function(_LoginLoading value)? logginLoading,
     TResult Function(_LoginFailure value)? logginFailure,
     TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult Function(_EmailConfirmed value)? emailConfirmed,
@@ -10098,6 +11746,9 @@ class _$SportsFetchedImpl implements _SportsFetched {
     required TResult Function() logginLoading,
     required TResult Function(Failure? failure) logginFailure,
     required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
     required TResult Function() confirmEmailLoading,
     required TResult Function(Failure? failure) confirmEmailFailure,
     required TResult Function(List<SportEntity> sports) emailConfirmed,
@@ -10133,6 +11784,9 @@ class _$SportsFetchedImpl implements _SportsFetched {
     TResult? Function()? logginLoading,
     TResult? Function(Failure? failure)? logginFailure,
     TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
     TResult? Function()? confirmEmailLoading,
     TResult? Function(Failure? failure)? confirmEmailFailure,
     TResult? Function(List<SportEntity> sports)? emailConfirmed,
@@ -10166,6 +11820,9 @@ class _$SportsFetchedImpl implements _SportsFetched {
     TResult Function()? logginLoading,
     TResult Function(Failure? failure)? logginFailure,
     TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
     TResult Function()? confirmEmailLoading,
     TResult Function(Failure? failure)? confirmEmailFailure,
     TResult Function(List<SportEntity> sports)? emailConfirmed,
@@ -10203,6 +11860,9 @@ class _$SportsFetchedImpl implements _SportsFetched {
     required TResult Function(_LoginLoading value) logginLoading,
     required TResult Function(_LoginFailure value) logginFailure,
     required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
     required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
     required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
     required TResult Function(_EmailConfirmed value) emailConfirmed,
@@ -10243,6 +11903,9 @@ class _$SportsFetchedImpl implements _SportsFetched {
     TResult? Function(_LoginLoading value)? logginLoading,
     TResult? Function(_LoginFailure value)? logginFailure,
     TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult? Function(_EmailConfirmed value)? emailConfirmed,
@@ -10280,6 +11943,9 @@ class _$SportsFetchedImpl implements _SportsFetched {
     TResult Function(_LoginLoading value)? logginLoading,
     TResult Function(_LoginFailure value)? logginFailure,
     TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
     TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
     TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
     TResult Function(_EmailConfirmed value)? emailConfirmed,

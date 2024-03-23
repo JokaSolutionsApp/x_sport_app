@@ -27,7 +27,25 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController password = TextEditingController();
 
   @override
+  void initState() {
+    getUserLocation();
+    super.initState();
+  }
+
+  getUserLocation() async {
+    await registerStream.updateLocation();
+  }
+
+  @override
+  void dispose() {
+    email.dispose();
+    password.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    // context.read<AuthBloc>().add(const AuthEvent.googleLogin());
     return IntrinsicHeightComponent(
       title: 'تسجيل الدخول',
       child: SizedBox(
@@ -92,7 +110,11 @@ class _LoginPageState extends State<LoginPage> {
                     textColor: XColors.Background_Color1,
                     image: AssetsManager.icons.google,
                     text: 'تسجيل الدخول عبر جوجل',
-                    onPressed: () {},
+                    onPressed: () {
+                      context
+                          .read<AuthBloc>()
+                          .add(const AuthEvent.googleLogin());
+                    },
                   ),
                 ],
               ),

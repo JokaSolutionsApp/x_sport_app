@@ -19,31 +19,34 @@ mixin _$AcademyEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getSportsMembership,
-    required TResult Function() getSuggestedAcademies,
-    required TResult Function() getAboutAcademy,
-    required TResult Function() getAcademyCourses,
-    required TResult Function() getAcademyCoursesInDate,
-    required TResult Function() getAcademyReview,
+    required TResult Function(SuggestedAcademyParams params)
+        getSuggestedAcademies,
+    required TResult Function(int academyId) getAboutAcademy,
+    required TResult Function(int academyId) getAcademyCourses,
+    required TResult Function(int academyId, String targetDate)
+        getAcademyCoursesInDate,
+    required TResult Function(int academyId) getAcademyReview,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getSportsMembership,
-    TResult? Function()? getSuggestedAcademies,
-    TResult? Function()? getAboutAcademy,
-    TResult? Function()? getAcademyCourses,
-    TResult? Function()? getAcademyCoursesInDate,
-    TResult? Function()? getAcademyReview,
+    TResult? Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult? Function(int academyId)? getAboutAcademy,
+    TResult? Function(int academyId)? getAcademyCourses,
+    TResult? Function(int academyId, String targetDate)?
+        getAcademyCoursesInDate,
+    TResult? Function(int academyId)? getAcademyReview,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getSportsMembership,
-    TResult Function()? getSuggestedAcademies,
-    TResult Function()? getAboutAcademy,
-    TResult Function()? getAcademyCourses,
-    TResult Function()? getAcademyCoursesInDate,
-    TResult Function()? getAcademyReview,
+    TResult Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult Function(int academyId)? getAboutAcademy,
+    TResult Function(int academyId)? getAcademyCourses,
+    TResult Function(int academyId, String targetDate)? getAcademyCoursesInDate,
+    TResult Function(int academyId)? getAcademyReview,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -145,11 +148,13 @@ class _$GetSportsMembershipEventImpl implements _GetSportsMembershipEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getSportsMembership,
-    required TResult Function() getSuggestedAcademies,
-    required TResult Function() getAboutAcademy,
-    required TResult Function() getAcademyCourses,
-    required TResult Function() getAcademyCoursesInDate,
-    required TResult Function() getAcademyReview,
+    required TResult Function(SuggestedAcademyParams params)
+        getSuggestedAcademies,
+    required TResult Function(int academyId) getAboutAcademy,
+    required TResult Function(int academyId) getAcademyCourses,
+    required TResult Function(int academyId, String targetDate)
+        getAcademyCoursesInDate,
+    required TResult Function(int academyId) getAcademyReview,
   }) {
     return getSportsMembership();
   }
@@ -158,11 +163,12 @@ class _$GetSportsMembershipEventImpl implements _GetSportsMembershipEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getSportsMembership,
-    TResult? Function()? getSuggestedAcademies,
-    TResult? Function()? getAboutAcademy,
-    TResult? Function()? getAcademyCourses,
-    TResult? Function()? getAcademyCoursesInDate,
-    TResult? Function()? getAcademyReview,
+    TResult? Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult? Function(int academyId)? getAboutAcademy,
+    TResult? Function(int academyId)? getAcademyCourses,
+    TResult? Function(int academyId, String targetDate)?
+        getAcademyCoursesInDate,
+    TResult? Function(int academyId)? getAcademyReview,
   }) {
     return getSportsMembership?.call();
   }
@@ -171,11 +177,11 @@ class _$GetSportsMembershipEventImpl implements _GetSportsMembershipEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getSportsMembership,
-    TResult Function()? getSuggestedAcademies,
-    TResult Function()? getAboutAcademy,
-    TResult Function()? getAcademyCourses,
-    TResult Function()? getAcademyCoursesInDate,
-    TResult Function()? getAcademyReview,
+    TResult Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult Function(int academyId)? getAboutAcademy,
+    TResult Function(int academyId)? getAcademyCourses,
+    TResult Function(int academyId, String targetDate)? getAcademyCoursesInDate,
+    TResult Function(int academyId)? getAcademyReview,
     required TResult orElse(),
   }) {
     if (getSportsMembership != null) {
@@ -243,6 +249,8 @@ abstract class _$$GetSuggestedAcademiesEventImplCopyWith<$Res> {
           _$GetSuggestedAcademiesEventImpl value,
           $Res Function(_$GetSuggestedAcademiesEventImpl) then) =
       __$$GetSuggestedAcademiesEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({SuggestedAcademyParams params});
 }
 
 /// @nodoc
@@ -253,67 +261,94 @@ class __$$GetSuggestedAcademiesEventImplCopyWithImpl<$Res>
       _$GetSuggestedAcademiesEventImpl _value,
       $Res Function(_$GetSuggestedAcademiesEventImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? params = null,
+  }) {
+    return _then(_$GetSuggestedAcademiesEventImpl(
+      params: null == params
+          ? _value.params
+          : params // ignore: cast_nullable_to_non_nullable
+              as SuggestedAcademyParams,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$GetSuggestedAcademiesEventImpl implements _GetSuggestedAcademiesEvent {
-  const _$GetSuggestedAcademiesEventImpl();
+  const _$GetSuggestedAcademiesEventImpl({required this.params});
+
+  @override
+  final SuggestedAcademyParams params;
 
   @override
   String toString() {
-    return 'AcademyEvent.getSuggestedAcademies()';
+    return 'AcademyEvent.getSuggestedAcademies(params: $params)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetSuggestedAcademiesEventImpl);
+            other is _$GetSuggestedAcademiesEventImpl &&
+            (identical(other.params, params) || other.params == params));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, params);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetSuggestedAcademiesEventImplCopyWith<_$GetSuggestedAcademiesEventImpl>
+      get copyWith => __$$GetSuggestedAcademiesEventImplCopyWithImpl<
+          _$GetSuggestedAcademiesEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getSportsMembership,
-    required TResult Function() getSuggestedAcademies,
-    required TResult Function() getAboutAcademy,
-    required TResult Function() getAcademyCourses,
-    required TResult Function() getAcademyCoursesInDate,
-    required TResult Function() getAcademyReview,
+    required TResult Function(SuggestedAcademyParams params)
+        getSuggestedAcademies,
+    required TResult Function(int academyId) getAboutAcademy,
+    required TResult Function(int academyId) getAcademyCourses,
+    required TResult Function(int academyId, String targetDate)
+        getAcademyCoursesInDate,
+    required TResult Function(int academyId) getAcademyReview,
   }) {
-    return getSuggestedAcademies();
+    return getSuggestedAcademies(params);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getSportsMembership,
-    TResult? Function()? getSuggestedAcademies,
-    TResult? Function()? getAboutAcademy,
-    TResult? Function()? getAcademyCourses,
-    TResult? Function()? getAcademyCoursesInDate,
-    TResult? Function()? getAcademyReview,
+    TResult? Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult? Function(int academyId)? getAboutAcademy,
+    TResult? Function(int academyId)? getAcademyCourses,
+    TResult? Function(int academyId, String targetDate)?
+        getAcademyCoursesInDate,
+    TResult? Function(int academyId)? getAcademyReview,
   }) {
-    return getSuggestedAcademies?.call();
+    return getSuggestedAcademies?.call(params);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getSportsMembership,
-    TResult Function()? getSuggestedAcademies,
-    TResult Function()? getAboutAcademy,
-    TResult Function()? getAcademyCourses,
-    TResult Function()? getAcademyCoursesInDate,
-    TResult Function()? getAcademyReview,
+    TResult Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult Function(int academyId)? getAboutAcademy,
+    TResult Function(int academyId)? getAcademyCourses,
+    TResult Function(int academyId, String targetDate)? getAcademyCoursesInDate,
+    TResult Function(int academyId)? getAcademyReview,
     required TResult orElse(),
   }) {
     if (getSuggestedAcademies != null) {
-      return getSuggestedAcademies();
+      return getSuggestedAcademies(params);
     }
     return orElse();
   }
@@ -368,8 +403,14 @@ class _$GetSuggestedAcademiesEventImpl implements _GetSuggestedAcademiesEvent {
 }
 
 abstract class _GetSuggestedAcademiesEvent implements AcademyEvent {
-  const factory _GetSuggestedAcademiesEvent() =
+  const factory _GetSuggestedAcademiesEvent(
+          {required final SuggestedAcademyParams params}) =
       _$GetSuggestedAcademiesEventImpl;
+
+  SuggestedAcademyParams get params;
+  @JsonKey(ignore: true)
+  _$$GetSuggestedAcademiesEventImplCopyWith<_$GetSuggestedAcademiesEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -377,6 +418,8 @@ abstract class _$$GetAboutAcademyEventImplCopyWith<$Res> {
   factory _$$GetAboutAcademyEventImplCopyWith(_$GetAboutAcademyEventImpl value,
           $Res Function(_$GetAboutAcademyEventImpl) then) =
       __$$GetAboutAcademyEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int academyId});
 }
 
 /// @nodoc
@@ -386,67 +429,96 @@ class __$$GetAboutAcademyEventImplCopyWithImpl<$Res>
   __$$GetAboutAcademyEventImplCopyWithImpl(_$GetAboutAcademyEventImpl _value,
       $Res Function(_$GetAboutAcademyEventImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? academyId = null,
+  }) {
+    return _then(_$GetAboutAcademyEventImpl(
+      academyId: null == academyId
+          ? _value.academyId
+          : academyId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$GetAboutAcademyEventImpl implements _GetAboutAcademyEvent {
-  const _$GetAboutAcademyEventImpl();
+  const _$GetAboutAcademyEventImpl({required this.academyId});
+
+  @override
+  final int academyId;
 
   @override
   String toString() {
-    return 'AcademyEvent.getAboutAcademy()';
+    return 'AcademyEvent.getAboutAcademy(academyId: $academyId)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetAboutAcademyEventImpl);
+            other is _$GetAboutAcademyEventImpl &&
+            (identical(other.academyId, academyId) ||
+                other.academyId == academyId));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, academyId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetAboutAcademyEventImplCopyWith<_$GetAboutAcademyEventImpl>
+      get copyWith =>
+          __$$GetAboutAcademyEventImplCopyWithImpl<_$GetAboutAcademyEventImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getSportsMembership,
-    required TResult Function() getSuggestedAcademies,
-    required TResult Function() getAboutAcademy,
-    required TResult Function() getAcademyCourses,
-    required TResult Function() getAcademyCoursesInDate,
-    required TResult Function() getAcademyReview,
+    required TResult Function(SuggestedAcademyParams params)
+        getSuggestedAcademies,
+    required TResult Function(int academyId) getAboutAcademy,
+    required TResult Function(int academyId) getAcademyCourses,
+    required TResult Function(int academyId, String targetDate)
+        getAcademyCoursesInDate,
+    required TResult Function(int academyId) getAcademyReview,
   }) {
-    return getAboutAcademy();
+    return getAboutAcademy(academyId);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getSportsMembership,
-    TResult? Function()? getSuggestedAcademies,
-    TResult? Function()? getAboutAcademy,
-    TResult? Function()? getAcademyCourses,
-    TResult? Function()? getAcademyCoursesInDate,
-    TResult? Function()? getAcademyReview,
+    TResult? Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult? Function(int academyId)? getAboutAcademy,
+    TResult? Function(int academyId)? getAcademyCourses,
+    TResult? Function(int academyId, String targetDate)?
+        getAcademyCoursesInDate,
+    TResult? Function(int academyId)? getAcademyReview,
   }) {
-    return getAboutAcademy?.call();
+    return getAboutAcademy?.call(academyId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getSportsMembership,
-    TResult Function()? getSuggestedAcademies,
-    TResult Function()? getAboutAcademy,
-    TResult Function()? getAcademyCourses,
-    TResult Function()? getAcademyCoursesInDate,
-    TResult Function()? getAcademyReview,
+    TResult Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult Function(int academyId)? getAboutAcademy,
+    TResult Function(int academyId)? getAcademyCourses,
+    TResult Function(int academyId, String targetDate)? getAcademyCoursesInDate,
+    TResult Function(int academyId)? getAcademyReview,
     required TResult orElse(),
   }) {
     if (getAboutAcademy != null) {
-      return getAboutAcademy();
+      return getAboutAcademy(academyId);
     }
     return orElse();
   }
@@ -501,7 +573,13 @@ class _$GetAboutAcademyEventImpl implements _GetAboutAcademyEvent {
 }
 
 abstract class _GetAboutAcademyEvent implements AcademyEvent {
-  const factory _GetAboutAcademyEvent() = _$GetAboutAcademyEventImpl;
+  const factory _GetAboutAcademyEvent({required final int academyId}) =
+      _$GetAboutAcademyEventImpl;
+
+  int get academyId;
+  @JsonKey(ignore: true)
+  _$$GetAboutAcademyEventImplCopyWith<_$GetAboutAcademyEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -510,6 +588,8 @@ abstract class _$$GetAcademyCoursesEventImplCopyWith<$Res> {
           _$GetAcademyCoursesEventImpl value,
           $Res Function(_$GetAcademyCoursesEventImpl) then) =
       __$$GetAcademyCoursesEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int academyId});
 }
 
 /// @nodoc
@@ -520,67 +600,95 @@ class __$$GetAcademyCoursesEventImplCopyWithImpl<$Res>
       _$GetAcademyCoursesEventImpl _value,
       $Res Function(_$GetAcademyCoursesEventImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? academyId = null,
+  }) {
+    return _then(_$GetAcademyCoursesEventImpl(
+      academyId: null == academyId
+          ? _value.academyId
+          : academyId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$GetAcademyCoursesEventImpl implements _GetAcademyCoursesEvent {
-  const _$GetAcademyCoursesEventImpl();
+  const _$GetAcademyCoursesEventImpl({required this.academyId});
+
+  @override
+  final int academyId;
 
   @override
   String toString() {
-    return 'AcademyEvent.getAcademyCourses()';
+    return 'AcademyEvent.getAcademyCourses(academyId: $academyId)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetAcademyCoursesEventImpl);
+            other is _$GetAcademyCoursesEventImpl &&
+            (identical(other.academyId, academyId) ||
+                other.academyId == academyId));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, academyId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetAcademyCoursesEventImplCopyWith<_$GetAcademyCoursesEventImpl>
+      get copyWith => __$$GetAcademyCoursesEventImplCopyWithImpl<
+          _$GetAcademyCoursesEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getSportsMembership,
-    required TResult Function() getSuggestedAcademies,
-    required TResult Function() getAboutAcademy,
-    required TResult Function() getAcademyCourses,
-    required TResult Function() getAcademyCoursesInDate,
-    required TResult Function() getAcademyReview,
+    required TResult Function(SuggestedAcademyParams params)
+        getSuggestedAcademies,
+    required TResult Function(int academyId) getAboutAcademy,
+    required TResult Function(int academyId) getAcademyCourses,
+    required TResult Function(int academyId, String targetDate)
+        getAcademyCoursesInDate,
+    required TResult Function(int academyId) getAcademyReview,
   }) {
-    return getAcademyCourses();
+    return getAcademyCourses(academyId);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getSportsMembership,
-    TResult? Function()? getSuggestedAcademies,
-    TResult? Function()? getAboutAcademy,
-    TResult? Function()? getAcademyCourses,
-    TResult? Function()? getAcademyCoursesInDate,
-    TResult? Function()? getAcademyReview,
+    TResult? Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult? Function(int academyId)? getAboutAcademy,
+    TResult? Function(int academyId)? getAcademyCourses,
+    TResult? Function(int academyId, String targetDate)?
+        getAcademyCoursesInDate,
+    TResult? Function(int academyId)? getAcademyReview,
   }) {
-    return getAcademyCourses?.call();
+    return getAcademyCourses?.call(academyId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getSportsMembership,
-    TResult Function()? getSuggestedAcademies,
-    TResult Function()? getAboutAcademy,
-    TResult Function()? getAcademyCourses,
-    TResult Function()? getAcademyCoursesInDate,
-    TResult Function()? getAcademyReview,
+    TResult Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult Function(int academyId)? getAboutAcademy,
+    TResult Function(int academyId)? getAcademyCourses,
+    TResult Function(int academyId, String targetDate)? getAcademyCoursesInDate,
+    TResult Function(int academyId)? getAcademyReview,
     required TResult orElse(),
   }) {
     if (getAcademyCourses != null) {
-      return getAcademyCourses();
+      return getAcademyCourses(academyId);
     }
     return orElse();
   }
@@ -635,7 +743,13 @@ class _$GetAcademyCoursesEventImpl implements _GetAcademyCoursesEvent {
 }
 
 abstract class _GetAcademyCoursesEvent implements AcademyEvent {
-  const factory _GetAcademyCoursesEvent() = _$GetAcademyCoursesEventImpl;
+  const factory _GetAcademyCoursesEvent({required final int academyId}) =
+      _$GetAcademyCoursesEventImpl;
+
+  int get academyId;
+  @JsonKey(ignore: true)
+  _$$GetAcademyCoursesEventImplCopyWith<_$GetAcademyCoursesEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -644,6 +758,8 @@ abstract class _$$GetAcademyCoursesInDateEventImplCopyWith<$Res> {
           _$GetAcademyCoursesInDateEventImpl value,
           $Res Function(_$GetAcademyCoursesInDateEventImpl) then) =
       __$$GetAcademyCoursesInDateEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int academyId, String targetDate});
 }
 
 /// @nodoc
@@ -654,68 +770,107 @@ class __$$GetAcademyCoursesInDateEventImplCopyWithImpl<$Res>
       _$GetAcademyCoursesInDateEventImpl _value,
       $Res Function(_$GetAcademyCoursesInDateEventImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? academyId = null,
+    Object? targetDate = null,
+  }) {
+    return _then(_$GetAcademyCoursesInDateEventImpl(
+      academyId: null == academyId
+          ? _value.academyId
+          : academyId // ignore: cast_nullable_to_non_nullable
+              as int,
+      targetDate: null == targetDate
+          ? _value.targetDate
+          : targetDate // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$GetAcademyCoursesInDateEventImpl
     implements _GetAcademyCoursesInDateEvent {
-  const _$GetAcademyCoursesInDateEventImpl();
+  const _$GetAcademyCoursesInDateEventImpl(
+      {required this.academyId, required this.targetDate});
+
+  @override
+  final int academyId;
+  @override
+  final String targetDate;
 
   @override
   String toString() {
-    return 'AcademyEvent.getAcademyCoursesInDate()';
+    return 'AcademyEvent.getAcademyCoursesInDate(academyId: $academyId, targetDate: $targetDate)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetAcademyCoursesInDateEventImpl);
+            other is _$GetAcademyCoursesInDateEventImpl &&
+            (identical(other.academyId, academyId) ||
+                other.academyId == academyId) &&
+            (identical(other.targetDate, targetDate) ||
+                other.targetDate == targetDate));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, academyId, targetDate);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetAcademyCoursesInDateEventImplCopyWith<
+          _$GetAcademyCoursesInDateEventImpl>
+      get copyWith => __$$GetAcademyCoursesInDateEventImplCopyWithImpl<
+          _$GetAcademyCoursesInDateEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getSportsMembership,
-    required TResult Function() getSuggestedAcademies,
-    required TResult Function() getAboutAcademy,
-    required TResult Function() getAcademyCourses,
-    required TResult Function() getAcademyCoursesInDate,
-    required TResult Function() getAcademyReview,
+    required TResult Function(SuggestedAcademyParams params)
+        getSuggestedAcademies,
+    required TResult Function(int academyId) getAboutAcademy,
+    required TResult Function(int academyId) getAcademyCourses,
+    required TResult Function(int academyId, String targetDate)
+        getAcademyCoursesInDate,
+    required TResult Function(int academyId) getAcademyReview,
   }) {
-    return getAcademyCoursesInDate();
+    return getAcademyCoursesInDate(academyId, targetDate);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getSportsMembership,
-    TResult? Function()? getSuggestedAcademies,
-    TResult? Function()? getAboutAcademy,
-    TResult? Function()? getAcademyCourses,
-    TResult? Function()? getAcademyCoursesInDate,
-    TResult? Function()? getAcademyReview,
+    TResult? Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult? Function(int academyId)? getAboutAcademy,
+    TResult? Function(int academyId)? getAcademyCourses,
+    TResult? Function(int academyId, String targetDate)?
+        getAcademyCoursesInDate,
+    TResult? Function(int academyId)? getAcademyReview,
   }) {
-    return getAcademyCoursesInDate?.call();
+    return getAcademyCoursesInDate?.call(academyId, targetDate);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getSportsMembership,
-    TResult Function()? getSuggestedAcademies,
-    TResult Function()? getAboutAcademy,
-    TResult Function()? getAcademyCourses,
-    TResult Function()? getAcademyCoursesInDate,
-    TResult Function()? getAcademyReview,
+    TResult Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult Function(int academyId)? getAboutAcademy,
+    TResult Function(int academyId)? getAcademyCourses,
+    TResult Function(int academyId, String targetDate)? getAcademyCoursesInDate,
+    TResult Function(int academyId)? getAcademyReview,
     required TResult orElse(),
   }) {
     if (getAcademyCoursesInDate != null) {
-      return getAcademyCoursesInDate();
+      return getAcademyCoursesInDate(academyId, targetDate);
     }
     return orElse();
   }
@@ -770,8 +925,16 @@ class _$GetAcademyCoursesInDateEventImpl
 }
 
 abstract class _GetAcademyCoursesInDateEvent implements AcademyEvent {
-  const factory _GetAcademyCoursesInDateEvent() =
-      _$GetAcademyCoursesInDateEventImpl;
+  const factory _GetAcademyCoursesInDateEvent(
+      {required final int academyId,
+      required final String targetDate}) = _$GetAcademyCoursesInDateEventImpl;
+
+  int get academyId;
+  String get targetDate;
+  @JsonKey(ignore: true)
+  _$$GetAcademyCoursesInDateEventImplCopyWith<
+          _$GetAcademyCoursesInDateEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -780,6 +943,8 @@ abstract class _$$GetAcademyReviewEventImplCopyWith<$Res> {
           _$GetAcademyReviewEventImpl value,
           $Res Function(_$GetAcademyReviewEventImpl) then) =
       __$$GetAcademyReviewEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int academyId});
 }
 
 /// @nodoc
@@ -789,67 +954,95 @@ class __$$GetAcademyReviewEventImplCopyWithImpl<$Res>
   __$$GetAcademyReviewEventImplCopyWithImpl(_$GetAcademyReviewEventImpl _value,
       $Res Function(_$GetAcademyReviewEventImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? academyId = null,
+  }) {
+    return _then(_$GetAcademyReviewEventImpl(
+      academyId: null == academyId
+          ? _value.academyId
+          : academyId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$GetAcademyReviewEventImpl implements _GetAcademyReviewEvent {
-  const _$GetAcademyReviewEventImpl();
+  const _$GetAcademyReviewEventImpl({required this.academyId});
+
+  @override
+  final int academyId;
 
   @override
   String toString() {
-    return 'AcademyEvent.getAcademyReview()';
+    return 'AcademyEvent.getAcademyReview(academyId: $academyId)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetAcademyReviewEventImpl);
+            other is _$GetAcademyReviewEventImpl &&
+            (identical(other.academyId, academyId) ||
+                other.academyId == academyId));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, academyId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetAcademyReviewEventImplCopyWith<_$GetAcademyReviewEventImpl>
+      get copyWith => __$$GetAcademyReviewEventImplCopyWithImpl<
+          _$GetAcademyReviewEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getSportsMembership,
-    required TResult Function() getSuggestedAcademies,
-    required TResult Function() getAboutAcademy,
-    required TResult Function() getAcademyCourses,
-    required TResult Function() getAcademyCoursesInDate,
-    required TResult Function() getAcademyReview,
+    required TResult Function(SuggestedAcademyParams params)
+        getSuggestedAcademies,
+    required TResult Function(int academyId) getAboutAcademy,
+    required TResult Function(int academyId) getAcademyCourses,
+    required TResult Function(int academyId, String targetDate)
+        getAcademyCoursesInDate,
+    required TResult Function(int academyId) getAcademyReview,
   }) {
-    return getAcademyReview();
+    return getAcademyReview(academyId);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getSportsMembership,
-    TResult? Function()? getSuggestedAcademies,
-    TResult? Function()? getAboutAcademy,
-    TResult? Function()? getAcademyCourses,
-    TResult? Function()? getAcademyCoursesInDate,
-    TResult? Function()? getAcademyReview,
+    TResult? Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult? Function(int academyId)? getAboutAcademy,
+    TResult? Function(int academyId)? getAcademyCourses,
+    TResult? Function(int academyId, String targetDate)?
+        getAcademyCoursesInDate,
+    TResult? Function(int academyId)? getAcademyReview,
   }) {
-    return getAcademyReview?.call();
+    return getAcademyReview?.call(academyId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getSportsMembership,
-    TResult Function()? getSuggestedAcademies,
-    TResult Function()? getAboutAcademy,
-    TResult Function()? getAcademyCourses,
-    TResult Function()? getAcademyCoursesInDate,
-    TResult Function()? getAcademyReview,
+    TResult Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult Function(int academyId)? getAboutAcademy,
+    TResult Function(int academyId)? getAcademyCourses,
+    TResult Function(int academyId, String targetDate)? getAcademyCoursesInDate,
+    TResult Function(int academyId)? getAcademyReview,
     required TResult orElse(),
   }) {
     if (getAcademyReview != null) {
-      return getAcademyReview();
+      return getAcademyReview(academyId);
     }
     return orElse();
   }
@@ -904,7 +1097,13 @@ class _$GetAcademyReviewEventImpl implements _GetAcademyReviewEvent {
 }
 
 abstract class _GetAcademyReviewEvent implements AcademyEvent {
-  const factory _GetAcademyReviewEvent() = _$GetAcademyReviewEventImpl;
+  const factory _GetAcademyReviewEvent({required final int academyId}) =
+      _$GetAcademyReviewEventImpl;
+
+  int get academyId;
+  @JsonKey(ignore: true)
+  _$$GetAcademyReviewEventImplCopyWith<_$GetAcademyReviewEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -914,27 +1113,27 @@ mixin _$AcademyState {
     required TResult Function() initial,
     required TResult Function() getSportsMembershipLoading,
     required TResult Function(Failure? failure) getSportsMembershipFailure,
-    required TResult Function(List<SportEntity> sportsMembership)
+    required TResult Function(List<AcademyMembershipEntity> sportsMembership)
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SportEntity> suggestedAcademies)
+    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
-    required TResult Function(List<SportEntity> aboutAcademy)
+    required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
     required TResult Function() getAcademyCoursesLoading,
     required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(List<SportEntity> academyCourses)
+    required TResult Function(GetAcademyCoursesEntity? academyCourses)
         academyCoursesFetched,
     required TResult Function() getAcademyCoursesInDateLoading,
     required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(List<SportEntity> academyCoursesInDate)
+    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
-    required TResult Function(List<SportEntity> academyReview)
+    required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
   }) =>
       throw _privateConstructorUsedError;
@@ -943,25 +1142,27 @@ mixin _$AcademyState {
     TResult? Function()? initial,
     TResult? Function()? getSportsMembershipLoading,
     TResult? Function(Failure? failure)? getSportsMembershipFailure,
-    TResult? Function(List<SportEntity> sportsMembership)?
+    TResult? Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SportEntity> suggestedAcademies)?
+    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
-    TResult? Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult? Function()? getAcademyCoursesLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult? Function()? getAcademyCoursesInDateLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(List<SportEntity> academyCoursesInDate)?
+    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
-    TResult? Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult? Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -969,25 +1170,27 @@ mixin _$AcademyState {
     TResult Function()? initial,
     TResult Function()? getSportsMembershipLoading,
     TResult Function(Failure? failure)? getSportsMembershipFailure,
-    TResult Function(List<SportEntity> sportsMembership)?
+    TResult Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SportEntity> suggestedAcademies)?
+    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
-    TResult Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult Function()? getAcademyCoursesLoading,
     TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult Function()? getAcademyCoursesInDateLoading,
     TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(List<SportEntity> academyCoursesInDate)?
+    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
-    TResult Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1156,27 +1359,27 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function() getSportsMembershipLoading,
     required TResult Function(Failure? failure) getSportsMembershipFailure,
-    required TResult Function(List<SportEntity> sportsMembership)
+    required TResult Function(List<AcademyMembershipEntity> sportsMembership)
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SportEntity> suggestedAcademies)
+    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
-    required TResult Function(List<SportEntity> aboutAcademy)
+    required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
     required TResult Function() getAcademyCoursesLoading,
     required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(List<SportEntity> academyCourses)
+    required TResult Function(GetAcademyCoursesEntity? academyCourses)
         academyCoursesFetched,
     required TResult Function() getAcademyCoursesInDateLoading,
     required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(List<SportEntity> academyCoursesInDate)
+    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
-    required TResult Function(List<SportEntity> academyReview)
+    required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
   }) {
     return initial();
@@ -1188,25 +1391,27 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? getSportsMembershipLoading,
     TResult? Function(Failure? failure)? getSportsMembershipFailure,
-    TResult? Function(List<SportEntity> sportsMembership)?
+    TResult? Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SportEntity> suggestedAcademies)?
+    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
-    TResult? Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult? Function()? getAcademyCoursesLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult? Function()? getAcademyCoursesInDateLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(List<SportEntity> academyCoursesInDate)?
+    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
-    TResult? Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult? Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
   }) {
     return initial?.call();
   }
@@ -1217,25 +1422,27 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? getSportsMembershipLoading,
     TResult Function(Failure? failure)? getSportsMembershipFailure,
-    TResult Function(List<SportEntity> sportsMembership)?
+    TResult Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SportEntity> suggestedAcademies)?
+    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
-    TResult Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult Function()? getAcademyCoursesLoading,
     TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult Function()? getAcademyCoursesInDateLoading,
     TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(List<SportEntity> academyCoursesInDate)?
+    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
-    TResult Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -1411,27 +1618,27 @@ class _$GetSportsMembershipMembershipLoadingImpl
     required TResult Function() initial,
     required TResult Function() getSportsMembershipLoading,
     required TResult Function(Failure? failure) getSportsMembershipFailure,
-    required TResult Function(List<SportEntity> sportsMembership)
+    required TResult Function(List<AcademyMembershipEntity> sportsMembership)
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SportEntity> suggestedAcademies)
+    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
-    required TResult Function(List<SportEntity> aboutAcademy)
+    required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
     required TResult Function() getAcademyCoursesLoading,
     required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(List<SportEntity> academyCourses)
+    required TResult Function(GetAcademyCoursesEntity? academyCourses)
         academyCoursesFetched,
     required TResult Function() getAcademyCoursesInDateLoading,
     required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(List<SportEntity> academyCoursesInDate)
+    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
-    required TResult Function(List<SportEntity> academyReview)
+    required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
   }) {
     return getSportsMembershipLoading();
@@ -1443,25 +1650,27 @@ class _$GetSportsMembershipMembershipLoadingImpl
     TResult? Function()? initial,
     TResult? Function()? getSportsMembershipLoading,
     TResult? Function(Failure? failure)? getSportsMembershipFailure,
-    TResult? Function(List<SportEntity> sportsMembership)?
+    TResult? Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SportEntity> suggestedAcademies)?
+    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
-    TResult? Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult? Function()? getAcademyCoursesLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult? Function()? getAcademyCoursesInDateLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(List<SportEntity> academyCoursesInDate)?
+    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
-    TResult? Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult? Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
   }) {
     return getSportsMembershipLoading?.call();
   }
@@ -1472,25 +1681,27 @@ class _$GetSportsMembershipMembershipLoadingImpl
     TResult Function()? initial,
     TResult Function()? getSportsMembershipLoading,
     TResult Function(Failure? failure)? getSportsMembershipFailure,
-    TResult Function(List<SportEntity> sportsMembership)?
+    TResult Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SportEntity> suggestedAcademies)?
+    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
-    TResult Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult Function()? getAcademyCoursesLoading,
     TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult Function()? getAcademyCoursesInDateLoading,
     TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(List<SportEntity> academyCoursesInDate)?
+    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
-    TResult Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
     required TResult orElse(),
   }) {
     if (getSportsMembershipLoading != null) {
@@ -1692,27 +1903,27 @@ class _$GetSportsMembershipFailureImpl implements _GetSportsMembershipFailure {
     required TResult Function() initial,
     required TResult Function() getSportsMembershipLoading,
     required TResult Function(Failure? failure) getSportsMembershipFailure,
-    required TResult Function(List<SportEntity> sportsMembership)
+    required TResult Function(List<AcademyMembershipEntity> sportsMembership)
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SportEntity> suggestedAcademies)
+    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
-    required TResult Function(List<SportEntity> aboutAcademy)
+    required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
     required TResult Function() getAcademyCoursesLoading,
     required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(List<SportEntity> academyCourses)
+    required TResult Function(GetAcademyCoursesEntity? academyCourses)
         academyCoursesFetched,
     required TResult Function() getAcademyCoursesInDateLoading,
     required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(List<SportEntity> academyCoursesInDate)
+    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
-    required TResult Function(List<SportEntity> academyReview)
+    required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
   }) {
     return getSportsMembershipFailure(failure);
@@ -1724,25 +1935,27 @@ class _$GetSportsMembershipFailureImpl implements _GetSportsMembershipFailure {
     TResult? Function()? initial,
     TResult? Function()? getSportsMembershipLoading,
     TResult? Function(Failure? failure)? getSportsMembershipFailure,
-    TResult? Function(List<SportEntity> sportsMembership)?
+    TResult? Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SportEntity> suggestedAcademies)?
+    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
-    TResult? Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult? Function()? getAcademyCoursesLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult? Function()? getAcademyCoursesInDateLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(List<SportEntity> academyCoursesInDate)?
+    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
-    TResult? Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult? Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
   }) {
     return getSportsMembershipFailure?.call(failure);
   }
@@ -1753,25 +1966,27 @@ class _$GetSportsMembershipFailureImpl implements _GetSportsMembershipFailure {
     TResult Function()? initial,
     TResult Function()? getSportsMembershipLoading,
     TResult Function(Failure? failure)? getSportsMembershipFailure,
-    TResult Function(List<SportEntity> sportsMembership)?
+    TResult Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SportEntity> suggestedAcademies)?
+    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
-    TResult Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult Function()? getAcademyCoursesLoading,
     TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult Function()? getAcademyCoursesInDateLoading,
     TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(List<SportEntity> academyCoursesInDate)?
+    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
-    TResult Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
     required TResult orElse(),
   }) {
     if (getSportsMembershipFailure != null) {
@@ -1914,7 +2129,7 @@ abstract class _$$SportsMembershipFetchedImplCopyWith<$Res> {
           $Res Function(_$SportsMembershipFetchedImpl) then) =
       __$$SportsMembershipFetchedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<SportEntity> sportsMembership});
+  $Res call({List<AcademyMembershipEntity> sportsMembership});
 }
 
 /// @nodoc
@@ -1935,7 +2150,7 @@ class __$$SportsMembershipFetchedImplCopyWithImpl<$Res>
       sportsMembership: null == sportsMembership
           ? _value._sportsMembership
           : sportsMembership // ignore: cast_nullable_to_non_nullable
-              as List<SportEntity>,
+              as List<AcademyMembershipEntity>,
     ));
   }
 }
@@ -1944,13 +2159,13 @@ class __$$SportsMembershipFetchedImplCopyWithImpl<$Res>
 
 class _$SportsMembershipFetchedImpl implements _SportsMembershipFetched {
   const _$SportsMembershipFetchedImpl(
-      {final List<SportEntity> sportsMembership = const []})
+      {final List<AcademyMembershipEntity> sportsMembership = const []})
       : _sportsMembership = sportsMembership;
 
-  final List<SportEntity> _sportsMembership;
+  final List<AcademyMembershipEntity> _sportsMembership;
   @override
   @JsonKey()
-  List<SportEntity> get sportsMembership {
+  List<AcademyMembershipEntity> get sportsMembership {
     if (_sportsMembership is EqualUnmodifiableListView)
       return _sportsMembership;
     // ignore: implicit_dynamic_type
@@ -1988,27 +2203,27 @@ class _$SportsMembershipFetchedImpl implements _SportsMembershipFetched {
     required TResult Function() initial,
     required TResult Function() getSportsMembershipLoading,
     required TResult Function(Failure? failure) getSportsMembershipFailure,
-    required TResult Function(List<SportEntity> sportsMembership)
+    required TResult Function(List<AcademyMembershipEntity> sportsMembership)
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SportEntity> suggestedAcademies)
+    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
-    required TResult Function(List<SportEntity> aboutAcademy)
+    required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
     required TResult Function() getAcademyCoursesLoading,
     required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(List<SportEntity> academyCourses)
+    required TResult Function(GetAcademyCoursesEntity? academyCourses)
         academyCoursesFetched,
     required TResult Function() getAcademyCoursesInDateLoading,
     required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(List<SportEntity> academyCoursesInDate)
+    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
-    required TResult Function(List<SportEntity> academyReview)
+    required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
   }) {
     return sportsMembershipFetched(sportsMembership);
@@ -2020,25 +2235,27 @@ class _$SportsMembershipFetchedImpl implements _SportsMembershipFetched {
     TResult? Function()? initial,
     TResult? Function()? getSportsMembershipLoading,
     TResult? Function(Failure? failure)? getSportsMembershipFailure,
-    TResult? Function(List<SportEntity> sportsMembership)?
+    TResult? Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SportEntity> suggestedAcademies)?
+    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
-    TResult? Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult? Function()? getAcademyCoursesLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult? Function()? getAcademyCoursesInDateLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(List<SportEntity> academyCoursesInDate)?
+    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
-    TResult? Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult? Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
   }) {
     return sportsMembershipFetched?.call(sportsMembership);
   }
@@ -2049,25 +2266,27 @@ class _$SportsMembershipFetchedImpl implements _SportsMembershipFetched {
     TResult Function()? initial,
     TResult Function()? getSportsMembershipLoading,
     TResult Function(Failure? failure)? getSportsMembershipFailure,
-    TResult Function(List<SportEntity> sportsMembership)?
+    TResult Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SportEntity> suggestedAcademies)?
+    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
-    TResult Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult Function()? getAcademyCoursesLoading,
     TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult Function()? getAcademyCoursesInDateLoading,
     TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(List<SportEntity> academyCoursesInDate)?
+    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
-    TResult Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
     required TResult orElse(),
   }) {
     if (sportsMembershipFetched != null) {
@@ -2195,10 +2414,10 @@ class _$SportsMembershipFetchedImpl implements _SportsMembershipFetched {
 
 abstract class _SportsMembershipFetched implements AcademyState {
   const factory _SportsMembershipFetched(
-          {final List<SportEntity> sportsMembership}) =
+          {final List<AcademyMembershipEntity> sportsMembership}) =
       _$SportsMembershipFetchedImpl;
 
-  List<SportEntity> get sportsMembership;
+  List<AcademyMembershipEntity> get sportsMembership;
   @JsonKey(ignore: true)
   _$$SportsMembershipFetchedImplCopyWith<_$SportsMembershipFetchedImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -2249,27 +2468,27 @@ class _$GetSuggestedAcademiesLoadingImpl
     required TResult Function() initial,
     required TResult Function() getSportsMembershipLoading,
     required TResult Function(Failure? failure) getSportsMembershipFailure,
-    required TResult Function(List<SportEntity> sportsMembership)
+    required TResult Function(List<AcademyMembershipEntity> sportsMembership)
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SportEntity> suggestedAcademies)
+    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
-    required TResult Function(List<SportEntity> aboutAcademy)
+    required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
     required TResult Function() getAcademyCoursesLoading,
     required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(List<SportEntity> academyCourses)
+    required TResult Function(GetAcademyCoursesEntity? academyCourses)
         academyCoursesFetched,
     required TResult Function() getAcademyCoursesInDateLoading,
     required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(List<SportEntity> academyCoursesInDate)
+    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
-    required TResult Function(List<SportEntity> academyReview)
+    required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
   }) {
     return getSuggestedAcademiesLoading();
@@ -2281,25 +2500,27 @@ class _$GetSuggestedAcademiesLoadingImpl
     TResult? Function()? initial,
     TResult? Function()? getSportsMembershipLoading,
     TResult? Function(Failure? failure)? getSportsMembershipFailure,
-    TResult? Function(List<SportEntity> sportsMembership)?
+    TResult? Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SportEntity> suggestedAcademies)?
+    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
-    TResult? Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult? Function()? getAcademyCoursesLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult? Function()? getAcademyCoursesInDateLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(List<SportEntity> academyCoursesInDate)?
+    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
-    TResult? Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult? Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
   }) {
     return getSuggestedAcademiesLoading?.call();
   }
@@ -2310,25 +2531,27 @@ class _$GetSuggestedAcademiesLoadingImpl
     TResult Function()? initial,
     TResult Function()? getSportsMembershipLoading,
     TResult Function(Failure? failure)? getSportsMembershipFailure,
-    TResult Function(List<SportEntity> sportsMembership)?
+    TResult Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SportEntity> suggestedAcademies)?
+    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
-    TResult Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult Function()? getAcademyCoursesLoading,
     TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult Function()? getAcademyCoursesInDateLoading,
     TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(List<SportEntity> academyCoursesInDate)?
+    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
-    TResult Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
     required TResult orElse(),
   }) {
     if (getSuggestedAcademiesLoading != null) {
@@ -2532,27 +2755,27 @@ class _$GetSuggestedAcademiesFailureImpl
     required TResult Function() initial,
     required TResult Function() getSportsMembershipLoading,
     required TResult Function(Failure? failure) getSportsMembershipFailure,
-    required TResult Function(List<SportEntity> sportsMembership)
+    required TResult Function(List<AcademyMembershipEntity> sportsMembership)
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SportEntity> suggestedAcademies)
+    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
-    required TResult Function(List<SportEntity> aboutAcademy)
+    required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
     required TResult Function() getAcademyCoursesLoading,
     required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(List<SportEntity> academyCourses)
+    required TResult Function(GetAcademyCoursesEntity? academyCourses)
         academyCoursesFetched,
     required TResult Function() getAcademyCoursesInDateLoading,
     required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(List<SportEntity> academyCoursesInDate)
+    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
-    required TResult Function(List<SportEntity> academyReview)
+    required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
   }) {
     return getSuggestedAcademiesFailure(failure);
@@ -2564,25 +2787,27 @@ class _$GetSuggestedAcademiesFailureImpl
     TResult? Function()? initial,
     TResult? Function()? getSportsMembershipLoading,
     TResult? Function(Failure? failure)? getSportsMembershipFailure,
-    TResult? Function(List<SportEntity> sportsMembership)?
+    TResult? Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SportEntity> suggestedAcademies)?
+    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
-    TResult? Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult? Function()? getAcademyCoursesLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult? Function()? getAcademyCoursesInDateLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(List<SportEntity> academyCoursesInDate)?
+    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
-    TResult? Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult? Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
   }) {
     return getSuggestedAcademiesFailure?.call(failure);
   }
@@ -2593,25 +2818,27 @@ class _$GetSuggestedAcademiesFailureImpl
     TResult Function()? initial,
     TResult Function()? getSportsMembershipLoading,
     TResult Function(Failure? failure)? getSportsMembershipFailure,
-    TResult Function(List<SportEntity> sportsMembership)?
+    TResult Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SportEntity> suggestedAcademies)?
+    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
-    TResult Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult Function()? getAcademyCoursesLoading,
     TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult Function()? getAcademyCoursesInDateLoading,
     TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(List<SportEntity> academyCoursesInDate)?
+    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
-    TResult Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
     required TResult orElse(),
   }) {
     if (getSuggestedAcademiesFailure != null) {
@@ -2755,7 +2982,7 @@ abstract class _$$SuggestedAcademiesFetchedImplCopyWith<$Res> {
           $Res Function(_$SuggestedAcademiesFetchedImpl) then) =
       __$$SuggestedAcademiesFetchedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<SportEntity> suggestedAcademies});
+  $Res call({List<SuggestedAcademyEntity> suggestedAcademies});
 }
 
 /// @nodoc
@@ -2776,7 +3003,7 @@ class __$$SuggestedAcademiesFetchedImplCopyWithImpl<$Res>
       suggestedAcademies: null == suggestedAcademies
           ? _value._suggestedAcademies
           : suggestedAcademies // ignore: cast_nullable_to_non_nullable
-              as List<SportEntity>,
+              as List<SuggestedAcademyEntity>,
     ));
   }
 }
@@ -2785,13 +3012,13 @@ class __$$SuggestedAcademiesFetchedImplCopyWithImpl<$Res>
 
 class _$SuggestedAcademiesFetchedImpl implements _SuggestedAcademiesFetched {
   const _$SuggestedAcademiesFetchedImpl(
-      {final List<SportEntity> suggestedAcademies = const []})
+      {final List<SuggestedAcademyEntity> suggestedAcademies = const []})
       : _suggestedAcademies = suggestedAcademies;
 
-  final List<SportEntity> _suggestedAcademies;
+  final List<SuggestedAcademyEntity> _suggestedAcademies;
   @override
   @JsonKey()
-  List<SportEntity> get suggestedAcademies {
+  List<SuggestedAcademyEntity> get suggestedAcademies {
     if (_suggestedAcademies is EqualUnmodifiableListView)
       return _suggestedAcademies;
     // ignore: implicit_dynamic_type
@@ -2829,27 +3056,27 @@ class _$SuggestedAcademiesFetchedImpl implements _SuggestedAcademiesFetched {
     required TResult Function() initial,
     required TResult Function() getSportsMembershipLoading,
     required TResult Function(Failure? failure) getSportsMembershipFailure,
-    required TResult Function(List<SportEntity> sportsMembership)
+    required TResult Function(List<AcademyMembershipEntity> sportsMembership)
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SportEntity> suggestedAcademies)
+    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
-    required TResult Function(List<SportEntity> aboutAcademy)
+    required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
     required TResult Function() getAcademyCoursesLoading,
     required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(List<SportEntity> academyCourses)
+    required TResult Function(GetAcademyCoursesEntity? academyCourses)
         academyCoursesFetched,
     required TResult Function() getAcademyCoursesInDateLoading,
     required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(List<SportEntity> academyCoursesInDate)
+    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
-    required TResult Function(List<SportEntity> academyReview)
+    required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
   }) {
     return suggestedAcademiesFetched(suggestedAcademies);
@@ -2861,25 +3088,27 @@ class _$SuggestedAcademiesFetchedImpl implements _SuggestedAcademiesFetched {
     TResult? Function()? initial,
     TResult? Function()? getSportsMembershipLoading,
     TResult? Function(Failure? failure)? getSportsMembershipFailure,
-    TResult? Function(List<SportEntity> sportsMembership)?
+    TResult? Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SportEntity> suggestedAcademies)?
+    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
-    TResult? Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult? Function()? getAcademyCoursesLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult? Function()? getAcademyCoursesInDateLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(List<SportEntity> academyCoursesInDate)?
+    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
-    TResult? Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult? Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
   }) {
     return suggestedAcademiesFetched?.call(suggestedAcademies);
   }
@@ -2890,25 +3119,27 @@ class _$SuggestedAcademiesFetchedImpl implements _SuggestedAcademiesFetched {
     TResult Function()? initial,
     TResult Function()? getSportsMembershipLoading,
     TResult Function(Failure? failure)? getSportsMembershipFailure,
-    TResult Function(List<SportEntity> sportsMembership)?
+    TResult Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SportEntity> suggestedAcademies)?
+    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
-    TResult Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult Function()? getAcademyCoursesLoading,
     TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult Function()? getAcademyCoursesInDateLoading,
     TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(List<SportEntity> academyCoursesInDate)?
+    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
-    TResult Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
     required TResult orElse(),
   }) {
     if (suggestedAcademiesFetched != null) {
@@ -3036,10 +3267,10 @@ class _$SuggestedAcademiesFetchedImpl implements _SuggestedAcademiesFetched {
 
 abstract class _SuggestedAcademiesFetched implements AcademyState {
   const factory _SuggestedAcademiesFetched(
-          {final List<SportEntity> suggestedAcademies}) =
+          {final List<SuggestedAcademyEntity> suggestedAcademies}) =
       _$SuggestedAcademiesFetchedImpl;
 
-  List<SportEntity> get suggestedAcademies;
+  List<SuggestedAcademyEntity> get suggestedAcademies;
   @JsonKey(ignore: true)
   _$$SuggestedAcademiesFetchedImplCopyWith<_$SuggestedAcademiesFetchedImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -3089,27 +3320,27 @@ class _$GetAboutAcademyLoadingImpl implements _GetAboutAcademyLoading {
     required TResult Function() initial,
     required TResult Function() getSportsMembershipLoading,
     required TResult Function(Failure? failure) getSportsMembershipFailure,
-    required TResult Function(List<SportEntity> sportsMembership)
+    required TResult Function(List<AcademyMembershipEntity> sportsMembership)
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SportEntity> suggestedAcademies)
+    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
-    required TResult Function(List<SportEntity> aboutAcademy)
+    required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
     required TResult Function() getAcademyCoursesLoading,
     required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(List<SportEntity> academyCourses)
+    required TResult Function(GetAcademyCoursesEntity? academyCourses)
         academyCoursesFetched,
     required TResult Function() getAcademyCoursesInDateLoading,
     required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(List<SportEntity> academyCoursesInDate)
+    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
-    required TResult Function(List<SportEntity> academyReview)
+    required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
   }) {
     return getAboutAcademyLoading();
@@ -3121,25 +3352,27 @@ class _$GetAboutAcademyLoadingImpl implements _GetAboutAcademyLoading {
     TResult? Function()? initial,
     TResult? Function()? getSportsMembershipLoading,
     TResult? Function(Failure? failure)? getSportsMembershipFailure,
-    TResult? Function(List<SportEntity> sportsMembership)?
+    TResult? Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SportEntity> suggestedAcademies)?
+    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
-    TResult? Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult? Function()? getAcademyCoursesLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult? Function()? getAcademyCoursesInDateLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(List<SportEntity> academyCoursesInDate)?
+    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
-    TResult? Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult? Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
   }) {
     return getAboutAcademyLoading?.call();
   }
@@ -3150,25 +3383,27 @@ class _$GetAboutAcademyLoadingImpl implements _GetAboutAcademyLoading {
     TResult Function()? initial,
     TResult Function()? getSportsMembershipLoading,
     TResult Function(Failure? failure)? getSportsMembershipFailure,
-    TResult Function(List<SportEntity> sportsMembership)?
+    TResult Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SportEntity> suggestedAcademies)?
+    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
-    TResult Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult Function()? getAcademyCoursesLoading,
     TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult Function()? getAcademyCoursesInDateLoading,
     TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(List<SportEntity> academyCoursesInDate)?
+    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
-    TResult Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
     required TResult orElse(),
   }) {
     if (getAboutAcademyLoading != null) {
@@ -3369,27 +3604,27 @@ class _$GetAboutAcademyFailureImpl implements _GetAboutAcademyFailure {
     required TResult Function() initial,
     required TResult Function() getSportsMembershipLoading,
     required TResult Function(Failure? failure) getSportsMembershipFailure,
-    required TResult Function(List<SportEntity> sportsMembership)
+    required TResult Function(List<AcademyMembershipEntity> sportsMembership)
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SportEntity> suggestedAcademies)
+    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
-    required TResult Function(List<SportEntity> aboutAcademy)
+    required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
     required TResult Function() getAcademyCoursesLoading,
     required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(List<SportEntity> academyCourses)
+    required TResult Function(GetAcademyCoursesEntity? academyCourses)
         academyCoursesFetched,
     required TResult Function() getAcademyCoursesInDateLoading,
     required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(List<SportEntity> academyCoursesInDate)
+    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
-    required TResult Function(List<SportEntity> academyReview)
+    required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
   }) {
     return getAboutAcademyFailure(failure);
@@ -3401,25 +3636,27 @@ class _$GetAboutAcademyFailureImpl implements _GetAboutAcademyFailure {
     TResult? Function()? initial,
     TResult? Function()? getSportsMembershipLoading,
     TResult? Function(Failure? failure)? getSportsMembershipFailure,
-    TResult? Function(List<SportEntity> sportsMembership)?
+    TResult? Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SportEntity> suggestedAcademies)?
+    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
-    TResult? Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult? Function()? getAcademyCoursesLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult? Function()? getAcademyCoursesInDateLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(List<SportEntity> academyCoursesInDate)?
+    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
-    TResult? Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult? Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
   }) {
     return getAboutAcademyFailure?.call(failure);
   }
@@ -3430,25 +3667,27 @@ class _$GetAboutAcademyFailureImpl implements _GetAboutAcademyFailure {
     TResult Function()? initial,
     TResult Function()? getSportsMembershipLoading,
     TResult Function(Failure? failure)? getSportsMembershipFailure,
-    TResult Function(List<SportEntity> sportsMembership)?
+    TResult Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SportEntity> suggestedAcademies)?
+    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
-    TResult Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult Function()? getAcademyCoursesLoading,
     TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult Function()? getAcademyCoursesInDateLoading,
     TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(List<SportEntity> academyCoursesInDate)?
+    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
-    TResult Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
     required TResult orElse(),
   }) {
     if (getAboutAcademyFailure != null) {
@@ -3590,7 +3829,7 @@ abstract class _$$AboutAcademyFetchedImplCopyWith<$Res> {
           $Res Function(_$AboutAcademyFetchedImpl) then) =
       __$$AboutAcademyFetchedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<SportEntity> aboutAcademy});
+  $Res call({AboutAcademyEntity? aboutAcademy});
 }
 
 /// @nodoc
@@ -3604,13 +3843,13 @@ class __$$AboutAcademyFetchedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? aboutAcademy = null,
+    Object? aboutAcademy = freezed,
   }) {
     return _then(_$AboutAcademyFetchedImpl(
-      aboutAcademy: null == aboutAcademy
-          ? _value._aboutAcademy
+      aboutAcademy: freezed == aboutAcademy
+          ? _value.aboutAcademy
           : aboutAcademy // ignore: cast_nullable_to_non_nullable
-              as List<SportEntity>,
+              as AboutAcademyEntity?,
     ));
   }
 }
@@ -3618,18 +3857,11 @@ class __$$AboutAcademyFetchedImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$AboutAcademyFetchedImpl implements _AboutAcademyFetched {
-  const _$AboutAcademyFetchedImpl(
-      {final List<SportEntity> aboutAcademy = const []})
-      : _aboutAcademy = aboutAcademy;
+  const _$AboutAcademyFetchedImpl({this.aboutAcademy = null});
 
-  final List<SportEntity> _aboutAcademy;
   @override
   @JsonKey()
-  List<SportEntity> get aboutAcademy {
-    if (_aboutAcademy is EqualUnmodifiableListView) return _aboutAcademy;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_aboutAcademy);
-  }
+  final AboutAcademyEntity? aboutAcademy;
 
   @override
   String toString() {
@@ -3641,13 +3873,12 @@ class _$AboutAcademyFetchedImpl implements _AboutAcademyFetched {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AboutAcademyFetchedImpl &&
-            const DeepCollectionEquality()
-                .equals(other._aboutAcademy, _aboutAcademy));
+            (identical(other.aboutAcademy, aboutAcademy) ||
+                other.aboutAcademy == aboutAcademy));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_aboutAcademy));
+  int get hashCode => Object.hash(runtimeType, aboutAcademy);
 
   @JsonKey(ignore: true)
   @override
@@ -3662,27 +3893,27 @@ class _$AboutAcademyFetchedImpl implements _AboutAcademyFetched {
     required TResult Function() initial,
     required TResult Function() getSportsMembershipLoading,
     required TResult Function(Failure? failure) getSportsMembershipFailure,
-    required TResult Function(List<SportEntity> sportsMembership)
+    required TResult Function(List<AcademyMembershipEntity> sportsMembership)
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SportEntity> suggestedAcademies)
+    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
-    required TResult Function(List<SportEntity> aboutAcademy)
+    required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
     required TResult Function() getAcademyCoursesLoading,
     required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(List<SportEntity> academyCourses)
+    required TResult Function(GetAcademyCoursesEntity? academyCourses)
         academyCoursesFetched,
     required TResult Function() getAcademyCoursesInDateLoading,
     required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(List<SportEntity> academyCoursesInDate)
+    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
-    required TResult Function(List<SportEntity> academyReview)
+    required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
   }) {
     return aboutAcademyFetched(aboutAcademy);
@@ -3694,25 +3925,27 @@ class _$AboutAcademyFetchedImpl implements _AboutAcademyFetched {
     TResult? Function()? initial,
     TResult? Function()? getSportsMembershipLoading,
     TResult? Function(Failure? failure)? getSportsMembershipFailure,
-    TResult? Function(List<SportEntity> sportsMembership)?
+    TResult? Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SportEntity> suggestedAcademies)?
+    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
-    TResult? Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult? Function()? getAcademyCoursesLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult? Function()? getAcademyCoursesInDateLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(List<SportEntity> academyCoursesInDate)?
+    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
-    TResult? Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult? Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
   }) {
     return aboutAcademyFetched?.call(aboutAcademy);
   }
@@ -3723,25 +3956,27 @@ class _$AboutAcademyFetchedImpl implements _AboutAcademyFetched {
     TResult Function()? initial,
     TResult Function()? getSportsMembershipLoading,
     TResult Function(Failure? failure)? getSportsMembershipFailure,
-    TResult Function(List<SportEntity> sportsMembership)?
+    TResult Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SportEntity> suggestedAcademies)?
+    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
-    TResult Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult Function()? getAcademyCoursesLoading,
     TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult Function()? getAcademyCoursesInDateLoading,
     TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(List<SportEntity> academyCoursesInDate)?
+    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
-    TResult Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
     required TResult orElse(),
   }) {
     if (aboutAcademyFetched != null) {
@@ -3868,10 +4103,10 @@ class _$AboutAcademyFetchedImpl implements _AboutAcademyFetched {
 }
 
 abstract class _AboutAcademyFetched implements AcademyState {
-  const factory _AboutAcademyFetched({final List<SportEntity> aboutAcademy}) =
+  const factory _AboutAcademyFetched({final AboutAcademyEntity? aboutAcademy}) =
       _$AboutAcademyFetchedImpl;
 
-  List<SportEntity> get aboutAcademy;
+  AboutAcademyEntity? get aboutAcademy;
   @JsonKey(ignore: true)
   _$$AboutAcademyFetchedImplCopyWith<_$AboutAcademyFetchedImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -3921,27 +4156,27 @@ class _$GetAcademyCoursesLoadingImpl implements _GetAcademyCoursesLoading {
     required TResult Function() initial,
     required TResult Function() getSportsMembershipLoading,
     required TResult Function(Failure? failure) getSportsMembershipFailure,
-    required TResult Function(List<SportEntity> sportsMembership)
+    required TResult Function(List<AcademyMembershipEntity> sportsMembership)
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SportEntity> suggestedAcademies)
+    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
-    required TResult Function(List<SportEntity> aboutAcademy)
+    required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
     required TResult Function() getAcademyCoursesLoading,
     required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(List<SportEntity> academyCourses)
+    required TResult Function(GetAcademyCoursesEntity? academyCourses)
         academyCoursesFetched,
     required TResult Function() getAcademyCoursesInDateLoading,
     required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(List<SportEntity> academyCoursesInDate)
+    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
-    required TResult Function(List<SportEntity> academyReview)
+    required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
   }) {
     return getAcademyCoursesLoading();
@@ -3953,25 +4188,27 @@ class _$GetAcademyCoursesLoadingImpl implements _GetAcademyCoursesLoading {
     TResult? Function()? initial,
     TResult? Function()? getSportsMembershipLoading,
     TResult? Function(Failure? failure)? getSportsMembershipFailure,
-    TResult? Function(List<SportEntity> sportsMembership)?
+    TResult? Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SportEntity> suggestedAcademies)?
+    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
-    TResult? Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult? Function()? getAcademyCoursesLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult? Function()? getAcademyCoursesInDateLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(List<SportEntity> academyCoursesInDate)?
+    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
-    TResult? Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult? Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
   }) {
     return getAcademyCoursesLoading?.call();
   }
@@ -3982,25 +4219,27 @@ class _$GetAcademyCoursesLoadingImpl implements _GetAcademyCoursesLoading {
     TResult Function()? initial,
     TResult Function()? getSportsMembershipLoading,
     TResult Function(Failure? failure)? getSportsMembershipFailure,
-    TResult Function(List<SportEntity> sportsMembership)?
+    TResult Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SportEntity> suggestedAcademies)?
+    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
-    TResult Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult Function()? getAcademyCoursesLoading,
     TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult Function()? getAcademyCoursesInDateLoading,
     TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(List<SportEntity> academyCoursesInDate)?
+    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
-    TResult Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
     required TResult orElse(),
   }) {
     if (getAcademyCoursesLoading != null) {
@@ -4201,27 +4440,27 @@ class _$GetAcademyCoursesFailureImpl implements _GetAcademyCoursesFailure {
     required TResult Function() initial,
     required TResult Function() getSportsMembershipLoading,
     required TResult Function(Failure? failure) getSportsMembershipFailure,
-    required TResult Function(List<SportEntity> sportsMembership)
+    required TResult Function(List<AcademyMembershipEntity> sportsMembership)
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SportEntity> suggestedAcademies)
+    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
-    required TResult Function(List<SportEntity> aboutAcademy)
+    required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
     required TResult Function() getAcademyCoursesLoading,
     required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(List<SportEntity> academyCourses)
+    required TResult Function(GetAcademyCoursesEntity? academyCourses)
         academyCoursesFetched,
     required TResult Function() getAcademyCoursesInDateLoading,
     required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(List<SportEntity> academyCoursesInDate)
+    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
-    required TResult Function(List<SportEntity> academyReview)
+    required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
   }) {
     return getAcademyCoursesFailure(failure);
@@ -4233,25 +4472,27 @@ class _$GetAcademyCoursesFailureImpl implements _GetAcademyCoursesFailure {
     TResult? Function()? initial,
     TResult? Function()? getSportsMembershipLoading,
     TResult? Function(Failure? failure)? getSportsMembershipFailure,
-    TResult? Function(List<SportEntity> sportsMembership)?
+    TResult? Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SportEntity> suggestedAcademies)?
+    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
-    TResult? Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult? Function()? getAcademyCoursesLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult? Function()? getAcademyCoursesInDateLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(List<SportEntity> academyCoursesInDate)?
+    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
-    TResult? Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult? Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
   }) {
     return getAcademyCoursesFailure?.call(failure);
   }
@@ -4262,25 +4503,27 @@ class _$GetAcademyCoursesFailureImpl implements _GetAcademyCoursesFailure {
     TResult Function()? initial,
     TResult Function()? getSportsMembershipLoading,
     TResult Function(Failure? failure)? getSportsMembershipFailure,
-    TResult Function(List<SportEntity> sportsMembership)?
+    TResult Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SportEntity> suggestedAcademies)?
+    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
-    TResult Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult Function()? getAcademyCoursesLoading,
     TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult Function()? getAcademyCoursesInDateLoading,
     TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(List<SportEntity> academyCoursesInDate)?
+    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
-    TResult Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
     required TResult orElse(),
   }) {
     if (getAcademyCoursesFailure != null) {
@@ -4423,7 +4666,7 @@ abstract class _$$AcademyCoursesFetchedImplCopyWith<$Res> {
           $Res Function(_$AcademyCoursesFetchedImpl) then) =
       __$$AcademyCoursesFetchedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<SportEntity> academyCourses});
+  $Res call({GetAcademyCoursesEntity? academyCourses});
 }
 
 /// @nodoc
@@ -4437,13 +4680,13 @@ class __$$AcademyCoursesFetchedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? academyCourses = null,
+    Object? academyCourses = freezed,
   }) {
     return _then(_$AcademyCoursesFetchedImpl(
-      academyCourses: null == academyCourses
-          ? _value._academyCourses
+      academyCourses: freezed == academyCourses
+          ? _value.academyCourses
           : academyCourses // ignore: cast_nullable_to_non_nullable
-              as List<SportEntity>,
+              as GetAcademyCoursesEntity?,
     ));
   }
 }
@@ -4451,18 +4694,11 @@ class __$$AcademyCoursesFetchedImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$AcademyCoursesFetchedImpl implements _AcademyCoursesFetched {
-  const _$AcademyCoursesFetchedImpl(
-      {final List<SportEntity> academyCourses = const []})
-      : _academyCourses = academyCourses;
+  const _$AcademyCoursesFetchedImpl({this.academyCourses = null});
 
-  final List<SportEntity> _academyCourses;
   @override
   @JsonKey()
-  List<SportEntity> get academyCourses {
-    if (_academyCourses is EqualUnmodifiableListView) return _academyCourses;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_academyCourses);
-  }
+  final GetAcademyCoursesEntity? academyCourses;
 
   @override
   String toString() {
@@ -4474,13 +4710,12 @@ class _$AcademyCoursesFetchedImpl implements _AcademyCoursesFetched {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AcademyCoursesFetchedImpl &&
-            const DeepCollectionEquality()
-                .equals(other._academyCourses, _academyCourses));
+            (identical(other.academyCourses, academyCourses) ||
+                other.academyCourses == academyCourses));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_academyCourses));
+  int get hashCode => Object.hash(runtimeType, academyCourses);
 
   @JsonKey(ignore: true)
   @override
@@ -4495,27 +4730,27 @@ class _$AcademyCoursesFetchedImpl implements _AcademyCoursesFetched {
     required TResult Function() initial,
     required TResult Function() getSportsMembershipLoading,
     required TResult Function(Failure? failure) getSportsMembershipFailure,
-    required TResult Function(List<SportEntity> sportsMembership)
+    required TResult Function(List<AcademyMembershipEntity> sportsMembership)
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SportEntity> suggestedAcademies)
+    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
-    required TResult Function(List<SportEntity> aboutAcademy)
+    required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
     required TResult Function() getAcademyCoursesLoading,
     required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(List<SportEntity> academyCourses)
+    required TResult Function(GetAcademyCoursesEntity? academyCourses)
         academyCoursesFetched,
     required TResult Function() getAcademyCoursesInDateLoading,
     required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(List<SportEntity> academyCoursesInDate)
+    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
-    required TResult Function(List<SportEntity> academyReview)
+    required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
   }) {
     return academyCoursesFetched(academyCourses);
@@ -4527,25 +4762,27 @@ class _$AcademyCoursesFetchedImpl implements _AcademyCoursesFetched {
     TResult? Function()? initial,
     TResult? Function()? getSportsMembershipLoading,
     TResult? Function(Failure? failure)? getSportsMembershipFailure,
-    TResult? Function(List<SportEntity> sportsMembership)?
+    TResult? Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SportEntity> suggestedAcademies)?
+    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
-    TResult? Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult? Function()? getAcademyCoursesLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult? Function()? getAcademyCoursesInDateLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(List<SportEntity> academyCoursesInDate)?
+    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
-    TResult? Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult? Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
   }) {
     return academyCoursesFetched?.call(academyCourses);
   }
@@ -4556,25 +4793,27 @@ class _$AcademyCoursesFetchedImpl implements _AcademyCoursesFetched {
     TResult Function()? initial,
     TResult Function()? getSportsMembershipLoading,
     TResult Function(Failure? failure)? getSportsMembershipFailure,
-    TResult Function(List<SportEntity> sportsMembership)?
+    TResult Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SportEntity> suggestedAcademies)?
+    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
-    TResult Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult Function()? getAcademyCoursesLoading,
     TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult Function()? getAcademyCoursesInDateLoading,
     TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(List<SportEntity> academyCoursesInDate)?
+    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
-    TResult Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
     required TResult orElse(),
   }) {
     if (academyCoursesFetched != null) {
@@ -4702,9 +4941,10 @@ class _$AcademyCoursesFetchedImpl implements _AcademyCoursesFetched {
 
 abstract class _AcademyCoursesFetched implements AcademyState {
   const factory _AcademyCoursesFetched(
-      {final List<SportEntity> academyCourses}) = _$AcademyCoursesFetchedImpl;
+          {final GetAcademyCoursesEntity? academyCourses}) =
+      _$AcademyCoursesFetchedImpl;
 
-  List<SportEntity> get academyCourses;
+  GetAcademyCoursesEntity? get academyCourses;
   @JsonKey(ignore: true)
   _$$AcademyCoursesFetchedImplCopyWith<_$AcademyCoursesFetchedImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -4756,27 +4996,27 @@ class _$GetAcademyCoursesInDateLoadingImpl
     required TResult Function() initial,
     required TResult Function() getSportsMembershipLoading,
     required TResult Function(Failure? failure) getSportsMembershipFailure,
-    required TResult Function(List<SportEntity> sportsMembership)
+    required TResult Function(List<AcademyMembershipEntity> sportsMembership)
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SportEntity> suggestedAcademies)
+    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
-    required TResult Function(List<SportEntity> aboutAcademy)
+    required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
     required TResult Function() getAcademyCoursesLoading,
     required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(List<SportEntity> academyCourses)
+    required TResult Function(GetAcademyCoursesEntity? academyCourses)
         academyCoursesFetched,
     required TResult Function() getAcademyCoursesInDateLoading,
     required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(List<SportEntity> academyCoursesInDate)
+    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
-    required TResult Function(List<SportEntity> academyReview)
+    required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
   }) {
     return getAcademyCoursesInDateLoading();
@@ -4788,25 +5028,27 @@ class _$GetAcademyCoursesInDateLoadingImpl
     TResult? Function()? initial,
     TResult? Function()? getSportsMembershipLoading,
     TResult? Function(Failure? failure)? getSportsMembershipFailure,
-    TResult? Function(List<SportEntity> sportsMembership)?
+    TResult? Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SportEntity> suggestedAcademies)?
+    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
-    TResult? Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult? Function()? getAcademyCoursesLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult? Function()? getAcademyCoursesInDateLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(List<SportEntity> academyCoursesInDate)?
+    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
-    TResult? Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult? Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
   }) {
     return getAcademyCoursesInDateLoading?.call();
   }
@@ -4817,25 +5059,27 @@ class _$GetAcademyCoursesInDateLoadingImpl
     TResult Function()? initial,
     TResult Function()? getSportsMembershipLoading,
     TResult Function(Failure? failure)? getSportsMembershipFailure,
-    TResult Function(List<SportEntity> sportsMembership)?
+    TResult Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SportEntity> suggestedAcademies)?
+    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
-    TResult Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult Function()? getAcademyCoursesLoading,
     TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult Function()? getAcademyCoursesInDateLoading,
     TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(List<SportEntity> academyCoursesInDate)?
+    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
-    TResult Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
     required TResult orElse(),
   }) {
     if (getAcademyCoursesInDateLoading != null) {
@@ -5040,27 +5284,27 @@ class _$GetAcademyCoursesInDateFailureImpl
     required TResult Function() initial,
     required TResult Function() getSportsMembershipLoading,
     required TResult Function(Failure? failure) getSportsMembershipFailure,
-    required TResult Function(List<SportEntity> sportsMembership)
+    required TResult Function(List<AcademyMembershipEntity> sportsMembership)
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SportEntity> suggestedAcademies)
+    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
-    required TResult Function(List<SportEntity> aboutAcademy)
+    required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
     required TResult Function() getAcademyCoursesLoading,
     required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(List<SportEntity> academyCourses)
+    required TResult Function(GetAcademyCoursesEntity? academyCourses)
         academyCoursesFetched,
     required TResult Function() getAcademyCoursesInDateLoading,
     required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(List<SportEntity> academyCoursesInDate)
+    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
-    required TResult Function(List<SportEntity> academyReview)
+    required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
   }) {
     return getAcademyCoursesInDateFailure(failure);
@@ -5072,25 +5316,27 @@ class _$GetAcademyCoursesInDateFailureImpl
     TResult? Function()? initial,
     TResult? Function()? getSportsMembershipLoading,
     TResult? Function(Failure? failure)? getSportsMembershipFailure,
-    TResult? Function(List<SportEntity> sportsMembership)?
+    TResult? Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SportEntity> suggestedAcademies)?
+    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
-    TResult? Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult? Function()? getAcademyCoursesLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult? Function()? getAcademyCoursesInDateLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(List<SportEntity> academyCoursesInDate)?
+    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
-    TResult? Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult? Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
   }) {
     return getAcademyCoursesInDateFailure?.call(failure);
   }
@@ -5101,25 +5347,27 @@ class _$GetAcademyCoursesInDateFailureImpl
     TResult Function()? initial,
     TResult Function()? getSportsMembershipLoading,
     TResult Function(Failure? failure)? getSportsMembershipFailure,
-    TResult Function(List<SportEntity> sportsMembership)?
+    TResult Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SportEntity> suggestedAcademies)?
+    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
-    TResult Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult Function()? getAcademyCoursesLoading,
     TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult Function()? getAcademyCoursesInDateLoading,
     TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(List<SportEntity> academyCoursesInDate)?
+    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
-    TResult Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
     required TResult orElse(),
   }) {
     if (getAcademyCoursesInDateFailure != null) {
@@ -5263,7 +5511,7 @@ abstract class _$$AcademyCoursesInDateFetchedImplCopyWith<$Res> {
           $Res Function(_$AcademyCoursesInDateFetchedImpl) then) =
       __$$AcademyCoursesInDateFetchedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<SportEntity> academyCoursesInDate});
+  $Res call({GetAcademyCoursesEntity? academyCoursesInDate});
 }
 
 /// @nodoc
@@ -5278,13 +5526,13 @@ class __$$AcademyCoursesInDateFetchedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? academyCoursesInDate = null,
+    Object? academyCoursesInDate = freezed,
   }) {
     return _then(_$AcademyCoursesInDateFetchedImpl(
-      academyCoursesInDate: null == academyCoursesInDate
-          ? _value._academyCoursesInDate
+      academyCoursesInDate: freezed == academyCoursesInDate
+          ? _value.academyCoursesInDate
           : academyCoursesInDate // ignore: cast_nullable_to_non_nullable
-              as List<SportEntity>,
+              as GetAcademyCoursesEntity?,
     ));
   }
 }
@@ -5293,19 +5541,11 @@ class __$$AcademyCoursesInDateFetchedImplCopyWithImpl<$Res>
 
 class _$AcademyCoursesInDateFetchedImpl
     implements _AcademyCoursesInDateFetched {
-  const _$AcademyCoursesInDateFetchedImpl(
-      {final List<SportEntity> academyCoursesInDate = const []})
-      : _academyCoursesInDate = academyCoursesInDate;
+  const _$AcademyCoursesInDateFetchedImpl({this.academyCoursesInDate = null});
 
-  final List<SportEntity> _academyCoursesInDate;
   @override
   @JsonKey()
-  List<SportEntity> get academyCoursesInDate {
-    if (_academyCoursesInDate is EqualUnmodifiableListView)
-      return _academyCoursesInDate;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_academyCoursesInDate);
-  }
+  final GetAcademyCoursesEntity? academyCoursesInDate;
 
   @override
   String toString() {
@@ -5317,13 +5557,12 @@ class _$AcademyCoursesInDateFetchedImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AcademyCoursesInDateFetchedImpl &&
-            const DeepCollectionEquality()
-                .equals(other._academyCoursesInDate, _academyCoursesInDate));
+            (identical(other.academyCoursesInDate, academyCoursesInDate) ||
+                other.academyCoursesInDate == academyCoursesInDate));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_academyCoursesInDate));
+  int get hashCode => Object.hash(runtimeType, academyCoursesInDate);
 
   @JsonKey(ignore: true)
   @override
@@ -5338,27 +5577,27 @@ class _$AcademyCoursesInDateFetchedImpl
     required TResult Function() initial,
     required TResult Function() getSportsMembershipLoading,
     required TResult Function(Failure? failure) getSportsMembershipFailure,
-    required TResult Function(List<SportEntity> sportsMembership)
+    required TResult Function(List<AcademyMembershipEntity> sportsMembership)
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SportEntity> suggestedAcademies)
+    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
-    required TResult Function(List<SportEntity> aboutAcademy)
+    required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
     required TResult Function() getAcademyCoursesLoading,
     required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(List<SportEntity> academyCourses)
+    required TResult Function(GetAcademyCoursesEntity? academyCourses)
         academyCoursesFetched,
     required TResult Function() getAcademyCoursesInDateLoading,
     required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(List<SportEntity> academyCoursesInDate)
+    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
-    required TResult Function(List<SportEntity> academyReview)
+    required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
   }) {
     return academyCoursesInDateFetched(academyCoursesInDate);
@@ -5370,25 +5609,27 @@ class _$AcademyCoursesInDateFetchedImpl
     TResult? Function()? initial,
     TResult? Function()? getSportsMembershipLoading,
     TResult? Function(Failure? failure)? getSportsMembershipFailure,
-    TResult? Function(List<SportEntity> sportsMembership)?
+    TResult? Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SportEntity> suggestedAcademies)?
+    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
-    TResult? Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult? Function()? getAcademyCoursesLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult? Function()? getAcademyCoursesInDateLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(List<SportEntity> academyCoursesInDate)?
+    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
-    TResult? Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult? Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
   }) {
     return academyCoursesInDateFetched?.call(academyCoursesInDate);
   }
@@ -5399,25 +5640,27 @@ class _$AcademyCoursesInDateFetchedImpl
     TResult Function()? initial,
     TResult Function()? getSportsMembershipLoading,
     TResult Function(Failure? failure)? getSportsMembershipFailure,
-    TResult Function(List<SportEntity> sportsMembership)?
+    TResult Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SportEntity> suggestedAcademies)?
+    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
-    TResult Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult Function()? getAcademyCoursesLoading,
     TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult Function()? getAcademyCoursesInDateLoading,
     TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(List<SportEntity> academyCoursesInDate)?
+    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
-    TResult Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
     required TResult orElse(),
   }) {
     if (academyCoursesInDateFetched != null) {
@@ -5545,10 +5788,10 @@ class _$AcademyCoursesInDateFetchedImpl
 
 abstract class _AcademyCoursesInDateFetched implements AcademyState {
   const factory _AcademyCoursesInDateFetched(
-          {final List<SportEntity> academyCoursesInDate}) =
+          {final GetAcademyCoursesEntity? academyCoursesInDate}) =
       _$AcademyCoursesInDateFetchedImpl;
 
-  List<SportEntity> get academyCoursesInDate;
+  GetAcademyCoursesEntity? get academyCoursesInDate;
   @JsonKey(ignore: true)
   _$$AcademyCoursesInDateFetchedImplCopyWith<_$AcademyCoursesInDateFetchedImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -5598,27 +5841,27 @@ class _$GetAcademyReviewLoadingImpl implements _GetAcademyReviewLoading {
     required TResult Function() initial,
     required TResult Function() getSportsMembershipLoading,
     required TResult Function(Failure? failure) getSportsMembershipFailure,
-    required TResult Function(List<SportEntity> sportsMembership)
+    required TResult Function(List<AcademyMembershipEntity> sportsMembership)
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SportEntity> suggestedAcademies)
+    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
-    required TResult Function(List<SportEntity> aboutAcademy)
+    required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
     required TResult Function() getAcademyCoursesLoading,
     required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(List<SportEntity> academyCourses)
+    required TResult Function(GetAcademyCoursesEntity? academyCourses)
         academyCoursesFetched,
     required TResult Function() getAcademyCoursesInDateLoading,
     required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(List<SportEntity> academyCoursesInDate)
+    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
-    required TResult Function(List<SportEntity> academyReview)
+    required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
   }) {
     return getAcademyReviewLoading();
@@ -5630,25 +5873,27 @@ class _$GetAcademyReviewLoadingImpl implements _GetAcademyReviewLoading {
     TResult? Function()? initial,
     TResult? Function()? getSportsMembershipLoading,
     TResult? Function(Failure? failure)? getSportsMembershipFailure,
-    TResult? Function(List<SportEntity> sportsMembership)?
+    TResult? Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SportEntity> suggestedAcademies)?
+    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
-    TResult? Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult? Function()? getAcademyCoursesLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult? Function()? getAcademyCoursesInDateLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(List<SportEntity> academyCoursesInDate)?
+    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
-    TResult? Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult? Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
   }) {
     return getAcademyReviewLoading?.call();
   }
@@ -5659,25 +5904,27 @@ class _$GetAcademyReviewLoadingImpl implements _GetAcademyReviewLoading {
     TResult Function()? initial,
     TResult Function()? getSportsMembershipLoading,
     TResult Function(Failure? failure)? getSportsMembershipFailure,
-    TResult Function(List<SportEntity> sportsMembership)?
+    TResult Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SportEntity> suggestedAcademies)?
+    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
-    TResult Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult Function()? getAcademyCoursesLoading,
     TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult Function()? getAcademyCoursesInDateLoading,
     TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(List<SportEntity> academyCoursesInDate)?
+    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
-    TResult Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
     required TResult orElse(),
   }) {
     if (getAcademyReviewLoading != null) {
@@ -5878,27 +6125,27 @@ class _$GetAcademyReviewFailureImpl implements _GetAcademyReviewFailure {
     required TResult Function() initial,
     required TResult Function() getSportsMembershipLoading,
     required TResult Function(Failure? failure) getSportsMembershipFailure,
-    required TResult Function(List<SportEntity> sportsMembership)
+    required TResult Function(List<AcademyMembershipEntity> sportsMembership)
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SportEntity> suggestedAcademies)
+    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
-    required TResult Function(List<SportEntity> aboutAcademy)
+    required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
     required TResult Function() getAcademyCoursesLoading,
     required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(List<SportEntity> academyCourses)
+    required TResult Function(GetAcademyCoursesEntity? academyCourses)
         academyCoursesFetched,
     required TResult Function() getAcademyCoursesInDateLoading,
     required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(List<SportEntity> academyCoursesInDate)
+    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
-    required TResult Function(List<SportEntity> academyReview)
+    required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
   }) {
     return getAcademyReviewFailure(failure);
@@ -5910,25 +6157,27 @@ class _$GetAcademyReviewFailureImpl implements _GetAcademyReviewFailure {
     TResult? Function()? initial,
     TResult? Function()? getSportsMembershipLoading,
     TResult? Function(Failure? failure)? getSportsMembershipFailure,
-    TResult? Function(List<SportEntity> sportsMembership)?
+    TResult? Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SportEntity> suggestedAcademies)?
+    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
-    TResult? Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult? Function()? getAcademyCoursesLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult? Function()? getAcademyCoursesInDateLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(List<SportEntity> academyCoursesInDate)?
+    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
-    TResult? Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult? Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
   }) {
     return getAcademyReviewFailure?.call(failure);
   }
@@ -5939,25 +6188,27 @@ class _$GetAcademyReviewFailureImpl implements _GetAcademyReviewFailure {
     TResult Function()? initial,
     TResult Function()? getSportsMembershipLoading,
     TResult Function(Failure? failure)? getSportsMembershipFailure,
-    TResult Function(List<SportEntity> sportsMembership)?
+    TResult Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SportEntity> suggestedAcademies)?
+    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
-    TResult Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult Function()? getAcademyCoursesLoading,
     TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult Function()? getAcademyCoursesInDateLoading,
     TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(List<SportEntity> academyCoursesInDate)?
+    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
-    TResult Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
     required TResult orElse(),
   }) {
     if (getAcademyReviewFailure != null) {
@@ -6099,7 +6350,7 @@ abstract class _$$AcademyReviewFetchedImplCopyWith<$Res> {
           $Res Function(_$AcademyReviewFetchedImpl) then) =
       __$$AcademyReviewFetchedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<SportEntity> academyReview});
+  $Res call({List<AcademyReviewEntity> academyReview});
 }
 
 /// @nodoc
@@ -6119,7 +6370,7 @@ class __$$AcademyReviewFetchedImplCopyWithImpl<$Res>
       academyReview: null == academyReview
           ? _value._academyReview
           : academyReview // ignore: cast_nullable_to_non_nullable
-              as List<SportEntity>,
+              as List<AcademyReviewEntity>,
     ));
   }
 }
@@ -6128,13 +6379,13 @@ class __$$AcademyReviewFetchedImplCopyWithImpl<$Res>
 
 class _$AcademyReviewFetchedImpl implements _AcademyReviewFetched {
   const _$AcademyReviewFetchedImpl(
-      {final List<SportEntity> academyReview = const []})
+      {final List<AcademyReviewEntity> academyReview = const []})
       : _academyReview = academyReview;
 
-  final List<SportEntity> _academyReview;
+  final List<AcademyReviewEntity> _academyReview;
   @override
   @JsonKey()
-  List<SportEntity> get academyReview {
+  List<AcademyReviewEntity> get academyReview {
     if (_academyReview is EqualUnmodifiableListView) return _academyReview;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_academyReview);
@@ -6172,27 +6423,27 @@ class _$AcademyReviewFetchedImpl implements _AcademyReviewFetched {
     required TResult Function() initial,
     required TResult Function() getSportsMembershipLoading,
     required TResult Function(Failure? failure) getSportsMembershipFailure,
-    required TResult Function(List<SportEntity> sportsMembership)
+    required TResult Function(List<AcademyMembershipEntity> sportsMembership)
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SportEntity> suggestedAcademies)
+    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
-    required TResult Function(List<SportEntity> aboutAcademy)
+    required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
     required TResult Function() getAcademyCoursesLoading,
     required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(List<SportEntity> academyCourses)
+    required TResult Function(GetAcademyCoursesEntity? academyCourses)
         academyCoursesFetched,
     required TResult Function() getAcademyCoursesInDateLoading,
     required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(List<SportEntity> academyCoursesInDate)
+    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
-    required TResult Function(List<SportEntity> academyReview)
+    required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
   }) {
     return academyReviewFetched(academyReview);
@@ -6204,25 +6455,27 @@ class _$AcademyReviewFetchedImpl implements _AcademyReviewFetched {
     TResult? Function()? initial,
     TResult? Function()? getSportsMembershipLoading,
     TResult? Function(Failure? failure)? getSportsMembershipFailure,
-    TResult? Function(List<SportEntity> sportsMembership)?
+    TResult? Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SportEntity> suggestedAcademies)?
+    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
-    TResult? Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult? Function()? getAcademyCoursesLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult? Function()? getAcademyCoursesInDateLoading,
     TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(List<SportEntity> academyCoursesInDate)?
+    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
-    TResult? Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult? Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
   }) {
     return academyReviewFetched?.call(academyReview);
   }
@@ -6233,25 +6486,27 @@ class _$AcademyReviewFetchedImpl implements _AcademyReviewFetched {
     TResult Function()? initial,
     TResult Function()? getSportsMembershipLoading,
     TResult Function(Failure? failure)? getSportsMembershipFailure,
-    TResult Function(List<SportEntity> sportsMembership)?
+    TResult Function(List<AcademyMembershipEntity> sportsMembership)?
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SportEntity> suggestedAcademies)?
+    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
-    TResult Function(List<SportEntity> aboutAcademy)? aboutAcademyFetched,
+    TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
     TResult Function()? getAcademyCoursesLoading,
     TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(List<SportEntity> academyCourses)? academyCoursesFetched,
+    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+        academyCoursesFetched,
     TResult Function()? getAcademyCoursesInDateLoading,
     TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(List<SportEntity> academyCoursesInDate)?
+    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
-    TResult Function(List<SportEntity> academyReview)? academyReviewFetched,
+    TResult Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
     required TResult orElse(),
   }) {
     if (academyReviewFetched != null) {
@@ -6378,10 +6633,11 @@ class _$AcademyReviewFetchedImpl implements _AcademyReviewFetched {
 }
 
 abstract class _AcademyReviewFetched implements AcademyState {
-  const factory _AcademyReviewFetched({final List<SportEntity> academyReview}) =
+  const factory _AcademyReviewFetched(
+          {final List<AcademyReviewEntity> academyReview}) =
       _$AcademyReviewFetchedImpl;
 
-  List<SportEntity> get academyReview;
+  List<AcademyReviewEntity> get academyReview;
   @JsonKey(ignore: true)
   _$$AcademyReviewFetchedImplCopyWith<_$AcademyReviewFetchedImpl>
       get copyWith => throw _privateConstructorUsedError;

@@ -7,9 +7,10 @@ import 'locator/service_locator.dart';
 class ApiService {
   static final Dio _dio = sl<Dio>();
 
-  static Future<Response> get(String path) async {
+  static Future<Response> get(String path,
+      {Map<String, dynamic>? queryParams}) async {
     try {
-      final response = await _dio.get(path);
+      final response = await _dio.get(path, queryParameters: queryParams);
       return response;
     } catch (error) {
       throw ServerException(

@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:x_sport/app/features/auth/domain/enitites/sport_entity.dart';
+import 'package:x_sport/app/features/academy/domain/enitites/params/acedemy_params.dart';
+import 'package:x_sport/app/features/academy/domain/enitites/suggested_academy_entity.dart';
 
 import '../../../../../core/error/failure.dart';
 import '../repository/base_academy_repository.dart';
@@ -9,7 +10,8 @@ class GetSuggestedAcademiesUseCase {
 
   GetSuggestedAcademiesUseCase(this.repository);
 
-  Future<Either<Failure, List<SportEntity>>> call() async {
-    return await repository.getSuggestedAcademies();
+  Future<Either<Failure, List<SuggestedAcademyEntity>>> call(
+      {required SuggestedAcademyParams params}) async {
+    return await repository.getSuggestedAcademies(params: params);
   }
 }

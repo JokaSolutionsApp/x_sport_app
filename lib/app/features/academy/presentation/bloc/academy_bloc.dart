@@ -1,5 +1,12 @@
 import 'package:bloc/bloc.dart';
 import 'package:injectable/injectable.dart';
+import 'package:x_sport/app/features/academy/domain/enitites/about_academy_entity.dart';
+import 'package:x_sport/app/features/academy/domain/enitites/academy_course_entity.dart';
+import 'package:x_sport/app/features/academy/domain/enitites/academy_membership_entity.dart';
+import 'package:x_sport/app/features/academy/domain/enitites/academy_review_entity.dart';
+import 'package:x_sport/app/features/academy/domain/enitites/get_academy_courses_entity.dart';
+import 'package:x_sport/app/features/academy/domain/enitites/params/acedemy_params.dart';
+import 'package:x_sport/app/features/academy/domain/enitites/suggested_academy_entity.dart';
 import 'package:x_sport/app/features/academy/domain/usecase/get_about_academy_usecase.dart';
 import 'package:x_sport/app/features/academy/domain/usecase/get_academy_courses_in_date_usecase.dart';
 import 'package:x_sport/app/features/academy/domain/usecase/get_academy_courses_usecase.dart';
@@ -14,7 +21,7 @@ part 'academy_state.dart';
 part 'academy_bloc.freezed.dart';
 
 @singleton
-class AuthBloc extends Bloc<AcademyEvent, AcademyState> {
+class AcademyBloc extends Bloc<AcademyEvent, AcademyState> {
   final GetSportsMembershipUseCase getSportsMembershipUseCase;
   final GetSuggestedAcademiesUseCase getSuggestedAcademiesUseCase;
   final GetAboutAcademyUseCase getAboutAcademyUseCase;
@@ -22,7 +29,7 @@ class AuthBloc extends Bloc<AcademyEvent, AcademyState> {
   final GetAcademyCoursesInDateUseCase getAcademyCoursesInDateUseCase;
   final GetAcademyReviewUseCase getAcademyReviewUseCase;
 
-  AuthBloc(
+  AcademyBloc(
     this.getSportsMembershipUseCase,
     this.getSuggestedAcademiesUseCase,
     this.getAboutAcademyUseCase,
@@ -53,7 +60,7 @@ class AuthBloc extends Bloc<AcademyEvent, AcademyState> {
     result.fold((f) {
       emit(AcademyState.getSuggestedAcademiesFailure(failure: f));
     }, (r) {
-      print('getSports Bloc');
+      print('_getSportsMembership $r');
 
       emit(AcademyState.sportsMembershipFetched(sportsMembership: r));
     });
@@ -61,12 +68,14 @@ class AuthBloc extends Bloc<AcademyEvent, AcademyState> {
 
   Future<void> _getSuggestedAcademies(event, Emitter<AcademyState> emit) async {
     event as _$GetSuggestedAcademiesEventImpl;
+    print('bloc _getSuggestedAcademies');
+
     emit(const AcademyState.getSuggestedAcademiesLoading());
-    final result = await getSuggestedAcademiesUseCase();
+    final result = await getSuggestedAcademiesUseCase(params: event.params);
     result.fold((f) {
       emit(AcademyState.getSuggestedAcademiesFailure(failure: f));
     }, (r) {
-      print('getSports Bloc');
+      print('bloc _getSuggestedAcademies $r');
 
       emit(AcademyState.suggestedAcademiesFetched(suggestedAcademies: r));
     });
@@ -75,11 +84,11 @@ class AuthBloc extends Bloc<AcademyEvent, AcademyState> {
   Future<void> _getAboutAcademy(event, Emitter<AcademyState> emit) async {
     event as _$GetAboutAcademyEventImpl;
     emit(const AcademyState.getAboutAcademyLoading());
-    final result = await getAboutAcademyUseCase();
+    final result = await getAboutAcademyUseCase(academyId: event.academyId);
     result.fold((f) {
       emit(AcademyState.getAboutAcademyFailure(failure: f));
     }, (r) {
-      print('getSports Bloc');
+      print(' _getAboutAcademy $r');
 
       emit(AcademyState.aboutAcademyFetched(aboutAcademy: r));
     });
@@ -88,11 +97,11 @@ class AuthBloc extends Bloc<AcademyEvent, AcademyState> {
   Future<void> _getAcademyCourses(event, Emitter<AcademyState> emit) async {
     event as _$GetAcademyCoursesEventImpl;
     emit(const AcademyState.getAcademyCoursesLoading());
-    final result = await getAcademyCoursesUseCase();
+    final result = await getAcademyCoursesUseCase(academyId: event.academyId);
     result.fold((f) {
       emit(AcademyState.getAcademyCoursesFailure(failure: f));
     }, (r) {
-      print('getSports Bloc');
+      print('_getAcademyCourses Bloc $r');
 
       emit(AcademyState.academyCoursesFetched(academyCourses: r));
     });
@@ -102,11 +111,12 @@ class AuthBloc extends Bloc<AcademyEvent, AcademyState> {
       event, Emitter<AcademyState> emit) async {
     event as _$GetAcademyCoursesInDateEventImpl;
     emit(const AcademyState.getAcademyCoursesInDateLoading());
-    final result = await getAcademyCoursesInDateUseCase();
+    final result = await getAcademyCoursesInDateUseCase(
+        academyId: event.academyId, targetDate: event.targetDate);
     result.fold((f) {
       emit(AcademyState.getAcademyCoursesInDateFailure(failure: f));
     }, (r) {
-      print('getSports Bloc');
+      print('_getAcademyCoursesInDate $r');
 
       emit(AcademyState.academyCoursesInDateFetched(academyCoursesInDate: r));
     });
@@ -115,11 +125,11 @@ class AuthBloc extends Bloc<AcademyEvent, AcademyState> {
   Future<void> _getAcademyReview(event, Emitter<AcademyState> emit) async {
     event as _$GetAcademyReviewEventImpl;
     emit(const AcademyState.getAcademyReviewLoading());
-    final result = await getAcademyReviewUseCase();
+    final result = await getAcademyReviewUseCase(academyId: event.academyId);
     result.fold((f) {
       emit(AcademyState.getAcademyReviewFailure(failure: f));
     }, (r) {
-      print('getSports Bloc');
+      print('_getAcademyReview $r');
 
       emit(AcademyState.academyReviewFetched(academyReview: r));
     });

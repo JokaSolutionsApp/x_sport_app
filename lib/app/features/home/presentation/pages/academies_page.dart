@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/academy/domain/enitites/params/acedemy_params.dart';
+import 'package:x_sport/app/features/academy/presentation/bloc/academy_bloc.dart';
 import '../components/academies_components/academies_component.dart';
 import '../components/academies_components/membership_component.dart';
 import '../components/academies_components/suggested_academies_component.dart';
@@ -8,9 +11,22 @@ import '../components/academies_components/academies_categories_component.dart';
 import '../../../../controllers/fileds_bloc.dart';
 import '../../../../widgets/text_fields/search_textfield.dart';
 
-class AcademiesPage extends StatelessWidget {
+class AcademiesPage extends StatefulWidget {
   AcademiesPage({super.key});
+
+  @override
+  State<AcademiesPage> createState() => _AcademiesPageState();
+}
+
+class _AcademiesPageState extends State<AcademiesPage> {
   final TextEditingController search = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    context.read<AcademyBloc>().add(AcademyEvent.getSuggestedAcademies(
+        params: SuggestedAcademyParams(pageSize: 1, pageNumber: 1)));
+  }
 
   @override
   Widget build(BuildContext context) {

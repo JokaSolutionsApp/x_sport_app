@@ -14,7 +14,7 @@ class SuggestedAcademyEntity extends Equatable {
   @JsonKey(name: 'long')
   final double long;
   @JsonKey(name: 'minPrice')
-  final int minPrice;
+  final double minPrice;
   @JsonKey(name: 'openTime')
   final String openTime;
   @JsonKey(name: 'closeTime')

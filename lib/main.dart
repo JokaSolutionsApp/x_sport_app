@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/academy/domain/enitites/params/acedemy_params.dart';
+import 'package:x_sport/app/features/academy/presentation/bloc/academy_bloc.dart';
 
 import 'app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'core/constance/app_constance.dart';
@@ -39,6 +41,11 @@ class MyApp extends StatelessWidget {
         builder: (_, child) {
           return MultiBlocProvider(
             providers: [
+              BlocProvider(
+                  create: (context) => sl<AcademyBloc>()
+                    ..add(AcademyEvent.getSuggestedAcademies(
+                        params: SuggestedAcademyParams(
+                            pageNumber: 1, pageSize: 1)))),
               BlocProvider(
                 create: (context) => sl<AuthBloc>()
                   ..add(const AuthEvent.checkUserLogged())

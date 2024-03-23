@@ -22,6 +22,15 @@ class AuthState with _$AuthState {
     @Default(null) UserProfileEntity? user,
   }) = _LoggedIn;
 
+  // Google Login User
+  const factory AuthState.googleLogginLoading() = _GoogleLoginLoading;
+  const factory AuthState.googleLogginFailure({
+    @Default(null) Failure? failure,
+  }) = _GoogleLoginFailure;
+  const factory AuthState.googleLoggedIn({
+    @Default(null) UserProfileEntity? user,
+  }) = _GoogleLoggedIn;
+
   // Confirm Email
   const factory AuthState.confirmEmailLoading() = _ConfirmEmailLoading;
   const factory AuthState.confirmEmailFailure({

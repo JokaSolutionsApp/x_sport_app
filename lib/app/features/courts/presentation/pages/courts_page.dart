@@ -298,7 +298,9 @@ class _CourtsScreenState extends State<CourtsPage>
                       Expanded(
                         child:
                             TabBarView(controller: _tabController, children: [
-                          const AcademyProgramtComponent(),
+                          AcademyProgramtComponent(
+                            academyId: 1,
+                          ),
                           CourtInformationComponent(),
                         ]),
                       ),

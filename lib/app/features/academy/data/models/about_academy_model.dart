@@ -12,8 +12,8 @@ class AboutAcademyModel extends AboutAcademyEntity {
     required String description,
     required double lat,
     required double long,
-    required int minPrice,
-    required int maxPrice,
+    required double minPrice,
+    required double maxPrice,
     required String phone,
     required String openAt,
     required String closeAt,
@@ -34,5 +34,5 @@ class AboutAcademyModel extends AboutAcademyEntity {
 
   factory AboutAcademyModel.fromJson(Map<String, dynamic> json) =>
       _$AboutAcademyModelFromJson(json);
-  Map<String, dynamic> toJson() => _$AboutAcademyModeltoJson(this);
+  // Map<String, dynamic> toJson() => _$AboutAcademyModeltoJson(this);
 }

@@ -6,13 +6,12 @@ import 'package:x_sport/app/features/academy/domain/enitites/academy_membership_
 part 'academy_membership_model.g.dart';
 
 @JsonSerializable()
-class AcademyMembership extends AcademyMembershipEntity {
-  AcademyMembership({
+class AcademyMembershipModel extends AcademyMembershipEntity {
+  AcademyMembershipModel({
     required SportInfoModel sportInfo,
     required List<AcademyInfoModel> academyInfoes,
   }) : super(academyInfoes: academyInfoes, sportInfo: sportInfo);
 
-  factory AcademyMembership.fromJson(Map<String, dynamic> json) =>
-      _$AcademyMembershipFromJson(json);
-  Map<String, dynamic> toJson() => _$AcademyMembershipToJson(this);
+  factory AcademyMembershipModel.fromJson(Map<String, dynamic> json) =>
+      _$AcademyMembershipModelFromJson(json);
 }

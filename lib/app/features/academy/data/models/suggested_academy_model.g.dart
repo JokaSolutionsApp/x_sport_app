@@ -14,7 +14,7 @@ SuggestedAcademyModel _$SuggestedAcademyModelFromJson(
       description: json['description'] as String,
       lat: (json['lat'] as num).toDouble(),
       long: (json['long'] as num).toDouble(),
-      minPrice: json['minPrice'] as int,
+      minPrice: (json['minPrice'] as num).toDouble(),
       openTime: json['openTime'] as String,
       closeTime: json['closeTime'] as String,
       evaluation: (json['evaluation'] as num).toDouble(),

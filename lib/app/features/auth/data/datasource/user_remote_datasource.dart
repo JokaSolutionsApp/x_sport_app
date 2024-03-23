@@ -15,9 +15,12 @@ import 'package:x_sport/core/services/api_service.dart';
 import 'package:x_sport/core/services/locator/service_locator.dart';
 import 'package:x_sport/core/services/secure_storage_service.dart.dart';
 import 'package:x_sport/app/controllers/fileds_bloc.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 abstract class BaseUserRemoteDataSource {
   Future<UserProfileEntity> login();
+  Future<UserProfileEntity> googleLogin();
+
   Future<bool> register();
   Future<UserProfileEntity> editUserProfile(
       {required EditUserProfileParams params});
@@ -171,6 +174,67 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
       throw ServerException(errorModel: ErrorModel.formJson(data));
     } else {
       throw ServerException(errorModel: ErrorModel.formJson(data));
+    }
+  }
+
+  @override
+  Future<UserProfileEntity> googleLogin() async {
+    GoogleSignIn googleSignIn = GoogleSignIn(
+      scopes: [
+        'email',
+        'profile', // This scope is for accessing basic profile information.
+        // Add other scopes if necessary, but be mindful of user privacy and data minimization principles.
+      ],
+    );
+    await googleSignIn.disconnect();
+    final GoogleSignInAccount? account = await googleSignIn.signIn();
+    print('Signed in account: $account');
+
+    if (account != null) {
+      final GoogleSignInAuthentication googleAuth =
+          await account.authentication;
+
+      // Check for null ID token
+      if (googleAuth.idToken == null) {
+        throw Exception(
+            "ID Token is null. Make sure the Google Sign-In configuration is correct.");
+      }
+
+      Map<String, dynamic> postData = {
+        'name': account.displayName,
+        'email': account.email,
+        'FirebaseToken': googleAuth.idToken,
+        'latitude': registerStream.latValue,
+        'longitude': registerStream.longeValue,
+
+        // Optionally include the user's ID
+        // 'id': account.id,
+        // Here's how you can get the OAuth 2.0 tokens:
+        // 'idToken': googleAuth.idToken,
+        // Note: phone number and gender are not available directly through Google Sign-In
+      };
+      print("postData $postData");
+      final response =
+          await ApiService.post(ApiConstance.googleLoginApi, postData);
+
+      final data = response.data;
+      print('googleLogin $data');
+      print('googleLogin ${response.statusCode}');
+
+      if (response.statusCode == 200) {
+        final token = data['data']['authResult']['token'];
+        final refreshToken = data['data']['authResult']['refreshToken'];
+        sl<SecureStorageService>().write('token', token);
+        sl<SecureStorageService>().write('refreshToken', refreshToken);
+
+        return UserProfileModel.fromJson(data['data']['userProfile']);
+      } else if (response.statusCode == 500) {
+        throw ServerException(errorModel: ErrorModel.formJson(data));
+      } else {
+        throw ServerException(errorModel: ErrorModel.formJson(data));
+      }
+    } else {
+      throw ServerException(errorModel: ErrorModel.formJson({}));
     }
   }
 

@@ -11,7 +11,7 @@ class AcademyState with _$AcademyState {
     @Default(null) Failure? failure,
   }) = _GetSportsMembershipFailure;
   const factory AcademyState.sportsMembershipFetched({
-    @Default([]) List<SportEntity> sportsMembership,
+    @Default([]) List<AcademyMembershipEntity> sportsMembership,
   }) = _SportsMembershipFetched;
 
   // Get Suggested Academies
@@ -21,7 +21,7 @@ class AcademyState with _$AcademyState {
     @Default(null) Failure? failure,
   }) = _GetSuggestedAcademiesFailure;
   const factory AcademyState.suggestedAcademiesFetched({
-    @Default([]) List<SportEntity> suggestedAcademies,
+    @Default([]) List<SuggestedAcademyEntity> suggestedAcademies,
   }) = _SuggestedAcademiesFetched;
 
   // Get About Academy
@@ -30,7 +30,7 @@ class AcademyState with _$AcademyState {
     @Default(null) Failure? failure,
   }) = _GetAboutAcademyFailure;
   const factory AcademyState.aboutAcademyFetched({
-    @Default([]) List<SportEntity> aboutAcademy,
+    @Default(null) AboutAcademyEntity? aboutAcademy,
   }) = _AboutAcademyFetched;
 
   // Get Academy Courses
@@ -40,7 +40,7 @@ class AcademyState with _$AcademyState {
     @Default(null) Failure? failure,
   }) = _GetAcademyCoursesFailure;
   const factory AcademyState.academyCoursesFetched({
-    @Default([]) List<SportEntity> academyCourses,
+    @Default(null) GetAcademyCoursesEntity? academyCourses,
   }) = _AcademyCoursesFetched;
 
   // Get Academy Courses In Date
@@ -50,7 +50,7 @@ class AcademyState with _$AcademyState {
     @Default(null) Failure? failure,
   }) = _GetAcademyCoursesInDateFailure;
   const factory AcademyState.academyCoursesInDateFetched({
-    @Default([]) List<SportEntity> academyCoursesInDate,
+    @Default(null) GetAcademyCoursesEntity? academyCoursesInDate,
   }) = _AcademyCoursesInDateFetched;
 
   // Get Academy Review
@@ -60,6 +60,6 @@ class AcademyState with _$AcademyState {
     @Default(null) Failure? failure,
   }) = _GetAcademyReviewFailure;
   const factory AcademyState.academyReviewFetched({
-    @Default([]) List<SportEntity> academyReview,
+    @Default([]) List<AcademyReviewEntity> academyReview,
   }) = _AcademyReviewFetched;
 }

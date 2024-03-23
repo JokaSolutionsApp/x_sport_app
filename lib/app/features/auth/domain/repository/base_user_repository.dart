@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:x_sport/app/features/auth/domain/params/google_login_params.dart';
 
 import '../../../../../core/error/failure.dart';
 import '../../data/datasource/params/auth_params.dart';
@@ -9,6 +10,8 @@ import '../../../../../core/error/failure.dart';
 
 abstract class BaseUserRepository {
   Future<Either<Failure, UserProfileEntity>> login();
+  Future<Either<Failure, UserProfileEntity>> googleLogin();
+
   Future<Either<Failure, bool>> register();
   Future<Either<Failure, UserProfileEntity>> editUserProfile(
       {required EditUserProfileParams params});

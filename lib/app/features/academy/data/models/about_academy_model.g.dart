@@ -13,8 +13,8 @@ AboutAcademyModel _$AboutAcademyModelFromJson(Map<String, dynamic> json) =>
       description: json['description'] as String,
       lat: (json['lat'] as num).toDouble(),
       long: (json['long'] as num).toDouble(),
-      minPrice: json['minPrice'] as int,
-      maxPrice: json['maxPrice'] as int,
+      minPrice: (json['minPrice'] as num).toDouble(),
+      maxPrice: (json['maxPrice'] as num).toDouble(),
       phone: json['phone'] as String,
       openAt: json['openAt'] as String,
       closeAt: json['closeAt'] as String,
@@ -23,7 +23,7 @@ AboutAcademyModel _$AboutAcademyModelFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$AboutAcademyModeltoJson(AboutAcademyModel instance) =>
+Map<String, dynamic> _$AboutAcademyModelToJson(AboutAcademyModel instance) =>
     <String, dynamic>{
       'academyId': instance.academyId,
       'name': instance.name,
