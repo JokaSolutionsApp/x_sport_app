@@ -196,6 +196,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   Future<void> _googleLogin(event, Emitter<AuthState> emit) async {
     event as _$GoogleLoginEventImpl;
+
     print('entered _googleLogin');
     emit(const AuthState.googleLogginLoading());
     EasyLoadingInit.startLoading();
@@ -205,8 +206,16 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     await result.fold((failure) async {
       print(failure);
       if (failure.statusCode == 500) {
-        EasyLoading.showError('معلرمات الحساب خاطئة');
+        emit(AuthState.sportsFetched(sports: sports));
+
+        await EasyLoading.dismiss();
+
+        Navigator.of(navigatorKey.currentContext!).push(
+          MaterialPageRoute(builder: (context) => WelcomePage()),
+        );
       } else {
+        emit(AuthState.sportsFetched(sports: sports));
+
         EasyLoading.showError('حدث خطأ اعد المحاولة مجدداً');
       }
       emit(const AuthState.googleLogginFailure());
@@ -214,12 +223,18 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       print('_googleLogin $r');
 
       await EasyLoading.dismiss();
-      if (r.toString().isNotEmpty) {
+      if (r.user != null) {
+        emit(AuthState.sportsFetched(sports: sports));
+
         emit(AuthState.googleLoggedIn(user: r));
         emit(AuthState.userProfileFetched(userProfile: r));
 
         Navigator.of(navigatorKey.currentContext!).push(
           MaterialPageRoute(builder: (context) => const MainPage()),
+        );
+      } else {
+        Navigator.of(navigatorKey.currentContext!).push(
+          MaterialPageRoute(builder: (context) => WelcomePage()),
         );
       }
     });
@@ -233,10 +248,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     result.fold((l) {
       emit(const AuthState.checkUserFailure());
     }, (isLogged) {
-      if (isLogged) {
+      if (isLogged == UserAuthState.loggedIn) {
         emit(const AuthState.checkUserLogged(
             userAuthState: UserAuthState.loggedIn));
-      } else {
+      } else if (isLogged == UserAuthState.welcome) {
+        emit(const AuthState.checkUserLogged(
+            userAuthState: UserAuthState.welcome));
+      } else if (isLogged == UserAuthState.guest) {
         emit(const AuthState.checkUserLogged(
             userAuthState: UserAuthState.guest));
       }

@@ -34,8 +34,8 @@ class ProfilePage extends StatelessWidget {
 
             return Scaffold(
               drawer: ProfileDrawerComponent(
-                user: userProfile.user,
-                favoriteSports: userProfile.favoriteSports,
+                user: userProfile.user!,
+                favoriteSports: userProfile.favoriteSports!,
               ),
               appBar: const ProfileAppBarComponent(),
               body: SingleChildScrollView(
@@ -47,7 +47,7 @@ class ProfilePage extends StatelessWidget {
                     ProfileInfoComponent(
                       userProfile: userProfile,
                       points: 200,
-                      favoriteSports: userProfile.favoriteSports,
+                      favoriteSports: userProfile.favoriteSports!,
                     ),
                     ProfileTabBarComponent(
                       userProfile: userProfile,

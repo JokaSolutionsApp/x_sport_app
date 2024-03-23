@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:x_sport/app/features/auth/data/models/auth_model.dart';
 import 'user_model.dart';
 import '../../domain/enitites/user_profile_entity.dart';
 import 'favorite_sport_model.dart';
@@ -9,15 +10,15 @@ part 'user_profile_model.g.dart';
 @JsonSerializable()
 class UserProfileModel extends UserProfileEntity {
   const UserProfileModel({
-    required UserModel user,
-    required List<FavoriteSportModel> favoriteSports,
-    // required CurrentSportModel currentSport,
-    required int followers,
-    required int following,
+    UserModel? user,
+    List<FavoriteSportModel>? favoriteSports,
+    AuthResultModel? authResult,
+    int? followers,
+    int? following,
   }) : super(
           user: user,
           favoriteSports: favoriteSports,
-          // currentSport: currentSport,
+          authResult: authResult,
           followers: followers,
           following: following,
         );

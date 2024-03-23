@@ -8,12 +8,18 @@ part of 'user_profile_model.dart';
 
 UserProfileModel _$UserProfileModelFromJson(Map<String, dynamic> json) =>
     UserProfileModel(
-      user: UserModel.fromJson(json['user'] as Map<String, dynamic>),
-      favoriteSports: (json['favoriteSports'] as List<dynamic>)
-          .map((e) => FavoriteSportModel.fromJson(e as Map<String, dynamic>))
+      user: json['user'] == null
+          ? null
+          : UserModel.fromJson(json['user'] as Map<String, dynamic>),
+      favoriteSports: (json['favoriteSports'] as List<dynamic>?)
+          ?.map((e) => FavoriteSportModel.fromJson(e as Map<String, dynamic>))
           .toList(),
-      followers: json['followers'] as int,
-      following: json['following'] as int,
+      authResult: json['authResult'] == null
+          ? null
+          : AuthResultModel.fromJson(
+              json['authResult'] as Map<String, dynamic>),
+      followers: json['followers'] as int?,
+      following: json['following'] as int?,
     );
 
 Map<String, dynamic> _$UserProfileModelToJson(UserProfileModel instance) =>
@@ -22,4 +28,5 @@ Map<String, dynamic> _$UserProfileModelToJson(UserProfileModel instance) =>
       'favoriteSports': instance.favoriteSports,
       'followers': instance.followers,
       'following': instance.following,
+      'authResult': instance.authResult,
     };

@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:x_sport/app/features/auth/domain/params/google_login_params.dart';
+import 'package:x_sport/core/utils/enums.dart';
 
 import '../../../../../core/error/exceptions.dart';
 import '../../../../../core/error/failure.dart';
@@ -49,7 +50,7 @@ class UserRepository extends BaseUserRepository {
   }
 
   @override
-  Future<Either<Failure, bool>> checkUserLogged() async {
+  Future<Either<Failure, UserAuthState>> checkUserLogged() async {
     try {
       final result = await baseUsersRemoteDataSource.checkUserLogged();
 

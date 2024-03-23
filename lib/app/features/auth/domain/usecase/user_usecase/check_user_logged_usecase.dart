@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:x_sport/core/utils/enums.dart';
 
 import '../../../../../../core/error/failure.dart';
 import '../../repository/base_user_repository.dart';
@@ -8,7 +9,7 @@ class CheckUserLoggedUseCase {
 
   CheckUserLoggedUseCase(this.repository);
 
-  Future<Either<Failure, bool>> call() async {
+  Future<Either<Failure, UserAuthState>> call() async {
     return await repository.checkUserLogged();
   }
 }

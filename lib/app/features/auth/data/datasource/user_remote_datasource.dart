@@ -8,6 +8,7 @@ import 'package:x_sport/app/features/auth/data/models/user_profile_model.dart';
 import 'package:x_sport/app/features/auth/domain/enitites/sport_entity.dart';
 import 'package:x_sport/app/features/auth/domain/enitites/user_profile_entity.dart';
 import 'package:x_sport/app/features/auth/domain/params/edit_preferences_params.dart';
+import 'package:x_sport/app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:x_sport/core/constance/api_constance.dart';
 import 'package:x_sport/core/error/exceptions.dart';
 import 'package:x_sport/core/network/error_message_model.dart';
@@ -16,6 +17,8 @@ import 'package:x_sport/core/services/locator/service_locator.dart';
 import 'package:x_sport/core/services/secure_storage_service.dart.dart';
 import 'package:x_sport/app/controllers/fileds_bloc.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:x_sport/core/utils/enums.dart';
 
 abstract class BaseUserRemoteDataSource {
   Future<UserProfileEntity> login();
@@ -32,7 +35,7 @@ abstract class BaseUserRemoteDataSource {
       {required List<int> sportsIds});
   Future<UserProfileEntity> addFavoriteSports({required List<int> sportsIds});
   Future<UserProfileEntity> selectCurrentSport({required int sportId});
-  Future<bool> checkUserLogged();
+  Future<UserAuthState> checkUserLogged();
   Future<List<SportEntity>> confirmUserEmail();
   Future<void> resendConfirmUserEmail();
 
@@ -194,24 +197,26 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
       final GoogleSignInAuthentication googleAuth =
           await account.authentication;
 
-      // Check for null ID token
-      if (googleAuth.idToken == null) {
-        throw Exception(
-            "ID Token is null. Make sure the Google Sign-In configuration is correct.");
+      print("googleAuth ${googleAuth.idToken} ${googleAuth.accessToken}");
+
+      final credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+      print("credential $credential");
+      final firebaseAuth =
+          await FirebaseAuth.instance.signInWithCredential(credential);
+      final idToken = await firebaseAuth.user!.getIdToken();
+      if (firebaseAuth.user != null) {
+        print("firebaseAuth ${idToken}");
       }
 
       Map<String, dynamic> postData = {
         'name': account.displayName,
         'email': account.email,
-        'FirebaseToken': googleAuth.idToken,
+        'firebaseToken': idToken,
         'latitude': registerStream.latValue,
         'longitude': registerStream.longeValue,
-
-        // Optionally include the user's ID
-        // 'id': account.id,
-        // Here's how you can get the OAuth 2.0 tokens:
-        // 'idToken': googleAuth.idToken,
-        // Note: phone number and gender are not available directly through Google Sign-In
       };
       print("postData $postData");
       final response =
@@ -226,8 +231,7 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
         final refreshToken = data['data']['authResult']['refreshToken'];
         sl<SecureStorageService>().write('token', token);
         sl<SecureStorageService>().write('refreshToken', refreshToken);
-
-        return UserProfileModel.fromJson(data['data']['userProfile']);
+        return UserProfileModel.fromJson(data['data']);
       } else if (response.statusCode == 500) {
         throw ServerException(errorModel: ErrorModel.formJson(data));
       } else {
@@ -239,13 +243,16 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
   }
 
   @override
-  Future<bool> checkUserLogged() async {
+  Future<UserAuthState> checkUserLogged() async {
+    final welcome = await sl<SecureStorageService>().containsKey('welcome');
     final isLogged = await sl<SecureStorageService>().containsKey('token');
     print(isLogged);
-    if (isLogged) {
-      return true;
+    if (isLogged && welcome) {
+      return UserAuthState.welcome;
+    } else if (isLogged) {
+      return UserAuthState.loggedIn;
     } else {
-      return false;
+      return UserAuthState.guest;
     }
   }
 

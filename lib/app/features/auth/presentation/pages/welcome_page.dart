@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/core/services/locator/service_locator.dart';
+import 'package:x_sport/core/services/secure_storage_service.dart.dart';
 
 import '../../../../../core/utils/assets_managers/assets.gen.dart';
 import '../../domain/enitites/sport_entity.dart';
@@ -9,14 +11,27 @@ import '../../../../../core/constance/app_constance.dart';
 import '../../components/welcome_screen_components/image_picker_component.dart';
 import '../../../../widgets/buttons/submit_button.dart';
 
-class WelcomePage extends StatelessWidget {
+class WelcomePage extends StatefulWidget {
+  WelcomePage({super.key});
+
+  @override
+  State<WelcomePage> createState() => _WelcomePageState();
+}
+
+class _WelcomePageState extends State<WelcomePage> {
   String imageType = '';
+
   List<int> imageBytes = [];
 
-  WelcomePage({super.key});
   final List<SportEntity> sports = [];
 
   final List<int> selectedSports = [];
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    sl<SecureStorageService>().write('welcome', 'yes');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -50,16 +65,19 @@ class WelcomePage extends StatelessWidget {
       ),
       body: BlocBuilder<AuthBloc, AuthState>(
         buildWhen: (prev, cur) {
+          print(
+              'cur.runtimeType ${cur.runtimeType} ${AuthState.sportsFetched().runtimeType}');
           if (cur.runtimeType !=
-              const AuthState.confirmEmailLoading().runtimeType) {
-            return true;
+              const AuthState.getSportsLoading().runtimeType) {
+            return false;
           }
+
           return false;
         },
         builder: (context, state) => state.maybeMap(
-          orElse: () => const Offstage(),
+          orElse: () => const CircularProgressIndicator(),
           confirmEmailLoading: (value) => const Offstage(),
-          emailConfirmed: (value) {
+          sportsFetched: (value) {
             final sports = value.sports;
             final ValueNotifier<List<bool>> isSelectedList =
                 ValueNotifier<List<bool>>(

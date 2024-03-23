@@ -5,6 +5,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:x_sport/app/features/academy/domain/enitites/params/acedemy_params.dart';
 import 'package:x_sport/app/features/academy/presentation/bloc/academy_bloc.dart';
+import 'package:x_sport/core/services/secure_storage_service.dart.dart';
 
 import 'app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'core/constance/app_constance.dart';
@@ -22,6 +23,8 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  final token = await sl<SecureStorageService>().read('token');
+  print("mytoken $token");
 
   runApp(const MyApp());
 }

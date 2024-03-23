@@ -20,6 +20,7 @@ class AuthKeys {
   static const String currentSport = 'currentSport';
   static const String followers = 'followers';
   static const String following = 'following';
+  static const String authResult = 'authResult';
 
   // FavoriteSportEntity keys
   static const String sportId =

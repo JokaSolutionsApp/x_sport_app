@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:x_sport/app/features/auth/domain/params/google_login_params.dart';
+import 'package:x_sport/core/utils/enums.dart';
 
 import '../../../../../core/error/failure.dart';
 import '../../data/datasource/params/auth_params.dart';
@@ -29,7 +30,7 @@ abstract class BaseUserRepository {
   Future<Either<Failure, UserProfileEntity>> selectCurrentSport(
       {required int sportId});
 
-  Future<Either<Failure, bool>> checkUserLogged();
+  Future<Either<Failure, UserAuthState>> checkUserLogged();
   Future<Either<Failure, List<SportEntity>>> confirmUserEmail();
   Future<Either<Failure, void>> resendConfirmUserEmail();
 

@@ -19,6 +19,7 @@ enum UserAuthState {
   logging,
   loggedIn,
   guest,
+  welcome,
   error,
 }
 

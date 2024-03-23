@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/core/services/locator/service_locator.dart';
+import 'package:x_sport/core/services/secure_storage_service.dart.dart';
 import 'play_page.dart';
 
 import '../../../../../core/constance/app_constance.dart';
@@ -38,6 +40,7 @@ class _MainScreenState extends State<MainPage>
 
   @override
   void initState() {
+    sl<SecureStorageService>().delete('welcome');
     _tabController = TabController(length: 5, vsync: this);
     super.initState();
   }

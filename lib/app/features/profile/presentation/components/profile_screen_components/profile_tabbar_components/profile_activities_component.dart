@@ -214,8 +214,10 @@ class _ProfileActivitiesComponentState
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
                                 Text(
-                                  widget.userProfile
-                                      .favoriteSports[selectedIndex.value].name,
+                                  widget
+                                      .userProfile
+                                      .favoriteSports![selectedIndex.value]
+                                      .name,
                                   style: TextStyle(
                                       color: Colors.black,
                                       fontSize: 15.sp,
@@ -225,7 +227,8 @@ class _ProfileActivitiesComponentState
                                     text: TextSpan(
                                         text: widget
                                             .userProfile
-                                            .favoriteSports[selectedIndex.value]
+                                            .favoriteSports![
+                                                selectedIndex.value]
                                             .userLevel[selectedIndex.value],
                                         style: TextStyle(
                                             color: Colors.black,
@@ -251,7 +254,8 @@ class _ProfileActivitiesComponentState
                                       TextSpan(
                                         text: widget
                                             .userProfile
-                                            .favoriteSports[selectedIndex.value]
+                                            .favoriteSports![
+                                                selectedIndex.value]
                                             .numOfMatches
                                             .toString(),
                                         style: TextStyle(
@@ -261,8 +265,10 @@ class _ProfileActivitiesComponentState
                                       )
                                     ])),
                                 Text(
-                                  widget.userProfile
-                                      .favoriteSports[selectedIndex.value].name,
+                                  widget
+                                      .userProfile
+                                      .favoriteSports![selectedIndex.value]
+                                      .name,
                                   style: TextStyle(
                                       color: XColors.primary,
                                       fontSize: 20.sp,
@@ -344,7 +350,7 @@ class _ProfileActivitiesComponentState
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          widget.userProfile.user.loyaltyPoints
+                                          widget.userProfile.user!.loyaltyPoints
                                               .toString(),
                                           style: const TextStyle(
                                             color: XColors.primary,
@@ -437,7 +443,7 @@ class _ProfileActivitiesComponentState
                             shrinkWrap: true,
                             itemCount: widget
                                 .userProfile
-                                .favoriteSports[selectedIndex.value]
+                                .favoriteSports![selectedIndex.value]
                                 .levels
                                 .length,
                             itemBuilder: (context, index) {
@@ -460,7 +466,7 @@ class _ProfileActivitiesComponentState
                                         Text(
                                           widget
                                               .userProfile
-                                              .favoriteSports[
+                                              .favoriteSports![
                                                   selectedIndex.value]
                                               .levels[index]
                                               .levelMaxPoints
@@ -472,7 +478,7 @@ class _ProfileActivitiesComponentState
                                         Text(
                                           widget
                                               .userProfile
-                                              .favoriteSports[
+                                              .favoriteSports![
                                                   selectedIndex.value]
                                               .levels[index]
                                               .levelName
@@ -517,18 +523,21 @@ class _ProfileActivitiesComponentState
                     physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     key: UniqueKey(),
-                    itemCount: widget.userProfile
-                        .favoriteSports[selectedIndex.value].preferences.length,
+                    itemCount: widget
+                        .userProfile
+                        .favoriteSports![selectedIndex.value]
+                        .preferences
+                        .length,
                     itemBuilder: (context, index) {
                       return ActivityPreferncesComponent(
                         initialValueId: widget
                             .userProfile
-                            .favoriteSports[selectedIndex.value]
+                            .favoriteSports![selectedIndex.value]
                             .preferences[index]
                             .selectedPreferenceValueId,
                         preferenceValues: widget
                             .userProfile
-                            .favoriteSports[selectedIndex.value]
+                            .favoriteSports![selectedIndex.value]
                             .preferences[index],
                       );
                     },

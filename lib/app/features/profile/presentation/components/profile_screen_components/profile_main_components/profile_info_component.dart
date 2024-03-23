@@ -64,7 +64,7 @@ class ProfileInfoComponent extends StatelessWidget {
                           ),
                           SizedBox(width: 6.h),
                           Text(
-                            "${userProfile.user.loyaltyPoints.toString()}",
+                            "${userProfile.user!.loyaltyPoints.toString()}",
                             style: TextStyle(
                               color: XColors.primary,
                               fontSize: 17.sp,
@@ -83,7 +83,7 @@ class ProfileInfoComponent extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            userProfile.user.name,
+                            userProfile.user!.name,
                             style: TextStyle(
                               color: const Color(0xFF111C32),
                               fontSize: 15.sp,
@@ -93,7 +93,7 @@ class ProfileInfoComponent extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            userProfile.user.email,
+                            userProfile.user!.email,
                             style: const TextStyle(
                               color: Color(0xFF7E7E7E),
                               fontSize: 12,
@@ -118,7 +118,7 @@ class ProfileInfoComponent extends StatelessWidget {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) => EditProfilePage(
-                                            user: userProfile.user,
+                                            user: userProfile.user!,
                                             favoriteSports: favoriteSports,
                                           )));
                             },
@@ -142,7 +142,7 @@ class ProfileInfoComponent extends StatelessWidget {
                       height: 74.w,
                       decoration: ShapeDecoration(
                         image: DecorationImage(
-                            image: NetworkImage(userProfile.user.imgURL)),
+                            image: NetworkImage(userProfile.user!.imgURL)),
                         color: XColors.Background_Color1,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(11),

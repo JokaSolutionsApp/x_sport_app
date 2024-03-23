@@ -118,7 +118,7 @@ class _ProfileTabBarComponentState extends State<ProfileTabBarComponent>
                 children: [
                   ProfileActivitiesComponent(
                       userProfile: widget.userProfile,
-                      favoritSports: widget.userProfile.favoriteSports),
+                      favoritSports: widget.userProfile.favoriteSports!),
                   DottedBorder(
                       borderType: BorderType.RRect,
                       radius: Radius.circular(12.sp),
