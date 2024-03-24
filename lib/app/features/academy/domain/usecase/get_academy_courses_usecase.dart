@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/academy_course_entity.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/get_academy_courses_entity.dart';
-import 'package:x_sport/app/features/auth/domain/enitites/sport_entity.dart';
+import '../enitites/academy_course_entity.dart';
+import '../enitites/get_academy_courses_entity.dart';
+import '../../../auth/domain/enitites/sport_entity.dart';
 
 import '../../../../../core/error/failure.dart';
 import '../repository/base_academy_repository.dart';

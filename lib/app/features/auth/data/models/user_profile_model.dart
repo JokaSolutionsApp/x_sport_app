@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:x_sport/app/features/auth/data/models/auth_model.dart';
+import 'auth_model.dart';
 import 'user_model.dart';
 import '../../domain/enitites/user_profile_entity.dart';
 import 'favorite_sport_model.dart';

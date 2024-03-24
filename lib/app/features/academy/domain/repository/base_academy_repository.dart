@@ -1,13 +1,13 @@
 import 'package:dartz/dartz.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/about_academy_entity.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/academy_course_entity.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/academy_membership_entity.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/academy_review_entity.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/get_academy_courses_entity.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/params/acedemy_params.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/suggested_academy_entity.dart';
-import 'package:x_sport/app/features/auth/domain/enitites/sport_entity.dart';
-import 'package:x_sport/core/error/failure.dart';
+import '../enitites/about_academy_entity.dart';
+import '../enitites/academy_course_entity.dart';
+import '../enitites/academy_membership_entity.dart';
+import '../enitites/academy_review_entity.dart';
+import '../enitites/get_academy_courses_entity.dart';
+import '../enitites/params/acedemy_params.dart';
+import '../enitites/suggested_academy_entity.dart';
+import '../../../auth/domain/enitites/sport_entity.dart';
+import '../../../../../core/error/failure.dart';
 
 abstract class BaseAcademyRepository {
   Future<Either<Failure, List<AcademyMembershipEntity>>> getSportsMembership();

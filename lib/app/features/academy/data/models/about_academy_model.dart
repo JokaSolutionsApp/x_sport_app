@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:x_sport/app/features/academy/data/models/academy_service_model.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/about_academy_entity.dart';
+import 'academy_service_model.dart';
+import '../../domain/enitites/about_academy_entity.dart';
 
 part 'about_academy_model.g.dart';
 

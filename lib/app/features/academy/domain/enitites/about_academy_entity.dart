@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/academy_service_entity.dart';
+import 'academy_service_entity.dart';
 // import 'service.dart'; // Import the Service model
 
 // part 'academy.g.dart';

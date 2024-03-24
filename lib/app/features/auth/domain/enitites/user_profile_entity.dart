@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:x_sport/app/features/auth/domain/enitites/auth_entity.dart';
+import 'auth_entity.dart';
 import 'current_sport_entity.dart';
 import 'favorite_sport_entity.dart';
 import 'josn_keys/auth_keys.dart';
