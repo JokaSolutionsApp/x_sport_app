@@ -4,6 +4,8 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:injectable/injectable.dart';
 import 'package:x_sport/app/features/auth/domain/params/google_login_params.dart';
 import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/google_login_usecase.dart';
+import 'package:x_sport/core/services/locator/service_locator.dart';
+import 'package:x_sport/core/services/secure_storage_service.dart.dart';
 import '../../data/datasource/params/auth_params.dart';
 import '../../domain/enitites/sport_entity.dart';
 import '../../domain/enitites/user_profile_entity.dart';
@@ -96,6 +98,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   List<SportEntity> sports = [];
+  UserProfileEntity? user;
 
   Future<void> _register(event, Emitter<AuthState> emit) async {
     event as _$RegisterEventImpl;
@@ -196,7 +199,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   Future<void> _googleLogin(event, Emitter<AuthState> emit) async {
     event as _$GoogleLoginEventImpl;
-
+    add(AuthEvent.getSports());
     print('entered _googleLogin');
     emit(const AuthState.googleLogginLoading());
     EasyLoadingInit.startLoading();
@@ -204,9 +207,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     final result = await googleLoginUseCase();
 
     await result.fold((failure) async {
+      emit(AuthState.sportsFetched(sports: sports));
+      emit(AuthState.userProfileFetched(userProfile: user));
+
       print(failure);
       if (failure.statusCode == 500) {
-        emit(AuthState.sportsFetched(sports: sports));
+        print('Bloc 500');
 
         await EasyLoading.dismiss();
 
@@ -218,7 +224,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
         EasyLoading.showError('حدث خطأ اعد المحاولة مجدداً');
       }
-      emit(const AuthState.googleLogginFailure());
     }, (r) async {
       print('_googleLogin $r');
 
@@ -233,6 +238,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           MaterialPageRoute(builder: (context) => const MainPage()),
         );
       } else {
+        emit(AuthState.sportsFetched(sports: sports));
+
         Navigator.of(navigatorKey.currentContext!).push(
           MaterialPageRoute(builder: (context) => WelcomePage()),
         );
@@ -275,9 +282,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         emit(AuthState.completeRegistrationailure(failure: failure));
       },
       (r) {
-        emit(AuthState.registrationCompleted(
-          userProfile: r,
-        ));
+        emit(AuthState.registrationCompleted(userProfile: r));
+        emit(AuthState.userProfileFetched(userProfile: r));
+
         Navigator.of(navigatorKey.currentContext!).push(
           MaterialPageRoute(builder: (context) => const MainPage()),
         );
@@ -321,6 +328,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       emit(const AuthState.userProfileFailure());
     }, (UserProfileEntity? userProfile) {
       if (userProfile != null) {
+        user = userProfile;
         emit(AuthState.userProfileFetched(userProfile: userProfile));
       }
     });
@@ -381,8 +389,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     final result = await deleteUserProfileUseCase();
     result.fold((f) {
       EasyLoading.showError(f.statusCode.toString());
-    }, (r) {
+    }, (r) async {
       EasyLoading.dismiss();
+      await sl<SecureStorageService>().delete('token');
+
       Navigator.of(navigatorKey.currentContext!).pushAndRemoveUntil(
         MaterialPageRoute(builder: (context) => const LoginPage()),
         ModalRoute.withName('/'),

@@ -40,9 +40,15 @@ class _MainScreenState extends State<MainPage>
 
   @override
   void initState() {
-    sl<SecureStorageService>().delete('welcome');
+    confirmCompleted();
     _tabController = TabController(length: 5, vsync: this);
     super.initState();
+  }
+
+  confirmCompleted() async {
+    // await sl<SecureStorageService>().write('welcome', 'yes');
+
+    await sl<SecureStorageService>().delete('welcome');
   }
 
   @override

@@ -21,9 +21,10 @@ class RoutePage extends StatelessWidget {
     }, builder: (context, state) {
       return state.maybeMap(
         orElse: () {
-          return const MainPage();
+          return const Offstage();
         },
         checkUserLogged: (value) {
+          print("value.userAuthState ${value.userAuthState}");
           if (value.userAuthState == UserAuthState.loggedIn) {
             return MainPage();
           } else if (value.userAuthState == UserAuthState.welcome) {

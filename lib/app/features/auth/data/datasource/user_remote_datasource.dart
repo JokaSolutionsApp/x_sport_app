@@ -246,7 +246,7 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
   Future<UserAuthState> checkUserLogged() async {
     final welcome = await sl<SecureStorageService>().containsKey('welcome');
     final isLogged = await sl<SecureStorageService>().containsKey('token');
-    print(isLogged);
+    print("isLoggedwelcome $isLogged $welcome");
     if (isLogged && welcome) {
       return UserAuthState.welcome;
     } else if (isLogged) {
@@ -262,8 +262,6 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
     final data = response.data;
 
     if (response.statusCode == 200) {
-      sl<SecureStorageService>().delete('token');
-
       return true;
     } else {
       throw ServerException(errorModel: ErrorModel.formJson(data));
