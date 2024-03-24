@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:x_sport/app/features/auth/domain/params/google_login_params.dart';
-import 'package:x_sport/core/utils/enums.dart';
+import '../../domain/params/google_login_params.dart';
+import '../../../../../core/utils/enums.dart';
 
 import '../../../../../core/error/exceptions.dart';
 import '../../../../../core/error/failure.dart';

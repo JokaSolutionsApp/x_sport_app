@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/suggested_academy_entity.dart';
+import '../../domain/enitites/suggested_academy_entity.dart';
 
 part 'suggested_academy_model.g.dart';
 

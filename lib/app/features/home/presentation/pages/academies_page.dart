@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/params/acedemy_params.dart';
-import 'package:x_sport/app/features/academy/presentation/bloc/academy_bloc.dart';
+import '../../../academy/domain/enitites/params/acedemy_params.dart';
+import '../../../academy/presentation/bloc/academy_bloc.dart';
 import '../components/academies_components/academies_component.dart';
 import '../components/academies_components/membership_component.dart';
 import '../components/academies_components/suggested_academies_component.dart';

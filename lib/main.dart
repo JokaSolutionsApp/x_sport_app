@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/params/acedemy_params.dart';
-import 'package:x_sport/app/features/academy/presentation/bloc/academy_bloc.dart';
-import 'package:x_sport/core/services/secure_storage_service.dart.dart';
+import 'app/features/academy/domain/enitites/params/acedemy_params.dart';
+import 'app/features/academy/presentation/bloc/academy_bloc.dart';
+import 'core/services/secure_storage_service.dart.dart';
 
 import 'app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'core/constance/app_constance.dart';
@@ -38,44 +38,45 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     sl<ImagePreloadingService>().preloadImages(context);
     return ScreenUtilInit(
-        designSize: const Size(430, 932),
-        minTextAdapt: true,
-        splitScreenMode: true,
-        builder: (_, child) {
-          return MultiBlocProvider(
-            providers: [
-              BlocProvider(
-                  create: (context) => sl<AcademyBloc>()
-                    ..add(AcademyEvent.getSuggestedAcademies(
-                        params: SuggestedAcademyParams(
-                            pageNumber: 1, pageSize: 1)))),
-              BlocProvider(
-                create: (context) => sl<AuthBloc>()
-                  ..add(const AuthEvent.checkUserLogged())
-                  ..add(const AuthEvent.getUserProfile())
-                  ..add(const AuthEvent.getSports()),
-              ),
-              BlocProvider(create: (context) => sl<ChatBloc>()),
-            ],
-            child: MaterialApp(
-              navigatorKey: navigatorKey,
-              builder: EasyLoading.init(),
-              debugShowCheckedModeBanner: false,
-              theme: ThemeData(
-                fontFamily: XStrings.fontFamily,
-                dialogTheme: const DialogTheme(
-                  surfaceTintColor: Colors.white,
-                  backgroundColor: Colors.white,
-                ),
-                colorScheme: ColorScheme.fromSeed(
-                  seedColor: const Color(0xFFF6F7F9),
-                  secondary: const Color(0xFFF6F7F9),
-                ),
-                useMaterial3: true,
-              ),
-              home: const RoutePage(),
+      designSize: const Size(430, 932),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (_, child) {
+        return MultiBlocProvider(
+          providers: [
+            BlocProvider(
+                create: (context) => sl<AcademyBloc>()
+                  ..add(AcademyEvent.getSuggestedAcademies(
+                      params:
+                          SuggestedAcademyParams(pageNumber: 1, pageSize: 1)))),
+            BlocProvider(
+              create: (context) => sl<AuthBloc>()
+                ..add(const AuthEvent.checkUserLogged())
+                ..add(const AuthEvent.getUserProfile())
+                ..add(const AuthEvent.getSports()),
             ),
-          );
-        });
+            BlocProvider(create: (context) => sl<ChatBloc>()),
+          ],
+          child: MaterialApp(
+            navigatorKey: navigatorKey,
+            builder: EasyLoading.init(),
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+              fontFamily: XStrings.fontFamily,
+              dialogTheme: const DialogTheme(
+                surfaceTintColor: Colors.white,
+                backgroundColor: Colors.white,
+              ),
+              colorScheme: ColorScheme.fromSeed(
+                seedColor: const Color(0xFFF6F7F9),
+                secondary: const Color(0xFFF6F7F9),
+              ),
+              useMaterial3: true,
+            ),
+            home: const RoutePage(),
+          ),
+        );
+      },
+    );
   }
 }

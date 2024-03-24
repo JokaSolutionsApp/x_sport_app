@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:x_sport/app/features/academy/data/models/academy_course_model.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/age_category_with_cources.dart';
+import 'academy_course_model.dart';
+import '../../domain/enitites/age_category_with_cources.dart';
 // import 'course.dart';
 
 part 'age_category_with_courses_model.g.dart';

@@ -3,9 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/constance/app_icons_icons.dart';
 import '../../../../../core/utils/assets_managers/assets.gen.dart';
-import 'payment_add_method_info_page.dart';
 import '../../../../widgets/buttons/custom_radio_button.dart';
 import '../../../../widgets/buttons/submit_button.dart';
+import 'payment_add_method_info_page.dart';
 
 class PaymentMethodPage extends StatelessWidget {
   PaymentMethodPage({super.key});

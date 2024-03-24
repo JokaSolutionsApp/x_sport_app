@@ -1,16 +1,16 @@
 import 'package:dartz/dartz.dart';
-import 'package:x_sport/app/features/academy/data/datasource/academy_remote_datasource.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/about_academy_entity.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/academy_course_entity.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/academy_membership_entity.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/academy_review_entity.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/get_academy_courses_entity.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/params/acedemy_params.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/suggested_academy_entity.dart';
-import 'package:x_sport/app/features/academy/domain/repository/base_academy_repository.dart';
-import 'package:x_sport/app/features/auth/domain/enitites/sport_entity.dart';
-import 'package:x_sport/core/error/exceptions.dart';
-import 'package:x_sport/core/error/failure.dart';
+import '../datasource/academy_remote_datasource.dart';
+import '../../domain/enitites/about_academy_entity.dart';
+import '../../domain/enitites/academy_course_entity.dart';
+import '../../domain/enitites/academy_membership_entity.dart';
+import '../../domain/enitites/academy_review_entity.dart';
+import '../../domain/enitites/get_academy_courses_entity.dart';
+import '../../domain/enitites/params/acedemy_params.dart';
+import '../../domain/enitites/suggested_academy_entity.dart';
+import '../../domain/repository/base_academy_repository.dart';
+import '../../../auth/domain/enitites/sport_entity.dart';
+import '../../../../../core/error/exceptions.dart';
+import '../../../../../core/error/failure.dart';
 
 class AcademyRepository extends BaseAcademyRepository {
   final BaseAcademyRemoteDataSource baseAcademyRemoteDataSource;

@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/params/acedemy_params.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/suggested_academy_entity.dart';
-import 'package:x_sport/app/features/academy/presentation/bloc/academy_bloc.dart';
+import '../../domain/enitites/params/acedemy_params.dart';
+import '../../domain/enitites/suggested_academy_entity.dart';
+import '../bloc/academy_bloc.dart';
 import '../components/video_player_full_screen_widget.dart';
 
 import '../../../../../core/constance/app_constance.dart';

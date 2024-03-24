@@ -1,8 +1,10 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import '../../../core/services/locator/service_locator.dart';
+
 import '../../../app/features/auth/domain/enitites/chat_entity.dart';
 import '../../../app/features/auth/domain/usecase/chat_uscases/send_message_usecase.dart';
+import '../../../core/services/locator/service_locator.dart';
+
 part 'chat_bloc.freezed.dart';
 part 'chat_event.dart';
 part 'chat_state.dart';

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/constance/app_constance.dart';
@@ -22,6 +23,15 @@ class MatchReservationPage extends StatefulWidget {
 
 class _MatchReservationPageState extends State<MatchReservationPage> {
   TextEditingController location = TextEditingController();
+  List<String> options = ['لمرة واحدة', 'متكرر'];
+  String? currentOption;
+
+  @override
+  void initState() {
+    currentOption = options[0];
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,7 +72,44 @@ class _MatchReservationPageState extends State<MatchReservationPage> {
                               style: TextStyle(
                                   fontSize: 18.sp, fontWeight: FontWeight.w500),
                             ),
-                            ReservationSportsComponent()
+                            ReservationSportsComponent(),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            Text(
+                              ':حدد نوع الحجز',
+                              style: TextStyle(
+                                  fontSize: 18.sp, fontWeight: FontWeight.w500),
+                            ),
+                            Directionality(
+                              textDirection: TextDirection.rtl,
+                              child: Row(
+                                children: [
+                                  Radio(
+                                    activeColor: XColors.primary,
+                                    value: options[0],
+                                    groupValue: currentOption,
+                                    onChanged: (value) {
+                                      setState(() {
+                                        currentOption = value.toString();
+                                      });
+                                    },
+                                  ),
+                                  const Text('لمرة واحدة'),
+                                  Radio(
+                                    activeColor: XColors.primary,
+                                    value: options[1],
+                                    groupValue: currentOption,
+                                    onChanged: (value) {
+                                      setState(() {
+                                        currentOption = value.toString();
+                                      });
+                                    },
+                                  ),
+                                  const Text('متكرر'),
+                                ],
+                              ),
+                            ),
                           ],
                         ),
                       ),

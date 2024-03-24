@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/age_category_with_cources.dart';
+import '../../../../domain/enitites/age_category_with_cources.dart';
 
 import '../../../../../../../core/constance/app_constance.dart';
 

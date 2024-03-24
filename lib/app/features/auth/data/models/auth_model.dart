@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:x_sport/app/features/auth/domain/enitites/auth_entity.dart';
+import '../../domain/enitites/auth_entity.dart';
 
 part 'auth_model.g.dart'; // Generate this file with json_serializable
 

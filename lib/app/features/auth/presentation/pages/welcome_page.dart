@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/core/services/locator/service_locator.dart';
-import 'package:x_sport/core/services/secure_storage_service.dart.dart';
+import '../../../../../core/services/locator/service_locator.dart';
+import '../../../../../core/services/secure_storage_service.dart.dart';
 
 import '../../../../../core/utils/assets_managers/assets.gen.dart';
 import '../../domain/enitites/sport_entity.dart';

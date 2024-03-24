@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/sport_info_entity.dart';
+import '../../domain/enitites/sport_info_entity.dart';
 
 part 'sport_info_model.g.dart';
 
