@@ -1,16 +1,15 @@
 import 'package:dartz/dartz.dart';
-import '../datasource/academy_remote_datasource.dart';
+
+import '../../../../../core/error/exceptions.dart';
+import '../../../../../core/error/failure.dart';
 import '../../domain/enitites/about_academy_entity.dart';
-import '../../domain/enitites/academy_course_entity.dart';
 import '../../domain/enitites/academy_membership_entity.dart';
 import '../../domain/enitites/academy_review_entity.dart';
 import '../../domain/enitites/get_academy_courses_entity.dart';
 import '../../domain/enitites/params/acedemy_params.dart';
 import '../../domain/enitites/suggested_academy_entity.dart';
 import '../../domain/repository/base_academy_repository.dart';
-import '../../../auth/domain/enitites/sport_entity.dart';
-import '../../../../../core/error/exceptions.dart';
-import '../../../../../core/error/failure.dart';
+import '../datasource/academy_remote_datasource.dart';
 
 class AcademyRepository extends BaseAcademyRepository {
   final BaseAcademyRemoteDataSource baseAcademyRemoteDataSource;

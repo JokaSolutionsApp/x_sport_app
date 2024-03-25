@@ -4,6 +4,7 @@ import 'package:crypto/crypto.dart';
 import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
 import 'package:get_it/get_it.dart';
+
 import '../../../app/features/academy/data/datasource/academy_remote_datasource.dart';
 import '../../../app/features/academy/data/repository/academy_repository.dart';
 import '../../../app/features/academy/domain/repository/base_academy_repository.dart';
@@ -14,8 +15,6 @@ import '../../../app/features/academy/domain/usecase/get_academy_review_usecase.
 import '../../../app/features/academy/domain/usecase/get_sports_membership_usecase.dart';
 import '../../../app/features/academy/domain/usecase/get_suggested_academies_usecase.dart';
 import '../../../app/features/academy/presentation/bloc/academy_bloc.dart';
-import '../../../app/features/auth/domain/usecase/user_usecase/google_login_usecase.dart';
-
 import '../../../app/features/auth/data/datasource/user_remote_datasource.dart';
 import '../../../app/features/auth/data/repository/user_repository.dart';
 import '../../../app/features/auth/domain/repository/base_user_repository.dart';
@@ -30,6 +29,7 @@ import '../../../app/features/auth/domain/usecase/user_usecase/edit__user_profil
 import '../../../app/features/auth/domain/usecase/user_usecase/edit_preferences_usecase.dart';
 import '../../../app/features/auth/domain/usecase/user_usecase/get_sports_usecase.dart';
 import '../../../app/features/auth/domain/usecase/user_usecase/get_user_profile_usecase.dart';
+import '../../../app/features/auth/domain/usecase/user_usecase/google_login_usecase.dart';
 import '../../../app/features/auth/domain/usecase/user_usecase/login_usecase.dart';
 import '../../../app/features/auth/domain/usecase/user_usecase/logout_usecase.dart';
 import '../../../app/features/auth/domain/usecase/user_usecase/register_usecase.dart';

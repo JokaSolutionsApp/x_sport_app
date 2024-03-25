@@ -4,9 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/constance/app_constance.dart';
 import '../../../../../core/constance/app_icons_icons.dart';
 import '../../../../../core/utils/assets_managers/assets.gen.dart';
-import '../components/search_components/user_search_bloc.dart';
 import '../../../../widgets/buttons/submit_button.dart';
 import '../../../../widgets/text_fields/search.dart';
+import '../components/search_components/user_search_bloc.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});

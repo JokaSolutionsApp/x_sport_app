@@ -1,23 +1,23 @@
 // ignore_for_file: prefer_typing_uninitialized_variables, unnecessary_brace_in_string_interps, null_argument_to_non_null_type
 
 import 'dart:async';
+
 import 'package:dio/dio.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:x_sport/app/controllers/fileds_bloc.dart';
 import 'package:x_sport/app/features/auth/data/datasource/params/auth_params.dart';
 import 'package:x_sport/app/features/auth/data/models/sport_model.dart';
 import 'package:x_sport/app/features/auth/data/models/user_profile_model.dart';
 import 'package:x_sport/app/features/auth/domain/enitites/sport_entity.dart';
 import 'package:x_sport/app/features/auth/domain/enitites/user_profile_entity.dart';
 import 'package:x_sport/app/features/auth/domain/params/edit_preferences_params.dart';
-import 'package:x_sport/app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:x_sport/core/constance/api_constance.dart';
 import 'package:x_sport/core/error/exceptions.dart';
 import 'package:x_sport/core/network/error_message_model.dart';
 import 'package:x_sport/core/services/api_service.dart';
 import 'package:x_sport/core/services/locator/service_locator.dart';
 import 'package:x_sport/core/services/secure_storage_service.dart.dart';
-import 'package:x_sport/app/controllers/fileds_bloc.dart';
-import 'package:google_sign_in/google_sign_in.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:x_sport/core/utils/enums.dart';
 
 abstract class BaseUserRemoteDataSource {

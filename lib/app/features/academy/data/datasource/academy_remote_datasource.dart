@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_typing_uninitialized_variables, unnecessary_brace_in_string_interps, null_argument_to_non_null_type
 
 import 'dart:async';
+
 import 'package:x_sport/app/features/academy/data/models/about_academy_model.dart';
 import 'package:x_sport/app/features/academy/data/models/academy_membership_model.dart';
 import 'package:x_sport/app/features/academy/data/models/academy_review_model.dart';

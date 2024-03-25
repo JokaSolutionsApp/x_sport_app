@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../components/register_success_dialog.dart';
-import '../components/text_form_field_widget.dart';
 
 import '../../../../../core/constance/app_constance.dart';
+import '../components/register_success_dialog.dart';
+import '../components/text_form_field_widget.dart';
 
 class AcademyRegisterPage extends StatefulWidget {
   const AcademyRegisterPage({super.key});

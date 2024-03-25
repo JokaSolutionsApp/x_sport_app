@@ -156,7 +156,7 @@ class _SocialProfilePageState extends State<SocialProfilePage> {
                     ),
                   ],
                 ),
-                UserProfileTabBarComponent(),
+                const UserProfileTabBarComponent(),
               ],
             ),
           ),

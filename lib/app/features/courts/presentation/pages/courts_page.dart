@@ -1,7 +1,11 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import '../../../academy/presentation/components/video_player_full_screen_widget.dart';
+import '../../../../../core/constance/app_constance.dart';
 
-import '../../../../../core/utils/assets_managers/assets.gen.dart';
 import '../../../academy/presentation/components/academy_components/academy_tabs_components/academy_program_component.dart';
 import '../components/court_information_tab_component.dart';
 
@@ -15,6 +19,13 @@ class CourtsPage extends StatefulWidget {
 class _CourtsScreenState extends State<CourtsPage>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  int activeIndex = 0;
+
+  var carouselImages = [
+    'https://picsum.photos/1920/1080',
+    'https://picsum.photos/1920/1080',
+    'https://picsum.photos/1920/1080',
+  ];
 
   @override
   void initState() {
@@ -26,290 +37,237 @@ class _CourtsScreenState extends State<CourtsPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        alignment: Alignment.topCenter,
-        children: [
-          Container(
-            height: 300.w,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-              fit: BoxFit.fill,
-              image: AssetsManager.images.courts.court.image().image,
-            )),
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        toolbarHeight: 0.06.sh,
+        backgroundColor: Colors.black,
+        flexibleSpace: Container(
+          alignment: Alignment.bottomCenter,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SizedBox(height: 38.w),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.of(context).pop();
-                      },
+                    const Icon(
+                      Icons.arrow_back_ios_new,
+                      color: Colors.white,
+                    ),
+                    Text(
+                      'اسم الملعب',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15.sp,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Row(
+                children: [
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.ios_share_rounded,
+                      color: Colors.white,
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.person_add,
+                      color: Colors.white,
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.more_horiz,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 0.23.sh,
+              width: double.infinity,
+              child: Stack(
+                children: [
+                  CarouselSlider.builder(
+                    itemCount: carouselImages.length,
+                    itemBuilder: (context, index, realIndex) {
+                      final carouselImage = carouselImages[index];
+                      return buildImage(carouselImage, index);
+                    },
+                    options: CarouselOptions(
+                      height: 0.23.sh,
+                      autoPlay: true,
+                      viewportFraction: 1,
+                      onPageChanged: (index, reason) => setState(
+                        () => activeIndex = index,
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: buildIndicator(),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.bottomRight,
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                        right: 4.0,
+                        bottom: 6.0,
+                      ),
                       child: Container(
-                        height: 35.w,
-                        width: 35.w,
-                        alignment: Alignment.center,
+                        height: 50.h,
+                        width: 50.w,
                         decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.55),
-                          borderRadius: BorderRadius.circular(6.sp),
-                        ),
-                        child: Icon(
-                          Icons.arrow_back_ios_outlined,
-                          color: Colors.black,
-                          size: 22.sp,
+                            color: XColors.primary.withOpacity(0.52),
+                            shape: BoxShape.circle),
+                        child: IconButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const VideoPlayerFullScreenWidget(),
+                              ),
+                            );
+                          },
+                          icon: Icon(
+                            Icons.play_arrow,
+                            color: Colors.white.withOpacity(0.52),
+                          ),
                         ),
                       ),
                     ),
-                    Row(
-                      children: [
-                        GestureDetector(
-                          onTap: () {},
-                          child: Container(
-                            height: 35.w,
-                            width: 85.w,
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                              color: Colors.white.withOpacity(0.55),
-                              borderRadius: BorderRadius.circular(6.sp),
-                            ),
-                            child: Text(
-                              '+ تابع',
-                              style: TextStyle(
-                                fontSize: 15.sp,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8.w),
+              child: Column(
+                children: [
+                  Container(
+                    alignment: Alignment.center,
+                    margin: EdgeInsets.only(top: 20.w),
+                    height: 50.h,
+                    width: 0.9.sw,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(12.sp),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.1),
+                          blurRadius: 8,
+                          offset: const Offset(0, 4),
+                        )
+                      ],
+                    ),
+                    child: TabBar(
+                      labelPadding: const EdgeInsets.symmetric(horizontal: 6),
+                      splashBorderRadius: BorderRadius.circular(11.sp),
+                      unselectedLabelColor: const Color(0xFFB4B4B4),
+                      indicatorSize: TabBarIndicatorSize.label,
+                      splashFactory: NoSplash.splashFactory,
+                      overlayColor: MaterialStateProperty.resolveWith<Color?>(
+                        (Set<MaterialState> states) {
+                          return states.contains(MaterialState.focused)
+                              ? null
+                              : Colors.transparent;
+                        },
+                      ),
+                      labelStyle: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w700),
+                      unselectedLabelStyle: TextStyle(
+                          color: const Color(0xFFB4B4B4),
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w700),
+                      dividerColor: Colors.transparent,
+                      indicator: BoxDecoration(
+                          color: XColors.primary,
+                          borderRadius: BorderRadius.circular(11.sp)),
+                      controller: _tabController,
+                      tabs: [
+                        Container(
+                          height: 30.w,
+                          alignment: Alignment.center,
+                          child: Text(
+                            'المجتمع',
+                            style: TextStyle(
+                                fontSize: 18.sp, fontWeight: FontWeight.w400),
                           ),
                         ),
-                        SizedBox(width: 18.w),
-                        GestureDetector(
-                          onTap: () {},
-                          child: Container(
-                            height: 35.w,
-                            width: 35.w,
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                              color: Colors.white.withOpacity(0.55),
-                              borderRadius: BorderRadius.circular(6.sp),
-                            ),
-                            child: Icon(
-                              Icons.bookmark_outline,
-                              color: Colors.black,
-                              size: 28.sp,
-                            ),
+                        Container(
+                          height: 30.w,
+                          alignment: Alignment.center,
+                          child: Text(
+                            'معلومات',
+                            style: TextStyle(
+                                fontSize: 18.sp, fontWeight: FontWeight.w400),
                           ),
                         ),
                       ],
                     ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: 70.w),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(left: 18.w),
-                      height: 35.w,
-                      width: 100.w,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.65),
-                        borderRadius: BorderRadius.circular(6.sp),
-                      ),
-                      child: Text(
-                        '6521 متابع',
-                        style: TextStyle(
-                          fontSize: 15.sp,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: 100.w,
-                      width: 270.w,
-                      padding: EdgeInsets.only(left: 20.w),
-                      margin: EdgeInsets.only(right: 10.w),
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.45),
-                        borderRadius: BorderRadius.circular(6.sp),
-                      ),
-                      child: Stack(
-                        alignment: Alignment.center,
-                        clipBehavior: Clip.none,
-                        children: List.generate(
-                          4,
-                          (index) => Positioned(
-                            left: index *
-                                40.0, // Adjust the spacing between circles
-                            child: index != 3
-                                ? Container(
-                                    width: 100.w,
-                                    height: 90.w,
-                                    decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                            fit: BoxFit.cover,
-                                            image: AssetImage(
-                                                'assets/images/courts/court${index + 1}.png')),
-                                        borderRadius:
-                                            BorderRadius.circular(7.sp),
-                                        border: Border.all(
-                                          color: Colors.white.withOpacity(0.55),
-                                        )),
-                                  )
-                                : Container(
-                                    width: 100.w,
-                                    height: 90.w,
-                                    decoration: BoxDecoration(
-                                        color: Colors.black.withOpacity(0.65),
-                                        borderRadius:
-                                            BorderRadius.circular(6.sp),
-                                        border: Border.all(
-                                          color: Colors.white.withOpacity(0.5),
-                                        )),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Text(
-                                          '+65',
-                                          style: TextStyle(
-                                            fontSize: 20.sp,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w400,
-                                          ),
-                                        ),
-                                        Text(
-                                          'صورة',
-                                          style: TextStyle(
-                                            height: 0.5.w,
-                                            fontSize: 12.sp,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w300,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-          Align(
-              alignment: Alignment.bottomLeft,
-              child: Container(
-                width: 1.sw,
-                height: 660.h,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(40.sp),
-                        topRight: Radius.circular(40.sp))),
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8.w),
-                  child: Column(
-                    children: [
-                      Container(
-                        alignment: Alignment.center,
-                        margin: EdgeInsets.only(top: 20.w),
-                        height: 50.h,
-                        width: 0.9.sw,
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(12.sp),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.1),
-                                blurRadius: 8,
-                                offset: const Offset(0, 4),
-                              )
-                            ]),
-                        child: Stack(
-                          alignment: Alignment.center,
-                          children: [
-                            TabBar(
-                              dividerColor: Colors.transparent,
-                              controller: _tabController,
-                              splashFactory: NoSplash.splashFactory,
-                              overlayColor:
-                                  MaterialStateProperty.resolveWith<Color?>(
-                                (Set<MaterialState> states) {
-                                  return states.contains(MaterialState.focused)
-                                      ? null
-                                      : const Color.fromARGB(0, 150, 89, 89);
-                                },
-                              ),
-                              // indicatorSize: TabBarIndicatorSize.label,
-                              // indicatorPadding:
-                              //     EdgeInsets.symmetric(horizontal: 16.w),
-                              // indicator: BoxDecoration(border: Border()),
-                              labelStyle: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 18.sp,
-                                  fontWeight: FontWeight.w400),
-                              indicatorColor: Colors.transparent,
-                              unselectedLabelStyle: const TextStyle(
-                                color: Color(0xFF8F8F8F),
-                              ),
-                              tabs: [
-                                Container(
-                                  height: 30.w,
-                                  alignment: Alignment.center,
-                                  child: Text(
-                                    'المجتمع',
-                                    style: TextStyle(
-                                        fontSize: 18.sp,
-                                        fontWeight: FontWeight.w400),
-                                  ),
-                                ),
-                                Container(
-                                  height: 30.w,
-                                  alignment: Alignment.center,
-                                  child: Text(
-                                    'معلومات',
-                                    style: TextStyle(
-                                        fontSize: 18.sp,
-                                        fontWeight: FontWeight.w400),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Container(
-                              width: 0.5.w,
-                              height: 38.w,
-                              color: const Color(0xFF989898),
-                            )
-                          ],
-                        ),
-                      ),
-                      SizedBox(height: 20.h),
-                      Expanded(
-                        child:
-                            TabBarView(controller: _tabController, children: [
-                          AcademyProgramtComponent(
-                            academyId: 1,
-                          ),
-                          CourtInformationComponent(),
-                        ]),
-                      ),
-                    ],
                   ),
-                ),
-              ))
-        ],
+                  SizedBox(
+                    height: 0.60.sh,
+                    child: TabBarView(
+                      controller: _tabController,
+                      children: [
+                        const AcademyProgramtComponent(
+                          academyId: 1,
+                        ),
+                        CourtInformationComponent(),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
+
+  Widget buildIndicator() => AnimatedSmoothIndicator(
+        activeIndex: activeIndex,
+        count: carouselImages.length,
+        effect: const ExpandingDotsEffect(
+          dotWidth: 7,
+          dotHeight: 7,
+          activeDotColor: Colors.white,
+          dotColor: Colors.grey,
+        ),
+      );
 }
+
+Widget buildImage(String carouselImage, int index) => Container(
+      width: double.infinity,
+      color: Colors.grey[300],
+      child: CachedNetworkImage(
+        imageUrl: carouselImage,
+        placeholder: (context, url) => const Icon(Icons.image),
+        errorWidget: (context, url, error) => const Icon(Icons.image),
+        fit: BoxFit.fill,
+      ),
+    );
