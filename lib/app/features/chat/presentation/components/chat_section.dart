@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'chat_messages.dart';
-import '../../../../controllers/chat_bloc/chat_bloc.dart';
+
 import '../../../../../presentation/controllers/chat_bloc/chat_bloc.dart';
+import 'chat_messages.dart';
 
 class ChatComponent extends StatefulWidget {
   const ChatComponent({Key? key}) : super(key: key);

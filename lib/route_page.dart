@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'app/features/auth/presentation/pages/welcome_page.dart';
-import 'core/services/locator/service_locator.dart';
-import 'core/services/secure_storage_service.dart.dart';
+
 import 'app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'app/features/auth/presentation/pages/login_page.dart';
+import 'app/features/auth/presentation/pages/welcome_page.dart';
 import 'app/features/home/presentation/pages/main_page.dart';
 import 'core/utils/enums.dart';
 

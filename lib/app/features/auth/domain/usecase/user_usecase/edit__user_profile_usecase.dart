@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
-import '../../../data/datasource/params/auth_params.dart';
-import '../../enitites/user_profile_entity.dart';
 
 import '../../../../../../core/error/failure.dart';
+import '../../../data/datasource/params/auth_params.dart';
+import '../../enitites/user_profile_entity.dart';
 import '../../repository/base_user_repository.dart';
 
 class EditUserProfileUseCase {

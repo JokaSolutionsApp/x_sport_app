@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../academy/presentation/bloc/academy_bloc.dart';
-
-import '../../../../../../core/utils/assets_managers/assets.gen.dart';
-import '../../../../academy/presentation/pages/academy_page.dart';
 
 import '../../../../../../core/constance/app_constance.dart';
 import '../../../../../../core/constance/app_icons_icons.dart';
 import '../../../../../widgets/buttons/submit_button.dart';
 import '../../../../../widgets/rectangle_container.dart';
+import '../../../../academy/presentation/bloc/academy_bloc.dart';
+import '../../../../academy/presentation/pages/academy_page.dart';
 
 class AcademiesComponent extends StatelessWidget {
   const AcademiesComponent({super.key});

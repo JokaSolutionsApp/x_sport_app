@@ -1,17 +1,18 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:pin_code_fields/pin_code_fields.dart';
+
+import '../../../../../core/constance/app_constance.dart';
 import '../../../../../core/constance/app_icons_icons.dart';
 import '../../../../../core/services/locator/service_locator.dart';
 import '../../../../../core/services/secure_storage_service.dart.dart';
-import '../bloc/auth_bloc.dart';
 import '../../../../../main.dart';
-import '../../../../../core/constance/app_constance.dart';
 import '../../../../controllers/fileds_bloc.dart';
 import '../../../../widgets/buttons/submit_button.dart';
+import '../bloc/auth_bloc.dart';
 
 class OtpPage extends StatefulWidget {
   const OtpPage({super.key});

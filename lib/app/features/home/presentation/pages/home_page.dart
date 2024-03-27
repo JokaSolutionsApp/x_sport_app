@@ -3,10 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/constance/app_constance.dart';
 import '../../../../../core/utils/assets_managers/assets.gen.dart';
-import '../components/home_components/home_stadiums_component.dart';
-import '../../../profile/presentation/components/profile_screen_components/profile_main_components/profile_appbar_component.dart';
 import '../../../../widgets/buttons/submit_button.dart';
 import '../../../../widgets/rectangle_container.dart';
+import '../../../profile/presentation/components/profile_screen_components/profile_main_components/profile_appbar_component.dart';
+import '../components/home_components/home_stadiums_component.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../auth/data/datasource/params/auth_params.dart';
-import '../../../auth/domain/enitites/favorite_sport_entity.dart';
-import '../../../auth/domain/enitites/sport_entity.dart';
-import '../../../auth/domain/enitites/user_entity.dart';
-import '../components/edit_profile_components/edit_gender.dart';
-import '../components/edit_profile_components/edit_sports.dart';
-import '../components/profile_screen_components/delete_favorite_sports.dart';
 
 import '../../../../../core/constance/app_constance.dart';
 import '../../../../../core/constance/local_data.dart';
-import '../components/edit_profile_components/edit_image_component.dart';
-import '../../../auth/presentation/bloc/auth_bloc.dart';
 import '../../../../../core/utils/assets_managers/assets.gen.dart';
 import '../../../../../main.dart';
 import '../../../../controllers/fileds_bloc.dart';
 import '../../../../widgets/buttons/edit_button.dart';
 import '../../../../widgets/text_fields/no_border_textfield_widget.dart';
+import '../../../auth/data/datasource/params/auth_params.dart';
+import '../../../auth/domain/enitites/favorite_sport_entity.dart';
+import '../../../auth/domain/enitites/sport_entity.dart';
+import '../../../auth/domain/enitites/user_entity.dart';
+import '../../../auth/presentation/bloc/auth_bloc.dart';
+import '../components/edit_profile_components/edit_gender.dart';
+import '../components/edit_profile_components/edit_image_component.dart';
+import '../components/edit_profile_components/edit_sports.dart';
 
 class EditProfilePage extends StatefulWidget {
   final UserEntity user;

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../bloc/academy_bloc.dart';
 
 import '../../../../../../../core/constance/app_constance.dart';
-import '../../../../../../widgets/rectangle_container.dart';
-
 import '../../../../../../../core/constance/app_icons_icons.dart';
+import '../../../../../../widgets/rectangle_container.dart';
+import '../../../bloc/academy_bloc.dart';
 
 class AcademyAboutComponent extends StatefulWidget {
   final int academyId;
@@ -19,11 +18,10 @@ class AcademyAboutComponent extends StatefulWidget {
 class _AcademyAboutComponentState extends State<AcademyAboutComponent> {
   @override
   void initState() {
-    // TODO: implement initState
-    super.initState();
     context
         .read<AcademyBloc>()
         .add(AcademyEvent.getAboutAcademy(academyId: widget.academyId));
+    super.initState();
   }
 
   final academyServices = [
@@ -206,33 +204,34 @@ class _AcademyAboutComponentState extends State<AcademyAboutComponent> {
                   height: 20.w,
                 ),
                 RectangleContainer(
-                    bottomMargin: 10,
-                    radius: 13,
-                    child: Container(
-                      padding: EdgeInsets.only(right: 10.w),
-                      height: 0.08.sh,
-                      width: 1.sw,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Text(
-                            'الاشتراك بدءا من ${aboutAcademy.minPrice}\$ الى ${aboutAcademy.maxPrice}\$ شهريا',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 15.sp,
-                                fontWeight: FontWeight.w400),
-                          ),
-                          Text(
-                            'يختلف الاشتراك حسب الفئات السنية ومزايا اخرى',
-                            style: TextStyle(
-                                color: const Color(0xFF6E6E6E),
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w400),
-                          ),
-                        ],
-                      ),
-                    )),
+                  bottomMargin: 10,
+                  radius: 13,
+                  child: Container(
+                    padding: EdgeInsets.only(right: 10.w),
+                    height: 0.08.sh,
+                    width: 1.sw,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          'الاشتراك بدءا من ${aboutAcademy.minPrice}\$ الى ${aboutAcademy.maxPrice}\$ شهريا',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15.sp,
+                              fontWeight: FontWeight.w400),
+                        ),
+                        Text(
+                          'يختلف الاشتراك حسب الفئات السنية ومزايا اخرى',
+                          style: TextStyle(
+                              color: const Color(0xFF6E6E6E),
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w400),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ],
             );
           },

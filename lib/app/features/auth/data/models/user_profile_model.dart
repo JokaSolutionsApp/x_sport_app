@@ -1,9 +1,9 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'auth_model.dart';
-import 'user_model.dart';
+
 import '../../domain/enitites/user_profile_entity.dart';
+import 'auth_model.dart';
 import 'favorite_sport_model.dart';
-import 'current_sport_model.dart';
+import 'user_model.dart';
 
 part 'user_profile_model.g.dart';
 

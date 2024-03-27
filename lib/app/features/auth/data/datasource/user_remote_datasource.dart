@@ -80,7 +80,7 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
 
   @override
   Future<List<SportEntity>> confirmUserEmail() async {
-    await sl<SecureStorageService>().write('password', 'Ammarlm4@');
+    await sl<SecureStorageService>().write('password', 'AA@@0a');
     final email = await sl<SecureStorageService>().read('email');
     final password = await sl<SecureStorageService>().read('password');
 

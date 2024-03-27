@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../bloc/academy_bloc.dart';
 
+import '../../../bloc/academy_bloc.dart';
 import '../program_tab_components/program_dates_component.dart';
 import '../program_tab_components/training_schedule_component.dart';
 

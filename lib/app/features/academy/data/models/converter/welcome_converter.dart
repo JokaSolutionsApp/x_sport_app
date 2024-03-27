@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 import '../../../../auth/data/models/sport_model.dart';
 import '../../../../auth/domain/enitites/sport_entity.dart';
 

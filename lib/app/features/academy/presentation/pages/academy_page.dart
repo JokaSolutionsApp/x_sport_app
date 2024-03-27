@@ -1,16 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import '../../domain/enitites/params/acedemy_params.dart';
+import '../components/courses_tab.dart';
 import '../../domain/enitites/suggested_academy_entity.dart';
-import '../bloc/academy_bloc.dart';
 import '../components/video_player_full_screen_widget.dart';
 
 import '../../../../../core/constance/app_constance.dart';
-import '../components/academy_components/academy_tabs_components/academy_program_component.dart';
 import '../../../../widgets/buttons/submit_button.dart';
 
 import '../components/academy_components/academy_tabs_components/academy_about_component.dart';
@@ -287,15 +284,16 @@ class _AcademyScreenState extends State<AcademyPage>
                   ),
                   SizedBox(
                     height: 0.49.sh,
-                    child: TabBarView(controller: _tabController, children: [
-                      const Text('data'),
-                      AcademyProgramtComponent(
-                        academyId: widget.academy.academyId,
-                      ),
-                      AcademyAboutComponent(
-                        academyId: widget.academy.academyId,
-                      ),
-                    ]),
+                    child: TabBarView(
+                      controller: _tabController,
+                      children: [
+                        const Text('data'),
+                        const CoursesTab(),
+                        AcademyAboutComponent(
+                          academyId: widget.academy.academyId,
+                        ),
+                      ],
+                    ),
                   ),
                   Align(
                     alignment: Alignment.center,
