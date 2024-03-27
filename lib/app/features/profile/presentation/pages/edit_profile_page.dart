@@ -66,44 +66,45 @@ class _EditProfilePageState extends State<EditProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          automaticallyImplyLeading: false,
-          leading: IconButton(
-              onPressed: () {
-                context.read<AuthBloc>().add(AuthEvent.editUserProfile(
-                    params: EditUserProfileParams(
-                        name: name.text,
-                        phone: phone.text,
-                        gender: updateGender,
-                        sportIds: selectedIds,
-                        lat: editProfileStream.latValue,
-                        long: editProfileStream.longeValue)));
-              },
-              icon: Icon(
-                Icons.done,
-                size: 36.sp,
-                color: XColors.primary,
-              )),
-          actions: [
-            Row(
-              children: [
-                Text(
-                  'تعديل الملف الشخصي',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w500),
-                ),
-                IconButton(
-                    onPressed: () {
-                      Navigator.of(navigatorKey.currentContext!).pop();
-                    },
-                    icon: Icon(
-                      Icons.close,
-                      size: 36.sp,
-                    ))
-              ],
-            )
-          ]),
+        automaticallyImplyLeading: false,
+        leading: IconButton(
+            onPressed: () {
+              context.read<AuthBloc>().add(AuthEvent.editUserProfile(
+                  params: EditUserProfileParams(
+                      name: name.text,
+                      phone: phone.text,
+                      gender: updateGender,
+                      sportIds: selectedIds,
+                      lat: editProfileStream.latValue,
+                      long: editProfileStream.longeValue)));
+            },
+            icon: Icon(
+              Icons.done,
+              size: 36.sp,
+              color: XColors.primary,
+            )),
+        actions: [
+          Row(
+            children: [
+              Text(
+                'تعديل الملف الشخصي',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w500),
+              ),
+              IconButton(
+                  onPressed: () {
+                    Navigator.of(navigatorKey.currentContext!).pop();
+                  },
+                  icon: Icon(
+                    Icons.close,
+                    size: 36.sp,
+                  ))
+            ],
+          )
+        ],
+      ),
       body: SingleChildScrollView(
         child: Center(
           child: SizedBox(

@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/home/presentation/components/academies_components/suggested_academies_component.dart';
+import 'package:x_sport/app/features/home/presentation/pages/academies_page.dart';
+import 'package:x_sport/app/features/home/presentation/pages/memberships_page.dart';
 
 import 'app/features/academy/domain/enitites/params/acedemy_params.dart';
 import 'app/features/academy/presentation/bloc/academy_bloc.dart';
@@ -73,7 +76,7 @@ class MyApp extends StatelessWidget {
               ),
               useMaterial3: true,
             ),
-            home: const RoutePage(),
+            home: const MembershipsPage(),
           ),
         );
       },

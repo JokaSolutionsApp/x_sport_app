@@ -21,11 +21,13 @@ class XColors {
   static const primary_text_color = Color(0xFF2E2E2E);
   static const secondary_text_color = Color(0xFF979797);
   static const scaffold_background = Color(0xFFFFFFFF);
+  static const scaffold_background2 = Color(0xFFFCFCFC);
   static const success_green = Color(0xFF66BB6A);
   static const fail_red = Color(0xFFF44336);
   static const white = Color(0xFFFFFFFF);
   static const black = Color(0xff000000);
   static const borderColor = Color(0xffDDDDDD);
+  static const shadow_color = Color(0x63000000);
 }
 
 class XStrings {

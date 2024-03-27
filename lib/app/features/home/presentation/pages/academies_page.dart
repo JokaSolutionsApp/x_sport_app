@@ -12,7 +12,7 @@ import '../../../../controllers/fileds_bloc.dart';
 import '../../../../widgets/text_fields/search_textfield.dart';
 
 class AcademiesPage extends StatefulWidget {
-  AcademiesPage({super.key});
+  const AcademiesPage({super.key});
 
   @override
   State<AcademiesPage> createState() => _AcademiesPageState();
