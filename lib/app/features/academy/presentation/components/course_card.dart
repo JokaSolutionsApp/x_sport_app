@@ -10,6 +10,7 @@ class CourseCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      margin: const EdgeInsets.symmetric(vertical: 10),
       color: XColors.Background_Color1,
       child: Padding(
         padding: const EdgeInsets.symmetric(
