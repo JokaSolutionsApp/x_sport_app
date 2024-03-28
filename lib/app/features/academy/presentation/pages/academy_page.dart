@@ -3,6 +3,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:x_sport/app/features/academy/presentation/components/reviews_tab.dart';
 import '../components/courses_tab.dart';
 import '../../domain/enitites/suggested_academy_entity.dart';
 import '../components/video_player_full_screen_widget.dart';
@@ -163,55 +164,6 @@ class _AcademyScreenState extends State<AcademyPage>
                 ],
               ),
             ),
-            // Container(
-            //   padding: EdgeInsets.only(bottom: 10.w, right: 20.w),
-            //   height: 0.23.sh,
-            //   decoration: BoxDecoration(
-            //       image: DecorationImage(
-            //     fit: BoxFit.cover,
-            //     image:
-            //         AssetsManager.images.academy.academyExample.image().image,
-            //   )),
-            //   child: Row(
-            //     crossAxisAlignment: CrossAxisAlignment.end,
-            //     mainAxisAlignment: MainAxisAlignment.end,
-            //     children: [
-            //       Column(
-            //         crossAxisAlignment: CrossAxisAlignment.end,
-            //         mainAxisAlignment: MainAxisAlignment.end,
-            //         children: [
-            //           Text(
-            //             'مشاهدة الفيديو',
-            //             style: TextStyle(
-            //                 color: Colors.white,
-            //                 fontSize: 12.sp,
-            //                 fontWeight: FontWeight.w500),
-            //           ),
-            //           Text(
-            //             '1:47',
-            //             textAlign: TextAlign.start,
-            //             style: TextStyle(
-            //                 color: Colors.white,
-            //                 fontSize: 10.sp,
-            //                 fontWeight: FontWeight.w500),
-            //           )
-            //         ],
-            //       ),
-            //       Container(
-            //         margin: EdgeInsets.only(left: 5.w),
-            //         height: 50.h,
-            //         width: 50.w,
-            //         decoration: BoxDecoration(
-            //             color: XColors.primary.withOpacity(0.52),
-            //             shape: BoxShape.circle),
-            //         child: Icon(
-            //           Icons.play_arrow,
-            //           color: Colors.white.withOpacity(0.52),
-            //         ),
-            //       )
-            //     ],
-            //   ),
-            // ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 8.w),
               child: Column(
@@ -287,7 +239,7 @@ class _AcademyScreenState extends State<AcademyPage>
                     child: TabBarView(
                       controller: _tabController,
                       children: [
-                        const Text('data'),
+                        const ReviewsTab(),
                         const CoursesTab(),
                         AcademyAboutComponent(
                           academyId: widget.academy.academyId,
