@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:x_sport/app/features/academy/presentation/components/course_card.dart';
-import 'package:x_sport/app/features/academy/presentation/components/register_success_dialog.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
 import 'package:x_sport/main.dart';
 
