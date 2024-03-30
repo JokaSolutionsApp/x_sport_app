@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/courts/presentation/pages/courts_page.dart';
+import 'package:x_sport/app/features/home/presentation/components/home_components/friends_stadiums_component.dart';
 
 import '../../../../../core/constance/app_constance.dart';
 import '../../../../../core/utils/assets_managers/assets.gen.dart';
@@ -164,7 +166,13 @@ class HomePage extends StatelessWidget {
                                     height: 18,
                                     textSize: 14,
                                     text: 'المزيد',
-                                    onPressed: () {}),
+                                    onPressed: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  CourtsPage()));
+                                    }),
                               )
                             ],
                           ),
@@ -173,7 +181,8 @@ class HomePage extends StatelessWidget {
                     );
                   }),
             ),
-            HomeStadiumsComponent()
+            HomeStadiumsComponent(),
+            FriendsStadiumsComponent(),
           ],
         ),
       ),

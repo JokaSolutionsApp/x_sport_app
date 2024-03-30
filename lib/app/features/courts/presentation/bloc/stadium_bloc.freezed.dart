@@ -521,11 +521,11 @@ mixin _$StadiumState {
     required TResult Function() getNearByStadiumsLoading,
     required TResult Function(Failure? failure) getNearByStadiumsFailure,
     required TResult Function(List<StadiumEntity> nearByStadiums)
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     required TResult Function() getFriendsStadiumsLoading,
     required TResult Function(Failure? failure) getFriendsStadiumsFailure,
     required TResult Function(List<StadiumEntity> friendsStadiums)
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     required TResult Function() getAboutStadiumLoading,
     required TResult Function(Failure? failure) getAboutStadiumFailure,
     required TResult Function(AboutStadiumEntity? aboutStadium)
@@ -538,11 +538,11 @@ mixin _$StadiumState {
     TResult? Function()? getNearByStadiumsLoading,
     TResult? Function(Failure? failure)? getNearByStadiumsFailure,
     TResult? Function(List<StadiumEntity> nearByStadiums)?
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     TResult? Function()? getFriendsStadiumsLoading,
     TResult? Function(Failure? failure)? getFriendsStadiumsFailure,
     TResult? Function(List<StadiumEntity> friendsStadiums)?
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     TResult? Function()? getAboutStadiumLoading,
     TResult? Function(Failure? failure)? getAboutStadiumFailure,
     TResult? Function(AboutStadiumEntity? aboutStadium)? aboutStadiumFetched,
@@ -553,11 +553,11 @@ mixin _$StadiumState {
     TResult Function()? initial,
     TResult Function()? getNearByStadiumsLoading,
     TResult Function(Failure? failure)? getNearByStadiumsFailure,
-    TResult Function(List<StadiumEntity> nearByStadiums)? NearByStadiumsFetched,
+    TResult Function(List<StadiumEntity> nearByStadiums)? nearByStadiumsFetched,
     TResult Function()? getFriendsStadiumsLoading,
     TResult Function(Failure? failure)? getFriendsStadiumsFailure,
     TResult Function(List<StadiumEntity> friendsStadiums)?
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     TResult Function()? getAboutStadiumLoading,
     TResult Function(Failure? failure)? getAboutStadiumFailure,
     TResult Function(AboutStadiumEntity? aboutStadium)? aboutStadiumFetched,
@@ -572,13 +572,13 @@ mixin _$StadiumState {
     required TResult Function(_GetNearByStadiumsFailure value)
         getNearByStadiumsFailure,
     required TResult Function(_NearByStadiumsFetched value)
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     required TResult Function(_GetFriendsStadiumsLoading value)
         getFriendsStadiumsLoading,
     required TResult Function(_GetFriendsStadiumsFailure value)
         getFriendsStadiumsFailure,
     required TResult Function(_FriendsStadiumsFetched value)
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     required TResult Function(_GetAboutStadiumLoading value)
         getAboutStadiumLoading,
     required TResult Function(_GetAboutStadiumFailure value)
@@ -593,12 +593,12 @@ mixin _$StadiumState {
         getNearByStadiumsLoading,
     TResult? Function(_GetNearByStadiumsFailure value)?
         getNearByStadiumsFailure,
-    TResult? Function(_NearByStadiumsFetched value)? NearByStadiumsFetched,
+    TResult? Function(_NearByStadiumsFetched value)? nearByStadiumsFetched,
     TResult? Function(_GetFriendsStadiumsLoading value)?
         getFriendsStadiumsLoading,
     TResult? Function(_GetFriendsStadiumsFailure value)?
         getFriendsStadiumsFailure,
-    TResult? Function(_FriendsStadiumsFetched value)? FriendsStadiumsFetched,
+    TResult? Function(_FriendsStadiumsFetched value)? friendsStadiumsFetched,
     TResult? Function(_GetAboutStadiumLoading value)? getAboutStadiumLoading,
     TResult? Function(_GetAboutStadiumFailure value)? getAboutStadiumFailure,
     TResult? Function(_AboutStadiumFetched value)? aboutStadiumFetched,
@@ -609,12 +609,12 @@ mixin _$StadiumState {
     TResult Function(_Initial value)? initial,
     TResult Function(_GetNearByStadiumsLoading value)? getNearByStadiumsLoading,
     TResult Function(_GetNearByStadiumsFailure value)? getNearByStadiumsFailure,
-    TResult Function(_NearByStadiumsFetched value)? NearByStadiumsFetched,
+    TResult Function(_NearByStadiumsFetched value)? nearByStadiumsFetched,
     TResult Function(_GetFriendsStadiumsLoading value)?
         getFriendsStadiumsLoading,
     TResult Function(_GetFriendsStadiumsFailure value)?
         getFriendsStadiumsFailure,
-    TResult Function(_FriendsStadiumsFetched value)? FriendsStadiumsFetched,
+    TResult Function(_FriendsStadiumsFetched value)? friendsStadiumsFetched,
     TResult Function(_GetAboutStadiumLoading value)? getAboutStadiumLoading,
     TResult Function(_GetAboutStadiumFailure value)? getAboutStadiumFailure,
     TResult Function(_AboutStadiumFetched value)? aboutStadiumFetched,
@@ -683,11 +683,11 @@ class _$InitialImpl implements _Initial {
     required TResult Function() getNearByStadiumsLoading,
     required TResult Function(Failure? failure) getNearByStadiumsFailure,
     required TResult Function(List<StadiumEntity> nearByStadiums)
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     required TResult Function() getFriendsStadiumsLoading,
     required TResult Function(Failure? failure) getFriendsStadiumsFailure,
     required TResult Function(List<StadiumEntity> friendsStadiums)
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     required TResult Function() getAboutStadiumLoading,
     required TResult Function(Failure? failure) getAboutStadiumFailure,
     required TResult Function(AboutStadiumEntity? aboutStadium)
@@ -703,11 +703,11 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? getNearByStadiumsLoading,
     TResult? Function(Failure? failure)? getNearByStadiumsFailure,
     TResult? Function(List<StadiumEntity> nearByStadiums)?
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     TResult? Function()? getFriendsStadiumsLoading,
     TResult? Function(Failure? failure)? getFriendsStadiumsFailure,
     TResult? Function(List<StadiumEntity> friendsStadiums)?
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     TResult? Function()? getAboutStadiumLoading,
     TResult? Function(Failure? failure)? getAboutStadiumFailure,
     TResult? Function(AboutStadiumEntity? aboutStadium)? aboutStadiumFetched,
@@ -721,11 +721,11 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? getNearByStadiumsLoading,
     TResult Function(Failure? failure)? getNearByStadiumsFailure,
-    TResult Function(List<StadiumEntity> nearByStadiums)? NearByStadiumsFetched,
+    TResult Function(List<StadiumEntity> nearByStadiums)? nearByStadiumsFetched,
     TResult Function()? getFriendsStadiumsLoading,
     TResult Function(Failure? failure)? getFriendsStadiumsFailure,
     TResult Function(List<StadiumEntity> friendsStadiums)?
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     TResult Function()? getAboutStadiumLoading,
     TResult Function(Failure? failure)? getAboutStadiumFailure,
     TResult Function(AboutStadiumEntity? aboutStadium)? aboutStadiumFetched,
@@ -746,13 +746,13 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_GetNearByStadiumsFailure value)
         getNearByStadiumsFailure,
     required TResult Function(_NearByStadiumsFetched value)
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     required TResult Function(_GetFriendsStadiumsLoading value)
         getFriendsStadiumsLoading,
     required TResult Function(_GetFriendsStadiumsFailure value)
         getFriendsStadiumsFailure,
     required TResult Function(_FriendsStadiumsFetched value)
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     required TResult Function(_GetAboutStadiumLoading value)
         getAboutStadiumLoading,
     required TResult Function(_GetAboutStadiumFailure value)
@@ -770,12 +770,12 @@ class _$InitialImpl implements _Initial {
         getNearByStadiumsLoading,
     TResult? Function(_GetNearByStadiumsFailure value)?
         getNearByStadiumsFailure,
-    TResult? Function(_NearByStadiumsFetched value)? NearByStadiumsFetched,
+    TResult? Function(_NearByStadiumsFetched value)? nearByStadiumsFetched,
     TResult? Function(_GetFriendsStadiumsLoading value)?
         getFriendsStadiumsLoading,
     TResult? Function(_GetFriendsStadiumsFailure value)?
         getFriendsStadiumsFailure,
-    TResult? Function(_FriendsStadiumsFetched value)? FriendsStadiumsFetched,
+    TResult? Function(_FriendsStadiumsFetched value)? friendsStadiumsFetched,
     TResult? Function(_GetAboutStadiumLoading value)? getAboutStadiumLoading,
     TResult? Function(_GetAboutStadiumFailure value)? getAboutStadiumFailure,
     TResult? Function(_AboutStadiumFetched value)? aboutStadiumFetched,
@@ -789,12 +789,12 @@ class _$InitialImpl implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_GetNearByStadiumsLoading value)? getNearByStadiumsLoading,
     TResult Function(_GetNearByStadiumsFailure value)? getNearByStadiumsFailure,
-    TResult Function(_NearByStadiumsFetched value)? NearByStadiumsFetched,
+    TResult Function(_NearByStadiumsFetched value)? nearByStadiumsFetched,
     TResult Function(_GetFriendsStadiumsLoading value)?
         getFriendsStadiumsLoading,
     TResult Function(_GetFriendsStadiumsFailure value)?
         getFriendsStadiumsFailure,
-    TResult Function(_FriendsStadiumsFetched value)? FriendsStadiumsFetched,
+    TResult Function(_FriendsStadiumsFetched value)? friendsStadiumsFetched,
     TResult Function(_GetAboutStadiumLoading value)? getAboutStadiumLoading,
     TResult Function(_GetAboutStadiumFailure value)? getAboutStadiumFailure,
     TResult Function(_AboutStadiumFetched value)? aboutStadiumFetched,
@@ -856,11 +856,11 @@ class _$GetNearByStadiumsLoadingImpl implements _GetNearByStadiumsLoading {
     required TResult Function() getNearByStadiumsLoading,
     required TResult Function(Failure? failure) getNearByStadiumsFailure,
     required TResult Function(List<StadiumEntity> nearByStadiums)
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     required TResult Function() getFriendsStadiumsLoading,
     required TResult Function(Failure? failure) getFriendsStadiumsFailure,
     required TResult Function(List<StadiumEntity> friendsStadiums)
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     required TResult Function() getAboutStadiumLoading,
     required TResult Function(Failure? failure) getAboutStadiumFailure,
     required TResult Function(AboutStadiumEntity? aboutStadium)
@@ -876,11 +876,11 @@ class _$GetNearByStadiumsLoadingImpl implements _GetNearByStadiumsLoading {
     TResult? Function()? getNearByStadiumsLoading,
     TResult? Function(Failure? failure)? getNearByStadiumsFailure,
     TResult? Function(List<StadiumEntity> nearByStadiums)?
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     TResult? Function()? getFriendsStadiumsLoading,
     TResult? Function(Failure? failure)? getFriendsStadiumsFailure,
     TResult? Function(List<StadiumEntity> friendsStadiums)?
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     TResult? Function()? getAboutStadiumLoading,
     TResult? Function(Failure? failure)? getAboutStadiumFailure,
     TResult? Function(AboutStadiumEntity? aboutStadium)? aboutStadiumFetched,
@@ -894,11 +894,11 @@ class _$GetNearByStadiumsLoadingImpl implements _GetNearByStadiumsLoading {
     TResult Function()? initial,
     TResult Function()? getNearByStadiumsLoading,
     TResult Function(Failure? failure)? getNearByStadiumsFailure,
-    TResult Function(List<StadiumEntity> nearByStadiums)? NearByStadiumsFetched,
+    TResult Function(List<StadiumEntity> nearByStadiums)? nearByStadiumsFetched,
     TResult Function()? getFriendsStadiumsLoading,
     TResult Function(Failure? failure)? getFriendsStadiumsFailure,
     TResult Function(List<StadiumEntity> friendsStadiums)?
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     TResult Function()? getAboutStadiumLoading,
     TResult Function(Failure? failure)? getAboutStadiumFailure,
     TResult Function(AboutStadiumEntity? aboutStadium)? aboutStadiumFetched,
@@ -919,13 +919,13 @@ class _$GetNearByStadiumsLoadingImpl implements _GetNearByStadiumsLoading {
     required TResult Function(_GetNearByStadiumsFailure value)
         getNearByStadiumsFailure,
     required TResult Function(_NearByStadiumsFetched value)
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     required TResult Function(_GetFriendsStadiumsLoading value)
         getFriendsStadiumsLoading,
     required TResult Function(_GetFriendsStadiumsFailure value)
         getFriendsStadiumsFailure,
     required TResult Function(_FriendsStadiumsFetched value)
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     required TResult Function(_GetAboutStadiumLoading value)
         getAboutStadiumLoading,
     required TResult Function(_GetAboutStadiumFailure value)
@@ -943,12 +943,12 @@ class _$GetNearByStadiumsLoadingImpl implements _GetNearByStadiumsLoading {
         getNearByStadiumsLoading,
     TResult? Function(_GetNearByStadiumsFailure value)?
         getNearByStadiumsFailure,
-    TResult? Function(_NearByStadiumsFetched value)? NearByStadiumsFetched,
+    TResult? Function(_NearByStadiumsFetched value)? nearByStadiumsFetched,
     TResult? Function(_GetFriendsStadiumsLoading value)?
         getFriendsStadiumsLoading,
     TResult? Function(_GetFriendsStadiumsFailure value)?
         getFriendsStadiumsFailure,
-    TResult? Function(_FriendsStadiumsFetched value)? FriendsStadiumsFetched,
+    TResult? Function(_FriendsStadiumsFetched value)? friendsStadiumsFetched,
     TResult? Function(_GetAboutStadiumLoading value)? getAboutStadiumLoading,
     TResult? Function(_GetAboutStadiumFailure value)? getAboutStadiumFailure,
     TResult? Function(_AboutStadiumFetched value)? aboutStadiumFetched,
@@ -962,12 +962,12 @@ class _$GetNearByStadiumsLoadingImpl implements _GetNearByStadiumsLoading {
     TResult Function(_Initial value)? initial,
     TResult Function(_GetNearByStadiumsLoading value)? getNearByStadiumsLoading,
     TResult Function(_GetNearByStadiumsFailure value)? getNearByStadiumsFailure,
-    TResult Function(_NearByStadiumsFetched value)? NearByStadiumsFetched,
+    TResult Function(_NearByStadiumsFetched value)? nearByStadiumsFetched,
     TResult Function(_GetFriendsStadiumsLoading value)?
         getFriendsStadiumsLoading,
     TResult Function(_GetFriendsStadiumsFailure value)?
         getFriendsStadiumsFailure,
-    TResult Function(_FriendsStadiumsFetched value)? FriendsStadiumsFetched,
+    TResult Function(_FriendsStadiumsFetched value)? friendsStadiumsFetched,
     TResult Function(_GetAboutStadiumLoading value)? getAboutStadiumLoading,
     TResult Function(_GetAboutStadiumFailure value)? getAboutStadiumFailure,
     TResult Function(_AboutStadiumFetched value)? aboutStadiumFetched,
@@ -1056,11 +1056,11 @@ class _$GetNearByStadiumsFailureImpl implements _GetNearByStadiumsFailure {
     required TResult Function() getNearByStadiumsLoading,
     required TResult Function(Failure? failure) getNearByStadiumsFailure,
     required TResult Function(List<StadiumEntity> nearByStadiums)
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     required TResult Function() getFriendsStadiumsLoading,
     required TResult Function(Failure? failure) getFriendsStadiumsFailure,
     required TResult Function(List<StadiumEntity> friendsStadiums)
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     required TResult Function() getAboutStadiumLoading,
     required TResult Function(Failure? failure) getAboutStadiumFailure,
     required TResult Function(AboutStadiumEntity? aboutStadium)
@@ -1076,11 +1076,11 @@ class _$GetNearByStadiumsFailureImpl implements _GetNearByStadiumsFailure {
     TResult? Function()? getNearByStadiumsLoading,
     TResult? Function(Failure? failure)? getNearByStadiumsFailure,
     TResult? Function(List<StadiumEntity> nearByStadiums)?
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     TResult? Function()? getFriendsStadiumsLoading,
     TResult? Function(Failure? failure)? getFriendsStadiumsFailure,
     TResult? Function(List<StadiumEntity> friendsStadiums)?
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     TResult? Function()? getAboutStadiumLoading,
     TResult? Function(Failure? failure)? getAboutStadiumFailure,
     TResult? Function(AboutStadiumEntity? aboutStadium)? aboutStadiumFetched,
@@ -1094,11 +1094,11 @@ class _$GetNearByStadiumsFailureImpl implements _GetNearByStadiumsFailure {
     TResult Function()? initial,
     TResult Function()? getNearByStadiumsLoading,
     TResult Function(Failure? failure)? getNearByStadiumsFailure,
-    TResult Function(List<StadiumEntity> nearByStadiums)? NearByStadiumsFetched,
+    TResult Function(List<StadiumEntity> nearByStadiums)? nearByStadiumsFetched,
     TResult Function()? getFriendsStadiumsLoading,
     TResult Function(Failure? failure)? getFriendsStadiumsFailure,
     TResult Function(List<StadiumEntity> friendsStadiums)?
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     TResult Function()? getAboutStadiumLoading,
     TResult Function(Failure? failure)? getAboutStadiumFailure,
     TResult Function(AboutStadiumEntity? aboutStadium)? aboutStadiumFetched,
@@ -1119,13 +1119,13 @@ class _$GetNearByStadiumsFailureImpl implements _GetNearByStadiumsFailure {
     required TResult Function(_GetNearByStadiumsFailure value)
         getNearByStadiumsFailure,
     required TResult Function(_NearByStadiumsFetched value)
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     required TResult Function(_GetFriendsStadiumsLoading value)
         getFriendsStadiumsLoading,
     required TResult Function(_GetFriendsStadiumsFailure value)
         getFriendsStadiumsFailure,
     required TResult Function(_FriendsStadiumsFetched value)
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     required TResult Function(_GetAboutStadiumLoading value)
         getAboutStadiumLoading,
     required TResult Function(_GetAboutStadiumFailure value)
@@ -1143,12 +1143,12 @@ class _$GetNearByStadiumsFailureImpl implements _GetNearByStadiumsFailure {
         getNearByStadiumsLoading,
     TResult? Function(_GetNearByStadiumsFailure value)?
         getNearByStadiumsFailure,
-    TResult? Function(_NearByStadiumsFetched value)? NearByStadiumsFetched,
+    TResult? Function(_NearByStadiumsFetched value)? nearByStadiumsFetched,
     TResult? Function(_GetFriendsStadiumsLoading value)?
         getFriendsStadiumsLoading,
     TResult? Function(_GetFriendsStadiumsFailure value)?
         getFriendsStadiumsFailure,
-    TResult? Function(_FriendsStadiumsFetched value)? FriendsStadiumsFetched,
+    TResult? Function(_FriendsStadiumsFetched value)? friendsStadiumsFetched,
     TResult? Function(_GetAboutStadiumLoading value)? getAboutStadiumLoading,
     TResult? Function(_GetAboutStadiumFailure value)? getAboutStadiumFailure,
     TResult? Function(_AboutStadiumFetched value)? aboutStadiumFetched,
@@ -1162,12 +1162,12 @@ class _$GetNearByStadiumsFailureImpl implements _GetNearByStadiumsFailure {
     TResult Function(_Initial value)? initial,
     TResult Function(_GetNearByStadiumsLoading value)? getNearByStadiumsLoading,
     TResult Function(_GetNearByStadiumsFailure value)? getNearByStadiumsFailure,
-    TResult Function(_NearByStadiumsFetched value)? NearByStadiumsFetched,
+    TResult Function(_NearByStadiumsFetched value)? nearByStadiumsFetched,
     TResult Function(_GetFriendsStadiumsLoading value)?
         getFriendsStadiumsLoading,
     TResult Function(_GetFriendsStadiumsFailure value)?
         getFriendsStadiumsFailure,
-    TResult Function(_FriendsStadiumsFetched value)? FriendsStadiumsFetched,
+    TResult Function(_FriendsStadiumsFetched value)? friendsStadiumsFetched,
     TResult Function(_GetAboutStadiumLoading value)? getAboutStadiumLoading,
     TResult Function(_GetAboutStadiumFailure value)? getAboutStadiumFailure,
     TResult Function(_AboutStadiumFetched value)? aboutStadiumFetched,
@@ -1240,7 +1240,7 @@ class _$NearByStadiumsFetchedImpl implements _NearByStadiumsFetched {
 
   @override
   String toString() {
-    return 'StadiumState.NearByStadiumsFetched(nearByStadiums: $nearByStadiums)';
+    return 'StadiumState.nearByStadiumsFetched(nearByStadiums: $nearByStadiums)';
   }
 
   @override
@@ -1270,17 +1270,17 @@ class _$NearByStadiumsFetchedImpl implements _NearByStadiumsFetched {
     required TResult Function() getNearByStadiumsLoading,
     required TResult Function(Failure? failure) getNearByStadiumsFailure,
     required TResult Function(List<StadiumEntity> nearByStadiums)
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     required TResult Function() getFriendsStadiumsLoading,
     required TResult Function(Failure? failure) getFriendsStadiumsFailure,
     required TResult Function(List<StadiumEntity> friendsStadiums)
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     required TResult Function() getAboutStadiumLoading,
     required TResult Function(Failure? failure) getAboutStadiumFailure,
     required TResult Function(AboutStadiumEntity? aboutStadium)
         aboutStadiumFetched,
   }) {
-    return NearByStadiumsFetched(nearByStadiums);
+    return nearByStadiumsFetched(nearByStadiums);
   }
 
   @override
@@ -1290,16 +1290,16 @@ class _$NearByStadiumsFetchedImpl implements _NearByStadiumsFetched {
     TResult? Function()? getNearByStadiumsLoading,
     TResult? Function(Failure? failure)? getNearByStadiumsFailure,
     TResult? Function(List<StadiumEntity> nearByStadiums)?
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     TResult? Function()? getFriendsStadiumsLoading,
     TResult? Function(Failure? failure)? getFriendsStadiumsFailure,
     TResult? Function(List<StadiumEntity> friendsStadiums)?
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     TResult? Function()? getAboutStadiumLoading,
     TResult? Function(Failure? failure)? getAboutStadiumFailure,
     TResult? Function(AboutStadiumEntity? aboutStadium)? aboutStadiumFetched,
   }) {
-    return NearByStadiumsFetched?.call(nearByStadiums);
+    return nearByStadiumsFetched?.call(nearByStadiums);
   }
 
   @override
@@ -1308,18 +1308,18 @@ class _$NearByStadiumsFetchedImpl implements _NearByStadiumsFetched {
     TResult Function()? initial,
     TResult Function()? getNearByStadiumsLoading,
     TResult Function(Failure? failure)? getNearByStadiumsFailure,
-    TResult Function(List<StadiumEntity> nearByStadiums)? NearByStadiumsFetched,
+    TResult Function(List<StadiumEntity> nearByStadiums)? nearByStadiumsFetched,
     TResult Function()? getFriendsStadiumsLoading,
     TResult Function(Failure? failure)? getFriendsStadiumsFailure,
     TResult Function(List<StadiumEntity> friendsStadiums)?
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     TResult Function()? getAboutStadiumLoading,
     TResult Function(Failure? failure)? getAboutStadiumFailure,
     TResult Function(AboutStadiumEntity? aboutStadium)? aboutStadiumFetched,
     required TResult orElse(),
   }) {
-    if (NearByStadiumsFetched != null) {
-      return NearByStadiumsFetched(nearByStadiums);
+    if (nearByStadiumsFetched != null) {
+      return nearByStadiumsFetched(nearByStadiums);
     }
     return orElse();
   }
@@ -1333,20 +1333,20 @@ class _$NearByStadiumsFetchedImpl implements _NearByStadiumsFetched {
     required TResult Function(_GetNearByStadiumsFailure value)
         getNearByStadiumsFailure,
     required TResult Function(_NearByStadiumsFetched value)
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     required TResult Function(_GetFriendsStadiumsLoading value)
         getFriendsStadiumsLoading,
     required TResult Function(_GetFriendsStadiumsFailure value)
         getFriendsStadiumsFailure,
     required TResult Function(_FriendsStadiumsFetched value)
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     required TResult Function(_GetAboutStadiumLoading value)
         getAboutStadiumLoading,
     required TResult Function(_GetAboutStadiumFailure value)
         getAboutStadiumFailure,
     required TResult Function(_AboutStadiumFetched value) aboutStadiumFetched,
   }) {
-    return NearByStadiumsFetched(this);
+    return nearByStadiumsFetched(this);
   }
 
   @override
@@ -1357,17 +1357,17 @@ class _$NearByStadiumsFetchedImpl implements _NearByStadiumsFetched {
         getNearByStadiumsLoading,
     TResult? Function(_GetNearByStadiumsFailure value)?
         getNearByStadiumsFailure,
-    TResult? Function(_NearByStadiumsFetched value)? NearByStadiumsFetched,
+    TResult? Function(_NearByStadiumsFetched value)? nearByStadiumsFetched,
     TResult? Function(_GetFriendsStadiumsLoading value)?
         getFriendsStadiumsLoading,
     TResult? Function(_GetFriendsStadiumsFailure value)?
         getFriendsStadiumsFailure,
-    TResult? Function(_FriendsStadiumsFetched value)? FriendsStadiumsFetched,
+    TResult? Function(_FriendsStadiumsFetched value)? friendsStadiumsFetched,
     TResult? Function(_GetAboutStadiumLoading value)? getAboutStadiumLoading,
     TResult? Function(_GetAboutStadiumFailure value)? getAboutStadiumFailure,
     TResult? Function(_AboutStadiumFetched value)? aboutStadiumFetched,
   }) {
-    return NearByStadiumsFetched?.call(this);
+    return nearByStadiumsFetched?.call(this);
   }
 
   @override
@@ -1376,19 +1376,19 @@ class _$NearByStadiumsFetchedImpl implements _NearByStadiumsFetched {
     TResult Function(_Initial value)? initial,
     TResult Function(_GetNearByStadiumsLoading value)? getNearByStadiumsLoading,
     TResult Function(_GetNearByStadiumsFailure value)? getNearByStadiumsFailure,
-    TResult Function(_NearByStadiumsFetched value)? NearByStadiumsFetched,
+    TResult Function(_NearByStadiumsFetched value)? nearByStadiumsFetched,
     TResult Function(_GetFriendsStadiumsLoading value)?
         getFriendsStadiumsLoading,
     TResult Function(_GetFriendsStadiumsFailure value)?
         getFriendsStadiumsFailure,
-    TResult Function(_FriendsStadiumsFetched value)? FriendsStadiumsFetched,
+    TResult Function(_FriendsStadiumsFetched value)? friendsStadiumsFetched,
     TResult Function(_GetAboutStadiumLoading value)? getAboutStadiumLoading,
     TResult Function(_GetAboutStadiumFailure value)? getAboutStadiumFailure,
     TResult Function(_AboutStadiumFetched value)? aboutStadiumFetched,
     required TResult orElse(),
   }) {
-    if (NearByStadiumsFetched != null) {
-      return NearByStadiumsFetched(this);
+    if (nearByStadiumsFetched != null) {
+      return nearByStadiumsFetched(this);
     }
     return orElse();
   }
@@ -1449,11 +1449,11 @@ class _$GetFriendsStadiumsLoadingImpl implements _GetFriendsStadiumsLoading {
     required TResult Function() getNearByStadiumsLoading,
     required TResult Function(Failure? failure) getNearByStadiumsFailure,
     required TResult Function(List<StadiumEntity> nearByStadiums)
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     required TResult Function() getFriendsStadiumsLoading,
     required TResult Function(Failure? failure) getFriendsStadiumsFailure,
     required TResult Function(List<StadiumEntity> friendsStadiums)
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     required TResult Function() getAboutStadiumLoading,
     required TResult Function(Failure? failure) getAboutStadiumFailure,
     required TResult Function(AboutStadiumEntity? aboutStadium)
@@ -1469,11 +1469,11 @@ class _$GetFriendsStadiumsLoadingImpl implements _GetFriendsStadiumsLoading {
     TResult? Function()? getNearByStadiumsLoading,
     TResult? Function(Failure? failure)? getNearByStadiumsFailure,
     TResult? Function(List<StadiumEntity> nearByStadiums)?
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     TResult? Function()? getFriendsStadiumsLoading,
     TResult? Function(Failure? failure)? getFriendsStadiumsFailure,
     TResult? Function(List<StadiumEntity> friendsStadiums)?
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     TResult? Function()? getAboutStadiumLoading,
     TResult? Function(Failure? failure)? getAboutStadiumFailure,
     TResult? Function(AboutStadiumEntity? aboutStadium)? aboutStadiumFetched,
@@ -1487,11 +1487,11 @@ class _$GetFriendsStadiumsLoadingImpl implements _GetFriendsStadiumsLoading {
     TResult Function()? initial,
     TResult Function()? getNearByStadiumsLoading,
     TResult Function(Failure? failure)? getNearByStadiumsFailure,
-    TResult Function(List<StadiumEntity> nearByStadiums)? NearByStadiumsFetched,
+    TResult Function(List<StadiumEntity> nearByStadiums)? nearByStadiumsFetched,
     TResult Function()? getFriendsStadiumsLoading,
     TResult Function(Failure? failure)? getFriendsStadiumsFailure,
     TResult Function(List<StadiumEntity> friendsStadiums)?
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     TResult Function()? getAboutStadiumLoading,
     TResult Function(Failure? failure)? getAboutStadiumFailure,
     TResult Function(AboutStadiumEntity? aboutStadium)? aboutStadiumFetched,
@@ -1512,13 +1512,13 @@ class _$GetFriendsStadiumsLoadingImpl implements _GetFriendsStadiumsLoading {
     required TResult Function(_GetNearByStadiumsFailure value)
         getNearByStadiumsFailure,
     required TResult Function(_NearByStadiumsFetched value)
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     required TResult Function(_GetFriendsStadiumsLoading value)
         getFriendsStadiumsLoading,
     required TResult Function(_GetFriendsStadiumsFailure value)
         getFriendsStadiumsFailure,
     required TResult Function(_FriendsStadiumsFetched value)
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     required TResult Function(_GetAboutStadiumLoading value)
         getAboutStadiumLoading,
     required TResult Function(_GetAboutStadiumFailure value)
@@ -1536,12 +1536,12 @@ class _$GetFriendsStadiumsLoadingImpl implements _GetFriendsStadiumsLoading {
         getNearByStadiumsLoading,
     TResult? Function(_GetNearByStadiumsFailure value)?
         getNearByStadiumsFailure,
-    TResult? Function(_NearByStadiumsFetched value)? NearByStadiumsFetched,
+    TResult? Function(_NearByStadiumsFetched value)? nearByStadiumsFetched,
     TResult? Function(_GetFriendsStadiumsLoading value)?
         getFriendsStadiumsLoading,
     TResult? Function(_GetFriendsStadiumsFailure value)?
         getFriendsStadiumsFailure,
-    TResult? Function(_FriendsStadiumsFetched value)? FriendsStadiumsFetched,
+    TResult? Function(_FriendsStadiumsFetched value)? friendsStadiumsFetched,
     TResult? Function(_GetAboutStadiumLoading value)? getAboutStadiumLoading,
     TResult? Function(_GetAboutStadiumFailure value)? getAboutStadiumFailure,
     TResult? Function(_AboutStadiumFetched value)? aboutStadiumFetched,
@@ -1555,12 +1555,12 @@ class _$GetFriendsStadiumsLoadingImpl implements _GetFriendsStadiumsLoading {
     TResult Function(_Initial value)? initial,
     TResult Function(_GetNearByStadiumsLoading value)? getNearByStadiumsLoading,
     TResult Function(_GetNearByStadiumsFailure value)? getNearByStadiumsFailure,
-    TResult Function(_NearByStadiumsFetched value)? NearByStadiumsFetched,
+    TResult Function(_NearByStadiumsFetched value)? nearByStadiumsFetched,
     TResult Function(_GetFriendsStadiumsLoading value)?
         getFriendsStadiumsLoading,
     TResult Function(_GetFriendsStadiumsFailure value)?
         getFriendsStadiumsFailure,
-    TResult Function(_FriendsStadiumsFetched value)? FriendsStadiumsFetched,
+    TResult Function(_FriendsStadiumsFetched value)? friendsStadiumsFetched,
     TResult Function(_GetAboutStadiumLoading value)? getAboutStadiumLoading,
     TResult Function(_GetAboutStadiumFailure value)? getAboutStadiumFailure,
     TResult Function(_AboutStadiumFetched value)? aboutStadiumFetched,
@@ -1649,11 +1649,11 @@ class _$GetFriendsStadiumsFailureImpl implements _GetFriendsStadiumsFailure {
     required TResult Function() getNearByStadiumsLoading,
     required TResult Function(Failure? failure) getNearByStadiumsFailure,
     required TResult Function(List<StadiumEntity> nearByStadiums)
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     required TResult Function() getFriendsStadiumsLoading,
     required TResult Function(Failure? failure) getFriendsStadiumsFailure,
     required TResult Function(List<StadiumEntity> friendsStadiums)
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     required TResult Function() getAboutStadiumLoading,
     required TResult Function(Failure? failure) getAboutStadiumFailure,
     required TResult Function(AboutStadiumEntity? aboutStadium)
@@ -1669,11 +1669,11 @@ class _$GetFriendsStadiumsFailureImpl implements _GetFriendsStadiumsFailure {
     TResult? Function()? getNearByStadiumsLoading,
     TResult? Function(Failure? failure)? getNearByStadiumsFailure,
     TResult? Function(List<StadiumEntity> nearByStadiums)?
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     TResult? Function()? getFriendsStadiumsLoading,
     TResult? Function(Failure? failure)? getFriendsStadiumsFailure,
     TResult? Function(List<StadiumEntity> friendsStadiums)?
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     TResult? Function()? getAboutStadiumLoading,
     TResult? Function(Failure? failure)? getAboutStadiumFailure,
     TResult? Function(AboutStadiumEntity? aboutStadium)? aboutStadiumFetched,
@@ -1687,11 +1687,11 @@ class _$GetFriendsStadiumsFailureImpl implements _GetFriendsStadiumsFailure {
     TResult Function()? initial,
     TResult Function()? getNearByStadiumsLoading,
     TResult Function(Failure? failure)? getNearByStadiumsFailure,
-    TResult Function(List<StadiumEntity> nearByStadiums)? NearByStadiumsFetched,
+    TResult Function(List<StadiumEntity> nearByStadiums)? nearByStadiumsFetched,
     TResult Function()? getFriendsStadiumsLoading,
     TResult Function(Failure? failure)? getFriendsStadiumsFailure,
     TResult Function(List<StadiumEntity> friendsStadiums)?
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     TResult Function()? getAboutStadiumLoading,
     TResult Function(Failure? failure)? getAboutStadiumFailure,
     TResult Function(AboutStadiumEntity? aboutStadium)? aboutStadiumFetched,
@@ -1712,13 +1712,13 @@ class _$GetFriendsStadiumsFailureImpl implements _GetFriendsStadiumsFailure {
     required TResult Function(_GetNearByStadiumsFailure value)
         getNearByStadiumsFailure,
     required TResult Function(_NearByStadiumsFetched value)
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     required TResult Function(_GetFriendsStadiumsLoading value)
         getFriendsStadiumsLoading,
     required TResult Function(_GetFriendsStadiumsFailure value)
         getFriendsStadiumsFailure,
     required TResult Function(_FriendsStadiumsFetched value)
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     required TResult Function(_GetAboutStadiumLoading value)
         getAboutStadiumLoading,
     required TResult Function(_GetAboutStadiumFailure value)
@@ -1736,12 +1736,12 @@ class _$GetFriendsStadiumsFailureImpl implements _GetFriendsStadiumsFailure {
         getNearByStadiumsLoading,
     TResult? Function(_GetNearByStadiumsFailure value)?
         getNearByStadiumsFailure,
-    TResult? Function(_NearByStadiumsFetched value)? NearByStadiumsFetched,
+    TResult? Function(_NearByStadiumsFetched value)? nearByStadiumsFetched,
     TResult? Function(_GetFriendsStadiumsLoading value)?
         getFriendsStadiumsLoading,
     TResult? Function(_GetFriendsStadiumsFailure value)?
         getFriendsStadiumsFailure,
-    TResult? Function(_FriendsStadiumsFetched value)? FriendsStadiumsFetched,
+    TResult? Function(_FriendsStadiumsFetched value)? friendsStadiumsFetched,
     TResult? Function(_GetAboutStadiumLoading value)? getAboutStadiumLoading,
     TResult? Function(_GetAboutStadiumFailure value)? getAboutStadiumFailure,
     TResult? Function(_AboutStadiumFetched value)? aboutStadiumFetched,
@@ -1755,12 +1755,12 @@ class _$GetFriendsStadiumsFailureImpl implements _GetFriendsStadiumsFailure {
     TResult Function(_Initial value)? initial,
     TResult Function(_GetNearByStadiumsLoading value)? getNearByStadiumsLoading,
     TResult Function(_GetNearByStadiumsFailure value)? getNearByStadiumsFailure,
-    TResult Function(_NearByStadiumsFetched value)? NearByStadiumsFetched,
+    TResult Function(_NearByStadiumsFetched value)? nearByStadiumsFetched,
     TResult Function(_GetFriendsStadiumsLoading value)?
         getFriendsStadiumsLoading,
     TResult Function(_GetFriendsStadiumsFailure value)?
         getFriendsStadiumsFailure,
-    TResult Function(_FriendsStadiumsFetched value)? FriendsStadiumsFetched,
+    TResult Function(_FriendsStadiumsFetched value)? friendsStadiumsFetched,
     TResult Function(_GetAboutStadiumLoading value)? getAboutStadiumLoading,
     TResult Function(_GetAboutStadiumFailure value)? getAboutStadiumFailure,
     TResult Function(_AboutStadiumFetched value)? aboutStadiumFetched,
@@ -1834,7 +1834,7 @@ class _$FriendsStadiumsFetchedImpl implements _FriendsStadiumsFetched {
 
   @override
   String toString() {
-    return 'StadiumState.FriendsStadiumsFetched(friendsStadiums: $friendsStadiums)';
+    return 'StadiumState.friendsStadiumsFetched(friendsStadiums: $friendsStadiums)';
   }
 
   @override
@@ -1864,17 +1864,17 @@ class _$FriendsStadiumsFetchedImpl implements _FriendsStadiumsFetched {
     required TResult Function() getNearByStadiumsLoading,
     required TResult Function(Failure? failure) getNearByStadiumsFailure,
     required TResult Function(List<StadiumEntity> nearByStadiums)
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     required TResult Function() getFriendsStadiumsLoading,
     required TResult Function(Failure? failure) getFriendsStadiumsFailure,
     required TResult Function(List<StadiumEntity> friendsStadiums)
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     required TResult Function() getAboutStadiumLoading,
     required TResult Function(Failure? failure) getAboutStadiumFailure,
     required TResult Function(AboutStadiumEntity? aboutStadium)
         aboutStadiumFetched,
   }) {
-    return FriendsStadiumsFetched(friendsStadiums);
+    return friendsStadiumsFetched(friendsStadiums);
   }
 
   @override
@@ -1884,16 +1884,16 @@ class _$FriendsStadiumsFetchedImpl implements _FriendsStadiumsFetched {
     TResult? Function()? getNearByStadiumsLoading,
     TResult? Function(Failure? failure)? getNearByStadiumsFailure,
     TResult? Function(List<StadiumEntity> nearByStadiums)?
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     TResult? Function()? getFriendsStadiumsLoading,
     TResult? Function(Failure? failure)? getFriendsStadiumsFailure,
     TResult? Function(List<StadiumEntity> friendsStadiums)?
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     TResult? Function()? getAboutStadiumLoading,
     TResult? Function(Failure? failure)? getAboutStadiumFailure,
     TResult? Function(AboutStadiumEntity? aboutStadium)? aboutStadiumFetched,
   }) {
-    return FriendsStadiumsFetched?.call(friendsStadiums);
+    return friendsStadiumsFetched?.call(friendsStadiums);
   }
 
   @override
@@ -1902,18 +1902,18 @@ class _$FriendsStadiumsFetchedImpl implements _FriendsStadiumsFetched {
     TResult Function()? initial,
     TResult Function()? getNearByStadiumsLoading,
     TResult Function(Failure? failure)? getNearByStadiumsFailure,
-    TResult Function(List<StadiumEntity> nearByStadiums)? NearByStadiumsFetched,
+    TResult Function(List<StadiumEntity> nearByStadiums)? nearByStadiumsFetched,
     TResult Function()? getFriendsStadiumsLoading,
     TResult Function(Failure? failure)? getFriendsStadiumsFailure,
     TResult Function(List<StadiumEntity> friendsStadiums)?
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     TResult Function()? getAboutStadiumLoading,
     TResult Function(Failure? failure)? getAboutStadiumFailure,
     TResult Function(AboutStadiumEntity? aboutStadium)? aboutStadiumFetched,
     required TResult orElse(),
   }) {
-    if (FriendsStadiumsFetched != null) {
-      return FriendsStadiumsFetched(friendsStadiums);
+    if (friendsStadiumsFetched != null) {
+      return friendsStadiumsFetched(friendsStadiums);
     }
     return orElse();
   }
@@ -1927,20 +1927,20 @@ class _$FriendsStadiumsFetchedImpl implements _FriendsStadiumsFetched {
     required TResult Function(_GetNearByStadiumsFailure value)
         getNearByStadiumsFailure,
     required TResult Function(_NearByStadiumsFetched value)
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     required TResult Function(_GetFriendsStadiumsLoading value)
         getFriendsStadiumsLoading,
     required TResult Function(_GetFriendsStadiumsFailure value)
         getFriendsStadiumsFailure,
     required TResult Function(_FriendsStadiumsFetched value)
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     required TResult Function(_GetAboutStadiumLoading value)
         getAboutStadiumLoading,
     required TResult Function(_GetAboutStadiumFailure value)
         getAboutStadiumFailure,
     required TResult Function(_AboutStadiumFetched value) aboutStadiumFetched,
   }) {
-    return FriendsStadiumsFetched(this);
+    return friendsStadiumsFetched(this);
   }
 
   @override
@@ -1951,17 +1951,17 @@ class _$FriendsStadiumsFetchedImpl implements _FriendsStadiumsFetched {
         getNearByStadiumsLoading,
     TResult? Function(_GetNearByStadiumsFailure value)?
         getNearByStadiumsFailure,
-    TResult? Function(_NearByStadiumsFetched value)? NearByStadiumsFetched,
+    TResult? Function(_NearByStadiumsFetched value)? nearByStadiumsFetched,
     TResult? Function(_GetFriendsStadiumsLoading value)?
         getFriendsStadiumsLoading,
     TResult? Function(_GetFriendsStadiumsFailure value)?
         getFriendsStadiumsFailure,
-    TResult? Function(_FriendsStadiumsFetched value)? FriendsStadiumsFetched,
+    TResult? Function(_FriendsStadiumsFetched value)? friendsStadiumsFetched,
     TResult? Function(_GetAboutStadiumLoading value)? getAboutStadiumLoading,
     TResult? Function(_GetAboutStadiumFailure value)? getAboutStadiumFailure,
     TResult? Function(_AboutStadiumFetched value)? aboutStadiumFetched,
   }) {
-    return FriendsStadiumsFetched?.call(this);
+    return friendsStadiumsFetched?.call(this);
   }
 
   @override
@@ -1970,19 +1970,19 @@ class _$FriendsStadiumsFetchedImpl implements _FriendsStadiumsFetched {
     TResult Function(_Initial value)? initial,
     TResult Function(_GetNearByStadiumsLoading value)? getNearByStadiumsLoading,
     TResult Function(_GetNearByStadiumsFailure value)? getNearByStadiumsFailure,
-    TResult Function(_NearByStadiumsFetched value)? NearByStadiumsFetched,
+    TResult Function(_NearByStadiumsFetched value)? nearByStadiumsFetched,
     TResult Function(_GetFriendsStadiumsLoading value)?
         getFriendsStadiumsLoading,
     TResult Function(_GetFriendsStadiumsFailure value)?
         getFriendsStadiumsFailure,
-    TResult Function(_FriendsStadiumsFetched value)? FriendsStadiumsFetched,
+    TResult Function(_FriendsStadiumsFetched value)? friendsStadiumsFetched,
     TResult Function(_GetAboutStadiumLoading value)? getAboutStadiumLoading,
     TResult Function(_GetAboutStadiumFailure value)? getAboutStadiumFailure,
     TResult Function(_AboutStadiumFetched value)? aboutStadiumFetched,
     required TResult orElse(),
   }) {
-    if (FriendsStadiumsFetched != null) {
-      return FriendsStadiumsFetched(this);
+    if (friendsStadiumsFetched != null) {
+      return friendsStadiumsFetched(this);
     }
     return orElse();
   }
@@ -2044,11 +2044,11 @@ class _$GetAboutStadiumLoadingImpl implements _GetAboutStadiumLoading {
     required TResult Function() getNearByStadiumsLoading,
     required TResult Function(Failure? failure) getNearByStadiumsFailure,
     required TResult Function(List<StadiumEntity> nearByStadiums)
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     required TResult Function() getFriendsStadiumsLoading,
     required TResult Function(Failure? failure) getFriendsStadiumsFailure,
     required TResult Function(List<StadiumEntity> friendsStadiums)
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     required TResult Function() getAboutStadiumLoading,
     required TResult Function(Failure? failure) getAboutStadiumFailure,
     required TResult Function(AboutStadiumEntity? aboutStadium)
@@ -2064,11 +2064,11 @@ class _$GetAboutStadiumLoadingImpl implements _GetAboutStadiumLoading {
     TResult? Function()? getNearByStadiumsLoading,
     TResult? Function(Failure? failure)? getNearByStadiumsFailure,
     TResult? Function(List<StadiumEntity> nearByStadiums)?
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     TResult? Function()? getFriendsStadiumsLoading,
     TResult? Function(Failure? failure)? getFriendsStadiumsFailure,
     TResult? Function(List<StadiumEntity> friendsStadiums)?
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     TResult? Function()? getAboutStadiumLoading,
     TResult? Function(Failure? failure)? getAboutStadiumFailure,
     TResult? Function(AboutStadiumEntity? aboutStadium)? aboutStadiumFetched,
@@ -2082,11 +2082,11 @@ class _$GetAboutStadiumLoadingImpl implements _GetAboutStadiumLoading {
     TResult Function()? initial,
     TResult Function()? getNearByStadiumsLoading,
     TResult Function(Failure? failure)? getNearByStadiumsFailure,
-    TResult Function(List<StadiumEntity> nearByStadiums)? NearByStadiumsFetched,
+    TResult Function(List<StadiumEntity> nearByStadiums)? nearByStadiumsFetched,
     TResult Function()? getFriendsStadiumsLoading,
     TResult Function(Failure? failure)? getFriendsStadiumsFailure,
     TResult Function(List<StadiumEntity> friendsStadiums)?
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     TResult Function()? getAboutStadiumLoading,
     TResult Function(Failure? failure)? getAboutStadiumFailure,
     TResult Function(AboutStadiumEntity? aboutStadium)? aboutStadiumFetched,
@@ -2107,13 +2107,13 @@ class _$GetAboutStadiumLoadingImpl implements _GetAboutStadiumLoading {
     required TResult Function(_GetNearByStadiumsFailure value)
         getNearByStadiumsFailure,
     required TResult Function(_NearByStadiumsFetched value)
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     required TResult Function(_GetFriendsStadiumsLoading value)
         getFriendsStadiumsLoading,
     required TResult Function(_GetFriendsStadiumsFailure value)
         getFriendsStadiumsFailure,
     required TResult Function(_FriendsStadiumsFetched value)
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     required TResult Function(_GetAboutStadiumLoading value)
         getAboutStadiumLoading,
     required TResult Function(_GetAboutStadiumFailure value)
@@ -2131,12 +2131,12 @@ class _$GetAboutStadiumLoadingImpl implements _GetAboutStadiumLoading {
         getNearByStadiumsLoading,
     TResult? Function(_GetNearByStadiumsFailure value)?
         getNearByStadiumsFailure,
-    TResult? Function(_NearByStadiumsFetched value)? NearByStadiumsFetched,
+    TResult? Function(_NearByStadiumsFetched value)? nearByStadiumsFetched,
     TResult? Function(_GetFriendsStadiumsLoading value)?
         getFriendsStadiumsLoading,
     TResult? Function(_GetFriendsStadiumsFailure value)?
         getFriendsStadiumsFailure,
-    TResult? Function(_FriendsStadiumsFetched value)? FriendsStadiumsFetched,
+    TResult? Function(_FriendsStadiumsFetched value)? friendsStadiumsFetched,
     TResult? Function(_GetAboutStadiumLoading value)? getAboutStadiumLoading,
     TResult? Function(_GetAboutStadiumFailure value)? getAboutStadiumFailure,
     TResult? Function(_AboutStadiumFetched value)? aboutStadiumFetched,
@@ -2150,12 +2150,12 @@ class _$GetAboutStadiumLoadingImpl implements _GetAboutStadiumLoading {
     TResult Function(_Initial value)? initial,
     TResult Function(_GetNearByStadiumsLoading value)? getNearByStadiumsLoading,
     TResult Function(_GetNearByStadiumsFailure value)? getNearByStadiumsFailure,
-    TResult Function(_NearByStadiumsFetched value)? NearByStadiumsFetched,
+    TResult Function(_NearByStadiumsFetched value)? nearByStadiumsFetched,
     TResult Function(_GetFriendsStadiumsLoading value)?
         getFriendsStadiumsLoading,
     TResult Function(_GetFriendsStadiumsFailure value)?
         getFriendsStadiumsFailure,
-    TResult Function(_FriendsStadiumsFetched value)? FriendsStadiumsFetched,
+    TResult Function(_FriendsStadiumsFetched value)? friendsStadiumsFetched,
     TResult Function(_GetAboutStadiumLoading value)? getAboutStadiumLoading,
     TResult Function(_GetAboutStadiumFailure value)? getAboutStadiumFailure,
     TResult Function(_AboutStadiumFetched value)? aboutStadiumFetched,
@@ -2244,11 +2244,11 @@ class _$GetAboutStadiumFailureImpl implements _GetAboutStadiumFailure {
     required TResult Function() getNearByStadiumsLoading,
     required TResult Function(Failure? failure) getNearByStadiumsFailure,
     required TResult Function(List<StadiumEntity> nearByStadiums)
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     required TResult Function() getFriendsStadiumsLoading,
     required TResult Function(Failure? failure) getFriendsStadiumsFailure,
     required TResult Function(List<StadiumEntity> friendsStadiums)
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     required TResult Function() getAboutStadiumLoading,
     required TResult Function(Failure? failure) getAboutStadiumFailure,
     required TResult Function(AboutStadiumEntity? aboutStadium)
@@ -2264,11 +2264,11 @@ class _$GetAboutStadiumFailureImpl implements _GetAboutStadiumFailure {
     TResult? Function()? getNearByStadiumsLoading,
     TResult? Function(Failure? failure)? getNearByStadiumsFailure,
     TResult? Function(List<StadiumEntity> nearByStadiums)?
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     TResult? Function()? getFriendsStadiumsLoading,
     TResult? Function(Failure? failure)? getFriendsStadiumsFailure,
     TResult? Function(List<StadiumEntity> friendsStadiums)?
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     TResult? Function()? getAboutStadiumLoading,
     TResult? Function(Failure? failure)? getAboutStadiumFailure,
     TResult? Function(AboutStadiumEntity? aboutStadium)? aboutStadiumFetched,
@@ -2282,11 +2282,11 @@ class _$GetAboutStadiumFailureImpl implements _GetAboutStadiumFailure {
     TResult Function()? initial,
     TResult Function()? getNearByStadiumsLoading,
     TResult Function(Failure? failure)? getNearByStadiumsFailure,
-    TResult Function(List<StadiumEntity> nearByStadiums)? NearByStadiumsFetched,
+    TResult Function(List<StadiumEntity> nearByStadiums)? nearByStadiumsFetched,
     TResult Function()? getFriendsStadiumsLoading,
     TResult Function(Failure? failure)? getFriendsStadiumsFailure,
     TResult Function(List<StadiumEntity> friendsStadiums)?
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     TResult Function()? getAboutStadiumLoading,
     TResult Function(Failure? failure)? getAboutStadiumFailure,
     TResult Function(AboutStadiumEntity? aboutStadium)? aboutStadiumFetched,
@@ -2307,13 +2307,13 @@ class _$GetAboutStadiumFailureImpl implements _GetAboutStadiumFailure {
     required TResult Function(_GetNearByStadiumsFailure value)
         getNearByStadiumsFailure,
     required TResult Function(_NearByStadiumsFetched value)
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     required TResult Function(_GetFriendsStadiumsLoading value)
         getFriendsStadiumsLoading,
     required TResult Function(_GetFriendsStadiumsFailure value)
         getFriendsStadiumsFailure,
     required TResult Function(_FriendsStadiumsFetched value)
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     required TResult Function(_GetAboutStadiumLoading value)
         getAboutStadiumLoading,
     required TResult Function(_GetAboutStadiumFailure value)
@@ -2331,12 +2331,12 @@ class _$GetAboutStadiumFailureImpl implements _GetAboutStadiumFailure {
         getNearByStadiumsLoading,
     TResult? Function(_GetNearByStadiumsFailure value)?
         getNearByStadiumsFailure,
-    TResult? Function(_NearByStadiumsFetched value)? NearByStadiumsFetched,
+    TResult? Function(_NearByStadiumsFetched value)? nearByStadiumsFetched,
     TResult? Function(_GetFriendsStadiumsLoading value)?
         getFriendsStadiumsLoading,
     TResult? Function(_GetFriendsStadiumsFailure value)?
         getFriendsStadiumsFailure,
-    TResult? Function(_FriendsStadiumsFetched value)? FriendsStadiumsFetched,
+    TResult? Function(_FriendsStadiumsFetched value)? friendsStadiumsFetched,
     TResult? Function(_GetAboutStadiumLoading value)? getAboutStadiumLoading,
     TResult? Function(_GetAboutStadiumFailure value)? getAboutStadiumFailure,
     TResult? Function(_AboutStadiumFetched value)? aboutStadiumFetched,
@@ -2350,12 +2350,12 @@ class _$GetAboutStadiumFailureImpl implements _GetAboutStadiumFailure {
     TResult Function(_Initial value)? initial,
     TResult Function(_GetNearByStadiumsLoading value)? getNearByStadiumsLoading,
     TResult Function(_GetNearByStadiumsFailure value)? getNearByStadiumsFailure,
-    TResult Function(_NearByStadiumsFetched value)? NearByStadiumsFetched,
+    TResult Function(_NearByStadiumsFetched value)? nearByStadiumsFetched,
     TResult Function(_GetFriendsStadiumsLoading value)?
         getFriendsStadiumsLoading,
     TResult Function(_GetFriendsStadiumsFailure value)?
         getFriendsStadiumsFailure,
-    TResult Function(_FriendsStadiumsFetched value)? FriendsStadiumsFetched,
+    TResult Function(_FriendsStadiumsFetched value)? friendsStadiumsFetched,
     TResult Function(_GetAboutStadiumLoading value)? getAboutStadiumLoading,
     TResult Function(_GetAboutStadiumFailure value)? getAboutStadiumFailure,
     TResult Function(_AboutStadiumFetched value)? aboutStadiumFetched,
@@ -2449,11 +2449,11 @@ class _$AboutStadiumFetchedImpl implements _AboutStadiumFetched {
     required TResult Function() getNearByStadiumsLoading,
     required TResult Function(Failure? failure) getNearByStadiumsFailure,
     required TResult Function(List<StadiumEntity> nearByStadiums)
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     required TResult Function() getFriendsStadiumsLoading,
     required TResult Function(Failure? failure) getFriendsStadiumsFailure,
     required TResult Function(List<StadiumEntity> friendsStadiums)
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     required TResult Function() getAboutStadiumLoading,
     required TResult Function(Failure? failure) getAboutStadiumFailure,
     required TResult Function(AboutStadiumEntity? aboutStadium)
@@ -2469,11 +2469,11 @@ class _$AboutStadiumFetchedImpl implements _AboutStadiumFetched {
     TResult? Function()? getNearByStadiumsLoading,
     TResult? Function(Failure? failure)? getNearByStadiumsFailure,
     TResult? Function(List<StadiumEntity> nearByStadiums)?
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     TResult? Function()? getFriendsStadiumsLoading,
     TResult? Function(Failure? failure)? getFriendsStadiumsFailure,
     TResult? Function(List<StadiumEntity> friendsStadiums)?
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     TResult? Function()? getAboutStadiumLoading,
     TResult? Function(Failure? failure)? getAboutStadiumFailure,
     TResult? Function(AboutStadiumEntity? aboutStadium)? aboutStadiumFetched,
@@ -2487,11 +2487,11 @@ class _$AboutStadiumFetchedImpl implements _AboutStadiumFetched {
     TResult Function()? initial,
     TResult Function()? getNearByStadiumsLoading,
     TResult Function(Failure? failure)? getNearByStadiumsFailure,
-    TResult Function(List<StadiumEntity> nearByStadiums)? NearByStadiumsFetched,
+    TResult Function(List<StadiumEntity> nearByStadiums)? nearByStadiumsFetched,
     TResult Function()? getFriendsStadiumsLoading,
     TResult Function(Failure? failure)? getFriendsStadiumsFailure,
     TResult Function(List<StadiumEntity> friendsStadiums)?
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     TResult Function()? getAboutStadiumLoading,
     TResult Function(Failure? failure)? getAboutStadiumFailure,
     TResult Function(AboutStadiumEntity? aboutStadium)? aboutStadiumFetched,
@@ -2512,13 +2512,13 @@ class _$AboutStadiumFetchedImpl implements _AboutStadiumFetched {
     required TResult Function(_GetNearByStadiumsFailure value)
         getNearByStadiumsFailure,
     required TResult Function(_NearByStadiumsFetched value)
-        NearByStadiumsFetched,
+        nearByStadiumsFetched,
     required TResult Function(_GetFriendsStadiumsLoading value)
         getFriendsStadiumsLoading,
     required TResult Function(_GetFriendsStadiumsFailure value)
         getFriendsStadiumsFailure,
     required TResult Function(_FriendsStadiumsFetched value)
-        FriendsStadiumsFetched,
+        friendsStadiumsFetched,
     required TResult Function(_GetAboutStadiumLoading value)
         getAboutStadiumLoading,
     required TResult Function(_GetAboutStadiumFailure value)
@@ -2536,12 +2536,12 @@ class _$AboutStadiumFetchedImpl implements _AboutStadiumFetched {
         getNearByStadiumsLoading,
     TResult? Function(_GetNearByStadiumsFailure value)?
         getNearByStadiumsFailure,
-    TResult? Function(_NearByStadiumsFetched value)? NearByStadiumsFetched,
+    TResult? Function(_NearByStadiumsFetched value)? nearByStadiumsFetched,
     TResult? Function(_GetFriendsStadiumsLoading value)?
         getFriendsStadiumsLoading,
     TResult? Function(_GetFriendsStadiumsFailure value)?
         getFriendsStadiumsFailure,
-    TResult? Function(_FriendsStadiumsFetched value)? FriendsStadiumsFetched,
+    TResult? Function(_FriendsStadiumsFetched value)? friendsStadiumsFetched,
     TResult? Function(_GetAboutStadiumLoading value)? getAboutStadiumLoading,
     TResult? Function(_GetAboutStadiumFailure value)? getAboutStadiumFailure,
     TResult? Function(_AboutStadiumFetched value)? aboutStadiumFetched,
@@ -2555,12 +2555,12 @@ class _$AboutStadiumFetchedImpl implements _AboutStadiumFetched {
     TResult Function(_Initial value)? initial,
     TResult Function(_GetNearByStadiumsLoading value)? getNearByStadiumsLoading,
     TResult Function(_GetNearByStadiumsFailure value)? getNearByStadiumsFailure,
-    TResult Function(_NearByStadiumsFetched value)? NearByStadiumsFetched,
+    TResult Function(_NearByStadiumsFetched value)? nearByStadiumsFetched,
     TResult Function(_GetFriendsStadiumsLoading value)?
         getFriendsStadiumsLoading,
     TResult Function(_GetFriendsStadiumsFailure value)?
         getFriendsStadiumsFailure,
-    TResult Function(_FriendsStadiumsFetched value)? FriendsStadiumsFetched,
+    TResult Function(_FriendsStadiumsFetched value)? friendsStadiumsFetched,
     TResult Function(_GetAboutStadiumLoading value)? getAboutStadiumLoading,
     TResult Function(_GetAboutStadiumFailure value)? getAboutStadiumFailure,
     TResult Function(_AboutStadiumFetched value)? aboutStadiumFetched,

@@ -14,8 +14,8 @@ AboutStadiumModel _$AboutStadiumModelFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String,
       description: json['description'] as String,
       price: (json['price'] as num).toDouble(),
-      openAt: json['openAt'] as String,
-      closeAt: json['closeAt'] as String,
+      openAt: json['openAt'] as String?,
+      closeAt: json['closeAt'] as String?,
       services: (json['services'] as List<dynamic>)
           .map((e) => CourtServiceModel.fromJson(e as Map<String, dynamic>))
           .toList(),

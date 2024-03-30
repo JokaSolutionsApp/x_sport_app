@@ -4,6 +4,13 @@ import 'package:crypto/crypto.dart';
 import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
 import 'package:get_it/get_it.dart';
+import 'package:x_sport/app/features/courts/data/datasource/stadium_remote_datasource.dart';
+import 'package:x_sport/app/features/courts/data/repository/court_repository.dart';
+import 'package:x_sport/app/features/courts/domain/repository/base_stadium_repository.dart';
+import 'package:x_sport/app/features/courts/domain/usecase/get_about_stadium_usecase.dart';
+import 'package:x_sport/app/features/courts/domain/usecase/get_friends_stadiums_usecase.dart';
+import 'package:x_sport/app/features/courts/domain/usecase/get_near_by_stadiums_usecase.dart';
+import 'package:x_sport/app/features/courts/presentation/bloc/stadium_bloc.dart';
 
 import '../../../app/features/academy/data/datasource/academy_remote_datasource.dart';
 import '../../../app/features/academy/data/repository/academy_repository.dart';
@@ -140,6 +147,12 @@ class ServiceLocator {
           sl(),
         ));
 
+    sl.registerFactory(() => StadiumBloc(
+          sl(),
+          sl(),
+          sl(),
+        ));
+
     // User UseCases
     sl.registerLazySingleton(() => LoginUseCase(sl()));
     sl.registerLazySingleton(() => GoogleLoginUseCase(sl()));
@@ -169,13 +182,22 @@ class ServiceLocator {
     sl.registerLazySingleton(() => GetAcademyReviewUseCase(sl()));
     sl.registerLazySingleton(() => GetSportsMembershipUseCase(sl()));
 
+    // stadium bloc usecases
+    sl.registerLazySingleton(() => GetFreindsStadiumsCase(sl()));
+    sl.registerLazySingleton(() => GetNearByStadiumsCase(sl()));
+    sl.registerLazySingleton(() => GetAboutStadiumUseCase(sl()));
+
     sl.registerLazySingleton<BaseUserRepository>(() => UserRepository(sl()));
     sl.registerLazySingleton<BaseAcademyRepository>(
         () => AcademyRepository(sl()));
+    sl.registerLazySingleton<BaseStadiumRepository>(
+        () => StadiumRepository(sl()));
 
     sl.registerLazySingleton<BaseUserRemoteDataSource>(
         () => UserRemoteDataSource());
     sl.registerLazySingleton<BaseAcademyRemoteDataSource>(
         () => AcademyRemoteDataSource());
+    sl.registerLazySingleton<BaseStadiumRemoteDataSource>(
+        () => StadiumRemoteDataSource());
   }
 }

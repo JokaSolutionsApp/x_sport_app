@@ -1,8 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:x_sport/app/features/courts/presentation/bloc/stadium_bloc.dart';
 import '../../../academy/presentation/components/video_player_full_screen_widget.dart';
 import '../../../../../core/constance/app_constance.dart';
 
@@ -29,7 +31,9 @@ class _CourtsScreenState extends State<CourtsPage>
 
   @override
   void initState() {
-    _tabController = TabController(vsync: this, length: 2);
+    _tabController = TabController(vsync: this, length: 2, initialIndex: 1);
+    BlocProvider.of<StadiumBloc>(context)
+        .add(StadiumEvent.getAboutStadium(StadiumId: 1));
 
     super.initState();
   }

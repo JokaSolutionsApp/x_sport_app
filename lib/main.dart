@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/courts/domain/enitites/params/stadium_params.dart';
+import 'package:x_sport/app/features/courts/presentation/bloc/stadium_bloc.dart';
 
 import 'app/features/academy/domain/enitites/params/acedemy_params.dart';
 import 'app/features/academy/presentation/bloc/academy_bloc.dart';
@@ -56,6 +58,7 @@ class MyApp extends StatelessWidget {
                 ..add(const AuthEvent.getSports()),
             ),
             BlocProvider(create: (context) => sl<ChatBloc>()),
+            BlocProvider(create: (context) => sl<StadiumBloc>()),
           ],
           child: MaterialApp(
             navigatorKey: navigatorKey,

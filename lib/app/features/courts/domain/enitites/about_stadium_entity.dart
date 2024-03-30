@@ -17,9 +17,9 @@ class AboutStadiumEntity extends Equatable {
   @JsonKey(name: 'price')
   final double price;
   @JsonKey(name: 'openAt')
-  final String openAt;
+  final String? openAt;
   @JsonKey(name: 'closeAt')
-  final String closeAt;
+  final String? closeAt;
   @JsonKey(name: 'services')
   final List<StadiumServiceEntity> services;
   @JsonKey(name: 'coverPhoto')
@@ -38,8 +38,8 @@ class AboutStadiumEntity extends Equatable {
     required this.stadiumType,
     required this.regionName,
     required this.price,
-    required this.openAt,
-    required this.closeAt,
+    this.openAt,
+    this.closeAt,
     required this.services,
     required this.coverPhoto,
     required this.coverVideo,

@@ -45,7 +45,7 @@ class StadiumBloc extends Bloc<StadiumEvent, StadiumState> {
     }, (r) {
       print('bloc _getNearByStadiums $r');
 
-      emit(StadiumState.NearByStadiumsFetched(nearByStadiums: r));
+      emit(StadiumState.nearByStadiumsFetched(nearByStadiums: r));
     });
   }
 
@@ -54,13 +54,13 @@ class StadiumBloc extends Bloc<StadiumEvent, StadiumState> {
     print('bloc _getFriendsStadiums');
 
     emit(const StadiumState.getFriendsStadiumsLoading());
-    final result = await getNearByStadiumsCase(params: event.params);
+    final result = await getFreindsStadiumsCase(params: event.params);
     result.fold((f) {
       emit(StadiumState.getFriendsStadiumsFailure(failure: f));
     }, (r) {
       print('bloc _getFriendsStadiums $r');
 
-      emit(StadiumState.FriendsStadiumsFetched(friendsStadiums: r));
+      emit(StadiumState.friendsStadiumsFetched(friendsStadiums: r));
     });
   }
 

@@ -10,7 +10,7 @@ class StadiumState with _$StadiumState {
   const factory StadiumState.getNearByStadiumsFailure({
     @Default(null) Failure? failure,
   }) = _GetNearByStadiumsFailure;
-  const factory StadiumState.NearByStadiumsFetched({
+  const factory StadiumState.nearByStadiumsFetched({
     @Default([]) List<StadiumEntity> nearByStadiums,
   }) = _NearByStadiumsFetched;
 
@@ -20,7 +20,7 @@ class StadiumState with _$StadiumState {
   const factory StadiumState.getFriendsStadiumsFailure({
     @Default(null) Failure? failure,
   }) = _GetFriendsStadiumsFailure;
-  const factory StadiumState.FriendsStadiumsFetched({
+  const factory StadiumState.friendsStadiumsFetched({
     @Default([]) List<StadiumEntity> friendsStadiums,
   }) = _FriendsStadiumsFetched;
 
