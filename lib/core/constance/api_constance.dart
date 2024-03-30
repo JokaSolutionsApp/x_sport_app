@@ -25,4 +25,9 @@ class ApiConstance {
   static const getAcademyCoursesinDate = 'Academy/GetAcademyCoursesInDate';
   static const getAcademyReviews = 'Academy/GetAcademyReviews';
   static const getSportsMemberShip = 'Academy/GetSportsMemberShip';
+
+// Academy
+  static const getNearByStadiums = 'Stadium/GetNearByStadiums';
+  static const getFriendsStadiums = 'Stadium/GetFriendsStadiums';
+  static const getAboutStadium = 'Stadium/GetAboutStadium';
 }
