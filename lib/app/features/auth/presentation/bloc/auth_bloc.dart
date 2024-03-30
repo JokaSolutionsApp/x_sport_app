@@ -143,7 +143,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         await EasyLoading.dismiss();
 
         emit(AuthState.emailConfirmed(
-          sports: r,
+          sports: sports,
         ));
         Navigator.of(navigatorKey.currentContext!).push(
           MaterialPageRoute(builder: (context) => WelcomePage()),

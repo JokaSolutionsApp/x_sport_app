@@ -35,7 +35,6 @@ class _WelcomePageState extends State<WelcomePage> {
 
   confirmCompleted() async {
     await sl<SecureStorageService>().write('welcome', 'yes');
-    // await sl<SecureStorageService>().delete('welcome');
   }
 
   @override
@@ -83,6 +82,10 @@ class _WelcomePageState extends State<WelcomePage> {
           orElse: () => const CircularProgressIndicator(),
           confirmEmailLoading: (value) => const Offstage(),
           sportsFetched: (value) {
+            final sports = value.sports;
+            return buildWeclome(sports);
+          },
+          emailConfirmed: (value) {
             final sports = value.sports;
             return buildWeclome(sports);
           },

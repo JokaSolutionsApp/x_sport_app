@@ -18,6 +18,7 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+  final GlobalKey<FormState> key = GlobalKey<FormState>();
   TextEditingController name = TextEditingController();
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
@@ -43,6 +44,7 @@ class _RegisterPageState extends State<RegisterPage> {
         height: 1.sh,
         child: SingleChildScrollView(
           child: Form(
+            key: key,
             child: Column(
               children: [
                 TextFieldWidget(
@@ -82,18 +84,23 @@ class _RegisterPageState extends State<RegisterPage> {
                   textStream: registerStream.phone,
                   onChanged: registerStream.changePhone,
                 ),
-                Container(
-                  height: 50.h,
-                  width: 0.83.sw,
-                  alignment: Alignment.centerRight,
-                  padding: const EdgeInsets.only(right: 10),
-                  margin: EdgeInsets.only(top: 34.0.h),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(15.sp),
-                      border: Border.all(
-                          color: XColors.Field_Color1, width: 0.5.w)),
-                  child: const Text('تفعيل الموقع الجغرافي'),
+                InkWell(
+                  onTap: () async {
+                    await registerStream.updateLocation();
+                  },
+                  child: Container(
+                    height: 50.h,
+                    width: 0.83.sw,
+                    alignment: Alignment.centerRight,
+                    padding: const EdgeInsets.only(right: 10),
+                    margin: EdgeInsets.only(top: 34.0.h),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(15.sp),
+                        border: Border.all(
+                            color: XColors.Field_Color1, width: 0.5.w)),
+                    child: const Text('تفعيل الموقع الجغرافي'),
+                  ),
                 ),
                 SizedBox(height: 30.h),
                 GenderComponent(
@@ -136,7 +143,8 @@ class _RegisterPageState extends State<RegisterPage> {
                     final isButtonEnabled = snapshot.data ?? false;
                     return SubmitButton(
                       isButtonEnabled: true,
-                      fillColor: XColors.primary,
+                      fillColor:
+                          isButtonEnabled ? XColors.primary : Colors.grey,
                       textColor: Colors.white,
                       text: 'انشاء حساب',
                       onPressed: () {
@@ -144,7 +152,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           context
                               .read<AuthBloc>()
                               .add(const AuthEvent.register());
-                        } else {}
+                        }
                       },
                     );
                   },

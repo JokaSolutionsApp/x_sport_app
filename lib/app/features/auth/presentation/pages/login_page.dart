@@ -45,7 +45,6 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    // context.read<AuthBloc>().add(const AuthEvent.googleLogin());
     return IntrinsicHeightComponent(
       title: 'تسجيل الدخول',
       child: SizedBox(
@@ -78,13 +77,6 @@ class _LoginPageState extends State<LoginPage> {
                     textColor: Colors.white,
                     text: 'تسجيل الدخول',
                     onPressed: () {
-                      // EasyLoadingInit.startLoading();
-                      // Future.delayed(Duration(seconds: 2), () {
-                      //   EasyLoading.dismiss();
-                      //   Navigator.of(navigatorKey.currentContext!).push(
-                      //     MaterialPageRoute(builder: (context) => MainPage()),
-                      //   );
-                      // });
                       context.read<AuthBloc>().add(const AuthEvent.login());
                     },
                   );

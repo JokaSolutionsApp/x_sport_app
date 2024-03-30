@@ -49,8 +49,6 @@ class _MainScreenState extends State<MainPage>
   }
 
   confirmCompleted() async {
-    // await sl<SecureStorageService>().write('welcome', 'yes');
-
     await sl<SecureStorageService>().delete('welcome');
   }
 

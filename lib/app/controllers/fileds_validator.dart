@@ -7,26 +7,16 @@ class Validators {
   final namevalidator =
       StreamTransformer<String, String>.fromHandlers(handleData: (name, sink) {
     if (name == null || name.isEmpty) {
-      sink.addError(" ");
+      sink.addError("ادخل الاسم");
     } else {
       sink.add(name);
-    }
-  });
-  final detailsvalidator = StreamTransformer<String, String>.fromHandlers(
-      handleData: (details, sink) {
-    if (details == null || details.isEmpty) {
-      sink.addError("LocaleKeys.field_error_details.tr()");
-    } else if (details.isEmpty) {
-      sink.addError(" ");
-    } else {
-      sink.add(details);
     }
   });
 
   final emailvalidator =
       StreamTransformer<String, String>.fromHandlers(handleData: (email, sink) {
-    String epattern =
-        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9]+\.[a-zA-Z]+";
+    String epattern = r'^(?:[0-9]{7,17}|[a-zA-Z0-9._%+-]+@gmail\.com)$';
+
     RegExp eregex = RegExp(epattern);
 
     if (eregex.hasMatch(email))
@@ -39,8 +29,8 @@ class Validators {
 
   final emailPhoneValidator =
       StreamTransformer<String, String>.fromHandlers(handleData: (email, sink) {
-    String epattern =
-        r'^(?:[0-9]{7,17}|[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$';
+    String epattern = r'^(?:[0-9]{7,17}|[a-zA-Z0-9._%+-]+@gmail\.com)$';
+
     RegExp eregex = RegExp(epattern);
 
     if (eregex.hasMatch(email))
@@ -60,20 +50,10 @@ class Validators {
       sink.addError(" ");
     else
       sink.addError(
-          "كلمة المرور يجب أن تحتوي على ٤ احرف على الاقل، رقم، وحرف كبير");
+        "يتضمن رمزًا واحدًا على الأقل، وحرفًا صغيرًا واحدًا على الأقل، ويجب أن يكون أكثر من 5 أحرف",
+      );
   });
-  var forgotpassvalidator =
-      StreamTransformer<String, String>.fromHandlers(handleData: (pass, sink) {
-    String pattern = r'^(?=.*[A-Z])(?=.*\d)(?=.*\W).{4,}$';
-    RegExp regex = RegExp(pattern);
-    if (regex.hasMatch(pass))
-      sink.add(pass);
-    else if (pass == null || pass.isEmpty)
-      sink.addError(" ");
-    else
-      sink.addError(
-          "كلمة المرور يجب أن تحتوي على ٤ احرف على الاقل، رقم، وحرف كبير");
-  });
+
   var confValidator =
       StreamTransformer<String, String>.fromHandlers(handleData: (conf, sink) {
     String pattern = r'^(?=.*[A-Z])(?=.*\d)(?=.*\W).{4,}$';
@@ -86,17 +66,6 @@ class Validators {
     else
       sink.addError("كلمة المرور غير مطابقة");
   });
-  // var forgotConfvalidator =
-  //     StreamTransformer<String, String>.fromHandlers(handleData: (conf, sink) {
-  //   String pattern = r'^(?=.*[a-zA-Zء-ي]).{4,}$';
-  //   RegExp regex = RegExp(pattern);
-  //   if (regex.hasMatch(conf) && blocF.newPasswordc == blocF.forgotConfc)
-  //     sink.add(conf);
-  //   else if (conf == null || conf.isEmpty)
-  //     sink.addError("LocaleKeys.field_error_confirm_password.tr()");
-  //   else
-  //     sink.addError("LocaleKeys.field_error_confirm_password.tr()");
-  // });
 
   var phonevalidator = StreamTransformer<String, String>.fromHandlers(
     handleData: (phone, sink) {
