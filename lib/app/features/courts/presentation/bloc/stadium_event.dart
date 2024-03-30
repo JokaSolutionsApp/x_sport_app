@@ -1,4 +1,4 @@
-part of 'stadium_bloc.dart';
+part of 'stadium_bloc';
 
 @freezed
 class StadiumEvent with _$StadiumEvent {
