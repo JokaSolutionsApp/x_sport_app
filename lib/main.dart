@@ -61,9 +61,6 @@ class MyApp extends StatelessWidget {
             BlocProvider(
               create: (context) => sl<StadiumBloc>()
                 ..add(
-                  const StadiumEvent.getAboutStadium(StadiumId: 1),
-                )
-                ..add(
                   StadiumEvent.getFriendsStadiums(
                       params:
                           StadiumPrams(pageNum: 1, pageSize: 10, sportId: 1)),
