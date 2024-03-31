@@ -18,13 +18,13 @@ class Validators {
     String epattern = r'^(?:[0-9]{7,17}|[a-zA-Z0-9._%+-]+@gmail\.com)$';
 
     RegExp eregex = RegExp(epattern);
-
-    if (eregex.hasMatch(email))
-      sink.add(email);
-    else if (email == null || email.isEmpty)
-      sink.addError("ادخل البربد الالكتروني");
-    else
-      sink.addError("البريد الالكتروني غير صحيح");
+    sink.add(email);
+    // if (eregex.hasMatch(email))
+    //   sink.add(email);
+    // else if (email == null || email.isEmpty)
+    //   sink.addError("ادخل البربد الالكتروني");
+    // else
+    //   sink.addError("البريد الالكتروني غير صحيح");
   });
 
   final emailPhoneValidator =
@@ -32,13 +32,14 @@ class Validators {
     String epattern = r'^(?:[0-9]{7,17}|[a-zA-Z0-9._%+-]+@gmail\.com)$';
 
     RegExp eregex = RegExp(epattern);
+    sink.add(email);
 
-    if (eregex.hasMatch(email))
-      sink.add(email);
-    else if (email == null || email.isEmpty)
-      sink.addError(" ");
-    else
-      sink.addError("البريد الالكتروني غير صحيح");
+    // if (eregex.hasMatch(email))
+    //   sink.add(email);
+    // else if (email == null || email.isEmpty)
+    //   sink.addError(" ");
+    // else
+    //   sink.addError("البريد الالكتروني غير صحيح");
   });
   var passvalidator =
       StreamTransformer<String, String>.fromHandlers(handleData: (pass, sink) {
