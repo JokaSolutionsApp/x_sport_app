@@ -58,7 +58,22 @@ class MyApp extends StatelessWidget {
                 ..add(const AuthEvent.getSports()),
             ),
             BlocProvider(create: (context) => sl<ChatBloc>()),
-            BlocProvider(create: (context) => sl<StadiumBloc>()),
+            BlocProvider(
+              create: (context) => sl<StadiumBloc>()
+                ..add(
+                  const StadiumEvent.getAboutStadium(StadiumId: 1),
+                )
+                ..add(
+                  StadiumEvent.getFriendsStadiums(
+                      params:
+                          StadiumPrams(pageNum: 1, pageSize: 10, sportId: 1)),
+                )
+                ..add(
+                  StadiumEvent.getNearByStadiums(
+                      params:
+                          StadiumPrams(pageNum: 1, pageSize: 10, sportId: 1)),
+                ),
+            ),
           ],
           child: MaterialApp(
             navigatorKey: navigatorKey,
