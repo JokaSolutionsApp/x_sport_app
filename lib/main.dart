@@ -89,7 +89,7 @@ class MyApp extends StatelessWidget {
               ),
               useMaterial3: true,
             ),
-            home: const ProfileRankingPage(),
+            home: const RoutePage(),
           ),
         );
       },
