@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/auth/presentation/pages/otp_page.dart';
+import 'package:x_sport/main.dart';
 
 import '../../../../../core/constance/app_constance.dart';
 import '../../../../controllers/fileds_bloc.dart';
@@ -142,17 +144,15 @@ class _RegisterPageState extends State<RegisterPage> {
                   builder: (context, snapshot) {
                     final isButtonEnabled = snapshot.data ?? false;
                     return SubmitButton(
-                      isButtonEnabled: true,
                       fillColor:
-                          isButtonEnabled ? XColors.primary : Colors.grey,
+                          isButtonEnabled ? XColors.primary : XColors.primary,
                       textColor: Colors.white,
                       text: 'انشاء حساب',
                       onPressed: () {
-                        if (isButtonEnabled) {
-                          context
-                              .read<AuthBloc>()
-                              .add(const AuthEvent.register());
-                        }
+                        Navigator.of(navigatorKey.currentContext!).push(
+                          MaterialPageRoute(
+                              builder: (context) => const OtpPage()),
+                        );
                       },
                     );
                   },

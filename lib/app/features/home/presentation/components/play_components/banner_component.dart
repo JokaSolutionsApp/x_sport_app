@@ -1,37 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/core/constance/app_constance.dart';
 
 import '../../../../../../core/utils/assets_managers/assets.gen.dart';
-import 'banner_part_component.dart';
 
 class BannerComponent extends StatelessWidget {
   const BannerComponent({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       height: 0.18.sh,
       width: 0.88.sw,
+      decoration: BoxDecoration(
+        color: XColors.primary,
+        borderRadius: BorderRadius.circular(20),
+      ),
       child:
           Stack(alignment: Alignment.center, fit: StackFit.expand, children: [
-        BannerPartComponent(
-          top: 30.w,
-          right: 20.w,
-          left: 20.w,
-          image: 'Rectangle3.png',
-        ),
-        BannerPartComponent(
-          top: 0,
-          right: 10.w,
-          left: 10.w,
-          image: 'Rectangle2.png',
-        ),
-        BannerPartComponent(
-          top: -10.w,
-          right: 0,
-          left: 0,
-          image: 'Rectangle1.png',
-        ),
         Positioned(
           top: 10.w,
           left: 4.w,
@@ -44,7 +30,7 @@ class BannerComponent extends StatelessWidget {
             children: [
               GestureDetector(
                 onTap: () {
-                  Navigator.of(context).pop();
+                  // Navigator.of(context).pop();
                 },
                 child: Container(
                   alignment: Alignment.center,

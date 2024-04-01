@@ -14,8 +14,8 @@ import '../../../../widgets/buttons/submit_button.dart';
 import '../components/academy_components/academy_tabs_components/academy_about_component.dart';
 
 class AcademyPage extends StatefulWidget {
-  final SuggestedAcademyEntity academy;
-  const AcademyPage({super.key, required this.academy});
+  final SuggestedAcademyEntity? academy;
+  const AcademyPage({super.key, this.academy});
 
   @override
   State<AcademyPage> createState() => _AcademyScreenState();
@@ -62,7 +62,7 @@ class _AcademyScreenState extends State<AcademyPage>
                       color: Colors.white,
                     ),
                     Text(
-                      widget.academy.name,
+                      widget.academy?.name ?? 'اسم الاكاديمية',
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 15.sp,
@@ -242,7 +242,7 @@ class _AcademyScreenState extends State<AcademyPage>
                         const ReviewsTab(),
                         const CoursesTab(),
                         AcademyAboutComponent(
-                          academyId: widget.academy.academyId,
+                          academyId: widget.academy?.academyId ?? 0,
                         ),
                       ],
                     ),

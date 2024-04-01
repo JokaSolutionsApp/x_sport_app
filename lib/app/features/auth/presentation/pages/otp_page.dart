@@ -2,8 +2,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:x_sport/app/features/auth/presentation/pages/welcome_page.dart';
 
 import '../../../../../core/constance/app_constance.dart';
 import '../../../../../core/constance/app_icons_icons.dart';
@@ -212,9 +214,7 @@ class _OtpPageState extends State<OtpPage> {
                 children: [
                   TextButton(
                     onPressed: () {
-                      context
-                          .read<AuthBloc>()
-                          .add(const AuthEvent.resendconfirmUserEmail());
+                      EasyLoading.showSuccess('تم ارسال رمز التفعيل');
                     },
                     child: Text(
                       'ارسال مرة اخرى',
@@ -245,9 +245,9 @@ class _OtpPageState extends State<OtpPage> {
               textSize: 18,
               text: 'تأكيد الحساب',
               onPressed: () {
-                context
-                    .read<AuthBloc>()
-                    .add(const AuthEvent.confirmUserEmail());
+                Navigator.of(navigatorKey.currentContext!).push(
+                  MaterialPageRoute(builder: (context) => WelcomePage()),
+                );
               },
             ),
           ],

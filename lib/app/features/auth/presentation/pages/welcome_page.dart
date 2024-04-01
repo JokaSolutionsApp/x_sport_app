@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/home/presentation/pages/main_page.dart';
+import 'package:x_sport/main.dart';
 import '../../../../../core/services/locator/service_locator.dart';
 import '../../../../../core/services/secure_storage_service.dart.dart';
 
@@ -28,8 +30,7 @@ class _WelcomePageState extends State<WelcomePage> {
   final List<int> selectedSports = [];
   @override
   void initState() {
-    confirmCompleted();
-
+    // confirmCompleted();
     super.initState();
   }
 
@@ -44,10 +45,12 @@ class _WelcomePageState extends State<WelcomePage> {
         automaticallyImplyLeading: false,
         flexibleSpace: Container(
           decoration: const BoxDecoration(
-              gradient: LinearGradient(colors: [
-            XColors.Background_Color1,
-            XColors.Background_Color2
-          ], begin: Alignment.centerLeft, end: Alignment.centerRight)),
+            gradient: LinearGradient(
+              colors: [XColors.Background_Color1, XColors.Background_Color2],
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+            ),
+          ),
           child: Padding(
             padding: EdgeInsets.only(top: 20.h),
             child: Row(
@@ -67,30 +70,7 @@ class _WelcomePageState extends State<WelcomePage> {
         elevation: 0,
         toolbarHeight: 0,
       ),
-      body: BlocBuilder<AuthBloc, AuthState>(buildWhen: (prev, cur) {
-        print(
-            'cur.runtimeType ${cur.runtimeType} ${AuthState.sportsFetched().runtimeType}');
-
-        if (cur.runtimeType == const AuthState.sportsFetched().runtimeType) {
-          return true;
-        }
-
-        return false;
-      }, builder: (context, state) {
-        print('builderstate.runtimeType ${state.runtimeType}');
-        return state.maybeMap(
-          orElse: () => const CircularProgressIndicator(),
-          confirmEmailLoading: (value) => const Offstage(),
-          sportsFetched: (value) {
-            final sports = value.sports;
-            return buildWeclome(sports);
-          },
-          emailConfirmed: (value) {
-            final sports = value.sports;
-            return buildWeclome(sports);
-          },
-        );
-      }),
+      body: buildWeclome(sports),
     );
   }
 
@@ -162,7 +142,7 @@ class _WelcomePageState extends State<WelcomePage> {
                     ),
                     SizedBox(height: 30.h),
                     SizedBox(
-                        height: 120.h,
+                        height: 70.h,
                         width: 360.w,
                         child: GridView.builder(
                           gridDelegate:
@@ -258,11 +238,10 @@ class _WelcomePageState extends State<WelcomePage> {
                       textColor: Colors.white,
                       text: 'ابدأ الان',
                       onPressed: () {
-                        context.read<AuthBloc>().add(
-                            AuthEvent.completeRegistration(
-                                imageBytes: imageBytes,
-                                imageType: imageType,
-                                selectedSports: selectedSports));
+                        Navigator.of(navigatorKey.currentContext!).push(
+                          MaterialPageRoute(
+                              builder: (context) => const MainPage()),
+                        );
                       },
                     ),
                   ],

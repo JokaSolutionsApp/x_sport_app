@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/home/presentation/pages/main_page.dart';
 
 import '../../../../../core/constance/app_constance.dart';
 import '../../../../../core/utils/assets_managers/assets.gen.dart';
@@ -77,7 +78,10 @@ class _LoginPageState extends State<LoginPage> {
                     textColor: Colors.white,
                     text: 'تسجيل الدخول',
                     onPressed: () {
-                      context.read<AuthBloc>().add(const AuthEvent.login());
+                      Navigator.of(navigatorKey.currentContext!).push(
+                        MaterialPageRoute(
+                            builder: (context) => const MainPage()),
+                      );
                     },
                   );
                 }),

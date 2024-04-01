@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -25,8 +26,8 @@ class _AcademiesPageState extends State<AcademiesPage> {
   @override
   void initState() {
     super.initState();
-    context.read<AcademyBloc>().add(AcademyEvent.getSuggestedAcademies(
-        params: SuggestedAcademyParams(pageSize: 1, pageNumber: 1)));
+    // context.read<AcademyBloc>().add(AcademyEvent.getSuggestedAcademies(
+    //     params: SuggestedAcademyParams(pageSize: 1, pageNumber: 1)));
   }
 
   @override
@@ -35,17 +36,17 @@ class _AcademiesPageState extends State<AcademiesPage> {
       appBar: const ProfileAppBarComponent(
         isProfile: true,
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const MembershipsBanner(),
-            AcademeiesCategoriesComponent(),
-            SizedBox(height: 26.h),
-            const SuggestedAcademiesComponent(),
-            SizedBox(height: 12.h),
-            const AcademiesComponent(),
-          ],
-        ),
+      body: Column(
+        children: [
+          const MembershipsBanner(),
+          AcademeiesCategoriesComponent(),
+          SizedBox(height: 26.h),
+          const SuggestedAcademiesComponent(),
+          SizedBox(height: 12.h),
+          const Expanded(
+            child: AcademiesComponent(),
+          ),
+        ],
       ),
     );
   }

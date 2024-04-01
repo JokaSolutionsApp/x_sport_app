@@ -19,57 +19,54 @@ class AcademeiesCategoriesComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 80.h,
-      child: ListView.builder(
-        padding: EdgeInsets.symmetric(horizontal: 0.04.sw),
-        shrinkWrap: true,
-        scrollDirection: Axis.horizontal,
-        itemExtent: 90.w,
-        itemCount: items.length,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8.w),
-            child: ValueListenableBuilder<int>(
-              valueListenable: selectedIdx,
-              builder: (context, selectedIndex, child) {
-                final isSelected = index == selectedIndex;
-                return GestureDetector(
-                  onTap: () {
-                    selectedIdx.value = index;
-                  },
-                  child: RectangleContainer(
-                    radius: 14,
-                    containerColor:
-                        isSelected ? XColors.primary : XColors.secondary,
-                    bottomMargin: 0,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        AssetsManager.images.main.tennisGame.image(
-                          height: 55.w,
-                          color: isSelected
-                              ? Colors.white
-                              : const Color(0xFF595959),
-                        ),
-                        Text(
-                          items[index],
-                          style: TextStyle(
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: [
+          ...items.map(
+            (e) => Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8.w),
+              child: ValueListenableBuilder<int>(
+                valueListenable: selectedIdx,
+                builder: (context, selectedIndex, child) {
+                  final isSelected = e == selectedIndex;
+                  return GestureDetector(
+                    onTap: () {
+                      selectedIdx.value = items.indexOf(e);
+                    },
+                    child: RectangleContainer(
+                      radius: 14,
+                      containerColor:
+                          isSelected ? XColors.primary : XColors.secondary,
+                      bottomMargin: 0,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          AssetsManager.images.main.tennisGame.image(
+                            height: 55.w,
                             color: isSelected
                                 ? Colors.white
-                                : const Color(0xFF7373AD),
-                            fontWeight: FontWeight.w400,
-                            fontSize: 12.sp,
+                                : const Color(0xFF595959),
                           ),
-                        ),
-                      ],
+                          Text(
+                            e,
+                            style: TextStyle(
+                              color: isSelected
+                                  ? Colors.white
+                                  : const Color(0xFF7373AD),
+                              fontWeight: FontWeight.w400,
+                              fontSize: 12.sp,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                );
-              },
+                  );
+                },
+              ),
             ),
-          );
-        },
+          )
+        ],
       ),
     );
   }

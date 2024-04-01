@@ -153,7 +153,7 @@ class PlayPage extends StatelessWidget {
                         },
                         text: 'نظم حجز',
                         textSize: 15,
-                        fillColor: const Color(0xFF2492F8),
+                        fillColor: XColors.primary,
                         radius: 12,
                       ),
                     ],

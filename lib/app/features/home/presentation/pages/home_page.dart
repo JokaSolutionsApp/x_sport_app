@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<HomeOptions> items = [
+    final List items = [
       HomeOptions(
         title: 'ابحث عن اكاديميات بقربك لتحول هوايتك الى احتراف',
         image: AssetsManager.images.home.search,
@@ -55,136 +55,129 @@ class HomePage extends StatelessWidget {
       appBar: const ProfileAppBarComponent(
         isProfile: true,
       ),
-      body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 10.w),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Container(
-              margin: EdgeInsets.only(top: 22.h),
-              alignment: Alignment.center,
-              padding: EdgeInsets.symmetric(vertical: 12.w),
-              decoration: ShapeDecoration(
-                color: Colors.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20.sp),
-                ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            margin: EdgeInsets.only(top: 22.h),
+            alignment: Alignment.center,
+            padding: EdgeInsets.symmetric(vertical: 12.w),
+            decoration: ShapeDecoration(
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.sp),
               ),
-              child: RectangleContainer(
-                  radius: 20,
-                  height: 100,
-                  width: 367,
-                  containerColor: XColors.primary,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 12.w),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'اهلا (اسم المستخدم)',
-                              style: TextStyle(
-                                fontSize: 18.sp,
-                                fontWeight: FontWeight.w700,
-                                color: Colors.white,
-                              ),
-                            ),
-                            SizedBox(height: 14.w),
-                            Text(
-                              'المنافسة اقرب اليك',
-                              style: TextStyle(
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                  )),
             ),
-            Container(
-              height: 434.h,
-              margin: EdgeInsets.only(top: 12.h),
-              alignment: Alignment.center,
-              padding: EdgeInsets.all(12.w),
-              decoration: ShapeDecoration(
-                color: Colors.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20.sp),
-                ),
-              ),
-              child: GridView.builder(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    mainAxisExtent: 186.w,
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 12.0.w,
-                    mainAxisSpacing: 10.0.w,
-                  ),
-                  itemCount: items.length,
-                  itemBuilder: (context, index) {
-                    return RectangleContainer(
-                      containerColor: items[index].color,
-                      child: Stack(alignment: Alignment.topRight, children: [
-                        items[index].fadedImage != null
-                            ? Positioned(
-                                top: items[index].fadedTop,
-                                left: 9.w,
-                                height: 50.w,
-                                width: 50.w,
-                                child: items[index].fadedImage!.image(),
-                              )
-                            : const SizedBox.shrink(),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              items[index].image.image(),
-                              Text(
-                                items[index].title,
-                                textAlign: TextAlign.end,
-                                style: TextStyle(
-                                  fontSize: 13.sp,
-                                  fontWeight: FontWeight.w500,
-                                  color: items[index].textColor,
-                                ),
-                              ),
-                              Align(
-                                alignment: Alignment.center,
-                                child: SubmitButton(
-                                    textColor: items[index].btnTextColor,
-                                    fillColor: items[index].btnColor,
-                                    radius: 4,
-                                    minWidth: 75,
-                                    height: 18,
-                                    textSize: 14,
-                                    text: 'المزيد',
-                                    onPressed: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  CourtsPage()));
-                                    }),
-                              )
-                            ],
+            child: RectangleContainer(
+                radius: 20,
+                height: 100,
+                width: 367,
+                containerColor: XColors.primary,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 12.w),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'اهلا (اسم المستخدم)',
+                            style: TextStyle(
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.white,
+                            ),
                           ),
-                        )
-                      ]),
-                    );
-                  }),
+                          SizedBox(height: 14.w),
+                          Text(
+                            'المنافسة اقرب اليك',
+                            style: TextStyle(
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                )),
+          ),
+          Expanded(
+            child: GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                mainAxisExtent: 186.w,
+                crossAxisCount: 2,
+                crossAxisSpacing: 12.0.w,
+                mainAxisSpacing: 10.0.w,
+              ),
+              itemCount: items.length,
+              itemBuilder: (context, index) {
+                return RectangleContainer(
+                  containerColor: items[index].color,
+                  child: Stack(
+                    alignment: Alignment.topRight,
+                    children: [
+                      items[index].fadedImage != null
+                          ? Positioned(
+                              top: items[index].fadedTop,
+                              left: 9.w,
+                              height: 50.w,
+                              width: 50.w,
+                              child: items[index].fadedImage!.image(),
+                            )
+                          : const SizedBox.shrink(),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            items[index].image.image(),
+                            Text(
+                              items[index].title,
+                              textAlign: TextAlign.end,
+                              style: TextStyle(
+                                fontSize: 13.sp,
+                                fontWeight: FontWeight.w500,
+                                color: items[index].textColor,
+                              ),
+                            ),
+                            Align(
+                              alignment: Alignment.center,
+                              child: SubmitButton(
+                                textColor: items[index].btnTextColor,
+                                fillColor: items[index].btnColor,
+                                radius: 4,
+                                minWidth: 75,
+                                height: 18,
+                                textSize: 14,
+                                text: 'المزيد',
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const CourtsPage(),
+                                    ),
+                                  );
+                                },
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                );
+              },
             ),
-            HomeStadiumsComponent(),
-            FriendsStadiumsComponent(),
-          ],
-        ),
+          ),
+          HomeStadiumsComponent(),
+          FriendsStadiumsComponent(),
+        ],
       ),
     );
   }
