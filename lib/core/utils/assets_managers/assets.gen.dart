@@ -48,6 +48,9 @@ class $AssetsIconsGen {
   AssetGenImage get greenUpArrow =>
       const AssetGenImage('assets/icons/green_up_arrow.png');
 
+  /// File path: assets/icons/icon.png
+  AssetGenImage get icon => const AssetGenImage('assets/icons/icon.png');
+
   /// File path: assets/icons/meds.png
   AssetGenImage get meds => const AssetGenImage('assets/icons/meds.png');
 
@@ -68,6 +71,7 @@ class $AssetsIconsGen {
         google,
         grass,
         greenUpArrow,
+        icon,
         meds,
         redDownArrow
       ];
@@ -80,6 +84,8 @@ class $AssetsImagesGen {
   $AssetsImagesActivitiesGen get activities =>
       const $AssetsImagesActivitiesGen();
   $AssetsImagesAvatarsGen get avatars => const $AssetsImagesAvatarsGen();
+  $AssetsImagesChampionshipGen get championship =>
+      const $AssetsImagesChampionshipGen();
   $AssetsImagesCourtsGen get courts => const $AssetsImagesCourtsGen();
   $AssetsImagesHomeGen get home => const $AssetsImagesHomeGen();
   $AssetsImagesMainGen get main => const $AssetsImagesMainGen();
@@ -144,6 +150,17 @@ class $AssetsImagesAvatarsGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [avatar0, avatar1, avatar2, avatar5];
+}
+
+class $AssetsImagesChampionshipGen {
+  const $AssetsImagesChampionshipGen();
+
+  /// File path: assets/images/championship/championship.png
+  AssetGenImage get championship =>
+      const AssetGenImage('assets/images/championship/championship.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [championship];
 }
 
 class $AssetsImagesCourtsGen {
