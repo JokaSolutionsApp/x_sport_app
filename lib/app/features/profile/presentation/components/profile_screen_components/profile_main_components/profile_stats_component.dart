@@ -8,10 +8,7 @@ class ProfileStatsComponent extends StatelessWidget {
   final int? following;
   final int? matchesCount;
   const ProfileStatsComponent(
-      {super.key,
-      required this.followers,
-      required this.matchesCount,
-      required this.following});
+      {super.key, this.followers, required this.matchesCount, this.following});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +27,7 @@ class ProfileStatsComponent extends StatelessWidget {
                     fontWeight: FontWeight.w500),
               ),
               Text(
-                followers.toString(),
+                '500',
                 style: TextStyle(
                     color: XColors.grey2,
                     fontSize: 13.sp,
@@ -53,7 +50,7 @@ class ProfileStatsComponent extends StatelessWidget {
                     fontWeight: FontWeight.w500),
               ),
               Text(
-                followers.toString(),
+                '500',
                 style: TextStyle(
                     color: XColors.grey2,
                     fontSize: 13.sp,

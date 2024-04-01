@@ -14,10 +14,9 @@ import '../../../pages/edit_profile_page.dart';
 import '../../../../../../widgets/buttons/icon_text_button.dart';
 
 class ProfileDrawerComponent extends StatelessWidget {
-  final UserEntity user;
-  final List<FavoriteSportEntity> favoriteSports;
-  const ProfileDrawerComponent(
-      {super.key, required this.user, required this.favoriteSports});
+  final UserEntity? user;
+  final List<FavoriteSportEntity>? favoriteSports;
+  const ProfileDrawerComponent({super.key, this.user, this.favoriteSports});
 
   @override
   Widget build(BuildContext context) {

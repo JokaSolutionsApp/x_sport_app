@@ -9,8 +9,8 @@ import '../profile_tabbar_components/profile_activities_component.dart';
 import '../profile_tabbar_components/profile_society_component.dart';
 
 class ProfileTabBarComponent extends StatefulWidget {
-  final UserProfileEntity userProfile;
-  const ProfileTabBarComponent({super.key, required this.userProfile});
+  final UserProfileEntity? userProfile;
+  const ProfileTabBarComponent({super.key, this.userProfile});
 
   @override
   State<ProfileTabBarComponent> createState() => _ProfileTabBarComponentState();
@@ -117,8 +117,8 @@ class _ProfileTabBarComponentState extends State<ProfileTabBarComponent>
               child: Column(
                 children: [
                   ProfileActivitiesComponent(
-                      userProfile: widget.userProfile,
-                      favoritSports: widget.userProfile.favoriteSports!),
+                    userProfile: widget.userProfile,
+                  ),
                   DottedBorder(
                       borderType: BorderType.RRect,
                       radius: Radius.circular(12.sp),

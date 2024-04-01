@@ -111,11 +111,9 @@ class _ProfileRankingPageState extends State<ProfileRankingPage> {
                 height: 0.18.sh,
                 // width: 0.91.sw,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12.sp),
-                    image: DecorationImage(
-                      fit: BoxFit.fill,
-                      image: AssetsManager.images.rank.ranking.image().image,
-                    )),
+                  color: XColors.primary,
+                  borderRadius: BorderRadius.circular(12.sp),
+                ),
               ),
               Padding(
                 padding: EdgeInsets.only(left: 10.w, top: 15.h),

@@ -15,50 +15,22 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AuthBloc, AuthState>(
-      buildWhen: (prev, cur) {
-        if (cur.runtimeType !=
-            const AuthState.userProfileLocalLoading().runtimeType) {
-          return true;
-        }
-        return false;
-      },
-      builder: (context, state) {
-        return state.maybeMap(
-          orElse: () => const Offstage(),
-          userProfileFailure: (_) => const Offstage(),
-          userProfileLocalLoading: (_) => const Offstage(),
-          userProfileLoading: (_) => const CircularProgressIndicator.adaptive(),
-          userProfileFetched: (value) {
-            UserProfileEntity userProfile = value.userProfile!;
-
-            return Scaffold(
-              drawer: ProfileDrawerComponent(
-                user: userProfile.user!,
-                favoriteSports: userProfile.favoriteSports!,
-              ),
-              appBar: const ProfileAppBarComponent(),
-              body: SingleChildScrollView(
-                  child: Center(
-                child: SizedBox(
-                  width: 385.w,
-                  child: Column(children: [
-                    SizedBox(height: 12.w),
-                    ProfileInfoComponent(
-                      userProfile: userProfile,
-                      points: 200,
-                      favoriteSports: userProfile.favoriteSports!,
-                    ),
-                    ProfileTabBarComponent(
-                      userProfile: userProfile,
-                    ),
-                  ]),
-                ),
-              )),
-            );
-          },
-        );
-      },
+    return Scaffold(
+      drawer: ProfileDrawerComponent(),
+      appBar: const ProfileAppBarComponent(),
+      body: SingleChildScrollView(
+          child: Center(
+        child: SizedBox(
+          width: 385.w,
+          child: Column(children: [
+            SizedBox(height: 12.w),
+            ProfileInfoComponent(
+              points: 200,
+            ),
+            ProfileTabBarComponent(),
+          ]),
+        ),
+      )),
     );
   }
 }

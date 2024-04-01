@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/academy/presentation/pages/courses_page.dart';
+import 'package:x_sport/app/features/paymnet/presentation/pages/payment_method_page.dart';
 import 'package:x_sport/main.dart';
 
 import '../../../../../core/constance/app_constance.dart';
@@ -283,17 +285,14 @@ class _AcademyScreenState extends State<AcademyRegisterPage>
                   hintText: 'رقم الهاتف',
                 ),
                 SizedBox(
-                  height: 300.h,
+                  height: 150.h,
                 ),
                 SizedBox(
                   width: 190.w,
                   child: ElevatedButton(
                     onPressed: () {
-                      showDialog(
-                        context: context,
-                        builder: (context) {
-                          return const RegisterSuccessDialog();
-                        },
+                      Navigator.of(navigatorKey.currentContext!).push(
+                        MaterialPageRoute(builder: (context) => CoursesPage()),
                       );
                     },
                     style: ElevatedButton.styleFrom(

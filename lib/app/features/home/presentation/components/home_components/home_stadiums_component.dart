@@ -18,7 +18,7 @@ class HomeStadiumsComponent extends StatelessWidget {
     return BlocBuilder<StadiumBloc, StadiumState>(
       builder: (context, state) {
         return state.maybeMap(
-            orElse: () => CircularProgressIndicator(),
+            orElse: () => Container(),
             getNearByStadiumsFailure: (value) => Offstage(),
             getNearByStadiumsLoading: (value) => Offstage(),
             nearByStadiumsFetched: (value) => Column(

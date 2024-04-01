@@ -10,7 +10,7 @@ import '../../../../auth/domain/enitites/sport_entity.dart';
 import '../../../../auth/presentation/bloc/auth_bloc.dart';
 
 class DeleteFavoriteSports extends StatefulWidget {
-  final List<FavoriteSportEntity> favoriteSports;
+  final List<FavoriteSportEntity>? favoriteSports;
   final List<SportEntity> allSports;
   final void Function(List<int> sportsIds) deleteSports;
 
@@ -20,7 +20,7 @@ class DeleteFavoriteSports extends StatefulWidget {
   final Color textColor;
   DeleteFavoriteSports(
       {super.key,
-      required this.favoriteSports,
+      this.favoriteSports,
       required this.allSports,
       required this.title,
       required this.subtitle,

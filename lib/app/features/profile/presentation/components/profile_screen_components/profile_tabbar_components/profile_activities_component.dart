@@ -1,5 +1,6 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -18,10 +19,9 @@ import '../delete_favorite_sports.dart';
 import 'activity_prefrences_component.dart';
 
 class ProfileActivitiesComponent extends StatefulWidget {
-  final List<FavoriteSportEntity> favoritSports;
-  final UserProfileEntity userProfile;
-  ProfileActivitiesComponent(
-      {super.key, required this.favoritSports, required this.userProfile});
+  final List<FavoriteSportEntity>? favoritSports;
+  final UserProfileEntity? userProfile;
+  ProfileActivitiesComponent({super.key, this.favoritSports, this.userProfile});
 
   @override
   State<ProfileActivitiesComponent> createState() =>
@@ -35,10 +35,6 @@ class _ProfileActivitiesComponentState
   late ValueNotifier<List<SportEntity>> sportsIds;
   @override
   void didChangeDependencies() {
-    final List<SportEntity> sportsFavorites = widget.favoritSports
-        .map((e) => SportEntity(sportId: e.id, name: e.name))
-        .toList();
-    sportsIds = ValueNotifier(sportsFavorites);
     super.didChangeDependencies();
   }
 
@@ -48,53 +44,30 @@ class _ProfileActivitiesComponentState
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        ValueListenableBuilder(
-          valueListenable: sportsIds,
-          builder: (context, value, child) => GestureDetector(
-            onTap: () {
-              showDialog(
-                  context: context,
-                  builder: (BuildContext ctx) {
-                    return DeleteFavoriteSports(
-                      favoriteSports: widget.favoritSports,
-                      title: 'ازالة لعبة',
-                      subtitle:
-                          'تنويه: بازالتك لاحد الالعاب سيختفي المحتوى المرتبط بتلك اللعبة خلال تصفحك التطبيق',
-                      submitColor: const Color(0xFFF44336),
-                      textColor: const Color(0xFFF44336),
-                      allSports: allSports,
-                      deleteSports: (List<int> ids) {
-                        value.removeWhere((e) => ids.contains(e.sportId));
-                      },
-                    );
-                  });
-            },
-            child: Container(
-              width: 80.w,
-              height: 34.w,
-              decoration: BoxDecoration(
-                color: const Color(0xFFFFD6D3),
-                borderRadius: BorderRadius.circular(10.sp),
+        Container(
+          width: 80.w,
+          height: 34.w,
+          decoration: BoxDecoration(
+            color: const Color(0xFFFFD6D3),
+            borderRadius: BorderRadius.circular(10.sp),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Text(
+                'ازالة لعبة',
+                style: TextStyle(
+                  color: const Color(0xFFFF3030),
+                  fontSize: 11.sp,
+                  fontWeight: FontWeight.w400,
+                ),
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Text(
-                    'ازالة لعبة',
-                    style: TextStyle(
-                      color: const Color(0xFFFF3030),
-                      fontSize: 11.sp,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                  Icon(
-                    Icons.delete_forever_outlined,
-                    color: const Color(0xFFFF3030),
-                    size: 18.sp,
-                  )
-                ],
-              ),
-            ),
+              Icon(
+                Icons.delete_forever_outlined,
+                color: const Color(0xFFFF3030),
+                size: 18.sp,
+              )
+            ],
           ),
         ),
         Directionality(
@@ -106,9 +79,9 @@ class _ProfileActivitiesComponentState
                 mainAxisExtent: 40.h,
                 mainAxisSpacing: 20.0.w,
                 crossAxisSpacing: 4.w),
-            itemCount: widget.favoritSports.length + 1,
+            itemCount: 5,
             itemBuilder: (context, index) {
-              if (index < widget.favoritSports.length) {
+              if (index < 5) {
                 return ValueListenableBuilder(
                     valueListenable: selectedIndex,
                     builder: (context, isSelected, child) {
@@ -134,7 +107,7 @@ class _ProfileActivitiesComponentState
                           child: Container(
                             alignment: Alignment.center,
                             child: Text(
-                              widget.favoritSports[index].name,
+                              'بادل',
                               style: TextStyle(
                                 color: selectedText,
                                 fontSize: 15.sp,
@@ -203,10 +176,14 @@ class _ProfileActivitiesComponentState
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          AssetsManager.images.main.tennis.image(
-                              height: 202.h, width: 160.w, fit: BoxFit.fill),
+                          Expanded(
+                            child: AssetsManager.images.main.tennis.image(
+                              height: 202.h,
+                              width: 160.w,
+                              fit: BoxFit.fill,
+                            ),
+                          ),
                           Container(
-                            height: 202.h,
                             padding: EdgeInsets.symmetric(
                                 horizontal: 16.w, vertical: 10.h),
                             child: Column(
@@ -214,10 +191,7 @@ class _ProfileActivitiesComponentState
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
                                 Text(
-                                  widget
-                                      .userProfile
-                                      .favoriteSports![selectedIndex.value]
-                                      .name,
+                                  'اسم الرياضة',
                                   style: TextStyle(
                                       color: Colors.black,
                                       fontSize: 15.sp,
@@ -225,11 +199,7 @@ class _ProfileActivitiesComponentState
                                 ),
                                 RichText(
                                     text: TextSpan(
-                                        text: widget
-                                            .userProfile
-                                            .favoriteSports![
-                                                selectedIndex.value]
-                                            .userLevel[selectedIndex.value],
+                                        text: 'مستوى اللاعب',
                                         style: TextStyle(
                                             color: Colors.black,
                                             fontSize: 21.sp,
@@ -252,12 +222,7 @@ class _ProfileActivitiesComponentState
                                             fontWeight: FontWeight.w400),
                                         children: [
                                       TextSpan(
-                                        text: widget
-                                            .userProfile
-                                            .favoriteSports![
-                                                selectedIndex.value]
-                                            .numOfMatches
-                                            .toString(),
+                                        text: '5',
                                         style: TextStyle(
                                             color: Colors.black,
                                             fontSize: 16.sp,
@@ -265,10 +230,7 @@ class _ProfileActivitiesComponentState
                                       )
                                     ])),
                                 Text(
-                                  widget
-                                      .userProfile
-                                      .favoriteSports![selectedIndex.value]
-                                      .name,
+                                  'قدم',
                                   style: TextStyle(
                                       color: XColors.primary,
                                       fontSize: 20.sp,
@@ -350,8 +312,7 @@ class _ProfileActivitiesComponentState
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          widget.userProfile.user!.loyaltyPoints
-                                              .toString(),
+                                          '300',
                                           style: const TextStyle(
                                             color: XColors.primary,
                                             fontSize: 20,
@@ -441,11 +402,7 @@ class _ProfileActivitiesComponentState
                         child: ListView.builder(
                             physics: const NeverScrollableScrollPhysics(),
                             shrinkWrap: true,
-                            itemCount: widget
-                                .userProfile
-                                .favoriteSports![selectedIndex.value]
-                                .levels
-                                .length,
+                            itemCount: 5,
                             itemBuilder: (context, index) {
                               return Column(
                                 children: [
@@ -464,25 +421,13 @@ class _ProfileActivitiesComponentState
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          widget
-                                              .userProfile
-                                              .favoriteSports![
-                                                  selectedIndex.value]
-                                              .levels[index]
-                                              .levelMaxPoints
-                                              .toString(),
+                                          '7',
                                           style: TextStyle(
                                               fontSize: 16.sp,
                                               color: const Color(0xFF2C2C2C)),
                                         ),
                                         Text(
-                                          widget
-                                              .userProfile
-                                              .favoriteSports![
-                                                  selectedIndex.value]
-                                              .levels[index]
-                                              .levelName
-                                              .toString(),
+                                          'محترف',
                                           style: TextStyle(
                                               fontSize: 15.sp,
                                               color: const Color(0xFF1B1B1B)),
@@ -523,22 +468,10 @@ class _ProfileActivitiesComponentState
                     physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     key: UniqueKey(),
-                    itemCount: widget
-                        .userProfile
-                        .favoriteSports![selectedIndex.value]
-                        .preferences
-                        .length,
+                    itemCount: 5,
                     itemBuilder: (context, index) {
                       return ActivityPreferncesComponent(
-                        initialValueId: widget
-                            .userProfile
-                            .favoriteSports![selectedIndex.value]
-                            .preferences[index]
-                            .selectedPreferenceValueId,
-                        preferenceValues: widget
-                            .userProfile
-                            .favoriteSports![selectedIndex.value]
-                            .preferences[index],
+                        initialValueId: 0,
                       );
                     },
                   ),

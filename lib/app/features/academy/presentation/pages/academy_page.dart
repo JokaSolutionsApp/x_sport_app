@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:x_sport/app/features/academy/presentation/components/reviews_tab.dart';
+import 'package:x_sport/app/features/academy/presentation/pages/academy_register_page.dart';
+import 'package:x_sport/main.dart';
 import '../components/courses_tab.dart';
 import '../../domain/enitites/suggested_academy_entity.dart';
 import '../components/video_player_full_screen_widget.dart';
@@ -238,12 +240,10 @@ class _AcademyScreenState extends State<AcademyPage>
                     height: 0.49.sh,
                     child: TabBarView(
                       controller: _tabController,
-                      children: [
-                        const ReviewsTab(),
-                        const CoursesTab(),
-                        AcademyAboutComponent(
-                          academyId: widget.academy?.academyId ?? 0,
-                        ),
+                      children: const [
+                        ReviewsTab(),
+                        CoursesTab(),
+                        AcademyAboutComponent(),
                       ],
                     ),
                   ),
@@ -256,7 +256,13 @@ class _AcademyScreenState extends State<AcademyPage>
                       textSize: 15,
                       fillColor: XColors.primary,
                       radius: 6,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(navigatorKey.currentContext!).push(
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const AcademyRegisterPage()),
+                        );
+                      },
                     ),
                   ),
                 ],

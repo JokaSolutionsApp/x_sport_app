@@ -11,18 +11,14 @@ import '../../../../widgets/buttons/edit_button.dart';
 import '../../../../widgets/text_fields/no_border_textfield_widget.dart';
 import '../../../auth/data/datasource/params/auth_params.dart';
 import '../../../auth/domain/enitites/favorite_sport_entity.dart';
-import '../../../auth/domain/enitites/sport_entity.dart';
 import '../../../auth/domain/enitites/user_entity.dart';
 import '../../../auth/presentation/bloc/auth_bloc.dart';
-import '../components/edit_profile_components/edit_gender.dart';
 import '../components/edit_profile_components/edit_image_component.dart';
-import '../components/edit_profile_components/edit_sports.dart';
 
 class EditProfilePage extends StatefulWidget {
-  final UserEntity user;
-  final List<FavoriteSportEntity> favoriteSports;
-  const EditProfilePage(
-      {super.key, required this.user, required this.favoriteSports});
+  final UserEntity? user;
+  final List<FavoriteSportEntity>? favoriteSports;
+  const EditProfilePage({super.key, this.user, this.favoriteSports});
 
   @override
   State<EditProfilePage> createState() => _EditProfilePageState();
@@ -31,32 +27,22 @@ class EditProfilePage extends StatefulWidget {
 class User {}
 
 class _EditProfilePageState extends State<EditProfilePage> {
-  late TextEditingController name;
-  late TextEditingController phone;
-  late final List<SportEntity> allSports;
+  TextEditingController name = TextEditingController();
+  TextEditingController phone = TextEditingController();
 
   String imageType = '';
   List<int> imageBytes = [];
-  late List<SportEntity> sportsIds;
+
   List<int> selectedIds = [];
 
   String gender = 'ذكر';
-  late String updateGender;
-  late final UserEntity user;
+
   getUserLocation() async {
     await editProfileStream.updateLocation();
   }
 
   @override
   void initState() {
-    user = widget.user;
-    updateGender = widget.user.gender!;
-    allSports = context.read<AuthBloc>().sports;
-    sportsIds = widget.favoriteSports
-        .map((e) => SportEntity(sportId: e.id, name: e.name))
-        .toList();
-    name = TextEditingController(text: user.name);
-    phone = TextEditingController(text: user.phone);
     getUserLocation();
     super.initState();
   }
@@ -72,8 +58,8 @@ class _EditProfilePageState extends State<EditProfilePage> {
               context.read<AuthBloc>().add(AuthEvent.editUserProfile(
                   params: EditUserProfileParams(
                       name: name.text,
+                      gender: 'ذكر',
                       phone: phone.text,
-                      gender: updateGender,
                       sportIds: selectedIds,
                       lat: editProfileStream.latValue,
                       long: editProfileStream.longeValue)));
@@ -180,24 +166,23 @@ class _EditProfilePageState extends State<EditProfilePage> {
                             tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                             alignment: Alignment.centerLeft),
                         onPressed: () {
-                          showDialog(
-                              context: context,
-                              builder: (BuildContext ctx) {
-                                return EditSportAlertDialog(
-                                  favoriteSports: sportsIds,
-                                  title: 'ازالة لعبة',
-                                  subtitle:
-                                      'تنويه: بازالتك لاحد الالعاب سيختفي المحتوى المرتبط بتلك اللعبة خلال تصفحك التطبيق',
-                                  allSports: allSports,
-                                  getSportsIds: (List<SportEntity> ids) {
-                                    setState(() {
-                                      sportsIds = ids;
-                                      selectedIds =
-                                          ids.map((e) => e.sportId).toList();
-                                    });
-                                  },
-                                );
-                              });
+                          // showDialog(
+                          //     context: context,
+                          //     builder: (BuildContext ctx) {
+                          //       return EditSportAlertDialog(
+                          //         favoriteSports: sportsIds,
+                          //         title: 'ازالة لعبة',
+                          //         subtitle:
+                          //             'تنويه: بازالتك لاحد الالعاب سيختفي المحتوى المرتبط بتلك اللعبة خلال تصفحك التطبيق',
+                          //         getSportsIds: (List<SportEntity> ids) {
+                          //           setState(() {
+                          //             sportsIds = ids;
+                          //             selectedIds =
+                          //                 ids.map((e) => e.sportId).toList();
+                          //           });
+                          //         },
+                          //       );
+                          //     });
                         },
                         child: Text(
                           'حذف او اضافة',
@@ -219,7 +204,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                               shrinkWrap: true,
                               itemExtent: 80.w,
                               scrollDirection: Axis.horizontal,
-                              itemCount: sportsIds.length,
+                              itemCount: 5,
                               itemBuilder: (context, index) {
                                 return Container(
                                   margin: EdgeInsets.only(left: 4.w),
@@ -234,7 +219,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                                   ),
                                   child: Text(
                                     textAlign: TextAlign.end,
-                                    sportsIds[index].name,
+                                    'اسم الرياضة',
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 14.sp,
@@ -259,19 +244,19 @@ class _EditProfilePageState extends State<EditProfilePage> {
                             tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                             alignment: Alignment.centerLeft),
                         onPressed: () {
-                          showDialog(
-                            context: context,
-                            builder: (BuildContext ctx) {
-                              return EditGenderAlertDialog(
-                                gender: updateGender,
-                                getGender: (newValue) {
-                                  setState(() {
-                                    updateGender = newValue;
-                                  });
-                                },
-                              );
-                            },
-                          );
+                          // showDialog(
+                          //   context: context,
+                          //   builder: (BuildContext ctx) {
+                          //     return EditGenderAlertDialog(
+                          //       gender: updateGender,
+                          //       getGender: (newValue) {
+                          //         setState(() {
+                          //           updateGender = newValue;
+                          //         });
+                          //       },
+                          //     );
+                          //   },
+                          // );
                         },
                         child: Text(
                           'تغيير',
@@ -285,7 +270,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                         ),
                       ),
                       Text(
-                        updateGender ?? 'ذكر',
+                        'ذكر',
                         style: TextStyle(
                             color: XColors.Background_Color1,
                             fontSize: 18.sp,

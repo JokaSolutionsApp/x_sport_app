@@ -13,14 +13,11 @@ import '../../../../../../../core/constance/app_constance.dart';
 import '../../../../../../widgets/rectangle_container.dart';
 
 class ProfileInfoComponent extends StatelessWidget {
-  final UserProfileEntity userProfile;
+  final UserProfileEntity? userProfile;
   final int? points;
-  final List<FavoriteSportEntity> favoriteSports;
+  final List<FavoriteSportEntity>? favoriteSports;
   const ProfileInfoComponent(
-      {super.key,
-      required this.userProfile,
-      required this.points,
-      required this.favoriteSports});
+      {super.key, this.userProfile, required this.points, this.favoriteSports});
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +61,7 @@ class ProfileInfoComponent extends StatelessWidget {
                           ),
                           SizedBox(width: 6.h),
                           Text(
-                            "${userProfile.user!.loyaltyPoints.toString()}",
+                            "500 ",
                             style: TextStyle(
                               color: XColors.primary,
                               fontSize: 17.sp,
@@ -83,7 +80,7 @@ class ProfileInfoComponent extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            userProfile.user!.name,
+                            'اسم المستخدم',
                             style: TextStyle(
                               color: const Color(0xFF111C32),
                               fontSize: 15.sp,
@@ -93,7 +90,7 @@ class ProfileInfoComponent extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            userProfile.user!.email,
+                            'البريد الالكتروني',
                             style: const TextStyle(
                               color: Color(0xFF7E7E7E),
                               fontSize: 12,
@@ -117,10 +114,7 @@ class ProfileInfoComponent extends StatelessWidget {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => EditProfilePage(
-                                            user: userProfile.user!,
-                                            favoriteSports: favoriteSports,
-                                          )));
+                                      builder: (context) => EditProfilePage()));
                             },
                             child: Text(
                               'تعديل الملف الشخصي',
@@ -142,7 +136,9 @@ class ProfileInfoComponent extends StatelessWidget {
                       height: 74.w,
                       decoration: ShapeDecoration(
                         image: DecorationImage(
-                            image: NetworkImage(userProfile.user!.imgURL)),
+                            image: AssetsManager.images.avatars.avatar0
+                                .image()
+                                .image),
                         color: XColors.Background_Color1,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(11),
@@ -181,8 +177,6 @@ class ProfileInfoComponent extends StatelessWidget {
             Align(
               alignment: Alignment.bottomCenter,
               child: ProfileStatsComponent(
-                following: userProfile.following,
-                followers: userProfile.followers,
                 matchesCount: 0,
               ),
             ),
