@@ -8,7 +8,6 @@ import 'package:x_sport/app/features/courts/presentation/bloc/stadium_bloc.dart'
 import '../../../academy/presentation/components/video_player_full_screen_widget.dart';
 import '../../../../../core/constance/app_constance.dart';
 
-import '../../../academy/presentation/components/academy_components/academy_tabs_components/academy_program_component.dart';
 import '../components/court_information_tab_component.dart';
 
 class CourtsPage extends StatefulWidget {
@@ -20,7 +19,6 @@ class CourtsPage extends StatefulWidget {
 
 class _CourtsScreenState extends State<CourtsPage>
     with SingleTickerProviderStateMixin {
-  late TabController _tabController;
   int activeIndex = 0;
 
   var carouselImages = [
@@ -31,9 +29,8 @@ class _CourtsScreenState extends State<CourtsPage>
 
   @override
   void initState() {
-    _tabController = TabController(vsync: this, length: 2, initialIndex: 1);
     BlocProvider.of<StadiumBloc>(context)
-        .add(StadiumEvent.getAboutStadium(StadiumId: 1));
+        .add(const StadiumEvent.getAboutStadium(StadiumId: 1));
 
     super.initState();
   }
@@ -174,7 +171,7 @@ class _CourtsScreenState extends State<CourtsPage>
                     height: 50.h,
                     width: 0.9.sw,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: XColors.primary,
                       borderRadius: BorderRadius.circular(12.sp),
                       boxShadow: [
                         BoxShadow(
@@ -184,66 +181,14 @@ class _CourtsScreenState extends State<CourtsPage>
                         )
                       ],
                     ),
-                    child: TabBar(
-                      labelPadding: const EdgeInsets.symmetric(horizontal: 6),
-                      splashBorderRadius: BorderRadius.circular(11.sp),
-                      unselectedLabelColor: const Color(0xFFB4B4B4),
-                      indicatorSize: TabBarIndicatorSize.label,
-                      splashFactory: NoSplash.splashFactory,
-                      overlayColor: MaterialStateProperty.resolveWith<Color?>(
-                        (Set<MaterialState> states) {
-                          return states.contains(MaterialState.focused)
-                              ? null
-                              : Colors.transparent;
-                        },
+                    child: const Text(
+                      'معلومات',
+                      style: TextStyle(
+                        color: XColors.white,
                       ),
-                      labelStyle: TextStyle(
-                          color: Colors.white,
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w700),
-                      unselectedLabelStyle: TextStyle(
-                          color: const Color(0xFFB4B4B4),
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w700),
-                      dividerColor: Colors.transparent,
-                      indicator: BoxDecoration(
-                          color: XColors.primary,
-                          borderRadius: BorderRadius.circular(11.sp)),
-                      controller: _tabController,
-                      tabs: [
-                        Container(
-                          height: 30.w,
-                          alignment: Alignment.center,
-                          child: Text(
-                            'المجتمع',
-                            style: TextStyle(
-                                fontSize: 18.sp, fontWeight: FontWeight.w400),
-                          ),
-                        ),
-                        Container(
-                          height: 30.w,
-                          alignment: Alignment.center,
-                          child: Text(
-                            'معلومات',
-                            style: TextStyle(
-                                fontSize: 18.sp, fontWeight: FontWeight.w400),
-                          ),
-                        ),
-                      ],
                     ),
                   ),
-                  SizedBox(
-                    height: 0.60.sh,
-                    child: TabBarView(
-                      controller: _tabController,
-                      children: [
-                        const AcademyProgramtComponent(
-                          academyId: 1,
-                        ),
-                        CourtInformationComponent(),
-                      ],
-                    ),
-                  ),
+                  const CourtInformationComponent(),
                 ],
               ),
             ),

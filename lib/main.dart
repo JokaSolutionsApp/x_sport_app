@@ -5,6 +5,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:x_sport/app/features/courts/domain/enitites/params/stadium_params.dart';
 import 'package:x_sport/app/features/courts/presentation/bloc/stadium_bloc.dart';
+import 'package:x_sport/app/features/courts/presentation/pages/courts_page.dart';
 import 'package:x_sport/app/features/profile/presentation/pages/profile_ranking_page.dart';
 
 import 'app/features/academy/domain/enitites/params/acedemy_params.dart';
@@ -89,7 +90,7 @@ class MyApp extends StatelessWidget {
               ),
               useMaterial3: true,
             ),
-            home: const RoutePage(),
+            home: const CourtsPage(),
           ),
         );
       },
