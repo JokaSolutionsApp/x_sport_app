@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/academy/presentation/pages/all_academies_page.dart';
+import 'package:x_sport/main.dart';
 
 import '../../../../../../core/constance/app_constance.dart';
 
@@ -22,7 +24,12 @@ class SuggestedAcademiesComponent extends StatelessWidget {
                     minimumSize: Size(50.w, 30.h),
                     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                     alignment: Alignment.centerLeft),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(navigatorKey.currentContext!).push(
+                    MaterialPageRoute(
+                        builder: (context) => const AllAcademiesPage()),
+                  );
+                },
                 child: Text(
                   'عرض الكل',
                   style: TextStyle(
