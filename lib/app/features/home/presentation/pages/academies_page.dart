@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/home/presentation/components/academies_components/membership_component.dart';
 import 'package:x_sport/app/features/home/presentation/components/memberships_banner.dart';
 
 import '../../../academy/domain/enitites/params/acedemy_params.dart';
@@ -38,7 +39,13 @@ class _AcademiesPageState extends State<AcademiesPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const MembershipsBanner(),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 27.w,
+                vertical: 20.h,
+              ),
+              child: const MemberShipComponent(),
+            ),
             AcademeiesCategoriesComponent(),
             SizedBox(height: 26.h),
             const SuggestedAcademiesComponent(),
