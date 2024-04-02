@@ -49,7 +49,13 @@ class _AcademiesPageState extends State<AcademiesPage> {
             AcademeiesCategoriesComponent(),
             SizedBox(height: 26.h),
             const SuggestedAcademiesComponent(),
-            const FilterWidget(),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 27.w,
+                vertical: 5.h,
+              ),
+              child: const FilterWidget(),
+            ),
             SizedBox(height: 12.h),
             const AcademiesComponent(),
           ],

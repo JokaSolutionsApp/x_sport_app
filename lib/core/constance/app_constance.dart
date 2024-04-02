@@ -24,6 +24,7 @@ class XColors {
   static const secondary_text_color = Color(0xFF979797);
   static const scaffold_background = Color(0xFFFFFFFF);
   static const scaffold_background2 = Color(0xFFFCFCFC);
+  static const scaffold_background3 = Color(0xFFF6F7F9);
   static const success_green = Color(0xFF66BB6A);
   static const fail_red = Color(0xFFF44336);
   static const white = Color(0xFFFFFFFF);
