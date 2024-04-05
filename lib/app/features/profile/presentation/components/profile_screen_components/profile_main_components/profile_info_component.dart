@@ -1,16 +1,14 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../../../../core/constance/app_constance.dart';
+import '../../../../../../../core/utils/assets_managers/assets.gen.dart';
+import '../../../../../../widgets/rectangle_container.dart';
 import '../../../../../auth/domain/enitites/favorite_sport_entity.dart';
-import '../../../../../auth/domain/enitites/user_entity.dart';
 import '../../../../../auth/domain/enitites/user_profile_entity.dart';
-import 'profile_stats_component.dart';
 import '../../../pages/edit_profile_page.dart';
 import '../../../pages/profile_ranking_page.dart';
-import '../../../../../../../core/utils/assets_managers/assets.gen.dart';
-import '../../../../../../../core/constance/app_constance.dart';
-import '../../../../../../widgets/rectangle_container.dart';
+import 'profile_stats_component.dart';
 
 class ProfileInfoComponent extends StatelessWidget {
   final UserProfileEntity userProfile;
@@ -64,7 +62,7 @@ class ProfileInfoComponent extends StatelessWidget {
                           ),
                           SizedBox(width: 6.h),
                           Text(
-                            "${userProfile.user!.loyaltyPoints.toString()}",
+                            userProfile.user!.loyaltyPoints.toString(),
                             style: TextStyle(
                               color: XColors.primary,
                               fontSize: 17.sp,

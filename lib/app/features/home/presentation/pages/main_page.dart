@@ -1,22 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/courts/domain/enitites/params/stadium_params.dart';
-import 'package:x_sport/app/features/courts/presentation/bloc/stadium_bloc.dart';
-import '../../../../../core/services/locator/service_locator.dart';
-import '../../../../../core/services/secure_storage_service.dart.dart';
-import 'play_page.dart';
 
 import '../../../../../core/constance/app_constance.dart';
 import '../../../../../core/constance/app_icons_icons.dart';
+import '../../../../../core/services/locator/service_locator.dart';
+import '../../../../../core/services/secure_storage_service.dart.dart';
 import '../../../../../main.dart';
+import '../../../../widgets/buttons/submit_button.dart';
+import '../../../match/presentation/pages/match_reservation_page.dart';
+import '../../../social/presentation/pages/social_page.dart';
 import '../components/main_components/match_type_component.dart';
 import '../components/main_components/options_component.dart';
 import 'academies_page.dart';
-import '../../../match/presentation/pages/match_reservation_page.dart';
-import '../../../../widgets/buttons/submit_button.dart';
 import 'home_page.dart';
-import '../../../social/presentation/pages/social_page.dart';
+import 'play_page.dart';
 import 'search_page.dart';
 
 class MainPage extends StatefulWidget {
@@ -36,7 +33,7 @@ class _MainScreenState extends State<MainPage>
     const SearchPage(),
     const SocialPage(),
     const HomePage(),
-    AcademiesPage(),
+    const AcademiesPage(),
     PlayPage(),
   ];
   bool isContainerVisible = false;

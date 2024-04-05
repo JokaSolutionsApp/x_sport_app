@@ -1,41 +1,42 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import '../../domain/params/google_login_params.dart';
-import '../../domain/usecase/user_usecase/google_login_usecase.dart';
+
+import '../../../../../core/constance/app_functions.dart';
+import '../../../../../core/error/failure.dart';
 import '../../../../../core/services/locator/service_locator.dart';
 import '../../../../../core/services/secure_storage_service.dart.dart';
+import '../../../../../core/utils/enums.dart';
+import '../../../../../main.dart';
+import '../../../home/presentation/pages/main_page.dart';
 import '../../data/datasource/params/auth_params.dart';
 import '../../domain/enitites/sport_entity.dart';
 import '../../domain/enitites/user_profile_entity.dart';
 import '../../domain/params/edit_preferences_params.dart';
 import '../../domain/usecase/user_usecase/add_favorite_sports_usecse.dart';
+import '../../domain/usecase/user_usecase/check_user_logged_usecase.dart';
 import '../../domain/usecase/user_usecase/complete_resgisteration_usecase.dart';
 import '../../domain/usecase/user_usecase/confirm_user_email_usecase.dart';
 import '../../domain/usecase/user_usecase/delete_favorite_sports_usecse.dart';
 import '../../domain/usecase/user_usecase/delete_user_profile.dart';
 import '../../domain/usecase/user_usecase/edit__user_profile_usecase.dart';
 import '../../domain/usecase/user_usecase/edit_preferences_usecase.dart';
+import '../../domain/usecase/user_usecase/get_sports_usecase.dart';
 import '../../domain/usecase/user_usecase/get_user_profile_usecase.dart';
+import '../../domain/usecase/user_usecase/google_login_usecase.dart';
 import '../../domain/usecase/user_usecase/login_usecase.dart';
+import '../../domain/usecase/user_usecase/logout_usecase.dart';
 import '../../domain/usecase/user_usecase/register_usecase.dart';
 import '../../domain/usecase/user_usecase/resend_confirm_user_email_usecase.dart';
 import '../pages/login_page.dart';
-import '../../../home/presentation/pages/main_page.dart';
-import '../../../../../core/constance/app_functions.dart';
-import '../../../../../core/error/failure.dart';
-import '../../../../../core/utils/enums.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-import '../../../../../main.dart';
-import '../../domain/usecase/user_usecase/check_user_logged_usecase.dart';
-import '../../domain/usecase/user_usecase/get_sports_usecase.dart';
-import '../../domain/usecase/user_usecase/logout_usecase.dart';
 import '../pages/otp_page.dart';
 import '../pages/welcome_page.dart';
+
+part 'auth_bloc.freezed.dart';
 part 'auth_event.dart';
 part 'auth_state.dart';
-part 'auth_bloc.freezed.dart';
 
 @singleton
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
@@ -199,7 +200,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   Future<void> _googleLogin(event, Emitter<AuthState> emit) async {
     event as _$GoogleLoginEventImpl;
-    add(AuthEvent.getSports());
+    add(const AuthEvent.getSports());
     print('entered _googleLogin');
     emit(const AuthState.googleLogginLoading());
     EasyLoadingInit.startLoading();

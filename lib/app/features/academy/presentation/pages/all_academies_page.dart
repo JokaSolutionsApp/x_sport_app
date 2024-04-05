@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:x_sport/app/features/academy/domain/enitites/params/acedemy_params.dart';
 import 'package:x_sport/app/features/academy/presentation/bloc/academy_bloc.dart';
-import 'package:x_sport/app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:x_sport/app/widgets/buttons/submit_button.dart';
 import 'package:x_sport/app/widgets/rectangle_container.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
@@ -61,7 +60,7 @@ class _AllAcademiesPageState extends State<AllAcademiesPage> {
           BlocBuilder<AcademyBloc, AcademyState>(
             builder: (context, state) {
               return state.maybeWhen(
-                orElse: () => Offstage(),
+                orElse: () => const Offstage(),
                 allAcademiesFetched: (allAcdemies) {
                   return ListView.builder(
                     shrinkWrap: true,
