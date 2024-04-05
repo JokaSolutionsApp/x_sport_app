@@ -32,8 +32,8 @@ class GenderComponent extends StatelessWidget {
           filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
           child: Directionality(
             textDirection: TextDirection.rtl,
-            child: DropdownButtonFormField<String>(
-              value: genders[0],
+            child: DropdownButtonFormField(
+              hint: const Text('الجنس'),
               style: TextStyle(
                   height: 1.8.w,
                   fontSize: 16.sp,

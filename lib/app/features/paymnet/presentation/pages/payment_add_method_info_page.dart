@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/academy/presentation/components/register_success_dialog.dart';
 
 import '../../../../../core/constance/app_icons_icons.dart';
 import '../../../../../core/utils/assets_managers/assets.gen.dart';
@@ -10,7 +11,7 @@ import '../../../../widgets/text_fields/add_payment_field.dart';
 class PaymentAddMethodInfoPage extends StatelessWidget {
   PaymentAddMethodInfoPage({super.key});
   final ValueNotifier<int> selectedValue = ValueNotifier<int>(1);
-  TextEditingController email = TextEditingController();
+  final TextEditingController email = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -119,12 +120,20 @@ class PaymentAddMethodInfoPage extends StatelessWidget {
                   Align(
                     alignment: Alignment.topLeft,
                     child: SubmitButton(
-                        radius: 6,
-                        height: 37.w,
-                        minWidth: 109.w,
-                        text: 'اضافة',
-                        textSize: 15,
-                        onPressed: () {}),
+                      radius: 6,
+                      height: 37.w,
+                      minWidth: 109.w,
+                      text: 'اضافة',
+                      textSize: 15,
+                      onPressed: () {
+                        showDialog(
+                          context: context,
+                          builder: (context) {
+                            return const RegisterSuccessDialog();
+                          },
+                        );
+                      },
+                    ),
                   )
                 ],
               ),

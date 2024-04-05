@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/paymnet/presentation/pages/payment_method_page.dart';
 import 'package:x_sport/main.dart';
 
 import '../../../../../core/constance/app_constance.dart';
-import '../components/register_success_dialog.dart';
 import '../components/text_form_field_widget.dart';
 
 class AcademyRegisterPage extends StatefulWidget {
@@ -17,8 +17,10 @@ class _AcademyScreenState extends State<AcademyRegisterPage>
     with SingleTickerProviderStateMixin {
   List<String> options = ['لك', 'لاحد افراد العائلة'];
   String currentOption = 'لك';
-  List<String> languageList = ['رجال', 'شباب', 'ناشئين'];
-  String selectedLanguage = '';
+  List<String> ageList = ['رجال', 'شباب', 'ناشئين'];
+  List<String> relativeList = ['ابن', 'ابنة'];
+  String selectedAge = '';
+  String selectedRelative = '';
   TextEditingController nameController = TextEditingController();
   TextEditingController numberController = TextEditingController();
   TextEditingController addressController = TextEditingController();
@@ -115,9 +117,91 @@ class _AcademyScreenState extends State<AcademyRegisterPage>
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: 35.h,
-                ),
+                if (currentOption == 'لاحد افراد العائلة')
+                  Column(
+                    children: [
+                      SizedBox(
+                        height: 35.h,
+                      ),
+                      Directionality(
+                        textDirection: TextDirection.rtl,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: XColors.white,
+                            border: Border.all(
+                              color: XColors.borderColor,
+                              width: 0.5,
+                            ),
+                            borderRadius: BorderRadius.circular(6.r),
+                          ),
+                          child: DropdownButtonFormField(
+                            isExpanded: true,
+                            hint: const Text('صلة القرابة'),
+                            dropdownColor: XColors.white,
+                            style: const TextStyle(
+                              fontSize: 16,
+                              color: Colors.black,
+                            ),
+                            decoration: InputDecoration(
+                              hintStyle: const TextStyle(
+                                fontSize: 16,
+                              ),
+                              contentPadding: EdgeInsets.symmetric(
+                                horizontal: 17.w,
+                                vertical: 17.h,
+                              ),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(6.r),
+                                borderSide: const BorderSide(
+                                  color: Colors.transparent,
+                                  width: 0,
+                                ),
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(6.r),
+                                borderSide: const BorderSide(
+                                  color: Colors.transparent,
+                                  width: 0,
+                                ),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(6.r),
+                                borderSide: const BorderSide(
+                                  color: Colors.transparent,
+                                  width: 0,
+                                ),
+                              ),
+                            ),
+                            items: relativeList
+                                .map(
+                                  (item) => DropdownMenuItem<dynamic>(
+                                    value: item,
+                                    child: Container(
+                                      alignment: Alignment.centerRight,
+                                      child: Text(
+                                        item,
+                                      ),
+                                    ),
+                                  ),
+                                )
+                                .toList(),
+                            onChanged: (item) => setState(
+                              () {
+                                selectedRelative = item;
+                              },
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 13.h,
+                      ),
+                    ],
+                  )
+                else
+                  SizedBox(
+                    height: 35.h,
+                  ),
                 Directionality(
                   textDirection: TextDirection.rtl,
                   child: Container(
@@ -167,7 +251,7 @@ class _AcademyScreenState extends State<AcademyRegisterPage>
                           ),
                         ),
                       ),
-                      items: languageList
+                      items: ageList
                           .map(
                             (item) => DropdownMenuItem<dynamic>(
                               value: item,
@@ -182,80 +266,7 @@ class _AcademyScreenState extends State<AcademyRegisterPage>
                           .toList(),
                       onChanged: (item) => setState(
                         () {
-                          selectedLanguage = item;
-                        },
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 13.h,
-                ),
-                Directionality(
-                  textDirection: TextDirection.rtl,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: XColors.white,
-                      border: Border.all(
-                        color: XColors.borderColor,
-                        width: 0.5,
-                      ),
-                      borderRadius: BorderRadius.circular(6.r),
-                    ),
-                    child: DropdownButtonFormField(
-                      isExpanded: true,
-                      hint: const Text('البرنامج التدريبي'),
-                      dropdownColor: XColors.white,
-                      style: const TextStyle(
-                        fontSize: 16,
-                        color: Colors.black,
-                      ),
-                      decoration: InputDecoration(
-                        hintStyle: const TextStyle(
-                          fontSize: 16,
-                        ),
-                        contentPadding: EdgeInsets.symmetric(
-                          horizontal: 17.w,
-                          vertical: 17.h,
-                        ),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(6.r),
-                          borderSide: const BorderSide(
-                            color: Colors.transparent,
-                            width: 0,
-                          ),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(6.r),
-                          borderSide: const BorderSide(
-                            color: Colors.transparent,
-                            width: 0,
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(6.r),
-                          borderSide: const BorderSide(
-                            color: Colors.transparent,
-                            width: 0,
-                          ),
-                        ),
-                      ),
-                      items: languageList
-                          .map(
-                            (item) => DropdownMenuItem<dynamic>(
-                              value: item,
-                              child: Container(
-                                alignment: Alignment.centerRight,
-                                child: Text(
-                                  item,
-                                ),
-                              ),
-                            ),
-                          )
-                          .toList(),
-                      onChanged: (item) => setState(
-                        () {
-                          selectedLanguage = item;
+                          selectedAge = item;
                         },
                       ),
                     ),
@@ -285,15 +296,18 @@ class _AcademyScreenState extends State<AcademyRegisterPage>
                 SizedBox(
                   height: 300.h,
                 ),
+                if (currentOption != 'لاحد افراد العائلة')
+                  SizedBox(
+                    height: 73.h,
+                  ),
                 SizedBox(
                   width: 190.w,
                   child: ElevatedButton(
                     onPressed: () {
-                      showDialog(
-                        context: context,
-                        builder: (context) {
-                          return const RegisterSuccessDialog();
-                        },
+                      Navigator.of(navigatorKey.currentContext!).push(
+                        MaterialPageRoute(
+                          builder: (context) => PaymentMethodPage(),
+                        ),
                       );
                     },
                     style: ElevatedButton.styleFrom(

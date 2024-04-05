@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../../core/constance/app_constance.dart';
-import '../../../../../widgets/rectangle_container.dart';
+import '../../app/widgets/rectangle_container.dart';
+import '../../core/constance/app_constance.dart';
 
-class MemberShipComponent extends StatelessWidget {
-  const MemberShipComponent({super.key});
+class MemberShipComponentDeprecated extends StatelessWidget {
+  const MemberShipComponentDeprecated({super.key});
 
   @override
   Widget build(BuildContext context) {

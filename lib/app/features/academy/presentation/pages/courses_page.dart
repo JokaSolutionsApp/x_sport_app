@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:x_sport/app/features/academy/presentation/components/course_card.dart';
-import 'package:x_sport/app/features/academy/presentation/pages/academy_register_page.dart';
-import 'package:x_sport/core/constance/app_constance.dart';
 import 'package:x_sport/main.dart';
 
 class CoursesPage extends StatelessWidget {
@@ -52,28 +50,24 @@ class CoursesPage extends StatelessWidget {
                 itemCount: 3,
                 itemBuilder: (ctx, index) => const CourseCard(),
               ),
-              SizedBox(
-                width: 190.w,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(navigatorKey.currentContext!).push(
-                        MaterialPageRoute(
-                            builder: (context) => const AcademyRegisterPage()));
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: XColors.primary,
-                    foregroundColor: const Color.fromRGBO(255, 255, 255, 1),
-                    shape: const RoundedRectangleBorder(),
-                  ),
-                  child: const Text(
-                    'التالي',
-                    style: TextStyle(
-                      fontSize: 10,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ),
-              ),
+              // SizedBox(
+              //   width: 190.w,
+              //   child: ElevatedButton(
+              //     onPressed: () {},
+              //     style: ElevatedButton.styleFrom(
+              //       backgroundColor: XColors.primary,
+              //       foregroundColor: const Color.fromRGBO(255, 255, 255, 1),
+              //       shape: const RoundedRectangleBorder(),
+              //     ),
+              //     child: const Text(
+              //       'التالي',
+              //       style: TextStyle(
+              //         fontSize: 10,
+              //         fontWeight: FontWeight.w500,
+              //       ),
+              //     ),
+              //   ),
+              // ),
             ],
           ),
         ),

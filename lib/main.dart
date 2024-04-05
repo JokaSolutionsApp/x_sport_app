@@ -5,6 +5,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:x_sport/app/features/courts/domain/enitites/params/stadium_params.dart';
 import 'package:x_sport/app/features/courts/presentation/bloc/stadium_bloc.dart';
+import 'package:x_sport/route_page.dart';
 
 import 'app/features/academy/domain/enitites/params/acedemy_params.dart';
 import 'app/features/academy/presentation/bloc/academy_bloc.dart';
@@ -16,7 +17,6 @@ import 'core/services/preload_images_service.dart';
 import 'core/services/secure_storage_service.dart.dart';
 import 'firebase_options.dart';
 import 'presentation/controllers/chat_bloc/chat_bloc.dart';
-import 'route_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
