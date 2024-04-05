@@ -9,6 +9,7 @@ class SuggestedAcademyModel extends SuggestedAcademyEntity {
     required super.academyId,
     required super.name,
     required super.description,
+    required super.regionName,
     required super.lat,
     required super.long,
     required super.minPrice,

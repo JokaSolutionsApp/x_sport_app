@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/academy/domain/enitites/get_courses_to_subscribe_entity.dart';
 
 import '../../../../../../../core/constance/app_constance.dart';
 import '../../../../../../../core/constance/app_icons_icons.dart';
 import '../../../../../../widgets/rectangle_container.dart';
 
 class TrainingScheduleComponent extends StatelessWidget {
-  TrainingScheduleComponent({super.key});
+  final List<GetCoursesToSubscribeEntity> courses;
+
+  TrainingScheduleComponent({
+    super.key,
+    required this.courses,
+  });
   final ValueNotifier<int?> isSelectedIndex = ValueNotifier<int?>(null);
 
   @override
@@ -16,7 +22,7 @@ class TrainingScheduleComponent extends StatelessWidget {
       width: 1.sw,
       child: ListView.builder(
           itemExtent: 0.12.sh,
-          itemCount: 3,
+          itemCount: courses.length,
           itemBuilder: (context, index) {
             return Padding(
               padding: EdgeInsets.only(bottom: 14.w),

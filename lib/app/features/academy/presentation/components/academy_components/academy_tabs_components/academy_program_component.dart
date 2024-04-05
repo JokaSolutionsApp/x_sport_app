@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/academy/domain/enitites/params/acedemy_params.dart';
 
 import '../../../bloc/academy_bloc.dart';
 import '../program_tab_components/program_dates_component.dart';
@@ -19,9 +20,8 @@ class _AcademyProgramtComponentState extends State<AcademyProgramtComponent> {
   @override
   void initState() {
     super.initState();
-    context
-        .read<AcademyBloc>()
-        .add(AcademyEvent.getAcademyCourses(academyId: widget.academyId));
+    context.read<AcademyBloc>().add(AcademyEvent.getCoursesToSubscribe(
+        params: CourseParams(academyId: 1, ageCategoryId: 1, genderId: 1)));
   }
 
   @override
@@ -29,7 +29,7 @@ class _AcademyProgramtComponentState extends State<AcademyProgramtComponent> {
     return BlocBuilder<AcademyBloc, AcademyState>(
       buildWhen: (prev, cur) {
         if (cur.runtimeType !=
-            const AcademyState.getAcademyCoursesLoading().runtimeType) {
+            const AcademyState.getCoursesToSubscribeLoading().runtimeType) {
           return true;
         }
         return false;
@@ -37,17 +37,14 @@ class _AcademyProgramtComponentState extends State<AcademyProgramtComponent> {
       builder: (context, state) {
         return state.maybeWhen(
             orElse: () => Offstage(),
-            getAcademyCoursesLoading: () => CircularProgressIndicator(),
-            getAcademyCoursesFailure: (failure) => Offstage(),
-            academyCoursesFetched: (academyCourses) {
-              final program = academyCourses!.ageCategoriesWithCoursesInDate;
+            getCoursesToSubscribeLoading: () => CircularProgressIndicator(),
+            getCoursesToSubscribeFailure: (failure) => Offstage(),
+            academyCoursesFetched: (courses) {
               return Column(
                 children: [
-                  ProgramDatesComponent(
-                    program: program,
-                  ),
+                  ProgramDatesComponent(),
                   SizedBox(height: 30.h),
-                  TrainingScheduleComponent(),
+                  TrainingScheduleComponent(courses: courses),
                 ],
               );
             });

@@ -5,12 +5,12 @@ import 'dart:async';
 import 'package:x_sport/app/features/academy/data/models/about_academy_model.dart';
 import 'package:x_sport/app/features/academy/data/models/academy_membership_model.dart';
 import 'package:x_sport/app/features/academy/data/models/academy_review_model.dart';
-import 'package:x_sport/app/features/academy/data/models/get_academy_courses_model.dart';
+import 'package:x_sport/app/features/academy/data/models/get_courses_to_subscribe_model.dart';
 import 'package:x_sport/app/features/academy/data/models/suggested_academy_model.dart';
 import 'package:x_sport/app/features/academy/domain/enitites/about_academy_entity.dart';
 import 'package:x_sport/app/features/academy/domain/enitites/academy_membership_entity.dart';
 import 'package:x_sport/app/features/academy/domain/enitites/academy_review_entity.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/get_academy_courses_entity.dart';
+import 'package:x_sport/app/features/academy/domain/enitites/get_courses_to_subscribe_entity.dart';
 import 'package:x_sport/app/features/academy/domain/enitites/params/acedemy_params.dart';
 import 'package:x_sport/app/features/academy/domain/enitites/suggested_academy_entity.dart';
 import 'package:x_sport/core/constance/api_constance.dart';
@@ -22,11 +22,17 @@ abstract class BaseAcademyRemoteDataSource {
   Future<List<AcademyMembershipEntity>> getSportsMembership();
   Future<List<SuggestedAcademyEntity>> getSuggestedAcademies(
       {required SuggestedAcademyParams params});
+  Future<List<SuggestedAcademyEntity>> getAllAcademies(
+      {required AllAcademiesParams params});
+
   Future<AboutAcademyEntity> getAboutAcademy({required int academyId});
-  Future<GetAcademyCoursesEntity> getAcademyCourses({required int academyId});
-  Future<GetAcademyCoursesEntity> getAcademyCoursesInDate(
+  Future<List<GetCoursesToSubscribeEntity>> getCoursesToSubscribe(
+      {required CourseParams params});
+  Future<GetCoursesToSubscribeEntity> getCoursesToSubscribeInDate(
       {required int academyId, required String targetDate});
   Future<List<AcademyReviewEntity>> getAcademyReview({required int academyId});
+  Future<bool> inrollUserInCourse({required InrollUserInCourseParams params});
+  Future<bool> addAcademyReview({required AddAcademyReviewParams params});
 }
 
 class AcademyRemoteDataSource extends BaseAcademyRemoteDataSource {
@@ -77,32 +83,35 @@ class AcademyRemoteDataSource extends BaseAcademyRemoteDataSource {
   }
 
   @override
-  Future<GetAcademyCoursesEntity> getAcademyCourses(
-      {required int academyId}) async {
-    final getParams = {'academyId': academyId};
-    final response = await ApiService.get(ApiConstance.getAcademyCourses,
-        queryParams: getParams);
+  Future<List<GetCoursesToSubscribeEntity>> getCoursesToSubscribe(
+      {required CourseParams params}) async {
+    final queryParams = params.toMap();
+
+    final response = await ApiService.get(ApiConstance.getCoursesToSubscribe,
+        queryParams: queryParams);
     final data = response.data;
-    print('$data getAcademyCourses');
+    print('$data getCoursesToSubscribe');
 
     if (response.statusCode == 200) {
-      return GetAcademyCoursesModel.fromJson(data['data']);
+      return List<GetCoursesToSubscribeModel>.from(
+          data['data'].map((e) => GetCoursesToSubscribeModel.fromJson(e)));
     } else {
       throw ServerException(errorModel: ErrorModel.formJson(data));
     }
   }
 
   @override
-  Future<GetAcademyCoursesEntity> getAcademyCoursesInDate(
+  Future<GetCoursesToSubscribeEntity> getCoursesToSubscribeInDate(
       {required int academyId, required String targetDate}) async {
     final getParams = {'academyId': academyId, 'targetDate': targetDate};
-    final response = await ApiService.get(ApiConstance.getAcademyCoursesinDate,
+    final response = await ApiService.get(
+        ApiConstance.getCoursesToSubscribeinDate,
         queryParams: getParams);
     final data = response.data;
-    print('$data getAcademyCoursesinDate');
+    print('$data getCoursesToSubscribeinDate');
 
     if (response.statusCode == 200) {
-      return GetAcademyCoursesModel.fromJson(data['data']);
+      return GetCoursesToSubscribeModel.fromJson(data['data']);
     } else {
       throw ServerException(errorModel: ErrorModel.formJson(data));
     }
@@ -120,6 +129,59 @@ class AcademyRemoteDataSource extends BaseAcademyRemoteDataSource {
     if (response.statusCode == 200) {
       return List<AcademyReviewModel>.from(
           data['data']['reviews'].map((e) => AcademyReviewModel.fromJson(e)));
+    } else {
+      throw ServerException(errorModel: ErrorModel.formJson(data));
+    }
+  }
+
+  @override
+  Future<List<SuggestedAcademyEntity>> getAllAcademies(
+      {required AllAcademiesParams params}) async {
+    final getParams = params.toMap();
+    final response = await ApiService.get(ApiConstance.getAllAcademies,
+        queryParams: getParams);
+    final data = response.data;
+    print('$data getAllAcademies');
+
+    if (response.statusCode == 200) {
+      return List<SuggestedAcademyModel>.from(
+          data['data'].map((e) => SuggestedAcademyModel.fromJson(e)));
+    } else {
+      throw ServerException(errorModel: ErrorModel.formJson(data));
+    }
+  }
+
+  @override
+  Future<bool> inrollUserInCourse(
+      {required InrollUserInCourseParams params}) async {
+    final queryParams = params.toMap();
+    final response = await ApiService.post(
+      ApiConstance.inrollUserInCourse,
+      queryParams,
+    );
+    final data = response.data;
+    print('$data inrollUserInCourse');
+
+    if (response.statusCode == 200) {
+      return true;
+    } else {
+      throw ServerException(errorModel: ErrorModel.formJson(data));
+    }
+  }
+
+  @override
+  Future<bool> addAcademyReview(
+      {required AddAcademyReviewParams params}) async {
+    final queryParams = params.toMap();
+    final response = await ApiService.post(
+      ApiConstance.addAcademyReivew,
+      queryParams,
+    );
+    final data = response.data;
+    print('$data addAcademyReivew');
+
+    if (response.statusCode == 200) {
+      return true;
     } else {
       throw ServerException(errorModel: ErrorModel.formJson(data));
     }

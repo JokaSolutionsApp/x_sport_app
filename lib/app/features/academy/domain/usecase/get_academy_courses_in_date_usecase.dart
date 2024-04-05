@@ -1,17 +1,17 @@
 import 'package:dartz/dartz.dart';
 
 import '../../../../../core/error/failure.dart';
-import '../enitites/get_academy_courses_entity.dart';
+import '../enitites/get_courses_to_subscribe_entity.dart';
 import '../repository/base_academy_repository.dart';
 
-class GetAcademyCoursesInDateUseCase {
+class GetCoursesToSubscribeInDateUseCase {
   final BaseAcademyRepository repository;
 
-  GetAcademyCoursesInDateUseCase(this.repository);
+  GetCoursesToSubscribeInDateUseCase(this.repository);
 
-  Future<Either<Failure, GetAcademyCoursesEntity>> call(
+  Future<Either<Failure, GetCoursesToSubscribeEntity>> call(
       {required int academyId, required String targetDate}) async {
-    return await repository.getAcademyCoursesInDate(
+    return await repository.getCoursesToSubscribeInDate(
       academyId: academyId,
       targetDate: targetDate,
     );

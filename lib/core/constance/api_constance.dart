@@ -20,11 +20,15 @@ class ApiConstance {
 
 // Academy
   static const getSuggestedAcademies = 'Academy/GetSuggestedAcademies';
+  static const getAllAcademies = 'Academy/GetAllAcademies';
   static const aboutAcademyAcademies = 'Academy/GetAboutAcademy';
-  static const getAcademyCourses = 'Academy/GetAcademyCourses';
-  static const getAcademyCoursesinDate = 'Academy/GetAcademyCoursesInDate';
+  static const getCoursesToSubscribe = 'Academy/GetCoursesToSubscribe';
+  static const getCoursesToSubscribeinDate =
+      'Academy/getCoursesToSubscribeInDate';
   static const getAcademyReviews = 'Academy/GetAcademyReviews';
   static const getSportsMemberShip = 'Academy/GetSportsMemberShip';
+  static const inrollUserInCourse = 'User/InrollUserInCourse';
+  static const addAcademyReivew = 'User/AddAcademyReview';
 
 // Academy
   static const getNearByStadiums = 'Stadium/GetNearByStadiums';

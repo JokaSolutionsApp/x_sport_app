@@ -1,18 +1,19 @@
 import 'package:dartz/dartz.dart';
+import 'package:x_sport/app/features/academy/domain/enitites/params/acedemy_params.dart';
 import '../enitites/academy_course_entity.dart';
-import '../enitites/get_academy_courses_entity.dart';
+import '../enitites/get_courses_to_subscribe_entity.dart';
 import '../../../auth/domain/enitites/sport_entity.dart';
 
 import '../../../../../core/error/failure.dart';
 import '../repository/base_academy_repository.dart';
 
-class GetAcademyCoursesUseCase {
+class GetCoursesToSubscribeUseCase {
   final BaseAcademyRepository repository;
 
-  GetAcademyCoursesUseCase(this.repository);
+  GetCoursesToSubscribeUseCase(this.repository);
 
-  Future<Either<Failure, GetAcademyCoursesEntity>> call(
-      {required int academyId}) async {
-    return await repository.getAcademyCourses(academyId: academyId);
+  Future<Either<Failure, List<GetCoursesToSubscribeEntity>>> call(
+      {required CourseParams params}) async {
+    return await repository.getCoursesToSubscribe(params: params);
   }
 }

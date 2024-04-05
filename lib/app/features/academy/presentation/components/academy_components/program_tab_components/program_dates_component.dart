@@ -7,7 +7,6 @@ import '../../../../domain/enitites/age_category_with_cources.dart';
 import '../../../../../../../core/constance/app_constance.dart';
 
 class ProgramDatesComponent extends StatelessWidget {
-  final List<AgeCategoryWithCoursesEntity> program;
   final List<String> dayMaps = ['sun', 'mon', 'tus', 'wed', 'thu', 'fri'];
 
   final List<String> ages = ['تحت 7 سنين', 'Item 2', 'Item 3', 'Item 4'];
@@ -16,7 +15,7 @@ class ProgramDatesComponent extends StatelessWidget {
 
   final ValueNotifier<int?> isSelectedIndex = ValueNotifier<int?>(null);
 
-  ProgramDatesComponent({super.key, required this.program});
+  ProgramDatesComponent({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -144,10 +143,10 @@ class ProgramDatesComponent extends StatelessWidget {
                     onChanged: (newValue) {
                       selectedAge.value = newValue!;
                     },
-                    items: program.map((item) {
+                    items: ages.map((item) {
                       return DropdownMenuItem<String>(
-                        value: item.toAge.toString(),
-                        child: Text(item.toAge.toString()),
+                        value: item.toString(),
+                        child: Text(item.toString()),
                       );
                     }).toList(),
                   ),

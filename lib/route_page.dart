@@ -29,7 +29,7 @@ class RoutePage extends StatelessWidget {
           if (value.userAuthState == UserAuthState.loggedIn) {
             return MainPage();
           } else if (value.userAuthState == UserAuthState.welcome) {
-            return WelcomePage();
+            return LoginPage();
           } else {
             return LoginPage();
           }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:x_sport/app/features/academy/presentation/components/course_card.dart';
+import 'package:x_sport/app/features/academy/presentation/pages/academy_register_page.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
 import 'package:x_sport/main.dart';
 
@@ -54,7 +55,11 @@ class CoursesPage extends StatelessWidget {
               SizedBox(
                 width: 190.w,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(navigatorKey.currentContext!).push(
+                        MaterialPageRoute(
+                            builder: (context) => const AcademyRegisterPage()));
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: XColors.primary,
                     foregroundColor: const Color.fromRGBO(255, 255, 255, 1),

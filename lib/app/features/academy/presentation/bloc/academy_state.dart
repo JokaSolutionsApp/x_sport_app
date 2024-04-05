@@ -24,6 +24,15 @@ class AcademyState with _$AcademyState {
     @Default([]) List<SuggestedAcademyEntity> suggestedAcademies,
   }) = _SuggestedAcademiesFetched;
 
+  // Get All Academies
+  const factory AcademyState.getAllAcademiesLoading() = _GetAllAcademiesLoading;
+  const factory AcademyState.getAllAcademiesFailure({
+    @Default(null) Failure? failure,
+  }) = _GetAllAcademiesFailure;
+  const factory AcademyState.allAcademiesFetched({
+    @Default([]) List<SuggestedAcademyEntity> allAcademies,
+  }) = _AllAcademiesFetched;
+
   // Get About Academy
   const factory AcademyState.getAboutAcademyLoading() = _GetAboutAcademyLoading;
   const factory AcademyState.getAboutAcademyFailure({
@@ -34,23 +43,23 @@ class AcademyState with _$AcademyState {
   }) = _AboutAcademyFetched;
 
   // Get Academy Courses
-  const factory AcademyState.getAcademyCoursesLoading() =
-      _GetAcademyCoursesLoading;
-  const factory AcademyState.getAcademyCoursesFailure({
+  const factory AcademyState.getCoursesToSubscribeLoading() =
+      _GetCoursesToSubscribeLoading;
+  const factory AcademyState.getCoursesToSubscribeFailure({
     @Default(null) Failure? failure,
-  }) = _GetAcademyCoursesFailure;
+  }) = _GetCoursesToSubscribeFailure;
   const factory AcademyState.academyCoursesFetched({
-    @Default(null) GetAcademyCoursesEntity? academyCourses,
+    @Default([]) List<GetCoursesToSubscribeEntity> academyCourses,
   }) = _AcademyCoursesFetched;
 
   // Get Academy Courses In Date
-  const factory AcademyState.getAcademyCoursesInDateLoading() =
-      _GetAcademyCoursesInDateLoading;
-  const factory AcademyState.getAcademyCoursesInDateFailure({
+  const factory AcademyState.getCoursesToSubscribeInDateLoading() =
+      _GetCoursesToSubscribeInDateLoading;
+  const factory AcademyState.getCoursesToSubscribeInDateFailure({
     @Default(null) Failure? failure,
-  }) = _GetAcademyCoursesInDateFailure;
+  }) = _GetCoursesToSubscribeInDateFailure;
   const factory AcademyState.academyCoursesInDateFetched({
-    @Default(null) GetAcademyCoursesEntity? academyCoursesInDate,
+    @Default(null) GetCoursesToSubscribeEntity? academyCoursesInDate,
   }) = _AcademyCoursesInDateFetched;
 
   // Get Academy Review
@@ -62,4 +71,24 @@ class AcademyState with _$AcademyState {
   const factory AcademyState.academyReviewFetched({
     @Default([]) List<AcademyReviewEntity> academyReview,
   }) = _AcademyReviewFetched;
+
+  //  Inroll UserIn Course
+  const factory AcademyState.inrollUserInCourseLoading() =
+      _InrollUserInCourseLoadingLoading;
+  const factory AcademyState.inrollUserInCourseFailure({
+    @Default(null) Failure? failure,
+  }) = _InrollUserInCourseFailure;
+  const factory AcademyState.courseInrolled({
+    @Default(false) bool courseInrolled,
+  }) = _CourseInrolled;
+
+  // Get Academy Review
+  const factory AcademyState.addAcademyReviewLoading() =
+      _AddAcademyReviewLoading;
+  const factory AcademyState.addAcademyReviewFailure({
+    @Default(null) Failure? failure,
+  }) = _AddAcademyReviewFailure;
+  const factory AcademyState.reviewAdded({
+    @Default(false) bool reviewAdded,
+  }) = _ReviewAdded;
 }

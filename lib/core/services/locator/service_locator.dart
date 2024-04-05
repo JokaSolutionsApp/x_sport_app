@@ -4,6 +4,9 @@ import 'package:crypto/crypto.dart';
 import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
 import 'package:get_it/get_it.dart';
+import 'package:x_sport/app/features/academy/domain/usecase/add_academy_review.dart';
+import 'package:x_sport/app/features/academy/domain/usecase/get_all_Academies.dart';
+import 'package:x_sport/app/features/academy/domain/usecase/inroll_user_in_course.dart';
 import 'package:x_sport/app/features/courts/data/datasource/stadium_remote_datasource.dart';
 import 'package:x_sport/app/features/courts/data/repository/court_repository.dart';
 import 'package:x_sport/app/features/courts/domain/repository/base_stadium_repository.dart';
@@ -76,7 +79,7 @@ class ServiceLocator {
 
       // Your server's SHA256 fingerprint
       String fingerprint =
-          '1D16E832256AA9BB617E601291A12E10097C61017C7212204AD6CB0F5396D3FB'
+          '3d6c81063063e032d244b7e0274d171abbf9f6a67cf84f0b07c4609ae98d9d7a'
               .toLowerCase();
 
       dio.httpClientAdapter = IOHttpClientAdapter(
@@ -145,6 +148,9 @@ class ServiceLocator {
           sl(),
           sl(),
           sl(),
+          sl(),
+          sl(),
+          sl(),
         ));
 
     sl.registerFactory(() => StadiumBloc(
@@ -176,11 +182,14 @@ class ServiceLocator {
 
     // academy bloc usecases
     sl.registerLazySingleton(() => GetSuggestedAcademiesUseCase(sl()));
+    sl.registerLazySingleton(() => GetAllAcademiesUseCase(sl()));
     sl.registerLazySingleton(() => GetAboutAcademyUseCase(sl()));
-    sl.registerLazySingleton(() => GetAcademyCoursesUseCase(sl()));
-    sl.registerLazySingleton(() => GetAcademyCoursesInDateUseCase(sl()));
+    sl.registerLazySingleton(() => GetCoursesToSubscribeUseCase(sl()));
+    sl.registerLazySingleton(() => GetCoursesToSubscribeInDateUseCase(sl()));
     sl.registerLazySingleton(() => GetAcademyReviewUseCase(sl()));
     sl.registerLazySingleton(() => GetSportsMembershipUseCase(sl()));
+    sl.registerLazySingleton(() => InrollUserInCourseUseCase(sl()));
+    sl.registerLazySingleton(() => AddAcademyReviewUseCase(sl()));
 
     // stadium bloc usecases
     sl.registerLazySingleton(() => GetFreindsStadiumsCase(sl()));

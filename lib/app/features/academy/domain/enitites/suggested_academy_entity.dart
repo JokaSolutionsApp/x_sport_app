@@ -9,6 +9,10 @@ class SuggestedAcademyEntity extends Equatable {
   final String name;
   @JsonKey(name: 'description')
   final String description;
+
+  @JsonKey(name: 'regionName')
+  final String regionName;
+
   @JsonKey(name: 'lat')
   final double lat;
   @JsonKey(name: 'long')
@@ -36,6 +40,7 @@ class SuggestedAcademyEntity extends Equatable {
     required this.academyId,
     required this.name,
     required this.description,
+    required this.regionName,
     required this.lat,
     required this.long,
     required this.minPrice,
@@ -54,6 +59,7 @@ class SuggestedAcademyEntity extends Equatable {
         academyId,
         name,
         description,
+        regionName,
         lat,
         long,
         minPrice,

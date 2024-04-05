@@ -27,7 +27,8 @@ class _AcademiesPageState extends State<AcademiesPage> {
   void initState() {
     super.initState();
     context.read<AcademyBloc>().add(AcademyEvent.getSuggestedAcademies(
-        params: SuggestedAcademyParams(pageSize: 1, pageNumber: 1)));
+        params:
+            SuggestedAcademyParams(pageSize: 1, pageNumber: 1, sportId: 1)));
   }
 
   @override

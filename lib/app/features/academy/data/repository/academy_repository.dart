@@ -5,7 +5,7 @@ import '../../../../../core/error/failure.dart';
 import '../../domain/enitites/about_academy_entity.dart';
 import '../../domain/enitites/academy_membership_entity.dart';
 import '../../domain/enitites/academy_review_entity.dart';
-import '../../domain/enitites/get_academy_courses_entity.dart';
+import '../../domain/enitites/get_courses_to_subscribe_entity.dart';
 import '../../domain/enitites/params/acedemy_params.dart';
 import '../../domain/enitites/suggested_academy_entity.dart';
 import '../../domain/repository/base_academy_repository.dart';
@@ -55,11 +55,11 @@ class AcademyRepository extends BaseAcademyRepository {
   }
 
   @override
-  Future<Either<Failure, GetAcademyCoursesEntity>> getAcademyCourses(
-      {required int academyId}) async {
+  Future<Either<Failure, List<GetCoursesToSubscribeEntity>>>
+      getCoursesToSubscribe({required CourseParams params}) async {
     try {
-      final result = await baseAcademyRemoteDataSource.getAcademyCourses(
-          academyId: academyId);
+      final result = await baseAcademyRemoteDataSource.getCoursesToSubscribe(
+          params: params);
 
       return Right(result);
     } on ServerException catch (failuar) {
@@ -68,10 +68,12 @@ class AcademyRepository extends BaseAcademyRepository {
   }
 
   @override
-  Future<Either<Failure, GetAcademyCoursesEntity>> getAcademyCoursesInDate(
-      {required int academyId, required String targetDate}) async {
+  Future<Either<Failure, GetCoursesToSubscribeEntity>>
+      getCoursesToSubscribeInDate(
+          {required int academyId, required String targetDate}) async {
     try {
-      final result = await baseAcademyRemoteDataSource.getAcademyCoursesInDate(
+      final result =
+          await baseAcademyRemoteDataSource.getCoursesToSubscribeInDate(
         academyId: academyId,
         targetDate: targetDate,
       );
@@ -88,6 +90,45 @@ class AcademyRepository extends BaseAcademyRepository {
     try {
       final result = await baseAcademyRemoteDataSource.getAcademyReview(
           academyId: academyId);
+
+      return Right(result);
+    } on ServerException catch (failuar) {
+      return Left(ServerFailure(failuar.errorModel.statusCode));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<SuggestedAcademyEntity>>> getAllAcademies(
+      {required AllAcademiesParams params}) async {
+    try {
+      final result =
+          await baseAcademyRemoteDataSource.getAllAcademies(params: params);
+
+      return Right(result);
+    } on ServerException catch (failuar) {
+      return Left(ServerFailure(failuar.errorModel.statusCode));
+    }
+  }
+
+  @override
+  Future<Either<Failure, bool>> inrollUserInCourse(
+      {required InrollUserInCourseParams params}) async {
+    try {
+      final result =
+          await baseAcademyRemoteDataSource.inrollUserInCourse(params: params);
+
+      return Right(result);
+    } on ServerException catch (failuar) {
+      return Left(ServerFailure(failuar.errorModel.statusCode));
+    }
+  }
+
+  @override
+  Future<Either<Failure, bool>> addAcademyReview(
+      {required AddAcademyReviewParams params}) async {
+    try {
+      final result =
+          await baseAcademyRemoteDataSource.addAcademyReview(params: params);
 
       return Right(result);
     } on ServerException catch (failuar) {

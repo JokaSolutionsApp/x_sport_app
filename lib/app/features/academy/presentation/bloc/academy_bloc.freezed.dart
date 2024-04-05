@@ -21,32 +21,43 @@ mixin _$AcademyEvent {
     required TResult Function() getSportsMembership,
     required TResult Function(SuggestedAcademyParams params)
         getSuggestedAcademies,
+    required TResult Function(AllAcademiesParams params) getAllAcademies,
     required TResult Function(int academyId) getAboutAcademy,
-    required TResult Function(int academyId) getAcademyCourses,
+    required TResult Function(CourseParams params) getCoursesToSubscribe,
     required TResult Function(int academyId, String targetDate)
-        getAcademyCoursesInDate,
+        getCoursesToSubscribeInDate,
     required TResult Function(int academyId) getAcademyReview,
+    required TResult Function(InrollUserInCourseParams params)
+        inrollUserInCourse,
+    required TResult Function(AddAcademyReviewParams params) addAcademyReview,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getSportsMembership,
     TResult? Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult? Function(AllAcademiesParams params)? getAllAcademies,
     TResult? Function(int academyId)? getAboutAcademy,
-    TResult? Function(int academyId)? getAcademyCourses,
+    TResult? Function(CourseParams params)? getCoursesToSubscribe,
     TResult? Function(int academyId, String targetDate)?
-        getAcademyCoursesInDate,
+        getCoursesToSubscribeInDate,
     TResult? Function(int academyId)? getAcademyReview,
+    TResult? Function(InrollUserInCourseParams params)? inrollUserInCourse,
+    TResult? Function(AddAcademyReviewParams params)? addAcademyReview,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getSportsMembership,
     TResult Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult Function(AllAcademiesParams params)? getAllAcademies,
     TResult Function(int academyId)? getAboutAcademy,
-    TResult Function(int academyId)? getAcademyCourses,
-    TResult Function(int academyId, String targetDate)? getAcademyCoursesInDate,
+    TResult Function(CourseParams params)? getCoursesToSubscribe,
+    TResult Function(int academyId, String targetDate)?
+        getCoursesToSubscribeInDate,
     TResult Function(int academyId)? getAcademyReview,
+    TResult Function(InrollUserInCourseParams params)? inrollUserInCourse,
+    TResult Function(AddAcademyReviewParams params)? addAcademyReview,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -56,33 +67,44 @@ mixin _$AcademyEvent {
         getSportsMembership,
     required TResult Function(_GetSuggestedAcademiesEvent value)
         getSuggestedAcademies,
+    required TResult Function(_GetAllAcademiesEvent value) getAllAcademies,
     required TResult Function(_GetAboutAcademyEvent value) getAboutAcademy,
-    required TResult Function(_GetAcademyCoursesEvent value) getAcademyCourses,
-    required TResult Function(_GetAcademyCoursesInDateEvent value)
-        getAcademyCoursesInDate,
+    required TResult Function(_GetCoursesToSubscribeEvent value)
+        getCoursesToSubscribe,
+    required TResult Function(_getCoursesToSubscribeInDateEvent value)
+        getCoursesToSubscribeInDate,
     required TResult Function(_GetAcademyReviewEvent value) getAcademyReview,
+    required TResult Function(_InrollUserInCourseEvent value)
+        inrollUserInCourse,
+    required TResult Function(_AddAcademyReviewEvent value) addAcademyReview,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetSportsMembershipEvent value)? getSportsMembership,
     TResult? Function(_GetSuggestedAcademiesEvent value)? getSuggestedAcademies,
+    TResult? Function(_GetAllAcademiesEvent value)? getAllAcademies,
     TResult? Function(_GetAboutAcademyEvent value)? getAboutAcademy,
-    TResult? Function(_GetAcademyCoursesEvent value)? getAcademyCourses,
-    TResult? Function(_GetAcademyCoursesInDateEvent value)?
-        getAcademyCoursesInDate,
+    TResult? Function(_GetCoursesToSubscribeEvent value)? getCoursesToSubscribe,
+    TResult? Function(_getCoursesToSubscribeInDateEvent value)?
+        getCoursesToSubscribeInDate,
     TResult? Function(_GetAcademyReviewEvent value)? getAcademyReview,
+    TResult? Function(_InrollUserInCourseEvent value)? inrollUserInCourse,
+    TResult? Function(_AddAcademyReviewEvent value)? addAcademyReview,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetSportsMembershipEvent value)? getSportsMembership,
     TResult Function(_GetSuggestedAcademiesEvent value)? getSuggestedAcademies,
+    TResult Function(_GetAllAcademiesEvent value)? getAllAcademies,
     TResult Function(_GetAboutAcademyEvent value)? getAboutAcademy,
-    TResult Function(_GetAcademyCoursesEvent value)? getAcademyCourses,
-    TResult Function(_GetAcademyCoursesInDateEvent value)?
-        getAcademyCoursesInDate,
+    TResult Function(_GetCoursesToSubscribeEvent value)? getCoursesToSubscribe,
+    TResult Function(_getCoursesToSubscribeInDateEvent value)?
+        getCoursesToSubscribeInDate,
     TResult Function(_GetAcademyReviewEvent value)? getAcademyReview,
+    TResult Function(_InrollUserInCourseEvent value)? inrollUserInCourse,
+    TResult Function(_AddAcademyReviewEvent value)? addAcademyReview,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -150,11 +172,15 @@ class _$GetSportsMembershipEventImpl implements _GetSportsMembershipEvent {
     required TResult Function() getSportsMembership,
     required TResult Function(SuggestedAcademyParams params)
         getSuggestedAcademies,
+    required TResult Function(AllAcademiesParams params) getAllAcademies,
     required TResult Function(int academyId) getAboutAcademy,
-    required TResult Function(int academyId) getAcademyCourses,
+    required TResult Function(CourseParams params) getCoursesToSubscribe,
     required TResult Function(int academyId, String targetDate)
-        getAcademyCoursesInDate,
+        getCoursesToSubscribeInDate,
     required TResult Function(int academyId) getAcademyReview,
+    required TResult Function(InrollUserInCourseParams params)
+        inrollUserInCourse,
+    required TResult Function(AddAcademyReviewParams params) addAcademyReview,
   }) {
     return getSportsMembership();
   }
@@ -164,11 +190,14 @@ class _$GetSportsMembershipEventImpl implements _GetSportsMembershipEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getSportsMembership,
     TResult? Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult? Function(AllAcademiesParams params)? getAllAcademies,
     TResult? Function(int academyId)? getAboutAcademy,
-    TResult? Function(int academyId)? getAcademyCourses,
+    TResult? Function(CourseParams params)? getCoursesToSubscribe,
     TResult? Function(int academyId, String targetDate)?
-        getAcademyCoursesInDate,
+        getCoursesToSubscribeInDate,
     TResult? Function(int academyId)? getAcademyReview,
+    TResult? Function(InrollUserInCourseParams params)? inrollUserInCourse,
+    TResult? Function(AddAcademyReviewParams params)? addAcademyReview,
   }) {
     return getSportsMembership?.call();
   }
@@ -178,10 +207,14 @@ class _$GetSportsMembershipEventImpl implements _GetSportsMembershipEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getSportsMembership,
     TResult Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult Function(AllAcademiesParams params)? getAllAcademies,
     TResult Function(int academyId)? getAboutAcademy,
-    TResult Function(int academyId)? getAcademyCourses,
-    TResult Function(int academyId, String targetDate)? getAcademyCoursesInDate,
+    TResult Function(CourseParams params)? getCoursesToSubscribe,
+    TResult Function(int academyId, String targetDate)?
+        getCoursesToSubscribeInDate,
     TResult Function(int academyId)? getAcademyReview,
+    TResult Function(InrollUserInCourseParams params)? inrollUserInCourse,
+    TResult Function(AddAcademyReviewParams params)? addAcademyReview,
     required TResult orElse(),
   }) {
     if (getSportsMembership != null) {
@@ -197,11 +230,16 @@ class _$GetSportsMembershipEventImpl implements _GetSportsMembershipEvent {
         getSportsMembership,
     required TResult Function(_GetSuggestedAcademiesEvent value)
         getSuggestedAcademies,
+    required TResult Function(_GetAllAcademiesEvent value) getAllAcademies,
     required TResult Function(_GetAboutAcademyEvent value) getAboutAcademy,
-    required TResult Function(_GetAcademyCoursesEvent value) getAcademyCourses,
-    required TResult Function(_GetAcademyCoursesInDateEvent value)
-        getAcademyCoursesInDate,
+    required TResult Function(_GetCoursesToSubscribeEvent value)
+        getCoursesToSubscribe,
+    required TResult Function(_getCoursesToSubscribeInDateEvent value)
+        getCoursesToSubscribeInDate,
     required TResult Function(_GetAcademyReviewEvent value) getAcademyReview,
+    required TResult Function(_InrollUserInCourseEvent value)
+        inrollUserInCourse,
+    required TResult Function(_AddAcademyReviewEvent value) addAcademyReview,
   }) {
     return getSportsMembership(this);
   }
@@ -211,11 +249,14 @@ class _$GetSportsMembershipEventImpl implements _GetSportsMembershipEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetSportsMembershipEvent value)? getSportsMembership,
     TResult? Function(_GetSuggestedAcademiesEvent value)? getSuggestedAcademies,
+    TResult? Function(_GetAllAcademiesEvent value)? getAllAcademies,
     TResult? Function(_GetAboutAcademyEvent value)? getAboutAcademy,
-    TResult? Function(_GetAcademyCoursesEvent value)? getAcademyCourses,
-    TResult? Function(_GetAcademyCoursesInDateEvent value)?
-        getAcademyCoursesInDate,
+    TResult? Function(_GetCoursesToSubscribeEvent value)? getCoursesToSubscribe,
+    TResult? Function(_getCoursesToSubscribeInDateEvent value)?
+        getCoursesToSubscribeInDate,
     TResult? Function(_GetAcademyReviewEvent value)? getAcademyReview,
+    TResult? Function(_InrollUserInCourseEvent value)? inrollUserInCourse,
+    TResult? Function(_AddAcademyReviewEvent value)? addAcademyReview,
   }) {
     return getSportsMembership?.call(this);
   }
@@ -225,11 +266,14 @@ class _$GetSportsMembershipEventImpl implements _GetSportsMembershipEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetSportsMembershipEvent value)? getSportsMembership,
     TResult Function(_GetSuggestedAcademiesEvent value)? getSuggestedAcademies,
+    TResult Function(_GetAllAcademiesEvent value)? getAllAcademies,
     TResult Function(_GetAboutAcademyEvent value)? getAboutAcademy,
-    TResult Function(_GetAcademyCoursesEvent value)? getAcademyCourses,
-    TResult Function(_GetAcademyCoursesInDateEvent value)?
-        getAcademyCoursesInDate,
+    TResult Function(_GetCoursesToSubscribeEvent value)? getCoursesToSubscribe,
+    TResult Function(_getCoursesToSubscribeInDateEvent value)?
+        getCoursesToSubscribeInDate,
     TResult Function(_GetAcademyReviewEvent value)? getAcademyReview,
+    TResult Function(_InrollUserInCourseEvent value)? inrollUserInCourse,
+    TResult Function(_AddAcademyReviewEvent value)? addAcademyReview,
     required TResult orElse(),
   }) {
     if (getSportsMembership != null) {
@@ -313,11 +357,15 @@ class _$GetSuggestedAcademiesEventImpl implements _GetSuggestedAcademiesEvent {
     required TResult Function() getSportsMembership,
     required TResult Function(SuggestedAcademyParams params)
         getSuggestedAcademies,
+    required TResult Function(AllAcademiesParams params) getAllAcademies,
     required TResult Function(int academyId) getAboutAcademy,
-    required TResult Function(int academyId) getAcademyCourses,
+    required TResult Function(CourseParams params) getCoursesToSubscribe,
     required TResult Function(int academyId, String targetDate)
-        getAcademyCoursesInDate,
+        getCoursesToSubscribeInDate,
     required TResult Function(int academyId) getAcademyReview,
+    required TResult Function(InrollUserInCourseParams params)
+        inrollUserInCourse,
+    required TResult Function(AddAcademyReviewParams params) addAcademyReview,
   }) {
     return getSuggestedAcademies(params);
   }
@@ -327,11 +375,14 @@ class _$GetSuggestedAcademiesEventImpl implements _GetSuggestedAcademiesEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getSportsMembership,
     TResult? Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult? Function(AllAcademiesParams params)? getAllAcademies,
     TResult? Function(int academyId)? getAboutAcademy,
-    TResult? Function(int academyId)? getAcademyCourses,
+    TResult? Function(CourseParams params)? getCoursesToSubscribe,
     TResult? Function(int academyId, String targetDate)?
-        getAcademyCoursesInDate,
+        getCoursesToSubscribeInDate,
     TResult? Function(int academyId)? getAcademyReview,
+    TResult? Function(InrollUserInCourseParams params)? inrollUserInCourse,
+    TResult? Function(AddAcademyReviewParams params)? addAcademyReview,
   }) {
     return getSuggestedAcademies?.call(params);
   }
@@ -341,10 +392,14 @@ class _$GetSuggestedAcademiesEventImpl implements _GetSuggestedAcademiesEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getSportsMembership,
     TResult Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult Function(AllAcademiesParams params)? getAllAcademies,
     TResult Function(int academyId)? getAboutAcademy,
-    TResult Function(int academyId)? getAcademyCourses,
-    TResult Function(int academyId, String targetDate)? getAcademyCoursesInDate,
+    TResult Function(CourseParams params)? getCoursesToSubscribe,
+    TResult Function(int academyId, String targetDate)?
+        getCoursesToSubscribeInDate,
     TResult Function(int academyId)? getAcademyReview,
+    TResult Function(InrollUserInCourseParams params)? inrollUserInCourse,
+    TResult Function(AddAcademyReviewParams params)? addAcademyReview,
     required TResult orElse(),
   }) {
     if (getSuggestedAcademies != null) {
@@ -360,11 +415,16 @@ class _$GetSuggestedAcademiesEventImpl implements _GetSuggestedAcademiesEvent {
         getSportsMembership,
     required TResult Function(_GetSuggestedAcademiesEvent value)
         getSuggestedAcademies,
+    required TResult Function(_GetAllAcademiesEvent value) getAllAcademies,
     required TResult Function(_GetAboutAcademyEvent value) getAboutAcademy,
-    required TResult Function(_GetAcademyCoursesEvent value) getAcademyCourses,
-    required TResult Function(_GetAcademyCoursesInDateEvent value)
-        getAcademyCoursesInDate,
+    required TResult Function(_GetCoursesToSubscribeEvent value)
+        getCoursesToSubscribe,
+    required TResult Function(_getCoursesToSubscribeInDateEvent value)
+        getCoursesToSubscribeInDate,
     required TResult Function(_GetAcademyReviewEvent value) getAcademyReview,
+    required TResult Function(_InrollUserInCourseEvent value)
+        inrollUserInCourse,
+    required TResult Function(_AddAcademyReviewEvent value) addAcademyReview,
   }) {
     return getSuggestedAcademies(this);
   }
@@ -374,11 +434,14 @@ class _$GetSuggestedAcademiesEventImpl implements _GetSuggestedAcademiesEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetSportsMembershipEvent value)? getSportsMembership,
     TResult? Function(_GetSuggestedAcademiesEvent value)? getSuggestedAcademies,
+    TResult? Function(_GetAllAcademiesEvent value)? getAllAcademies,
     TResult? Function(_GetAboutAcademyEvent value)? getAboutAcademy,
-    TResult? Function(_GetAcademyCoursesEvent value)? getAcademyCourses,
-    TResult? Function(_GetAcademyCoursesInDateEvent value)?
-        getAcademyCoursesInDate,
+    TResult? Function(_GetCoursesToSubscribeEvent value)? getCoursesToSubscribe,
+    TResult? Function(_getCoursesToSubscribeInDateEvent value)?
+        getCoursesToSubscribeInDate,
     TResult? Function(_GetAcademyReviewEvent value)? getAcademyReview,
+    TResult? Function(_InrollUserInCourseEvent value)? inrollUserInCourse,
+    TResult? Function(_AddAcademyReviewEvent value)? addAcademyReview,
   }) {
     return getSuggestedAcademies?.call(this);
   }
@@ -388,11 +451,14 @@ class _$GetSuggestedAcademiesEventImpl implements _GetSuggestedAcademiesEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetSportsMembershipEvent value)? getSportsMembership,
     TResult Function(_GetSuggestedAcademiesEvent value)? getSuggestedAcademies,
+    TResult Function(_GetAllAcademiesEvent value)? getAllAcademies,
     TResult Function(_GetAboutAcademyEvent value)? getAboutAcademy,
-    TResult Function(_GetAcademyCoursesEvent value)? getAcademyCourses,
-    TResult Function(_GetAcademyCoursesInDateEvent value)?
-        getAcademyCoursesInDate,
+    TResult Function(_GetCoursesToSubscribeEvent value)? getCoursesToSubscribe,
+    TResult Function(_getCoursesToSubscribeInDateEvent value)?
+        getCoursesToSubscribeInDate,
     TResult Function(_GetAcademyReviewEvent value)? getAcademyReview,
+    TResult Function(_InrollUserInCourseEvent value)? inrollUserInCourse,
+    TResult Function(_AddAcademyReviewEvent value)? addAcademyReview,
     required TResult orElse(),
   }) {
     if (getSuggestedAcademies != null) {
@@ -410,6 +476,196 @@ abstract class _GetSuggestedAcademiesEvent implements AcademyEvent {
   SuggestedAcademyParams get params;
   @JsonKey(ignore: true)
   _$$GetSuggestedAcademiesEventImplCopyWith<_$GetSuggestedAcademiesEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetAllAcademiesEventImplCopyWith<$Res> {
+  factory _$$GetAllAcademiesEventImplCopyWith(_$GetAllAcademiesEventImpl value,
+          $Res Function(_$GetAllAcademiesEventImpl) then) =
+      __$$GetAllAcademiesEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({AllAcademiesParams params});
+}
+
+/// @nodoc
+class __$$GetAllAcademiesEventImplCopyWithImpl<$Res>
+    extends _$AcademyEventCopyWithImpl<$Res, _$GetAllAcademiesEventImpl>
+    implements _$$GetAllAcademiesEventImplCopyWith<$Res> {
+  __$$GetAllAcademiesEventImplCopyWithImpl(_$GetAllAcademiesEventImpl _value,
+      $Res Function(_$GetAllAcademiesEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? params = null,
+  }) {
+    return _then(_$GetAllAcademiesEventImpl(
+      params: null == params
+          ? _value.params
+          : params // ignore: cast_nullable_to_non_nullable
+              as AllAcademiesParams,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetAllAcademiesEventImpl implements _GetAllAcademiesEvent {
+  const _$GetAllAcademiesEventImpl({required this.params});
+
+  @override
+  final AllAcademiesParams params;
+
+  @override
+  String toString() {
+    return 'AcademyEvent.getAllAcademies(params: $params)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetAllAcademiesEventImpl &&
+            (identical(other.params, params) || other.params == params));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, params);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetAllAcademiesEventImplCopyWith<_$GetAllAcademiesEventImpl>
+      get copyWith =>
+          __$$GetAllAcademiesEventImplCopyWithImpl<_$GetAllAcademiesEventImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getSportsMembership,
+    required TResult Function(SuggestedAcademyParams params)
+        getSuggestedAcademies,
+    required TResult Function(AllAcademiesParams params) getAllAcademies,
+    required TResult Function(int academyId) getAboutAcademy,
+    required TResult Function(CourseParams params) getCoursesToSubscribe,
+    required TResult Function(int academyId, String targetDate)
+        getCoursesToSubscribeInDate,
+    required TResult Function(int academyId) getAcademyReview,
+    required TResult Function(InrollUserInCourseParams params)
+        inrollUserInCourse,
+    required TResult Function(AddAcademyReviewParams params) addAcademyReview,
+  }) {
+    return getAllAcademies(params);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getSportsMembership,
+    TResult? Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult? Function(AllAcademiesParams params)? getAllAcademies,
+    TResult? Function(int academyId)? getAboutAcademy,
+    TResult? Function(CourseParams params)? getCoursesToSubscribe,
+    TResult? Function(int academyId, String targetDate)?
+        getCoursesToSubscribeInDate,
+    TResult? Function(int academyId)? getAcademyReview,
+    TResult? Function(InrollUserInCourseParams params)? inrollUserInCourse,
+    TResult? Function(AddAcademyReviewParams params)? addAcademyReview,
+  }) {
+    return getAllAcademies?.call(params);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getSportsMembership,
+    TResult Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult Function(AllAcademiesParams params)? getAllAcademies,
+    TResult Function(int academyId)? getAboutAcademy,
+    TResult Function(CourseParams params)? getCoursesToSubscribe,
+    TResult Function(int academyId, String targetDate)?
+        getCoursesToSubscribeInDate,
+    TResult Function(int academyId)? getAcademyReview,
+    TResult Function(InrollUserInCourseParams params)? inrollUserInCourse,
+    TResult Function(AddAcademyReviewParams params)? addAcademyReview,
+    required TResult orElse(),
+  }) {
+    if (getAllAcademies != null) {
+      return getAllAcademies(params);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetSportsMembershipEvent value)
+        getSportsMembership,
+    required TResult Function(_GetSuggestedAcademiesEvent value)
+        getSuggestedAcademies,
+    required TResult Function(_GetAllAcademiesEvent value) getAllAcademies,
+    required TResult Function(_GetAboutAcademyEvent value) getAboutAcademy,
+    required TResult Function(_GetCoursesToSubscribeEvent value)
+        getCoursesToSubscribe,
+    required TResult Function(_getCoursesToSubscribeInDateEvent value)
+        getCoursesToSubscribeInDate,
+    required TResult Function(_GetAcademyReviewEvent value) getAcademyReview,
+    required TResult Function(_InrollUserInCourseEvent value)
+        inrollUserInCourse,
+    required TResult Function(_AddAcademyReviewEvent value) addAcademyReview,
+  }) {
+    return getAllAcademies(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetSportsMembershipEvent value)? getSportsMembership,
+    TResult? Function(_GetSuggestedAcademiesEvent value)? getSuggestedAcademies,
+    TResult? Function(_GetAllAcademiesEvent value)? getAllAcademies,
+    TResult? Function(_GetAboutAcademyEvent value)? getAboutAcademy,
+    TResult? Function(_GetCoursesToSubscribeEvent value)? getCoursesToSubscribe,
+    TResult? Function(_getCoursesToSubscribeInDateEvent value)?
+        getCoursesToSubscribeInDate,
+    TResult? Function(_GetAcademyReviewEvent value)? getAcademyReview,
+    TResult? Function(_InrollUserInCourseEvent value)? inrollUserInCourse,
+    TResult? Function(_AddAcademyReviewEvent value)? addAcademyReview,
+  }) {
+    return getAllAcademies?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetSportsMembershipEvent value)? getSportsMembership,
+    TResult Function(_GetSuggestedAcademiesEvent value)? getSuggestedAcademies,
+    TResult Function(_GetAllAcademiesEvent value)? getAllAcademies,
+    TResult Function(_GetAboutAcademyEvent value)? getAboutAcademy,
+    TResult Function(_GetCoursesToSubscribeEvent value)? getCoursesToSubscribe,
+    TResult Function(_getCoursesToSubscribeInDateEvent value)?
+        getCoursesToSubscribeInDate,
+    TResult Function(_GetAcademyReviewEvent value)? getAcademyReview,
+    TResult Function(_InrollUserInCourseEvent value)? inrollUserInCourse,
+    TResult Function(_AddAcademyReviewEvent value)? addAcademyReview,
+    required TResult orElse(),
+  }) {
+    if (getAllAcademies != null) {
+      return getAllAcademies(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetAllAcademiesEvent implements AcademyEvent {
+  const factory _GetAllAcademiesEvent(
+      {required final AllAcademiesParams params}) = _$GetAllAcademiesEventImpl;
+
+  AllAcademiesParams get params;
+  @JsonKey(ignore: true)
+  _$$GetAllAcademiesEventImplCopyWith<_$GetAllAcademiesEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -483,11 +739,15 @@ class _$GetAboutAcademyEventImpl implements _GetAboutAcademyEvent {
     required TResult Function() getSportsMembership,
     required TResult Function(SuggestedAcademyParams params)
         getSuggestedAcademies,
+    required TResult Function(AllAcademiesParams params) getAllAcademies,
     required TResult Function(int academyId) getAboutAcademy,
-    required TResult Function(int academyId) getAcademyCourses,
+    required TResult Function(CourseParams params) getCoursesToSubscribe,
     required TResult Function(int academyId, String targetDate)
-        getAcademyCoursesInDate,
+        getCoursesToSubscribeInDate,
     required TResult Function(int academyId) getAcademyReview,
+    required TResult Function(InrollUserInCourseParams params)
+        inrollUserInCourse,
+    required TResult Function(AddAcademyReviewParams params) addAcademyReview,
   }) {
     return getAboutAcademy(academyId);
   }
@@ -497,11 +757,14 @@ class _$GetAboutAcademyEventImpl implements _GetAboutAcademyEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getSportsMembership,
     TResult? Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult? Function(AllAcademiesParams params)? getAllAcademies,
     TResult? Function(int academyId)? getAboutAcademy,
-    TResult? Function(int academyId)? getAcademyCourses,
+    TResult? Function(CourseParams params)? getCoursesToSubscribe,
     TResult? Function(int academyId, String targetDate)?
-        getAcademyCoursesInDate,
+        getCoursesToSubscribeInDate,
     TResult? Function(int academyId)? getAcademyReview,
+    TResult? Function(InrollUserInCourseParams params)? inrollUserInCourse,
+    TResult? Function(AddAcademyReviewParams params)? addAcademyReview,
   }) {
     return getAboutAcademy?.call(academyId);
   }
@@ -511,10 +774,14 @@ class _$GetAboutAcademyEventImpl implements _GetAboutAcademyEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getSportsMembership,
     TResult Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult Function(AllAcademiesParams params)? getAllAcademies,
     TResult Function(int academyId)? getAboutAcademy,
-    TResult Function(int academyId)? getAcademyCourses,
-    TResult Function(int academyId, String targetDate)? getAcademyCoursesInDate,
+    TResult Function(CourseParams params)? getCoursesToSubscribe,
+    TResult Function(int academyId, String targetDate)?
+        getCoursesToSubscribeInDate,
     TResult Function(int academyId)? getAcademyReview,
+    TResult Function(InrollUserInCourseParams params)? inrollUserInCourse,
+    TResult Function(AddAcademyReviewParams params)? addAcademyReview,
     required TResult orElse(),
   }) {
     if (getAboutAcademy != null) {
@@ -530,11 +797,16 @@ class _$GetAboutAcademyEventImpl implements _GetAboutAcademyEvent {
         getSportsMembership,
     required TResult Function(_GetSuggestedAcademiesEvent value)
         getSuggestedAcademies,
+    required TResult Function(_GetAllAcademiesEvent value) getAllAcademies,
     required TResult Function(_GetAboutAcademyEvent value) getAboutAcademy,
-    required TResult Function(_GetAcademyCoursesEvent value) getAcademyCourses,
-    required TResult Function(_GetAcademyCoursesInDateEvent value)
-        getAcademyCoursesInDate,
+    required TResult Function(_GetCoursesToSubscribeEvent value)
+        getCoursesToSubscribe,
+    required TResult Function(_getCoursesToSubscribeInDateEvent value)
+        getCoursesToSubscribeInDate,
     required TResult Function(_GetAcademyReviewEvent value) getAcademyReview,
+    required TResult Function(_InrollUserInCourseEvent value)
+        inrollUserInCourse,
+    required TResult Function(_AddAcademyReviewEvent value) addAcademyReview,
   }) {
     return getAboutAcademy(this);
   }
@@ -544,11 +816,14 @@ class _$GetAboutAcademyEventImpl implements _GetAboutAcademyEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetSportsMembershipEvent value)? getSportsMembership,
     TResult? Function(_GetSuggestedAcademiesEvent value)? getSuggestedAcademies,
+    TResult? Function(_GetAllAcademiesEvent value)? getAllAcademies,
     TResult? Function(_GetAboutAcademyEvent value)? getAboutAcademy,
-    TResult? Function(_GetAcademyCoursesEvent value)? getAcademyCourses,
-    TResult? Function(_GetAcademyCoursesInDateEvent value)?
-        getAcademyCoursesInDate,
+    TResult? Function(_GetCoursesToSubscribeEvent value)? getCoursesToSubscribe,
+    TResult? Function(_getCoursesToSubscribeInDateEvent value)?
+        getCoursesToSubscribeInDate,
     TResult? Function(_GetAcademyReviewEvent value)? getAcademyReview,
+    TResult? Function(_InrollUserInCourseEvent value)? inrollUserInCourse,
+    TResult? Function(_AddAcademyReviewEvent value)? addAcademyReview,
   }) {
     return getAboutAcademy?.call(this);
   }
@@ -558,11 +833,14 @@ class _$GetAboutAcademyEventImpl implements _GetAboutAcademyEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetSportsMembershipEvent value)? getSportsMembership,
     TResult Function(_GetSuggestedAcademiesEvent value)? getSuggestedAcademies,
+    TResult Function(_GetAllAcademiesEvent value)? getAllAcademies,
     TResult Function(_GetAboutAcademyEvent value)? getAboutAcademy,
-    TResult Function(_GetAcademyCoursesEvent value)? getAcademyCourses,
-    TResult Function(_GetAcademyCoursesInDateEvent value)?
-        getAcademyCoursesInDate,
+    TResult Function(_GetCoursesToSubscribeEvent value)? getCoursesToSubscribe,
+    TResult Function(_getCoursesToSubscribeInDateEvent value)?
+        getCoursesToSubscribeInDate,
     TResult Function(_GetAcademyReviewEvent value)? getAcademyReview,
+    TResult Function(_InrollUserInCourseEvent value)? inrollUserInCourse,
+    TResult Function(_AddAcademyReviewEvent value)? addAcademyReview,
     required TResult orElse(),
   }) {
     if (getAboutAcademy != null) {
@@ -583,69 +861,68 @@ abstract class _GetAboutAcademyEvent implements AcademyEvent {
 }
 
 /// @nodoc
-abstract class _$$GetAcademyCoursesEventImplCopyWith<$Res> {
-  factory _$$GetAcademyCoursesEventImplCopyWith(
-          _$GetAcademyCoursesEventImpl value,
-          $Res Function(_$GetAcademyCoursesEventImpl) then) =
-      __$$GetAcademyCoursesEventImplCopyWithImpl<$Res>;
+abstract class _$$GetCoursesToSubscribeEventImplCopyWith<$Res> {
+  factory _$$GetCoursesToSubscribeEventImplCopyWith(
+          _$GetCoursesToSubscribeEventImpl value,
+          $Res Function(_$GetCoursesToSubscribeEventImpl) then) =
+      __$$GetCoursesToSubscribeEventImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int academyId});
+  $Res call({CourseParams params});
 }
 
 /// @nodoc
-class __$$GetAcademyCoursesEventImplCopyWithImpl<$Res>
-    extends _$AcademyEventCopyWithImpl<$Res, _$GetAcademyCoursesEventImpl>
-    implements _$$GetAcademyCoursesEventImplCopyWith<$Res> {
-  __$$GetAcademyCoursesEventImplCopyWithImpl(
-      _$GetAcademyCoursesEventImpl _value,
-      $Res Function(_$GetAcademyCoursesEventImpl) _then)
+class __$$GetCoursesToSubscribeEventImplCopyWithImpl<$Res>
+    extends _$AcademyEventCopyWithImpl<$Res, _$GetCoursesToSubscribeEventImpl>
+    implements _$$GetCoursesToSubscribeEventImplCopyWith<$Res> {
+  __$$GetCoursesToSubscribeEventImplCopyWithImpl(
+      _$GetCoursesToSubscribeEventImpl _value,
+      $Res Function(_$GetCoursesToSubscribeEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? academyId = null,
+    Object? params = null,
   }) {
-    return _then(_$GetAcademyCoursesEventImpl(
-      academyId: null == academyId
-          ? _value.academyId
-          : academyId // ignore: cast_nullable_to_non_nullable
-              as int,
+    return _then(_$GetCoursesToSubscribeEventImpl(
+      params: null == params
+          ? _value.params
+          : params // ignore: cast_nullable_to_non_nullable
+              as CourseParams,
     ));
   }
 }
 
 /// @nodoc
 
-class _$GetAcademyCoursesEventImpl implements _GetAcademyCoursesEvent {
-  const _$GetAcademyCoursesEventImpl({required this.academyId});
+class _$GetCoursesToSubscribeEventImpl implements _GetCoursesToSubscribeEvent {
+  const _$GetCoursesToSubscribeEventImpl({required this.params});
 
   @override
-  final int academyId;
+  final CourseParams params;
 
   @override
   String toString() {
-    return 'AcademyEvent.getAcademyCourses(academyId: $academyId)';
+    return 'AcademyEvent.getCoursesToSubscribe(params: $params)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetAcademyCoursesEventImpl &&
-            (identical(other.academyId, academyId) ||
-                other.academyId == academyId));
+            other is _$GetCoursesToSubscribeEventImpl &&
+            (identical(other.params, params) || other.params == params));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, academyId);
+  int get hashCode => Object.hash(runtimeType, params);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetAcademyCoursesEventImplCopyWith<_$GetAcademyCoursesEventImpl>
-      get copyWith => __$$GetAcademyCoursesEventImplCopyWithImpl<
-          _$GetAcademyCoursesEventImpl>(this, _$identity);
+  _$$GetCoursesToSubscribeEventImplCopyWith<_$GetCoursesToSubscribeEventImpl>
+      get copyWith => __$$GetCoursesToSubscribeEventImplCopyWithImpl<
+          _$GetCoursesToSubscribeEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -653,13 +930,17 @@ class _$GetAcademyCoursesEventImpl implements _GetAcademyCoursesEvent {
     required TResult Function() getSportsMembership,
     required TResult Function(SuggestedAcademyParams params)
         getSuggestedAcademies,
+    required TResult Function(AllAcademiesParams params) getAllAcademies,
     required TResult Function(int academyId) getAboutAcademy,
-    required TResult Function(int academyId) getAcademyCourses,
+    required TResult Function(CourseParams params) getCoursesToSubscribe,
     required TResult Function(int academyId, String targetDate)
-        getAcademyCoursesInDate,
+        getCoursesToSubscribeInDate,
     required TResult Function(int academyId) getAcademyReview,
+    required TResult Function(InrollUserInCourseParams params)
+        inrollUserInCourse,
+    required TResult Function(AddAcademyReviewParams params) addAcademyReview,
   }) {
-    return getAcademyCourses(academyId);
+    return getCoursesToSubscribe(params);
   }
 
   @override
@@ -667,13 +948,16 @@ class _$GetAcademyCoursesEventImpl implements _GetAcademyCoursesEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getSportsMembership,
     TResult? Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult? Function(AllAcademiesParams params)? getAllAcademies,
     TResult? Function(int academyId)? getAboutAcademy,
-    TResult? Function(int academyId)? getAcademyCourses,
+    TResult? Function(CourseParams params)? getCoursesToSubscribe,
     TResult? Function(int academyId, String targetDate)?
-        getAcademyCoursesInDate,
+        getCoursesToSubscribeInDate,
     TResult? Function(int academyId)? getAcademyReview,
+    TResult? Function(InrollUserInCourseParams params)? inrollUserInCourse,
+    TResult? Function(AddAcademyReviewParams params)? addAcademyReview,
   }) {
-    return getAcademyCourses?.call(academyId);
+    return getCoursesToSubscribe?.call(params);
   }
 
   @override
@@ -681,14 +965,18 @@ class _$GetAcademyCoursesEventImpl implements _GetAcademyCoursesEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getSportsMembership,
     TResult Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult Function(AllAcademiesParams params)? getAllAcademies,
     TResult Function(int academyId)? getAboutAcademy,
-    TResult Function(int academyId)? getAcademyCourses,
-    TResult Function(int academyId, String targetDate)? getAcademyCoursesInDate,
+    TResult Function(CourseParams params)? getCoursesToSubscribe,
+    TResult Function(int academyId, String targetDate)?
+        getCoursesToSubscribeInDate,
     TResult Function(int academyId)? getAcademyReview,
+    TResult Function(InrollUserInCourseParams params)? inrollUserInCourse,
+    TResult Function(AddAcademyReviewParams params)? addAcademyReview,
     required TResult orElse(),
   }) {
-    if (getAcademyCourses != null) {
-      return getAcademyCourses(academyId);
+    if (getCoursesToSubscribe != null) {
+      return getCoursesToSubscribe(params);
     }
     return orElse();
   }
@@ -700,13 +988,18 @@ class _$GetAcademyCoursesEventImpl implements _GetAcademyCoursesEvent {
         getSportsMembership,
     required TResult Function(_GetSuggestedAcademiesEvent value)
         getSuggestedAcademies,
+    required TResult Function(_GetAllAcademiesEvent value) getAllAcademies,
     required TResult Function(_GetAboutAcademyEvent value) getAboutAcademy,
-    required TResult Function(_GetAcademyCoursesEvent value) getAcademyCourses,
-    required TResult Function(_GetAcademyCoursesInDateEvent value)
-        getAcademyCoursesInDate,
+    required TResult Function(_GetCoursesToSubscribeEvent value)
+        getCoursesToSubscribe,
+    required TResult Function(_getCoursesToSubscribeInDateEvent value)
+        getCoursesToSubscribeInDate,
     required TResult Function(_GetAcademyReviewEvent value) getAcademyReview,
+    required TResult Function(_InrollUserInCourseEvent value)
+        inrollUserInCourse,
+    required TResult Function(_AddAcademyReviewEvent value) addAcademyReview,
   }) {
-    return getAcademyCourses(this);
+    return getCoursesToSubscribe(this);
   }
 
   @override
@@ -714,13 +1007,16 @@ class _$GetAcademyCoursesEventImpl implements _GetAcademyCoursesEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetSportsMembershipEvent value)? getSportsMembership,
     TResult? Function(_GetSuggestedAcademiesEvent value)? getSuggestedAcademies,
+    TResult? Function(_GetAllAcademiesEvent value)? getAllAcademies,
     TResult? Function(_GetAboutAcademyEvent value)? getAboutAcademy,
-    TResult? Function(_GetAcademyCoursesEvent value)? getAcademyCourses,
-    TResult? Function(_GetAcademyCoursesInDateEvent value)?
-        getAcademyCoursesInDate,
+    TResult? Function(_GetCoursesToSubscribeEvent value)? getCoursesToSubscribe,
+    TResult? Function(_getCoursesToSubscribeInDateEvent value)?
+        getCoursesToSubscribeInDate,
     TResult? Function(_GetAcademyReviewEvent value)? getAcademyReview,
+    TResult? Function(_InrollUserInCourseEvent value)? inrollUserInCourse,
+    TResult? Function(_AddAcademyReviewEvent value)? addAcademyReview,
   }) {
-    return getAcademyCourses?.call(this);
+    return getCoursesToSubscribe?.call(this);
   }
 
   @override
@@ -728,47 +1024,51 @@ class _$GetAcademyCoursesEventImpl implements _GetAcademyCoursesEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetSportsMembershipEvent value)? getSportsMembership,
     TResult Function(_GetSuggestedAcademiesEvent value)? getSuggestedAcademies,
+    TResult Function(_GetAllAcademiesEvent value)? getAllAcademies,
     TResult Function(_GetAboutAcademyEvent value)? getAboutAcademy,
-    TResult Function(_GetAcademyCoursesEvent value)? getAcademyCourses,
-    TResult Function(_GetAcademyCoursesInDateEvent value)?
-        getAcademyCoursesInDate,
+    TResult Function(_GetCoursesToSubscribeEvent value)? getCoursesToSubscribe,
+    TResult Function(_getCoursesToSubscribeInDateEvent value)?
+        getCoursesToSubscribeInDate,
     TResult Function(_GetAcademyReviewEvent value)? getAcademyReview,
+    TResult Function(_InrollUserInCourseEvent value)? inrollUserInCourse,
+    TResult Function(_AddAcademyReviewEvent value)? addAcademyReview,
     required TResult orElse(),
   }) {
-    if (getAcademyCourses != null) {
-      return getAcademyCourses(this);
+    if (getCoursesToSubscribe != null) {
+      return getCoursesToSubscribe(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetAcademyCoursesEvent implements AcademyEvent {
-  const factory _GetAcademyCoursesEvent({required final int academyId}) =
-      _$GetAcademyCoursesEventImpl;
+abstract class _GetCoursesToSubscribeEvent implements AcademyEvent {
+  const factory _GetCoursesToSubscribeEvent(
+      {required final CourseParams params}) = _$GetCoursesToSubscribeEventImpl;
 
-  int get academyId;
+  CourseParams get params;
   @JsonKey(ignore: true)
-  _$$GetAcademyCoursesEventImplCopyWith<_$GetAcademyCoursesEventImpl>
+  _$$GetCoursesToSubscribeEventImplCopyWith<_$GetCoursesToSubscribeEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GetAcademyCoursesInDateEventImplCopyWith<$Res> {
-  factory _$$GetAcademyCoursesInDateEventImplCopyWith(
-          _$GetAcademyCoursesInDateEventImpl value,
-          $Res Function(_$GetAcademyCoursesInDateEventImpl) then) =
-      __$$GetAcademyCoursesInDateEventImplCopyWithImpl<$Res>;
+abstract class _$$getCoursesToSubscribeInDateEventImplCopyWith<$Res> {
+  factory _$$getCoursesToSubscribeInDateEventImplCopyWith(
+          _$getCoursesToSubscribeInDateEventImpl value,
+          $Res Function(_$getCoursesToSubscribeInDateEventImpl) then) =
+      __$$getCoursesToSubscribeInDateEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int academyId, String targetDate});
 }
 
 /// @nodoc
-class __$$GetAcademyCoursesInDateEventImplCopyWithImpl<$Res>
-    extends _$AcademyEventCopyWithImpl<$Res, _$GetAcademyCoursesInDateEventImpl>
-    implements _$$GetAcademyCoursesInDateEventImplCopyWith<$Res> {
-  __$$GetAcademyCoursesInDateEventImplCopyWithImpl(
-      _$GetAcademyCoursesInDateEventImpl _value,
-      $Res Function(_$GetAcademyCoursesInDateEventImpl) _then)
+class __$$getCoursesToSubscribeInDateEventImplCopyWithImpl<$Res>
+    extends _$AcademyEventCopyWithImpl<$Res,
+        _$getCoursesToSubscribeInDateEventImpl>
+    implements _$$getCoursesToSubscribeInDateEventImplCopyWith<$Res> {
+  __$$getCoursesToSubscribeInDateEventImplCopyWithImpl(
+      _$getCoursesToSubscribeInDateEventImpl _value,
+      $Res Function(_$getCoursesToSubscribeInDateEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -777,7 +1077,7 @@ class __$$GetAcademyCoursesInDateEventImplCopyWithImpl<$Res>
     Object? academyId = null,
     Object? targetDate = null,
   }) {
-    return _then(_$GetAcademyCoursesInDateEventImpl(
+    return _then(_$getCoursesToSubscribeInDateEventImpl(
       academyId: null == academyId
           ? _value.academyId
           : academyId // ignore: cast_nullable_to_non_nullable
@@ -792,9 +1092,9 @@ class __$$GetAcademyCoursesInDateEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetAcademyCoursesInDateEventImpl
-    implements _GetAcademyCoursesInDateEvent {
-  const _$GetAcademyCoursesInDateEventImpl(
+class _$getCoursesToSubscribeInDateEventImpl
+    implements _getCoursesToSubscribeInDateEvent {
+  const _$getCoursesToSubscribeInDateEventImpl(
       {required this.academyId, required this.targetDate});
 
   @override
@@ -804,14 +1104,14 @@ class _$GetAcademyCoursesInDateEventImpl
 
   @override
   String toString() {
-    return 'AcademyEvent.getAcademyCoursesInDate(academyId: $academyId, targetDate: $targetDate)';
+    return 'AcademyEvent.getCoursesToSubscribeInDate(academyId: $academyId, targetDate: $targetDate)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetAcademyCoursesInDateEventImpl &&
+            other is _$getCoursesToSubscribeInDateEventImpl &&
             (identical(other.academyId, academyId) ||
                 other.academyId == academyId) &&
             (identical(other.targetDate, targetDate) ||
@@ -824,10 +1124,10 @@ class _$GetAcademyCoursesInDateEventImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetAcademyCoursesInDateEventImplCopyWith<
-          _$GetAcademyCoursesInDateEventImpl>
-      get copyWith => __$$GetAcademyCoursesInDateEventImplCopyWithImpl<
-          _$GetAcademyCoursesInDateEventImpl>(this, _$identity);
+  _$$getCoursesToSubscribeInDateEventImplCopyWith<
+          _$getCoursesToSubscribeInDateEventImpl>
+      get copyWith => __$$getCoursesToSubscribeInDateEventImplCopyWithImpl<
+          _$getCoursesToSubscribeInDateEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -835,13 +1135,17 @@ class _$GetAcademyCoursesInDateEventImpl
     required TResult Function() getSportsMembership,
     required TResult Function(SuggestedAcademyParams params)
         getSuggestedAcademies,
+    required TResult Function(AllAcademiesParams params) getAllAcademies,
     required TResult Function(int academyId) getAboutAcademy,
-    required TResult Function(int academyId) getAcademyCourses,
+    required TResult Function(CourseParams params) getCoursesToSubscribe,
     required TResult Function(int academyId, String targetDate)
-        getAcademyCoursesInDate,
+        getCoursesToSubscribeInDate,
     required TResult Function(int academyId) getAcademyReview,
+    required TResult Function(InrollUserInCourseParams params)
+        inrollUserInCourse,
+    required TResult Function(AddAcademyReviewParams params) addAcademyReview,
   }) {
-    return getAcademyCoursesInDate(academyId, targetDate);
+    return getCoursesToSubscribeInDate(academyId, targetDate);
   }
 
   @override
@@ -849,13 +1153,16 @@ class _$GetAcademyCoursesInDateEventImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getSportsMembership,
     TResult? Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult? Function(AllAcademiesParams params)? getAllAcademies,
     TResult? Function(int academyId)? getAboutAcademy,
-    TResult? Function(int academyId)? getAcademyCourses,
+    TResult? Function(CourseParams params)? getCoursesToSubscribe,
     TResult? Function(int academyId, String targetDate)?
-        getAcademyCoursesInDate,
+        getCoursesToSubscribeInDate,
     TResult? Function(int academyId)? getAcademyReview,
+    TResult? Function(InrollUserInCourseParams params)? inrollUserInCourse,
+    TResult? Function(AddAcademyReviewParams params)? addAcademyReview,
   }) {
-    return getAcademyCoursesInDate?.call(academyId, targetDate);
+    return getCoursesToSubscribeInDate?.call(academyId, targetDate);
   }
 
   @override
@@ -863,14 +1170,18 @@ class _$GetAcademyCoursesInDateEventImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getSportsMembership,
     TResult Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult Function(AllAcademiesParams params)? getAllAcademies,
     TResult Function(int academyId)? getAboutAcademy,
-    TResult Function(int academyId)? getAcademyCourses,
-    TResult Function(int academyId, String targetDate)? getAcademyCoursesInDate,
+    TResult Function(CourseParams params)? getCoursesToSubscribe,
+    TResult Function(int academyId, String targetDate)?
+        getCoursesToSubscribeInDate,
     TResult Function(int academyId)? getAcademyReview,
+    TResult Function(InrollUserInCourseParams params)? inrollUserInCourse,
+    TResult Function(AddAcademyReviewParams params)? addAcademyReview,
     required TResult orElse(),
   }) {
-    if (getAcademyCoursesInDate != null) {
-      return getAcademyCoursesInDate(academyId, targetDate);
+    if (getCoursesToSubscribeInDate != null) {
+      return getCoursesToSubscribeInDate(academyId, targetDate);
     }
     return orElse();
   }
@@ -882,13 +1193,18 @@ class _$GetAcademyCoursesInDateEventImpl
         getSportsMembership,
     required TResult Function(_GetSuggestedAcademiesEvent value)
         getSuggestedAcademies,
+    required TResult Function(_GetAllAcademiesEvent value) getAllAcademies,
     required TResult Function(_GetAboutAcademyEvent value) getAboutAcademy,
-    required TResult Function(_GetAcademyCoursesEvent value) getAcademyCourses,
-    required TResult Function(_GetAcademyCoursesInDateEvent value)
-        getAcademyCoursesInDate,
+    required TResult Function(_GetCoursesToSubscribeEvent value)
+        getCoursesToSubscribe,
+    required TResult Function(_getCoursesToSubscribeInDateEvent value)
+        getCoursesToSubscribeInDate,
     required TResult Function(_GetAcademyReviewEvent value) getAcademyReview,
+    required TResult Function(_InrollUserInCourseEvent value)
+        inrollUserInCourse,
+    required TResult Function(_AddAcademyReviewEvent value) addAcademyReview,
   }) {
-    return getAcademyCoursesInDate(this);
+    return getCoursesToSubscribeInDate(this);
   }
 
   @override
@@ -896,13 +1212,16 @@ class _$GetAcademyCoursesInDateEventImpl
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetSportsMembershipEvent value)? getSportsMembership,
     TResult? Function(_GetSuggestedAcademiesEvent value)? getSuggestedAcademies,
+    TResult? Function(_GetAllAcademiesEvent value)? getAllAcademies,
     TResult? Function(_GetAboutAcademyEvent value)? getAboutAcademy,
-    TResult? Function(_GetAcademyCoursesEvent value)? getAcademyCourses,
-    TResult? Function(_GetAcademyCoursesInDateEvent value)?
-        getAcademyCoursesInDate,
+    TResult? Function(_GetCoursesToSubscribeEvent value)? getCoursesToSubscribe,
+    TResult? Function(_getCoursesToSubscribeInDateEvent value)?
+        getCoursesToSubscribeInDate,
     TResult? Function(_GetAcademyReviewEvent value)? getAcademyReview,
+    TResult? Function(_InrollUserInCourseEvent value)? inrollUserInCourse,
+    TResult? Function(_AddAcademyReviewEvent value)? addAcademyReview,
   }) {
-    return getAcademyCoursesInDate?.call(this);
+    return getCoursesToSubscribeInDate?.call(this);
   }
 
   @override
@@ -910,30 +1229,33 @@ class _$GetAcademyCoursesInDateEventImpl
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetSportsMembershipEvent value)? getSportsMembership,
     TResult Function(_GetSuggestedAcademiesEvent value)? getSuggestedAcademies,
+    TResult Function(_GetAllAcademiesEvent value)? getAllAcademies,
     TResult Function(_GetAboutAcademyEvent value)? getAboutAcademy,
-    TResult Function(_GetAcademyCoursesEvent value)? getAcademyCourses,
-    TResult Function(_GetAcademyCoursesInDateEvent value)?
-        getAcademyCoursesInDate,
+    TResult Function(_GetCoursesToSubscribeEvent value)? getCoursesToSubscribe,
+    TResult Function(_getCoursesToSubscribeInDateEvent value)?
+        getCoursesToSubscribeInDate,
     TResult Function(_GetAcademyReviewEvent value)? getAcademyReview,
+    TResult Function(_InrollUserInCourseEvent value)? inrollUserInCourse,
+    TResult Function(_AddAcademyReviewEvent value)? addAcademyReview,
     required TResult orElse(),
   }) {
-    if (getAcademyCoursesInDate != null) {
-      return getAcademyCoursesInDate(this);
+    if (getCoursesToSubscribeInDate != null) {
+      return getCoursesToSubscribeInDate(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetAcademyCoursesInDateEvent implements AcademyEvent {
-  const factory _GetAcademyCoursesInDateEvent(
-      {required final int academyId,
-      required final String targetDate}) = _$GetAcademyCoursesInDateEventImpl;
+abstract class _getCoursesToSubscribeInDateEvent implements AcademyEvent {
+  const factory _getCoursesToSubscribeInDateEvent(
+          {required final int academyId, required final String targetDate}) =
+      _$getCoursesToSubscribeInDateEventImpl;
 
   int get academyId;
   String get targetDate;
   @JsonKey(ignore: true)
-  _$$GetAcademyCoursesInDateEventImplCopyWith<
-          _$GetAcademyCoursesInDateEventImpl>
+  _$$getCoursesToSubscribeInDateEventImplCopyWith<
+          _$getCoursesToSubscribeInDateEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1007,11 +1329,15 @@ class _$GetAcademyReviewEventImpl implements _GetAcademyReviewEvent {
     required TResult Function() getSportsMembership,
     required TResult Function(SuggestedAcademyParams params)
         getSuggestedAcademies,
+    required TResult Function(AllAcademiesParams params) getAllAcademies,
     required TResult Function(int academyId) getAboutAcademy,
-    required TResult Function(int academyId) getAcademyCourses,
+    required TResult Function(CourseParams params) getCoursesToSubscribe,
     required TResult Function(int academyId, String targetDate)
-        getAcademyCoursesInDate,
+        getCoursesToSubscribeInDate,
     required TResult Function(int academyId) getAcademyReview,
+    required TResult Function(InrollUserInCourseParams params)
+        inrollUserInCourse,
+    required TResult Function(AddAcademyReviewParams params) addAcademyReview,
   }) {
     return getAcademyReview(academyId);
   }
@@ -1021,11 +1347,14 @@ class _$GetAcademyReviewEventImpl implements _GetAcademyReviewEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getSportsMembership,
     TResult? Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult? Function(AllAcademiesParams params)? getAllAcademies,
     TResult? Function(int academyId)? getAboutAcademy,
-    TResult? Function(int academyId)? getAcademyCourses,
+    TResult? Function(CourseParams params)? getCoursesToSubscribe,
     TResult? Function(int academyId, String targetDate)?
-        getAcademyCoursesInDate,
+        getCoursesToSubscribeInDate,
     TResult? Function(int academyId)? getAcademyReview,
+    TResult? Function(InrollUserInCourseParams params)? inrollUserInCourse,
+    TResult? Function(AddAcademyReviewParams params)? addAcademyReview,
   }) {
     return getAcademyReview?.call(academyId);
   }
@@ -1035,10 +1364,14 @@ class _$GetAcademyReviewEventImpl implements _GetAcademyReviewEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getSportsMembership,
     TResult Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult Function(AllAcademiesParams params)? getAllAcademies,
     TResult Function(int academyId)? getAboutAcademy,
-    TResult Function(int academyId)? getAcademyCourses,
-    TResult Function(int academyId, String targetDate)? getAcademyCoursesInDate,
+    TResult Function(CourseParams params)? getCoursesToSubscribe,
+    TResult Function(int academyId, String targetDate)?
+        getCoursesToSubscribeInDate,
     TResult Function(int academyId)? getAcademyReview,
+    TResult Function(InrollUserInCourseParams params)? inrollUserInCourse,
+    TResult Function(AddAcademyReviewParams params)? addAcademyReview,
     required TResult orElse(),
   }) {
     if (getAcademyReview != null) {
@@ -1054,11 +1387,16 @@ class _$GetAcademyReviewEventImpl implements _GetAcademyReviewEvent {
         getSportsMembership,
     required TResult Function(_GetSuggestedAcademiesEvent value)
         getSuggestedAcademies,
+    required TResult Function(_GetAllAcademiesEvent value) getAllAcademies,
     required TResult Function(_GetAboutAcademyEvent value) getAboutAcademy,
-    required TResult Function(_GetAcademyCoursesEvent value) getAcademyCourses,
-    required TResult Function(_GetAcademyCoursesInDateEvent value)
-        getAcademyCoursesInDate,
+    required TResult Function(_GetCoursesToSubscribeEvent value)
+        getCoursesToSubscribe,
+    required TResult Function(_getCoursesToSubscribeInDateEvent value)
+        getCoursesToSubscribeInDate,
     required TResult Function(_GetAcademyReviewEvent value) getAcademyReview,
+    required TResult Function(_InrollUserInCourseEvent value)
+        inrollUserInCourse,
+    required TResult Function(_AddAcademyReviewEvent value) addAcademyReview,
   }) {
     return getAcademyReview(this);
   }
@@ -1068,11 +1406,14 @@ class _$GetAcademyReviewEventImpl implements _GetAcademyReviewEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetSportsMembershipEvent value)? getSportsMembership,
     TResult? Function(_GetSuggestedAcademiesEvent value)? getSuggestedAcademies,
+    TResult? Function(_GetAllAcademiesEvent value)? getAllAcademies,
     TResult? Function(_GetAboutAcademyEvent value)? getAboutAcademy,
-    TResult? Function(_GetAcademyCoursesEvent value)? getAcademyCourses,
-    TResult? Function(_GetAcademyCoursesInDateEvent value)?
-        getAcademyCoursesInDate,
+    TResult? Function(_GetCoursesToSubscribeEvent value)? getCoursesToSubscribe,
+    TResult? Function(_getCoursesToSubscribeInDateEvent value)?
+        getCoursesToSubscribeInDate,
     TResult? Function(_GetAcademyReviewEvent value)? getAcademyReview,
+    TResult? Function(_InrollUserInCourseEvent value)? inrollUserInCourse,
+    TResult? Function(_AddAcademyReviewEvent value)? addAcademyReview,
   }) {
     return getAcademyReview?.call(this);
   }
@@ -1082,11 +1423,14 @@ class _$GetAcademyReviewEventImpl implements _GetAcademyReviewEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetSportsMembershipEvent value)? getSportsMembership,
     TResult Function(_GetSuggestedAcademiesEvent value)? getSuggestedAcademies,
+    TResult Function(_GetAllAcademiesEvent value)? getAllAcademies,
     TResult Function(_GetAboutAcademyEvent value)? getAboutAcademy,
-    TResult Function(_GetAcademyCoursesEvent value)? getAcademyCourses,
-    TResult Function(_GetAcademyCoursesInDateEvent value)?
-        getAcademyCoursesInDate,
+    TResult Function(_GetCoursesToSubscribeEvent value)? getCoursesToSubscribe,
+    TResult Function(_getCoursesToSubscribeInDateEvent value)?
+        getCoursesToSubscribeInDate,
     TResult Function(_GetAcademyReviewEvent value)? getAcademyReview,
+    TResult Function(_InrollUserInCourseEvent value)? inrollUserInCourse,
+    TResult Function(_AddAcademyReviewEvent value)? addAcademyReview,
     required TResult orElse(),
   }) {
     if (getAcademyReview != null) {
@@ -1107,6 +1451,389 @@ abstract class _GetAcademyReviewEvent implements AcademyEvent {
 }
 
 /// @nodoc
+abstract class _$$InrollUserInCourseEventImplCopyWith<$Res> {
+  factory _$$InrollUserInCourseEventImplCopyWith(
+          _$InrollUserInCourseEventImpl value,
+          $Res Function(_$InrollUserInCourseEventImpl) then) =
+      __$$InrollUserInCourseEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({InrollUserInCourseParams params});
+}
+
+/// @nodoc
+class __$$InrollUserInCourseEventImplCopyWithImpl<$Res>
+    extends _$AcademyEventCopyWithImpl<$Res, _$InrollUserInCourseEventImpl>
+    implements _$$InrollUserInCourseEventImplCopyWith<$Res> {
+  __$$InrollUserInCourseEventImplCopyWithImpl(
+      _$InrollUserInCourseEventImpl _value,
+      $Res Function(_$InrollUserInCourseEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? params = null,
+  }) {
+    return _then(_$InrollUserInCourseEventImpl(
+      params: null == params
+          ? _value.params
+          : params // ignore: cast_nullable_to_non_nullable
+              as InrollUserInCourseParams,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InrollUserInCourseEventImpl implements _InrollUserInCourseEvent {
+  const _$InrollUserInCourseEventImpl({required this.params});
+
+  @override
+  final InrollUserInCourseParams params;
+
+  @override
+  String toString() {
+    return 'AcademyEvent.inrollUserInCourse(params: $params)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InrollUserInCourseEventImpl &&
+            (identical(other.params, params) || other.params == params));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, params);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InrollUserInCourseEventImplCopyWith<_$InrollUserInCourseEventImpl>
+      get copyWith => __$$InrollUserInCourseEventImplCopyWithImpl<
+          _$InrollUserInCourseEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getSportsMembership,
+    required TResult Function(SuggestedAcademyParams params)
+        getSuggestedAcademies,
+    required TResult Function(AllAcademiesParams params) getAllAcademies,
+    required TResult Function(int academyId) getAboutAcademy,
+    required TResult Function(CourseParams params) getCoursesToSubscribe,
+    required TResult Function(int academyId, String targetDate)
+        getCoursesToSubscribeInDate,
+    required TResult Function(int academyId) getAcademyReview,
+    required TResult Function(InrollUserInCourseParams params)
+        inrollUserInCourse,
+    required TResult Function(AddAcademyReviewParams params) addAcademyReview,
+  }) {
+    return inrollUserInCourse(params);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getSportsMembership,
+    TResult? Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult? Function(AllAcademiesParams params)? getAllAcademies,
+    TResult? Function(int academyId)? getAboutAcademy,
+    TResult? Function(CourseParams params)? getCoursesToSubscribe,
+    TResult? Function(int academyId, String targetDate)?
+        getCoursesToSubscribeInDate,
+    TResult? Function(int academyId)? getAcademyReview,
+    TResult? Function(InrollUserInCourseParams params)? inrollUserInCourse,
+    TResult? Function(AddAcademyReviewParams params)? addAcademyReview,
+  }) {
+    return inrollUserInCourse?.call(params);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getSportsMembership,
+    TResult Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult Function(AllAcademiesParams params)? getAllAcademies,
+    TResult Function(int academyId)? getAboutAcademy,
+    TResult Function(CourseParams params)? getCoursesToSubscribe,
+    TResult Function(int academyId, String targetDate)?
+        getCoursesToSubscribeInDate,
+    TResult Function(int academyId)? getAcademyReview,
+    TResult Function(InrollUserInCourseParams params)? inrollUserInCourse,
+    TResult Function(AddAcademyReviewParams params)? addAcademyReview,
+    required TResult orElse(),
+  }) {
+    if (inrollUserInCourse != null) {
+      return inrollUserInCourse(params);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetSportsMembershipEvent value)
+        getSportsMembership,
+    required TResult Function(_GetSuggestedAcademiesEvent value)
+        getSuggestedAcademies,
+    required TResult Function(_GetAllAcademiesEvent value) getAllAcademies,
+    required TResult Function(_GetAboutAcademyEvent value) getAboutAcademy,
+    required TResult Function(_GetCoursesToSubscribeEvent value)
+        getCoursesToSubscribe,
+    required TResult Function(_getCoursesToSubscribeInDateEvent value)
+        getCoursesToSubscribeInDate,
+    required TResult Function(_GetAcademyReviewEvent value) getAcademyReview,
+    required TResult Function(_InrollUserInCourseEvent value)
+        inrollUserInCourse,
+    required TResult Function(_AddAcademyReviewEvent value) addAcademyReview,
+  }) {
+    return inrollUserInCourse(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetSportsMembershipEvent value)? getSportsMembership,
+    TResult? Function(_GetSuggestedAcademiesEvent value)? getSuggestedAcademies,
+    TResult? Function(_GetAllAcademiesEvent value)? getAllAcademies,
+    TResult? Function(_GetAboutAcademyEvent value)? getAboutAcademy,
+    TResult? Function(_GetCoursesToSubscribeEvent value)? getCoursesToSubscribe,
+    TResult? Function(_getCoursesToSubscribeInDateEvent value)?
+        getCoursesToSubscribeInDate,
+    TResult? Function(_GetAcademyReviewEvent value)? getAcademyReview,
+    TResult? Function(_InrollUserInCourseEvent value)? inrollUserInCourse,
+    TResult? Function(_AddAcademyReviewEvent value)? addAcademyReview,
+  }) {
+    return inrollUserInCourse?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetSportsMembershipEvent value)? getSportsMembership,
+    TResult Function(_GetSuggestedAcademiesEvent value)? getSuggestedAcademies,
+    TResult Function(_GetAllAcademiesEvent value)? getAllAcademies,
+    TResult Function(_GetAboutAcademyEvent value)? getAboutAcademy,
+    TResult Function(_GetCoursesToSubscribeEvent value)? getCoursesToSubscribe,
+    TResult Function(_getCoursesToSubscribeInDateEvent value)?
+        getCoursesToSubscribeInDate,
+    TResult Function(_GetAcademyReviewEvent value)? getAcademyReview,
+    TResult Function(_InrollUserInCourseEvent value)? inrollUserInCourse,
+    TResult Function(_AddAcademyReviewEvent value)? addAcademyReview,
+    required TResult orElse(),
+  }) {
+    if (inrollUserInCourse != null) {
+      return inrollUserInCourse(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InrollUserInCourseEvent implements AcademyEvent {
+  const factory _InrollUserInCourseEvent(
+          {required final InrollUserInCourseParams params}) =
+      _$InrollUserInCourseEventImpl;
+
+  InrollUserInCourseParams get params;
+  @JsonKey(ignore: true)
+  _$$InrollUserInCourseEventImplCopyWith<_$InrollUserInCourseEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddAcademyReviewEventImplCopyWith<$Res> {
+  factory _$$AddAcademyReviewEventImplCopyWith(
+          _$AddAcademyReviewEventImpl value,
+          $Res Function(_$AddAcademyReviewEventImpl) then) =
+      __$$AddAcademyReviewEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({AddAcademyReviewParams params});
+}
+
+/// @nodoc
+class __$$AddAcademyReviewEventImplCopyWithImpl<$Res>
+    extends _$AcademyEventCopyWithImpl<$Res, _$AddAcademyReviewEventImpl>
+    implements _$$AddAcademyReviewEventImplCopyWith<$Res> {
+  __$$AddAcademyReviewEventImplCopyWithImpl(_$AddAcademyReviewEventImpl _value,
+      $Res Function(_$AddAcademyReviewEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? params = null,
+  }) {
+    return _then(_$AddAcademyReviewEventImpl(
+      params: null == params
+          ? _value.params
+          : params // ignore: cast_nullable_to_non_nullable
+              as AddAcademyReviewParams,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddAcademyReviewEventImpl implements _AddAcademyReviewEvent {
+  const _$AddAcademyReviewEventImpl({required this.params});
+
+  @override
+  final AddAcademyReviewParams params;
+
+  @override
+  String toString() {
+    return 'AcademyEvent.addAcademyReview(params: $params)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddAcademyReviewEventImpl &&
+            (identical(other.params, params) || other.params == params));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, params);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddAcademyReviewEventImplCopyWith<_$AddAcademyReviewEventImpl>
+      get copyWith => __$$AddAcademyReviewEventImplCopyWithImpl<
+          _$AddAcademyReviewEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getSportsMembership,
+    required TResult Function(SuggestedAcademyParams params)
+        getSuggestedAcademies,
+    required TResult Function(AllAcademiesParams params) getAllAcademies,
+    required TResult Function(int academyId) getAboutAcademy,
+    required TResult Function(CourseParams params) getCoursesToSubscribe,
+    required TResult Function(int academyId, String targetDate)
+        getCoursesToSubscribeInDate,
+    required TResult Function(int academyId) getAcademyReview,
+    required TResult Function(InrollUserInCourseParams params)
+        inrollUserInCourse,
+    required TResult Function(AddAcademyReviewParams params) addAcademyReview,
+  }) {
+    return addAcademyReview(params);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getSportsMembership,
+    TResult? Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult? Function(AllAcademiesParams params)? getAllAcademies,
+    TResult? Function(int academyId)? getAboutAcademy,
+    TResult? Function(CourseParams params)? getCoursesToSubscribe,
+    TResult? Function(int academyId, String targetDate)?
+        getCoursesToSubscribeInDate,
+    TResult? Function(int academyId)? getAcademyReview,
+    TResult? Function(InrollUserInCourseParams params)? inrollUserInCourse,
+    TResult? Function(AddAcademyReviewParams params)? addAcademyReview,
+  }) {
+    return addAcademyReview?.call(params);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getSportsMembership,
+    TResult Function(SuggestedAcademyParams params)? getSuggestedAcademies,
+    TResult Function(AllAcademiesParams params)? getAllAcademies,
+    TResult Function(int academyId)? getAboutAcademy,
+    TResult Function(CourseParams params)? getCoursesToSubscribe,
+    TResult Function(int academyId, String targetDate)?
+        getCoursesToSubscribeInDate,
+    TResult Function(int academyId)? getAcademyReview,
+    TResult Function(InrollUserInCourseParams params)? inrollUserInCourse,
+    TResult Function(AddAcademyReviewParams params)? addAcademyReview,
+    required TResult orElse(),
+  }) {
+    if (addAcademyReview != null) {
+      return addAcademyReview(params);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetSportsMembershipEvent value)
+        getSportsMembership,
+    required TResult Function(_GetSuggestedAcademiesEvent value)
+        getSuggestedAcademies,
+    required TResult Function(_GetAllAcademiesEvent value) getAllAcademies,
+    required TResult Function(_GetAboutAcademyEvent value) getAboutAcademy,
+    required TResult Function(_GetCoursesToSubscribeEvent value)
+        getCoursesToSubscribe,
+    required TResult Function(_getCoursesToSubscribeInDateEvent value)
+        getCoursesToSubscribeInDate,
+    required TResult Function(_GetAcademyReviewEvent value) getAcademyReview,
+    required TResult Function(_InrollUserInCourseEvent value)
+        inrollUserInCourse,
+    required TResult Function(_AddAcademyReviewEvent value) addAcademyReview,
+  }) {
+    return addAcademyReview(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetSportsMembershipEvent value)? getSportsMembership,
+    TResult? Function(_GetSuggestedAcademiesEvent value)? getSuggestedAcademies,
+    TResult? Function(_GetAllAcademiesEvent value)? getAllAcademies,
+    TResult? Function(_GetAboutAcademyEvent value)? getAboutAcademy,
+    TResult? Function(_GetCoursesToSubscribeEvent value)? getCoursesToSubscribe,
+    TResult? Function(_getCoursesToSubscribeInDateEvent value)?
+        getCoursesToSubscribeInDate,
+    TResult? Function(_GetAcademyReviewEvent value)? getAcademyReview,
+    TResult? Function(_InrollUserInCourseEvent value)? inrollUserInCourse,
+    TResult? Function(_AddAcademyReviewEvent value)? addAcademyReview,
+  }) {
+    return addAcademyReview?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetSportsMembershipEvent value)? getSportsMembership,
+    TResult Function(_GetSuggestedAcademiesEvent value)? getSuggestedAcademies,
+    TResult Function(_GetAllAcademiesEvent value)? getAllAcademies,
+    TResult Function(_GetAboutAcademyEvent value)? getAboutAcademy,
+    TResult Function(_GetCoursesToSubscribeEvent value)? getCoursesToSubscribe,
+    TResult Function(_getCoursesToSubscribeInDateEvent value)?
+        getCoursesToSubscribeInDate,
+    TResult Function(_GetAcademyReviewEvent value)? getAcademyReview,
+    TResult Function(_InrollUserInCourseEvent value)? inrollUserInCourse,
+    TResult Function(_AddAcademyReviewEvent value)? addAcademyReview,
+    required TResult orElse(),
+  }) {
+    if (addAcademyReview != null) {
+      return addAcademyReview(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AddAcademyReviewEvent implements AcademyEvent {
+  const factory _AddAcademyReviewEvent(
+          {required final AddAcademyReviewParams params}) =
+      _$AddAcademyReviewEventImpl;
+
+  AddAcademyReviewParams get params;
+  @JsonKey(ignore: true)
+  _$$AddAcademyReviewEventImplCopyWith<_$AddAcademyReviewEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$AcademyState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -1119,22 +1846,33 @@ mixin _$AcademyState {
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
     required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
+    required TResult Function() getAllAcademiesLoading,
+    required TResult Function(Failure? failure) getAllAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
+        allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
-    required TResult Function() getAcademyCoursesLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCourses)
+    required TResult Function() getCoursesToSubscribeLoading,
+    required TResult Function(Failure? failure) getCoursesToSubscribeFailure,
+    required TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)
         academyCoursesFetched,
-    required TResult Function() getAcademyCoursesInDateLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
+    required TResult Function() getCoursesToSubscribeInDateLoading,
+    required TResult Function(Failure? failure)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
     required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
+    required TResult Function() inrollUserInCourseLoading,
+    required TResult Function(Failure? failure) inrollUserInCourseFailure,
+    required TResult Function(bool courseInrolled) courseInrolled,
+    required TResult Function() addAcademyReviewLoading,
+    required TResult Function(Failure? failure) addAcademyReviewFailure,
+    required TResult Function(bool reviewAdded) reviewAdded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1148,21 +1886,31 @@ mixin _$AcademyState {
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult? Function()? getAllAcademiesLoading,
+    TResult? Function(Failure? failure)? getAllAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult? Function()? getAcademyCoursesLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult? Function()? getCoursesToSubscribeLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult? Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult? Function()? getAcademyCoursesInDateLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult? Function()? getCoursesToSubscribeInDateLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult? Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
     TResult? Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult? Function()? inrollUserInCourseLoading,
+    TResult? Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult? Function(bool courseInrolled)? courseInrolled,
+    TResult? Function()? addAcademyReviewLoading,
+    TResult? Function(Failure? failure)? addAcademyReviewFailure,
+    TResult? Function(bool reviewAdded)? reviewAdded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1176,21 +1924,31 @@ mixin _$AcademyState {
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult Function()? getAllAcademiesLoading,
+    TResult Function(Failure? failure)? getAllAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult Function()? getAcademyCoursesLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult Function()? getCoursesToSubscribeLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult Function()? getAcademyCoursesInDateLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult Function()? getCoursesToSubscribeInDateLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
     TResult Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult Function()? inrollUserInCourseLoading,
+    TResult Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult Function(bool courseInrolled)? courseInrolled,
+    TResult Function()? addAcademyReviewLoading,
+    TResult Function(Failure? failure)? addAcademyReviewFailure,
+    TResult Function(bool reviewAdded)? reviewAdded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1209,21 +1967,26 @@ mixin _$AcademyState {
         getSuggestedAcademiesFailure,
     required TResult Function(_SuggestedAcademiesFetched value)
         suggestedAcademiesFetched,
+    required TResult Function(_GetAllAcademiesLoading value)
+        getAllAcademiesLoading,
+    required TResult Function(_GetAllAcademiesFailure value)
+        getAllAcademiesFailure,
+    required TResult Function(_AllAcademiesFetched value) allAcademiesFetched,
     required TResult Function(_GetAboutAcademyLoading value)
         getAboutAcademyLoading,
     required TResult Function(_GetAboutAcademyFailure value)
         getAboutAcademyFailure,
     required TResult Function(_AboutAcademyFetched value) aboutAcademyFetched,
-    required TResult Function(_GetAcademyCoursesLoading value)
-        getAcademyCoursesLoading,
-    required TResult Function(_GetAcademyCoursesFailure value)
-        getAcademyCoursesFailure,
+    required TResult Function(_GetCoursesToSubscribeLoading value)
+        getCoursesToSubscribeLoading,
+    required TResult Function(_GetCoursesToSubscribeFailure value)
+        getCoursesToSubscribeFailure,
     required TResult Function(_AcademyCoursesFetched value)
         academyCoursesFetched,
-    required TResult Function(_GetAcademyCoursesInDateLoading value)
-        getAcademyCoursesInDateLoading,
-    required TResult Function(_GetAcademyCoursesInDateFailure value)
-        getAcademyCoursesInDateFailure,
+    required TResult Function(_GetCoursesToSubscribeInDateLoading value)
+        getCoursesToSubscribeInDateLoading,
+    required TResult Function(_GetCoursesToSubscribeInDateFailure value)
+        getCoursesToSubscribeInDateFailure,
     required TResult Function(_AcademyCoursesInDateFetched value)
         academyCoursesInDateFetched,
     required TResult Function(_GetAcademyReviewLoading value)
@@ -1231,6 +1994,16 @@ mixin _$AcademyState {
     required TResult Function(_GetAcademyReviewFailure value)
         getAcademyReviewFailure,
     required TResult Function(_AcademyReviewFetched value) academyReviewFetched,
+    required TResult Function(_InrollUserInCourseLoadingLoading value)
+        inrollUserInCourseLoading,
+    required TResult Function(_InrollUserInCourseFailure value)
+        inrollUserInCourseFailure,
+    required TResult Function(_CourseInrolled value) courseInrolled,
+    required TResult Function(_AddAcademyReviewLoading value)
+        addAcademyReviewLoading,
+    required TResult Function(_AddAcademyReviewFailure value)
+        addAcademyReviewFailure,
+    required TResult Function(_ReviewAdded value) reviewAdded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1247,23 +2020,34 @@ mixin _$AcademyState {
         getSuggestedAcademiesFailure,
     TResult? Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult? Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult? Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult? Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult? Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult? Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult? Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult? Function(_GetAcademyCoursesLoading value)?
-        getAcademyCoursesLoading,
-    TResult? Function(_GetAcademyCoursesFailure value)?
-        getAcademyCoursesFailure,
+    TResult? Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult? Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult? Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult? Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult? Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult? Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult? Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult? Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult? Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult? Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult? Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult? Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult? Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult? Function(_CourseInrolled value)? courseInrolled,
+    TResult? Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult? Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult? Function(_ReviewAdded value)? reviewAdded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1280,21 +2064,34 @@ mixin _$AcademyState {
         getSuggestedAcademiesFailure,
     TResult Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult Function(_GetAcademyCoursesLoading value)? getAcademyCoursesLoading,
-    TResult Function(_GetAcademyCoursesFailure value)? getAcademyCoursesFailure,
+    TResult Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult Function(_CourseInrolled value)? courseInrolled,
+    TResult Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult Function(_ReviewAdded value)? reviewAdded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1365,22 +2162,33 @@ class _$InitialImpl implements _Initial {
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
     required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
+    required TResult Function() getAllAcademiesLoading,
+    required TResult Function(Failure? failure) getAllAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
+        allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
-    required TResult Function() getAcademyCoursesLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCourses)
+    required TResult Function() getCoursesToSubscribeLoading,
+    required TResult Function(Failure? failure) getCoursesToSubscribeFailure,
+    required TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)
         academyCoursesFetched,
-    required TResult Function() getAcademyCoursesInDateLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
+    required TResult Function() getCoursesToSubscribeInDateLoading,
+    required TResult Function(Failure? failure)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
     required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
+    required TResult Function() inrollUserInCourseLoading,
+    required TResult Function(Failure? failure) inrollUserInCourseFailure,
+    required TResult Function(bool courseInrolled) courseInrolled,
+    required TResult Function() addAcademyReviewLoading,
+    required TResult Function(Failure? failure) addAcademyReviewFailure,
+    required TResult Function(bool reviewAdded) reviewAdded,
   }) {
     return initial();
   }
@@ -1397,21 +2205,31 @@ class _$InitialImpl implements _Initial {
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult? Function()? getAllAcademiesLoading,
+    TResult? Function(Failure? failure)? getAllAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult? Function()? getAcademyCoursesLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult? Function()? getCoursesToSubscribeLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult? Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult? Function()? getAcademyCoursesInDateLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult? Function()? getCoursesToSubscribeInDateLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult? Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
     TResult? Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult? Function()? inrollUserInCourseLoading,
+    TResult? Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult? Function(bool courseInrolled)? courseInrolled,
+    TResult? Function()? addAcademyReviewLoading,
+    TResult? Function(Failure? failure)? addAcademyReviewFailure,
+    TResult? Function(bool reviewAdded)? reviewAdded,
   }) {
     return initial?.call();
   }
@@ -1428,21 +2246,31 @@ class _$InitialImpl implements _Initial {
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult Function()? getAllAcademiesLoading,
+    TResult Function(Failure? failure)? getAllAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult Function()? getAcademyCoursesLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult Function()? getCoursesToSubscribeLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult Function()? getAcademyCoursesInDateLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult Function()? getCoursesToSubscribeInDateLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
     TResult Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult Function()? inrollUserInCourseLoading,
+    TResult Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult Function(bool courseInrolled)? courseInrolled,
+    TResult Function()? addAcademyReviewLoading,
+    TResult Function(Failure? failure)? addAcademyReviewFailure,
+    TResult Function(bool reviewAdded)? reviewAdded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -1467,21 +2295,26 @@ class _$InitialImpl implements _Initial {
         getSuggestedAcademiesFailure,
     required TResult Function(_SuggestedAcademiesFetched value)
         suggestedAcademiesFetched,
+    required TResult Function(_GetAllAcademiesLoading value)
+        getAllAcademiesLoading,
+    required TResult Function(_GetAllAcademiesFailure value)
+        getAllAcademiesFailure,
+    required TResult Function(_AllAcademiesFetched value) allAcademiesFetched,
     required TResult Function(_GetAboutAcademyLoading value)
         getAboutAcademyLoading,
     required TResult Function(_GetAboutAcademyFailure value)
         getAboutAcademyFailure,
     required TResult Function(_AboutAcademyFetched value) aboutAcademyFetched,
-    required TResult Function(_GetAcademyCoursesLoading value)
-        getAcademyCoursesLoading,
-    required TResult Function(_GetAcademyCoursesFailure value)
-        getAcademyCoursesFailure,
+    required TResult Function(_GetCoursesToSubscribeLoading value)
+        getCoursesToSubscribeLoading,
+    required TResult Function(_GetCoursesToSubscribeFailure value)
+        getCoursesToSubscribeFailure,
     required TResult Function(_AcademyCoursesFetched value)
         academyCoursesFetched,
-    required TResult Function(_GetAcademyCoursesInDateLoading value)
-        getAcademyCoursesInDateLoading,
-    required TResult Function(_GetAcademyCoursesInDateFailure value)
-        getAcademyCoursesInDateFailure,
+    required TResult Function(_GetCoursesToSubscribeInDateLoading value)
+        getCoursesToSubscribeInDateLoading,
+    required TResult Function(_GetCoursesToSubscribeInDateFailure value)
+        getCoursesToSubscribeInDateFailure,
     required TResult Function(_AcademyCoursesInDateFetched value)
         academyCoursesInDateFetched,
     required TResult Function(_GetAcademyReviewLoading value)
@@ -1489,6 +2322,16 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_GetAcademyReviewFailure value)
         getAcademyReviewFailure,
     required TResult Function(_AcademyReviewFetched value) academyReviewFetched,
+    required TResult Function(_InrollUserInCourseLoadingLoading value)
+        inrollUserInCourseLoading,
+    required TResult Function(_InrollUserInCourseFailure value)
+        inrollUserInCourseFailure,
+    required TResult Function(_CourseInrolled value) courseInrolled,
+    required TResult Function(_AddAcademyReviewLoading value)
+        addAcademyReviewLoading,
+    required TResult Function(_AddAcademyReviewFailure value)
+        addAcademyReviewFailure,
+    required TResult Function(_ReviewAdded value) reviewAdded,
   }) {
     return initial(this);
   }
@@ -1508,23 +2351,34 @@ class _$InitialImpl implements _Initial {
         getSuggestedAcademiesFailure,
     TResult? Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult? Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult? Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult? Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult? Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult? Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult? Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult? Function(_GetAcademyCoursesLoading value)?
-        getAcademyCoursesLoading,
-    TResult? Function(_GetAcademyCoursesFailure value)?
-        getAcademyCoursesFailure,
+    TResult? Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult? Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult? Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult? Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult? Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult? Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult? Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult? Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult? Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult? Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult? Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult? Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult? Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult? Function(_CourseInrolled value)? courseInrolled,
+    TResult? Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult? Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult? Function(_ReviewAdded value)? reviewAdded,
   }) {
     return initial?.call(this);
   }
@@ -1544,21 +2398,34 @@ class _$InitialImpl implements _Initial {
         getSuggestedAcademiesFailure,
     TResult Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult Function(_GetAcademyCoursesLoading value)? getAcademyCoursesLoading,
-    TResult Function(_GetAcademyCoursesFailure value)? getAcademyCoursesFailure,
+    TResult Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult Function(_CourseInrolled value)? courseInrolled,
+    TResult Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult Function(_ReviewAdded value)? reviewAdded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -1624,22 +2491,33 @@ class _$GetSportsMembershipMembershipLoadingImpl
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
     required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
+    required TResult Function() getAllAcademiesLoading,
+    required TResult Function(Failure? failure) getAllAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
+        allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
-    required TResult Function() getAcademyCoursesLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCourses)
+    required TResult Function() getCoursesToSubscribeLoading,
+    required TResult Function(Failure? failure) getCoursesToSubscribeFailure,
+    required TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)
         academyCoursesFetched,
-    required TResult Function() getAcademyCoursesInDateLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
+    required TResult Function() getCoursesToSubscribeInDateLoading,
+    required TResult Function(Failure? failure)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
     required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
+    required TResult Function() inrollUserInCourseLoading,
+    required TResult Function(Failure? failure) inrollUserInCourseFailure,
+    required TResult Function(bool courseInrolled) courseInrolled,
+    required TResult Function() addAcademyReviewLoading,
+    required TResult Function(Failure? failure) addAcademyReviewFailure,
+    required TResult Function(bool reviewAdded) reviewAdded,
   }) {
     return getSportsMembershipLoading();
   }
@@ -1656,21 +2534,31 @@ class _$GetSportsMembershipMembershipLoadingImpl
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult? Function()? getAllAcademiesLoading,
+    TResult? Function(Failure? failure)? getAllAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult? Function()? getAcademyCoursesLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult? Function()? getCoursesToSubscribeLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult? Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult? Function()? getAcademyCoursesInDateLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult? Function()? getCoursesToSubscribeInDateLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult? Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
     TResult? Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult? Function()? inrollUserInCourseLoading,
+    TResult? Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult? Function(bool courseInrolled)? courseInrolled,
+    TResult? Function()? addAcademyReviewLoading,
+    TResult? Function(Failure? failure)? addAcademyReviewFailure,
+    TResult? Function(bool reviewAdded)? reviewAdded,
   }) {
     return getSportsMembershipLoading?.call();
   }
@@ -1687,21 +2575,31 @@ class _$GetSportsMembershipMembershipLoadingImpl
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult Function()? getAllAcademiesLoading,
+    TResult Function(Failure? failure)? getAllAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult Function()? getAcademyCoursesLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult Function()? getCoursesToSubscribeLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult Function()? getAcademyCoursesInDateLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult Function()? getCoursesToSubscribeInDateLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
     TResult Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult Function()? inrollUserInCourseLoading,
+    TResult Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult Function(bool courseInrolled)? courseInrolled,
+    TResult Function()? addAcademyReviewLoading,
+    TResult Function(Failure? failure)? addAcademyReviewFailure,
+    TResult Function(bool reviewAdded)? reviewAdded,
     required TResult orElse(),
   }) {
     if (getSportsMembershipLoading != null) {
@@ -1726,21 +2624,26 @@ class _$GetSportsMembershipMembershipLoadingImpl
         getSuggestedAcademiesFailure,
     required TResult Function(_SuggestedAcademiesFetched value)
         suggestedAcademiesFetched,
+    required TResult Function(_GetAllAcademiesLoading value)
+        getAllAcademiesLoading,
+    required TResult Function(_GetAllAcademiesFailure value)
+        getAllAcademiesFailure,
+    required TResult Function(_AllAcademiesFetched value) allAcademiesFetched,
     required TResult Function(_GetAboutAcademyLoading value)
         getAboutAcademyLoading,
     required TResult Function(_GetAboutAcademyFailure value)
         getAboutAcademyFailure,
     required TResult Function(_AboutAcademyFetched value) aboutAcademyFetched,
-    required TResult Function(_GetAcademyCoursesLoading value)
-        getAcademyCoursesLoading,
-    required TResult Function(_GetAcademyCoursesFailure value)
-        getAcademyCoursesFailure,
+    required TResult Function(_GetCoursesToSubscribeLoading value)
+        getCoursesToSubscribeLoading,
+    required TResult Function(_GetCoursesToSubscribeFailure value)
+        getCoursesToSubscribeFailure,
     required TResult Function(_AcademyCoursesFetched value)
         academyCoursesFetched,
-    required TResult Function(_GetAcademyCoursesInDateLoading value)
-        getAcademyCoursesInDateLoading,
-    required TResult Function(_GetAcademyCoursesInDateFailure value)
-        getAcademyCoursesInDateFailure,
+    required TResult Function(_GetCoursesToSubscribeInDateLoading value)
+        getCoursesToSubscribeInDateLoading,
+    required TResult Function(_GetCoursesToSubscribeInDateFailure value)
+        getCoursesToSubscribeInDateFailure,
     required TResult Function(_AcademyCoursesInDateFetched value)
         academyCoursesInDateFetched,
     required TResult Function(_GetAcademyReviewLoading value)
@@ -1748,6 +2651,16 @@ class _$GetSportsMembershipMembershipLoadingImpl
     required TResult Function(_GetAcademyReviewFailure value)
         getAcademyReviewFailure,
     required TResult Function(_AcademyReviewFetched value) academyReviewFetched,
+    required TResult Function(_InrollUserInCourseLoadingLoading value)
+        inrollUserInCourseLoading,
+    required TResult Function(_InrollUserInCourseFailure value)
+        inrollUserInCourseFailure,
+    required TResult Function(_CourseInrolled value) courseInrolled,
+    required TResult Function(_AddAcademyReviewLoading value)
+        addAcademyReviewLoading,
+    required TResult Function(_AddAcademyReviewFailure value)
+        addAcademyReviewFailure,
+    required TResult Function(_ReviewAdded value) reviewAdded,
   }) {
     return getSportsMembershipLoading(this);
   }
@@ -1767,23 +2680,34 @@ class _$GetSportsMembershipMembershipLoadingImpl
         getSuggestedAcademiesFailure,
     TResult? Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult? Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult? Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult? Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult? Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult? Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult? Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult? Function(_GetAcademyCoursesLoading value)?
-        getAcademyCoursesLoading,
-    TResult? Function(_GetAcademyCoursesFailure value)?
-        getAcademyCoursesFailure,
+    TResult? Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult? Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult? Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult? Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult? Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult? Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult? Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult? Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult? Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult? Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult? Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult? Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult? Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult? Function(_CourseInrolled value)? courseInrolled,
+    TResult? Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult? Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult? Function(_ReviewAdded value)? reviewAdded,
   }) {
     return getSportsMembershipLoading?.call(this);
   }
@@ -1803,21 +2727,34 @@ class _$GetSportsMembershipMembershipLoadingImpl
         getSuggestedAcademiesFailure,
     TResult Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult Function(_GetAcademyCoursesLoading value)? getAcademyCoursesLoading,
-    TResult Function(_GetAcademyCoursesFailure value)? getAcademyCoursesFailure,
+    TResult Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult Function(_CourseInrolled value)? courseInrolled,
+    TResult Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult Function(_ReviewAdded value)? reviewAdded,
     required TResult orElse(),
   }) {
     if (getSportsMembershipLoading != null) {
@@ -1909,22 +2846,33 @@ class _$GetSportsMembershipFailureImpl implements _GetSportsMembershipFailure {
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
     required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
+    required TResult Function() getAllAcademiesLoading,
+    required TResult Function(Failure? failure) getAllAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
+        allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
-    required TResult Function() getAcademyCoursesLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCourses)
+    required TResult Function() getCoursesToSubscribeLoading,
+    required TResult Function(Failure? failure) getCoursesToSubscribeFailure,
+    required TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)
         academyCoursesFetched,
-    required TResult Function() getAcademyCoursesInDateLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
+    required TResult Function() getCoursesToSubscribeInDateLoading,
+    required TResult Function(Failure? failure)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
     required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
+    required TResult Function() inrollUserInCourseLoading,
+    required TResult Function(Failure? failure) inrollUserInCourseFailure,
+    required TResult Function(bool courseInrolled) courseInrolled,
+    required TResult Function() addAcademyReviewLoading,
+    required TResult Function(Failure? failure) addAcademyReviewFailure,
+    required TResult Function(bool reviewAdded) reviewAdded,
   }) {
     return getSportsMembershipFailure(failure);
   }
@@ -1941,21 +2889,31 @@ class _$GetSportsMembershipFailureImpl implements _GetSportsMembershipFailure {
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult? Function()? getAllAcademiesLoading,
+    TResult? Function(Failure? failure)? getAllAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult? Function()? getAcademyCoursesLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult? Function()? getCoursesToSubscribeLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult? Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult? Function()? getAcademyCoursesInDateLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult? Function()? getCoursesToSubscribeInDateLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult? Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
     TResult? Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult? Function()? inrollUserInCourseLoading,
+    TResult? Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult? Function(bool courseInrolled)? courseInrolled,
+    TResult? Function()? addAcademyReviewLoading,
+    TResult? Function(Failure? failure)? addAcademyReviewFailure,
+    TResult? Function(bool reviewAdded)? reviewAdded,
   }) {
     return getSportsMembershipFailure?.call(failure);
   }
@@ -1972,21 +2930,31 @@ class _$GetSportsMembershipFailureImpl implements _GetSportsMembershipFailure {
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult Function()? getAllAcademiesLoading,
+    TResult Function(Failure? failure)? getAllAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult Function()? getAcademyCoursesLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult Function()? getCoursesToSubscribeLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult Function()? getAcademyCoursesInDateLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult Function()? getCoursesToSubscribeInDateLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
     TResult Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult Function()? inrollUserInCourseLoading,
+    TResult Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult Function(bool courseInrolled)? courseInrolled,
+    TResult Function()? addAcademyReviewLoading,
+    TResult Function(Failure? failure)? addAcademyReviewFailure,
+    TResult Function(bool reviewAdded)? reviewAdded,
     required TResult orElse(),
   }) {
     if (getSportsMembershipFailure != null) {
@@ -2011,21 +2979,26 @@ class _$GetSportsMembershipFailureImpl implements _GetSportsMembershipFailure {
         getSuggestedAcademiesFailure,
     required TResult Function(_SuggestedAcademiesFetched value)
         suggestedAcademiesFetched,
+    required TResult Function(_GetAllAcademiesLoading value)
+        getAllAcademiesLoading,
+    required TResult Function(_GetAllAcademiesFailure value)
+        getAllAcademiesFailure,
+    required TResult Function(_AllAcademiesFetched value) allAcademiesFetched,
     required TResult Function(_GetAboutAcademyLoading value)
         getAboutAcademyLoading,
     required TResult Function(_GetAboutAcademyFailure value)
         getAboutAcademyFailure,
     required TResult Function(_AboutAcademyFetched value) aboutAcademyFetched,
-    required TResult Function(_GetAcademyCoursesLoading value)
-        getAcademyCoursesLoading,
-    required TResult Function(_GetAcademyCoursesFailure value)
-        getAcademyCoursesFailure,
+    required TResult Function(_GetCoursesToSubscribeLoading value)
+        getCoursesToSubscribeLoading,
+    required TResult Function(_GetCoursesToSubscribeFailure value)
+        getCoursesToSubscribeFailure,
     required TResult Function(_AcademyCoursesFetched value)
         academyCoursesFetched,
-    required TResult Function(_GetAcademyCoursesInDateLoading value)
-        getAcademyCoursesInDateLoading,
-    required TResult Function(_GetAcademyCoursesInDateFailure value)
-        getAcademyCoursesInDateFailure,
+    required TResult Function(_GetCoursesToSubscribeInDateLoading value)
+        getCoursesToSubscribeInDateLoading,
+    required TResult Function(_GetCoursesToSubscribeInDateFailure value)
+        getCoursesToSubscribeInDateFailure,
     required TResult Function(_AcademyCoursesInDateFetched value)
         academyCoursesInDateFetched,
     required TResult Function(_GetAcademyReviewLoading value)
@@ -2033,6 +3006,16 @@ class _$GetSportsMembershipFailureImpl implements _GetSportsMembershipFailure {
     required TResult Function(_GetAcademyReviewFailure value)
         getAcademyReviewFailure,
     required TResult Function(_AcademyReviewFetched value) academyReviewFetched,
+    required TResult Function(_InrollUserInCourseLoadingLoading value)
+        inrollUserInCourseLoading,
+    required TResult Function(_InrollUserInCourseFailure value)
+        inrollUserInCourseFailure,
+    required TResult Function(_CourseInrolled value) courseInrolled,
+    required TResult Function(_AddAcademyReviewLoading value)
+        addAcademyReviewLoading,
+    required TResult Function(_AddAcademyReviewFailure value)
+        addAcademyReviewFailure,
+    required TResult Function(_ReviewAdded value) reviewAdded,
   }) {
     return getSportsMembershipFailure(this);
   }
@@ -2052,23 +3035,34 @@ class _$GetSportsMembershipFailureImpl implements _GetSportsMembershipFailure {
         getSuggestedAcademiesFailure,
     TResult? Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult? Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult? Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult? Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult? Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult? Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult? Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult? Function(_GetAcademyCoursesLoading value)?
-        getAcademyCoursesLoading,
-    TResult? Function(_GetAcademyCoursesFailure value)?
-        getAcademyCoursesFailure,
+    TResult? Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult? Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult? Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult? Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult? Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult? Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult? Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult? Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult? Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult? Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult? Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult? Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult? Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult? Function(_CourseInrolled value)? courseInrolled,
+    TResult? Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult? Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult? Function(_ReviewAdded value)? reviewAdded,
   }) {
     return getSportsMembershipFailure?.call(this);
   }
@@ -2088,21 +3082,34 @@ class _$GetSportsMembershipFailureImpl implements _GetSportsMembershipFailure {
         getSuggestedAcademiesFailure,
     TResult Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult Function(_GetAcademyCoursesLoading value)? getAcademyCoursesLoading,
-    TResult Function(_GetAcademyCoursesFailure value)? getAcademyCoursesFailure,
+    TResult Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult Function(_CourseInrolled value)? courseInrolled,
+    TResult Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult Function(_ReviewAdded value)? reviewAdded,
     required TResult orElse(),
   }) {
     if (getSportsMembershipFailure != null) {
@@ -2209,22 +3216,33 @@ class _$SportsMembershipFetchedImpl implements _SportsMembershipFetched {
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
     required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
+    required TResult Function() getAllAcademiesLoading,
+    required TResult Function(Failure? failure) getAllAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
+        allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
-    required TResult Function() getAcademyCoursesLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCourses)
+    required TResult Function() getCoursesToSubscribeLoading,
+    required TResult Function(Failure? failure) getCoursesToSubscribeFailure,
+    required TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)
         academyCoursesFetched,
-    required TResult Function() getAcademyCoursesInDateLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
+    required TResult Function() getCoursesToSubscribeInDateLoading,
+    required TResult Function(Failure? failure)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
     required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
+    required TResult Function() inrollUserInCourseLoading,
+    required TResult Function(Failure? failure) inrollUserInCourseFailure,
+    required TResult Function(bool courseInrolled) courseInrolled,
+    required TResult Function() addAcademyReviewLoading,
+    required TResult Function(Failure? failure) addAcademyReviewFailure,
+    required TResult Function(bool reviewAdded) reviewAdded,
   }) {
     return sportsMembershipFetched(sportsMembership);
   }
@@ -2241,21 +3259,31 @@ class _$SportsMembershipFetchedImpl implements _SportsMembershipFetched {
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult? Function()? getAllAcademiesLoading,
+    TResult? Function(Failure? failure)? getAllAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult? Function()? getAcademyCoursesLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult? Function()? getCoursesToSubscribeLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult? Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult? Function()? getAcademyCoursesInDateLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult? Function()? getCoursesToSubscribeInDateLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult? Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
     TResult? Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult? Function()? inrollUserInCourseLoading,
+    TResult? Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult? Function(bool courseInrolled)? courseInrolled,
+    TResult? Function()? addAcademyReviewLoading,
+    TResult? Function(Failure? failure)? addAcademyReviewFailure,
+    TResult? Function(bool reviewAdded)? reviewAdded,
   }) {
     return sportsMembershipFetched?.call(sportsMembership);
   }
@@ -2272,21 +3300,31 @@ class _$SportsMembershipFetchedImpl implements _SportsMembershipFetched {
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult Function()? getAllAcademiesLoading,
+    TResult Function(Failure? failure)? getAllAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult Function()? getAcademyCoursesLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult Function()? getCoursesToSubscribeLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult Function()? getAcademyCoursesInDateLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult Function()? getCoursesToSubscribeInDateLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
     TResult Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult Function()? inrollUserInCourseLoading,
+    TResult Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult Function(bool courseInrolled)? courseInrolled,
+    TResult Function()? addAcademyReviewLoading,
+    TResult Function(Failure? failure)? addAcademyReviewFailure,
+    TResult Function(bool reviewAdded)? reviewAdded,
     required TResult orElse(),
   }) {
     if (sportsMembershipFetched != null) {
@@ -2311,21 +3349,26 @@ class _$SportsMembershipFetchedImpl implements _SportsMembershipFetched {
         getSuggestedAcademiesFailure,
     required TResult Function(_SuggestedAcademiesFetched value)
         suggestedAcademiesFetched,
+    required TResult Function(_GetAllAcademiesLoading value)
+        getAllAcademiesLoading,
+    required TResult Function(_GetAllAcademiesFailure value)
+        getAllAcademiesFailure,
+    required TResult Function(_AllAcademiesFetched value) allAcademiesFetched,
     required TResult Function(_GetAboutAcademyLoading value)
         getAboutAcademyLoading,
     required TResult Function(_GetAboutAcademyFailure value)
         getAboutAcademyFailure,
     required TResult Function(_AboutAcademyFetched value) aboutAcademyFetched,
-    required TResult Function(_GetAcademyCoursesLoading value)
-        getAcademyCoursesLoading,
-    required TResult Function(_GetAcademyCoursesFailure value)
-        getAcademyCoursesFailure,
+    required TResult Function(_GetCoursesToSubscribeLoading value)
+        getCoursesToSubscribeLoading,
+    required TResult Function(_GetCoursesToSubscribeFailure value)
+        getCoursesToSubscribeFailure,
     required TResult Function(_AcademyCoursesFetched value)
         academyCoursesFetched,
-    required TResult Function(_GetAcademyCoursesInDateLoading value)
-        getAcademyCoursesInDateLoading,
-    required TResult Function(_GetAcademyCoursesInDateFailure value)
-        getAcademyCoursesInDateFailure,
+    required TResult Function(_GetCoursesToSubscribeInDateLoading value)
+        getCoursesToSubscribeInDateLoading,
+    required TResult Function(_GetCoursesToSubscribeInDateFailure value)
+        getCoursesToSubscribeInDateFailure,
     required TResult Function(_AcademyCoursesInDateFetched value)
         academyCoursesInDateFetched,
     required TResult Function(_GetAcademyReviewLoading value)
@@ -2333,6 +3376,16 @@ class _$SportsMembershipFetchedImpl implements _SportsMembershipFetched {
     required TResult Function(_GetAcademyReviewFailure value)
         getAcademyReviewFailure,
     required TResult Function(_AcademyReviewFetched value) academyReviewFetched,
+    required TResult Function(_InrollUserInCourseLoadingLoading value)
+        inrollUserInCourseLoading,
+    required TResult Function(_InrollUserInCourseFailure value)
+        inrollUserInCourseFailure,
+    required TResult Function(_CourseInrolled value) courseInrolled,
+    required TResult Function(_AddAcademyReviewLoading value)
+        addAcademyReviewLoading,
+    required TResult Function(_AddAcademyReviewFailure value)
+        addAcademyReviewFailure,
+    required TResult Function(_ReviewAdded value) reviewAdded,
   }) {
     return sportsMembershipFetched(this);
   }
@@ -2352,23 +3405,34 @@ class _$SportsMembershipFetchedImpl implements _SportsMembershipFetched {
         getSuggestedAcademiesFailure,
     TResult? Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult? Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult? Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult? Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult? Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult? Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult? Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult? Function(_GetAcademyCoursesLoading value)?
-        getAcademyCoursesLoading,
-    TResult? Function(_GetAcademyCoursesFailure value)?
-        getAcademyCoursesFailure,
+    TResult? Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult? Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult? Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult? Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult? Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult? Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult? Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult? Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult? Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult? Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult? Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult? Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult? Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult? Function(_CourseInrolled value)? courseInrolled,
+    TResult? Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult? Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult? Function(_ReviewAdded value)? reviewAdded,
   }) {
     return sportsMembershipFetched?.call(this);
   }
@@ -2388,21 +3452,34 @@ class _$SportsMembershipFetchedImpl implements _SportsMembershipFetched {
         getSuggestedAcademiesFailure,
     TResult Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult Function(_GetAcademyCoursesLoading value)? getAcademyCoursesLoading,
-    TResult Function(_GetAcademyCoursesFailure value)? getAcademyCoursesFailure,
+    TResult Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult Function(_CourseInrolled value)? courseInrolled,
+    TResult Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult Function(_ReviewAdded value)? reviewAdded,
     required TResult orElse(),
   }) {
     if (sportsMembershipFetched != null) {
@@ -2474,22 +3551,33 @@ class _$GetSuggestedAcademiesLoadingImpl
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
     required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
+    required TResult Function() getAllAcademiesLoading,
+    required TResult Function(Failure? failure) getAllAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
+        allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
-    required TResult Function() getAcademyCoursesLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCourses)
+    required TResult Function() getCoursesToSubscribeLoading,
+    required TResult Function(Failure? failure) getCoursesToSubscribeFailure,
+    required TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)
         academyCoursesFetched,
-    required TResult Function() getAcademyCoursesInDateLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
+    required TResult Function() getCoursesToSubscribeInDateLoading,
+    required TResult Function(Failure? failure)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
     required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
+    required TResult Function() inrollUserInCourseLoading,
+    required TResult Function(Failure? failure) inrollUserInCourseFailure,
+    required TResult Function(bool courseInrolled) courseInrolled,
+    required TResult Function() addAcademyReviewLoading,
+    required TResult Function(Failure? failure) addAcademyReviewFailure,
+    required TResult Function(bool reviewAdded) reviewAdded,
   }) {
     return getSuggestedAcademiesLoading();
   }
@@ -2506,21 +3594,31 @@ class _$GetSuggestedAcademiesLoadingImpl
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult? Function()? getAllAcademiesLoading,
+    TResult? Function(Failure? failure)? getAllAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult? Function()? getAcademyCoursesLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult? Function()? getCoursesToSubscribeLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult? Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult? Function()? getAcademyCoursesInDateLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult? Function()? getCoursesToSubscribeInDateLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult? Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
     TResult? Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult? Function()? inrollUserInCourseLoading,
+    TResult? Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult? Function(bool courseInrolled)? courseInrolled,
+    TResult? Function()? addAcademyReviewLoading,
+    TResult? Function(Failure? failure)? addAcademyReviewFailure,
+    TResult? Function(bool reviewAdded)? reviewAdded,
   }) {
     return getSuggestedAcademiesLoading?.call();
   }
@@ -2537,21 +3635,31 @@ class _$GetSuggestedAcademiesLoadingImpl
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult Function()? getAllAcademiesLoading,
+    TResult Function(Failure? failure)? getAllAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult Function()? getAcademyCoursesLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult Function()? getCoursesToSubscribeLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult Function()? getAcademyCoursesInDateLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult Function()? getCoursesToSubscribeInDateLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
     TResult Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult Function()? inrollUserInCourseLoading,
+    TResult Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult Function(bool courseInrolled)? courseInrolled,
+    TResult Function()? addAcademyReviewLoading,
+    TResult Function(Failure? failure)? addAcademyReviewFailure,
+    TResult Function(bool reviewAdded)? reviewAdded,
     required TResult orElse(),
   }) {
     if (getSuggestedAcademiesLoading != null) {
@@ -2576,21 +3684,26 @@ class _$GetSuggestedAcademiesLoadingImpl
         getSuggestedAcademiesFailure,
     required TResult Function(_SuggestedAcademiesFetched value)
         suggestedAcademiesFetched,
+    required TResult Function(_GetAllAcademiesLoading value)
+        getAllAcademiesLoading,
+    required TResult Function(_GetAllAcademiesFailure value)
+        getAllAcademiesFailure,
+    required TResult Function(_AllAcademiesFetched value) allAcademiesFetched,
     required TResult Function(_GetAboutAcademyLoading value)
         getAboutAcademyLoading,
     required TResult Function(_GetAboutAcademyFailure value)
         getAboutAcademyFailure,
     required TResult Function(_AboutAcademyFetched value) aboutAcademyFetched,
-    required TResult Function(_GetAcademyCoursesLoading value)
-        getAcademyCoursesLoading,
-    required TResult Function(_GetAcademyCoursesFailure value)
-        getAcademyCoursesFailure,
+    required TResult Function(_GetCoursesToSubscribeLoading value)
+        getCoursesToSubscribeLoading,
+    required TResult Function(_GetCoursesToSubscribeFailure value)
+        getCoursesToSubscribeFailure,
     required TResult Function(_AcademyCoursesFetched value)
         academyCoursesFetched,
-    required TResult Function(_GetAcademyCoursesInDateLoading value)
-        getAcademyCoursesInDateLoading,
-    required TResult Function(_GetAcademyCoursesInDateFailure value)
-        getAcademyCoursesInDateFailure,
+    required TResult Function(_GetCoursesToSubscribeInDateLoading value)
+        getCoursesToSubscribeInDateLoading,
+    required TResult Function(_GetCoursesToSubscribeInDateFailure value)
+        getCoursesToSubscribeInDateFailure,
     required TResult Function(_AcademyCoursesInDateFetched value)
         academyCoursesInDateFetched,
     required TResult Function(_GetAcademyReviewLoading value)
@@ -2598,6 +3711,16 @@ class _$GetSuggestedAcademiesLoadingImpl
     required TResult Function(_GetAcademyReviewFailure value)
         getAcademyReviewFailure,
     required TResult Function(_AcademyReviewFetched value) academyReviewFetched,
+    required TResult Function(_InrollUserInCourseLoadingLoading value)
+        inrollUserInCourseLoading,
+    required TResult Function(_InrollUserInCourseFailure value)
+        inrollUserInCourseFailure,
+    required TResult Function(_CourseInrolled value) courseInrolled,
+    required TResult Function(_AddAcademyReviewLoading value)
+        addAcademyReviewLoading,
+    required TResult Function(_AddAcademyReviewFailure value)
+        addAcademyReviewFailure,
+    required TResult Function(_ReviewAdded value) reviewAdded,
   }) {
     return getSuggestedAcademiesLoading(this);
   }
@@ -2617,23 +3740,34 @@ class _$GetSuggestedAcademiesLoadingImpl
         getSuggestedAcademiesFailure,
     TResult? Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult? Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult? Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult? Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult? Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult? Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult? Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult? Function(_GetAcademyCoursesLoading value)?
-        getAcademyCoursesLoading,
-    TResult? Function(_GetAcademyCoursesFailure value)?
-        getAcademyCoursesFailure,
+    TResult? Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult? Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult? Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult? Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult? Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult? Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult? Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult? Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult? Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult? Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult? Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult? Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult? Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult? Function(_CourseInrolled value)? courseInrolled,
+    TResult? Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult? Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult? Function(_ReviewAdded value)? reviewAdded,
   }) {
     return getSuggestedAcademiesLoading?.call(this);
   }
@@ -2653,21 +3787,34 @@ class _$GetSuggestedAcademiesLoadingImpl
         getSuggestedAcademiesFailure,
     TResult Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult Function(_GetAcademyCoursesLoading value)? getAcademyCoursesLoading,
-    TResult Function(_GetAcademyCoursesFailure value)? getAcademyCoursesFailure,
+    TResult Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult Function(_CourseInrolled value)? courseInrolled,
+    TResult Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult Function(_ReviewAdded value)? reviewAdded,
     required TResult orElse(),
   }) {
     if (getSuggestedAcademiesLoading != null) {
@@ -2761,22 +3908,33 @@ class _$GetSuggestedAcademiesFailureImpl
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
     required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
+    required TResult Function() getAllAcademiesLoading,
+    required TResult Function(Failure? failure) getAllAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
+        allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
-    required TResult Function() getAcademyCoursesLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCourses)
+    required TResult Function() getCoursesToSubscribeLoading,
+    required TResult Function(Failure? failure) getCoursesToSubscribeFailure,
+    required TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)
         academyCoursesFetched,
-    required TResult Function() getAcademyCoursesInDateLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
+    required TResult Function() getCoursesToSubscribeInDateLoading,
+    required TResult Function(Failure? failure)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
     required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
+    required TResult Function() inrollUserInCourseLoading,
+    required TResult Function(Failure? failure) inrollUserInCourseFailure,
+    required TResult Function(bool courseInrolled) courseInrolled,
+    required TResult Function() addAcademyReviewLoading,
+    required TResult Function(Failure? failure) addAcademyReviewFailure,
+    required TResult Function(bool reviewAdded) reviewAdded,
   }) {
     return getSuggestedAcademiesFailure(failure);
   }
@@ -2793,21 +3951,31 @@ class _$GetSuggestedAcademiesFailureImpl
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult? Function()? getAllAcademiesLoading,
+    TResult? Function(Failure? failure)? getAllAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult? Function()? getAcademyCoursesLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult? Function()? getCoursesToSubscribeLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult? Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult? Function()? getAcademyCoursesInDateLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult? Function()? getCoursesToSubscribeInDateLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult? Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
     TResult? Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult? Function()? inrollUserInCourseLoading,
+    TResult? Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult? Function(bool courseInrolled)? courseInrolled,
+    TResult? Function()? addAcademyReviewLoading,
+    TResult? Function(Failure? failure)? addAcademyReviewFailure,
+    TResult? Function(bool reviewAdded)? reviewAdded,
   }) {
     return getSuggestedAcademiesFailure?.call(failure);
   }
@@ -2824,21 +3992,31 @@ class _$GetSuggestedAcademiesFailureImpl
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult Function()? getAllAcademiesLoading,
+    TResult Function(Failure? failure)? getAllAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult Function()? getAcademyCoursesLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult Function()? getCoursesToSubscribeLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult Function()? getAcademyCoursesInDateLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult Function()? getCoursesToSubscribeInDateLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
     TResult Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult Function()? inrollUserInCourseLoading,
+    TResult Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult Function(bool courseInrolled)? courseInrolled,
+    TResult Function()? addAcademyReviewLoading,
+    TResult Function(Failure? failure)? addAcademyReviewFailure,
+    TResult Function(bool reviewAdded)? reviewAdded,
     required TResult orElse(),
   }) {
     if (getSuggestedAcademiesFailure != null) {
@@ -2863,21 +4041,26 @@ class _$GetSuggestedAcademiesFailureImpl
         getSuggestedAcademiesFailure,
     required TResult Function(_SuggestedAcademiesFetched value)
         suggestedAcademiesFetched,
+    required TResult Function(_GetAllAcademiesLoading value)
+        getAllAcademiesLoading,
+    required TResult Function(_GetAllAcademiesFailure value)
+        getAllAcademiesFailure,
+    required TResult Function(_AllAcademiesFetched value) allAcademiesFetched,
     required TResult Function(_GetAboutAcademyLoading value)
         getAboutAcademyLoading,
     required TResult Function(_GetAboutAcademyFailure value)
         getAboutAcademyFailure,
     required TResult Function(_AboutAcademyFetched value) aboutAcademyFetched,
-    required TResult Function(_GetAcademyCoursesLoading value)
-        getAcademyCoursesLoading,
-    required TResult Function(_GetAcademyCoursesFailure value)
-        getAcademyCoursesFailure,
+    required TResult Function(_GetCoursesToSubscribeLoading value)
+        getCoursesToSubscribeLoading,
+    required TResult Function(_GetCoursesToSubscribeFailure value)
+        getCoursesToSubscribeFailure,
     required TResult Function(_AcademyCoursesFetched value)
         academyCoursesFetched,
-    required TResult Function(_GetAcademyCoursesInDateLoading value)
-        getAcademyCoursesInDateLoading,
-    required TResult Function(_GetAcademyCoursesInDateFailure value)
-        getAcademyCoursesInDateFailure,
+    required TResult Function(_GetCoursesToSubscribeInDateLoading value)
+        getCoursesToSubscribeInDateLoading,
+    required TResult Function(_GetCoursesToSubscribeInDateFailure value)
+        getCoursesToSubscribeInDateFailure,
     required TResult Function(_AcademyCoursesInDateFetched value)
         academyCoursesInDateFetched,
     required TResult Function(_GetAcademyReviewLoading value)
@@ -2885,6 +4068,16 @@ class _$GetSuggestedAcademiesFailureImpl
     required TResult Function(_GetAcademyReviewFailure value)
         getAcademyReviewFailure,
     required TResult Function(_AcademyReviewFetched value) academyReviewFetched,
+    required TResult Function(_InrollUserInCourseLoadingLoading value)
+        inrollUserInCourseLoading,
+    required TResult Function(_InrollUserInCourseFailure value)
+        inrollUserInCourseFailure,
+    required TResult Function(_CourseInrolled value) courseInrolled,
+    required TResult Function(_AddAcademyReviewLoading value)
+        addAcademyReviewLoading,
+    required TResult Function(_AddAcademyReviewFailure value)
+        addAcademyReviewFailure,
+    required TResult Function(_ReviewAdded value) reviewAdded,
   }) {
     return getSuggestedAcademiesFailure(this);
   }
@@ -2904,23 +4097,34 @@ class _$GetSuggestedAcademiesFailureImpl
         getSuggestedAcademiesFailure,
     TResult? Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult? Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult? Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult? Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult? Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult? Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult? Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult? Function(_GetAcademyCoursesLoading value)?
-        getAcademyCoursesLoading,
-    TResult? Function(_GetAcademyCoursesFailure value)?
-        getAcademyCoursesFailure,
+    TResult? Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult? Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult? Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult? Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult? Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult? Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult? Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult? Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult? Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult? Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult? Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult? Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult? Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult? Function(_CourseInrolled value)? courseInrolled,
+    TResult? Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult? Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult? Function(_ReviewAdded value)? reviewAdded,
   }) {
     return getSuggestedAcademiesFailure?.call(this);
   }
@@ -2940,21 +4144,34 @@ class _$GetSuggestedAcademiesFailureImpl
         getSuggestedAcademiesFailure,
     TResult Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult Function(_GetAcademyCoursesLoading value)? getAcademyCoursesLoading,
-    TResult Function(_GetAcademyCoursesFailure value)? getAcademyCoursesFailure,
+    TResult Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult Function(_CourseInrolled value)? courseInrolled,
+    TResult Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult Function(_ReviewAdded value)? reviewAdded,
     required TResult orElse(),
   }) {
     if (getSuggestedAcademiesFailure != null) {
@@ -3062,22 +4279,33 @@ class _$SuggestedAcademiesFetchedImpl implements _SuggestedAcademiesFetched {
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
     required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
+    required TResult Function() getAllAcademiesLoading,
+    required TResult Function(Failure? failure) getAllAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
+        allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
-    required TResult Function() getAcademyCoursesLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCourses)
+    required TResult Function() getCoursesToSubscribeLoading,
+    required TResult Function(Failure? failure) getCoursesToSubscribeFailure,
+    required TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)
         academyCoursesFetched,
-    required TResult Function() getAcademyCoursesInDateLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
+    required TResult Function() getCoursesToSubscribeInDateLoading,
+    required TResult Function(Failure? failure)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
     required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
+    required TResult Function() inrollUserInCourseLoading,
+    required TResult Function(Failure? failure) inrollUserInCourseFailure,
+    required TResult Function(bool courseInrolled) courseInrolled,
+    required TResult Function() addAcademyReviewLoading,
+    required TResult Function(Failure? failure) addAcademyReviewFailure,
+    required TResult Function(bool reviewAdded) reviewAdded,
   }) {
     return suggestedAcademiesFetched(suggestedAcademies);
   }
@@ -3094,21 +4322,31 @@ class _$SuggestedAcademiesFetchedImpl implements _SuggestedAcademiesFetched {
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult? Function()? getAllAcademiesLoading,
+    TResult? Function(Failure? failure)? getAllAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult? Function()? getAcademyCoursesLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult? Function()? getCoursesToSubscribeLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult? Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult? Function()? getAcademyCoursesInDateLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult? Function()? getCoursesToSubscribeInDateLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult? Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
     TResult? Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult? Function()? inrollUserInCourseLoading,
+    TResult? Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult? Function(bool courseInrolled)? courseInrolled,
+    TResult? Function()? addAcademyReviewLoading,
+    TResult? Function(Failure? failure)? addAcademyReviewFailure,
+    TResult? Function(bool reviewAdded)? reviewAdded,
   }) {
     return suggestedAcademiesFetched?.call(suggestedAcademies);
   }
@@ -3125,21 +4363,31 @@ class _$SuggestedAcademiesFetchedImpl implements _SuggestedAcademiesFetched {
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult Function()? getAllAcademiesLoading,
+    TResult Function(Failure? failure)? getAllAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult Function()? getAcademyCoursesLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult Function()? getCoursesToSubscribeLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult Function()? getAcademyCoursesInDateLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult Function()? getCoursesToSubscribeInDateLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
     TResult Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult Function()? inrollUserInCourseLoading,
+    TResult Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult Function(bool courseInrolled)? courseInrolled,
+    TResult Function()? addAcademyReviewLoading,
+    TResult Function(Failure? failure)? addAcademyReviewFailure,
+    TResult Function(bool reviewAdded)? reviewAdded,
     required TResult orElse(),
   }) {
     if (suggestedAcademiesFetched != null) {
@@ -3164,21 +4412,26 @@ class _$SuggestedAcademiesFetchedImpl implements _SuggestedAcademiesFetched {
         getSuggestedAcademiesFailure,
     required TResult Function(_SuggestedAcademiesFetched value)
         suggestedAcademiesFetched,
+    required TResult Function(_GetAllAcademiesLoading value)
+        getAllAcademiesLoading,
+    required TResult Function(_GetAllAcademiesFailure value)
+        getAllAcademiesFailure,
+    required TResult Function(_AllAcademiesFetched value) allAcademiesFetched,
     required TResult Function(_GetAboutAcademyLoading value)
         getAboutAcademyLoading,
     required TResult Function(_GetAboutAcademyFailure value)
         getAboutAcademyFailure,
     required TResult Function(_AboutAcademyFetched value) aboutAcademyFetched,
-    required TResult Function(_GetAcademyCoursesLoading value)
-        getAcademyCoursesLoading,
-    required TResult Function(_GetAcademyCoursesFailure value)
-        getAcademyCoursesFailure,
+    required TResult Function(_GetCoursesToSubscribeLoading value)
+        getCoursesToSubscribeLoading,
+    required TResult Function(_GetCoursesToSubscribeFailure value)
+        getCoursesToSubscribeFailure,
     required TResult Function(_AcademyCoursesFetched value)
         academyCoursesFetched,
-    required TResult Function(_GetAcademyCoursesInDateLoading value)
-        getAcademyCoursesInDateLoading,
-    required TResult Function(_GetAcademyCoursesInDateFailure value)
-        getAcademyCoursesInDateFailure,
+    required TResult Function(_GetCoursesToSubscribeInDateLoading value)
+        getCoursesToSubscribeInDateLoading,
+    required TResult Function(_GetCoursesToSubscribeInDateFailure value)
+        getCoursesToSubscribeInDateFailure,
     required TResult Function(_AcademyCoursesInDateFetched value)
         academyCoursesInDateFetched,
     required TResult Function(_GetAcademyReviewLoading value)
@@ -3186,6 +4439,16 @@ class _$SuggestedAcademiesFetchedImpl implements _SuggestedAcademiesFetched {
     required TResult Function(_GetAcademyReviewFailure value)
         getAcademyReviewFailure,
     required TResult Function(_AcademyReviewFetched value) academyReviewFetched,
+    required TResult Function(_InrollUserInCourseLoadingLoading value)
+        inrollUserInCourseLoading,
+    required TResult Function(_InrollUserInCourseFailure value)
+        inrollUserInCourseFailure,
+    required TResult Function(_CourseInrolled value) courseInrolled,
+    required TResult Function(_AddAcademyReviewLoading value)
+        addAcademyReviewLoading,
+    required TResult Function(_AddAcademyReviewFailure value)
+        addAcademyReviewFailure,
+    required TResult Function(_ReviewAdded value) reviewAdded,
   }) {
     return suggestedAcademiesFetched(this);
   }
@@ -3205,23 +4468,34 @@ class _$SuggestedAcademiesFetchedImpl implements _SuggestedAcademiesFetched {
         getSuggestedAcademiesFailure,
     TResult? Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult? Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult? Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult? Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult? Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult? Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult? Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult? Function(_GetAcademyCoursesLoading value)?
-        getAcademyCoursesLoading,
-    TResult? Function(_GetAcademyCoursesFailure value)?
-        getAcademyCoursesFailure,
+    TResult? Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult? Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult? Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult? Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult? Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult? Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult? Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult? Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult? Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult? Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult? Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult? Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult? Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult? Function(_CourseInrolled value)? courseInrolled,
+    TResult? Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult? Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult? Function(_ReviewAdded value)? reviewAdded,
   }) {
     return suggestedAcademiesFetched?.call(this);
   }
@@ -3241,21 +4515,34 @@ class _$SuggestedAcademiesFetchedImpl implements _SuggestedAcademiesFetched {
         getSuggestedAcademiesFailure,
     TResult Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult Function(_GetAcademyCoursesLoading value)? getAcademyCoursesLoading,
-    TResult Function(_GetAcademyCoursesFailure value)? getAcademyCoursesFailure,
+    TResult Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult Function(_CourseInrolled value)? courseInrolled,
+    TResult Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult Function(_ReviewAdded value)? reviewAdded,
     required TResult orElse(),
   }) {
     if (suggestedAcademiesFetched != null) {
@@ -3274,6 +4561,1061 @@ abstract class _SuggestedAcademiesFetched implements AcademyState {
   @JsonKey(ignore: true)
   _$$SuggestedAcademiesFetchedImplCopyWith<_$SuggestedAcademiesFetchedImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetAllAcademiesLoadingImplCopyWith<$Res> {
+  factory _$$GetAllAcademiesLoadingImplCopyWith(
+          _$GetAllAcademiesLoadingImpl value,
+          $Res Function(_$GetAllAcademiesLoadingImpl) then) =
+      __$$GetAllAcademiesLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetAllAcademiesLoadingImplCopyWithImpl<$Res>
+    extends _$AcademyStateCopyWithImpl<$Res, _$GetAllAcademiesLoadingImpl>
+    implements _$$GetAllAcademiesLoadingImplCopyWith<$Res> {
+  __$$GetAllAcademiesLoadingImplCopyWithImpl(
+      _$GetAllAcademiesLoadingImpl _value,
+      $Res Function(_$GetAllAcademiesLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetAllAcademiesLoadingImpl implements _GetAllAcademiesLoading {
+  const _$GetAllAcademiesLoadingImpl();
+
+  @override
+  String toString() {
+    return 'AcademyState.getAllAcademiesLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetAllAcademiesLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getSportsMembershipLoading,
+    required TResult Function(Failure? failure) getSportsMembershipFailure,
+    required TResult Function(List<AcademyMembershipEntity> sportsMembership)
+        sportsMembershipFetched,
+    required TResult Function() getSuggestedAcademiesLoading,
+    required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+        suggestedAcademiesFetched,
+    required TResult Function() getAllAcademiesLoading,
+    required TResult Function(Failure? failure) getAllAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
+        allAcademiesFetched,
+    required TResult Function() getAboutAcademyLoading,
+    required TResult Function(Failure? failure) getAboutAcademyFailure,
+    required TResult Function(AboutAcademyEntity? aboutAcademy)
+        aboutAcademyFetched,
+    required TResult Function() getCoursesToSubscribeLoading,
+    required TResult Function(Failure? failure) getCoursesToSubscribeFailure,
+    required TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)
+        academyCoursesFetched,
+    required TResult Function() getCoursesToSubscribeInDateLoading,
+    required TResult Function(Failure? failure)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)
+        academyCoursesInDateFetched,
+    required TResult Function() getAcademyReviewLoading,
+    required TResult Function(Failure? failure) getAcademyReviewFailure,
+    required TResult Function(List<AcademyReviewEntity> academyReview)
+        academyReviewFetched,
+    required TResult Function() inrollUserInCourseLoading,
+    required TResult Function(Failure? failure) inrollUserInCourseFailure,
+    required TResult Function(bool courseInrolled) courseInrolled,
+    required TResult Function() addAcademyReviewLoading,
+    required TResult Function(Failure? failure) addAcademyReviewFailure,
+    required TResult Function(bool reviewAdded) reviewAdded,
+  }) {
+    return getAllAcademiesLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getSportsMembershipLoading,
+    TResult? Function(Failure? failure)? getSportsMembershipFailure,
+    TResult? Function(List<AcademyMembershipEntity> sportsMembership)?
+        sportsMembershipFetched,
+    TResult? Function()? getSuggestedAcademiesLoading,
+    TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+        suggestedAcademiesFetched,
+    TResult? Function()? getAllAcademiesLoading,
+    TResult? Function(Failure? failure)? getAllAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
+    TResult? Function()? getAboutAcademyLoading,
+    TResult? Function(Failure? failure)? getAboutAcademyFailure,
+    TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
+    TResult? Function()? getCoursesToSubscribeLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult? Function(List<GetCoursesToSubscribeEntity> academyCourses)?
+        academyCoursesFetched,
+    TResult? Function()? getCoursesToSubscribeInDateLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult? Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
+        academyCoursesInDateFetched,
+    TResult? Function()? getAcademyReviewLoading,
+    TResult? Function(Failure? failure)? getAcademyReviewFailure,
+    TResult? Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
+    TResult? Function()? inrollUserInCourseLoading,
+    TResult? Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult? Function(bool courseInrolled)? courseInrolled,
+    TResult? Function()? addAcademyReviewLoading,
+    TResult? Function(Failure? failure)? addAcademyReviewFailure,
+    TResult? Function(bool reviewAdded)? reviewAdded,
+  }) {
+    return getAllAcademiesLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getSportsMembershipLoading,
+    TResult Function(Failure? failure)? getSportsMembershipFailure,
+    TResult Function(List<AcademyMembershipEntity> sportsMembership)?
+        sportsMembershipFetched,
+    TResult Function()? getSuggestedAcademiesLoading,
+    TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+        suggestedAcademiesFetched,
+    TResult Function()? getAllAcademiesLoading,
+    TResult Function(Failure? failure)? getAllAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
+    TResult Function()? getAboutAcademyLoading,
+    TResult Function(Failure? failure)? getAboutAcademyFailure,
+    TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
+    TResult Function()? getCoursesToSubscribeLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)?
+        academyCoursesFetched,
+    TResult Function()? getCoursesToSubscribeInDateLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
+        academyCoursesInDateFetched,
+    TResult Function()? getAcademyReviewLoading,
+    TResult Function(Failure? failure)? getAcademyReviewFailure,
+    TResult Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
+    TResult Function()? inrollUserInCourseLoading,
+    TResult Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult Function(bool courseInrolled)? courseInrolled,
+    TResult Function()? addAcademyReviewLoading,
+    TResult Function(Failure? failure)? addAcademyReviewFailure,
+    TResult Function(bool reviewAdded)? reviewAdded,
+    required TResult orElse(),
+  }) {
+    if (getAllAcademiesLoading != null) {
+      return getAllAcademiesLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_GetSportsMembershipMembershipLoading value)
+        getSportsMembershipLoading,
+    required TResult Function(_GetSportsMembershipFailure value)
+        getSportsMembershipFailure,
+    required TResult Function(_SportsMembershipFetched value)
+        sportsMembershipFetched,
+    required TResult Function(_GetSuggestedAcademiesLoading value)
+        getSuggestedAcademiesLoading,
+    required TResult Function(_GetSuggestedAcademiesFailure value)
+        getSuggestedAcademiesFailure,
+    required TResult Function(_SuggestedAcademiesFetched value)
+        suggestedAcademiesFetched,
+    required TResult Function(_GetAllAcademiesLoading value)
+        getAllAcademiesLoading,
+    required TResult Function(_GetAllAcademiesFailure value)
+        getAllAcademiesFailure,
+    required TResult Function(_AllAcademiesFetched value) allAcademiesFetched,
+    required TResult Function(_GetAboutAcademyLoading value)
+        getAboutAcademyLoading,
+    required TResult Function(_GetAboutAcademyFailure value)
+        getAboutAcademyFailure,
+    required TResult Function(_AboutAcademyFetched value) aboutAcademyFetched,
+    required TResult Function(_GetCoursesToSubscribeLoading value)
+        getCoursesToSubscribeLoading,
+    required TResult Function(_GetCoursesToSubscribeFailure value)
+        getCoursesToSubscribeFailure,
+    required TResult Function(_AcademyCoursesFetched value)
+        academyCoursesFetched,
+    required TResult Function(_GetCoursesToSubscribeInDateLoading value)
+        getCoursesToSubscribeInDateLoading,
+    required TResult Function(_GetCoursesToSubscribeInDateFailure value)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(_AcademyCoursesInDateFetched value)
+        academyCoursesInDateFetched,
+    required TResult Function(_GetAcademyReviewLoading value)
+        getAcademyReviewLoading,
+    required TResult Function(_GetAcademyReviewFailure value)
+        getAcademyReviewFailure,
+    required TResult Function(_AcademyReviewFetched value) academyReviewFetched,
+    required TResult Function(_InrollUserInCourseLoadingLoading value)
+        inrollUserInCourseLoading,
+    required TResult Function(_InrollUserInCourseFailure value)
+        inrollUserInCourseFailure,
+    required TResult Function(_CourseInrolled value) courseInrolled,
+    required TResult Function(_AddAcademyReviewLoading value)
+        addAcademyReviewLoading,
+    required TResult Function(_AddAcademyReviewFailure value)
+        addAcademyReviewFailure,
+    required TResult Function(_ReviewAdded value) reviewAdded,
+  }) {
+    return getAllAcademiesLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_GetSportsMembershipMembershipLoading value)?
+        getSportsMembershipLoading,
+    TResult? Function(_GetSportsMembershipFailure value)?
+        getSportsMembershipFailure,
+    TResult? Function(_SportsMembershipFetched value)? sportsMembershipFetched,
+    TResult? Function(_GetSuggestedAcademiesLoading value)?
+        getSuggestedAcademiesLoading,
+    TResult? Function(_GetSuggestedAcademiesFailure value)?
+        getSuggestedAcademiesFailure,
+    TResult? Function(_SuggestedAcademiesFetched value)?
+        suggestedAcademiesFetched,
+    TResult? Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult? Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult? Function(_AllAcademiesFetched value)? allAcademiesFetched,
+    TResult? Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
+    TResult? Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
+    TResult? Function(_AboutAcademyFetched value)? aboutAcademyFetched,
+    TResult? Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult? Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
+    TResult? Function(_AcademyCoursesFetched value)? academyCoursesFetched,
+    TResult? Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult? Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
+    TResult? Function(_AcademyCoursesInDateFetched value)?
+        academyCoursesInDateFetched,
+    TResult? Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
+    TResult? Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
+    TResult? Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult? Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult? Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult? Function(_CourseInrolled value)? courseInrolled,
+    TResult? Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult? Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult? Function(_ReviewAdded value)? reviewAdded,
+  }) {
+    return getAllAcademiesLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GetSportsMembershipMembershipLoading value)?
+        getSportsMembershipLoading,
+    TResult Function(_GetSportsMembershipFailure value)?
+        getSportsMembershipFailure,
+    TResult Function(_SportsMembershipFetched value)? sportsMembershipFetched,
+    TResult Function(_GetSuggestedAcademiesLoading value)?
+        getSuggestedAcademiesLoading,
+    TResult Function(_GetSuggestedAcademiesFailure value)?
+        getSuggestedAcademiesFailure,
+    TResult Function(_SuggestedAcademiesFetched value)?
+        suggestedAcademiesFetched,
+    TResult Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult Function(_AllAcademiesFetched value)? allAcademiesFetched,
+    TResult Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
+    TResult Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
+    TResult Function(_AboutAcademyFetched value)? aboutAcademyFetched,
+    TResult Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
+    TResult Function(_AcademyCoursesFetched value)? academyCoursesFetched,
+    TResult Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
+    TResult Function(_AcademyCoursesInDateFetched value)?
+        academyCoursesInDateFetched,
+    TResult Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
+    TResult Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
+    TResult Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult Function(_CourseInrolled value)? courseInrolled,
+    TResult Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult Function(_ReviewAdded value)? reviewAdded,
+    required TResult orElse(),
+  }) {
+    if (getAllAcademiesLoading != null) {
+      return getAllAcademiesLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetAllAcademiesLoading implements AcademyState {
+  const factory _GetAllAcademiesLoading() = _$GetAllAcademiesLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$GetAllAcademiesFailureImplCopyWith<$Res> {
+  factory _$$GetAllAcademiesFailureImplCopyWith(
+          _$GetAllAcademiesFailureImpl value,
+          $Res Function(_$GetAllAcademiesFailureImpl) then) =
+      __$$GetAllAcademiesFailureImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Failure? failure});
+}
+
+/// @nodoc
+class __$$GetAllAcademiesFailureImplCopyWithImpl<$Res>
+    extends _$AcademyStateCopyWithImpl<$Res, _$GetAllAcademiesFailureImpl>
+    implements _$$GetAllAcademiesFailureImplCopyWith<$Res> {
+  __$$GetAllAcademiesFailureImplCopyWithImpl(
+      _$GetAllAcademiesFailureImpl _value,
+      $Res Function(_$GetAllAcademiesFailureImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? failure = freezed,
+  }) {
+    return _then(_$GetAllAcademiesFailureImpl(
+      failure: freezed == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetAllAcademiesFailureImpl implements _GetAllAcademiesFailure {
+  const _$GetAllAcademiesFailureImpl({this.failure = null});
+
+  @override
+  @JsonKey()
+  final Failure? failure;
+
+  @override
+  String toString() {
+    return 'AcademyState.getAllAcademiesFailure(failure: $failure)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetAllAcademiesFailureImpl &&
+            (identical(other.failure, failure) || other.failure == failure));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, failure);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetAllAcademiesFailureImplCopyWith<_$GetAllAcademiesFailureImpl>
+      get copyWith => __$$GetAllAcademiesFailureImplCopyWithImpl<
+          _$GetAllAcademiesFailureImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getSportsMembershipLoading,
+    required TResult Function(Failure? failure) getSportsMembershipFailure,
+    required TResult Function(List<AcademyMembershipEntity> sportsMembership)
+        sportsMembershipFetched,
+    required TResult Function() getSuggestedAcademiesLoading,
+    required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+        suggestedAcademiesFetched,
+    required TResult Function() getAllAcademiesLoading,
+    required TResult Function(Failure? failure) getAllAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
+        allAcademiesFetched,
+    required TResult Function() getAboutAcademyLoading,
+    required TResult Function(Failure? failure) getAboutAcademyFailure,
+    required TResult Function(AboutAcademyEntity? aboutAcademy)
+        aboutAcademyFetched,
+    required TResult Function() getCoursesToSubscribeLoading,
+    required TResult Function(Failure? failure) getCoursesToSubscribeFailure,
+    required TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)
+        academyCoursesFetched,
+    required TResult Function() getCoursesToSubscribeInDateLoading,
+    required TResult Function(Failure? failure)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)
+        academyCoursesInDateFetched,
+    required TResult Function() getAcademyReviewLoading,
+    required TResult Function(Failure? failure) getAcademyReviewFailure,
+    required TResult Function(List<AcademyReviewEntity> academyReview)
+        academyReviewFetched,
+    required TResult Function() inrollUserInCourseLoading,
+    required TResult Function(Failure? failure) inrollUserInCourseFailure,
+    required TResult Function(bool courseInrolled) courseInrolled,
+    required TResult Function() addAcademyReviewLoading,
+    required TResult Function(Failure? failure) addAcademyReviewFailure,
+    required TResult Function(bool reviewAdded) reviewAdded,
+  }) {
+    return getAllAcademiesFailure(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getSportsMembershipLoading,
+    TResult? Function(Failure? failure)? getSportsMembershipFailure,
+    TResult? Function(List<AcademyMembershipEntity> sportsMembership)?
+        sportsMembershipFetched,
+    TResult? Function()? getSuggestedAcademiesLoading,
+    TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+        suggestedAcademiesFetched,
+    TResult? Function()? getAllAcademiesLoading,
+    TResult? Function(Failure? failure)? getAllAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
+    TResult? Function()? getAboutAcademyLoading,
+    TResult? Function(Failure? failure)? getAboutAcademyFailure,
+    TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
+    TResult? Function()? getCoursesToSubscribeLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult? Function(List<GetCoursesToSubscribeEntity> academyCourses)?
+        academyCoursesFetched,
+    TResult? Function()? getCoursesToSubscribeInDateLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult? Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
+        academyCoursesInDateFetched,
+    TResult? Function()? getAcademyReviewLoading,
+    TResult? Function(Failure? failure)? getAcademyReviewFailure,
+    TResult? Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
+    TResult? Function()? inrollUserInCourseLoading,
+    TResult? Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult? Function(bool courseInrolled)? courseInrolled,
+    TResult? Function()? addAcademyReviewLoading,
+    TResult? Function(Failure? failure)? addAcademyReviewFailure,
+    TResult? Function(bool reviewAdded)? reviewAdded,
+  }) {
+    return getAllAcademiesFailure?.call(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getSportsMembershipLoading,
+    TResult Function(Failure? failure)? getSportsMembershipFailure,
+    TResult Function(List<AcademyMembershipEntity> sportsMembership)?
+        sportsMembershipFetched,
+    TResult Function()? getSuggestedAcademiesLoading,
+    TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+        suggestedAcademiesFetched,
+    TResult Function()? getAllAcademiesLoading,
+    TResult Function(Failure? failure)? getAllAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
+    TResult Function()? getAboutAcademyLoading,
+    TResult Function(Failure? failure)? getAboutAcademyFailure,
+    TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
+    TResult Function()? getCoursesToSubscribeLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)?
+        academyCoursesFetched,
+    TResult Function()? getCoursesToSubscribeInDateLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
+        academyCoursesInDateFetched,
+    TResult Function()? getAcademyReviewLoading,
+    TResult Function(Failure? failure)? getAcademyReviewFailure,
+    TResult Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
+    TResult Function()? inrollUserInCourseLoading,
+    TResult Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult Function(bool courseInrolled)? courseInrolled,
+    TResult Function()? addAcademyReviewLoading,
+    TResult Function(Failure? failure)? addAcademyReviewFailure,
+    TResult Function(bool reviewAdded)? reviewAdded,
+    required TResult orElse(),
+  }) {
+    if (getAllAcademiesFailure != null) {
+      return getAllAcademiesFailure(failure);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_GetSportsMembershipMembershipLoading value)
+        getSportsMembershipLoading,
+    required TResult Function(_GetSportsMembershipFailure value)
+        getSportsMembershipFailure,
+    required TResult Function(_SportsMembershipFetched value)
+        sportsMembershipFetched,
+    required TResult Function(_GetSuggestedAcademiesLoading value)
+        getSuggestedAcademiesLoading,
+    required TResult Function(_GetSuggestedAcademiesFailure value)
+        getSuggestedAcademiesFailure,
+    required TResult Function(_SuggestedAcademiesFetched value)
+        suggestedAcademiesFetched,
+    required TResult Function(_GetAllAcademiesLoading value)
+        getAllAcademiesLoading,
+    required TResult Function(_GetAllAcademiesFailure value)
+        getAllAcademiesFailure,
+    required TResult Function(_AllAcademiesFetched value) allAcademiesFetched,
+    required TResult Function(_GetAboutAcademyLoading value)
+        getAboutAcademyLoading,
+    required TResult Function(_GetAboutAcademyFailure value)
+        getAboutAcademyFailure,
+    required TResult Function(_AboutAcademyFetched value) aboutAcademyFetched,
+    required TResult Function(_GetCoursesToSubscribeLoading value)
+        getCoursesToSubscribeLoading,
+    required TResult Function(_GetCoursesToSubscribeFailure value)
+        getCoursesToSubscribeFailure,
+    required TResult Function(_AcademyCoursesFetched value)
+        academyCoursesFetched,
+    required TResult Function(_GetCoursesToSubscribeInDateLoading value)
+        getCoursesToSubscribeInDateLoading,
+    required TResult Function(_GetCoursesToSubscribeInDateFailure value)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(_AcademyCoursesInDateFetched value)
+        academyCoursesInDateFetched,
+    required TResult Function(_GetAcademyReviewLoading value)
+        getAcademyReviewLoading,
+    required TResult Function(_GetAcademyReviewFailure value)
+        getAcademyReviewFailure,
+    required TResult Function(_AcademyReviewFetched value) academyReviewFetched,
+    required TResult Function(_InrollUserInCourseLoadingLoading value)
+        inrollUserInCourseLoading,
+    required TResult Function(_InrollUserInCourseFailure value)
+        inrollUserInCourseFailure,
+    required TResult Function(_CourseInrolled value) courseInrolled,
+    required TResult Function(_AddAcademyReviewLoading value)
+        addAcademyReviewLoading,
+    required TResult Function(_AddAcademyReviewFailure value)
+        addAcademyReviewFailure,
+    required TResult Function(_ReviewAdded value) reviewAdded,
+  }) {
+    return getAllAcademiesFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_GetSportsMembershipMembershipLoading value)?
+        getSportsMembershipLoading,
+    TResult? Function(_GetSportsMembershipFailure value)?
+        getSportsMembershipFailure,
+    TResult? Function(_SportsMembershipFetched value)? sportsMembershipFetched,
+    TResult? Function(_GetSuggestedAcademiesLoading value)?
+        getSuggestedAcademiesLoading,
+    TResult? Function(_GetSuggestedAcademiesFailure value)?
+        getSuggestedAcademiesFailure,
+    TResult? Function(_SuggestedAcademiesFetched value)?
+        suggestedAcademiesFetched,
+    TResult? Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult? Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult? Function(_AllAcademiesFetched value)? allAcademiesFetched,
+    TResult? Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
+    TResult? Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
+    TResult? Function(_AboutAcademyFetched value)? aboutAcademyFetched,
+    TResult? Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult? Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
+    TResult? Function(_AcademyCoursesFetched value)? academyCoursesFetched,
+    TResult? Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult? Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
+    TResult? Function(_AcademyCoursesInDateFetched value)?
+        academyCoursesInDateFetched,
+    TResult? Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
+    TResult? Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
+    TResult? Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult? Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult? Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult? Function(_CourseInrolled value)? courseInrolled,
+    TResult? Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult? Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult? Function(_ReviewAdded value)? reviewAdded,
+  }) {
+    return getAllAcademiesFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GetSportsMembershipMembershipLoading value)?
+        getSportsMembershipLoading,
+    TResult Function(_GetSportsMembershipFailure value)?
+        getSportsMembershipFailure,
+    TResult Function(_SportsMembershipFetched value)? sportsMembershipFetched,
+    TResult Function(_GetSuggestedAcademiesLoading value)?
+        getSuggestedAcademiesLoading,
+    TResult Function(_GetSuggestedAcademiesFailure value)?
+        getSuggestedAcademiesFailure,
+    TResult Function(_SuggestedAcademiesFetched value)?
+        suggestedAcademiesFetched,
+    TResult Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult Function(_AllAcademiesFetched value)? allAcademiesFetched,
+    TResult Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
+    TResult Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
+    TResult Function(_AboutAcademyFetched value)? aboutAcademyFetched,
+    TResult Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
+    TResult Function(_AcademyCoursesFetched value)? academyCoursesFetched,
+    TResult Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
+    TResult Function(_AcademyCoursesInDateFetched value)?
+        academyCoursesInDateFetched,
+    TResult Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
+    TResult Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
+    TResult Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult Function(_CourseInrolled value)? courseInrolled,
+    TResult Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult Function(_ReviewAdded value)? reviewAdded,
+    required TResult orElse(),
+  }) {
+    if (getAllAcademiesFailure != null) {
+      return getAllAcademiesFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetAllAcademiesFailure implements AcademyState {
+  const factory _GetAllAcademiesFailure({final Failure? failure}) =
+      _$GetAllAcademiesFailureImpl;
+
+  Failure? get failure;
+  @JsonKey(ignore: true)
+  _$$GetAllAcademiesFailureImplCopyWith<_$GetAllAcademiesFailureImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AllAcademiesFetchedImplCopyWith<$Res> {
+  factory _$$AllAcademiesFetchedImplCopyWith(_$AllAcademiesFetchedImpl value,
+          $Res Function(_$AllAcademiesFetchedImpl) then) =
+      __$$AllAcademiesFetchedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<SuggestedAcademyEntity> allAcademies});
+}
+
+/// @nodoc
+class __$$AllAcademiesFetchedImplCopyWithImpl<$Res>
+    extends _$AcademyStateCopyWithImpl<$Res, _$AllAcademiesFetchedImpl>
+    implements _$$AllAcademiesFetchedImplCopyWith<$Res> {
+  __$$AllAcademiesFetchedImplCopyWithImpl(_$AllAcademiesFetchedImpl _value,
+      $Res Function(_$AllAcademiesFetchedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? allAcademies = null,
+  }) {
+    return _then(_$AllAcademiesFetchedImpl(
+      allAcademies: null == allAcademies
+          ? _value._allAcademies
+          : allAcademies // ignore: cast_nullable_to_non_nullable
+              as List<SuggestedAcademyEntity>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AllAcademiesFetchedImpl implements _AllAcademiesFetched {
+  const _$AllAcademiesFetchedImpl(
+      {final List<SuggestedAcademyEntity> allAcademies = const []})
+      : _allAcademies = allAcademies;
+
+  final List<SuggestedAcademyEntity> _allAcademies;
+  @override
+  @JsonKey()
+  List<SuggestedAcademyEntity> get allAcademies {
+    if (_allAcademies is EqualUnmodifiableListView) return _allAcademies;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_allAcademies);
+  }
+
+  @override
+  String toString() {
+    return 'AcademyState.allAcademiesFetched(allAcademies: $allAcademies)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AllAcademiesFetchedImpl &&
+            const DeepCollectionEquality()
+                .equals(other._allAcademies, _allAcademies));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_allAcademies));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AllAcademiesFetchedImplCopyWith<_$AllAcademiesFetchedImpl> get copyWith =>
+      __$$AllAcademiesFetchedImplCopyWithImpl<_$AllAcademiesFetchedImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getSportsMembershipLoading,
+    required TResult Function(Failure? failure) getSportsMembershipFailure,
+    required TResult Function(List<AcademyMembershipEntity> sportsMembership)
+        sportsMembershipFetched,
+    required TResult Function() getSuggestedAcademiesLoading,
+    required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+        suggestedAcademiesFetched,
+    required TResult Function() getAllAcademiesLoading,
+    required TResult Function(Failure? failure) getAllAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
+        allAcademiesFetched,
+    required TResult Function() getAboutAcademyLoading,
+    required TResult Function(Failure? failure) getAboutAcademyFailure,
+    required TResult Function(AboutAcademyEntity? aboutAcademy)
+        aboutAcademyFetched,
+    required TResult Function() getCoursesToSubscribeLoading,
+    required TResult Function(Failure? failure) getCoursesToSubscribeFailure,
+    required TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)
+        academyCoursesFetched,
+    required TResult Function() getCoursesToSubscribeInDateLoading,
+    required TResult Function(Failure? failure)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)
+        academyCoursesInDateFetched,
+    required TResult Function() getAcademyReviewLoading,
+    required TResult Function(Failure? failure) getAcademyReviewFailure,
+    required TResult Function(List<AcademyReviewEntity> academyReview)
+        academyReviewFetched,
+    required TResult Function() inrollUserInCourseLoading,
+    required TResult Function(Failure? failure) inrollUserInCourseFailure,
+    required TResult Function(bool courseInrolled) courseInrolled,
+    required TResult Function() addAcademyReviewLoading,
+    required TResult Function(Failure? failure) addAcademyReviewFailure,
+    required TResult Function(bool reviewAdded) reviewAdded,
+  }) {
+    return allAcademiesFetched(allAcademies);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getSportsMembershipLoading,
+    TResult? Function(Failure? failure)? getSportsMembershipFailure,
+    TResult? Function(List<AcademyMembershipEntity> sportsMembership)?
+        sportsMembershipFetched,
+    TResult? Function()? getSuggestedAcademiesLoading,
+    TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+        suggestedAcademiesFetched,
+    TResult? Function()? getAllAcademiesLoading,
+    TResult? Function(Failure? failure)? getAllAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
+    TResult? Function()? getAboutAcademyLoading,
+    TResult? Function(Failure? failure)? getAboutAcademyFailure,
+    TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
+    TResult? Function()? getCoursesToSubscribeLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult? Function(List<GetCoursesToSubscribeEntity> academyCourses)?
+        academyCoursesFetched,
+    TResult? Function()? getCoursesToSubscribeInDateLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult? Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
+        academyCoursesInDateFetched,
+    TResult? Function()? getAcademyReviewLoading,
+    TResult? Function(Failure? failure)? getAcademyReviewFailure,
+    TResult? Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
+    TResult? Function()? inrollUserInCourseLoading,
+    TResult? Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult? Function(bool courseInrolled)? courseInrolled,
+    TResult? Function()? addAcademyReviewLoading,
+    TResult? Function(Failure? failure)? addAcademyReviewFailure,
+    TResult? Function(bool reviewAdded)? reviewAdded,
+  }) {
+    return allAcademiesFetched?.call(allAcademies);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getSportsMembershipLoading,
+    TResult Function(Failure? failure)? getSportsMembershipFailure,
+    TResult Function(List<AcademyMembershipEntity> sportsMembership)?
+        sportsMembershipFetched,
+    TResult Function()? getSuggestedAcademiesLoading,
+    TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+        suggestedAcademiesFetched,
+    TResult Function()? getAllAcademiesLoading,
+    TResult Function(Failure? failure)? getAllAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
+    TResult Function()? getAboutAcademyLoading,
+    TResult Function(Failure? failure)? getAboutAcademyFailure,
+    TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
+    TResult Function()? getCoursesToSubscribeLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)?
+        academyCoursesFetched,
+    TResult Function()? getCoursesToSubscribeInDateLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
+        academyCoursesInDateFetched,
+    TResult Function()? getAcademyReviewLoading,
+    TResult Function(Failure? failure)? getAcademyReviewFailure,
+    TResult Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
+    TResult Function()? inrollUserInCourseLoading,
+    TResult Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult Function(bool courseInrolled)? courseInrolled,
+    TResult Function()? addAcademyReviewLoading,
+    TResult Function(Failure? failure)? addAcademyReviewFailure,
+    TResult Function(bool reviewAdded)? reviewAdded,
+    required TResult orElse(),
+  }) {
+    if (allAcademiesFetched != null) {
+      return allAcademiesFetched(allAcademies);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_GetSportsMembershipMembershipLoading value)
+        getSportsMembershipLoading,
+    required TResult Function(_GetSportsMembershipFailure value)
+        getSportsMembershipFailure,
+    required TResult Function(_SportsMembershipFetched value)
+        sportsMembershipFetched,
+    required TResult Function(_GetSuggestedAcademiesLoading value)
+        getSuggestedAcademiesLoading,
+    required TResult Function(_GetSuggestedAcademiesFailure value)
+        getSuggestedAcademiesFailure,
+    required TResult Function(_SuggestedAcademiesFetched value)
+        suggestedAcademiesFetched,
+    required TResult Function(_GetAllAcademiesLoading value)
+        getAllAcademiesLoading,
+    required TResult Function(_GetAllAcademiesFailure value)
+        getAllAcademiesFailure,
+    required TResult Function(_AllAcademiesFetched value) allAcademiesFetched,
+    required TResult Function(_GetAboutAcademyLoading value)
+        getAboutAcademyLoading,
+    required TResult Function(_GetAboutAcademyFailure value)
+        getAboutAcademyFailure,
+    required TResult Function(_AboutAcademyFetched value) aboutAcademyFetched,
+    required TResult Function(_GetCoursesToSubscribeLoading value)
+        getCoursesToSubscribeLoading,
+    required TResult Function(_GetCoursesToSubscribeFailure value)
+        getCoursesToSubscribeFailure,
+    required TResult Function(_AcademyCoursesFetched value)
+        academyCoursesFetched,
+    required TResult Function(_GetCoursesToSubscribeInDateLoading value)
+        getCoursesToSubscribeInDateLoading,
+    required TResult Function(_GetCoursesToSubscribeInDateFailure value)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(_AcademyCoursesInDateFetched value)
+        academyCoursesInDateFetched,
+    required TResult Function(_GetAcademyReviewLoading value)
+        getAcademyReviewLoading,
+    required TResult Function(_GetAcademyReviewFailure value)
+        getAcademyReviewFailure,
+    required TResult Function(_AcademyReviewFetched value) academyReviewFetched,
+    required TResult Function(_InrollUserInCourseLoadingLoading value)
+        inrollUserInCourseLoading,
+    required TResult Function(_InrollUserInCourseFailure value)
+        inrollUserInCourseFailure,
+    required TResult Function(_CourseInrolled value) courseInrolled,
+    required TResult Function(_AddAcademyReviewLoading value)
+        addAcademyReviewLoading,
+    required TResult Function(_AddAcademyReviewFailure value)
+        addAcademyReviewFailure,
+    required TResult Function(_ReviewAdded value) reviewAdded,
+  }) {
+    return allAcademiesFetched(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_GetSportsMembershipMembershipLoading value)?
+        getSportsMembershipLoading,
+    TResult? Function(_GetSportsMembershipFailure value)?
+        getSportsMembershipFailure,
+    TResult? Function(_SportsMembershipFetched value)? sportsMembershipFetched,
+    TResult? Function(_GetSuggestedAcademiesLoading value)?
+        getSuggestedAcademiesLoading,
+    TResult? Function(_GetSuggestedAcademiesFailure value)?
+        getSuggestedAcademiesFailure,
+    TResult? Function(_SuggestedAcademiesFetched value)?
+        suggestedAcademiesFetched,
+    TResult? Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult? Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult? Function(_AllAcademiesFetched value)? allAcademiesFetched,
+    TResult? Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
+    TResult? Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
+    TResult? Function(_AboutAcademyFetched value)? aboutAcademyFetched,
+    TResult? Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult? Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
+    TResult? Function(_AcademyCoursesFetched value)? academyCoursesFetched,
+    TResult? Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult? Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
+    TResult? Function(_AcademyCoursesInDateFetched value)?
+        academyCoursesInDateFetched,
+    TResult? Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
+    TResult? Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
+    TResult? Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult? Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult? Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult? Function(_CourseInrolled value)? courseInrolled,
+    TResult? Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult? Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult? Function(_ReviewAdded value)? reviewAdded,
+  }) {
+    return allAcademiesFetched?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GetSportsMembershipMembershipLoading value)?
+        getSportsMembershipLoading,
+    TResult Function(_GetSportsMembershipFailure value)?
+        getSportsMembershipFailure,
+    TResult Function(_SportsMembershipFetched value)? sportsMembershipFetched,
+    TResult Function(_GetSuggestedAcademiesLoading value)?
+        getSuggestedAcademiesLoading,
+    TResult Function(_GetSuggestedAcademiesFailure value)?
+        getSuggestedAcademiesFailure,
+    TResult Function(_SuggestedAcademiesFetched value)?
+        suggestedAcademiesFetched,
+    TResult Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult Function(_AllAcademiesFetched value)? allAcademiesFetched,
+    TResult Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
+    TResult Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
+    TResult Function(_AboutAcademyFetched value)? aboutAcademyFetched,
+    TResult Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
+    TResult Function(_AcademyCoursesFetched value)? academyCoursesFetched,
+    TResult Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
+    TResult Function(_AcademyCoursesInDateFetched value)?
+        academyCoursesInDateFetched,
+    TResult Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
+    TResult Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
+    TResult Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult Function(_CourseInrolled value)? courseInrolled,
+    TResult Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult Function(_ReviewAdded value)? reviewAdded,
+    required TResult orElse(),
+  }) {
+    if (allAcademiesFetched != null) {
+      return allAcademiesFetched(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AllAcademiesFetched implements AcademyState {
+  const factory _AllAcademiesFetched(
+          {final List<SuggestedAcademyEntity> allAcademies}) =
+      _$AllAcademiesFetchedImpl;
+
+  List<SuggestedAcademyEntity> get allAcademies;
+  @JsonKey(ignore: true)
+  _$$AllAcademiesFetchedImplCopyWith<_$AllAcademiesFetchedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -3326,22 +5668,33 @@ class _$GetAboutAcademyLoadingImpl implements _GetAboutAcademyLoading {
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
     required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
+    required TResult Function() getAllAcademiesLoading,
+    required TResult Function(Failure? failure) getAllAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
+        allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
-    required TResult Function() getAcademyCoursesLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCourses)
+    required TResult Function() getCoursesToSubscribeLoading,
+    required TResult Function(Failure? failure) getCoursesToSubscribeFailure,
+    required TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)
         academyCoursesFetched,
-    required TResult Function() getAcademyCoursesInDateLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
+    required TResult Function() getCoursesToSubscribeInDateLoading,
+    required TResult Function(Failure? failure)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
     required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
+    required TResult Function() inrollUserInCourseLoading,
+    required TResult Function(Failure? failure) inrollUserInCourseFailure,
+    required TResult Function(bool courseInrolled) courseInrolled,
+    required TResult Function() addAcademyReviewLoading,
+    required TResult Function(Failure? failure) addAcademyReviewFailure,
+    required TResult Function(bool reviewAdded) reviewAdded,
   }) {
     return getAboutAcademyLoading();
   }
@@ -3358,21 +5711,31 @@ class _$GetAboutAcademyLoadingImpl implements _GetAboutAcademyLoading {
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult? Function()? getAllAcademiesLoading,
+    TResult? Function(Failure? failure)? getAllAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult? Function()? getAcademyCoursesLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult? Function()? getCoursesToSubscribeLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult? Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult? Function()? getAcademyCoursesInDateLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult? Function()? getCoursesToSubscribeInDateLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult? Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
     TResult? Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult? Function()? inrollUserInCourseLoading,
+    TResult? Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult? Function(bool courseInrolled)? courseInrolled,
+    TResult? Function()? addAcademyReviewLoading,
+    TResult? Function(Failure? failure)? addAcademyReviewFailure,
+    TResult? Function(bool reviewAdded)? reviewAdded,
   }) {
     return getAboutAcademyLoading?.call();
   }
@@ -3389,21 +5752,31 @@ class _$GetAboutAcademyLoadingImpl implements _GetAboutAcademyLoading {
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult Function()? getAllAcademiesLoading,
+    TResult Function(Failure? failure)? getAllAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult Function()? getAcademyCoursesLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult Function()? getCoursesToSubscribeLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult Function()? getAcademyCoursesInDateLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult Function()? getCoursesToSubscribeInDateLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
     TResult Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult Function()? inrollUserInCourseLoading,
+    TResult Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult Function(bool courseInrolled)? courseInrolled,
+    TResult Function()? addAcademyReviewLoading,
+    TResult Function(Failure? failure)? addAcademyReviewFailure,
+    TResult Function(bool reviewAdded)? reviewAdded,
     required TResult orElse(),
   }) {
     if (getAboutAcademyLoading != null) {
@@ -3428,21 +5801,26 @@ class _$GetAboutAcademyLoadingImpl implements _GetAboutAcademyLoading {
         getSuggestedAcademiesFailure,
     required TResult Function(_SuggestedAcademiesFetched value)
         suggestedAcademiesFetched,
+    required TResult Function(_GetAllAcademiesLoading value)
+        getAllAcademiesLoading,
+    required TResult Function(_GetAllAcademiesFailure value)
+        getAllAcademiesFailure,
+    required TResult Function(_AllAcademiesFetched value) allAcademiesFetched,
     required TResult Function(_GetAboutAcademyLoading value)
         getAboutAcademyLoading,
     required TResult Function(_GetAboutAcademyFailure value)
         getAboutAcademyFailure,
     required TResult Function(_AboutAcademyFetched value) aboutAcademyFetched,
-    required TResult Function(_GetAcademyCoursesLoading value)
-        getAcademyCoursesLoading,
-    required TResult Function(_GetAcademyCoursesFailure value)
-        getAcademyCoursesFailure,
+    required TResult Function(_GetCoursesToSubscribeLoading value)
+        getCoursesToSubscribeLoading,
+    required TResult Function(_GetCoursesToSubscribeFailure value)
+        getCoursesToSubscribeFailure,
     required TResult Function(_AcademyCoursesFetched value)
         academyCoursesFetched,
-    required TResult Function(_GetAcademyCoursesInDateLoading value)
-        getAcademyCoursesInDateLoading,
-    required TResult Function(_GetAcademyCoursesInDateFailure value)
-        getAcademyCoursesInDateFailure,
+    required TResult Function(_GetCoursesToSubscribeInDateLoading value)
+        getCoursesToSubscribeInDateLoading,
+    required TResult Function(_GetCoursesToSubscribeInDateFailure value)
+        getCoursesToSubscribeInDateFailure,
     required TResult Function(_AcademyCoursesInDateFetched value)
         academyCoursesInDateFetched,
     required TResult Function(_GetAcademyReviewLoading value)
@@ -3450,6 +5828,16 @@ class _$GetAboutAcademyLoadingImpl implements _GetAboutAcademyLoading {
     required TResult Function(_GetAcademyReviewFailure value)
         getAcademyReviewFailure,
     required TResult Function(_AcademyReviewFetched value) academyReviewFetched,
+    required TResult Function(_InrollUserInCourseLoadingLoading value)
+        inrollUserInCourseLoading,
+    required TResult Function(_InrollUserInCourseFailure value)
+        inrollUserInCourseFailure,
+    required TResult Function(_CourseInrolled value) courseInrolled,
+    required TResult Function(_AddAcademyReviewLoading value)
+        addAcademyReviewLoading,
+    required TResult Function(_AddAcademyReviewFailure value)
+        addAcademyReviewFailure,
+    required TResult Function(_ReviewAdded value) reviewAdded,
   }) {
     return getAboutAcademyLoading(this);
   }
@@ -3469,23 +5857,34 @@ class _$GetAboutAcademyLoadingImpl implements _GetAboutAcademyLoading {
         getSuggestedAcademiesFailure,
     TResult? Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult? Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult? Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult? Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult? Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult? Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult? Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult? Function(_GetAcademyCoursesLoading value)?
-        getAcademyCoursesLoading,
-    TResult? Function(_GetAcademyCoursesFailure value)?
-        getAcademyCoursesFailure,
+    TResult? Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult? Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult? Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult? Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult? Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult? Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult? Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult? Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult? Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult? Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult? Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult? Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult? Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult? Function(_CourseInrolled value)? courseInrolled,
+    TResult? Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult? Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult? Function(_ReviewAdded value)? reviewAdded,
   }) {
     return getAboutAcademyLoading?.call(this);
   }
@@ -3505,21 +5904,34 @@ class _$GetAboutAcademyLoadingImpl implements _GetAboutAcademyLoading {
         getSuggestedAcademiesFailure,
     TResult Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult Function(_GetAcademyCoursesLoading value)? getAcademyCoursesLoading,
-    TResult Function(_GetAcademyCoursesFailure value)? getAcademyCoursesFailure,
+    TResult Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult Function(_CourseInrolled value)? courseInrolled,
+    TResult Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult Function(_ReviewAdded value)? reviewAdded,
     required TResult orElse(),
   }) {
     if (getAboutAcademyLoading != null) {
@@ -3610,22 +6022,33 @@ class _$GetAboutAcademyFailureImpl implements _GetAboutAcademyFailure {
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
     required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
+    required TResult Function() getAllAcademiesLoading,
+    required TResult Function(Failure? failure) getAllAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
+        allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
-    required TResult Function() getAcademyCoursesLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCourses)
+    required TResult Function() getCoursesToSubscribeLoading,
+    required TResult Function(Failure? failure) getCoursesToSubscribeFailure,
+    required TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)
         academyCoursesFetched,
-    required TResult Function() getAcademyCoursesInDateLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
+    required TResult Function() getCoursesToSubscribeInDateLoading,
+    required TResult Function(Failure? failure)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
     required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
+    required TResult Function() inrollUserInCourseLoading,
+    required TResult Function(Failure? failure) inrollUserInCourseFailure,
+    required TResult Function(bool courseInrolled) courseInrolled,
+    required TResult Function() addAcademyReviewLoading,
+    required TResult Function(Failure? failure) addAcademyReviewFailure,
+    required TResult Function(bool reviewAdded) reviewAdded,
   }) {
     return getAboutAcademyFailure(failure);
   }
@@ -3642,21 +6065,31 @@ class _$GetAboutAcademyFailureImpl implements _GetAboutAcademyFailure {
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult? Function()? getAllAcademiesLoading,
+    TResult? Function(Failure? failure)? getAllAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult? Function()? getAcademyCoursesLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult? Function()? getCoursesToSubscribeLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult? Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult? Function()? getAcademyCoursesInDateLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult? Function()? getCoursesToSubscribeInDateLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult? Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
     TResult? Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult? Function()? inrollUserInCourseLoading,
+    TResult? Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult? Function(bool courseInrolled)? courseInrolled,
+    TResult? Function()? addAcademyReviewLoading,
+    TResult? Function(Failure? failure)? addAcademyReviewFailure,
+    TResult? Function(bool reviewAdded)? reviewAdded,
   }) {
     return getAboutAcademyFailure?.call(failure);
   }
@@ -3673,21 +6106,31 @@ class _$GetAboutAcademyFailureImpl implements _GetAboutAcademyFailure {
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult Function()? getAllAcademiesLoading,
+    TResult Function(Failure? failure)? getAllAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult Function()? getAcademyCoursesLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult Function()? getCoursesToSubscribeLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult Function()? getAcademyCoursesInDateLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult Function()? getCoursesToSubscribeInDateLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
     TResult Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult Function()? inrollUserInCourseLoading,
+    TResult Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult Function(bool courseInrolled)? courseInrolled,
+    TResult Function()? addAcademyReviewLoading,
+    TResult Function(Failure? failure)? addAcademyReviewFailure,
+    TResult Function(bool reviewAdded)? reviewAdded,
     required TResult orElse(),
   }) {
     if (getAboutAcademyFailure != null) {
@@ -3712,21 +6155,26 @@ class _$GetAboutAcademyFailureImpl implements _GetAboutAcademyFailure {
         getSuggestedAcademiesFailure,
     required TResult Function(_SuggestedAcademiesFetched value)
         suggestedAcademiesFetched,
+    required TResult Function(_GetAllAcademiesLoading value)
+        getAllAcademiesLoading,
+    required TResult Function(_GetAllAcademiesFailure value)
+        getAllAcademiesFailure,
+    required TResult Function(_AllAcademiesFetched value) allAcademiesFetched,
     required TResult Function(_GetAboutAcademyLoading value)
         getAboutAcademyLoading,
     required TResult Function(_GetAboutAcademyFailure value)
         getAboutAcademyFailure,
     required TResult Function(_AboutAcademyFetched value) aboutAcademyFetched,
-    required TResult Function(_GetAcademyCoursesLoading value)
-        getAcademyCoursesLoading,
-    required TResult Function(_GetAcademyCoursesFailure value)
-        getAcademyCoursesFailure,
+    required TResult Function(_GetCoursesToSubscribeLoading value)
+        getCoursesToSubscribeLoading,
+    required TResult Function(_GetCoursesToSubscribeFailure value)
+        getCoursesToSubscribeFailure,
     required TResult Function(_AcademyCoursesFetched value)
         academyCoursesFetched,
-    required TResult Function(_GetAcademyCoursesInDateLoading value)
-        getAcademyCoursesInDateLoading,
-    required TResult Function(_GetAcademyCoursesInDateFailure value)
-        getAcademyCoursesInDateFailure,
+    required TResult Function(_GetCoursesToSubscribeInDateLoading value)
+        getCoursesToSubscribeInDateLoading,
+    required TResult Function(_GetCoursesToSubscribeInDateFailure value)
+        getCoursesToSubscribeInDateFailure,
     required TResult Function(_AcademyCoursesInDateFetched value)
         academyCoursesInDateFetched,
     required TResult Function(_GetAcademyReviewLoading value)
@@ -3734,6 +6182,16 @@ class _$GetAboutAcademyFailureImpl implements _GetAboutAcademyFailure {
     required TResult Function(_GetAcademyReviewFailure value)
         getAcademyReviewFailure,
     required TResult Function(_AcademyReviewFetched value) academyReviewFetched,
+    required TResult Function(_InrollUserInCourseLoadingLoading value)
+        inrollUserInCourseLoading,
+    required TResult Function(_InrollUserInCourseFailure value)
+        inrollUserInCourseFailure,
+    required TResult Function(_CourseInrolled value) courseInrolled,
+    required TResult Function(_AddAcademyReviewLoading value)
+        addAcademyReviewLoading,
+    required TResult Function(_AddAcademyReviewFailure value)
+        addAcademyReviewFailure,
+    required TResult Function(_ReviewAdded value) reviewAdded,
   }) {
     return getAboutAcademyFailure(this);
   }
@@ -3753,23 +6211,34 @@ class _$GetAboutAcademyFailureImpl implements _GetAboutAcademyFailure {
         getSuggestedAcademiesFailure,
     TResult? Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult? Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult? Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult? Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult? Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult? Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult? Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult? Function(_GetAcademyCoursesLoading value)?
-        getAcademyCoursesLoading,
-    TResult? Function(_GetAcademyCoursesFailure value)?
-        getAcademyCoursesFailure,
+    TResult? Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult? Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult? Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult? Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult? Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult? Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult? Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult? Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult? Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult? Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult? Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult? Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult? Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult? Function(_CourseInrolled value)? courseInrolled,
+    TResult? Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult? Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult? Function(_ReviewAdded value)? reviewAdded,
   }) {
     return getAboutAcademyFailure?.call(this);
   }
@@ -3789,21 +6258,34 @@ class _$GetAboutAcademyFailureImpl implements _GetAboutAcademyFailure {
         getSuggestedAcademiesFailure,
     TResult Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult Function(_GetAcademyCoursesLoading value)? getAcademyCoursesLoading,
-    TResult Function(_GetAcademyCoursesFailure value)? getAcademyCoursesFailure,
+    TResult Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult Function(_CourseInrolled value)? courseInrolled,
+    TResult Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult Function(_ReviewAdded value)? reviewAdded,
     required TResult orElse(),
   }) {
     if (getAboutAcademyFailure != null) {
@@ -3899,22 +6381,33 @@ class _$AboutAcademyFetchedImpl implements _AboutAcademyFetched {
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
     required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
+    required TResult Function() getAllAcademiesLoading,
+    required TResult Function(Failure? failure) getAllAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
+        allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
-    required TResult Function() getAcademyCoursesLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCourses)
+    required TResult Function() getCoursesToSubscribeLoading,
+    required TResult Function(Failure? failure) getCoursesToSubscribeFailure,
+    required TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)
         academyCoursesFetched,
-    required TResult Function() getAcademyCoursesInDateLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
+    required TResult Function() getCoursesToSubscribeInDateLoading,
+    required TResult Function(Failure? failure)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
     required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
+    required TResult Function() inrollUserInCourseLoading,
+    required TResult Function(Failure? failure) inrollUserInCourseFailure,
+    required TResult Function(bool courseInrolled) courseInrolled,
+    required TResult Function() addAcademyReviewLoading,
+    required TResult Function(Failure? failure) addAcademyReviewFailure,
+    required TResult Function(bool reviewAdded) reviewAdded,
   }) {
     return aboutAcademyFetched(aboutAcademy);
   }
@@ -3931,21 +6424,31 @@ class _$AboutAcademyFetchedImpl implements _AboutAcademyFetched {
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult? Function()? getAllAcademiesLoading,
+    TResult? Function(Failure? failure)? getAllAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult? Function()? getAcademyCoursesLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult? Function()? getCoursesToSubscribeLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult? Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult? Function()? getAcademyCoursesInDateLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult? Function()? getCoursesToSubscribeInDateLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult? Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
     TResult? Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult? Function()? inrollUserInCourseLoading,
+    TResult? Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult? Function(bool courseInrolled)? courseInrolled,
+    TResult? Function()? addAcademyReviewLoading,
+    TResult? Function(Failure? failure)? addAcademyReviewFailure,
+    TResult? Function(bool reviewAdded)? reviewAdded,
   }) {
     return aboutAcademyFetched?.call(aboutAcademy);
   }
@@ -3962,21 +6465,31 @@ class _$AboutAcademyFetchedImpl implements _AboutAcademyFetched {
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult Function()? getAllAcademiesLoading,
+    TResult Function(Failure? failure)? getAllAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult Function()? getAcademyCoursesLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult Function()? getCoursesToSubscribeLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult Function()? getAcademyCoursesInDateLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult Function()? getCoursesToSubscribeInDateLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
     TResult Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult Function()? inrollUserInCourseLoading,
+    TResult Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult Function(bool courseInrolled)? courseInrolled,
+    TResult Function()? addAcademyReviewLoading,
+    TResult Function(Failure? failure)? addAcademyReviewFailure,
+    TResult Function(bool reviewAdded)? reviewAdded,
     required TResult orElse(),
   }) {
     if (aboutAcademyFetched != null) {
@@ -4001,21 +6514,26 @@ class _$AboutAcademyFetchedImpl implements _AboutAcademyFetched {
         getSuggestedAcademiesFailure,
     required TResult Function(_SuggestedAcademiesFetched value)
         suggestedAcademiesFetched,
+    required TResult Function(_GetAllAcademiesLoading value)
+        getAllAcademiesLoading,
+    required TResult Function(_GetAllAcademiesFailure value)
+        getAllAcademiesFailure,
+    required TResult Function(_AllAcademiesFetched value) allAcademiesFetched,
     required TResult Function(_GetAboutAcademyLoading value)
         getAboutAcademyLoading,
     required TResult Function(_GetAboutAcademyFailure value)
         getAboutAcademyFailure,
     required TResult Function(_AboutAcademyFetched value) aboutAcademyFetched,
-    required TResult Function(_GetAcademyCoursesLoading value)
-        getAcademyCoursesLoading,
-    required TResult Function(_GetAcademyCoursesFailure value)
-        getAcademyCoursesFailure,
+    required TResult Function(_GetCoursesToSubscribeLoading value)
+        getCoursesToSubscribeLoading,
+    required TResult Function(_GetCoursesToSubscribeFailure value)
+        getCoursesToSubscribeFailure,
     required TResult Function(_AcademyCoursesFetched value)
         academyCoursesFetched,
-    required TResult Function(_GetAcademyCoursesInDateLoading value)
-        getAcademyCoursesInDateLoading,
-    required TResult Function(_GetAcademyCoursesInDateFailure value)
-        getAcademyCoursesInDateFailure,
+    required TResult Function(_GetCoursesToSubscribeInDateLoading value)
+        getCoursesToSubscribeInDateLoading,
+    required TResult Function(_GetCoursesToSubscribeInDateFailure value)
+        getCoursesToSubscribeInDateFailure,
     required TResult Function(_AcademyCoursesInDateFetched value)
         academyCoursesInDateFetched,
     required TResult Function(_GetAcademyReviewLoading value)
@@ -4023,6 +6541,16 @@ class _$AboutAcademyFetchedImpl implements _AboutAcademyFetched {
     required TResult Function(_GetAcademyReviewFailure value)
         getAcademyReviewFailure,
     required TResult Function(_AcademyReviewFetched value) academyReviewFetched,
+    required TResult Function(_InrollUserInCourseLoadingLoading value)
+        inrollUserInCourseLoading,
+    required TResult Function(_InrollUserInCourseFailure value)
+        inrollUserInCourseFailure,
+    required TResult Function(_CourseInrolled value) courseInrolled,
+    required TResult Function(_AddAcademyReviewLoading value)
+        addAcademyReviewLoading,
+    required TResult Function(_AddAcademyReviewFailure value)
+        addAcademyReviewFailure,
+    required TResult Function(_ReviewAdded value) reviewAdded,
   }) {
     return aboutAcademyFetched(this);
   }
@@ -4042,23 +6570,34 @@ class _$AboutAcademyFetchedImpl implements _AboutAcademyFetched {
         getSuggestedAcademiesFailure,
     TResult? Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult? Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult? Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult? Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult? Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult? Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult? Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult? Function(_GetAcademyCoursesLoading value)?
-        getAcademyCoursesLoading,
-    TResult? Function(_GetAcademyCoursesFailure value)?
-        getAcademyCoursesFailure,
+    TResult? Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult? Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult? Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult? Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult? Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult? Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult? Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult? Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult? Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult? Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult? Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult? Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult? Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult? Function(_CourseInrolled value)? courseInrolled,
+    TResult? Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult? Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult? Function(_ReviewAdded value)? reviewAdded,
   }) {
     return aboutAcademyFetched?.call(this);
   }
@@ -4078,21 +6617,34 @@ class _$AboutAcademyFetchedImpl implements _AboutAcademyFetched {
         getSuggestedAcademiesFailure,
     TResult Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult Function(_GetAcademyCoursesLoading value)? getAcademyCoursesLoading,
-    TResult Function(_GetAcademyCoursesFailure value)? getAcademyCoursesFailure,
+    TResult Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult Function(_CourseInrolled value)? courseInrolled,
+    TResult Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult Function(_ReviewAdded value)? reviewAdded,
     required TResult orElse(),
   }) {
     if (aboutAcademyFetched != null) {
@@ -4113,38 +6665,39 @@ abstract class _AboutAcademyFetched implements AcademyState {
 }
 
 /// @nodoc
-abstract class _$$GetAcademyCoursesLoadingImplCopyWith<$Res> {
-  factory _$$GetAcademyCoursesLoadingImplCopyWith(
-          _$GetAcademyCoursesLoadingImpl value,
-          $Res Function(_$GetAcademyCoursesLoadingImpl) then) =
-      __$$GetAcademyCoursesLoadingImplCopyWithImpl<$Res>;
+abstract class _$$GetCoursesToSubscribeLoadingImplCopyWith<$Res> {
+  factory _$$GetCoursesToSubscribeLoadingImplCopyWith(
+          _$GetCoursesToSubscribeLoadingImpl value,
+          $Res Function(_$GetCoursesToSubscribeLoadingImpl) then) =
+      __$$GetCoursesToSubscribeLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetAcademyCoursesLoadingImplCopyWithImpl<$Res>
-    extends _$AcademyStateCopyWithImpl<$Res, _$GetAcademyCoursesLoadingImpl>
-    implements _$$GetAcademyCoursesLoadingImplCopyWith<$Res> {
-  __$$GetAcademyCoursesLoadingImplCopyWithImpl(
-      _$GetAcademyCoursesLoadingImpl _value,
-      $Res Function(_$GetAcademyCoursesLoadingImpl) _then)
+class __$$GetCoursesToSubscribeLoadingImplCopyWithImpl<$Res>
+    extends _$AcademyStateCopyWithImpl<$Res, _$GetCoursesToSubscribeLoadingImpl>
+    implements _$$GetCoursesToSubscribeLoadingImplCopyWith<$Res> {
+  __$$GetCoursesToSubscribeLoadingImplCopyWithImpl(
+      _$GetCoursesToSubscribeLoadingImpl _value,
+      $Res Function(_$GetCoursesToSubscribeLoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$GetAcademyCoursesLoadingImpl implements _GetAcademyCoursesLoading {
-  const _$GetAcademyCoursesLoadingImpl();
+class _$GetCoursesToSubscribeLoadingImpl
+    implements _GetCoursesToSubscribeLoading {
+  const _$GetCoursesToSubscribeLoadingImpl();
 
   @override
   String toString() {
-    return 'AcademyState.getAcademyCoursesLoading()';
+    return 'AcademyState.getCoursesToSubscribeLoading()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetAcademyCoursesLoadingImpl);
+            other is _$GetCoursesToSubscribeLoadingImpl);
   }
 
   @override
@@ -4162,24 +6715,35 @@ class _$GetAcademyCoursesLoadingImpl implements _GetAcademyCoursesLoading {
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
     required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
+    required TResult Function() getAllAcademiesLoading,
+    required TResult Function(Failure? failure) getAllAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
+        allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
-    required TResult Function() getAcademyCoursesLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCourses)
+    required TResult Function() getCoursesToSubscribeLoading,
+    required TResult Function(Failure? failure) getCoursesToSubscribeFailure,
+    required TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)
         academyCoursesFetched,
-    required TResult Function() getAcademyCoursesInDateLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
+    required TResult Function() getCoursesToSubscribeInDateLoading,
+    required TResult Function(Failure? failure)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
     required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
+    required TResult Function() inrollUserInCourseLoading,
+    required TResult Function(Failure? failure) inrollUserInCourseFailure,
+    required TResult Function(bool courseInrolled) courseInrolled,
+    required TResult Function() addAcademyReviewLoading,
+    required TResult Function(Failure? failure) addAcademyReviewFailure,
+    required TResult Function(bool reviewAdded) reviewAdded,
   }) {
-    return getAcademyCoursesLoading();
+    return getCoursesToSubscribeLoading();
   }
 
   @override
@@ -4194,23 +6758,33 @@ class _$GetAcademyCoursesLoadingImpl implements _GetAcademyCoursesLoading {
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult? Function()? getAllAcademiesLoading,
+    TResult? Function(Failure? failure)? getAllAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult? Function()? getAcademyCoursesLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult? Function()? getCoursesToSubscribeLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult? Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult? Function()? getAcademyCoursesInDateLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult? Function()? getCoursesToSubscribeInDateLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult? Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
     TResult? Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult? Function()? inrollUserInCourseLoading,
+    TResult? Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult? Function(bool courseInrolled)? courseInrolled,
+    TResult? Function()? addAcademyReviewLoading,
+    TResult? Function(Failure? failure)? addAcademyReviewFailure,
+    TResult? Function(bool reviewAdded)? reviewAdded,
   }) {
-    return getAcademyCoursesLoading?.call();
+    return getCoursesToSubscribeLoading?.call();
   }
 
   @override
@@ -4225,25 +6799,35 @@ class _$GetAcademyCoursesLoadingImpl implements _GetAcademyCoursesLoading {
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult Function()? getAllAcademiesLoading,
+    TResult Function(Failure? failure)? getAllAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult Function()? getAcademyCoursesLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult Function()? getCoursesToSubscribeLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult Function()? getAcademyCoursesInDateLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult Function()? getCoursesToSubscribeInDateLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
     TResult Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult Function()? inrollUserInCourseLoading,
+    TResult Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult Function(bool courseInrolled)? courseInrolled,
+    TResult Function()? addAcademyReviewLoading,
+    TResult Function(Failure? failure)? addAcademyReviewFailure,
+    TResult Function(bool reviewAdded)? reviewAdded,
     required TResult orElse(),
   }) {
-    if (getAcademyCoursesLoading != null) {
-      return getAcademyCoursesLoading();
+    if (getCoursesToSubscribeLoading != null) {
+      return getCoursesToSubscribeLoading();
     }
     return orElse();
   }
@@ -4264,21 +6848,26 @@ class _$GetAcademyCoursesLoadingImpl implements _GetAcademyCoursesLoading {
         getSuggestedAcademiesFailure,
     required TResult Function(_SuggestedAcademiesFetched value)
         suggestedAcademiesFetched,
+    required TResult Function(_GetAllAcademiesLoading value)
+        getAllAcademiesLoading,
+    required TResult Function(_GetAllAcademiesFailure value)
+        getAllAcademiesFailure,
+    required TResult Function(_AllAcademiesFetched value) allAcademiesFetched,
     required TResult Function(_GetAboutAcademyLoading value)
         getAboutAcademyLoading,
     required TResult Function(_GetAboutAcademyFailure value)
         getAboutAcademyFailure,
     required TResult Function(_AboutAcademyFetched value) aboutAcademyFetched,
-    required TResult Function(_GetAcademyCoursesLoading value)
-        getAcademyCoursesLoading,
-    required TResult Function(_GetAcademyCoursesFailure value)
-        getAcademyCoursesFailure,
+    required TResult Function(_GetCoursesToSubscribeLoading value)
+        getCoursesToSubscribeLoading,
+    required TResult Function(_GetCoursesToSubscribeFailure value)
+        getCoursesToSubscribeFailure,
     required TResult Function(_AcademyCoursesFetched value)
         academyCoursesFetched,
-    required TResult Function(_GetAcademyCoursesInDateLoading value)
-        getAcademyCoursesInDateLoading,
-    required TResult Function(_GetAcademyCoursesInDateFailure value)
-        getAcademyCoursesInDateFailure,
+    required TResult Function(_GetCoursesToSubscribeInDateLoading value)
+        getCoursesToSubscribeInDateLoading,
+    required TResult Function(_GetCoursesToSubscribeInDateFailure value)
+        getCoursesToSubscribeInDateFailure,
     required TResult Function(_AcademyCoursesInDateFetched value)
         academyCoursesInDateFetched,
     required TResult Function(_GetAcademyReviewLoading value)
@@ -4286,8 +6875,18 @@ class _$GetAcademyCoursesLoadingImpl implements _GetAcademyCoursesLoading {
     required TResult Function(_GetAcademyReviewFailure value)
         getAcademyReviewFailure,
     required TResult Function(_AcademyReviewFetched value) academyReviewFetched,
+    required TResult Function(_InrollUserInCourseLoadingLoading value)
+        inrollUserInCourseLoading,
+    required TResult Function(_InrollUserInCourseFailure value)
+        inrollUserInCourseFailure,
+    required TResult Function(_CourseInrolled value) courseInrolled,
+    required TResult Function(_AddAcademyReviewLoading value)
+        addAcademyReviewLoading,
+    required TResult Function(_AddAcademyReviewFailure value)
+        addAcademyReviewFailure,
+    required TResult Function(_ReviewAdded value) reviewAdded,
   }) {
-    return getAcademyCoursesLoading(this);
+    return getCoursesToSubscribeLoading(this);
   }
 
   @override
@@ -4305,25 +6904,36 @@ class _$GetAcademyCoursesLoadingImpl implements _GetAcademyCoursesLoading {
         getSuggestedAcademiesFailure,
     TResult? Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult? Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult? Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult? Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult? Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult? Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult? Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult? Function(_GetAcademyCoursesLoading value)?
-        getAcademyCoursesLoading,
-    TResult? Function(_GetAcademyCoursesFailure value)?
-        getAcademyCoursesFailure,
+    TResult? Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult? Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult? Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult? Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult? Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult? Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult? Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult? Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult? Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult? Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult? Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult? Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult? Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult? Function(_CourseInrolled value)? courseInrolled,
+    TResult? Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult? Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult? Function(_ReviewAdded value)? reviewAdded,
   }) {
-    return getAcademyCoursesLoading?.call(this);
+    return getCoursesToSubscribeLoading?.call(this);
   }
 
   @override
@@ -4341,51 +6951,65 @@ class _$GetAcademyCoursesLoadingImpl implements _GetAcademyCoursesLoading {
         getSuggestedAcademiesFailure,
     TResult Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult Function(_GetAcademyCoursesLoading value)? getAcademyCoursesLoading,
-    TResult Function(_GetAcademyCoursesFailure value)? getAcademyCoursesFailure,
+    TResult Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult Function(_CourseInrolled value)? courseInrolled,
+    TResult Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult Function(_ReviewAdded value)? reviewAdded,
     required TResult orElse(),
   }) {
-    if (getAcademyCoursesLoading != null) {
-      return getAcademyCoursesLoading(this);
+    if (getCoursesToSubscribeLoading != null) {
+      return getCoursesToSubscribeLoading(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetAcademyCoursesLoading implements AcademyState {
-  const factory _GetAcademyCoursesLoading() = _$GetAcademyCoursesLoadingImpl;
+abstract class _GetCoursesToSubscribeLoading implements AcademyState {
+  const factory _GetCoursesToSubscribeLoading() =
+      _$GetCoursesToSubscribeLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$GetAcademyCoursesFailureImplCopyWith<$Res> {
-  factory _$$GetAcademyCoursesFailureImplCopyWith(
-          _$GetAcademyCoursesFailureImpl value,
-          $Res Function(_$GetAcademyCoursesFailureImpl) then) =
-      __$$GetAcademyCoursesFailureImplCopyWithImpl<$Res>;
+abstract class _$$GetCoursesToSubscribeFailureImplCopyWith<$Res> {
+  factory _$$GetCoursesToSubscribeFailureImplCopyWith(
+          _$GetCoursesToSubscribeFailureImpl value,
+          $Res Function(_$GetCoursesToSubscribeFailureImpl) then) =
+      __$$GetCoursesToSubscribeFailureImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Failure? failure});
 }
 
 /// @nodoc
-class __$$GetAcademyCoursesFailureImplCopyWithImpl<$Res>
-    extends _$AcademyStateCopyWithImpl<$Res, _$GetAcademyCoursesFailureImpl>
-    implements _$$GetAcademyCoursesFailureImplCopyWith<$Res> {
-  __$$GetAcademyCoursesFailureImplCopyWithImpl(
-      _$GetAcademyCoursesFailureImpl _value,
-      $Res Function(_$GetAcademyCoursesFailureImpl) _then)
+class __$$GetCoursesToSubscribeFailureImplCopyWithImpl<$Res>
+    extends _$AcademyStateCopyWithImpl<$Res, _$GetCoursesToSubscribeFailureImpl>
+    implements _$$GetCoursesToSubscribeFailureImplCopyWith<$Res> {
+  __$$GetCoursesToSubscribeFailureImplCopyWithImpl(
+      _$GetCoursesToSubscribeFailureImpl _value,
+      $Res Function(_$GetCoursesToSubscribeFailureImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -4393,7 +7017,7 @@ class __$$GetAcademyCoursesFailureImplCopyWithImpl<$Res>
   $Res call({
     Object? failure = freezed,
   }) {
-    return _then(_$GetAcademyCoursesFailureImpl(
+    return _then(_$GetCoursesToSubscribeFailureImpl(
       failure: freezed == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
@@ -4404,8 +7028,9 @@ class __$$GetAcademyCoursesFailureImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetAcademyCoursesFailureImpl implements _GetAcademyCoursesFailure {
-  const _$GetAcademyCoursesFailureImpl({this.failure = null});
+class _$GetCoursesToSubscribeFailureImpl
+    implements _GetCoursesToSubscribeFailure {
+  const _$GetCoursesToSubscribeFailureImpl({this.failure = null});
 
   @override
   @JsonKey()
@@ -4413,14 +7038,14 @@ class _$GetAcademyCoursesFailureImpl implements _GetAcademyCoursesFailure {
 
   @override
   String toString() {
-    return 'AcademyState.getAcademyCoursesFailure(failure: $failure)';
+    return 'AcademyState.getCoursesToSubscribeFailure(failure: $failure)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetAcademyCoursesFailureImpl &&
+            other is _$GetCoursesToSubscribeFailureImpl &&
             (identical(other.failure, failure) || other.failure == failure));
   }
 
@@ -4430,9 +7055,10 @@ class _$GetAcademyCoursesFailureImpl implements _GetAcademyCoursesFailure {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetAcademyCoursesFailureImplCopyWith<_$GetAcademyCoursesFailureImpl>
-      get copyWith => __$$GetAcademyCoursesFailureImplCopyWithImpl<
-          _$GetAcademyCoursesFailureImpl>(this, _$identity);
+  _$$GetCoursesToSubscribeFailureImplCopyWith<
+          _$GetCoursesToSubscribeFailureImpl>
+      get copyWith => __$$GetCoursesToSubscribeFailureImplCopyWithImpl<
+          _$GetCoursesToSubscribeFailureImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -4446,24 +7072,35 @@ class _$GetAcademyCoursesFailureImpl implements _GetAcademyCoursesFailure {
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
     required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
+    required TResult Function() getAllAcademiesLoading,
+    required TResult Function(Failure? failure) getAllAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
+        allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
-    required TResult Function() getAcademyCoursesLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCourses)
+    required TResult Function() getCoursesToSubscribeLoading,
+    required TResult Function(Failure? failure) getCoursesToSubscribeFailure,
+    required TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)
         academyCoursesFetched,
-    required TResult Function() getAcademyCoursesInDateLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
+    required TResult Function() getCoursesToSubscribeInDateLoading,
+    required TResult Function(Failure? failure)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
     required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
+    required TResult Function() inrollUserInCourseLoading,
+    required TResult Function(Failure? failure) inrollUserInCourseFailure,
+    required TResult Function(bool courseInrolled) courseInrolled,
+    required TResult Function() addAcademyReviewLoading,
+    required TResult Function(Failure? failure) addAcademyReviewFailure,
+    required TResult Function(bool reviewAdded) reviewAdded,
   }) {
-    return getAcademyCoursesFailure(failure);
+    return getCoursesToSubscribeFailure(failure);
   }
 
   @override
@@ -4478,23 +7115,33 @@ class _$GetAcademyCoursesFailureImpl implements _GetAcademyCoursesFailure {
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult? Function()? getAllAcademiesLoading,
+    TResult? Function(Failure? failure)? getAllAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult? Function()? getAcademyCoursesLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult? Function()? getCoursesToSubscribeLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult? Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult? Function()? getAcademyCoursesInDateLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult? Function()? getCoursesToSubscribeInDateLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult? Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
     TResult? Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult? Function()? inrollUserInCourseLoading,
+    TResult? Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult? Function(bool courseInrolled)? courseInrolled,
+    TResult? Function()? addAcademyReviewLoading,
+    TResult? Function(Failure? failure)? addAcademyReviewFailure,
+    TResult? Function(bool reviewAdded)? reviewAdded,
   }) {
-    return getAcademyCoursesFailure?.call(failure);
+    return getCoursesToSubscribeFailure?.call(failure);
   }
 
   @override
@@ -4509,25 +7156,35 @@ class _$GetAcademyCoursesFailureImpl implements _GetAcademyCoursesFailure {
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult Function()? getAllAcademiesLoading,
+    TResult Function(Failure? failure)? getAllAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult Function()? getAcademyCoursesLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult Function()? getCoursesToSubscribeLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult Function()? getAcademyCoursesInDateLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult Function()? getCoursesToSubscribeInDateLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
     TResult Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult Function()? inrollUserInCourseLoading,
+    TResult Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult Function(bool courseInrolled)? courseInrolled,
+    TResult Function()? addAcademyReviewLoading,
+    TResult Function(Failure? failure)? addAcademyReviewFailure,
+    TResult Function(bool reviewAdded)? reviewAdded,
     required TResult orElse(),
   }) {
-    if (getAcademyCoursesFailure != null) {
-      return getAcademyCoursesFailure(failure);
+    if (getCoursesToSubscribeFailure != null) {
+      return getCoursesToSubscribeFailure(failure);
     }
     return orElse();
   }
@@ -4548,21 +7205,26 @@ class _$GetAcademyCoursesFailureImpl implements _GetAcademyCoursesFailure {
         getSuggestedAcademiesFailure,
     required TResult Function(_SuggestedAcademiesFetched value)
         suggestedAcademiesFetched,
+    required TResult Function(_GetAllAcademiesLoading value)
+        getAllAcademiesLoading,
+    required TResult Function(_GetAllAcademiesFailure value)
+        getAllAcademiesFailure,
+    required TResult Function(_AllAcademiesFetched value) allAcademiesFetched,
     required TResult Function(_GetAboutAcademyLoading value)
         getAboutAcademyLoading,
     required TResult Function(_GetAboutAcademyFailure value)
         getAboutAcademyFailure,
     required TResult Function(_AboutAcademyFetched value) aboutAcademyFetched,
-    required TResult Function(_GetAcademyCoursesLoading value)
-        getAcademyCoursesLoading,
-    required TResult Function(_GetAcademyCoursesFailure value)
-        getAcademyCoursesFailure,
+    required TResult Function(_GetCoursesToSubscribeLoading value)
+        getCoursesToSubscribeLoading,
+    required TResult Function(_GetCoursesToSubscribeFailure value)
+        getCoursesToSubscribeFailure,
     required TResult Function(_AcademyCoursesFetched value)
         academyCoursesFetched,
-    required TResult Function(_GetAcademyCoursesInDateLoading value)
-        getAcademyCoursesInDateLoading,
-    required TResult Function(_GetAcademyCoursesInDateFailure value)
-        getAcademyCoursesInDateFailure,
+    required TResult Function(_GetCoursesToSubscribeInDateLoading value)
+        getCoursesToSubscribeInDateLoading,
+    required TResult Function(_GetCoursesToSubscribeInDateFailure value)
+        getCoursesToSubscribeInDateFailure,
     required TResult Function(_AcademyCoursesInDateFetched value)
         academyCoursesInDateFetched,
     required TResult Function(_GetAcademyReviewLoading value)
@@ -4570,8 +7232,18 @@ class _$GetAcademyCoursesFailureImpl implements _GetAcademyCoursesFailure {
     required TResult Function(_GetAcademyReviewFailure value)
         getAcademyReviewFailure,
     required TResult Function(_AcademyReviewFetched value) academyReviewFetched,
+    required TResult Function(_InrollUserInCourseLoadingLoading value)
+        inrollUserInCourseLoading,
+    required TResult Function(_InrollUserInCourseFailure value)
+        inrollUserInCourseFailure,
+    required TResult Function(_CourseInrolled value) courseInrolled,
+    required TResult Function(_AddAcademyReviewLoading value)
+        addAcademyReviewLoading,
+    required TResult Function(_AddAcademyReviewFailure value)
+        addAcademyReviewFailure,
+    required TResult Function(_ReviewAdded value) reviewAdded,
   }) {
-    return getAcademyCoursesFailure(this);
+    return getCoursesToSubscribeFailure(this);
   }
 
   @override
@@ -4589,25 +7261,36 @@ class _$GetAcademyCoursesFailureImpl implements _GetAcademyCoursesFailure {
         getSuggestedAcademiesFailure,
     TResult? Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult? Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult? Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult? Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult? Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult? Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult? Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult? Function(_GetAcademyCoursesLoading value)?
-        getAcademyCoursesLoading,
-    TResult? Function(_GetAcademyCoursesFailure value)?
-        getAcademyCoursesFailure,
+    TResult? Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult? Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult? Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult? Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult? Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult? Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult? Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult? Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult? Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult? Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult? Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult? Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult? Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult? Function(_CourseInrolled value)? courseInrolled,
+    TResult? Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult? Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult? Function(_ReviewAdded value)? reviewAdded,
   }) {
-    return getAcademyCoursesFailure?.call(this);
+    return getCoursesToSubscribeFailure?.call(this);
   }
 
   @override
@@ -4625,37 +7308,51 @@ class _$GetAcademyCoursesFailureImpl implements _GetAcademyCoursesFailure {
         getSuggestedAcademiesFailure,
     TResult Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult Function(_GetAcademyCoursesLoading value)? getAcademyCoursesLoading,
-    TResult Function(_GetAcademyCoursesFailure value)? getAcademyCoursesFailure,
+    TResult Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult Function(_CourseInrolled value)? courseInrolled,
+    TResult Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult Function(_ReviewAdded value)? reviewAdded,
     required TResult orElse(),
   }) {
-    if (getAcademyCoursesFailure != null) {
-      return getAcademyCoursesFailure(this);
+    if (getCoursesToSubscribeFailure != null) {
+      return getCoursesToSubscribeFailure(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetAcademyCoursesFailure implements AcademyState {
-  const factory _GetAcademyCoursesFailure({final Failure? failure}) =
-      _$GetAcademyCoursesFailureImpl;
+abstract class _GetCoursesToSubscribeFailure implements AcademyState {
+  const factory _GetCoursesToSubscribeFailure({final Failure? failure}) =
+      _$GetCoursesToSubscribeFailureImpl;
 
   Failure? get failure;
   @JsonKey(ignore: true)
-  _$$GetAcademyCoursesFailureImplCopyWith<_$GetAcademyCoursesFailureImpl>
+  _$$GetCoursesToSubscribeFailureImplCopyWith<
+          _$GetCoursesToSubscribeFailureImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -4666,7 +7363,7 @@ abstract class _$$AcademyCoursesFetchedImplCopyWith<$Res> {
           $Res Function(_$AcademyCoursesFetchedImpl) then) =
       __$$AcademyCoursesFetchedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({GetAcademyCoursesEntity? academyCourses});
+  $Res call({List<GetCoursesToSubscribeEntity> academyCourses});
 }
 
 /// @nodoc
@@ -4680,13 +7377,13 @@ class __$$AcademyCoursesFetchedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? academyCourses = freezed,
+    Object? academyCourses = null,
   }) {
     return _then(_$AcademyCoursesFetchedImpl(
-      academyCourses: freezed == academyCourses
-          ? _value.academyCourses
+      academyCourses: null == academyCourses
+          ? _value._academyCourses
           : academyCourses // ignore: cast_nullable_to_non_nullable
-              as GetAcademyCoursesEntity?,
+              as List<GetCoursesToSubscribeEntity>,
     ));
   }
 }
@@ -4694,11 +7391,18 @@ class __$$AcademyCoursesFetchedImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$AcademyCoursesFetchedImpl implements _AcademyCoursesFetched {
-  const _$AcademyCoursesFetchedImpl({this.academyCourses = null});
+  const _$AcademyCoursesFetchedImpl(
+      {final List<GetCoursesToSubscribeEntity> academyCourses = const []})
+      : _academyCourses = academyCourses;
 
+  final List<GetCoursesToSubscribeEntity> _academyCourses;
   @override
   @JsonKey()
-  final GetAcademyCoursesEntity? academyCourses;
+  List<GetCoursesToSubscribeEntity> get academyCourses {
+    if (_academyCourses is EqualUnmodifiableListView) return _academyCourses;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_academyCourses);
+  }
 
   @override
   String toString() {
@@ -4710,12 +7414,13 @@ class _$AcademyCoursesFetchedImpl implements _AcademyCoursesFetched {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AcademyCoursesFetchedImpl &&
-            (identical(other.academyCourses, academyCourses) ||
-                other.academyCourses == academyCourses));
+            const DeepCollectionEquality()
+                .equals(other._academyCourses, _academyCourses));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, academyCourses);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_academyCourses));
 
   @JsonKey(ignore: true)
   @override
@@ -4736,22 +7441,33 @@ class _$AcademyCoursesFetchedImpl implements _AcademyCoursesFetched {
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
     required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
+    required TResult Function() getAllAcademiesLoading,
+    required TResult Function(Failure? failure) getAllAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
+        allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
-    required TResult Function() getAcademyCoursesLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCourses)
+    required TResult Function() getCoursesToSubscribeLoading,
+    required TResult Function(Failure? failure) getCoursesToSubscribeFailure,
+    required TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)
         academyCoursesFetched,
-    required TResult Function() getAcademyCoursesInDateLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
+    required TResult Function() getCoursesToSubscribeInDateLoading,
+    required TResult Function(Failure? failure)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
     required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
+    required TResult Function() inrollUserInCourseLoading,
+    required TResult Function(Failure? failure) inrollUserInCourseFailure,
+    required TResult Function(bool courseInrolled) courseInrolled,
+    required TResult Function() addAcademyReviewLoading,
+    required TResult Function(Failure? failure) addAcademyReviewFailure,
+    required TResult Function(bool reviewAdded) reviewAdded,
   }) {
     return academyCoursesFetched(academyCourses);
   }
@@ -4768,21 +7484,31 @@ class _$AcademyCoursesFetchedImpl implements _AcademyCoursesFetched {
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult? Function()? getAllAcademiesLoading,
+    TResult? Function(Failure? failure)? getAllAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult? Function()? getAcademyCoursesLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult? Function()? getCoursesToSubscribeLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult? Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult? Function()? getAcademyCoursesInDateLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult? Function()? getCoursesToSubscribeInDateLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult? Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
     TResult? Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult? Function()? inrollUserInCourseLoading,
+    TResult? Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult? Function(bool courseInrolled)? courseInrolled,
+    TResult? Function()? addAcademyReviewLoading,
+    TResult? Function(Failure? failure)? addAcademyReviewFailure,
+    TResult? Function(bool reviewAdded)? reviewAdded,
   }) {
     return academyCoursesFetched?.call(academyCourses);
   }
@@ -4799,21 +7525,31 @@ class _$AcademyCoursesFetchedImpl implements _AcademyCoursesFetched {
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult Function()? getAllAcademiesLoading,
+    TResult Function(Failure? failure)? getAllAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult Function()? getAcademyCoursesLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult Function()? getCoursesToSubscribeLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult Function()? getAcademyCoursesInDateLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult Function()? getCoursesToSubscribeInDateLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
     TResult Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult Function()? inrollUserInCourseLoading,
+    TResult Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult Function(bool courseInrolled)? courseInrolled,
+    TResult Function()? addAcademyReviewLoading,
+    TResult Function(Failure? failure)? addAcademyReviewFailure,
+    TResult Function(bool reviewAdded)? reviewAdded,
     required TResult orElse(),
   }) {
     if (academyCoursesFetched != null) {
@@ -4838,21 +7574,26 @@ class _$AcademyCoursesFetchedImpl implements _AcademyCoursesFetched {
         getSuggestedAcademiesFailure,
     required TResult Function(_SuggestedAcademiesFetched value)
         suggestedAcademiesFetched,
+    required TResult Function(_GetAllAcademiesLoading value)
+        getAllAcademiesLoading,
+    required TResult Function(_GetAllAcademiesFailure value)
+        getAllAcademiesFailure,
+    required TResult Function(_AllAcademiesFetched value) allAcademiesFetched,
     required TResult Function(_GetAboutAcademyLoading value)
         getAboutAcademyLoading,
     required TResult Function(_GetAboutAcademyFailure value)
         getAboutAcademyFailure,
     required TResult Function(_AboutAcademyFetched value) aboutAcademyFetched,
-    required TResult Function(_GetAcademyCoursesLoading value)
-        getAcademyCoursesLoading,
-    required TResult Function(_GetAcademyCoursesFailure value)
-        getAcademyCoursesFailure,
+    required TResult Function(_GetCoursesToSubscribeLoading value)
+        getCoursesToSubscribeLoading,
+    required TResult Function(_GetCoursesToSubscribeFailure value)
+        getCoursesToSubscribeFailure,
     required TResult Function(_AcademyCoursesFetched value)
         academyCoursesFetched,
-    required TResult Function(_GetAcademyCoursesInDateLoading value)
-        getAcademyCoursesInDateLoading,
-    required TResult Function(_GetAcademyCoursesInDateFailure value)
-        getAcademyCoursesInDateFailure,
+    required TResult Function(_GetCoursesToSubscribeInDateLoading value)
+        getCoursesToSubscribeInDateLoading,
+    required TResult Function(_GetCoursesToSubscribeInDateFailure value)
+        getCoursesToSubscribeInDateFailure,
     required TResult Function(_AcademyCoursesInDateFetched value)
         academyCoursesInDateFetched,
     required TResult Function(_GetAcademyReviewLoading value)
@@ -4860,6 +7601,16 @@ class _$AcademyCoursesFetchedImpl implements _AcademyCoursesFetched {
     required TResult Function(_GetAcademyReviewFailure value)
         getAcademyReviewFailure,
     required TResult Function(_AcademyReviewFetched value) academyReviewFetched,
+    required TResult Function(_InrollUserInCourseLoadingLoading value)
+        inrollUserInCourseLoading,
+    required TResult Function(_InrollUserInCourseFailure value)
+        inrollUserInCourseFailure,
+    required TResult Function(_CourseInrolled value) courseInrolled,
+    required TResult Function(_AddAcademyReviewLoading value)
+        addAcademyReviewLoading,
+    required TResult Function(_AddAcademyReviewFailure value)
+        addAcademyReviewFailure,
+    required TResult Function(_ReviewAdded value) reviewAdded,
   }) {
     return academyCoursesFetched(this);
   }
@@ -4879,23 +7630,34 @@ class _$AcademyCoursesFetchedImpl implements _AcademyCoursesFetched {
         getSuggestedAcademiesFailure,
     TResult? Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult? Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult? Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult? Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult? Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult? Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult? Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult? Function(_GetAcademyCoursesLoading value)?
-        getAcademyCoursesLoading,
-    TResult? Function(_GetAcademyCoursesFailure value)?
-        getAcademyCoursesFailure,
+    TResult? Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult? Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult? Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult? Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult? Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult? Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult? Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult? Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult? Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult? Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult? Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult? Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult? Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult? Function(_CourseInrolled value)? courseInrolled,
+    TResult? Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult? Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult? Function(_ReviewAdded value)? reviewAdded,
   }) {
     return academyCoursesFetched?.call(this);
   }
@@ -4915,21 +7677,34 @@ class _$AcademyCoursesFetchedImpl implements _AcademyCoursesFetched {
         getSuggestedAcademiesFailure,
     TResult Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult Function(_GetAcademyCoursesLoading value)? getAcademyCoursesLoading,
-    TResult Function(_GetAcademyCoursesFailure value)? getAcademyCoursesFailure,
+    TResult Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult Function(_CourseInrolled value)? courseInrolled,
+    TResult Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult Function(_ReviewAdded value)? reviewAdded,
     required TResult orElse(),
   }) {
     if (academyCoursesFetched != null) {
@@ -4941,50 +7716,50 @@ class _$AcademyCoursesFetchedImpl implements _AcademyCoursesFetched {
 
 abstract class _AcademyCoursesFetched implements AcademyState {
   const factory _AcademyCoursesFetched(
-          {final GetAcademyCoursesEntity? academyCourses}) =
+          {final List<GetCoursesToSubscribeEntity> academyCourses}) =
       _$AcademyCoursesFetchedImpl;
 
-  GetAcademyCoursesEntity? get academyCourses;
+  List<GetCoursesToSubscribeEntity> get academyCourses;
   @JsonKey(ignore: true)
   _$$AcademyCoursesFetchedImplCopyWith<_$AcademyCoursesFetchedImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GetAcademyCoursesInDateLoadingImplCopyWith<$Res> {
-  factory _$$GetAcademyCoursesInDateLoadingImplCopyWith(
-          _$GetAcademyCoursesInDateLoadingImpl value,
-          $Res Function(_$GetAcademyCoursesInDateLoadingImpl) then) =
-      __$$GetAcademyCoursesInDateLoadingImplCopyWithImpl<$Res>;
+abstract class _$$GetCoursesToSubscribeInDateLoadingImplCopyWith<$Res> {
+  factory _$$GetCoursesToSubscribeInDateLoadingImplCopyWith(
+          _$GetCoursesToSubscribeInDateLoadingImpl value,
+          $Res Function(_$GetCoursesToSubscribeInDateLoadingImpl) then) =
+      __$$GetCoursesToSubscribeInDateLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetAcademyCoursesInDateLoadingImplCopyWithImpl<$Res>
+class __$$GetCoursesToSubscribeInDateLoadingImplCopyWithImpl<$Res>
     extends _$AcademyStateCopyWithImpl<$Res,
-        _$GetAcademyCoursesInDateLoadingImpl>
-    implements _$$GetAcademyCoursesInDateLoadingImplCopyWith<$Res> {
-  __$$GetAcademyCoursesInDateLoadingImplCopyWithImpl(
-      _$GetAcademyCoursesInDateLoadingImpl _value,
-      $Res Function(_$GetAcademyCoursesInDateLoadingImpl) _then)
+        _$GetCoursesToSubscribeInDateLoadingImpl>
+    implements _$$GetCoursesToSubscribeInDateLoadingImplCopyWith<$Res> {
+  __$$GetCoursesToSubscribeInDateLoadingImplCopyWithImpl(
+      _$GetCoursesToSubscribeInDateLoadingImpl _value,
+      $Res Function(_$GetCoursesToSubscribeInDateLoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$GetAcademyCoursesInDateLoadingImpl
-    implements _GetAcademyCoursesInDateLoading {
-  const _$GetAcademyCoursesInDateLoadingImpl();
+class _$GetCoursesToSubscribeInDateLoadingImpl
+    implements _GetCoursesToSubscribeInDateLoading {
+  const _$GetCoursesToSubscribeInDateLoadingImpl();
 
   @override
   String toString() {
-    return 'AcademyState.getAcademyCoursesInDateLoading()';
+    return 'AcademyState.getCoursesToSubscribeInDateLoading()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetAcademyCoursesInDateLoadingImpl);
+            other is _$GetCoursesToSubscribeInDateLoadingImpl);
   }
 
   @override
@@ -5002,24 +7777,35 @@ class _$GetAcademyCoursesInDateLoadingImpl
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
     required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
+    required TResult Function() getAllAcademiesLoading,
+    required TResult Function(Failure? failure) getAllAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
+        allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
-    required TResult Function() getAcademyCoursesLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCourses)
+    required TResult Function() getCoursesToSubscribeLoading,
+    required TResult Function(Failure? failure) getCoursesToSubscribeFailure,
+    required TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)
         academyCoursesFetched,
-    required TResult Function() getAcademyCoursesInDateLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
+    required TResult Function() getCoursesToSubscribeInDateLoading,
+    required TResult Function(Failure? failure)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
     required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
+    required TResult Function() inrollUserInCourseLoading,
+    required TResult Function(Failure? failure) inrollUserInCourseFailure,
+    required TResult Function(bool courseInrolled) courseInrolled,
+    required TResult Function() addAcademyReviewLoading,
+    required TResult Function(Failure? failure) addAcademyReviewFailure,
+    required TResult Function(bool reviewAdded) reviewAdded,
   }) {
-    return getAcademyCoursesInDateLoading();
+    return getCoursesToSubscribeInDateLoading();
   }
 
   @override
@@ -5034,23 +7820,33 @@ class _$GetAcademyCoursesInDateLoadingImpl
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult? Function()? getAllAcademiesLoading,
+    TResult? Function(Failure? failure)? getAllAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult? Function()? getAcademyCoursesLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult? Function()? getCoursesToSubscribeLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult? Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult? Function()? getAcademyCoursesInDateLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult? Function()? getCoursesToSubscribeInDateLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult? Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
     TResult? Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult? Function()? inrollUserInCourseLoading,
+    TResult? Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult? Function(bool courseInrolled)? courseInrolled,
+    TResult? Function()? addAcademyReviewLoading,
+    TResult? Function(Failure? failure)? addAcademyReviewFailure,
+    TResult? Function(bool reviewAdded)? reviewAdded,
   }) {
-    return getAcademyCoursesInDateLoading?.call();
+    return getCoursesToSubscribeInDateLoading?.call();
   }
 
   @override
@@ -5065,25 +7861,35 @@ class _$GetAcademyCoursesInDateLoadingImpl
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult Function()? getAllAcademiesLoading,
+    TResult Function(Failure? failure)? getAllAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult Function()? getAcademyCoursesLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult Function()? getCoursesToSubscribeLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult Function()? getAcademyCoursesInDateLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult Function()? getCoursesToSubscribeInDateLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
     TResult Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult Function()? inrollUserInCourseLoading,
+    TResult Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult Function(bool courseInrolled)? courseInrolled,
+    TResult Function()? addAcademyReviewLoading,
+    TResult Function(Failure? failure)? addAcademyReviewFailure,
+    TResult Function(bool reviewAdded)? reviewAdded,
     required TResult orElse(),
   }) {
-    if (getAcademyCoursesInDateLoading != null) {
-      return getAcademyCoursesInDateLoading();
+    if (getCoursesToSubscribeInDateLoading != null) {
+      return getCoursesToSubscribeInDateLoading();
     }
     return orElse();
   }
@@ -5104,21 +7910,26 @@ class _$GetAcademyCoursesInDateLoadingImpl
         getSuggestedAcademiesFailure,
     required TResult Function(_SuggestedAcademiesFetched value)
         suggestedAcademiesFetched,
+    required TResult Function(_GetAllAcademiesLoading value)
+        getAllAcademiesLoading,
+    required TResult Function(_GetAllAcademiesFailure value)
+        getAllAcademiesFailure,
+    required TResult Function(_AllAcademiesFetched value) allAcademiesFetched,
     required TResult Function(_GetAboutAcademyLoading value)
         getAboutAcademyLoading,
     required TResult Function(_GetAboutAcademyFailure value)
         getAboutAcademyFailure,
     required TResult Function(_AboutAcademyFetched value) aboutAcademyFetched,
-    required TResult Function(_GetAcademyCoursesLoading value)
-        getAcademyCoursesLoading,
-    required TResult Function(_GetAcademyCoursesFailure value)
-        getAcademyCoursesFailure,
+    required TResult Function(_GetCoursesToSubscribeLoading value)
+        getCoursesToSubscribeLoading,
+    required TResult Function(_GetCoursesToSubscribeFailure value)
+        getCoursesToSubscribeFailure,
     required TResult Function(_AcademyCoursesFetched value)
         academyCoursesFetched,
-    required TResult Function(_GetAcademyCoursesInDateLoading value)
-        getAcademyCoursesInDateLoading,
-    required TResult Function(_GetAcademyCoursesInDateFailure value)
-        getAcademyCoursesInDateFailure,
+    required TResult Function(_GetCoursesToSubscribeInDateLoading value)
+        getCoursesToSubscribeInDateLoading,
+    required TResult Function(_GetCoursesToSubscribeInDateFailure value)
+        getCoursesToSubscribeInDateFailure,
     required TResult Function(_AcademyCoursesInDateFetched value)
         academyCoursesInDateFetched,
     required TResult Function(_GetAcademyReviewLoading value)
@@ -5126,8 +7937,18 @@ class _$GetAcademyCoursesInDateLoadingImpl
     required TResult Function(_GetAcademyReviewFailure value)
         getAcademyReviewFailure,
     required TResult Function(_AcademyReviewFetched value) academyReviewFetched,
+    required TResult Function(_InrollUserInCourseLoadingLoading value)
+        inrollUserInCourseLoading,
+    required TResult Function(_InrollUserInCourseFailure value)
+        inrollUserInCourseFailure,
+    required TResult Function(_CourseInrolled value) courseInrolled,
+    required TResult Function(_AddAcademyReviewLoading value)
+        addAcademyReviewLoading,
+    required TResult Function(_AddAcademyReviewFailure value)
+        addAcademyReviewFailure,
+    required TResult Function(_ReviewAdded value) reviewAdded,
   }) {
-    return getAcademyCoursesInDateLoading(this);
+    return getCoursesToSubscribeInDateLoading(this);
   }
 
   @override
@@ -5145,25 +7966,36 @@ class _$GetAcademyCoursesInDateLoadingImpl
         getSuggestedAcademiesFailure,
     TResult? Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult? Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult? Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult? Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult? Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult? Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult? Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult? Function(_GetAcademyCoursesLoading value)?
-        getAcademyCoursesLoading,
-    TResult? Function(_GetAcademyCoursesFailure value)?
-        getAcademyCoursesFailure,
+    TResult? Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult? Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult? Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult? Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult? Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult? Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult? Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult? Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult? Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult? Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult? Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult? Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult? Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult? Function(_CourseInrolled value)? courseInrolled,
+    TResult? Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult? Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult? Function(_ReviewAdded value)? reviewAdded,
   }) {
-    return getAcademyCoursesInDateLoading?.call(this);
+    return getCoursesToSubscribeInDateLoading?.call(this);
   }
 
   @override
@@ -5181,53 +8013,66 @@ class _$GetAcademyCoursesInDateLoadingImpl
         getSuggestedAcademiesFailure,
     TResult Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult Function(_GetAcademyCoursesLoading value)? getAcademyCoursesLoading,
-    TResult Function(_GetAcademyCoursesFailure value)? getAcademyCoursesFailure,
+    TResult Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult Function(_CourseInrolled value)? courseInrolled,
+    TResult Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult Function(_ReviewAdded value)? reviewAdded,
     required TResult orElse(),
   }) {
-    if (getAcademyCoursesInDateLoading != null) {
-      return getAcademyCoursesInDateLoading(this);
+    if (getCoursesToSubscribeInDateLoading != null) {
+      return getCoursesToSubscribeInDateLoading(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetAcademyCoursesInDateLoading implements AcademyState {
-  const factory _GetAcademyCoursesInDateLoading() =
-      _$GetAcademyCoursesInDateLoadingImpl;
+abstract class _GetCoursesToSubscribeInDateLoading implements AcademyState {
+  const factory _GetCoursesToSubscribeInDateLoading() =
+      _$GetCoursesToSubscribeInDateLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$GetAcademyCoursesInDateFailureImplCopyWith<$Res> {
-  factory _$$GetAcademyCoursesInDateFailureImplCopyWith(
-          _$GetAcademyCoursesInDateFailureImpl value,
-          $Res Function(_$GetAcademyCoursesInDateFailureImpl) then) =
-      __$$GetAcademyCoursesInDateFailureImplCopyWithImpl<$Res>;
+abstract class _$$GetCoursesToSubscribeInDateFailureImplCopyWith<$Res> {
+  factory _$$GetCoursesToSubscribeInDateFailureImplCopyWith(
+          _$GetCoursesToSubscribeInDateFailureImpl value,
+          $Res Function(_$GetCoursesToSubscribeInDateFailureImpl) then) =
+      __$$GetCoursesToSubscribeInDateFailureImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Failure? failure});
 }
 
 /// @nodoc
-class __$$GetAcademyCoursesInDateFailureImplCopyWithImpl<$Res>
+class __$$GetCoursesToSubscribeInDateFailureImplCopyWithImpl<$Res>
     extends _$AcademyStateCopyWithImpl<$Res,
-        _$GetAcademyCoursesInDateFailureImpl>
-    implements _$$GetAcademyCoursesInDateFailureImplCopyWith<$Res> {
-  __$$GetAcademyCoursesInDateFailureImplCopyWithImpl(
-      _$GetAcademyCoursesInDateFailureImpl _value,
-      $Res Function(_$GetAcademyCoursesInDateFailureImpl) _then)
+        _$GetCoursesToSubscribeInDateFailureImpl>
+    implements _$$GetCoursesToSubscribeInDateFailureImplCopyWith<$Res> {
+  __$$GetCoursesToSubscribeInDateFailureImplCopyWithImpl(
+      _$GetCoursesToSubscribeInDateFailureImpl _value,
+      $Res Function(_$GetCoursesToSubscribeInDateFailureImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -5235,7 +8080,7 @@ class __$$GetAcademyCoursesInDateFailureImplCopyWithImpl<$Res>
   $Res call({
     Object? failure = freezed,
   }) {
-    return _then(_$GetAcademyCoursesInDateFailureImpl(
+    return _then(_$GetCoursesToSubscribeInDateFailureImpl(
       failure: freezed == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
@@ -5246,9 +8091,9 @@ class __$$GetAcademyCoursesInDateFailureImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetAcademyCoursesInDateFailureImpl
-    implements _GetAcademyCoursesInDateFailure {
-  const _$GetAcademyCoursesInDateFailureImpl({this.failure = null});
+class _$GetCoursesToSubscribeInDateFailureImpl
+    implements _GetCoursesToSubscribeInDateFailure {
+  const _$GetCoursesToSubscribeInDateFailureImpl({this.failure = null});
 
   @override
   @JsonKey()
@@ -5256,14 +8101,14 @@ class _$GetAcademyCoursesInDateFailureImpl
 
   @override
   String toString() {
-    return 'AcademyState.getAcademyCoursesInDateFailure(failure: $failure)';
+    return 'AcademyState.getCoursesToSubscribeInDateFailure(failure: $failure)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetAcademyCoursesInDateFailureImpl &&
+            other is _$GetCoursesToSubscribeInDateFailureImpl &&
             (identical(other.failure, failure) || other.failure == failure));
   }
 
@@ -5273,10 +8118,10 @@ class _$GetAcademyCoursesInDateFailureImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetAcademyCoursesInDateFailureImplCopyWith<
-          _$GetAcademyCoursesInDateFailureImpl>
-      get copyWith => __$$GetAcademyCoursesInDateFailureImplCopyWithImpl<
-          _$GetAcademyCoursesInDateFailureImpl>(this, _$identity);
+  _$$GetCoursesToSubscribeInDateFailureImplCopyWith<
+          _$GetCoursesToSubscribeInDateFailureImpl>
+      get copyWith => __$$GetCoursesToSubscribeInDateFailureImplCopyWithImpl<
+          _$GetCoursesToSubscribeInDateFailureImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -5290,24 +8135,35 @@ class _$GetAcademyCoursesInDateFailureImpl
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
     required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
+    required TResult Function() getAllAcademiesLoading,
+    required TResult Function(Failure? failure) getAllAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
+        allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
-    required TResult Function() getAcademyCoursesLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCourses)
+    required TResult Function() getCoursesToSubscribeLoading,
+    required TResult Function(Failure? failure) getCoursesToSubscribeFailure,
+    required TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)
         academyCoursesFetched,
-    required TResult Function() getAcademyCoursesInDateLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
+    required TResult Function() getCoursesToSubscribeInDateLoading,
+    required TResult Function(Failure? failure)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
     required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
+    required TResult Function() inrollUserInCourseLoading,
+    required TResult Function(Failure? failure) inrollUserInCourseFailure,
+    required TResult Function(bool courseInrolled) courseInrolled,
+    required TResult Function() addAcademyReviewLoading,
+    required TResult Function(Failure? failure) addAcademyReviewFailure,
+    required TResult Function(bool reviewAdded) reviewAdded,
   }) {
-    return getAcademyCoursesInDateFailure(failure);
+    return getCoursesToSubscribeInDateFailure(failure);
   }
 
   @override
@@ -5322,23 +8178,33 @@ class _$GetAcademyCoursesInDateFailureImpl
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult? Function()? getAllAcademiesLoading,
+    TResult? Function(Failure? failure)? getAllAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult? Function()? getAcademyCoursesLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult? Function()? getCoursesToSubscribeLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult? Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult? Function()? getAcademyCoursesInDateLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult? Function()? getCoursesToSubscribeInDateLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult? Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
     TResult? Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult? Function()? inrollUserInCourseLoading,
+    TResult? Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult? Function(bool courseInrolled)? courseInrolled,
+    TResult? Function()? addAcademyReviewLoading,
+    TResult? Function(Failure? failure)? addAcademyReviewFailure,
+    TResult? Function(bool reviewAdded)? reviewAdded,
   }) {
-    return getAcademyCoursesInDateFailure?.call(failure);
+    return getCoursesToSubscribeInDateFailure?.call(failure);
   }
 
   @override
@@ -5353,25 +8219,35 @@ class _$GetAcademyCoursesInDateFailureImpl
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult Function()? getAllAcademiesLoading,
+    TResult Function(Failure? failure)? getAllAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult Function()? getAcademyCoursesLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult Function()? getCoursesToSubscribeLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult Function()? getAcademyCoursesInDateLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult Function()? getCoursesToSubscribeInDateLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
     TResult Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult Function()? inrollUserInCourseLoading,
+    TResult Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult Function(bool courseInrolled)? courseInrolled,
+    TResult Function()? addAcademyReviewLoading,
+    TResult Function(Failure? failure)? addAcademyReviewFailure,
+    TResult Function(bool reviewAdded)? reviewAdded,
     required TResult orElse(),
   }) {
-    if (getAcademyCoursesInDateFailure != null) {
-      return getAcademyCoursesInDateFailure(failure);
+    if (getCoursesToSubscribeInDateFailure != null) {
+      return getCoursesToSubscribeInDateFailure(failure);
     }
     return orElse();
   }
@@ -5392,21 +8268,26 @@ class _$GetAcademyCoursesInDateFailureImpl
         getSuggestedAcademiesFailure,
     required TResult Function(_SuggestedAcademiesFetched value)
         suggestedAcademiesFetched,
+    required TResult Function(_GetAllAcademiesLoading value)
+        getAllAcademiesLoading,
+    required TResult Function(_GetAllAcademiesFailure value)
+        getAllAcademiesFailure,
+    required TResult Function(_AllAcademiesFetched value) allAcademiesFetched,
     required TResult Function(_GetAboutAcademyLoading value)
         getAboutAcademyLoading,
     required TResult Function(_GetAboutAcademyFailure value)
         getAboutAcademyFailure,
     required TResult Function(_AboutAcademyFetched value) aboutAcademyFetched,
-    required TResult Function(_GetAcademyCoursesLoading value)
-        getAcademyCoursesLoading,
-    required TResult Function(_GetAcademyCoursesFailure value)
-        getAcademyCoursesFailure,
+    required TResult Function(_GetCoursesToSubscribeLoading value)
+        getCoursesToSubscribeLoading,
+    required TResult Function(_GetCoursesToSubscribeFailure value)
+        getCoursesToSubscribeFailure,
     required TResult Function(_AcademyCoursesFetched value)
         academyCoursesFetched,
-    required TResult Function(_GetAcademyCoursesInDateLoading value)
-        getAcademyCoursesInDateLoading,
-    required TResult Function(_GetAcademyCoursesInDateFailure value)
-        getAcademyCoursesInDateFailure,
+    required TResult Function(_GetCoursesToSubscribeInDateLoading value)
+        getCoursesToSubscribeInDateLoading,
+    required TResult Function(_GetCoursesToSubscribeInDateFailure value)
+        getCoursesToSubscribeInDateFailure,
     required TResult Function(_AcademyCoursesInDateFetched value)
         academyCoursesInDateFetched,
     required TResult Function(_GetAcademyReviewLoading value)
@@ -5414,8 +8295,18 @@ class _$GetAcademyCoursesInDateFailureImpl
     required TResult Function(_GetAcademyReviewFailure value)
         getAcademyReviewFailure,
     required TResult Function(_AcademyReviewFetched value) academyReviewFetched,
+    required TResult Function(_InrollUserInCourseLoadingLoading value)
+        inrollUserInCourseLoading,
+    required TResult Function(_InrollUserInCourseFailure value)
+        inrollUserInCourseFailure,
+    required TResult Function(_CourseInrolled value) courseInrolled,
+    required TResult Function(_AddAcademyReviewLoading value)
+        addAcademyReviewLoading,
+    required TResult Function(_AddAcademyReviewFailure value)
+        addAcademyReviewFailure,
+    required TResult Function(_ReviewAdded value) reviewAdded,
   }) {
-    return getAcademyCoursesInDateFailure(this);
+    return getCoursesToSubscribeInDateFailure(this);
   }
 
   @override
@@ -5433,25 +8324,36 @@ class _$GetAcademyCoursesInDateFailureImpl
         getSuggestedAcademiesFailure,
     TResult? Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult? Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult? Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult? Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult? Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult? Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult? Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult? Function(_GetAcademyCoursesLoading value)?
-        getAcademyCoursesLoading,
-    TResult? Function(_GetAcademyCoursesFailure value)?
-        getAcademyCoursesFailure,
+    TResult? Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult? Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult? Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult? Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult? Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult? Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult? Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult? Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult? Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult? Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult? Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult? Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult? Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult? Function(_CourseInrolled value)? courseInrolled,
+    TResult? Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult? Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult? Function(_ReviewAdded value)? reviewAdded,
   }) {
-    return getAcademyCoursesInDateFailure?.call(this);
+    return getCoursesToSubscribeInDateFailure?.call(this);
   }
 
   @override
@@ -5469,38 +8371,51 @@ class _$GetAcademyCoursesInDateFailureImpl
         getSuggestedAcademiesFailure,
     TResult Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult Function(_GetAcademyCoursesLoading value)? getAcademyCoursesLoading,
-    TResult Function(_GetAcademyCoursesFailure value)? getAcademyCoursesFailure,
+    TResult Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult Function(_CourseInrolled value)? courseInrolled,
+    TResult Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult Function(_ReviewAdded value)? reviewAdded,
     required TResult orElse(),
   }) {
-    if (getAcademyCoursesInDateFailure != null) {
-      return getAcademyCoursesInDateFailure(this);
+    if (getCoursesToSubscribeInDateFailure != null) {
+      return getCoursesToSubscribeInDateFailure(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetAcademyCoursesInDateFailure implements AcademyState {
-  const factory _GetAcademyCoursesInDateFailure({final Failure? failure}) =
-      _$GetAcademyCoursesInDateFailureImpl;
+abstract class _GetCoursesToSubscribeInDateFailure implements AcademyState {
+  const factory _GetCoursesToSubscribeInDateFailure({final Failure? failure}) =
+      _$GetCoursesToSubscribeInDateFailureImpl;
 
   Failure? get failure;
   @JsonKey(ignore: true)
-  _$$GetAcademyCoursesInDateFailureImplCopyWith<
-          _$GetAcademyCoursesInDateFailureImpl>
+  _$$GetCoursesToSubscribeInDateFailureImplCopyWith<
+          _$GetCoursesToSubscribeInDateFailureImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -5511,7 +8426,7 @@ abstract class _$$AcademyCoursesInDateFetchedImplCopyWith<$Res> {
           $Res Function(_$AcademyCoursesInDateFetchedImpl) then) =
       __$$AcademyCoursesInDateFetchedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({GetAcademyCoursesEntity? academyCoursesInDate});
+  $Res call({GetCoursesToSubscribeEntity? academyCoursesInDate});
 }
 
 /// @nodoc
@@ -5532,7 +8447,7 @@ class __$$AcademyCoursesInDateFetchedImplCopyWithImpl<$Res>
       academyCoursesInDate: freezed == academyCoursesInDate
           ? _value.academyCoursesInDate
           : academyCoursesInDate // ignore: cast_nullable_to_non_nullable
-              as GetAcademyCoursesEntity?,
+              as GetCoursesToSubscribeEntity?,
     ));
   }
 }
@@ -5545,7 +8460,7 @@ class _$AcademyCoursesInDateFetchedImpl
 
   @override
   @JsonKey()
-  final GetAcademyCoursesEntity? academyCoursesInDate;
+  final GetCoursesToSubscribeEntity? academyCoursesInDate;
 
   @override
   String toString() {
@@ -5583,22 +8498,33 @@ class _$AcademyCoursesInDateFetchedImpl
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
     required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
+    required TResult Function() getAllAcademiesLoading,
+    required TResult Function(Failure? failure) getAllAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
+        allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
-    required TResult Function() getAcademyCoursesLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCourses)
+    required TResult Function() getCoursesToSubscribeLoading,
+    required TResult Function(Failure? failure) getCoursesToSubscribeFailure,
+    required TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)
         academyCoursesFetched,
-    required TResult Function() getAcademyCoursesInDateLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
+    required TResult Function() getCoursesToSubscribeInDateLoading,
+    required TResult Function(Failure? failure)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
     required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
+    required TResult Function() inrollUserInCourseLoading,
+    required TResult Function(Failure? failure) inrollUserInCourseFailure,
+    required TResult Function(bool courseInrolled) courseInrolled,
+    required TResult Function() addAcademyReviewLoading,
+    required TResult Function(Failure? failure) addAcademyReviewFailure,
+    required TResult Function(bool reviewAdded) reviewAdded,
   }) {
     return academyCoursesInDateFetched(academyCoursesInDate);
   }
@@ -5615,21 +8541,31 @@ class _$AcademyCoursesInDateFetchedImpl
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult? Function()? getAllAcademiesLoading,
+    TResult? Function(Failure? failure)? getAllAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult? Function()? getAcademyCoursesLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult? Function()? getCoursesToSubscribeLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult? Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult? Function()? getAcademyCoursesInDateLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult? Function()? getCoursesToSubscribeInDateLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult? Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
     TResult? Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult? Function()? inrollUserInCourseLoading,
+    TResult? Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult? Function(bool courseInrolled)? courseInrolled,
+    TResult? Function()? addAcademyReviewLoading,
+    TResult? Function(Failure? failure)? addAcademyReviewFailure,
+    TResult? Function(bool reviewAdded)? reviewAdded,
   }) {
     return academyCoursesInDateFetched?.call(academyCoursesInDate);
   }
@@ -5646,21 +8582,31 @@ class _$AcademyCoursesInDateFetchedImpl
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult Function()? getAllAcademiesLoading,
+    TResult Function(Failure? failure)? getAllAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult Function()? getAcademyCoursesLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult Function()? getCoursesToSubscribeLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult Function()? getAcademyCoursesInDateLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult Function()? getCoursesToSubscribeInDateLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
     TResult Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult Function()? inrollUserInCourseLoading,
+    TResult Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult Function(bool courseInrolled)? courseInrolled,
+    TResult Function()? addAcademyReviewLoading,
+    TResult Function(Failure? failure)? addAcademyReviewFailure,
+    TResult Function(bool reviewAdded)? reviewAdded,
     required TResult orElse(),
   }) {
     if (academyCoursesInDateFetched != null) {
@@ -5685,21 +8631,26 @@ class _$AcademyCoursesInDateFetchedImpl
         getSuggestedAcademiesFailure,
     required TResult Function(_SuggestedAcademiesFetched value)
         suggestedAcademiesFetched,
+    required TResult Function(_GetAllAcademiesLoading value)
+        getAllAcademiesLoading,
+    required TResult Function(_GetAllAcademiesFailure value)
+        getAllAcademiesFailure,
+    required TResult Function(_AllAcademiesFetched value) allAcademiesFetched,
     required TResult Function(_GetAboutAcademyLoading value)
         getAboutAcademyLoading,
     required TResult Function(_GetAboutAcademyFailure value)
         getAboutAcademyFailure,
     required TResult Function(_AboutAcademyFetched value) aboutAcademyFetched,
-    required TResult Function(_GetAcademyCoursesLoading value)
-        getAcademyCoursesLoading,
-    required TResult Function(_GetAcademyCoursesFailure value)
-        getAcademyCoursesFailure,
+    required TResult Function(_GetCoursesToSubscribeLoading value)
+        getCoursesToSubscribeLoading,
+    required TResult Function(_GetCoursesToSubscribeFailure value)
+        getCoursesToSubscribeFailure,
     required TResult Function(_AcademyCoursesFetched value)
         academyCoursesFetched,
-    required TResult Function(_GetAcademyCoursesInDateLoading value)
-        getAcademyCoursesInDateLoading,
-    required TResult Function(_GetAcademyCoursesInDateFailure value)
-        getAcademyCoursesInDateFailure,
+    required TResult Function(_GetCoursesToSubscribeInDateLoading value)
+        getCoursesToSubscribeInDateLoading,
+    required TResult Function(_GetCoursesToSubscribeInDateFailure value)
+        getCoursesToSubscribeInDateFailure,
     required TResult Function(_AcademyCoursesInDateFetched value)
         academyCoursesInDateFetched,
     required TResult Function(_GetAcademyReviewLoading value)
@@ -5707,6 +8658,16 @@ class _$AcademyCoursesInDateFetchedImpl
     required TResult Function(_GetAcademyReviewFailure value)
         getAcademyReviewFailure,
     required TResult Function(_AcademyReviewFetched value) academyReviewFetched,
+    required TResult Function(_InrollUserInCourseLoadingLoading value)
+        inrollUserInCourseLoading,
+    required TResult Function(_InrollUserInCourseFailure value)
+        inrollUserInCourseFailure,
+    required TResult Function(_CourseInrolled value) courseInrolled,
+    required TResult Function(_AddAcademyReviewLoading value)
+        addAcademyReviewLoading,
+    required TResult Function(_AddAcademyReviewFailure value)
+        addAcademyReviewFailure,
+    required TResult Function(_ReviewAdded value) reviewAdded,
   }) {
     return academyCoursesInDateFetched(this);
   }
@@ -5726,23 +8687,34 @@ class _$AcademyCoursesInDateFetchedImpl
         getSuggestedAcademiesFailure,
     TResult? Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult? Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult? Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult? Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult? Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult? Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult? Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult? Function(_GetAcademyCoursesLoading value)?
-        getAcademyCoursesLoading,
-    TResult? Function(_GetAcademyCoursesFailure value)?
-        getAcademyCoursesFailure,
+    TResult? Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult? Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult? Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult? Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult? Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult? Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult? Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult? Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult? Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult? Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult? Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult? Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult? Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult? Function(_CourseInrolled value)? courseInrolled,
+    TResult? Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult? Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult? Function(_ReviewAdded value)? reviewAdded,
   }) {
     return academyCoursesInDateFetched?.call(this);
   }
@@ -5762,21 +8734,34 @@ class _$AcademyCoursesInDateFetchedImpl
         getSuggestedAcademiesFailure,
     TResult Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult Function(_GetAcademyCoursesLoading value)? getAcademyCoursesLoading,
-    TResult Function(_GetAcademyCoursesFailure value)? getAcademyCoursesFailure,
+    TResult Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult Function(_CourseInrolled value)? courseInrolled,
+    TResult Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult Function(_ReviewAdded value)? reviewAdded,
     required TResult orElse(),
   }) {
     if (academyCoursesInDateFetched != null) {
@@ -5788,10 +8773,10 @@ class _$AcademyCoursesInDateFetchedImpl
 
 abstract class _AcademyCoursesInDateFetched implements AcademyState {
   const factory _AcademyCoursesInDateFetched(
-          {final GetAcademyCoursesEntity? academyCoursesInDate}) =
+          {final GetCoursesToSubscribeEntity? academyCoursesInDate}) =
       _$AcademyCoursesInDateFetchedImpl;
 
-  GetAcademyCoursesEntity? get academyCoursesInDate;
+  GetCoursesToSubscribeEntity? get academyCoursesInDate;
   @JsonKey(ignore: true)
   _$$AcademyCoursesInDateFetchedImplCopyWith<_$AcademyCoursesInDateFetchedImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -5847,22 +8832,33 @@ class _$GetAcademyReviewLoadingImpl implements _GetAcademyReviewLoading {
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
     required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
+    required TResult Function() getAllAcademiesLoading,
+    required TResult Function(Failure? failure) getAllAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
+        allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
-    required TResult Function() getAcademyCoursesLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCourses)
+    required TResult Function() getCoursesToSubscribeLoading,
+    required TResult Function(Failure? failure) getCoursesToSubscribeFailure,
+    required TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)
         academyCoursesFetched,
-    required TResult Function() getAcademyCoursesInDateLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
+    required TResult Function() getCoursesToSubscribeInDateLoading,
+    required TResult Function(Failure? failure)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
     required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
+    required TResult Function() inrollUserInCourseLoading,
+    required TResult Function(Failure? failure) inrollUserInCourseFailure,
+    required TResult Function(bool courseInrolled) courseInrolled,
+    required TResult Function() addAcademyReviewLoading,
+    required TResult Function(Failure? failure) addAcademyReviewFailure,
+    required TResult Function(bool reviewAdded) reviewAdded,
   }) {
     return getAcademyReviewLoading();
   }
@@ -5879,21 +8875,31 @@ class _$GetAcademyReviewLoadingImpl implements _GetAcademyReviewLoading {
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult? Function()? getAllAcademiesLoading,
+    TResult? Function(Failure? failure)? getAllAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult? Function()? getAcademyCoursesLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult? Function()? getCoursesToSubscribeLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult? Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult? Function()? getAcademyCoursesInDateLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult? Function()? getCoursesToSubscribeInDateLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult? Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
     TResult? Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult? Function()? inrollUserInCourseLoading,
+    TResult? Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult? Function(bool courseInrolled)? courseInrolled,
+    TResult? Function()? addAcademyReviewLoading,
+    TResult? Function(Failure? failure)? addAcademyReviewFailure,
+    TResult? Function(bool reviewAdded)? reviewAdded,
   }) {
     return getAcademyReviewLoading?.call();
   }
@@ -5910,21 +8916,31 @@ class _$GetAcademyReviewLoadingImpl implements _GetAcademyReviewLoading {
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult Function()? getAllAcademiesLoading,
+    TResult Function(Failure? failure)? getAllAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult Function()? getAcademyCoursesLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult Function()? getCoursesToSubscribeLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult Function()? getAcademyCoursesInDateLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult Function()? getCoursesToSubscribeInDateLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
     TResult Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult Function()? inrollUserInCourseLoading,
+    TResult Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult Function(bool courseInrolled)? courseInrolled,
+    TResult Function()? addAcademyReviewLoading,
+    TResult Function(Failure? failure)? addAcademyReviewFailure,
+    TResult Function(bool reviewAdded)? reviewAdded,
     required TResult orElse(),
   }) {
     if (getAcademyReviewLoading != null) {
@@ -5949,21 +8965,26 @@ class _$GetAcademyReviewLoadingImpl implements _GetAcademyReviewLoading {
         getSuggestedAcademiesFailure,
     required TResult Function(_SuggestedAcademiesFetched value)
         suggestedAcademiesFetched,
+    required TResult Function(_GetAllAcademiesLoading value)
+        getAllAcademiesLoading,
+    required TResult Function(_GetAllAcademiesFailure value)
+        getAllAcademiesFailure,
+    required TResult Function(_AllAcademiesFetched value) allAcademiesFetched,
     required TResult Function(_GetAboutAcademyLoading value)
         getAboutAcademyLoading,
     required TResult Function(_GetAboutAcademyFailure value)
         getAboutAcademyFailure,
     required TResult Function(_AboutAcademyFetched value) aboutAcademyFetched,
-    required TResult Function(_GetAcademyCoursesLoading value)
-        getAcademyCoursesLoading,
-    required TResult Function(_GetAcademyCoursesFailure value)
-        getAcademyCoursesFailure,
+    required TResult Function(_GetCoursesToSubscribeLoading value)
+        getCoursesToSubscribeLoading,
+    required TResult Function(_GetCoursesToSubscribeFailure value)
+        getCoursesToSubscribeFailure,
     required TResult Function(_AcademyCoursesFetched value)
         academyCoursesFetched,
-    required TResult Function(_GetAcademyCoursesInDateLoading value)
-        getAcademyCoursesInDateLoading,
-    required TResult Function(_GetAcademyCoursesInDateFailure value)
-        getAcademyCoursesInDateFailure,
+    required TResult Function(_GetCoursesToSubscribeInDateLoading value)
+        getCoursesToSubscribeInDateLoading,
+    required TResult Function(_GetCoursesToSubscribeInDateFailure value)
+        getCoursesToSubscribeInDateFailure,
     required TResult Function(_AcademyCoursesInDateFetched value)
         academyCoursesInDateFetched,
     required TResult Function(_GetAcademyReviewLoading value)
@@ -5971,6 +8992,16 @@ class _$GetAcademyReviewLoadingImpl implements _GetAcademyReviewLoading {
     required TResult Function(_GetAcademyReviewFailure value)
         getAcademyReviewFailure,
     required TResult Function(_AcademyReviewFetched value) academyReviewFetched,
+    required TResult Function(_InrollUserInCourseLoadingLoading value)
+        inrollUserInCourseLoading,
+    required TResult Function(_InrollUserInCourseFailure value)
+        inrollUserInCourseFailure,
+    required TResult Function(_CourseInrolled value) courseInrolled,
+    required TResult Function(_AddAcademyReviewLoading value)
+        addAcademyReviewLoading,
+    required TResult Function(_AddAcademyReviewFailure value)
+        addAcademyReviewFailure,
+    required TResult Function(_ReviewAdded value) reviewAdded,
   }) {
     return getAcademyReviewLoading(this);
   }
@@ -5990,23 +9021,34 @@ class _$GetAcademyReviewLoadingImpl implements _GetAcademyReviewLoading {
         getSuggestedAcademiesFailure,
     TResult? Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult? Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult? Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult? Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult? Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult? Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult? Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult? Function(_GetAcademyCoursesLoading value)?
-        getAcademyCoursesLoading,
-    TResult? Function(_GetAcademyCoursesFailure value)?
-        getAcademyCoursesFailure,
+    TResult? Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult? Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult? Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult? Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult? Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult? Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult? Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult? Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult? Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult? Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult? Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult? Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult? Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult? Function(_CourseInrolled value)? courseInrolled,
+    TResult? Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult? Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult? Function(_ReviewAdded value)? reviewAdded,
   }) {
     return getAcademyReviewLoading?.call(this);
   }
@@ -6026,21 +9068,34 @@ class _$GetAcademyReviewLoadingImpl implements _GetAcademyReviewLoading {
         getSuggestedAcademiesFailure,
     TResult Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult Function(_GetAcademyCoursesLoading value)? getAcademyCoursesLoading,
-    TResult Function(_GetAcademyCoursesFailure value)? getAcademyCoursesFailure,
+    TResult Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult Function(_CourseInrolled value)? courseInrolled,
+    TResult Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult Function(_ReviewAdded value)? reviewAdded,
     required TResult orElse(),
   }) {
     if (getAcademyReviewLoading != null) {
@@ -6131,22 +9186,33 @@ class _$GetAcademyReviewFailureImpl implements _GetAcademyReviewFailure {
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
     required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
+    required TResult Function() getAllAcademiesLoading,
+    required TResult Function(Failure? failure) getAllAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
+        allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
-    required TResult Function() getAcademyCoursesLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCourses)
+    required TResult Function() getCoursesToSubscribeLoading,
+    required TResult Function(Failure? failure) getCoursesToSubscribeFailure,
+    required TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)
         academyCoursesFetched,
-    required TResult Function() getAcademyCoursesInDateLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
+    required TResult Function() getCoursesToSubscribeInDateLoading,
+    required TResult Function(Failure? failure)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
     required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
+    required TResult Function() inrollUserInCourseLoading,
+    required TResult Function(Failure? failure) inrollUserInCourseFailure,
+    required TResult Function(bool courseInrolled) courseInrolled,
+    required TResult Function() addAcademyReviewLoading,
+    required TResult Function(Failure? failure) addAcademyReviewFailure,
+    required TResult Function(bool reviewAdded) reviewAdded,
   }) {
     return getAcademyReviewFailure(failure);
   }
@@ -6163,21 +9229,31 @@ class _$GetAcademyReviewFailureImpl implements _GetAcademyReviewFailure {
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult? Function()? getAllAcademiesLoading,
+    TResult? Function(Failure? failure)? getAllAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult? Function()? getAcademyCoursesLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult? Function()? getCoursesToSubscribeLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult? Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult? Function()? getAcademyCoursesInDateLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult? Function()? getCoursesToSubscribeInDateLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult? Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
     TResult? Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult? Function()? inrollUserInCourseLoading,
+    TResult? Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult? Function(bool courseInrolled)? courseInrolled,
+    TResult? Function()? addAcademyReviewLoading,
+    TResult? Function(Failure? failure)? addAcademyReviewFailure,
+    TResult? Function(bool reviewAdded)? reviewAdded,
   }) {
     return getAcademyReviewFailure?.call(failure);
   }
@@ -6194,21 +9270,31 @@ class _$GetAcademyReviewFailureImpl implements _GetAcademyReviewFailure {
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult Function()? getAllAcademiesLoading,
+    TResult Function(Failure? failure)? getAllAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult Function()? getAcademyCoursesLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult Function()? getCoursesToSubscribeLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult Function()? getAcademyCoursesInDateLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult Function()? getCoursesToSubscribeInDateLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
     TResult Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult Function()? inrollUserInCourseLoading,
+    TResult Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult Function(bool courseInrolled)? courseInrolled,
+    TResult Function()? addAcademyReviewLoading,
+    TResult Function(Failure? failure)? addAcademyReviewFailure,
+    TResult Function(bool reviewAdded)? reviewAdded,
     required TResult orElse(),
   }) {
     if (getAcademyReviewFailure != null) {
@@ -6233,21 +9319,26 @@ class _$GetAcademyReviewFailureImpl implements _GetAcademyReviewFailure {
         getSuggestedAcademiesFailure,
     required TResult Function(_SuggestedAcademiesFetched value)
         suggestedAcademiesFetched,
+    required TResult Function(_GetAllAcademiesLoading value)
+        getAllAcademiesLoading,
+    required TResult Function(_GetAllAcademiesFailure value)
+        getAllAcademiesFailure,
+    required TResult Function(_AllAcademiesFetched value) allAcademiesFetched,
     required TResult Function(_GetAboutAcademyLoading value)
         getAboutAcademyLoading,
     required TResult Function(_GetAboutAcademyFailure value)
         getAboutAcademyFailure,
     required TResult Function(_AboutAcademyFetched value) aboutAcademyFetched,
-    required TResult Function(_GetAcademyCoursesLoading value)
-        getAcademyCoursesLoading,
-    required TResult Function(_GetAcademyCoursesFailure value)
-        getAcademyCoursesFailure,
+    required TResult Function(_GetCoursesToSubscribeLoading value)
+        getCoursesToSubscribeLoading,
+    required TResult Function(_GetCoursesToSubscribeFailure value)
+        getCoursesToSubscribeFailure,
     required TResult Function(_AcademyCoursesFetched value)
         academyCoursesFetched,
-    required TResult Function(_GetAcademyCoursesInDateLoading value)
-        getAcademyCoursesInDateLoading,
-    required TResult Function(_GetAcademyCoursesInDateFailure value)
-        getAcademyCoursesInDateFailure,
+    required TResult Function(_GetCoursesToSubscribeInDateLoading value)
+        getCoursesToSubscribeInDateLoading,
+    required TResult Function(_GetCoursesToSubscribeInDateFailure value)
+        getCoursesToSubscribeInDateFailure,
     required TResult Function(_AcademyCoursesInDateFetched value)
         academyCoursesInDateFetched,
     required TResult Function(_GetAcademyReviewLoading value)
@@ -6255,6 +9346,16 @@ class _$GetAcademyReviewFailureImpl implements _GetAcademyReviewFailure {
     required TResult Function(_GetAcademyReviewFailure value)
         getAcademyReviewFailure,
     required TResult Function(_AcademyReviewFetched value) academyReviewFetched,
+    required TResult Function(_InrollUserInCourseLoadingLoading value)
+        inrollUserInCourseLoading,
+    required TResult Function(_InrollUserInCourseFailure value)
+        inrollUserInCourseFailure,
+    required TResult Function(_CourseInrolled value) courseInrolled,
+    required TResult Function(_AddAcademyReviewLoading value)
+        addAcademyReviewLoading,
+    required TResult Function(_AddAcademyReviewFailure value)
+        addAcademyReviewFailure,
+    required TResult Function(_ReviewAdded value) reviewAdded,
   }) {
     return getAcademyReviewFailure(this);
   }
@@ -6274,23 +9375,34 @@ class _$GetAcademyReviewFailureImpl implements _GetAcademyReviewFailure {
         getSuggestedAcademiesFailure,
     TResult? Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult? Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult? Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult? Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult? Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult? Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult? Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult? Function(_GetAcademyCoursesLoading value)?
-        getAcademyCoursesLoading,
-    TResult? Function(_GetAcademyCoursesFailure value)?
-        getAcademyCoursesFailure,
+    TResult? Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult? Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult? Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult? Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult? Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult? Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult? Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult? Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult? Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult? Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult? Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult? Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult? Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult? Function(_CourseInrolled value)? courseInrolled,
+    TResult? Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult? Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult? Function(_ReviewAdded value)? reviewAdded,
   }) {
     return getAcademyReviewFailure?.call(this);
   }
@@ -6310,21 +9422,34 @@ class _$GetAcademyReviewFailureImpl implements _GetAcademyReviewFailure {
         getSuggestedAcademiesFailure,
     TResult Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult Function(_GetAcademyCoursesLoading value)? getAcademyCoursesLoading,
-    TResult Function(_GetAcademyCoursesFailure value)? getAcademyCoursesFailure,
+    TResult Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult Function(_CourseInrolled value)? courseInrolled,
+    TResult Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult Function(_ReviewAdded value)? reviewAdded,
     required TResult orElse(),
   }) {
     if (getAcademyReviewFailure != null) {
@@ -6429,22 +9554,33 @@ class _$AcademyReviewFetchedImpl implements _AcademyReviewFetched {
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
     required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
         suggestedAcademiesFetched,
+    required TResult Function() getAllAcademiesLoading,
+    required TResult Function(Failure? failure) getAllAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
+        allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
         aboutAcademyFetched,
-    required TResult Function() getAcademyCoursesLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCourses)
+    required TResult Function() getCoursesToSubscribeLoading,
+    required TResult Function(Failure? failure) getCoursesToSubscribeFailure,
+    required TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)
         academyCoursesFetched,
-    required TResult Function() getAcademyCoursesInDateLoading,
-    required TResult Function(Failure? failure) getAcademyCoursesInDateFailure,
-    required TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)
+    required TResult Function() getCoursesToSubscribeInDateLoading,
+    required TResult Function(Failure? failure)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)
         academyCoursesInDateFetched,
     required TResult Function() getAcademyReviewLoading,
     required TResult Function(Failure? failure) getAcademyReviewFailure,
     required TResult Function(List<AcademyReviewEntity> academyReview)
         academyReviewFetched,
+    required TResult Function() inrollUserInCourseLoading,
+    required TResult Function(Failure? failure) inrollUserInCourseFailure,
+    required TResult Function(bool courseInrolled) courseInrolled,
+    required TResult Function() addAcademyReviewLoading,
+    required TResult Function(Failure? failure) addAcademyReviewFailure,
+    required TResult Function(bool reviewAdded) reviewAdded,
   }) {
     return academyReviewFetched(academyReview);
   }
@@ -6461,21 +9597,31 @@ class _$AcademyReviewFetchedImpl implements _AcademyReviewFetched {
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult? Function()? getAllAcademiesLoading,
+    TResult? Function(Failure? failure)? getAllAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult? Function()? getAcademyCoursesLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult? Function()? getCoursesToSubscribeLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult? Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult? Function()? getAcademyCoursesInDateLoading,
-    TResult? Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult? Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult? Function()? getCoursesToSubscribeInDateLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult? Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult? Function()? getAcademyReviewLoading,
     TResult? Function(Failure? failure)? getAcademyReviewFailure,
     TResult? Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult? Function()? inrollUserInCourseLoading,
+    TResult? Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult? Function(bool courseInrolled)? courseInrolled,
+    TResult? Function()? addAcademyReviewLoading,
+    TResult? Function(Failure? failure)? addAcademyReviewFailure,
+    TResult? Function(bool reviewAdded)? reviewAdded,
   }) {
     return academyReviewFetched?.call(academyReview);
   }
@@ -6492,21 +9638,31 @@ class _$AcademyReviewFetchedImpl implements _AcademyReviewFetched {
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
     TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
         suggestedAcademiesFetched,
+    TResult Function()? getAllAcademiesLoading,
+    TResult Function(Failure? failure)? getAllAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
-    TResult Function()? getAcademyCoursesLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCourses)?
+    TResult Function()? getCoursesToSubscribeLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)?
         academyCoursesFetched,
-    TResult Function()? getAcademyCoursesInDateLoading,
-    TResult Function(Failure? failure)? getAcademyCoursesInDateFailure,
-    TResult Function(GetAcademyCoursesEntity? academyCoursesInDate)?
+    TResult Function()? getCoursesToSubscribeInDateLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
         academyCoursesInDateFetched,
     TResult Function()? getAcademyReviewLoading,
     TResult Function(Failure? failure)? getAcademyReviewFailure,
     TResult Function(List<AcademyReviewEntity> academyReview)?
         academyReviewFetched,
+    TResult Function()? inrollUserInCourseLoading,
+    TResult Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult Function(bool courseInrolled)? courseInrolled,
+    TResult Function()? addAcademyReviewLoading,
+    TResult Function(Failure? failure)? addAcademyReviewFailure,
+    TResult Function(bool reviewAdded)? reviewAdded,
     required TResult orElse(),
   }) {
     if (academyReviewFetched != null) {
@@ -6531,21 +9687,26 @@ class _$AcademyReviewFetchedImpl implements _AcademyReviewFetched {
         getSuggestedAcademiesFailure,
     required TResult Function(_SuggestedAcademiesFetched value)
         suggestedAcademiesFetched,
+    required TResult Function(_GetAllAcademiesLoading value)
+        getAllAcademiesLoading,
+    required TResult Function(_GetAllAcademiesFailure value)
+        getAllAcademiesFailure,
+    required TResult Function(_AllAcademiesFetched value) allAcademiesFetched,
     required TResult Function(_GetAboutAcademyLoading value)
         getAboutAcademyLoading,
     required TResult Function(_GetAboutAcademyFailure value)
         getAboutAcademyFailure,
     required TResult Function(_AboutAcademyFetched value) aboutAcademyFetched,
-    required TResult Function(_GetAcademyCoursesLoading value)
-        getAcademyCoursesLoading,
-    required TResult Function(_GetAcademyCoursesFailure value)
-        getAcademyCoursesFailure,
+    required TResult Function(_GetCoursesToSubscribeLoading value)
+        getCoursesToSubscribeLoading,
+    required TResult Function(_GetCoursesToSubscribeFailure value)
+        getCoursesToSubscribeFailure,
     required TResult Function(_AcademyCoursesFetched value)
         academyCoursesFetched,
-    required TResult Function(_GetAcademyCoursesInDateLoading value)
-        getAcademyCoursesInDateLoading,
-    required TResult Function(_GetAcademyCoursesInDateFailure value)
-        getAcademyCoursesInDateFailure,
+    required TResult Function(_GetCoursesToSubscribeInDateLoading value)
+        getCoursesToSubscribeInDateLoading,
+    required TResult Function(_GetCoursesToSubscribeInDateFailure value)
+        getCoursesToSubscribeInDateFailure,
     required TResult Function(_AcademyCoursesInDateFetched value)
         academyCoursesInDateFetched,
     required TResult Function(_GetAcademyReviewLoading value)
@@ -6553,6 +9714,16 @@ class _$AcademyReviewFetchedImpl implements _AcademyReviewFetched {
     required TResult Function(_GetAcademyReviewFailure value)
         getAcademyReviewFailure,
     required TResult Function(_AcademyReviewFetched value) academyReviewFetched,
+    required TResult Function(_InrollUserInCourseLoadingLoading value)
+        inrollUserInCourseLoading,
+    required TResult Function(_InrollUserInCourseFailure value)
+        inrollUserInCourseFailure,
+    required TResult Function(_CourseInrolled value) courseInrolled,
+    required TResult Function(_AddAcademyReviewLoading value)
+        addAcademyReviewLoading,
+    required TResult Function(_AddAcademyReviewFailure value)
+        addAcademyReviewFailure,
+    required TResult Function(_ReviewAdded value) reviewAdded,
   }) {
     return academyReviewFetched(this);
   }
@@ -6572,23 +9743,34 @@ class _$AcademyReviewFetchedImpl implements _AcademyReviewFetched {
         getSuggestedAcademiesFailure,
     TResult? Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult? Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult? Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult? Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult? Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult? Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult? Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult? Function(_GetAcademyCoursesLoading value)?
-        getAcademyCoursesLoading,
-    TResult? Function(_GetAcademyCoursesFailure value)?
-        getAcademyCoursesFailure,
+    TResult? Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult? Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult? Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult? Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult? Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult? Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult? Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult? Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult? Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult? Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult? Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult? Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult? Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult? Function(_CourseInrolled value)? courseInrolled,
+    TResult? Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult? Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult? Function(_ReviewAdded value)? reviewAdded,
   }) {
     return academyReviewFetched?.call(this);
   }
@@ -6608,21 +9790,34 @@ class _$AcademyReviewFetchedImpl implements _AcademyReviewFetched {
         getSuggestedAcademiesFailure,
     TResult Function(_SuggestedAcademiesFetched value)?
         suggestedAcademiesFetched,
+    TResult Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult Function(_AllAcademiesFetched value)? allAcademiesFetched,
     TResult Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
     TResult Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
     TResult Function(_AboutAcademyFetched value)? aboutAcademyFetched,
-    TResult Function(_GetAcademyCoursesLoading value)? getAcademyCoursesLoading,
-    TResult Function(_GetAcademyCoursesFailure value)? getAcademyCoursesFailure,
+    TResult Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
     TResult Function(_AcademyCoursesFetched value)? academyCoursesFetched,
-    TResult Function(_GetAcademyCoursesInDateLoading value)?
-        getAcademyCoursesInDateLoading,
-    TResult Function(_GetAcademyCoursesInDateFailure value)?
-        getAcademyCoursesInDateFailure,
+    TResult Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
     TResult Function(_AcademyCoursesInDateFetched value)?
         academyCoursesInDateFetched,
     TResult Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
     TResult Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
     TResult Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult Function(_CourseInrolled value)? courseInrolled,
+    TResult Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult Function(_ReviewAdded value)? reviewAdded,
     required TResult orElse(),
   }) {
     if (academyReviewFetched != null) {
@@ -6641,4 +9836,2097 @@ abstract class _AcademyReviewFetched implements AcademyState {
   @JsonKey(ignore: true)
   _$$AcademyReviewFetchedImplCopyWith<_$AcademyReviewFetchedImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$InrollUserInCourseLoadingLoadingImplCopyWith<$Res> {
+  factory _$$InrollUserInCourseLoadingLoadingImplCopyWith(
+          _$InrollUserInCourseLoadingLoadingImpl value,
+          $Res Function(_$InrollUserInCourseLoadingLoadingImpl) then) =
+      __$$InrollUserInCourseLoadingLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$InrollUserInCourseLoadingLoadingImplCopyWithImpl<$Res>
+    extends _$AcademyStateCopyWithImpl<$Res,
+        _$InrollUserInCourseLoadingLoadingImpl>
+    implements _$$InrollUserInCourseLoadingLoadingImplCopyWith<$Res> {
+  __$$InrollUserInCourseLoadingLoadingImplCopyWithImpl(
+      _$InrollUserInCourseLoadingLoadingImpl _value,
+      $Res Function(_$InrollUserInCourseLoadingLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$InrollUserInCourseLoadingLoadingImpl
+    implements _InrollUserInCourseLoadingLoading {
+  const _$InrollUserInCourseLoadingLoadingImpl();
+
+  @override
+  String toString() {
+    return 'AcademyState.inrollUserInCourseLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InrollUserInCourseLoadingLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getSportsMembershipLoading,
+    required TResult Function(Failure? failure) getSportsMembershipFailure,
+    required TResult Function(List<AcademyMembershipEntity> sportsMembership)
+        sportsMembershipFetched,
+    required TResult Function() getSuggestedAcademiesLoading,
+    required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+        suggestedAcademiesFetched,
+    required TResult Function() getAllAcademiesLoading,
+    required TResult Function(Failure? failure) getAllAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
+        allAcademiesFetched,
+    required TResult Function() getAboutAcademyLoading,
+    required TResult Function(Failure? failure) getAboutAcademyFailure,
+    required TResult Function(AboutAcademyEntity? aboutAcademy)
+        aboutAcademyFetched,
+    required TResult Function() getCoursesToSubscribeLoading,
+    required TResult Function(Failure? failure) getCoursesToSubscribeFailure,
+    required TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)
+        academyCoursesFetched,
+    required TResult Function() getCoursesToSubscribeInDateLoading,
+    required TResult Function(Failure? failure)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)
+        academyCoursesInDateFetched,
+    required TResult Function() getAcademyReviewLoading,
+    required TResult Function(Failure? failure) getAcademyReviewFailure,
+    required TResult Function(List<AcademyReviewEntity> academyReview)
+        academyReviewFetched,
+    required TResult Function() inrollUserInCourseLoading,
+    required TResult Function(Failure? failure) inrollUserInCourseFailure,
+    required TResult Function(bool courseInrolled) courseInrolled,
+    required TResult Function() addAcademyReviewLoading,
+    required TResult Function(Failure? failure) addAcademyReviewFailure,
+    required TResult Function(bool reviewAdded) reviewAdded,
+  }) {
+    return inrollUserInCourseLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getSportsMembershipLoading,
+    TResult? Function(Failure? failure)? getSportsMembershipFailure,
+    TResult? Function(List<AcademyMembershipEntity> sportsMembership)?
+        sportsMembershipFetched,
+    TResult? Function()? getSuggestedAcademiesLoading,
+    TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+        suggestedAcademiesFetched,
+    TResult? Function()? getAllAcademiesLoading,
+    TResult? Function(Failure? failure)? getAllAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
+    TResult? Function()? getAboutAcademyLoading,
+    TResult? Function(Failure? failure)? getAboutAcademyFailure,
+    TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
+    TResult? Function()? getCoursesToSubscribeLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult? Function(List<GetCoursesToSubscribeEntity> academyCourses)?
+        academyCoursesFetched,
+    TResult? Function()? getCoursesToSubscribeInDateLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult? Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
+        academyCoursesInDateFetched,
+    TResult? Function()? getAcademyReviewLoading,
+    TResult? Function(Failure? failure)? getAcademyReviewFailure,
+    TResult? Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
+    TResult? Function()? inrollUserInCourseLoading,
+    TResult? Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult? Function(bool courseInrolled)? courseInrolled,
+    TResult? Function()? addAcademyReviewLoading,
+    TResult? Function(Failure? failure)? addAcademyReviewFailure,
+    TResult? Function(bool reviewAdded)? reviewAdded,
+  }) {
+    return inrollUserInCourseLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getSportsMembershipLoading,
+    TResult Function(Failure? failure)? getSportsMembershipFailure,
+    TResult Function(List<AcademyMembershipEntity> sportsMembership)?
+        sportsMembershipFetched,
+    TResult Function()? getSuggestedAcademiesLoading,
+    TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+        suggestedAcademiesFetched,
+    TResult Function()? getAllAcademiesLoading,
+    TResult Function(Failure? failure)? getAllAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
+    TResult Function()? getAboutAcademyLoading,
+    TResult Function(Failure? failure)? getAboutAcademyFailure,
+    TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
+    TResult Function()? getCoursesToSubscribeLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)?
+        academyCoursesFetched,
+    TResult Function()? getCoursesToSubscribeInDateLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
+        academyCoursesInDateFetched,
+    TResult Function()? getAcademyReviewLoading,
+    TResult Function(Failure? failure)? getAcademyReviewFailure,
+    TResult Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
+    TResult Function()? inrollUserInCourseLoading,
+    TResult Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult Function(bool courseInrolled)? courseInrolled,
+    TResult Function()? addAcademyReviewLoading,
+    TResult Function(Failure? failure)? addAcademyReviewFailure,
+    TResult Function(bool reviewAdded)? reviewAdded,
+    required TResult orElse(),
+  }) {
+    if (inrollUserInCourseLoading != null) {
+      return inrollUserInCourseLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_GetSportsMembershipMembershipLoading value)
+        getSportsMembershipLoading,
+    required TResult Function(_GetSportsMembershipFailure value)
+        getSportsMembershipFailure,
+    required TResult Function(_SportsMembershipFetched value)
+        sportsMembershipFetched,
+    required TResult Function(_GetSuggestedAcademiesLoading value)
+        getSuggestedAcademiesLoading,
+    required TResult Function(_GetSuggestedAcademiesFailure value)
+        getSuggestedAcademiesFailure,
+    required TResult Function(_SuggestedAcademiesFetched value)
+        suggestedAcademiesFetched,
+    required TResult Function(_GetAllAcademiesLoading value)
+        getAllAcademiesLoading,
+    required TResult Function(_GetAllAcademiesFailure value)
+        getAllAcademiesFailure,
+    required TResult Function(_AllAcademiesFetched value) allAcademiesFetched,
+    required TResult Function(_GetAboutAcademyLoading value)
+        getAboutAcademyLoading,
+    required TResult Function(_GetAboutAcademyFailure value)
+        getAboutAcademyFailure,
+    required TResult Function(_AboutAcademyFetched value) aboutAcademyFetched,
+    required TResult Function(_GetCoursesToSubscribeLoading value)
+        getCoursesToSubscribeLoading,
+    required TResult Function(_GetCoursesToSubscribeFailure value)
+        getCoursesToSubscribeFailure,
+    required TResult Function(_AcademyCoursesFetched value)
+        academyCoursesFetched,
+    required TResult Function(_GetCoursesToSubscribeInDateLoading value)
+        getCoursesToSubscribeInDateLoading,
+    required TResult Function(_GetCoursesToSubscribeInDateFailure value)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(_AcademyCoursesInDateFetched value)
+        academyCoursesInDateFetched,
+    required TResult Function(_GetAcademyReviewLoading value)
+        getAcademyReviewLoading,
+    required TResult Function(_GetAcademyReviewFailure value)
+        getAcademyReviewFailure,
+    required TResult Function(_AcademyReviewFetched value) academyReviewFetched,
+    required TResult Function(_InrollUserInCourseLoadingLoading value)
+        inrollUserInCourseLoading,
+    required TResult Function(_InrollUserInCourseFailure value)
+        inrollUserInCourseFailure,
+    required TResult Function(_CourseInrolled value) courseInrolled,
+    required TResult Function(_AddAcademyReviewLoading value)
+        addAcademyReviewLoading,
+    required TResult Function(_AddAcademyReviewFailure value)
+        addAcademyReviewFailure,
+    required TResult Function(_ReviewAdded value) reviewAdded,
+  }) {
+    return inrollUserInCourseLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_GetSportsMembershipMembershipLoading value)?
+        getSportsMembershipLoading,
+    TResult? Function(_GetSportsMembershipFailure value)?
+        getSportsMembershipFailure,
+    TResult? Function(_SportsMembershipFetched value)? sportsMembershipFetched,
+    TResult? Function(_GetSuggestedAcademiesLoading value)?
+        getSuggestedAcademiesLoading,
+    TResult? Function(_GetSuggestedAcademiesFailure value)?
+        getSuggestedAcademiesFailure,
+    TResult? Function(_SuggestedAcademiesFetched value)?
+        suggestedAcademiesFetched,
+    TResult? Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult? Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult? Function(_AllAcademiesFetched value)? allAcademiesFetched,
+    TResult? Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
+    TResult? Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
+    TResult? Function(_AboutAcademyFetched value)? aboutAcademyFetched,
+    TResult? Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult? Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
+    TResult? Function(_AcademyCoursesFetched value)? academyCoursesFetched,
+    TResult? Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult? Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
+    TResult? Function(_AcademyCoursesInDateFetched value)?
+        academyCoursesInDateFetched,
+    TResult? Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
+    TResult? Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
+    TResult? Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult? Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult? Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult? Function(_CourseInrolled value)? courseInrolled,
+    TResult? Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult? Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult? Function(_ReviewAdded value)? reviewAdded,
+  }) {
+    return inrollUserInCourseLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GetSportsMembershipMembershipLoading value)?
+        getSportsMembershipLoading,
+    TResult Function(_GetSportsMembershipFailure value)?
+        getSportsMembershipFailure,
+    TResult Function(_SportsMembershipFetched value)? sportsMembershipFetched,
+    TResult Function(_GetSuggestedAcademiesLoading value)?
+        getSuggestedAcademiesLoading,
+    TResult Function(_GetSuggestedAcademiesFailure value)?
+        getSuggestedAcademiesFailure,
+    TResult Function(_SuggestedAcademiesFetched value)?
+        suggestedAcademiesFetched,
+    TResult Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult Function(_AllAcademiesFetched value)? allAcademiesFetched,
+    TResult Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
+    TResult Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
+    TResult Function(_AboutAcademyFetched value)? aboutAcademyFetched,
+    TResult Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
+    TResult Function(_AcademyCoursesFetched value)? academyCoursesFetched,
+    TResult Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
+    TResult Function(_AcademyCoursesInDateFetched value)?
+        academyCoursesInDateFetched,
+    TResult Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
+    TResult Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
+    TResult Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult Function(_CourseInrolled value)? courseInrolled,
+    TResult Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult Function(_ReviewAdded value)? reviewAdded,
+    required TResult orElse(),
+  }) {
+    if (inrollUserInCourseLoading != null) {
+      return inrollUserInCourseLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InrollUserInCourseLoadingLoading implements AcademyState {
+  const factory _InrollUserInCourseLoadingLoading() =
+      _$InrollUserInCourseLoadingLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$InrollUserInCourseFailureImplCopyWith<$Res> {
+  factory _$$InrollUserInCourseFailureImplCopyWith(
+          _$InrollUserInCourseFailureImpl value,
+          $Res Function(_$InrollUserInCourseFailureImpl) then) =
+      __$$InrollUserInCourseFailureImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Failure? failure});
+}
+
+/// @nodoc
+class __$$InrollUserInCourseFailureImplCopyWithImpl<$Res>
+    extends _$AcademyStateCopyWithImpl<$Res, _$InrollUserInCourseFailureImpl>
+    implements _$$InrollUserInCourseFailureImplCopyWith<$Res> {
+  __$$InrollUserInCourseFailureImplCopyWithImpl(
+      _$InrollUserInCourseFailureImpl _value,
+      $Res Function(_$InrollUserInCourseFailureImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? failure = freezed,
+  }) {
+    return _then(_$InrollUserInCourseFailureImpl(
+      failure: freezed == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InrollUserInCourseFailureImpl implements _InrollUserInCourseFailure {
+  const _$InrollUserInCourseFailureImpl({this.failure = null});
+
+  @override
+  @JsonKey()
+  final Failure? failure;
+
+  @override
+  String toString() {
+    return 'AcademyState.inrollUserInCourseFailure(failure: $failure)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InrollUserInCourseFailureImpl &&
+            (identical(other.failure, failure) || other.failure == failure));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, failure);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InrollUserInCourseFailureImplCopyWith<_$InrollUserInCourseFailureImpl>
+      get copyWith => __$$InrollUserInCourseFailureImplCopyWithImpl<
+          _$InrollUserInCourseFailureImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getSportsMembershipLoading,
+    required TResult Function(Failure? failure) getSportsMembershipFailure,
+    required TResult Function(List<AcademyMembershipEntity> sportsMembership)
+        sportsMembershipFetched,
+    required TResult Function() getSuggestedAcademiesLoading,
+    required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+        suggestedAcademiesFetched,
+    required TResult Function() getAllAcademiesLoading,
+    required TResult Function(Failure? failure) getAllAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
+        allAcademiesFetched,
+    required TResult Function() getAboutAcademyLoading,
+    required TResult Function(Failure? failure) getAboutAcademyFailure,
+    required TResult Function(AboutAcademyEntity? aboutAcademy)
+        aboutAcademyFetched,
+    required TResult Function() getCoursesToSubscribeLoading,
+    required TResult Function(Failure? failure) getCoursesToSubscribeFailure,
+    required TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)
+        academyCoursesFetched,
+    required TResult Function() getCoursesToSubscribeInDateLoading,
+    required TResult Function(Failure? failure)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)
+        academyCoursesInDateFetched,
+    required TResult Function() getAcademyReviewLoading,
+    required TResult Function(Failure? failure) getAcademyReviewFailure,
+    required TResult Function(List<AcademyReviewEntity> academyReview)
+        academyReviewFetched,
+    required TResult Function() inrollUserInCourseLoading,
+    required TResult Function(Failure? failure) inrollUserInCourseFailure,
+    required TResult Function(bool courseInrolled) courseInrolled,
+    required TResult Function() addAcademyReviewLoading,
+    required TResult Function(Failure? failure) addAcademyReviewFailure,
+    required TResult Function(bool reviewAdded) reviewAdded,
+  }) {
+    return inrollUserInCourseFailure(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getSportsMembershipLoading,
+    TResult? Function(Failure? failure)? getSportsMembershipFailure,
+    TResult? Function(List<AcademyMembershipEntity> sportsMembership)?
+        sportsMembershipFetched,
+    TResult? Function()? getSuggestedAcademiesLoading,
+    TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+        suggestedAcademiesFetched,
+    TResult? Function()? getAllAcademiesLoading,
+    TResult? Function(Failure? failure)? getAllAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
+    TResult? Function()? getAboutAcademyLoading,
+    TResult? Function(Failure? failure)? getAboutAcademyFailure,
+    TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
+    TResult? Function()? getCoursesToSubscribeLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult? Function(List<GetCoursesToSubscribeEntity> academyCourses)?
+        academyCoursesFetched,
+    TResult? Function()? getCoursesToSubscribeInDateLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult? Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
+        academyCoursesInDateFetched,
+    TResult? Function()? getAcademyReviewLoading,
+    TResult? Function(Failure? failure)? getAcademyReviewFailure,
+    TResult? Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
+    TResult? Function()? inrollUserInCourseLoading,
+    TResult? Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult? Function(bool courseInrolled)? courseInrolled,
+    TResult? Function()? addAcademyReviewLoading,
+    TResult? Function(Failure? failure)? addAcademyReviewFailure,
+    TResult? Function(bool reviewAdded)? reviewAdded,
+  }) {
+    return inrollUserInCourseFailure?.call(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getSportsMembershipLoading,
+    TResult Function(Failure? failure)? getSportsMembershipFailure,
+    TResult Function(List<AcademyMembershipEntity> sportsMembership)?
+        sportsMembershipFetched,
+    TResult Function()? getSuggestedAcademiesLoading,
+    TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+        suggestedAcademiesFetched,
+    TResult Function()? getAllAcademiesLoading,
+    TResult Function(Failure? failure)? getAllAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
+    TResult Function()? getAboutAcademyLoading,
+    TResult Function(Failure? failure)? getAboutAcademyFailure,
+    TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
+    TResult Function()? getCoursesToSubscribeLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)?
+        academyCoursesFetched,
+    TResult Function()? getCoursesToSubscribeInDateLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
+        academyCoursesInDateFetched,
+    TResult Function()? getAcademyReviewLoading,
+    TResult Function(Failure? failure)? getAcademyReviewFailure,
+    TResult Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
+    TResult Function()? inrollUserInCourseLoading,
+    TResult Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult Function(bool courseInrolled)? courseInrolled,
+    TResult Function()? addAcademyReviewLoading,
+    TResult Function(Failure? failure)? addAcademyReviewFailure,
+    TResult Function(bool reviewAdded)? reviewAdded,
+    required TResult orElse(),
+  }) {
+    if (inrollUserInCourseFailure != null) {
+      return inrollUserInCourseFailure(failure);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_GetSportsMembershipMembershipLoading value)
+        getSportsMembershipLoading,
+    required TResult Function(_GetSportsMembershipFailure value)
+        getSportsMembershipFailure,
+    required TResult Function(_SportsMembershipFetched value)
+        sportsMembershipFetched,
+    required TResult Function(_GetSuggestedAcademiesLoading value)
+        getSuggestedAcademiesLoading,
+    required TResult Function(_GetSuggestedAcademiesFailure value)
+        getSuggestedAcademiesFailure,
+    required TResult Function(_SuggestedAcademiesFetched value)
+        suggestedAcademiesFetched,
+    required TResult Function(_GetAllAcademiesLoading value)
+        getAllAcademiesLoading,
+    required TResult Function(_GetAllAcademiesFailure value)
+        getAllAcademiesFailure,
+    required TResult Function(_AllAcademiesFetched value) allAcademiesFetched,
+    required TResult Function(_GetAboutAcademyLoading value)
+        getAboutAcademyLoading,
+    required TResult Function(_GetAboutAcademyFailure value)
+        getAboutAcademyFailure,
+    required TResult Function(_AboutAcademyFetched value) aboutAcademyFetched,
+    required TResult Function(_GetCoursesToSubscribeLoading value)
+        getCoursesToSubscribeLoading,
+    required TResult Function(_GetCoursesToSubscribeFailure value)
+        getCoursesToSubscribeFailure,
+    required TResult Function(_AcademyCoursesFetched value)
+        academyCoursesFetched,
+    required TResult Function(_GetCoursesToSubscribeInDateLoading value)
+        getCoursesToSubscribeInDateLoading,
+    required TResult Function(_GetCoursesToSubscribeInDateFailure value)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(_AcademyCoursesInDateFetched value)
+        academyCoursesInDateFetched,
+    required TResult Function(_GetAcademyReviewLoading value)
+        getAcademyReviewLoading,
+    required TResult Function(_GetAcademyReviewFailure value)
+        getAcademyReviewFailure,
+    required TResult Function(_AcademyReviewFetched value) academyReviewFetched,
+    required TResult Function(_InrollUserInCourseLoadingLoading value)
+        inrollUserInCourseLoading,
+    required TResult Function(_InrollUserInCourseFailure value)
+        inrollUserInCourseFailure,
+    required TResult Function(_CourseInrolled value) courseInrolled,
+    required TResult Function(_AddAcademyReviewLoading value)
+        addAcademyReviewLoading,
+    required TResult Function(_AddAcademyReviewFailure value)
+        addAcademyReviewFailure,
+    required TResult Function(_ReviewAdded value) reviewAdded,
+  }) {
+    return inrollUserInCourseFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_GetSportsMembershipMembershipLoading value)?
+        getSportsMembershipLoading,
+    TResult? Function(_GetSportsMembershipFailure value)?
+        getSportsMembershipFailure,
+    TResult? Function(_SportsMembershipFetched value)? sportsMembershipFetched,
+    TResult? Function(_GetSuggestedAcademiesLoading value)?
+        getSuggestedAcademiesLoading,
+    TResult? Function(_GetSuggestedAcademiesFailure value)?
+        getSuggestedAcademiesFailure,
+    TResult? Function(_SuggestedAcademiesFetched value)?
+        suggestedAcademiesFetched,
+    TResult? Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult? Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult? Function(_AllAcademiesFetched value)? allAcademiesFetched,
+    TResult? Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
+    TResult? Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
+    TResult? Function(_AboutAcademyFetched value)? aboutAcademyFetched,
+    TResult? Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult? Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
+    TResult? Function(_AcademyCoursesFetched value)? academyCoursesFetched,
+    TResult? Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult? Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
+    TResult? Function(_AcademyCoursesInDateFetched value)?
+        academyCoursesInDateFetched,
+    TResult? Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
+    TResult? Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
+    TResult? Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult? Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult? Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult? Function(_CourseInrolled value)? courseInrolled,
+    TResult? Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult? Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult? Function(_ReviewAdded value)? reviewAdded,
+  }) {
+    return inrollUserInCourseFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GetSportsMembershipMembershipLoading value)?
+        getSportsMembershipLoading,
+    TResult Function(_GetSportsMembershipFailure value)?
+        getSportsMembershipFailure,
+    TResult Function(_SportsMembershipFetched value)? sportsMembershipFetched,
+    TResult Function(_GetSuggestedAcademiesLoading value)?
+        getSuggestedAcademiesLoading,
+    TResult Function(_GetSuggestedAcademiesFailure value)?
+        getSuggestedAcademiesFailure,
+    TResult Function(_SuggestedAcademiesFetched value)?
+        suggestedAcademiesFetched,
+    TResult Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult Function(_AllAcademiesFetched value)? allAcademiesFetched,
+    TResult Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
+    TResult Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
+    TResult Function(_AboutAcademyFetched value)? aboutAcademyFetched,
+    TResult Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
+    TResult Function(_AcademyCoursesFetched value)? academyCoursesFetched,
+    TResult Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
+    TResult Function(_AcademyCoursesInDateFetched value)?
+        academyCoursesInDateFetched,
+    TResult Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
+    TResult Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
+    TResult Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult Function(_CourseInrolled value)? courseInrolled,
+    TResult Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult Function(_ReviewAdded value)? reviewAdded,
+    required TResult orElse(),
+  }) {
+    if (inrollUserInCourseFailure != null) {
+      return inrollUserInCourseFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InrollUserInCourseFailure implements AcademyState {
+  const factory _InrollUserInCourseFailure({final Failure? failure}) =
+      _$InrollUserInCourseFailureImpl;
+
+  Failure? get failure;
+  @JsonKey(ignore: true)
+  _$$InrollUserInCourseFailureImplCopyWith<_$InrollUserInCourseFailureImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CourseInrolledImplCopyWith<$Res> {
+  factory _$$CourseInrolledImplCopyWith(_$CourseInrolledImpl value,
+          $Res Function(_$CourseInrolledImpl) then) =
+      __$$CourseInrolledImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool courseInrolled});
+}
+
+/// @nodoc
+class __$$CourseInrolledImplCopyWithImpl<$Res>
+    extends _$AcademyStateCopyWithImpl<$Res, _$CourseInrolledImpl>
+    implements _$$CourseInrolledImplCopyWith<$Res> {
+  __$$CourseInrolledImplCopyWithImpl(
+      _$CourseInrolledImpl _value, $Res Function(_$CourseInrolledImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? courseInrolled = null,
+  }) {
+    return _then(_$CourseInrolledImpl(
+      courseInrolled: null == courseInrolled
+          ? _value.courseInrolled
+          : courseInrolled // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CourseInrolledImpl implements _CourseInrolled {
+  const _$CourseInrolledImpl({this.courseInrolled = false});
+
+  @override
+  @JsonKey()
+  final bool courseInrolled;
+
+  @override
+  String toString() {
+    return 'AcademyState.courseInrolled(courseInrolled: $courseInrolled)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CourseInrolledImpl &&
+            (identical(other.courseInrolled, courseInrolled) ||
+                other.courseInrolled == courseInrolled));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, courseInrolled);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CourseInrolledImplCopyWith<_$CourseInrolledImpl> get copyWith =>
+      __$$CourseInrolledImplCopyWithImpl<_$CourseInrolledImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getSportsMembershipLoading,
+    required TResult Function(Failure? failure) getSportsMembershipFailure,
+    required TResult Function(List<AcademyMembershipEntity> sportsMembership)
+        sportsMembershipFetched,
+    required TResult Function() getSuggestedAcademiesLoading,
+    required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+        suggestedAcademiesFetched,
+    required TResult Function() getAllAcademiesLoading,
+    required TResult Function(Failure? failure) getAllAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
+        allAcademiesFetched,
+    required TResult Function() getAboutAcademyLoading,
+    required TResult Function(Failure? failure) getAboutAcademyFailure,
+    required TResult Function(AboutAcademyEntity? aboutAcademy)
+        aboutAcademyFetched,
+    required TResult Function() getCoursesToSubscribeLoading,
+    required TResult Function(Failure? failure) getCoursesToSubscribeFailure,
+    required TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)
+        academyCoursesFetched,
+    required TResult Function() getCoursesToSubscribeInDateLoading,
+    required TResult Function(Failure? failure)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)
+        academyCoursesInDateFetched,
+    required TResult Function() getAcademyReviewLoading,
+    required TResult Function(Failure? failure) getAcademyReviewFailure,
+    required TResult Function(List<AcademyReviewEntity> academyReview)
+        academyReviewFetched,
+    required TResult Function() inrollUserInCourseLoading,
+    required TResult Function(Failure? failure) inrollUserInCourseFailure,
+    required TResult Function(bool courseInrolled) courseInrolled,
+    required TResult Function() addAcademyReviewLoading,
+    required TResult Function(Failure? failure) addAcademyReviewFailure,
+    required TResult Function(bool reviewAdded) reviewAdded,
+  }) {
+    return courseInrolled(this.courseInrolled);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getSportsMembershipLoading,
+    TResult? Function(Failure? failure)? getSportsMembershipFailure,
+    TResult? Function(List<AcademyMembershipEntity> sportsMembership)?
+        sportsMembershipFetched,
+    TResult? Function()? getSuggestedAcademiesLoading,
+    TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+        suggestedAcademiesFetched,
+    TResult? Function()? getAllAcademiesLoading,
+    TResult? Function(Failure? failure)? getAllAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
+    TResult? Function()? getAboutAcademyLoading,
+    TResult? Function(Failure? failure)? getAboutAcademyFailure,
+    TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
+    TResult? Function()? getCoursesToSubscribeLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult? Function(List<GetCoursesToSubscribeEntity> academyCourses)?
+        academyCoursesFetched,
+    TResult? Function()? getCoursesToSubscribeInDateLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult? Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
+        academyCoursesInDateFetched,
+    TResult? Function()? getAcademyReviewLoading,
+    TResult? Function(Failure? failure)? getAcademyReviewFailure,
+    TResult? Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
+    TResult? Function()? inrollUserInCourseLoading,
+    TResult? Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult? Function(bool courseInrolled)? courseInrolled,
+    TResult? Function()? addAcademyReviewLoading,
+    TResult? Function(Failure? failure)? addAcademyReviewFailure,
+    TResult? Function(bool reviewAdded)? reviewAdded,
+  }) {
+    return courseInrolled?.call(this.courseInrolled);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getSportsMembershipLoading,
+    TResult Function(Failure? failure)? getSportsMembershipFailure,
+    TResult Function(List<AcademyMembershipEntity> sportsMembership)?
+        sportsMembershipFetched,
+    TResult Function()? getSuggestedAcademiesLoading,
+    TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+        suggestedAcademiesFetched,
+    TResult Function()? getAllAcademiesLoading,
+    TResult Function(Failure? failure)? getAllAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
+    TResult Function()? getAboutAcademyLoading,
+    TResult Function(Failure? failure)? getAboutAcademyFailure,
+    TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
+    TResult Function()? getCoursesToSubscribeLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)?
+        academyCoursesFetched,
+    TResult Function()? getCoursesToSubscribeInDateLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
+        academyCoursesInDateFetched,
+    TResult Function()? getAcademyReviewLoading,
+    TResult Function(Failure? failure)? getAcademyReviewFailure,
+    TResult Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
+    TResult Function()? inrollUserInCourseLoading,
+    TResult Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult Function(bool courseInrolled)? courseInrolled,
+    TResult Function()? addAcademyReviewLoading,
+    TResult Function(Failure? failure)? addAcademyReviewFailure,
+    TResult Function(bool reviewAdded)? reviewAdded,
+    required TResult orElse(),
+  }) {
+    if (courseInrolled != null) {
+      return courseInrolled(this.courseInrolled);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_GetSportsMembershipMembershipLoading value)
+        getSportsMembershipLoading,
+    required TResult Function(_GetSportsMembershipFailure value)
+        getSportsMembershipFailure,
+    required TResult Function(_SportsMembershipFetched value)
+        sportsMembershipFetched,
+    required TResult Function(_GetSuggestedAcademiesLoading value)
+        getSuggestedAcademiesLoading,
+    required TResult Function(_GetSuggestedAcademiesFailure value)
+        getSuggestedAcademiesFailure,
+    required TResult Function(_SuggestedAcademiesFetched value)
+        suggestedAcademiesFetched,
+    required TResult Function(_GetAllAcademiesLoading value)
+        getAllAcademiesLoading,
+    required TResult Function(_GetAllAcademiesFailure value)
+        getAllAcademiesFailure,
+    required TResult Function(_AllAcademiesFetched value) allAcademiesFetched,
+    required TResult Function(_GetAboutAcademyLoading value)
+        getAboutAcademyLoading,
+    required TResult Function(_GetAboutAcademyFailure value)
+        getAboutAcademyFailure,
+    required TResult Function(_AboutAcademyFetched value) aboutAcademyFetched,
+    required TResult Function(_GetCoursesToSubscribeLoading value)
+        getCoursesToSubscribeLoading,
+    required TResult Function(_GetCoursesToSubscribeFailure value)
+        getCoursesToSubscribeFailure,
+    required TResult Function(_AcademyCoursesFetched value)
+        academyCoursesFetched,
+    required TResult Function(_GetCoursesToSubscribeInDateLoading value)
+        getCoursesToSubscribeInDateLoading,
+    required TResult Function(_GetCoursesToSubscribeInDateFailure value)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(_AcademyCoursesInDateFetched value)
+        academyCoursesInDateFetched,
+    required TResult Function(_GetAcademyReviewLoading value)
+        getAcademyReviewLoading,
+    required TResult Function(_GetAcademyReviewFailure value)
+        getAcademyReviewFailure,
+    required TResult Function(_AcademyReviewFetched value) academyReviewFetched,
+    required TResult Function(_InrollUserInCourseLoadingLoading value)
+        inrollUserInCourseLoading,
+    required TResult Function(_InrollUserInCourseFailure value)
+        inrollUserInCourseFailure,
+    required TResult Function(_CourseInrolled value) courseInrolled,
+    required TResult Function(_AddAcademyReviewLoading value)
+        addAcademyReviewLoading,
+    required TResult Function(_AddAcademyReviewFailure value)
+        addAcademyReviewFailure,
+    required TResult Function(_ReviewAdded value) reviewAdded,
+  }) {
+    return courseInrolled(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_GetSportsMembershipMembershipLoading value)?
+        getSportsMembershipLoading,
+    TResult? Function(_GetSportsMembershipFailure value)?
+        getSportsMembershipFailure,
+    TResult? Function(_SportsMembershipFetched value)? sportsMembershipFetched,
+    TResult? Function(_GetSuggestedAcademiesLoading value)?
+        getSuggestedAcademiesLoading,
+    TResult? Function(_GetSuggestedAcademiesFailure value)?
+        getSuggestedAcademiesFailure,
+    TResult? Function(_SuggestedAcademiesFetched value)?
+        suggestedAcademiesFetched,
+    TResult? Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult? Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult? Function(_AllAcademiesFetched value)? allAcademiesFetched,
+    TResult? Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
+    TResult? Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
+    TResult? Function(_AboutAcademyFetched value)? aboutAcademyFetched,
+    TResult? Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult? Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
+    TResult? Function(_AcademyCoursesFetched value)? academyCoursesFetched,
+    TResult? Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult? Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
+    TResult? Function(_AcademyCoursesInDateFetched value)?
+        academyCoursesInDateFetched,
+    TResult? Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
+    TResult? Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
+    TResult? Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult? Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult? Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult? Function(_CourseInrolled value)? courseInrolled,
+    TResult? Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult? Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult? Function(_ReviewAdded value)? reviewAdded,
+  }) {
+    return courseInrolled?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GetSportsMembershipMembershipLoading value)?
+        getSportsMembershipLoading,
+    TResult Function(_GetSportsMembershipFailure value)?
+        getSportsMembershipFailure,
+    TResult Function(_SportsMembershipFetched value)? sportsMembershipFetched,
+    TResult Function(_GetSuggestedAcademiesLoading value)?
+        getSuggestedAcademiesLoading,
+    TResult Function(_GetSuggestedAcademiesFailure value)?
+        getSuggestedAcademiesFailure,
+    TResult Function(_SuggestedAcademiesFetched value)?
+        suggestedAcademiesFetched,
+    TResult Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult Function(_AllAcademiesFetched value)? allAcademiesFetched,
+    TResult Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
+    TResult Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
+    TResult Function(_AboutAcademyFetched value)? aboutAcademyFetched,
+    TResult Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
+    TResult Function(_AcademyCoursesFetched value)? academyCoursesFetched,
+    TResult Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
+    TResult Function(_AcademyCoursesInDateFetched value)?
+        academyCoursesInDateFetched,
+    TResult Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
+    TResult Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
+    TResult Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult Function(_CourseInrolled value)? courseInrolled,
+    TResult Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult Function(_ReviewAdded value)? reviewAdded,
+    required TResult orElse(),
+  }) {
+    if (courseInrolled != null) {
+      return courseInrolled(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CourseInrolled implements AcademyState {
+  const factory _CourseInrolled({final bool courseInrolled}) =
+      _$CourseInrolledImpl;
+
+  bool get courseInrolled;
+  @JsonKey(ignore: true)
+  _$$CourseInrolledImplCopyWith<_$CourseInrolledImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddAcademyReviewLoadingImplCopyWith<$Res> {
+  factory _$$AddAcademyReviewLoadingImplCopyWith(
+          _$AddAcademyReviewLoadingImpl value,
+          $Res Function(_$AddAcademyReviewLoadingImpl) then) =
+      __$$AddAcademyReviewLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AddAcademyReviewLoadingImplCopyWithImpl<$Res>
+    extends _$AcademyStateCopyWithImpl<$Res, _$AddAcademyReviewLoadingImpl>
+    implements _$$AddAcademyReviewLoadingImplCopyWith<$Res> {
+  __$$AddAcademyReviewLoadingImplCopyWithImpl(
+      _$AddAcademyReviewLoadingImpl _value,
+      $Res Function(_$AddAcademyReviewLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$AddAcademyReviewLoadingImpl implements _AddAcademyReviewLoading {
+  const _$AddAcademyReviewLoadingImpl();
+
+  @override
+  String toString() {
+    return 'AcademyState.addAcademyReviewLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddAcademyReviewLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getSportsMembershipLoading,
+    required TResult Function(Failure? failure) getSportsMembershipFailure,
+    required TResult Function(List<AcademyMembershipEntity> sportsMembership)
+        sportsMembershipFetched,
+    required TResult Function() getSuggestedAcademiesLoading,
+    required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+        suggestedAcademiesFetched,
+    required TResult Function() getAllAcademiesLoading,
+    required TResult Function(Failure? failure) getAllAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
+        allAcademiesFetched,
+    required TResult Function() getAboutAcademyLoading,
+    required TResult Function(Failure? failure) getAboutAcademyFailure,
+    required TResult Function(AboutAcademyEntity? aboutAcademy)
+        aboutAcademyFetched,
+    required TResult Function() getCoursesToSubscribeLoading,
+    required TResult Function(Failure? failure) getCoursesToSubscribeFailure,
+    required TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)
+        academyCoursesFetched,
+    required TResult Function() getCoursesToSubscribeInDateLoading,
+    required TResult Function(Failure? failure)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)
+        academyCoursesInDateFetched,
+    required TResult Function() getAcademyReviewLoading,
+    required TResult Function(Failure? failure) getAcademyReviewFailure,
+    required TResult Function(List<AcademyReviewEntity> academyReview)
+        academyReviewFetched,
+    required TResult Function() inrollUserInCourseLoading,
+    required TResult Function(Failure? failure) inrollUserInCourseFailure,
+    required TResult Function(bool courseInrolled) courseInrolled,
+    required TResult Function() addAcademyReviewLoading,
+    required TResult Function(Failure? failure) addAcademyReviewFailure,
+    required TResult Function(bool reviewAdded) reviewAdded,
+  }) {
+    return addAcademyReviewLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getSportsMembershipLoading,
+    TResult? Function(Failure? failure)? getSportsMembershipFailure,
+    TResult? Function(List<AcademyMembershipEntity> sportsMembership)?
+        sportsMembershipFetched,
+    TResult? Function()? getSuggestedAcademiesLoading,
+    TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+        suggestedAcademiesFetched,
+    TResult? Function()? getAllAcademiesLoading,
+    TResult? Function(Failure? failure)? getAllAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
+    TResult? Function()? getAboutAcademyLoading,
+    TResult? Function(Failure? failure)? getAboutAcademyFailure,
+    TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
+    TResult? Function()? getCoursesToSubscribeLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult? Function(List<GetCoursesToSubscribeEntity> academyCourses)?
+        academyCoursesFetched,
+    TResult? Function()? getCoursesToSubscribeInDateLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult? Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
+        academyCoursesInDateFetched,
+    TResult? Function()? getAcademyReviewLoading,
+    TResult? Function(Failure? failure)? getAcademyReviewFailure,
+    TResult? Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
+    TResult? Function()? inrollUserInCourseLoading,
+    TResult? Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult? Function(bool courseInrolled)? courseInrolled,
+    TResult? Function()? addAcademyReviewLoading,
+    TResult? Function(Failure? failure)? addAcademyReviewFailure,
+    TResult? Function(bool reviewAdded)? reviewAdded,
+  }) {
+    return addAcademyReviewLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getSportsMembershipLoading,
+    TResult Function(Failure? failure)? getSportsMembershipFailure,
+    TResult Function(List<AcademyMembershipEntity> sportsMembership)?
+        sportsMembershipFetched,
+    TResult Function()? getSuggestedAcademiesLoading,
+    TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+        suggestedAcademiesFetched,
+    TResult Function()? getAllAcademiesLoading,
+    TResult Function(Failure? failure)? getAllAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
+    TResult Function()? getAboutAcademyLoading,
+    TResult Function(Failure? failure)? getAboutAcademyFailure,
+    TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
+    TResult Function()? getCoursesToSubscribeLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)?
+        academyCoursesFetched,
+    TResult Function()? getCoursesToSubscribeInDateLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
+        academyCoursesInDateFetched,
+    TResult Function()? getAcademyReviewLoading,
+    TResult Function(Failure? failure)? getAcademyReviewFailure,
+    TResult Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
+    TResult Function()? inrollUserInCourseLoading,
+    TResult Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult Function(bool courseInrolled)? courseInrolled,
+    TResult Function()? addAcademyReviewLoading,
+    TResult Function(Failure? failure)? addAcademyReviewFailure,
+    TResult Function(bool reviewAdded)? reviewAdded,
+    required TResult orElse(),
+  }) {
+    if (addAcademyReviewLoading != null) {
+      return addAcademyReviewLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_GetSportsMembershipMembershipLoading value)
+        getSportsMembershipLoading,
+    required TResult Function(_GetSportsMembershipFailure value)
+        getSportsMembershipFailure,
+    required TResult Function(_SportsMembershipFetched value)
+        sportsMembershipFetched,
+    required TResult Function(_GetSuggestedAcademiesLoading value)
+        getSuggestedAcademiesLoading,
+    required TResult Function(_GetSuggestedAcademiesFailure value)
+        getSuggestedAcademiesFailure,
+    required TResult Function(_SuggestedAcademiesFetched value)
+        suggestedAcademiesFetched,
+    required TResult Function(_GetAllAcademiesLoading value)
+        getAllAcademiesLoading,
+    required TResult Function(_GetAllAcademiesFailure value)
+        getAllAcademiesFailure,
+    required TResult Function(_AllAcademiesFetched value) allAcademiesFetched,
+    required TResult Function(_GetAboutAcademyLoading value)
+        getAboutAcademyLoading,
+    required TResult Function(_GetAboutAcademyFailure value)
+        getAboutAcademyFailure,
+    required TResult Function(_AboutAcademyFetched value) aboutAcademyFetched,
+    required TResult Function(_GetCoursesToSubscribeLoading value)
+        getCoursesToSubscribeLoading,
+    required TResult Function(_GetCoursesToSubscribeFailure value)
+        getCoursesToSubscribeFailure,
+    required TResult Function(_AcademyCoursesFetched value)
+        academyCoursesFetched,
+    required TResult Function(_GetCoursesToSubscribeInDateLoading value)
+        getCoursesToSubscribeInDateLoading,
+    required TResult Function(_GetCoursesToSubscribeInDateFailure value)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(_AcademyCoursesInDateFetched value)
+        academyCoursesInDateFetched,
+    required TResult Function(_GetAcademyReviewLoading value)
+        getAcademyReviewLoading,
+    required TResult Function(_GetAcademyReviewFailure value)
+        getAcademyReviewFailure,
+    required TResult Function(_AcademyReviewFetched value) academyReviewFetched,
+    required TResult Function(_InrollUserInCourseLoadingLoading value)
+        inrollUserInCourseLoading,
+    required TResult Function(_InrollUserInCourseFailure value)
+        inrollUserInCourseFailure,
+    required TResult Function(_CourseInrolled value) courseInrolled,
+    required TResult Function(_AddAcademyReviewLoading value)
+        addAcademyReviewLoading,
+    required TResult Function(_AddAcademyReviewFailure value)
+        addAcademyReviewFailure,
+    required TResult Function(_ReviewAdded value) reviewAdded,
+  }) {
+    return addAcademyReviewLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_GetSportsMembershipMembershipLoading value)?
+        getSportsMembershipLoading,
+    TResult? Function(_GetSportsMembershipFailure value)?
+        getSportsMembershipFailure,
+    TResult? Function(_SportsMembershipFetched value)? sportsMembershipFetched,
+    TResult? Function(_GetSuggestedAcademiesLoading value)?
+        getSuggestedAcademiesLoading,
+    TResult? Function(_GetSuggestedAcademiesFailure value)?
+        getSuggestedAcademiesFailure,
+    TResult? Function(_SuggestedAcademiesFetched value)?
+        suggestedAcademiesFetched,
+    TResult? Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult? Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult? Function(_AllAcademiesFetched value)? allAcademiesFetched,
+    TResult? Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
+    TResult? Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
+    TResult? Function(_AboutAcademyFetched value)? aboutAcademyFetched,
+    TResult? Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult? Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
+    TResult? Function(_AcademyCoursesFetched value)? academyCoursesFetched,
+    TResult? Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult? Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
+    TResult? Function(_AcademyCoursesInDateFetched value)?
+        academyCoursesInDateFetched,
+    TResult? Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
+    TResult? Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
+    TResult? Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult? Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult? Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult? Function(_CourseInrolled value)? courseInrolled,
+    TResult? Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult? Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult? Function(_ReviewAdded value)? reviewAdded,
+  }) {
+    return addAcademyReviewLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GetSportsMembershipMembershipLoading value)?
+        getSportsMembershipLoading,
+    TResult Function(_GetSportsMembershipFailure value)?
+        getSportsMembershipFailure,
+    TResult Function(_SportsMembershipFetched value)? sportsMembershipFetched,
+    TResult Function(_GetSuggestedAcademiesLoading value)?
+        getSuggestedAcademiesLoading,
+    TResult Function(_GetSuggestedAcademiesFailure value)?
+        getSuggestedAcademiesFailure,
+    TResult Function(_SuggestedAcademiesFetched value)?
+        suggestedAcademiesFetched,
+    TResult Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult Function(_AllAcademiesFetched value)? allAcademiesFetched,
+    TResult Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
+    TResult Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
+    TResult Function(_AboutAcademyFetched value)? aboutAcademyFetched,
+    TResult Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
+    TResult Function(_AcademyCoursesFetched value)? academyCoursesFetched,
+    TResult Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
+    TResult Function(_AcademyCoursesInDateFetched value)?
+        academyCoursesInDateFetched,
+    TResult Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
+    TResult Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
+    TResult Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult Function(_CourseInrolled value)? courseInrolled,
+    TResult Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult Function(_ReviewAdded value)? reviewAdded,
+    required TResult orElse(),
+  }) {
+    if (addAcademyReviewLoading != null) {
+      return addAcademyReviewLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AddAcademyReviewLoading implements AcademyState {
+  const factory _AddAcademyReviewLoading() = _$AddAcademyReviewLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$AddAcademyReviewFailureImplCopyWith<$Res> {
+  factory _$$AddAcademyReviewFailureImplCopyWith(
+          _$AddAcademyReviewFailureImpl value,
+          $Res Function(_$AddAcademyReviewFailureImpl) then) =
+      __$$AddAcademyReviewFailureImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Failure? failure});
+}
+
+/// @nodoc
+class __$$AddAcademyReviewFailureImplCopyWithImpl<$Res>
+    extends _$AcademyStateCopyWithImpl<$Res, _$AddAcademyReviewFailureImpl>
+    implements _$$AddAcademyReviewFailureImplCopyWith<$Res> {
+  __$$AddAcademyReviewFailureImplCopyWithImpl(
+      _$AddAcademyReviewFailureImpl _value,
+      $Res Function(_$AddAcademyReviewFailureImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? failure = freezed,
+  }) {
+    return _then(_$AddAcademyReviewFailureImpl(
+      failure: freezed == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddAcademyReviewFailureImpl implements _AddAcademyReviewFailure {
+  const _$AddAcademyReviewFailureImpl({this.failure = null});
+
+  @override
+  @JsonKey()
+  final Failure? failure;
+
+  @override
+  String toString() {
+    return 'AcademyState.addAcademyReviewFailure(failure: $failure)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddAcademyReviewFailureImpl &&
+            (identical(other.failure, failure) || other.failure == failure));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, failure);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddAcademyReviewFailureImplCopyWith<_$AddAcademyReviewFailureImpl>
+      get copyWith => __$$AddAcademyReviewFailureImplCopyWithImpl<
+          _$AddAcademyReviewFailureImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getSportsMembershipLoading,
+    required TResult Function(Failure? failure) getSportsMembershipFailure,
+    required TResult Function(List<AcademyMembershipEntity> sportsMembership)
+        sportsMembershipFetched,
+    required TResult Function() getSuggestedAcademiesLoading,
+    required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+        suggestedAcademiesFetched,
+    required TResult Function() getAllAcademiesLoading,
+    required TResult Function(Failure? failure) getAllAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
+        allAcademiesFetched,
+    required TResult Function() getAboutAcademyLoading,
+    required TResult Function(Failure? failure) getAboutAcademyFailure,
+    required TResult Function(AboutAcademyEntity? aboutAcademy)
+        aboutAcademyFetched,
+    required TResult Function() getCoursesToSubscribeLoading,
+    required TResult Function(Failure? failure) getCoursesToSubscribeFailure,
+    required TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)
+        academyCoursesFetched,
+    required TResult Function() getCoursesToSubscribeInDateLoading,
+    required TResult Function(Failure? failure)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)
+        academyCoursesInDateFetched,
+    required TResult Function() getAcademyReviewLoading,
+    required TResult Function(Failure? failure) getAcademyReviewFailure,
+    required TResult Function(List<AcademyReviewEntity> academyReview)
+        academyReviewFetched,
+    required TResult Function() inrollUserInCourseLoading,
+    required TResult Function(Failure? failure) inrollUserInCourseFailure,
+    required TResult Function(bool courseInrolled) courseInrolled,
+    required TResult Function() addAcademyReviewLoading,
+    required TResult Function(Failure? failure) addAcademyReviewFailure,
+    required TResult Function(bool reviewAdded) reviewAdded,
+  }) {
+    return addAcademyReviewFailure(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getSportsMembershipLoading,
+    TResult? Function(Failure? failure)? getSportsMembershipFailure,
+    TResult? Function(List<AcademyMembershipEntity> sportsMembership)?
+        sportsMembershipFetched,
+    TResult? Function()? getSuggestedAcademiesLoading,
+    TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+        suggestedAcademiesFetched,
+    TResult? Function()? getAllAcademiesLoading,
+    TResult? Function(Failure? failure)? getAllAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
+    TResult? Function()? getAboutAcademyLoading,
+    TResult? Function(Failure? failure)? getAboutAcademyFailure,
+    TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
+    TResult? Function()? getCoursesToSubscribeLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult? Function(List<GetCoursesToSubscribeEntity> academyCourses)?
+        academyCoursesFetched,
+    TResult? Function()? getCoursesToSubscribeInDateLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult? Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
+        academyCoursesInDateFetched,
+    TResult? Function()? getAcademyReviewLoading,
+    TResult? Function(Failure? failure)? getAcademyReviewFailure,
+    TResult? Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
+    TResult? Function()? inrollUserInCourseLoading,
+    TResult? Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult? Function(bool courseInrolled)? courseInrolled,
+    TResult? Function()? addAcademyReviewLoading,
+    TResult? Function(Failure? failure)? addAcademyReviewFailure,
+    TResult? Function(bool reviewAdded)? reviewAdded,
+  }) {
+    return addAcademyReviewFailure?.call(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getSportsMembershipLoading,
+    TResult Function(Failure? failure)? getSportsMembershipFailure,
+    TResult Function(List<AcademyMembershipEntity> sportsMembership)?
+        sportsMembershipFetched,
+    TResult Function()? getSuggestedAcademiesLoading,
+    TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+        suggestedAcademiesFetched,
+    TResult Function()? getAllAcademiesLoading,
+    TResult Function(Failure? failure)? getAllAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
+    TResult Function()? getAboutAcademyLoading,
+    TResult Function(Failure? failure)? getAboutAcademyFailure,
+    TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
+    TResult Function()? getCoursesToSubscribeLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)?
+        academyCoursesFetched,
+    TResult Function()? getCoursesToSubscribeInDateLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
+        academyCoursesInDateFetched,
+    TResult Function()? getAcademyReviewLoading,
+    TResult Function(Failure? failure)? getAcademyReviewFailure,
+    TResult Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
+    TResult Function()? inrollUserInCourseLoading,
+    TResult Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult Function(bool courseInrolled)? courseInrolled,
+    TResult Function()? addAcademyReviewLoading,
+    TResult Function(Failure? failure)? addAcademyReviewFailure,
+    TResult Function(bool reviewAdded)? reviewAdded,
+    required TResult orElse(),
+  }) {
+    if (addAcademyReviewFailure != null) {
+      return addAcademyReviewFailure(failure);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_GetSportsMembershipMembershipLoading value)
+        getSportsMembershipLoading,
+    required TResult Function(_GetSportsMembershipFailure value)
+        getSportsMembershipFailure,
+    required TResult Function(_SportsMembershipFetched value)
+        sportsMembershipFetched,
+    required TResult Function(_GetSuggestedAcademiesLoading value)
+        getSuggestedAcademiesLoading,
+    required TResult Function(_GetSuggestedAcademiesFailure value)
+        getSuggestedAcademiesFailure,
+    required TResult Function(_SuggestedAcademiesFetched value)
+        suggestedAcademiesFetched,
+    required TResult Function(_GetAllAcademiesLoading value)
+        getAllAcademiesLoading,
+    required TResult Function(_GetAllAcademiesFailure value)
+        getAllAcademiesFailure,
+    required TResult Function(_AllAcademiesFetched value) allAcademiesFetched,
+    required TResult Function(_GetAboutAcademyLoading value)
+        getAboutAcademyLoading,
+    required TResult Function(_GetAboutAcademyFailure value)
+        getAboutAcademyFailure,
+    required TResult Function(_AboutAcademyFetched value) aboutAcademyFetched,
+    required TResult Function(_GetCoursesToSubscribeLoading value)
+        getCoursesToSubscribeLoading,
+    required TResult Function(_GetCoursesToSubscribeFailure value)
+        getCoursesToSubscribeFailure,
+    required TResult Function(_AcademyCoursesFetched value)
+        academyCoursesFetched,
+    required TResult Function(_GetCoursesToSubscribeInDateLoading value)
+        getCoursesToSubscribeInDateLoading,
+    required TResult Function(_GetCoursesToSubscribeInDateFailure value)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(_AcademyCoursesInDateFetched value)
+        academyCoursesInDateFetched,
+    required TResult Function(_GetAcademyReviewLoading value)
+        getAcademyReviewLoading,
+    required TResult Function(_GetAcademyReviewFailure value)
+        getAcademyReviewFailure,
+    required TResult Function(_AcademyReviewFetched value) academyReviewFetched,
+    required TResult Function(_InrollUserInCourseLoadingLoading value)
+        inrollUserInCourseLoading,
+    required TResult Function(_InrollUserInCourseFailure value)
+        inrollUserInCourseFailure,
+    required TResult Function(_CourseInrolled value) courseInrolled,
+    required TResult Function(_AddAcademyReviewLoading value)
+        addAcademyReviewLoading,
+    required TResult Function(_AddAcademyReviewFailure value)
+        addAcademyReviewFailure,
+    required TResult Function(_ReviewAdded value) reviewAdded,
+  }) {
+    return addAcademyReviewFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_GetSportsMembershipMembershipLoading value)?
+        getSportsMembershipLoading,
+    TResult? Function(_GetSportsMembershipFailure value)?
+        getSportsMembershipFailure,
+    TResult? Function(_SportsMembershipFetched value)? sportsMembershipFetched,
+    TResult? Function(_GetSuggestedAcademiesLoading value)?
+        getSuggestedAcademiesLoading,
+    TResult? Function(_GetSuggestedAcademiesFailure value)?
+        getSuggestedAcademiesFailure,
+    TResult? Function(_SuggestedAcademiesFetched value)?
+        suggestedAcademiesFetched,
+    TResult? Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult? Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult? Function(_AllAcademiesFetched value)? allAcademiesFetched,
+    TResult? Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
+    TResult? Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
+    TResult? Function(_AboutAcademyFetched value)? aboutAcademyFetched,
+    TResult? Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult? Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
+    TResult? Function(_AcademyCoursesFetched value)? academyCoursesFetched,
+    TResult? Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult? Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
+    TResult? Function(_AcademyCoursesInDateFetched value)?
+        academyCoursesInDateFetched,
+    TResult? Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
+    TResult? Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
+    TResult? Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult? Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult? Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult? Function(_CourseInrolled value)? courseInrolled,
+    TResult? Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult? Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult? Function(_ReviewAdded value)? reviewAdded,
+  }) {
+    return addAcademyReviewFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GetSportsMembershipMembershipLoading value)?
+        getSportsMembershipLoading,
+    TResult Function(_GetSportsMembershipFailure value)?
+        getSportsMembershipFailure,
+    TResult Function(_SportsMembershipFetched value)? sportsMembershipFetched,
+    TResult Function(_GetSuggestedAcademiesLoading value)?
+        getSuggestedAcademiesLoading,
+    TResult Function(_GetSuggestedAcademiesFailure value)?
+        getSuggestedAcademiesFailure,
+    TResult Function(_SuggestedAcademiesFetched value)?
+        suggestedAcademiesFetched,
+    TResult Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult Function(_AllAcademiesFetched value)? allAcademiesFetched,
+    TResult Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
+    TResult Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
+    TResult Function(_AboutAcademyFetched value)? aboutAcademyFetched,
+    TResult Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
+    TResult Function(_AcademyCoursesFetched value)? academyCoursesFetched,
+    TResult Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
+    TResult Function(_AcademyCoursesInDateFetched value)?
+        academyCoursesInDateFetched,
+    TResult Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
+    TResult Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
+    TResult Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult Function(_CourseInrolled value)? courseInrolled,
+    TResult Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult Function(_ReviewAdded value)? reviewAdded,
+    required TResult orElse(),
+  }) {
+    if (addAcademyReviewFailure != null) {
+      return addAcademyReviewFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AddAcademyReviewFailure implements AcademyState {
+  const factory _AddAcademyReviewFailure({final Failure? failure}) =
+      _$AddAcademyReviewFailureImpl;
+
+  Failure? get failure;
+  @JsonKey(ignore: true)
+  _$$AddAcademyReviewFailureImplCopyWith<_$AddAcademyReviewFailureImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ReviewAddedImplCopyWith<$Res> {
+  factory _$$ReviewAddedImplCopyWith(
+          _$ReviewAddedImpl value, $Res Function(_$ReviewAddedImpl) then) =
+      __$$ReviewAddedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool reviewAdded});
+}
+
+/// @nodoc
+class __$$ReviewAddedImplCopyWithImpl<$Res>
+    extends _$AcademyStateCopyWithImpl<$Res, _$ReviewAddedImpl>
+    implements _$$ReviewAddedImplCopyWith<$Res> {
+  __$$ReviewAddedImplCopyWithImpl(
+      _$ReviewAddedImpl _value, $Res Function(_$ReviewAddedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? reviewAdded = null,
+  }) {
+    return _then(_$ReviewAddedImpl(
+      reviewAdded: null == reviewAdded
+          ? _value.reviewAdded
+          : reviewAdded // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ReviewAddedImpl implements _ReviewAdded {
+  const _$ReviewAddedImpl({this.reviewAdded = false});
+
+  @override
+  @JsonKey()
+  final bool reviewAdded;
+
+  @override
+  String toString() {
+    return 'AcademyState.reviewAdded(reviewAdded: $reviewAdded)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ReviewAddedImpl &&
+            (identical(other.reviewAdded, reviewAdded) ||
+                other.reviewAdded == reviewAdded));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, reviewAdded);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ReviewAddedImplCopyWith<_$ReviewAddedImpl> get copyWith =>
+      __$$ReviewAddedImplCopyWithImpl<_$ReviewAddedImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getSportsMembershipLoading,
+    required TResult Function(Failure? failure) getSportsMembershipFailure,
+    required TResult Function(List<AcademyMembershipEntity> sportsMembership)
+        sportsMembershipFetched,
+    required TResult Function() getSuggestedAcademiesLoading,
+    required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+        suggestedAcademiesFetched,
+    required TResult Function() getAllAcademiesLoading,
+    required TResult Function(Failure? failure) getAllAcademiesFailure,
+    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
+        allAcademiesFetched,
+    required TResult Function() getAboutAcademyLoading,
+    required TResult Function(Failure? failure) getAboutAcademyFailure,
+    required TResult Function(AboutAcademyEntity? aboutAcademy)
+        aboutAcademyFetched,
+    required TResult Function() getCoursesToSubscribeLoading,
+    required TResult Function(Failure? failure) getCoursesToSubscribeFailure,
+    required TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)
+        academyCoursesFetched,
+    required TResult Function() getCoursesToSubscribeInDateLoading,
+    required TResult Function(Failure? failure)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)
+        academyCoursesInDateFetched,
+    required TResult Function() getAcademyReviewLoading,
+    required TResult Function(Failure? failure) getAcademyReviewFailure,
+    required TResult Function(List<AcademyReviewEntity> academyReview)
+        academyReviewFetched,
+    required TResult Function() inrollUserInCourseLoading,
+    required TResult Function(Failure? failure) inrollUserInCourseFailure,
+    required TResult Function(bool courseInrolled) courseInrolled,
+    required TResult Function() addAcademyReviewLoading,
+    required TResult Function(Failure? failure) addAcademyReviewFailure,
+    required TResult Function(bool reviewAdded) reviewAdded,
+  }) {
+    return reviewAdded(this.reviewAdded);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getSportsMembershipLoading,
+    TResult? Function(Failure? failure)? getSportsMembershipFailure,
+    TResult? Function(List<AcademyMembershipEntity> sportsMembership)?
+        sportsMembershipFetched,
+    TResult? Function()? getSuggestedAcademiesLoading,
+    TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+        suggestedAcademiesFetched,
+    TResult? Function()? getAllAcademiesLoading,
+    TResult? Function(Failure? failure)? getAllAcademiesFailure,
+    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
+    TResult? Function()? getAboutAcademyLoading,
+    TResult? Function(Failure? failure)? getAboutAcademyFailure,
+    TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
+    TResult? Function()? getCoursesToSubscribeLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult? Function(List<GetCoursesToSubscribeEntity> academyCourses)?
+        academyCoursesFetched,
+    TResult? Function()? getCoursesToSubscribeInDateLoading,
+    TResult? Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult? Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
+        academyCoursesInDateFetched,
+    TResult? Function()? getAcademyReviewLoading,
+    TResult? Function(Failure? failure)? getAcademyReviewFailure,
+    TResult? Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
+    TResult? Function()? inrollUserInCourseLoading,
+    TResult? Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult? Function(bool courseInrolled)? courseInrolled,
+    TResult? Function()? addAcademyReviewLoading,
+    TResult? Function(Failure? failure)? addAcademyReviewFailure,
+    TResult? Function(bool reviewAdded)? reviewAdded,
+  }) {
+    return reviewAdded?.call(this.reviewAdded);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getSportsMembershipLoading,
+    TResult Function(Failure? failure)? getSportsMembershipFailure,
+    TResult Function(List<AcademyMembershipEntity> sportsMembership)?
+        sportsMembershipFetched,
+    TResult Function()? getSuggestedAcademiesLoading,
+    TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+        suggestedAcademiesFetched,
+    TResult Function()? getAllAcademiesLoading,
+    TResult Function(Failure? failure)? getAllAcademiesFailure,
+    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
+        allAcademiesFetched,
+    TResult Function()? getAboutAcademyLoading,
+    TResult Function(Failure? failure)? getAboutAcademyFailure,
+    TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
+    TResult Function()? getCoursesToSubscribeLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeFailure,
+    TResult Function(List<GetCoursesToSubscribeEntity> academyCourses)?
+        academyCoursesFetched,
+    TResult Function()? getCoursesToSubscribeInDateLoading,
+    TResult Function(Failure? failure)? getCoursesToSubscribeInDateFailure,
+    TResult Function(GetCoursesToSubscribeEntity? academyCoursesInDate)?
+        academyCoursesInDateFetched,
+    TResult Function()? getAcademyReviewLoading,
+    TResult Function(Failure? failure)? getAcademyReviewFailure,
+    TResult Function(List<AcademyReviewEntity> academyReview)?
+        academyReviewFetched,
+    TResult Function()? inrollUserInCourseLoading,
+    TResult Function(Failure? failure)? inrollUserInCourseFailure,
+    TResult Function(bool courseInrolled)? courseInrolled,
+    TResult Function()? addAcademyReviewLoading,
+    TResult Function(Failure? failure)? addAcademyReviewFailure,
+    TResult Function(bool reviewAdded)? reviewAdded,
+    required TResult orElse(),
+  }) {
+    if (reviewAdded != null) {
+      return reviewAdded(this.reviewAdded);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_GetSportsMembershipMembershipLoading value)
+        getSportsMembershipLoading,
+    required TResult Function(_GetSportsMembershipFailure value)
+        getSportsMembershipFailure,
+    required TResult Function(_SportsMembershipFetched value)
+        sportsMembershipFetched,
+    required TResult Function(_GetSuggestedAcademiesLoading value)
+        getSuggestedAcademiesLoading,
+    required TResult Function(_GetSuggestedAcademiesFailure value)
+        getSuggestedAcademiesFailure,
+    required TResult Function(_SuggestedAcademiesFetched value)
+        suggestedAcademiesFetched,
+    required TResult Function(_GetAllAcademiesLoading value)
+        getAllAcademiesLoading,
+    required TResult Function(_GetAllAcademiesFailure value)
+        getAllAcademiesFailure,
+    required TResult Function(_AllAcademiesFetched value) allAcademiesFetched,
+    required TResult Function(_GetAboutAcademyLoading value)
+        getAboutAcademyLoading,
+    required TResult Function(_GetAboutAcademyFailure value)
+        getAboutAcademyFailure,
+    required TResult Function(_AboutAcademyFetched value) aboutAcademyFetched,
+    required TResult Function(_GetCoursesToSubscribeLoading value)
+        getCoursesToSubscribeLoading,
+    required TResult Function(_GetCoursesToSubscribeFailure value)
+        getCoursesToSubscribeFailure,
+    required TResult Function(_AcademyCoursesFetched value)
+        academyCoursesFetched,
+    required TResult Function(_GetCoursesToSubscribeInDateLoading value)
+        getCoursesToSubscribeInDateLoading,
+    required TResult Function(_GetCoursesToSubscribeInDateFailure value)
+        getCoursesToSubscribeInDateFailure,
+    required TResult Function(_AcademyCoursesInDateFetched value)
+        academyCoursesInDateFetched,
+    required TResult Function(_GetAcademyReviewLoading value)
+        getAcademyReviewLoading,
+    required TResult Function(_GetAcademyReviewFailure value)
+        getAcademyReviewFailure,
+    required TResult Function(_AcademyReviewFetched value) academyReviewFetched,
+    required TResult Function(_InrollUserInCourseLoadingLoading value)
+        inrollUserInCourseLoading,
+    required TResult Function(_InrollUserInCourseFailure value)
+        inrollUserInCourseFailure,
+    required TResult Function(_CourseInrolled value) courseInrolled,
+    required TResult Function(_AddAcademyReviewLoading value)
+        addAcademyReviewLoading,
+    required TResult Function(_AddAcademyReviewFailure value)
+        addAcademyReviewFailure,
+    required TResult Function(_ReviewAdded value) reviewAdded,
+  }) {
+    return reviewAdded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_GetSportsMembershipMembershipLoading value)?
+        getSportsMembershipLoading,
+    TResult? Function(_GetSportsMembershipFailure value)?
+        getSportsMembershipFailure,
+    TResult? Function(_SportsMembershipFetched value)? sportsMembershipFetched,
+    TResult? Function(_GetSuggestedAcademiesLoading value)?
+        getSuggestedAcademiesLoading,
+    TResult? Function(_GetSuggestedAcademiesFailure value)?
+        getSuggestedAcademiesFailure,
+    TResult? Function(_SuggestedAcademiesFetched value)?
+        suggestedAcademiesFetched,
+    TResult? Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult? Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult? Function(_AllAcademiesFetched value)? allAcademiesFetched,
+    TResult? Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
+    TResult? Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
+    TResult? Function(_AboutAcademyFetched value)? aboutAcademyFetched,
+    TResult? Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult? Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
+    TResult? Function(_AcademyCoursesFetched value)? academyCoursesFetched,
+    TResult? Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult? Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
+    TResult? Function(_AcademyCoursesInDateFetched value)?
+        academyCoursesInDateFetched,
+    TResult? Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
+    TResult? Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
+    TResult? Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult? Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult? Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult? Function(_CourseInrolled value)? courseInrolled,
+    TResult? Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult? Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult? Function(_ReviewAdded value)? reviewAdded,
+  }) {
+    return reviewAdded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GetSportsMembershipMembershipLoading value)?
+        getSportsMembershipLoading,
+    TResult Function(_GetSportsMembershipFailure value)?
+        getSportsMembershipFailure,
+    TResult Function(_SportsMembershipFetched value)? sportsMembershipFetched,
+    TResult Function(_GetSuggestedAcademiesLoading value)?
+        getSuggestedAcademiesLoading,
+    TResult Function(_GetSuggestedAcademiesFailure value)?
+        getSuggestedAcademiesFailure,
+    TResult Function(_SuggestedAcademiesFetched value)?
+        suggestedAcademiesFetched,
+    TResult Function(_GetAllAcademiesLoading value)? getAllAcademiesLoading,
+    TResult Function(_GetAllAcademiesFailure value)? getAllAcademiesFailure,
+    TResult Function(_AllAcademiesFetched value)? allAcademiesFetched,
+    TResult Function(_GetAboutAcademyLoading value)? getAboutAcademyLoading,
+    TResult Function(_GetAboutAcademyFailure value)? getAboutAcademyFailure,
+    TResult Function(_AboutAcademyFetched value)? aboutAcademyFetched,
+    TResult Function(_GetCoursesToSubscribeLoading value)?
+        getCoursesToSubscribeLoading,
+    TResult Function(_GetCoursesToSubscribeFailure value)?
+        getCoursesToSubscribeFailure,
+    TResult Function(_AcademyCoursesFetched value)? academyCoursesFetched,
+    TResult Function(_GetCoursesToSubscribeInDateLoading value)?
+        getCoursesToSubscribeInDateLoading,
+    TResult Function(_GetCoursesToSubscribeInDateFailure value)?
+        getCoursesToSubscribeInDateFailure,
+    TResult Function(_AcademyCoursesInDateFetched value)?
+        academyCoursesInDateFetched,
+    TResult Function(_GetAcademyReviewLoading value)? getAcademyReviewLoading,
+    TResult Function(_GetAcademyReviewFailure value)? getAcademyReviewFailure,
+    TResult Function(_AcademyReviewFetched value)? academyReviewFetched,
+    TResult Function(_InrollUserInCourseLoadingLoading value)?
+        inrollUserInCourseLoading,
+    TResult Function(_InrollUserInCourseFailure value)?
+        inrollUserInCourseFailure,
+    TResult Function(_CourseInrolled value)? courseInrolled,
+    TResult Function(_AddAcademyReviewLoading value)? addAcademyReviewLoading,
+    TResult Function(_AddAcademyReviewFailure value)? addAcademyReviewFailure,
+    TResult Function(_ReviewAdded value)? reviewAdded,
+    required TResult orElse(),
+  }) {
+    if (reviewAdded != null) {
+      return reviewAdded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ReviewAdded implements AcademyState {
+  const factory _ReviewAdded({final bool reviewAdded}) = _$ReviewAddedImpl;
+
+  bool get reviewAdded;
+  @JsonKey(ignore: true)
+  _$$ReviewAddedImplCopyWith<_$ReviewAddedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
