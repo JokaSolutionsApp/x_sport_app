@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:x_sport/app/features/home/presentation/components/filter_widget.dart';
 import 'package:x_sport/app/features/home/presentation/components/memberships_banner.dart';
-
-import '../../../academy/domain/enitites/params/acedemy_params.dart';
-import '../../../academy/presentation/bloc/academy_bloc.dart';
 import '../../../profile/presentation/components/profile_screen_components/profile_main_components/profile_appbar_component.dart';
 import '../components/academies_components/academies_categories_component.dart';
 import '../components/academies_components/academies_component.dart';
@@ -24,9 +20,6 @@ class _AcademiesPageState extends State<AcademiesPage> {
   @override
   void initState() {
     super.initState();
-    context.read<AcademyBloc>().add(AcademyEvent.getSuggestedAcademies(
-        params:
-            SuggestedAcademyParams(pageSize: 1, pageNumber: 1, sportId: 1)));
   }
 
   @override
@@ -40,12 +33,17 @@ class _AcademiesPageState extends State<AcademiesPage> {
           children: [
             Padding(
               padding: EdgeInsets.symmetric(
-                horizontal: 27.w,
+                horizontal: 10.w,
                 vertical: 20.h,
               ),
-              child: const MembershipsBanner(),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const MembershipsBanner(),
+                  AcademeiesCategoriesComponent(),
+                ],
+              ),
             ),
-            AcademeiesCategoriesComponent(),
             SizedBox(height: 26.h),
             const SuggestedAcademiesComponent(),
             Padding(

@@ -124,7 +124,11 @@ class AcademyBloc extends Bloc<AcademyEvent, AcademyState> {
     event as _$GetCoursesToSubscribeEventImpl;
     emit(const AcademyState.getCoursesToSubscribeLoading());
     final result = await getCoursesToSubscribeUseCase(
-        params: CourseParams(academyId: 1, ageCategoryId: 1, genderId: 1));
+        params: CourseParams(
+      academyId: event.params.academyId,
+      ageCategoryId: event.params.ageCategoryId,
+      genderId: event.params.genderId,
+    ));
     result.fold((f) {
       emit(AcademyState.getCoursesToSubscribeFailure(failure: f));
     }, (r) {

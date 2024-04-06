@@ -241,8 +241,8 @@ class _AcademyScreenState extends State<AcademyPage>
                     child: TabBarView(
                       controller: _tabController,
                       children: [
-                        const ReviewsTab(),
-                        const CoursesTab(),
+                        ReviewsTab(academyId: widget.academy.academyId),
+                        CoursesTab(academy: widget.academy),
                         AcademyAboutComponent(
                           academyId: widget.academy.academyId,
                         ),

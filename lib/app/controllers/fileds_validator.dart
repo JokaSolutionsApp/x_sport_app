@@ -18,13 +18,12 @@ class Validators {
     String epattern = r'^(?:[0-9]{7,17}|[a-zA-Z0-9._%+-]+@gmail\.com)$';
 
     RegExp eregex = RegExp(epattern);
-    sink.add(email);
-    // if (eregex.hasMatch(email))
-    //   sink.add(email);
-    // else if (email == null || email.isEmpty)
-    //   sink.addError("ادخل البربد الالكتروني");
-    // else
-    //   sink.addError("البريد الالكتروني غير صحيح");
+    if (eregex.hasMatch(email))
+      sink.add(email);
+    else if (email == null || email.isEmpty)
+      sink.addError("ادخل البربد الالكتروني");
+    else
+      sink.addError("البريد الالكتروني غير صحيح");
   });
 
   final emailPhoneValidator =
@@ -32,14 +31,13 @@ class Validators {
     String epattern = r'^(?:[0-9]{7,17}|[a-zA-Z0-9._%+-]+@gmail\.com)$';
 
     RegExp eregex = RegExp(epattern);
-    sink.add(email);
 
-    // if (eregex.hasMatch(email))
-    //   sink.add(email);
-    // else if (email == null || email.isEmpty)
-    //   sink.addError(" ");
-    // else
-    //   sink.addError("البريد الالكتروني غير صحيح");
+    if (eregex.hasMatch(email))
+      sink.add(email);
+    else if (email == null || email.isEmpty)
+      sink.addError(" ");
+    else
+      sink.addError("البريد الالكتروني غير صحيح");
   });
   var passvalidator =
       StreamTransformer<String, String>.fromHandlers(handleData: (pass, sink) {
@@ -51,8 +49,7 @@ class Validators {
       sink.addError(" ");
     else
       sink.addError(
-        "يتضمن رمزًا واحدًا على الأقل، وحرفًا صغيرًا واحدًا على الأقل، ويجب أن يكون أكثر من 5 أحرف",
-      );
+          "يجب أن تتكون كلمات المرور من 6 أحرف على الأقل، وحرف واحد على الأقل غير أبجدي رقمي، ورقم واحد على الأقل، وحرف كبير واحد على الأقل.");
   });
 
   var confValidator =

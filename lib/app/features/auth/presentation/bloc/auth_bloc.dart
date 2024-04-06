@@ -139,15 +139,19 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       (failure) async {
         EasyLoading.showError('Network error please try again');
         emit(const AuthState.confirmEmailFailure());
+        await EasyLoading.dismiss();
       },
       (r) async {
         await EasyLoading.dismiss();
 
         emit(AuthState.emailConfirmed(
-          sports: sports,
+          sports: r,
         ));
         Navigator.of(navigatorKey.currentContext!).push(
-          MaterialPageRoute(builder: (context) => WelcomePage()),
+          MaterialPageRoute(
+              builder: (context) => WelcomePage(
+                    sports: r,
+                  )),
         );
       },
     );
@@ -218,7 +222,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         await EasyLoading.dismiss();
 
         Navigator.of(navigatorKey.currentContext!).push(
-          MaterialPageRoute(builder: (context) => WelcomePage()),
+          MaterialPageRoute(
+              builder: (context) => WelcomePage(
+                    sports: sports,
+                  )),
         );
       } else {
         emit(AuthState.sportsFetched(sports: sports));
@@ -242,7 +249,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         emit(AuthState.sportsFetched(sports: sports));
 
         Navigator.of(navigatorKey.currentContext!).push(
-          MaterialPageRoute(builder: (context) => WelcomePage()),
+          MaterialPageRoute(
+              builder: (context) => WelcomePage(
+                    sports: sports,
+                  )),
         );
       }
     });

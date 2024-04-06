@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:x_sport/app/features/academy/domain/enitites/params/acedemy_params.dart';
 import 'package:x_sport/app/features/academy/presentation/bloc/academy_bloc.dart';
+import 'package:x_sport/app/features/academy/presentation/pages/academy_page.dart';
 import 'package:x_sport/app/widgets/buttons/submit_button.dart';
 import 'package:x_sport/app/widgets/rectangle_container.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
@@ -71,12 +72,14 @@ class _AllAcademiesPageState extends State<AllAcademiesPage> {
 
                       return GestureDetector(
                         onTap: () {
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //     builder: (context) => AcademyPage(),
-                          //   ),
-                          // );
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => AcademyPage(
+                                academy: academy,
+                              ),
+                            ),
+                          );
                         },
                         child: Padding(
                           padding: EdgeInsets.symmetric(horizontal: 0.02.sw),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/academy/domain/enitites/get_courses_to_subscribe_entity.dart';
 import 'package:x_sport/app/features/academy/presentation/components/course_card.dart';
 import 'package:x_sport/main.dart';
 
@@ -48,7 +49,18 @@ class CoursesPage extends StatelessWidget {
                 physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 itemCount: 3,
-                itemBuilder: (ctx, index) => const CourseCard(),
+                itemBuilder: (ctx, index) => const CourseCard(
+                  course: GetCoursesToSubscribeEntity(
+                      courseId: 1,
+                      courseName: '',
+                      sportId: 1,
+                      sportName: '',
+                      description: '',
+                      startDate: '',
+                      endDate: '',
+                      gender: '',
+                      price: 0),
+                ),
               ),
               // SizedBox(
               //   width: 190.w,

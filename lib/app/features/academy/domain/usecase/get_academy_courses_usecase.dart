@@ -1,9 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:x_sport/app/features/academy/domain/enitites/params/acedemy_params.dart';
-import '../enitites/academy_course_entity.dart';
 import '../enitites/get_courses_to_subscribe_entity.dart';
-import '../../../auth/domain/enitites/sport_entity.dart';
-
 import '../../../../../core/error/failure.dart';
 import '../repository/base_academy_repository.dart';
 

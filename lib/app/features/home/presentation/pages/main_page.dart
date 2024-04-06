@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/auth/presentation/bloc/auth_bloc.dart';
 
 import '../../../../../core/constance/app_constance.dart';
 import '../../../../../core/constance/app_icons_icons.dart';
@@ -42,7 +44,9 @@ class _MainScreenState extends State<MainPage>
   void initState() {
     confirmCompleted();
     _tabController = TabController(length: 5, vsync: this);
+
     super.initState();
+    context.read<AuthBloc>().add(const AuthEvent.getSports());
   }
 
   confirmCompleted() async {

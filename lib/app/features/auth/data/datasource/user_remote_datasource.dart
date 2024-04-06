@@ -84,19 +84,18 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
     final password = await sl<SecureStorageService>().read('password');
 
     final postData = {
-      'Email': email,
-      'Password': password,
-      'Code': registerStream.codeValue,
+      'email': email,
+      'password': password,
+      'code': registerStream.codeValue,
     };
     final response =
         await ApiService.post(ApiConstance.confirmEmailApi, postData);
-    final data = response.data['data'];
-    print('postData $data');
+    final data = response.data;
 
     if (response.statusCode == 200) {
-      final result = data['sports'];
-      final token = data['authResult']['token'];
-      final refreshToken = data['authResult']['refreshToken'];
+      final result = data['data']['sports'];
+      final token = data['data']['authResult']['token'];
+      final refreshToken = data['data']['authResult']['refreshToken'];
       sl<SecureStorageService>().write('token', token);
       sl<SecureStorageService>().write('refreshToken', refreshToken);
       return result.map<SportEntity>((e) => SportModel.fromJson(e)).toList();

@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/academy/domain/enitites/get_courses_to_subscribe_entity.dart';
 import 'package:x_sport/app/features/academy/domain/enitites/params/acedemy_params.dart';
+import 'package:x_sport/app/features/academy/domain/enitites/suggested_academy_entity.dart';
 import 'package:x_sport/app/features/academy/presentation/bloc/academy_bloc.dart';
 import 'course_card.dart';
 import '../../../../../core/constance/app_constance.dart';
 
 class CoursesTab extends StatefulWidget {
+  final SuggestedAcademyEntity academy;
+
   const CoursesTab({
     super.key,
+    required this.academy,
   });
 
   @override
@@ -20,7 +25,10 @@ class _CoursesTabState extends State<CoursesTab> {
   void initState() {
     super.initState();
     context.read<AcademyBloc>().add(AcademyEvent.getCoursesToSubscribe(
-        params: CourseParams(academyId: 1, ageCategoryId: 1, genderId: 1)));
+        params: CourseParams(
+            academyId: widget.academy.academyId,
+            ageCategoryId: 15,
+            genderId: 1)));
   }
 
   @override
@@ -114,7 +122,6 @@ class _CoursesTabState extends State<CoursesTab> {
             ),
             BlocBuilder<AcademyBloc, AcademyState>(
               buildWhen: (prev, cur) {
-                print("cur.runtimeType courses ${cur.runtimeType}");
                 if (cur.runtimeType !=
                     const AcademyState.getCoursesToSubscribeLoading()
                         .runtimeType) {
@@ -125,16 +132,18 @@ class _CoursesTabState extends State<CoursesTab> {
               builder: (context, state) {
                 return state.maybeWhen(
                     orElse: () => Offstage(),
-                    getCoursesToSubscribeLoading: () =>
-                        CircularProgressIndicator(),
+                    getCoursesToSubscribeLoading: () => Offstage(),
                     getCoursesToSubscribeFailure: (failure) => Offstage(),
                     academyCoursesFetched: (courses) {
                       return ListView.builder(
-                        physics: const NeverScrollableScrollPhysics(),
-                        shrinkWrap: true,
-                        itemCount: 3,
-                        itemBuilder: (ctx, index) => const CourseCard(),
-                      );
+                          physics: const NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          itemCount: courses.length,
+                          itemBuilder: (ctx, index) {
+                            GetCoursesToSubscribeEntity course = courses[index];
+
+                            return CourseCard(course: course);
+                          });
                     });
               },
             )

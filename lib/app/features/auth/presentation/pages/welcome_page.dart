@@ -12,7 +12,8 @@ import '../../components/welcome_screen_components/image_picker_component.dart';
 import '../../../../widgets/buttons/submit_button.dart';
 
 class WelcomePage extends StatefulWidget {
-  WelcomePage({super.key});
+  final List<SportEntity> sports;
+  WelcomePage({super.key, required this.sports});
 
   @override
   State<WelcomePage> createState() => _WelcomePageState();
@@ -69,15 +70,16 @@ class _WelcomePageState extends State<WelcomePage> {
       ),
       body: BlocBuilder<AuthBloc, AuthState>(buildWhen: (prev, cur) {
         print(
-            'cur.runtimeType ${cur.runtimeType} ${AuthState.sportsFetched().runtimeType}');
+            'sportsState ${cur.runtimeType} ${AuthState.sportsFetched().runtimeType}');
 
         if (cur.runtimeType == const AuthState.sportsFetched().runtimeType) {
           return true;
         }
-
+        if (cur.runtimeType == const AuthState.emailConfirmed().runtimeType) {
+          return true;
+        }
         return false;
       }, builder: (context, state) {
-        print('builderstate.runtimeType ${state.runtimeType}');
         return state.maybeMap(
           orElse: () => const CircularProgressIndicator(),
           confirmEmailLoading: (value) => const Offstage(),

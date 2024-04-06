@@ -47,25 +47,12 @@ class MyApp extends StatelessWidget {
         return MultiBlocProvider(
           providers: [
             BlocProvider(
-              create: (context) => sl<AcademyBloc>()
-                ..add(
-                  AcademyEvent.getSuggestedAcademies(
-                    params: SuggestedAcademyParams(
-                        pageNumber: 1, pageSize: 1, sportId: 1),
-                  ),
-                )
-                ..add(
-                  AcademyEvent.getAllAcademies(
-                    params: AllAcademiesParams(pageNumber: 1, pageSize: 1),
-                  ),
-                ),
-            ),
-            BlocProvider(
               create: (context) => sl<AuthBloc>()
                 ..add(const AuthEvent.checkUserLogged())
                 ..add(const AuthEvent.getUserProfile())
                 ..add(const AuthEvent.getSports()),
             ),
+            BlocProvider(create: (context) => sl<AcademyBloc>()),
             BlocProvider(create: (context) => sl<ChatBloc>()),
             BlocProvider(
               create: (context) => sl<StadiumBloc>()

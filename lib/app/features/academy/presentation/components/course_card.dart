@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/academy/domain/enitites/get_courses_to_subscribe_entity.dart';
 import 'package:x_sport/app/features/academy/presentation/pages/academy_register_page.dart';
 import 'package:x_sport/main.dart';
-
 import '../../../../../core/constance/app_constance.dart';
 
 class CourseCard extends StatelessWidget {
+  final GetCoursesToSubscribeEntity course;
   const CourseCard({
     super.key,
+    required this.course,
   });
 
   @override
@@ -48,8 +50,8 @@ class CourseCard extends StatelessWidget {
                         padding: EdgeInsets.only(
                           right: 4.w,
                         ),
-                        child: const Text(
-                          'اسم الكورس',
+                        child: Text(
+                          course.courseName,
                           style: TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.w500,
@@ -62,12 +64,15 @@ class CourseCard extends StatelessWidget {
                   SizedBox(
                     height: 5.h,
                   ),
-                  const Text(
-                    'وصف بسيط من سطر او سطرين',
-                    style: TextStyle(
-                      fontSize: 10,
-                      fontWeight: FontWeight.w500,
-                      color: XColors.white,
+                  SizedBox(
+                    width: 0.6.sw,
+                    child: Text(
+                      course.description,
+                      style: TextStyle(
+                        fontSize: 10,
+                        fontWeight: FontWeight.w500,
+                        color: XColors.white,
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -81,8 +86,8 @@ class CourseCard extends StatelessWidget {
                       ),
                       Padding(
                         padding: EdgeInsets.only(right: 4.w),
-                        child: const Text(
-                          'من 12/3/2024',
+                        child: Text(
+                          'من ${course.startDate}',
                           style: TextStyle(
                             fontSize: 10,
                             fontWeight: FontWeight.w400,
@@ -92,8 +97,8 @@ class CourseCard extends StatelessWidget {
                       ),
                       Padding(
                         padding: EdgeInsets.only(right: 10.w),
-                        child: const Text(
-                          'حتى 12/3/2024',
+                        child: Text(
+                          'حتى ${course.endDate}',
                           style: TextStyle(
                             fontSize: 10,
                             fontWeight: FontWeight.w400,
@@ -148,8 +153,8 @@ class CourseCard extends StatelessWidget {
                   SizedBox(
                     height: 50.h,
                   ),
-                  const Text(
-                    '\$ 49.99',
+                  Text(
+                    '${course.price}\$',
                     style: TextStyle(
                       height: 0.8,
                       fontSize: 25,
