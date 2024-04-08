@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:x_sport/app/features/courts/presentation/bloc/stadium_bloc.dart';
-
 import '../../../../../../core/constance/app_constance.dart';
 import '../../../../../../core/utils/assets_managers/assets.gen.dart';
 import '../../../../../widgets/buttons/submit_button.dart';
@@ -16,16 +15,23 @@ class HomeStadiumsComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<StadiumBloc, StadiumState>(
+      buildWhen: (previous, current) {
+        if (current.runtimeType ==
+            const StadiumState.nearByStadiumsFetched().runtimeType) {
+          return true;
+        }
+        return false;
+      },
       builder: (context, state) {
         return state.maybeMap(
-            orElse: () => CircularProgressIndicator(),
-            getNearByStadiumsFailure: (value) => Offstage(),
-            getNearByStadiumsLoading: (value) => Offstage(),
+            orElse: () => const Offstage(),
+            getNearByStadiumsFailure: (value) => const Offstage(),
+            getNearByStadiumsLoading: (value) => const Offstage(),
             nearByStadiumsFetched: (value) => Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(bottom: 8),
+                      padding: const EdgeInsets.only(bottom: 8),
                       child: Text(
                         'ملاعب بالقرب منك',
                         style: TextStyle(
@@ -124,7 +130,7 @@ class HomeStadiumsComponent extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        CourtsPage()));
+                                                        const CourtsPage()));
                                           }),
                                     )
                                   ],

@@ -44,8 +44,6 @@ class _AcademiesPageState extends State<AcademiesPage> {
                 ],
               ),
             ),
-            SizedBox(height: 26.h),
-            const SuggestedAcademiesComponent(),
             Padding(
               padding: EdgeInsets.symmetric(
                 horizontal: 27.w,

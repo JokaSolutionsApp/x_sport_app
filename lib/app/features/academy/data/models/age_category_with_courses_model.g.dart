@@ -6,24 +6,19 @@ part of 'age_category_with_courses_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-AgeCategoryWithCoursesModel _$AgeCategoryWithCoursesModelFromJson(
+AgeCategoryDropDownItemModel _$AgeCategoryDropDownItemModelFromJson(
         Map<String, dynamic> json) =>
-    AgeCategoryWithCoursesModel(
-      ageCategoryId: json['ageCategoryId'] as int,
-      ageCategoryName: json['ageCategoryName'] as String,
-      fromAge: json['fromAge'] as int,
-      toAge: json['toAge'] as int,
-      courses: (json['courses'] as List<dynamic>)
-          .map((e) => AcademyCourseModel.fromJson(e as Map<String, dynamic>))
-          .toList(),
+    AgeCategoryDropDownItemModel(
+      id: json['id'] as int,
+      name: json['name'] as String,
+      info:
+          DropdownItemInfoModel.fromJson(json['info'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$AgeCategoryWithCoursesModelToJson(
-        AgeCategoryWithCoursesModel instance) =>
+Map<String, dynamic> _$AgeCategoryDropDownItemModelToJson(
+        AgeCategoryDropDownItemModel instance) =>
     <String, dynamic>{
-      'ageCategoryId': instance.ageCategoryId,
-      'ageCategoryName': instance.ageCategoryName,
-      'fromAge': instance.fromAge,
-      'toAge': instance.toAge,
-      'courses': instance.courses,
+      'id': instance.id,
+      'name': instance.name,
+      'info': instance.info,
     };

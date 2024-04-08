@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/academy/presentation/bloc/academy_bloc.dart';
 import 'package:x_sport/app/features/home/presentation/components/memberships_page_card.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
 
@@ -13,6 +15,12 @@ class MembershipsPage extends StatefulWidget {
 }
 
 class _MembershipsPageState extends State<MembershipsPage> {
+  @override
+  initState() {
+    super.initState();
+    context.read<AcademyBloc>().add(const AcademyEvent.getSportsMembership());
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -79,14 +79,14 @@ class ServiceLocator {
 
       // Your server's SHA256 fingerprint
       String fingerprint =
-          '3d6c81063063e032d244b7e0274d171abbf9f6a67cf84f0b07c4609ae98d9d7a'
+          "e0f49d9a71f9754f4a5d3f1f16b11a65d049b1814576db09a460e4a55de899b4"
               .toLowerCase();
 
       dio.httpClientAdapter = IOHttpClientAdapter(
         createHttpClient: () {
           // Don't trust any certificate just because their root cert is trusted.
           final HttpClient client =
-              HttpClient(context: SecurityContext(withTrustedRoots: false));
+              HttpClient(context: SecurityContext(withTrustedRoots: true));
           // You can test the intermediate / root cert here. We just ignore it.
           client.badCertificateCallback = (cert, host, port) => true;
           return client;

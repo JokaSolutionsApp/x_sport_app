@@ -21,7 +21,7 @@ class AcademyState with _$AcademyState {
     @Default(null) Failure? failure,
   }) = _GetSuggestedAcademiesFailure;
   const factory AcademyState.suggestedAcademiesFetched({
-    @Default([]) List<SuggestedAcademyEntity> suggestedAcademies,
+    @Default(null) AcademyEntity? suggestedAcademies,
   }) = _SuggestedAcademiesFetched;
 
   // Get All Academies
@@ -30,7 +30,7 @@ class AcademyState with _$AcademyState {
     @Default(null) Failure? failure,
   }) = _GetAllAcademiesFailure;
   const factory AcademyState.allAcademiesFetched({
-    @Default([]) List<SuggestedAcademyEntity> allAcademies,
+    @Default(null) AcademyEntity? allAcademies,
   }) = _AllAcademiesFetched;
 
   // Get About Academy

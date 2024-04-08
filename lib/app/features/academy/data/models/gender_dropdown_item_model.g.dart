@@ -1,19 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'sport_info_model.dart';
+part of 'gender_dropdown_item_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-SportInfoModel _$SportInfoModelFromJson(Map<String, dynamic> json) =>
-    SportInfoModel(
-      sportId: json['sportId'] as int,
+GenderDropdownItemModel _$GenderDropdownItemModelFromJson(
+        Map<String, dynamic> json) =>
+    GenderDropdownItemModel(
+      id: json['id'] as int,
       name: json['name'] as String,
     );
 
-Map<String, dynamic> _$SportInfoModelToJson(SportInfoModel instance) =>
+Map<String, dynamic> _$GenderDropdownItemModelToJson(
+        GenderDropdownItemModel instance) =>
     <String, dynamic>{
-      'sportId': instance.sportId,
+      'id': instance.id,
       'name': instance.name,
     };

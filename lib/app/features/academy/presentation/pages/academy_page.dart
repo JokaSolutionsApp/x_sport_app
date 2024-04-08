@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:x_sport/app/features/academy/presentation/components/reviews_tab.dart';
@@ -242,7 +243,10 @@ class _AcademyScreenState extends State<AcademyPage>
                       controller: _tabController,
                       children: [
                         ReviewsTab(academyId: widget.academy.academyId),
-                        CoursesTab(academy: widget.academy),
+                        CoursesTab(
+                            academy: widget.academy,
+                            ageCategoriesDropdownItems:
+                                widget.academy.ageCategoriesDropdownItems),
                         AcademyAboutComponent(
                           academyId: widget.academy.academyId,
                         ),

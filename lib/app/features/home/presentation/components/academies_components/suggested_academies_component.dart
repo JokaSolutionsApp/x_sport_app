@@ -6,7 +6,8 @@ import 'package:x_sport/main.dart';
 import '../../../../../../core/constance/app_constance.dart';
 
 class SuggestedAcademiesComponent extends StatelessWidget {
-  const SuggestedAcademiesComponent({super.key});
+  final int currentSport;
+  const SuggestedAcademiesComponent({super.key, required this.currentSport});
 
   @override
   Widget build(BuildContext context) {

@@ -1844,12 +1844,11 @@ mixin _$AcademyState {
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+    required TResult Function(AcademyEntity? suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAllAcademiesLoading,
     required TResult Function(Failure? failure) getAllAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
-        allAcademiesFetched,
+    required TResult Function(AcademyEntity? allAcademies) allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
@@ -1884,12 +1883,11 @@ mixin _$AcademyState {
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult? Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAllAcademiesLoading,
     TResult? Function(Failure? failure)? getAllAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult? Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -1922,12 +1920,11 @@ mixin _$AcademyState {
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAllAcademiesLoading,
     TResult Function(Failure? failure)? getAllAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -2160,12 +2157,11 @@ class _$InitialImpl implements _Initial {
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+    required TResult Function(AcademyEntity? suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAllAcademiesLoading,
     required TResult Function(Failure? failure) getAllAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
-        allAcademiesFetched,
+    required TResult Function(AcademyEntity? allAcademies) allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
@@ -2203,12 +2199,11 @@ class _$InitialImpl implements _Initial {
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult? Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAllAcademiesLoading,
     TResult? Function(Failure? failure)? getAllAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult? Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -2244,12 +2239,11 @@ class _$InitialImpl implements _Initial {
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAllAcademiesLoading,
     TResult Function(Failure? failure)? getAllAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -2489,12 +2483,11 @@ class _$GetSportsMembershipMembershipLoadingImpl
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+    required TResult Function(AcademyEntity? suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAllAcademiesLoading,
     required TResult Function(Failure? failure) getAllAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
-        allAcademiesFetched,
+    required TResult Function(AcademyEntity? allAcademies) allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
@@ -2532,12 +2525,11 @@ class _$GetSportsMembershipMembershipLoadingImpl
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult? Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAllAcademiesLoading,
     TResult? Function(Failure? failure)? getAllAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult? Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -2573,12 +2565,11 @@ class _$GetSportsMembershipMembershipLoadingImpl
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAllAcademiesLoading,
     TResult Function(Failure? failure)? getAllAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -2844,12 +2835,11 @@ class _$GetSportsMembershipFailureImpl implements _GetSportsMembershipFailure {
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+    required TResult Function(AcademyEntity? suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAllAcademiesLoading,
     required TResult Function(Failure? failure) getAllAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
-        allAcademiesFetched,
+    required TResult Function(AcademyEntity? allAcademies) allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
@@ -2887,12 +2877,11 @@ class _$GetSportsMembershipFailureImpl implements _GetSportsMembershipFailure {
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult? Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAllAcademiesLoading,
     TResult? Function(Failure? failure)? getAllAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult? Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -2928,12 +2917,11 @@ class _$GetSportsMembershipFailureImpl implements _GetSportsMembershipFailure {
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAllAcademiesLoading,
     TResult Function(Failure? failure)? getAllAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -3214,12 +3202,11 @@ class _$SportsMembershipFetchedImpl implements _SportsMembershipFetched {
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+    required TResult Function(AcademyEntity? suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAllAcademiesLoading,
     required TResult Function(Failure? failure) getAllAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
-        allAcademiesFetched,
+    required TResult Function(AcademyEntity? allAcademies) allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
@@ -3257,12 +3244,11 @@ class _$SportsMembershipFetchedImpl implements _SportsMembershipFetched {
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult? Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAllAcademiesLoading,
     TResult? Function(Failure? failure)? getAllAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult? Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -3298,12 +3284,11 @@ class _$SportsMembershipFetchedImpl implements _SportsMembershipFetched {
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAllAcademiesLoading,
     TResult Function(Failure? failure)? getAllAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -3549,12 +3534,11 @@ class _$GetSuggestedAcademiesLoadingImpl
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+    required TResult Function(AcademyEntity? suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAllAcademiesLoading,
     required TResult Function(Failure? failure) getAllAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
-        allAcademiesFetched,
+    required TResult Function(AcademyEntity? allAcademies) allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
@@ -3592,12 +3576,11 @@ class _$GetSuggestedAcademiesLoadingImpl
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult? Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAllAcademiesLoading,
     TResult? Function(Failure? failure)? getAllAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult? Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -3633,12 +3616,11 @@ class _$GetSuggestedAcademiesLoadingImpl
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAllAcademiesLoading,
     TResult Function(Failure? failure)? getAllAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -3906,12 +3888,11 @@ class _$GetSuggestedAcademiesFailureImpl
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+    required TResult Function(AcademyEntity? suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAllAcademiesLoading,
     required TResult Function(Failure? failure) getAllAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
-        allAcademiesFetched,
+    required TResult Function(AcademyEntity? allAcademies) allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
@@ -3949,12 +3930,11 @@ class _$GetSuggestedAcademiesFailureImpl
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult? Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAllAcademiesLoading,
     TResult? Function(Failure? failure)? getAllAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult? Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -3990,12 +3970,11 @@ class _$GetSuggestedAcademiesFailureImpl
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAllAcademiesLoading,
     TResult Function(Failure? failure)? getAllAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -4199,7 +4178,7 @@ abstract class _$$SuggestedAcademiesFetchedImplCopyWith<$Res> {
           $Res Function(_$SuggestedAcademiesFetchedImpl) then) =
       __$$SuggestedAcademiesFetchedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<SuggestedAcademyEntity> suggestedAcademies});
+  $Res call({AcademyEntity? suggestedAcademies});
 }
 
 /// @nodoc
@@ -4214,13 +4193,13 @@ class __$$SuggestedAcademiesFetchedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? suggestedAcademies = null,
+    Object? suggestedAcademies = freezed,
   }) {
     return _then(_$SuggestedAcademiesFetchedImpl(
-      suggestedAcademies: null == suggestedAcademies
-          ? _value._suggestedAcademies
+      suggestedAcademies: freezed == suggestedAcademies
+          ? _value.suggestedAcademies
           : suggestedAcademies // ignore: cast_nullable_to_non_nullable
-              as List<SuggestedAcademyEntity>,
+              as AcademyEntity?,
     ));
   }
 }
@@ -4228,19 +4207,11 @@ class __$$SuggestedAcademiesFetchedImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SuggestedAcademiesFetchedImpl implements _SuggestedAcademiesFetched {
-  const _$SuggestedAcademiesFetchedImpl(
-      {final List<SuggestedAcademyEntity> suggestedAcademies = const []})
-      : _suggestedAcademies = suggestedAcademies;
+  const _$SuggestedAcademiesFetchedImpl({this.suggestedAcademies = null});
 
-  final List<SuggestedAcademyEntity> _suggestedAcademies;
   @override
   @JsonKey()
-  List<SuggestedAcademyEntity> get suggestedAcademies {
-    if (_suggestedAcademies is EqualUnmodifiableListView)
-      return _suggestedAcademies;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_suggestedAcademies);
-  }
+  final AcademyEntity? suggestedAcademies;
 
   @override
   String toString() {
@@ -4252,13 +4223,12 @@ class _$SuggestedAcademiesFetchedImpl implements _SuggestedAcademiesFetched {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SuggestedAcademiesFetchedImpl &&
-            const DeepCollectionEquality()
-                .equals(other._suggestedAcademies, _suggestedAcademies));
+            (identical(other.suggestedAcademies, suggestedAcademies) ||
+                other.suggestedAcademies == suggestedAcademies));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_suggestedAcademies));
+  int get hashCode => Object.hash(runtimeType, suggestedAcademies);
 
   @JsonKey(ignore: true)
   @override
@@ -4277,12 +4247,11 @@ class _$SuggestedAcademiesFetchedImpl implements _SuggestedAcademiesFetched {
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+    required TResult Function(AcademyEntity? suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAllAcademiesLoading,
     required TResult Function(Failure? failure) getAllAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
-        allAcademiesFetched,
+    required TResult Function(AcademyEntity? allAcademies) allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
@@ -4320,12 +4289,11 @@ class _$SuggestedAcademiesFetchedImpl implements _SuggestedAcademiesFetched {
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult? Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAllAcademiesLoading,
     TResult? Function(Failure? failure)? getAllAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult? Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -4361,12 +4329,11 @@ class _$SuggestedAcademiesFetchedImpl implements _SuggestedAcademiesFetched {
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAllAcademiesLoading,
     TResult Function(Failure? failure)? getAllAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -4554,10 +4521,10 @@ class _$SuggestedAcademiesFetchedImpl implements _SuggestedAcademiesFetched {
 
 abstract class _SuggestedAcademiesFetched implements AcademyState {
   const factory _SuggestedAcademiesFetched(
-          {final List<SuggestedAcademyEntity> suggestedAcademies}) =
+          {final AcademyEntity? suggestedAcademies}) =
       _$SuggestedAcademiesFetchedImpl;
 
-  List<SuggestedAcademyEntity> get suggestedAcademies;
+  AcademyEntity? get suggestedAcademies;
   @JsonKey(ignore: true)
   _$$SuggestedAcademiesFetchedImplCopyWith<_$SuggestedAcademiesFetchedImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -4611,12 +4578,11 @@ class _$GetAllAcademiesLoadingImpl implements _GetAllAcademiesLoading {
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+    required TResult Function(AcademyEntity? suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAllAcademiesLoading,
     required TResult Function(Failure? failure) getAllAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
-        allAcademiesFetched,
+    required TResult Function(AcademyEntity? allAcademies) allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
@@ -4654,12 +4620,11 @@ class _$GetAllAcademiesLoadingImpl implements _GetAllAcademiesLoading {
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult? Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAllAcademiesLoading,
     TResult? Function(Failure? failure)? getAllAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult? Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -4695,12 +4660,11 @@ class _$GetAllAcademiesLoadingImpl implements _GetAllAcademiesLoading {
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAllAcademiesLoading,
     TResult Function(Failure? failure)? getAllAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -4965,12 +4929,11 @@ class _$GetAllAcademiesFailureImpl implements _GetAllAcademiesFailure {
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+    required TResult Function(AcademyEntity? suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAllAcademiesLoading,
     required TResult Function(Failure? failure) getAllAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
-        allAcademiesFetched,
+    required TResult Function(AcademyEntity? allAcademies) allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
@@ -5008,12 +4971,11 @@ class _$GetAllAcademiesFailureImpl implements _GetAllAcademiesFailure {
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult? Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAllAcademiesLoading,
     TResult? Function(Failure? failure)? getAllAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult? Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -5049,12 +5011,11 @@ class _$GetAllAcademiesFailureImpl implements _GetAllAcademiesFailure {
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAllAcademiesLoading,
     TResult Function(Failure? failure)? getAllAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -5256,7 +5217,7 @@ abstract class _$$AllAcademiesFetchedImplCopyWith<$Res> {
           $Res Function(_$AllAcademiesFetchedImpl) then) =
       __$$AllAcademiesFetchedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<SuggestedAcademyEntity> allAcademies});
+  $Res call({AcademyEntity? allAcademies});
 }
 
 /// @nodoc
@@ -5270,13 +5231,13 @@ class __$$AllAcademiesFetchedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? allAcademies = null,
+    Object? allAcademies = freezed,
   }) {
     return _then(_$AllAcademiesFetchedImpl(
-      allAcademies: null == allAcademies
-          ? _value._allAcademies
+      allAcademies: freezed == allAcademies
+          ? _value.allAcademies
           : allAcademies // ignore: cast_nullable_to_non_nullable
-              as List<SuggestedAcademyEntity>,
+              as AcademyEntity?,
     ));
   }
 }
@@ -5284,18 +5245,11 @@ class __$$AllAcademiesFetchedImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$AllAcademiesFetchedImpl implements _AllAcademiesFetched {
-  const _$AllAcademiesFetchedImpl(
-      {final List<SuggestedAcademyEntity> allAcademies = const []})
-      : _allAcademies = allAcademies;
+  const _$AllAcademiesFetchedImpl({this.allAcademies = null});
 
-  final List<SuggestedAcademyEntity> _allAcademies;
   @override
   @JsonKey()
-  List<SuggestedAcademyEntity> get allAcademies {
-    if (_allAcademies is EqualUnmodifiableListView) return _allAcademies;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_allAcademies);
-  }
+  final AcademyEntity? allAcademies;
 
   @override
   String toString() {
@@ -5307,13 +5261,12 @@ class _$AllAcademiesFetchedImpl implements _AllAcademiesFetched {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AllAcademiesFetchedImpl &&
-            const DeepCollectionEquality()
-                .equals(other._allAcademies, _allAcademies));
+            (identical(other.allAcademies, allAcademies) ||
+                other.allAcademies == allAcademies));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_allAcademies));
+  int get hashCode => Object.hash(runtimeType, allAcademies);
 
   @JsonKey(ignore: true)
   @override
@@ -5332,12 +5285,11 @@ class _$AllAcademiesFetchedImpl implements _AllAcademiesFetched {
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+    required TResult Function(AcademyEntity? suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAllAcademiesLoading,
     required TResult Function(Failure? failure) getAllAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
-        allAcademiesFetched,
+    required TResult Function(AcademyEntity? allAcademies) allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
@@ -5375,12 +5327,11 @@ class _$AllAcademiesFetchedImpl implements _AllAcademiesFetched {
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult? Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAllAcademiesLoading,
     TResult? Function(Failure? failure)? getAllAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult? Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -5416,12 +5367,11 @@ class _$AllAcademiesFetchedImpl implements _AllAcademiesFetched {
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAllAcademiesLoading,
     TResult Function(Failure? failure)? getAllAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -5608,11 +5558,10 @@ class _$AllAcademiesFetchedImpl implements _AllAcademiesFetched {
 }
 
 abstract class _AllAcademiesFetched implements AcademyState {
-  const factory _AllAcademiesFetched(
-          {final List<SuggestedAcademyEntity> allAcademies}) =
+  const factory _AllAcademiesFetched({final AcademyEntity? allAcademies}) =
       _$AllAcademiesFetchedImpl;
 
-  List<SuggestedAcademyEntity> get allAcademies;
+  AcademyEntity? get allAcademies;
   @JsonKey(ignore: true)
   _$$AllAcademiesFetchedImplCopyWith<_$AllAcademiesFetchedImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -5666,12 +5615,11 @@ class _$GetAboutAcademyLoadingImpl implements _GetAboutAcademyLoading {
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+    required TResult Function(AcademyEntity? suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAllAcademiesLoading,
     required TResult Function(Failure? failure) getAllAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
-        allAcademiesFetched,
+    required TResult Function(AcademyEntity? allAcademies) allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
@@ -5709,12 +5657,11 @@ class _$GetAboutAcademyLoadingImpl implements _GetAboutAcademyLoading {
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult? Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAllAcademiesLoading,
     TResult? Function(Failure? failure)? getAllAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult? Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -5750,12 +5697,11 @@ class _$GetAboutAcademyLoadingImpl implements _GetAboutAcademyLoading {
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAllAcademiesLoading,
     TResult Function(Failure? failure)? getAllAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -6020,12 +5966,11 @@ class _$GetAboutAcademyFailureImpl implements _GetAboutAcademyFailure {
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+    required TResult Function(AcademyEntity? suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAllAcademiesLoading,
     required TResult Function(Failure? failure) getAllAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
-        allAcademiesFetched,
+    required TResult Function(AcademyEntity? allAcademies) allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
@@ -6063,12 +6008,11 @@ class _$GetAboutAcademyFailureImpl implements _GetAboutAcademyFailure {
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult? Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAllAcademiesLoading,
     TResult? Function(Failure? failure)? getAllAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult? Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -6104,12 +6048,11 @@ class _$GetAboutAcademyFailureImpl implements _GetAboutAcademyFailure {
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAllAcademiesLoading,
     TResult Function(Failure? failure)? getAllAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -6379,12 +6322,11 @@ class _$AboutAcademyFetchedImpl implements _AboutAcademyFetched {
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+    required TResult Function(AcademyEntity? suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAllAcademiesLoading,
     required TResult Function(Failure? failure) getAllAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
-        allAcademiesFetched,
+    required TResult Function(AcademyEntity? allAcademies) allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
@@ -6422,12 +6364,11 @@ class _$AboutAcademyFetchedImpl implements _AboutAcademyFetched {
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult? Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAllAcademiesLoading,
     TResult? Function(Failure? failure)? getAllAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult? Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -6463,12 +6404,11 @@ class _$AboutAcademyFetchedImpl implements _AboutAcademyFetched {
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAllAcademiesLoading,
     TResult Function(Failure? failure)? getAllAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -6713,12 +6653,11 @@ class _$GetCoursesToSubscribeLoadingImpl
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+    required TResult Function(AcademyEntity? suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAllAcademiesLoading,
     required TResult Function(Failure? failure) getAllAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
-        allAcademiesFetched,
+    required TResult Function(AcademyEntity? allAcademies) allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
@@ -6756,12 +6695,11 @@ class _$GetCoursesToSubscribeLoadingImpl
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult? Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAllAcademiesLoading,
     TResult? Function(Failure? failure)? getAllAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult? Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -6797,12 +6735,11 @@ class _$GetCoursesToSubscribeLoadingImpl
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAllAcademiesLoading,
     TResult Function(Failure? failure)? getAllAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -7070,12 +7007,11 @@ class _$GetCoursesToSubscribeFailureImpl
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+    required TResult Function(AcademyEntity? suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAllAcademiesLoading,
     required TResult Function(Failure? failure) getAllAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
-        allAcademiesFetched,
+    required TResult Function(AcademyEntity? allAcademies) allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
@@ -7113,12 +7049,11 @@ class _$GetCoursesToSubscribeFailureImpl
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult? Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAllAcademiesLoading,
     TResult? Function(Failure? failure)? getAllAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult? Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -7154,12 +7089,11 @@ class _$GetCoursesToSubscribeFailureImpl
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAllAcademiesLoading,
     TResult Function(Failure? failure)? getAllAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -7439,12 +7373,11 @@ class _$AcademyCoursesFetchedImpl implements _AcademyCoursesFetched {
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+    required TResult Function(AcademyEntity? suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAllAcademiesLoading,
     required TResult Function(Failure? failure) getAllAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
-        allAcademiesFetched,
+    required TResult Function(AcademyEntity? allAcademies) allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
@@ -7482,12 +7415,11 @@ class _$AcademyCoursesFetchedImpl implements _AcademyCoursesFetched {
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult? Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAllAcademiesLoading,
     TResult? Function(Failure? failure)? getAllAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult? Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -7523,12 +7455,11 @@ class _$AcademyCoursesFetchedImpl implements _AcademyCoursesFetched {
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAllAcademiesLoading,
     TResult Function(Failure? failure)? getAllAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -7775,12 +7706,11 @@ class _$GetCoursesToSubscribeInDateLoadingImpl
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+    required TResult Function(AcademyEntity? suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAllAcademiesLoading,
     required TResult Function(Failure? failure) getAllAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
-        allAcademiesFetched,
+    required TResult Function(AcademyEntity? allAcademies) allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
@@ -7818,12 +7748,11 @@ class _$GetCoursesToSubscribeInDateLoadingImpl
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult? Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAllAcademiesLoading,
     TResult? Function(Failure? failure)? getAllAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult? Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -7859,12 +7788,11 @@ class _$GetCoursesToSubscribeInDateLoadingImpl
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAllAcademiesLoading,
     TResult Function(Failure? failure)? getAllAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -8133,12 +8061,11 @@ class _$GetCoursesToSubscribeInDateFailureImpl
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+    required TResult Function(AcademyEntity? suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAllAcademiesLoading,
     required TResult Function(Failure? failure) getAllAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
-        allAcademiesFetched,
+    required TResult Function(AcademyEntity? allAcademies) allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
@@ -8176,12 +8103,11 @@ class _$GetCoursesToSubscribeInDateFailureImpl
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult? Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAllAcademiesLoading,
     TResult? Function(Failure? failure)? getAllAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult? Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -8217,12 +8143,11 @@ class _$GetCoursesToSubscribeInDateFailureImpl
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAllAcademiesLoading,
     TResult Function(Failure? failure)? getAllAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -8496,12 +8421,11 @@ class _$AcademyCoursesInDateFetchedImpl
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+    required TResult Function(AcademyEntity? suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAllAcademiesLoading,
     required TResult Function(Failure? failure) getAllAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
-        allAcademiesFetched,
+    required TResult Function(AcademyEntity? allAcademies) allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
@@ -8539,12 +8463,11 @@ class _$AcademyCoursesInDateFetchedImpl
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult? Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAllAcademiesLoading,
     TResult? Function(Failure? failure)? getAllAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult? Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -8580,12 +8503,11 @@ class _$AcademyCoursesInDateFetchedImpl
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAllAcademiesLoading,
     TResult Function(Failure? failure)? getAllAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -8830,12 +8752,11 @@ class _$GetAcademyReviewLoadingImpl implements _GetAcademyReviewLoading {
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+    required TResult Function(AcademyEntity? suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAllAcademiesLoading,
     required TResult Function(Failure? failure) getAllAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
-        allAcademiesFetched,
+    required TResult Function(AcademyEntity? allAcademies) allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
@@ -8873,12 +8794,11 @@ class _$GetAcademyReviewLoadingImpl implements _GetAcademyReviewLoading {
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult? Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAllAcademiesLoading,
     TResult? Function(Failure? failure)? getAllAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult? Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -8914,12 +8834,11 @@ class _$GetAcademyReviewLoadingImpl implements _GetAcademyReviewLoading {
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAllAcademiesLoading,
     TResult Function(Failure? failure)? getAllAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -9184,12 +9103,11 @@ class _$GetAcademyReviewFailureImpl implements _GetAcademyReviewFailure {
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+    required TResult Function(AcademyEntity? suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAllAcademiesLoading,
     required TResult Function(Failure? failure) getAllAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
-        allAcademiesFetched,
+    required TResult Function(AcademyEntity? allAcademies) allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
@@ -9227,12 +9145,11 @@ class _$GetAcademyReviewFailureImpl implements _GetAcademyReviewFailure {
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult? Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAllAcademiesLoading,
     TResult? Function(Failure? failure)? getAllAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult? Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -9268,12 +9185,11 @@ class _$GetAcademyReviewFailureImpl implements _GetAcademyReviewFailure {
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAllAcademiesLoading,
     TResult Function(Failure? failure)? getAllAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -9552,12 +9468,11 @@ class _$AcademyReviewFetchedImpl implements _AcademyReviewFetched {
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+    required TResult Function(AcademyEntity? suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAllAcademiesLoading,
     required TResult Function(Failure? failure) getAllAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
-        allAcademiesFetched,
+    required TResult Function(AcademyEntity? allAcademies) allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
@@ -9595,12 +9510,11 @@ class _$AcademyReviewFetchedImpl implements _AcademyReviewFetched {
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult? Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAllAcademiesLoading,
     TResult? Function(Failure? failure)? getAllAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult? Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -9636,12 +9550,11 @@ class _$AcademyReviewFetchedImpl implements _AcademyReviewFetched {
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAllAcademiesLoading,
     TResult Function(Failure? failure)? getAllAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -9888,12 +9801,11 @@ class _$InrollUserInCourseLoadingLoadingImpl
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+    required TResult Function(AcademyEntity? suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAllAcademiesLoading,
     required TResult Function(Failure? failure) getAllAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
-        allAcademiesFetched,
+    required TResult Function(AcademyEntity? allAcademies) allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
@@ -9931,12 +9843,11 @@ class _$InrollUserInCourseLoadingLoadingImpl
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult? Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAllAcademiesLoading,
     TResult? Function(Failure? failure)? getAllAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult? Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -9972,12 +9883,11 @@ class _$InrollUserInCourseLoadingLoadingImpl
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAllAcademiesLoading,
     TResult Function(Failure? failure)? getAllAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -10243,12 +10153,11 @@ class _$InrollUserInCourseFailureImpl implements _InrollUserInCourseFailure {
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+    required TResult Function(AcademyEntity? suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAllAcademiesLoading,
     required TResult Function(Failure? failure) getAllAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
-        allAcademiesFetched,
+    required TResult Function(AcademyEntity? allAcademies) allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
@@ -10286,12 +10195,11 @@ class _$InrollUserInCourseFailureImpl implements _InrollUserInCourseFailure {
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult? Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAllAcademiesLoading,
     TResult? Function(Failure? failure)? getAllAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult? Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -10327,12 +10235,11 @@ class _$InrollUserInCourseFailureImpl implements _InrollUserInCourseFailure {
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAllAcademiesLoading,
     TResult Function(Failure? failure)? getAllAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -10602,12 +10509,11 @@ class _$CourseInrolledImpl implements _CourseInrolled {
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+    required TResult Function(AcademyEntity? suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAllAcademiesLoading,
     required TResult Function(Failure? failure) getAllAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
-        allAcademiesFetched,
+    required TResult Function(AcademyEntity? allAcademies) allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
@@ -10645,12 +10551,11 @@ class _$CourseInrolledImpl implements _CourseInrolled {
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult? Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAllAcademiesLoading,
     TResult? Function(Failure? failure)? getAllAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult? Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -10686,12 +10591,11 @@ class _$CourseInrolledImpl implements _CourseInrolled {
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAllAcademiesLoading,
     TResult Function(Failure? failure)? getAllAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -10935,12 +10839,11 @@ class _$AddAcademyReviewLoadingImpl implements _AddAcademyReviewLoading {
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+    required TResult Function(AcademyEntity? suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAllAcademiesLoading,
     required TResult Function(Failure? failure) getAllAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
-        allAcademiesFetched,
+    required TResult Function(AcademyEntity? allAcademies) allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
@@ -10978,12 +10881,11 @@ class _$AddAcademyReviewLoadingImpl implements _AddAcademyReviewLoading {
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult? Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAllAcademiesLoading,
     TResult? Function(Failure? failure)? getAllAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult? Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -11019,12 +10921,11 @@ class _$AddAcademyReviewLoadingImpl implements _AddAcademyReviewLoading {
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAllAcademiesLoading,
     TResult Function(Failure? failure)? getAllAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -11289,12 +11190,11 @@ class _$AddAcademyReviewFailureImpl implements _AddAcademyReviewFailure {
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+    required TResult Function(AcademyEntity? suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAllAcademiesLoading,
     required TResult Function(Failure? failure) getAllAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
-        allAcademiesFetched,
+    required TResult Function(AcademyEntity? allAcademies) allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
@@ -11332,12 +11232,11 @@ class _$AddAcademyReviewFailureImpl implements _AddAcademyReviewFailure {
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult? Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAllAcademiesLoading,
     TResult? Function(Failure? failure)? getAllAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult? Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -11373,12 +11272,11 @@ class _$AddAcademyReviewFailureImpl implements _AddAcademyReviewFailure {
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAllAcademiesLoading,
     TResult Function(Failure? failure)? getAllAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -11647,12 +11545,11 @@ class _$ReviewAddedImpl implements _ReviewAdded {
         sportsMembershipFetched,
     required TResult Function() getSuggestedAcademiesLoading,
     required TResult Function(Failure? failure) getSuggestedAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)
+    required TResult Function(AcademyEntity? suggestedAcademies)
         suggestedAcademiesFetched,
     required TResult Function() getAllAcademiesLoading,
     required TResult Function(Failure? failure) getAllAcademiesFailure,
-    required TResult Function(List<SuggestedAcademyEntity> allAcademies)
-        allAcademiesFetched,
+    required TResult Function(AcademyEntity? allAcademies) allAcademiesFetched,
     required TResult Function() getAboutAcademyLoading,
     required TResult Function(Failure? failure) getAboutAcademyFailure,
     required TResult Function(AboutAcademyEntity? aboutAcademy)
@@ -11690,12 +11587,11 @@ class _$ReviewAddedImpl implements _ReviewAdded {
         sportsMembershipFetched,
     TResult? Function()? getSuggestedAcademiesLoading,
     TResult? Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult? Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult? Function()? getAllAcademiesLoading,
     TResult? Function(Failure? failure)? getAllAcademiesFailure,
-    TResult? Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult? Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult? Function()? getAboutAcademyLoading,
     TResult? Function(Failure? failure)? getAboutAcademyFailure,
     TResult? Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,
@@ -11731,12 +11627,11 @@ class _$ReviewAddedImpl implements _ReviewAdded {
         sportsMembershipFetched,
     TResult Function()? getSuggestedAcademiesLoading,
     TResult Function(Failure? failure)? getSuggestedAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> suggestedAcademies)?
+    TResult Function(AcademyEntity? suggestedAcademies)?
         suggestedAcademiesFetched,
     TResult Function()? getAllAcademiesLoading,
     TResult Function(Failure? failure)? getAllAcademiesFailure,
-    TResult Function(List<SuggestedAcademyEntity> allAcademies)?
-        allAcademiesFetched,
+    TResult Function(AcademyEntity? allAcademies)? allAcademiesFetched,
     TResult Function()? getAboutAcademyLoading,
     TResult Function(Failure? failure)? getAboutAcademyFailure,
     TResult Function(AboutAcademyEntity? aboutAcademy)? aboutAcademyFetched,

@@ -1,8 +1,11 @@
+import 'dart:convert';
+
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:x_sport/app/features/auth/data/models/sport_model.dart';
 
 import '../../../../../core/constance/app_functions.dart';
 import '../../../../../core/error/failure.dart';
@@ -341,6 +344,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       if (userProfile != null) {
         user = userProfile;
         emit(AuthState.userProfileFetched(userProfile: userProfile));
+        print('eventuserProfileFetched');
       }
     });
   }
@@ -383,12 +387,20 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     event as _$GetSportsEventImpl;
     emit(const AuthState.getSportsLoading());
     final result = await getsportsUseCase();
-    result.fold((f) {
+    await result.fold((f) {
       emit(AuthState.getSportsFailure(failure: f));
-    }, (r) {
-      print('getSports Bloc');
+    }, (r) async {
+      String? sportsJsonString =
+          await sl<SecureStorageService>().read('sports');
+      if (sportsJsonString == null) {
+        return <SportEntity>[];
+      }
 
-      sports = r;
+      List<dynamic> sportsJson = json.decode(sportsJsonString);
+      sports = sportsJson
+          .map<SportEntity>((json) => SportModel.fromJson(json))
+          .toList();
+
       emit(AuthState.sportsFetched(sports: r));
     });
   }

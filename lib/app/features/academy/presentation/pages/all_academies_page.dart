@@ -66,9 +66,9 @@ class _AllAcademiesPageState extends State<AllAcademiesPage> {
                   return ListView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
-                    itemCount: allAcdemies.length,
+                    itemCount: allAcdemies!.suggestedAcademies.length,
                     itemBuilder: (context, index) {
-                      final academy = allAcdemies[index];
+                      final academy = allAcdemies.suggestedAcademies[index];
 
                       return GestureDetector(
                         onTap: () {

@@ -1,18 +1,18 @@
 import 'package:dartz/dartz.dart';
+import 'package:x_sport/app/features/academy/domain/enitites/academy_entity.dart';
 import '../enitites/about_academy_entity.dart';
 import '../enitites/academy_membership_entity.dart';
 import '../enitites/academy_review_entity.dart';
 import '../enitites/get_courses_to_subscribe_entity.dart';
 import '../enitites/params/acedemy_params.dart';
-import '../enitites/suggested_academy_entity.dart';
 import '../../../../../core/error/failure.dart';
 
 abstract class BaseAcademyRepository {
   Future<Either<Failure, List<AcademyMembershipEntity>>> getSportsMembership();
-  Future<Either<Failure, List<SuggestedAcademyEntity>>> getSuggestedAcademies(
+  Future<Either<Failure, AcademyEntity>> getSuggestedAcademies(
       {required SuggestedAcademyParams params});
 
-  Future<Either<Failure, List<SuggestedAcademyEntity>>> getAllAcademies(
+  Future<Either<Failure, AcademyEntity>> getAllAcademies(
       {required AllAcademiesParams params});
 
   Future<Either<Failure, AboutAcademyEntity>> getAboutAcademy(

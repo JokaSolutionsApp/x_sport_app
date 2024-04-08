@@ -1,9 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'academy_service_entity.dart';
-// import 'service.dart'; // Import the Service model
-
-// part 'academy.g.dart';
 
 @JsonSerializable()
 class AboutAcademyEntity extends Equatable {
@@ -58,8 +55,4 @@ class AboutAcademyEntity extends Equatable {
         closeAt,
         services
       ];
-
-  // factory AboutAcademyEntity.fromJson(Map<String, dynamic> json) =>
-  //     _$AboutAcademyEntityFromJson(json);
-  // Map<String, dynamic> toJson() => _$AboutAcademyEntityoJson(this);
 }

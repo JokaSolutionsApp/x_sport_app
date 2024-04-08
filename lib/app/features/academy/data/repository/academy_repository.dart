@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:x_sport/app/features/academy/domain/enitites/academy_entity.dart';
 
 import '../../../../../core/error/exceptions.dart';
 import '../../../../../core/error/failure.dart';
@@ -29,7 +30,7 @@ class AcademyRepository extends BaseAcademyRepository {
   }
 
   @override
-  Future<Either<Failure, List<SuggestedAcademyEntity>>> getSuggestedAcademies(
+  Future<Either<Failure, AcademyEntity>> getSuggestedAcademies(
       {required SuggestedAcademyParams params}) async {
     try {
       final result = await baseAcademyRemoteDataSource.getSuggestedAcademies(
@@ -98,7 +99,7 @@ class AcademyRepository extends BaseAcademyRepository {
   }
 
   @override
-  Future<Either<Failure, List<SuggestedAcademyEntity>>> getAllAcademies(
+  Future<Either<Failure, AcademyEntity>> getAllAcademies(
       {required AllAcademiesParams params}) async {
     try {
       final result =

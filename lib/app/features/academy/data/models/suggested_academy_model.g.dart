@@ -26,6 +26,11 @@ SuggestedAcademyModel _$SuggestedAcademyModelFromJson(
           (json['photos'] as List<dynamic>).map((e) => e as String).toList(),
       videos:
           (json['videos'] as List<dynamic>).map((e) => e as String).toList(),
+      ageCategoriesDropdownItems: (json['ageCategoriesDropdownItems']
+              as List<dynamic>)
+          .map((e) =>
+              AgeCategoryDropDownItemModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$SuggestedAcademyModelToJson(
@@ -46,4 +51,5 @@ Map<String, dynamic> _$SuggestedAcademyModelToJson(
       'coverVideo': instance.coverVideo,
       'photos': instance.photos,
       'videos': instance.videos,
+      'ageCategoriesDropdownItems': instance.ageCategoriesDropdownItems,
     };

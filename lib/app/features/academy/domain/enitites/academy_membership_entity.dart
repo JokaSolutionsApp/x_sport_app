@@ -1,27 +1,61 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'sport_info_entity.dart';
-import 'academy_info_entity.dart';
-
-// part 'main_structure_model.g.dart';
 
 @JsonSerializable()
 class AcademyMembershipEntity extends Equatable {
-  @JsonKey(name: 'sportInfo')
-  final SportInfoEntity sportInfo;
-  @JsonKey(name: 'academyInfoes')
-  final List<AcademyInfoEntity> academyInfoes;
+  @JsonKey(name: 'academyId')
+  final int academyId;
+  @JsonKey(name: 'academyName')
+  final String academyName;
+  @JsonKey(name: 'courseId')
+  final int courseId;
+  @JsonKey(name: 'courseName')
+  final String courseName;
+  @JsonKey(name: 'courseStartDate')
+  final String courseStartDate;
+  @JsonKey(name: 'courseEndDate')
+  final String courseEndDate;
+  @JsonKey(name: 'kinShip')
+  final String kinShip;
+  @JsonKey(name: 'subscriberPoints')
+  final int subscriberPoints;
+  @JsonKey(name: 'coverPhoto')
+  final String coverPhoto;
+  @JsonKey(name: 'coverVideo')
+  final String coverVideo;
+  @JsonKey(name: 'photos')
+  final List<String> photos;
+  @JsonKey(name: 'videos')
+  final List<String> videos;
 
   AcademyMembershipEntity({
-    required this.sportInfo,
-    required this.academyInfoes,
+    required this.academyId,
+    required this.academyName,
+    required this.courseId,
+    required this.courseName,
+    required this.courseStartDate,
+    required this.courseEndDate,
+    required this.kinShip,
+    required this.subscriberPoints,
+    required this.coverPhoto,
+    required this.coverVideo,
+    required this.photos,
+    required this.videos,
   });
 
   @override
-  // TODO: implement props
-  List<Object?> get props => [sportInfo, academyInfoes];
-
-  // factory AcademyMembershipEntity.fromJson(Map<String, dynamic> json) =>
-  //     _$AcademyMembershipEntityFromJson(json);
-  // Map<String, dynamic> toJson() => _$AcademyMembershipEntityToJson(this);
+  List<Object?> get props => [
+        academyId,
+        academyName,
+        courseId,
+        courseName,
+        courseStartDate,
+        courseEndDate,
+        kinShip,
+        subscriberPoints,
+        coverPhoto,
+        coverVideo,
+        photos,
+        videos,
+      ];
 }

@@ -23,7 +23,7 @@ class _ReviewsTabState extends State<ReviewsTab> {
     super.initState();
     context
         .read<AcademyBloc>()
-        .add(const AcademyEvent.getAcademyReview(academyId: 5));
+        .add(AcademyEvent.getAcademyReview(academyId: widget.academyId));
   }
 
   @override

@@ -26,7 +26,7 @@ class ApiConstance {
   static const getCoursesToSubscribeinDate =
       'Academy/getCoursesToSubscribeInDate';
   static const getAcademyReviews = 'Academy/GetAcademyReviews';
-  static const getSportsMemberShip = 'Academy/GetSportsMemberShip';
+  static const getSportsMemberShip = 'Academy/GetMemberShips';
   static const inrollUserInCourse = 'User/InrollUserInCourse';
   static const addAcademyReivew = 'User/AddAcademyReview';
 

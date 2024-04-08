@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:injectable/injectable.dart';
+import 'package:x_sport/app/features/academy/domain/enitites/academy_entity.dart';
 import 'package:x_sport/app/features/academy/domain/usecase/add_academy_review.dart';
 import 'package:x_sport/app/features/academy/domain/usecase/get_all_Academies.dart';
 import 'package:x_sport/app/features/academy/domain/usecase/inroll_user_in_course.dart';

@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:x_sport/app/features/academy/domain/enitites/age_category_dropdown_item.dart';
 
 @JsonSerializable()
 class SuggestedAcademyEntity extends Equatable {
@@ -9,10 +10,8 @@ class SuggestedAcademyEntity extends Equatable {
   final String name;
   @JsonKey(name: 'description')
   final String description;
-
   @JsonKey(name: 'regionName')
   final String regionName;
-
   @JsonKey(name: 'lat')
   final double lat;
   @JsonKey(name: 'long')
@@ -35,6 +34,8 @@ class SuggestedAcademyEntity extends Equatable {
   final List<String> photos;
   @JsonKey(name: 'videos')
   final List<String> videos;
+  @JsonKey(name: 'ageCategoriesDropdownItems')
+  final List<AgeCategoryDropdownItem> ageCategoriesDropdownItems;
 
   SuggestedAcademyEntity({
     required this.academyId,
@@ -52,6 +53,7 @@ class SuggestedAcademyEntity extends Equatable {
     required this.coverVideo,
     required this.photos,
     required this.videos,
+    required this.ageCategoriesDropdownItems,
   });
 
   @override
@@ -71,5 +73,6 @@ class SuggestedAcademyEntity extends Equatable {
         coverVideo,
         photos,
         videos,
+        ageCategoriesDropdownItems,
       ];
 }

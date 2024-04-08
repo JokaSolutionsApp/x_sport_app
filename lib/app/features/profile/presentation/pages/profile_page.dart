@@ -16,8 +16,9 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<AuthBloc, AuthState>(
       buildWhen: (prev, cur) {
-        if (cur.runtimeType !=
-            const AuthState.userProfileLocalLoading().runtimeType) {
+        print('userProfileCur ${cur.runtimeType} ');
+        if (cur.runtimeType ==
+            const AuthState.userProfileFetched().runtimeType) {
           return true;
         }
         return false;

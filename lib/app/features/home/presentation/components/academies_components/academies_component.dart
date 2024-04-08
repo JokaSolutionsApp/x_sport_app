@@ -16,7 +16,6 @@ class AcademiesComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<AcademyBloc, AcademyState>(
       buildWhen: (previous, current) {
-        print('sugg ${current.runtimeType}');
         if (current.runtimeType !=
             const AcademyState.getSuggestedAcademiesLoading().runtimeType) {
           return true;
@@ -29,16 +28,16 @@ class AcademiesComponent extends StatelessWidget {
       },
       builder: (context, state) {
         return state.maybeWhen(
-            orElse: () => Offstage(),
-            getSuggestedAcademiesFailure: (value) => Offstage(),
-            getSuggestedAcademiesLoading: () => Offstage(),
+            orElse: () => const Offstage(),
+            getSuggestedAcademiesFailure: (value) => const Offstage(),
+            getSuggestedAcademiesLoading: () => const Offstage(),
             suggestedAcademiesFetched: (value) {
               final academies = value;
               return ListView.builder(
                   shrinkWrap: true,
-                  itemCount: academies.length,
+                  itemCount: academies!.suggestedAcademies.length,
                   itemBuilder: (context, index) {
-                    final academy = academies[index];
+                    final academy = academies.suggestedAcademies[index];
                     return GestureDetector(
                       onTap: () {
                         Navigator.push(

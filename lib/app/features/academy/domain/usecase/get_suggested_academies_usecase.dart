@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:x_sport/app/features/academy/domain/enitites/academy_entity.dart';
 import '../enitites/params/acedemy_params.dart';
 import '../enitites/suggested_academy_entity.dart';
 
@@ -10,7 +11,7 @@ class GetSuggestedAcademiesUseCase {
 
   GetSuggestedAcademiesUseCase(this.repository);
 
-  Future<Either<Failure, List<SuggestedAcademyEntity>>> call(
+  Future<Either<Failure, AcademyEntity>> call(
       {required SuggestedAcademyParams params}) async {
     return await repository.getSuggestedAcademies(params: params);
   }

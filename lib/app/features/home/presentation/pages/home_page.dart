@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:x_sport/app/features/courts/presentation/pages/courts_page.dart';
+import 'package:x_sport/app/features/home/presentation/components/home_components/banner_component.dart';
 import 'package:x_sport/app/features/home/presentation/components/home_components/friends_stadiums_component.dart';
-
 import '../../../../../core/constance/app_constance.dart';
 import '../../../../../core/utils/assets_managers/assets.gen.dart';
 import '../../../../widgets/buttons/submit_button.dart';
@@ -10,9 +10,14 @@ import '../../../../widgets/rectangle_container.dart';
 import '../../../profile/presentation/components/profile_screen_components/profile_main_components/profile_appbar_component.dart';
 import '../components/home_components/home_stadiums_component.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final List<HomeOptions> items = [
@@ -60,54 +65,7 @@ class HomePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              margin: EdgeInsets.only(top: 22.h),
-              alignment: Alignment.center,
-              padding: EdgeInsets.symmetric(vertical: 12.w),
-              decoration: ShapeDecoration(
-                color: Colors.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20.sp),
-                ),
-              ),
-              child: RectangleContainer(
-                  radius: 20,
-                  height: 100,
-                  width: 367,
-                  containerColor: XColors.primary,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 12.w),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'اهلا (اسم المستخدم)',
-                              style: TextStyle(
-                                fontSize: 18.sp,
-                                fontWeight: FontWeight.w700,
-                                color: Colors.white,
-                              ),
-                            ),
-                            SizedBox(height: 14.w),
-                            Text(
-                              'المنافسة اقرب اليك',
-                              style: TextStyle(
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                  )),
-            ),
+            const HomeBannerComponent(),
             Container(
               height: 434.h,
               margin: EdgeInsets.only(top: 12.h),

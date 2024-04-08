@@ -1,27 +1,22 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'academy_course_model.dart';
-import '../../domain/enitites/age_category_with_cources.dart';
-// import 'course.dart';
+import 'package:x_sport/app/features/academy/data/models/dropdown_item_info_model.dart';
+import '../../domain/enitites/age_category_dropdown_item.dart';
 
 part 'age_category_with_courses_model.g.dart';
 
 @JsonSerializable()
-class AgeCategoryWithCoursesModel extends AgeCategoryWithCoursesEntity {
-  AgeCategoryWithCoursesModel({
-    required int ageCategoryId,
-    required String ageCategoryName,
-    required int fromAge,
-    required int toAge,
-    required List<AcademyCourseModel> courses,
+class AgeCategoryDropDownItemModel extends AgeCategoryDropdownItem {
+  const AgeCategoryDropDownItemModel({
+    required int id,
+    required String name,
+    required DropdownItemInfoModel info,
   }) : super(
-          ageCategoryId: ageCategoryId,
-          ageCategoryName: ageCategoryName,
-          fromAge: fromAge,
-          toAge: toAge,
-          courses: courses,
+          id: id,
+          name: name,
+          info: info,
         );
 
-  factory AgeCategoryWithCoursesModel.fromJson(Map<String, dynamic> json) =>
-      _$AgeCategoryWithCoursesModelFromJson(json);
-  Map<String, dynamic> toJson() => _$AgeCategoryWithCoursesModelToJson(this);
+  factory AgeCategoryDropDownItemModel.fromJson(Map<String, dynamic> json) =>
+      _$AgeCategoryDropDownItemModelFromJson(json);
+  Map<String, dynamic> toJson() => _$AgeCategoryDropDownItemModelToJson(this);
 }

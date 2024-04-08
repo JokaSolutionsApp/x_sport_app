@@ -1,18 +1,17 @@
 // ignore_for_file: prefer_typing_uninitialized_variables, unnecessary_brace_in_string_interps, null_argument_to_non_null_type
 
 import 'dart:async';
-
 import 'package:x_sport/app/features/academy/data/models/about_academy_model.dart';
 import 'package:x_sport/app/features/academy/data/models/academy_membership_model.dart';
+import 'package:x_sport/app/features/academy/data/models/academy_model.dart';
 import 'package:x_sport/app/features/academy/data/models/academy_review_model.dart';
 import 'package:x_sport/app/features/academy/data/models/get_courses_to_subscribe_model.dart';
-import 'package:x_sport/app/features/academy/data/models/suggested_academy_model.dart';
 import 'package:x_sport/app/features/academy/domain/enitites/about_academy_entity.dart';
+import 'package:x_sport/app/features/academy/domain/enitites/academy_entity.dart';
 import 'package:x_sport/app/features/academy/domain/enitites/academy_membership_entity.dart';
 import 'package:x_sport/app/features/academy/domain/enitites/academy_review_entity.dart';
 import 'package:x_sport/app/features/academy/domain/enitites/get_courses_to_subscribe_entity.dart';
 import 'package:x_sport/app/features/academy/domain/enitites/params/acedemy_params.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/suggested_academy_entity.dart';
 import 'package:x_sport/core/constance/api_constance.dart';
 import 'package:x_sport/core/error/exceptions.dart';
 import 'package:x_sport/core/network/error_message_model.dart';
@@ -20,10 +19,9 @@ import 'package:x_sport/core/services/api_service.dart';
 
 abstract class BaseAcademyRemoteDataSource {
   Future<List<AcademyMembershipEntity>> getSportsMembership();
-  Future<List<SuggestedAcademyEntity>> getSuggestedAcademies(
+  Future<AcademyEntity> getSuggestedAcademies(
       {required SuggestedAcademyParams params});
-  Future<List<SuggestedAcademyEntity>> getAllAcademies(
-      {required AllAcademiesParams params});
+  Future<AcademyEntity> getAllAcademies({required AllAcademiesParams params});
 
   Future<AboutAcademyEntity> getAboutAcademy({required int academyId});
   Future<List<GetCoursesToSubscribeEntity>> getCoursesToSubscribe(
@@ -51,7 +49,7 @@ class AcademyRemoteDataSource extends BaseAcademyRemoteDataSource {
   }
 
   @override
-  Future<List<SuggestedAcademyEntity>> getSuggestedAcademies(
+  Future<AcademyEntity> getSuggestedAcademies(
       {required SuggestedAcademyParams params}) async {
     final getParams = params.toMap();
     final response = await ApiService.get(ApiConstance.getSuggestedAcademies,
@@ -60,8 +58,7 @@ class AcademyRemoteDataSource extends BaseAcademyRemoteDataSource {
     print('$data getSuggestedAcademies');
 
     if (response.statusCode == 200) {
-      return List<SuggestedAcademyModel>.from(
-          data['data'].map((e) => SuggestedAcademyModel.fromJson(e)));
+      return AcademyModel.fromJson(data['data']);
     } else {
       throw ServerException(errorModel: ErrorModel.formJson(data));
     }
@@ -135,7 +132,7 @@ class AcademyRemoteDataSource extends BaseAcademyRemoteDataSource {
   }
 
   @override
-  Future<List<SuggestedAcademyEntity>> getAllAcademies(
+  Future<AcademyEntity> getAllAcademies(
       {required AllAcademiesParams params}) async {
     final getParams = params.toMap();
     final response = await ApiService.get(ApiConstance.getAllAcademies,
@@ -144,8 +141,7 @@ class AcademyRemoteDataSource extends BaseAcademyRemoteDataSource {
     print('$data getAllAcademies');
 
     if (response.statusCode == 200) {
-      return List<SuggestedAcademyModel>.from(
-          data['data'].map((e) => SuggestedAcademyModel.fromJson(e)));
+      return AcademyModel.fromJson(data['data']);
     } else {
       throw ServerException(errorModel: ErrorModel.formJson(data));
     }
