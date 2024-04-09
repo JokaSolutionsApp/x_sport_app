@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:x_sport/app/features/profile/presentation/components/edit_profile_components/status_dialog.dart';
 
 import 'app_constance.dart';
 
@@ -22,6 +23,22 @@ class EasyLoadingInit {
   static void startLoading() async {
     await EasyLoading.show(
       status: '...جاري التحميل',
+    );
+  }
+}
+
+class Dialogs {
+  static changeProfileDataDialog(
+      {required BuildContext context,
+      required bool isSuccess,
+      String error = ''}) {
+    return showDialog(
+      context: context,
+      builder: (context) => StatusDialog(
+        title: isSuccess ? 'تم تغيير كلمة المرور بنجاح' : 'حدث خطا',
+        content: error,
+        isSuccess: isSuccess,
+      ),
     );
   }
 }

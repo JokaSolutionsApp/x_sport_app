@@ -46,7 +46,7 @@ class _MainScreenState extends State<MainPage>
     _tabController = TabController(length: 5, vsync: this);
 
     super.initState();
-    context.read<AuthBloc>().add(const AuthEvent.getSports());
+    context.read<AuthBloc>().add(const AuthEvent.getUserProfile());
   }
 
   confirmCompleted() async {

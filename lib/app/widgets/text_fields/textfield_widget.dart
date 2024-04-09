@@ -56,10 +56,8 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
               builder: (context, snapshot) {
                 TextDirection textDirection = TextDirection.rtl;
                 if (widget.controller.text.isNotEmpty) {
-                  // Check if the text starts with a digit or '+' sign
                   bool startsWithDigitOrPlus =
                       RegExp(r'^[\d+]').hasMatch(widget.controller.text);
-                  // Check if the text ends with '@'
                   bool endsWithAtSign = widget.controller.text.endsWith('@');
 
                   if (startsWithDigitOrPlus || endsWithAtSign) {

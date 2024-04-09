@@ -7,6 +7,8 @@ import 'package:get_it/get_it.dart';
 import 'package:x_sport/app/features/academy/domain/usecase/add_academy_review.dart';
 import 'package:x_sport/app/features/academy/domain/usecase/get_all_Academies.dart';
 import 'package:x_sport/app/features/academy/domain/usecase/inroll_user_in_course.dart';
+import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/change_email_usecase.dart';
+import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/change_password_usecase.dart';
 import 'package:x_sport/app/features/courts/data/datasource/stadium_remote_datasource.dart';
 import 'package:x_sport/app/features/courts/data/repository/court_repository.dart';
 import 'package:x_sport/app/features/courts/domain/repository/base_stadium_repository.dart';
@@ -139,6 +141,8 @@ class ServiceLocator {
           sl(),
           sl(),
           sl(),
+          sl(),
+          sl(),
         ));
     sl.registerFactory(() => ChatBloc());
     sl.registerFactory(() => AcademyBloc(
@@ -176,6 +180,8 @@ class ServiceLocator {
     sl.registerLazySingleton(() => AddFavoriteSportsUseCase(sl()));
     sl.registerLazySingleton(() => DeleteFavoriteSportsUseCase(sl()));
     sl.registerLazySingleton(() => DeleteUserProfileUseCase(sl()));
+    sl.registerLazySingleton(() => ChangeEmailUseCase(sl()));
+    sl.registerLazySingleton(() => ChangePasswordUseCase(sl()));
 
     // chat bloc usecases
     sl.registerLazySingleton(() => SendMessageUseCase(sl()));

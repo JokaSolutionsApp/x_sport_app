@@ -12,6 +12,7 @@ class NoBorderTextFieldWidget extends StatefulWidget {
   final TextStyle? hintStyle;
   final Stream textStream;
   final InputBorder? inputBorder;
+  final bool isObscureText;
 
   const NoBorderTextFieldWidget({
     super.key,
@@ -23,6 +24,7 @@ class NoBorderTextFieldWidget extends StatefulWidget {
     required this.onChanged,
     this.hintStyle,
     this.inputBorder,
+    this.isObscureText = false,
   });
 
   @override
@@ -32,13 +34,12 @@ class NoBorderTextFieldWidget extends StatefulWidget {
 
 class _NoBorderTextFieldWidgetState extends State<NoBorderTextFieldWidget> {
   late bool isHidden;
-  // @override
-  // void initState() {
-  //   isHidden = widget.isObscureText;
-  //   widget.controller.text = widget.hintText;
+  @override
+  void initState() {
+    isHidden = widget.isObscureText;
 
-  //   super.initState();
-  // }
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -106,19 +107,19 @@ class _NoBorderTextFieldWidgetState extends State<NoBorderTextFieldWidget> {
                 );
               },
             ),
-            // StreamBuilder(
-            //     stream: widget.textStream,
-            //     builder: (context, snapshot) {
-            //       final hasError = snapshot.hasError;
-            //       return hasError
-            //           ? Text(
-            //               textAlign: TextAlign.center,
-            //               snapshot.error.toString(),
-            //               style: const TextStyle(
-            //                   color: Color.fromARGB(201, 244, 67, 54)),
-            //             )
-            //           : const SizedBox.shrink();
-            //     })
+            StreamBuilder(
+                stream: widget.textStream,
+                builder: (context, snapshot) {
+                  final hasError = snapshot.hasError;
+                  return hasError
+                      ? Text(
+                          textAlign: TextAlign.end,
+                          snapshot.error.toString(),
+                          style: const TextStyle(
+                              color: Color.fromARGB(201, 244, 67, 54)),
+                        )
+                      : const SizedBox.shrink();
+                })
           ],
         ),
       ),

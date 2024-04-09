@@ -6,7 +6,9 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:x_sport/app/features/auth/data/models/sport_model.dart';
-
+import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/change_email_usecase.dart';
+import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/change_password_usecase.dart';
+import 'package:x_sport/app/features/profile/presentation/components/edit_profile_components/status_dialog.dart';
 import '../../../../../core/constance/app_functions.dart';
 import '../../../../../core/error/failure.dart';
 import '../../../../../core/services/locator/service_locator.dart';
@@ -58,6 +60,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final AddFavoriteSportsUseCase addFavoriteSportsUseCase;
   final DeleteFavoriteSportsUseCase deleteFavoriteSportsUseCase;
   final DeleteUserProfileUseCase deleteUserProfileUseCase;
+  final ChangeEmailUseCase changeEmailUseCase;
+  final ChangePasswordUseCase changePasswordUseCase;
 
   AuthBloc(
     this.registerUseCase,
@@ -75,6 +79,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     this.addFavoriteSportsUseCase,
     this.deleteFavoriteSportsUseCase,
     this.deleteUserProfileUseCase,
+    this.changeEmailUseCase,
+    this.changePasswordUseCase,
   ) : super(const AuthState.initial()) {
     on<AuthEvent>((event, emit) async {
       await event.map(
@@ -97,6 +103,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             await _addFavoriteSports(event, emit),
         deleteFavoriteSports: (event) async =>
             await _deleteFavoriteSports(event, emit),
+        changeEmail: (event) async => await _changeEmail(event, emit),
+        changePassword: (event) async => await _changePassword(event, emit),
       );
     });
   }
@@ -111,12 +119,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
     final result = await registerUseCase();
 
-    await result.fold((failure) async {
+    await result.fold((f) async {
       await EasyLoading.dismiss();
-      if (failure.statusCode == 500) {
-        EasyLoading.showError('هذا الحساب متستخدم من قبل');
+      if (f.statusCode == 500) {
+        EasyLoading.showError(f.message);
       } else {
-        EasyLoading.showError('حدث خطأ اعد المحاولة مجدداً');
+        EasyLoading.showError(f.message);
       }
       emit(const AuthState.registerFailure());
     }, (r) async {
@@ -139,8 +147,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
     final result = await confirmUserEmailUseCase();
     await result.fold(
-      (failure) async {
-        EasyLoading.showError('Network error please try again');
+      (f) async {
+        EasyLoading.showError(f.message);
         emit(const AuthState.confirmEmailFailure());
         await EasyLoading.dismiss();
       },
@@ -151,10 +159,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           sports: r,
         ));
         Navigator.of(navigatorKey.currentContext!).push(
-          MaterialPageRoute(
-              builder: (context) => WelcomePage(
-                    sports: r,
-                  )),
+          MaterialPageRoute(builder: (context) => const WelcomePage()),
         );
       },
     );
@@ -168,8 +173,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
     final result = await resendConfirmUserEmailUseCase();
     await result.fold(
-      (failure) async {
-        EasyLoading.showError('Network error please try again');
+      (f) async {
+        EasyLoading.showError(f.message);
         emit(const AuthState.resendConfirmEmailFailure());
       },
       (r) {
@@ -185,11 +190,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
     final result = await loginUseCase();
 
-    await result.fold((failure) async {
-      if (failure.statusCode == 500) {
-        EasyLoading.showError('معلرمات الحساب خاطئة');
+    await result.fold((f) async {
+      if (f.statusCode == 500) {
+        EasyLoading.showError(f.message);
       } else {
-        EasyLoading.showError('حدث خطأ اعد المحاولة مجدداً');
+        EasyLoading.showError(f.message);
       }
       emit(const AuthState.logginFailure());
     }, (r) async {
@@ -214,26 +219,23 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
     final result = await googleLoginUseCase();
 
-    await result.fold((failure) async {
+    await result.fold((f) async {
       emit(AuthState.sportsFetched(sports: sports));
       emit(AuthState.userProfileFetched(userProfile: user));
 
-      print(failure);
-      if (failure.statusCode == 500) {
+      print(f);
+      if (f.statusCode == 500) {
         print('Bloc 500');
 
         await EasyLoading.dismiss();
 
         Navigator.of(navigatorKey.currentContext!).push(
-          MaterialPageRoute(
-              builder: (context) => WelcomePage(
-                    sports: sports,
-                  )),
+          MaterialPageRoute(builder: (context) => const WelcomePage()),
         );
       } else {
         emit(AuthState.sportsFetched(sports: sports));
 
-        EasyLoading.showError('حدث خطأ اعد المحاولة مجدداً');
+        EasyLoading.showError(f.message);
       }
     }, (r) async {
       print('_googleLogin $r');
@@ -252,10 +254,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         emit(AuthState.sportsFetched(sports: sports));
 
         Navigator.of(navigatorKey.currentContext!).push(
-          MaterialPageRoute(
-              builder: (context) => WelcomePage(
-                    sports: sports,
-                  )),
+          MaterialPageRoute(builder: (context) => const WelcomePage()),
         );
       }
     });
@@ -291,9 +290,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     final result = await completeRegistrationUseCase(
         event.imageBytes, event.imageType, event.selectedSports);
     await result.fold(
-      (failure) async {
-        EasyLoading.showError('Network error please try again');
-        emit(AuthState.completeRegistrationailure(failure: failure));
+      (f) async {
+        EasyLoading.showError(f.message);
+        emit(AuthState.completeRegistrationailure(failure: f));
       },
       (r) {
         emit(AuthState.registrationCompleted(userProfile: r));
@@ -314,12 +313,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
     final result = await editUserProfileUseCase(params: event.params);
 
-    await result.fold((failure) async {
+    await result.fold((f) async {
       await EasyLoading.dismiss();
-      if (failure.statusCode == 500) {
-        EasyLoading.showError('معلرمات الحساب خاطئة');
+      if (f.statusCode == 500) {
+        EasyLoading.showError(f.message);
       } else {
-        EasyLoading.showError('حدث خطأ اعد المحاولة مجدداً');
+        EasyLoading.showError(f.message);
       }
       emit(const AuthState.userProfileFailure());
     }, (r) async {
@@ -411,7 +410,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     emit(const AuthState.userProfileLocalLoading());
     final result = await deleteUserProfileUseCase();
     result.fold((f) {
-      EasyLoading.showError(f.statusCode.toString());
+      EasyLoading.showError(f.message);
     }, (r) async {
       EasyLoading.dismiss();
       await sl<SecureStorageService>().delete('token');
@@ -420,6 +419,57 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         MaterialPageRoute(builder: (context) => const LoginPage()),
         ModalRoute.withName('/'),
       );
+    });
+  }
+
+  Future<void> _changeEmail(event, Emitter<AuthState> emit) async {
+    event as _$ChangeEmailEventImpl;
+    EasyLoadingInit.startLoading();
+    emit(const AuthState.changeEmailLoading());
+    final result = await changeEmailUseCase();
+    result.fold((f) {
+      emit(const AuthState.changeEmailFailure());
+      EasyLoading.showError(f.message);
+    }, (r) async {
+      await sl<SecureStorageService>().delete('token');
+      emit(const AuthState.emailChanged());
+      EasyLoading.dismiss();
+      Navigator.of(navigatorKey.currentContext!).pushAndRemoveUntil(
+        MaterialPageRoute(builder: (context) => const OtpPage()),
+        ModalRoute.withName('/'),
+      );
+    });
+  }
+
+  Future<void> _changePassword(event, Emitter<AuthState> emit) async {
+    event as _$ChangePasswordEventImpl;
+    EasyLoadingInit.startLoading();
+    emit(const AuthState.changePasswordLoading());
+    final result = await changePasswordUseCase();
+    result.fold((f) {
+      EasyLoading.dismiss();
+
+      emit(const AuthState.changePasswordFailure());
+      Dialogs.changeProfileDataDialog(
+          context: navigatorKey.currentContext!,
+          isSuccess: false,
+          error: f.message);
+    }, (r) async {
+      EasyLoading.dismiss();
+
+      await sl<SecureStorageService>().delete('token');
+      Dialogs.changeProfileDataDialog(
+          context: navigatorKey.currentContext!,
+          isSuccess: true,
+          error:
+              'سيتم تسجيل الخروج من حسابك, يرجى الدخول مرة أخرى باستخدام كلمة المرور الجديدة');
+
+      Future.delayed(const Duration(seconds: 2), () {
+        Navigator.of(navigatorKey.currentContext!).pushAndRemoveUntil(
+          MaterialPageRoute(builder: (context) => const LoginPage()),
+          ModalRoute.withName('/'),
+        );
+      });
     });
   }
 }

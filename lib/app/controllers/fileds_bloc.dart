@@ -11,6 +11,7 @@ class Bloc extends Validators {
   final _password = BehaviorSubject<String>();
   final _newPassword = BehaviorSubject<String>();
   final _confpassword = BehaviorSubject<String>();
+  final _confNewPassword = BehaviorSubject<String>();
   final _forgotConfpassword = BehaviorSubject<String>();
   final _gender = BehaviorSubject<String>();
   final _privacy = BehaviorSubject<bool>();
@@ -31,6 +32,9 @@ class Bloc extends Validators {
       _newPassword.stream.transform(passvalidator);
   Stream<String> get confPassword =>
       _confpassword.stream.transform(confValidator);
+
+  Stream<String> get confNewPassword =>
+      _confNewPassword.stream.transform(confNewValidator);
   Stream<bool> get privacy => _privacy.stream.transform(privacyValidator);
 
   Stream<String> get code => _code.stream.transform(codevalidator);
@@ -56,6 +60,9 @@ class Bloc extends Validators {
       privacy,
       (n, e, p, cp, g, ph, lat, long, pr) => true);
 
+  Stream<bool> get editPasswordIsValid => Rx.combineLatest3(
+      password, newPassword, confNewPassword, (p, np, cnp) => true);
+
   Function(String) get changeName => _name.sink.add;
   Function(String) get changeGender => _gender.sink.add;
 
@@ -63,6 +70,7 @@ class Bloc extends Validators {
   Function(String) get changePassword => _password.sink.add;
   Function(String) get changeNewPassword => _newPassword.sink.add;
   Function(String) get changeConfPassword => _confpassword.sink.add;
+  Function(String) get changeConfNewPassword => _confNewPassword.sink.add;
   Function(String) get forgotchangeConf => _forgotConfpassword.sink.add;
   Function(bool) get changePrivacy => _privacy.sink.add;
   Function(String) get changePhone => _phone.sink.add;
@@ -75,6 +83,7 @@ class Bloc extends Validators {
   get passwordValue => _password.valueOrNull;
   get newPasswordValue => _newPassword.valueOrNull;
   get confValue => _confpassword.valueOrNull;
+  get confNewValue => _confNewPassword.valueOrNull;
   get forgotConfValue => _forgotConfpassword.valueOrNull;
   get privacyValue => _privacy.valueOrNull;
   get phoneValue => _phone.valueOrNull;
@@ -90,6 +99,7 @@ class Bloc extends Validators {
     bloc._password.value = "";
     bloc._newPassword.value = "";
     bloc._confpassword.value = "";
+    bloc._confNewPassword.value = "";
     bloc._forgotConfpassword.value = "";
     bloc._privacy.value = false;
     bloc._code.value = "";

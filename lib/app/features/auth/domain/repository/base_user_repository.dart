@@ -1,19 +1,18 @@
 import 'package:dartz/dartz.dart';
-import '../params/google_login_params.dart';
 import '../../../../../core/utils/enums.dart';
-
 import '../../../../../core/error/failure.dart';
 import '../../data/datasource/params/auth_params.dart';
 import '../enitites/sport_entity.dart';
 import '../enitites/user_profile_entity.dart';
 import '../params/edit_preferences_params.dart';
-import '../../../../../core/error/failure.dart';
 
 abstract class BaseUserRepository {
   Future<Either<Failure, UserProfileEntity>> login();
   Future<Either<Failure, UserProfileEntity>> googleLogin();
 
   Future<Either<Failure, bool>> register();
+  Future<Either<Failure, bool>> changeEmail();
+  Future<Either<Failure, bool>> changePassword();
   Future<Either<Failure, UserProfileEntity>> editUserProfile(
       {required EditUserProfileParams params});
 

@@ -65,6 +65,19 @@ class Validators {
       sink.addError("كلمة المرور غير مطابقة");
   });
 
+  var confNewValidator =
+      StreamTransformer<String, String>.fromHandlers(handleData: (conf, sink) {
+    String pattern = r'^(?=.*[A-Z])(?=.*\d)(?=.*\W).{4,}$';
+    RegExp regex = RegExp(pattern);
+    if (regex.hasMatch(conf) &&
+        editProfileStream.newPasswordValue == editProfileStream.confNewValue)
+      sink.add(conf);
+    else if (conf == null || conf.isEmpty)
+      sink.addError(" ");
+    else
+      sink.addError("كلمة المرور غير مطابقة");
+  });
+
   var phonevalidator = StreamTransformer<String, String>.fromHandlers(
     handleData: (phone, sink) {
       String pattern = r'\+(?:\d\s?){9,17}\d$';

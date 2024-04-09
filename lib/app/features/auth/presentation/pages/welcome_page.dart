@@ -12,8 +12,7 @@ import '../../components/welcome_screen_components/image_picker_component.dart';
 import '../../../../widgets/buttons/submit_button.dart';
 
 class WelcomePage extends StatefulWidget {
-  final List<SportEntity> sports;
-  WelcomePage({super.key, required this.sports});
+  const WelcomePage({super.key});
 
   @override
   State<WelcomePage> createState() => _WelcomePageState();
@@ -24,14 +23,15 @@ class _WelcomePageState extends State<WelcomePage> {
 
   List<int> imageBytes = [];
 
-  final List<SportEntity> sports = [];
-
   final List<int> selectedSports = [];
+
+  late List<SportEntity> sports;
+
   @override
   void initState() {
-    confirmCompleted();
-
     super.initState();
+    sports = context.read<AuthBloc>().sports;
+    confirmCompleted();
   }
 
   confirmCompleted() async {
@@ -41,59 +41,34 @@ class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        flexibleSpace: Container(
-          decoration: const BoxDecoration(
-              gradient: LinearGradient(colors: [
-            XColors.Background_Color1,
-            XColors.Background_Color2
-          ], begin: Alignment.centerLeft, end: Alignment.centerRight)),
-          child: Padding(
-            padding: EdgeInsets.only(top: 20.h),
-            child: Row(
-              children: [
-                IconButton(
-                  icon: const Icon(
-                    Icons.language_sharp,
-                    color: Color(0xFFFFFFFF),
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+                gradient: LinearGradient(colors: [
+              XColors.Background_Color1,
+              XColors.Background_Color2
+            ], begin: Alignment.centerLeft, end: Alignment.centerRight)),
+            child: Padding(
+              padding: EdgeInsets.only(top: 20.h),
+              child: Row(
+                children: [
+                  IconButton(
+                    icon: const Icon(
+                      Icons.language_sharp,
+                      color: Color(0xFFFFFFFF),
+                    ),
+                    onPressed: () {},
+                    iconSize: 38.w,
                   ),
-                  onPressed: () {},
-                  iconSize: 38.w,
-                ),
-              ],
+                ],
+              ),
             ),
           ),
+          elevation: 0,
+          toolbarHeight: 0,
         ),
-        elevation: 0,
-        toolbarHeight: 0,
-      ),
-      body: BlocBuilder<AuthBloc, AuthState>(buildWhen: (prev, cur) {
-        print(
-            'sportsState ${cur.runtimeType} ${AuthState.sportsFetched().runtimeType}');
-
-        if (cur.runtimeType == const AuthState.sportsFetched().runtimeType) {
-          return true;
-        }
-        if (cur.runtimeType == const AuthState.emailConfirmed().runtimeType) {
-          return true;
-        }
-        return false;
-      }, builder: (context, state) {
-        return state.maybeMap(
-          orElse: () => const CircularProgressIndicator(),
-          confirmEmailLoading: (value) => const Offstage(),
-          sportsFetched: (value) {
-            final sports = value.sports;
-            return buildWeclome(sports);
-          },
-          emailConfirmed: (value) {
-            final sports = value.sports;
-            return buildWeclome(sports);
-          },
-        );
-      }),
-    );
+        body: buildWeclome(sports));
   }
 
   buildWeclome(List<SportEntity> sports) {

@@ -84,4 +84,22 @@ class AuthState with _$AuthState {
   const factory AuthState.sportsFetched({
     @Default([]) List<SportEntity> sports,
   }) = _SportsFetched;
+
+  // Change Email
+  const factory AuthState.changeEmailLoading() = _ChangeEmailLoading;
+  const factory AuthState.changeEmailFailure({
+    @Default(null) Failure? failure,
+  }) = _ChangeEmailFailure;
+  const factory AuthState.emailChanged({
+    @Default(false) bool emailChanged,
+  }) = _EmailChanged;
+
+  // Change Password
+  const factory AuthState.changePasswordLoading() = _ChangePasswordLoading;
+  const factory AuthState.changePasswordFailure({
+    @Default(null) Failure? failure,
+  }) = _ChangePasswordFailure;
+  const factory AuthState.passwordChanged({
+    @Default(false) bool passwordChanged,
+  }) = _PasswordChanged;
 }

@@ -24,6 +24,7 @@ class ProfilePage extends StatelessWidget {
         return false;
       },
       builder: (context, state) {
+        print('userProfileCur ${state.runtimeType} ');
         return state.maybeMap(
           orElse: () => const Offstage(),
           userProfileFailure: (_) => const Offstage(),

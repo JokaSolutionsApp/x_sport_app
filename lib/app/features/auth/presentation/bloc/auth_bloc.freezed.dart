@@ -34,6 +34,8 @@ mixin _$AuthEvent {
         completeRegistration,
     required TResult Function(List<int> sportsIds) addFavoriteSports,
     required TResult Function(List<int> sportsIds) deleteFavoriteSports,
+    required TResult Function() changeEmail,
+    required TResult Function() changePassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,6 +56,8 @@ mixin _$AuthEvent {
         completeRegistration,
     TResult? Function(List<int> sportsIds)? addFavoriteSports,
     TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult? Function()? changeEmail,
+    TResult? Function()? changePassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -74,6 +78,8 @@ mixin _$AuthEvent {
         completeRegistration,
     TResult Function(List<int> sportsIds)? addFavoriteSports,
     TResult Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult Function()? changeEmail,
+    TResult Function()? changePassword,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -96,6 +102,8 @@ mixin _$AuthEvent {
     required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
     required TResult Function(_DeleteFavoriteSportsEvent value)
         deleteFavoriteSports,
+    required TResult Function(_ChangeEmailEvent value) changeEmail,
+    required TResult Function(_ChangePasswordEvent value) changePassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -115,6 +123,8 @@ mixin _$AuthEvent {
     TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
     TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
     TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult? Function(_ChangeEmailEvent value)? changeEmail,
+    TResult? Function(_ChangePasswordEvent value)? changePassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -134,6 +144,8 @@ mixin _$AuthEvent {
     TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
     TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
     TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult Function(_ChangeEmailEvent value)? changeEmail,
+    TResult Function(_ChangePasswordEvent value)? changePassword,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -210,6 +222,8 @@ class _$LoginEventImpl implements _LoginEvent {
         completeRegistration,
     required TResult Function(List<int> sportsIds) addFavoriteSports,
     required TResult Function(List<int> sportsIds) deleteFavoriteSports,
+    required TResult Function() changeEmail,
+    required TResult Function() changePassword,
   }) {
     return login();
   }
@@ -233,6 +247,8 @@ class _$LoginEventImpl implements _LoginEvent {
         completeRegistration,
     TResult? Function(List<int> sportsIds)? addFavoriteSports,
     TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult? Function()? changeEmail,
+    TResult? Function()? changePassword,
   }) {
     return login?.call();
   }
@@ -256,6 +272,8 @@ class _$LoginEventImpl implements _LoginEvent {
         completeRegistration,
     TResult Function(List<int> sportsIds)? addFavoriteSports,
     TResult Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult Function()? changeEmail,
+    TResult Function()? changePassword,
     required TResult orElse(),
   }) {
     if (login != null) {
@@ -284,6 +302,8 @@ class _$LoginEventImpl implements _LoginEvent {
     required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
     required TResult Function(_DeleteFavoriteSportsEvent value)
         deleteFavoriteSports,
+    required TResult Function(_ChangeEmailEvent value) changeEmail,
+    required TResult Function(_ChangePasswordEvent value) changePassword,
   }) {
     return login(this);
   }
@@ -306,6 +326,8 @@ class _$LoginEventImpl implements _LoginEvent {
     TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
     TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
     TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult? Function(_ChangeEmailEvent value)? changeEmail,
+    TResult? Function(_ChangePasswordEvent value)? changePassword,
   }) {
     return login?.call(this);
   }
@@ -328,6 +350,8 @@ class _$LoginEventImpl implements _LoginEvent {
     TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
     TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
     TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult Function(_ChangeEmailEvent value)? changeEmail,
+    TResult Function(_ChangePasswordEvent value)? changePassword,
     required TResult orElse(),
   }) {
     if (login != null) {
@@ -395,6 +419,8 @@ class _$GoogleLoginEventImpl implements _GoogleLoginEvent {
         completeRegistration,
     required TResult Function(List<int> sportsIds) addFavoriteSports,
     required TResult Function(List<int> sportsIds) deleteFavoriteSports,
+    required TResult Function() changeEmail,
+    required TResult Function() changePassword,
   }) {
     return googleLogin();
   }
@@ -418,6 +444,8 @@ class _$GoogleLoginEventImpl implements _GoogleLoginEvent {
         completeRegistration,
     TResult? Function(List<int> sportsIds)? addFavoriteSports,
     TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult? Function()? changeEmail,
+    TResult? Function()? changePassword,
   }) {
     return googleLogin?.call();
   }
@@ -441,6 +469,8 @@ class _$GoogleLoginEventImpl implements _GoogleLoginEvent {
         completeRegistration,
     TResult Function(List<int> sportsIds)? addFavoriteSports,
     TResult Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult Function()? changeEmail,
+    TResult Function()? changePassword,
     required TResult orElse(),
   }) {
     if (googleLogin != null) {
@@ -469,6 +499,8 @@ class _$GoogleLoginEventImpl implements _GoogleLoginEvent {
     required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
     required TResult Function(_DeleteFavoriteSportsEvent value)
         deleteFavoriteSports,
+    required TResult Function(_ChangeEmailEvent value) changeEmail,
+    required TResult Function(_ChangePasswordEvent value) changePassword,
   }) {
     return googleLogin(this);
   }
@@ -491,6 +523,8 @@ class _$GoogleLoginEventImpl implements _GoogleLoginEvent {
     TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
     TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
     TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult? Function(_ChangeEmailEvent value)? changeEmail,
+    TResult? Function(_ChangePasswordEvent value)? changePassword,
   }) {
     return googleLogin?.call(this);
   }
@@ -513,6 +547,8 @@ class _$GoogleLoginEventImpl implements _GoogleLoginEvent {
     TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
     TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
     TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult Function(_ChangeEmailEvent value)? changeEmail,
+    TResult Function(_ChangePasswordEvent value)? changePassword,
     required TResult orElse(),
   }) {
     if (googleLogin != null) {
@@ -580,6 +616,8 @@ class _$RegisterEventImpl implements _RegisterEvent {
         completeRegistration,
     required TResult Function(List<int> sportsIds) addFavoriteSports,
     required TResult Function(List<int> sportsIds) deleteFavoriteSports,
+    required TResult Function() changeEmail,
+    required TResult Function() changePassword,
   }) {
     return register();
   }
@@ -603,6 +641,8 @@ class _$RegisterEventImpl implements _RegisterEvent {
         completeRegistration,
     TResult? Function(List<int> sportsIds)? addFavoriteSports,
     TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult? Function()? changeEmail,
+    TResult? Function()? changePassword,
   }) {
     return register?.call();
   }
@@ -626,6 +666,8 @@ class _$RegisterEventImpl implements _RegisterEvent {
         completeRegistration,
     TResult Function(List<int> sportsIds)? addFavoriteSports,
     TResult Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult Function()? changeEmail,
+    TResult Function()? changePassword,
     required TResult orElse(),
   }) {
     if (register != null) {
@@ -654,6 +696,8 @@ class _$RegisterEventImpl implements _RegisterEvent {
     required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
     required TResult Function(_DeleteFavoriteSportsEvent value)
         deleteFavoriteSports,
+    required TResult Function(_ChangeEmailEvent value) changeEmail,
+    required TResult Function(_ChangePasswordEvent value) changePassword,
   }) {
     return register(this);
   }
@@ -676,6 +720,8 @@ class _$RegisterEventImpl implements _RegisterEvent {
     TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
     TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
     TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult? Function(_ChangeEmailEvent value)? changeEmail,
+    TResult? Function(_ChangePasswordEvent value)? changePassword,
   }) {
     return register?.call(this);
   }
@@ -698,6 +744,8 @@ class _$RegisterEventImpl implements _RegisterEvent {
     TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
     TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
     TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult Function(_ChangeEmailEvent value)? changeEmail,
+    TResult Function(_ChangePasswordEvent value)? changePassword,
     required TResult orElse(),
   }) {
     if (register != null) {
@@ -766,6 +814,8 @@ class _$GetUserProfileEventImpl implements _GetUserProfileEvent {
         completeRegistration,
     required TResult Function(List<int> sportsIds) addFavoriteSports,
     required TResult Function(List<int> sportsIds) deleteFavoriteSports,
+    required TResult Function() changeEmail,
+    required TResult Function() changePassword,
   }) {
     return getUserProfile();
   }
@@ -789,6 +839,8 @@ class _$GetUserProfileEventImpl implements _GetUserProfileEvent {
         completeRegistration,
     TResult? Function(List<int> sportsIds)? addFavoriteSports,
     TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult? Function()? changeEmail,
+    TResult? Function()? changePassword,
   }) {
     return getUserProfile?.call();
   }
@@ -812,6 +864,8 @@ class _$GetUserProfileEventImpl implements _GetUserProfileEvent {
         completeRegistration,
     TResult Function(List<int> sportsIds)? addFavoriteSports,
     TResult Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult Function()? changeEmail,
+    TResult Function()? changePassword,
     required TResult orElse(),
   }) {
     if (getUserProfile != null) {
@@ -840,6 +894,8 @@ class _$GetUserProfileEventImpl implements _GetUserProfileEvent {
     required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
     required TResult Function(_DeleteFavoriteSportsEvent value)
         deleteFavoriteSports,
+    required TResult Function(_ChangeEmailEvent value) changeEmail,
+    required TResult Function(_ChangePasswordEvent value) changePassword,
   }) {
     return getUserProfile(this);
   }
@@ -862,6 +918,8 @@ class _$GetUserProfileEventImpl implements _GetUserProfileEvent {
     TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
     TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
     TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult? Function(_ChangeEmailEvent value)? changeEmail,
+    TResult? Function(_ChangePasswordEvent value)? changePassword,
   }) {
     return getUserProfile?.call(this);
   }
@@ -884,6 +942,8 @@ class _$GetUserProfileEventImpl implements _GetUserProfileEvent {
     TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
     TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
     TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult Function(_ChangeEmailEvent value)? changeEmail,
+    TResult Function(_ChangePasswordEvent value)? changePassword,
     required TResult orElse(),
   }) {
     if (getUserProfile != null) {
@@ -954,6 +1014,8 @@ class _$DeleteUserProfileEventImpl implements _DeleteUserProfileEvent {
         completeRegistration,
     required TResult Function(List<int> sportsIds) addFavoriteSports,
     required TResult Function(List<int> sportsIds) deleteFavoriteSports,
+    required TResult Function() changeEmail,
+    required TResult Function() changePassword,
   }) {
     return deleteUserProfile();
   }
@@ -977,6 +1039,8 @@ class _$DeleteUserProfileEventImpl implements _DeleteUserProfileEvent {
         completeRegistration,
     TResult? Function(List<int> sportsIds)? addFavoriteSports,
     TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult? Function()? changeEmail,
+    TResult? Function()? changePassword,
   }) {
     return deleteUserProfile?.call();
   }
@@ -1000,6 +1064,8 @@ class _$DeleteUserProfileEventImpl implements _DeleteUserProfileEvent {
         completeRegistration,
     TResult Function(List<int> sportsIds)? addFavoriteSports,
     TResult Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult Function()? changeEmail,
+    TResult Function()? changePassword,
     required TResult orElse(),
   }) {
     if (deleteUserProfile != null) {
@@ -1028,6 +1094,8 @@ class _$DeleteUserProfileEventImpl implements _DeleteUserProfileEvent {
     required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
     required TResult Function(_DeleteFavoriteSportsEvent value)
         deleteFavoriteSports,
+    required TResult Function(_ChangeEmailEvent value) changeEmail,
+    required TResult Function(_ChangePasswordEvent value) changePassword,
   }) {
     return deleteUserProfile(this);
   }
@@ -1050,6 +1118,8 @@ class _$DeleteUserProfileEventImpl implements _DeleteUserProfileEvent {
     TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
     TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
     TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult? Function(_ChangeEmailEvent value)? changeEmail,
+    TResult? Function(_ChangePasswordEvent value)? changePassword,
   }) {
     return deleteUserProfile?.call(this);
   }
@@ -1072,6 +1142,8 @@ class _$DeleteUserProfileEventImpl implements _DeleteUserProfileEvent {
     TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
     TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
     TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult Function(_ChangeEmailEvent value)? changeEmail,
+    TResult Function(_ChangePasswordEvent value)? changePassword,
     required TResult orElse(),
   }) {
     if (deleteUserProfile != null) {
@@ -1167,6 +1239,8 @@ class _$EditUserProfileEventImpl implements _EditUserProfileEvent {
         completeRegistration,
     required TResult Function(List<int> sportsIds) addFavoriteSports,
     required TResult Function(List<int> sportsIds) deleteFavoriteSports,
+    required TResult Function() changeEmail,
+    required TResult Function() changePassword,
   }) {
     return editUserProfile(params);
   }
@@ -1190,6 +1264,8 @@ class _$EditUserProfileEventImpl implements _EditUserProfileEvent {
         completeRegistration,
     TResult? Function(List<int> sportsIds)? addFavoriteSports,
     TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult? Function()? changeEmail,
+    TResult? Function()? changePassword,
   }) {
     return editUserProfile?.call(params);
   }
@@ -1213,6 +1289,8 @@ class _$EditUserProfileEventImpl implements _EditUserProfileEvent {
         completeRegistration,
     TResult Function(List<int> sportsIds)? addFavoriteSports,
     TResult Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult Function()? changeEmail,
+    TResult Function()? changePassword,
     required TResult orElse(),
   }) {
     if (editUserProfile != null) {
@@ -1241,6 +1319,8 @@ class _$EditUserProfileEventImpl implements _EditUserProfileEvent {
     required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
     required TResult Function(_DeleteFavoriteSportsEvent value)
         deleteFavoriteSports,
+    required TResult Function(_ChangeEmailEvent value) changeEmail,
+    required TResult Function(_ChangePasswordEvent value) changePassword,
   }) {
     return editUserProfile(this);
   }
@@ -1263,6 +1343,8 @@ class _$EditUserProfileEventImpl implements _EditUserProfileEvent {
     TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
     TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
     TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult? Function(_ChangeEmailEvent value)? changeEmail,
+    TResult? Function(_ChangePasswordEvent value)? changePassword,
   }) {
     return editUserProfile?.call(this);
   }
@@ -1285,6 +1367,8 @@ class _$EditUserProfileEventImpl implements _EditUserProfileEvent {
     TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
     TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
     TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult Function(_ChangeEmailEvent value)? changeEmail,
+    TResult Function(_ChangePasswordEvent value)? changePassword,
     required TResult orElse(),
   }) {
     if (editUserProfile != null) {
@@ -1387,6 +1471,8 @@ class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
         completeRegistration,
     required TResult Function(List<int> sportsIds) addFavoriteSports,
     required TResult Function(List<int> sportsIds) deleteFavoriteSports,
+    required TResult Function() changeEmail,
+    required TResult Function() changePassword,
   }) {
     return editPreferences(params);
   }
@@ -1410,6 +1496,8 @@ class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
         completeRegistration,
     TResult? Function(List<int> sportsIds)? addFavoriteSports,
     TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult? Function()? changeEmail,
+    TResult? Function()? changePassword,
   }) {
     return editPreferences?.call(params);
   }
@@ -1433,6 +1521,8 @@ class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
         completeRegistration,
     TResult Function(List<int> sportsIds)? addFavoriteSports,
     TResult Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult Function()? changeEmail,
+    TResult Function()? changePassword,
     required TResult orElse(),
   }) {
     if (editPreferences != null) {
@@ -1461,6 +1551,8 @@ class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
     required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
     required TResult Function(_DeleteFavoriteSportsEvent value)
         deleteFavoriteSports,
+    required TResult Function(_ChangeEmailEvent value) changeEmail,
+    required TResult Function(_ChangePasswordEvent value) changePassword,
   }) {
     return editPreferences(this);
   }
@@ -1483,6 +1575,8 @@ class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
     TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
     TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
     TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult? Function(_ChangeEmailEvent value)? changeEmail,
+    TResult? Function(_ChangePasswordEvent value)? changePassword,
   }) {
     return editPreferences?.call(this);
   }
@@ -1505,6 +1599,8 @@ class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
     TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
     TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
     TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult Function(_ChangeEmailEvent value)? changeEmail,
+    TResult Function(_ChangePasswordEvent value)? changePassword,
     required TResult orElse(),
   }) {
     if (editPreferences != null) {
@@ -1579,6 +1675,8 @@ class _$CheckUserLoggedEventImpl implements _CheckUserLoggedEvent {
         completeRegistration,
     required TResult Function(List<int> sportsIds) addFavoriteSports,
     required TResult Function(List<int> sportsIds) deleteFavoriteSports,
+    required TResult Function() changeEmail,
+    required TResult Function() changePassword,
   }) {
     return checkUserLogged();
   }
@@ -1602,6 +1700,8 @@ class _$CheckUserLoggedEventImpl implements _CheckUserLoggedEvent {
         completeRegistration,
     TResult? Function(List<int> sportsIds)? addFavoriteSports,
     TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult? Function()? changeEmail,
+    TResult? Function()? changePassword,
   }) {
     return checkUserLogged?.call();
   }
@@ -1625,6 +1725,8 @@ class _$CheckUserLoggedEventImpl implements _CheckUserLoggedEvent {
         completeRegistration,
     TResult Function(List<int> sportsIds)? addFavoriteSports,
     TResult Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult Function()? changeEmail,
+    TResult Function()? changePassword,
     required TResult orElse(),
   }) {
     if (checkUserLogged != null) {
@@ -1653,6 +1755,8 @@ class _$CheckUserLoggedEventImpl implements _CheckUserLoggedEvent {
     required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
     required TResult Function(_DeleteFavoriteSportsEvent value)
         deleteFavoriteSports,
+    required TResult Function(_ChangeEmailEvent value) changeEmail,
+    required TResult Function(_ChangePasswordEvent value) changePassword,
   }) {
     return checkUserLogged(this);
   }
@@ -1675,6 +1779,8 @@ class _$CheckUserLoggedEventImpl implements _CheckUserLoggedEvent {
     TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
     TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
     TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult? Function(_ChangeEmailEvent value)? changeEmail,
+    TResult? Function(_ChangePasswordEvent value)? changePassword,
   }) {
     return checkUserLogged?.call(this);
   }
@@ -1697,6 +1803,8 @@ class _$CheckUserLoggedEventImpl implements _CheckUserLoggedEvent {
     TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
     TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
     TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult Function(_ChangeEmailEvent value)? changeEmail,
+    TResult Function(_ChangePasswordEvent value)? changePassword,
     required TResult orElse(),
   }) {
     if (checkUserLogged != null) {
@@ -1766,6 +1874,8 @@ class _$ConfirmUserEmailEventImpl implements _ConfirmUserEmailEvent {
         completeRegistration,
     required TResult Function(List<int> sportsIds) addFavoriteSports,
     required TResult Function(List<int> sportsIds) deleteFavoriteSports,
+    required TResult Function() changeEmail,
+    required TResult Function() changePassword,
   }) {
     return confirmUserEmail();
   }
@@ -1789,6 +1899,8 @@ class _$ConfirmUserEmailEventImpl implements _ConfirmUserEmailEvent {
         completeRegistration,
     TResult? Function(List<int> sportsIds)? addFavoriteSports,
     TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult? Function()? changeEmail,
+    TResult? Function()? changePassword,
   }) {
     return confirmUserEmail?.call();
   }
@@ -1812,6 +1924,8 @@ class _$ConfirmUserEmailEventImpl implements _ConfirmUserEmailEvent {
         completeRegistration,
     TResult Function(List<int> sportsIds)? addFavoriteSports,
     TResult Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult Function()? changeEmail,
+    TResult Function()? changePassword,
     required TResult orElse(),
   }) {
     if (confirmUserEmail != null) {
@@ -1840,6 +1954,8 @@ class _$ConfirmUserEmailEventImpl implements _ConfirmUserEmailEvent {
     required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
     required TResult Function(_DeleteFavoriteSportsEvent value)
         deleteFavoriteSports,
+    required TResult Function(_ChangeEmailEvent value) changeEmail,
+    required TResult Function(_ChangePasswordEvent value) changePassword,
   }) {
     return confirmUserEmail(this);
   }
@@ -1862,6 +1978,8 @@ class _$ConfirmUserEmailEventImpl implements _ConfirmUserEmailEvent {
     TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
     TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
     TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult? Function(_ChangeEmailEvent value)? changeEmail,
+    TResult? Function(_ChangePasswordEvent value)? changePassword,
   }) {
     return confirmUserEmail?.call(this);
   }
@@ -1884,6 +2002,8 @@ class _$ConfirmUserEmailEventImpl implements _ConfirmUserEmailEvent {
     TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
     TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
     TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult Function(_ChangeEmailEvent value)? changeEmail,
+    TResult Function(_ChangePasswordEvent value)? changePassword,
     required TResult orElse(),
   }) {
     if (confirmUserEmail != null) {
@@ -1955,6 +2075,8 @@ class _$ResendConfirmUserEmailEventImpl
         completeRegistration,
     required TResult Function(List<int> sportsIds) addFavoriteSports,
     required TResult Function(List<int> sportsIds) deleteFavoriteSports,
+    required TResult Function() changeEmail,
+    required TResult Function() changePassword,
   }) {
     return resendconfirmUserEmail();
   }
@@ -1978,6 +2100,8 @@ class _$ResendConfirmUserEmailEventImpl
         completeRegistration,
     TResult? Function(List<int> sportsIds)? addFavoriteSports,
     TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult? Function()? changeEmail,
+    TResult? Function()? changePassword,
   }) {
     return resendconfirmUserEmail?.call();
   }
@@ -2001,6 +2125,8 @@ class _$ResendConfirmUserEmailEventImpl
         completeRegistration,
     TResult Function(List<int> sportsIds)? addFavoriteSports,
     TResult Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult Function()? changeEmail,
+    TResult Function()? changePassword,
     required TResult orElse(),
   }) {
     if (resendconfirmUserEmail != null) {
@@ -2029,6 +2155,8 @@ class _$ResendConfirmUserEmailEventImpl
     required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
     required TResult Function(_DeleteFavoriteSportsEvent value)
         deleteFavoriteSports,
+    required TResult Function(_ChangeEmailEvent value) changeEmail,
+    required TResult Function(_ChangePasswordEvent value) changePassword,
   }) {
     return resendconfirmUserEmail(this);
   }
@@ -2051,6 +2179,8 @@ class _$ResendConfirmUserEmailEventImpl
     TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
     TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
     TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult? Function(_ChangeEmailEvent value)? changeEmail,
+    TResult? Function(_ChangePasswordEvent value)? changePassword,
   }) {
     return resendconfirmUserEmail?.call(this);
   }
@@ -2073,6 +2203,8 @@ class _$ResendConfirmUserEmailEventImpl
     TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
     TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
     TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult Function(_ChangeEmailEvent value)? changeEmail,
+    TResult Function(_ChangePasswordEvent value)? changePassword,
     required TResult orElse(),
   }) {
     if (resendconfirmUserEmail != null) {
@@ -2141,6 +2273,8 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
         completeRegistration,
     required TResult Function(List<int> sportsIds) addFavoriteSports,
     required TResult Function(List<int> sportsIds) deleteFavoriteSports,
+    required TResult Function() changeEmail,
+    required TResult Function() changePassword,
   }) {
     return getSports();
   }
@@ -2164,6 +2298,8 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
         completeRegistration,
     TResult? Function(List<int> sportsIds)? addFavoriteSports,
     TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult? Function()? changeEmail,
+    TResult? Function()? changePassword,
   }) {
     return getSports?.call();
   }
@@ -2187,6 +2323,8 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
         completeRegistration,
     TResult Function(List<int> sportsIds)? addFavoriteSports,
     TResult Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult Function()? changeEmail,
+    TResult Function()? changePassword,
     required TResult orElse(),
   }) {
     if (getSports != null) {
@@ -2215,6 +2353,8 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
     required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
     required TResult Function(_DeleteFavoriteSportsEvent value)
         deleteFavoriteSports,
+    required TResult Function(_ChangeEmailEvent value) changeEmail,
+    required TResult Function(_ChangePasswordEvent value) changePassword,
   }) {
     return getSports(this);
   }
@@ -2237,6 +2377,8 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
     TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
     TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
     TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult? Function(_ChangeEmailEvent value)? changeEmail,
+    TResult? Function(_ChangePasswordEvent value)? changePassword,
   }) {
     return getSports?.call(this);
   }
@@ -2259,6 +2401,8 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
     TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
     TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
     TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult Function(_ChangeEmailEvent value)? changeEmail,
+    TResult Function(_ChangePasswordEvent value)? changePassword,
     required TResult orElse(),
   }) {
     if (getSports != null) {
@@ -2394,6 +2538,8 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
         completeRegistration,
     required TResult Function(List<int> sportsIds) addFavoriteSports,
     required TResult Function(List<int> sportsIds) deleteFavoriteSports,
+    required TResult Function() changeEmail,
+    required TResult Function() changePassword,
   }) {
     return completeRegistration(imageBytes, imageType, selectedSports);
   }
@@ -2417,6 +2563,8 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
         completeRegistration,
     TResult? Function(List<int> sportsIds)? addFavoriteSports,
     TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult? Function()? changeEmail,
+    TResult? Function()? changePassword,
   }) {
     return completeRegistration?.call(imageBytes, imageType, selectedSports);
   }
@@ -2440,6 +2588,8 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
         completeRegistration,
     TResult Function(List<int> sportsIds)? addFavoriteSports,
     TResult Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult Function()? changeEmail,
+    TResult Function()? changePassword,
     required TResult orElse(),
   }) {
     if (completeRegistration != null) {
@@ -2468,6 +2618,8 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
     required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
     required TResult Function(_DeleteFavoriteSportsEvent value)
         deleteFavoriteSports,
+    required TResult Function(_ChangeEmailEvent value) changeEmail,
+    required TResult Function(_ChangePasswordEvent value) changePassword,
   }) {
     return completeRegistration(this);
   }
@@ -2490,6 +2642,8 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
     TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
     TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
     TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult? Function(_ChangeEmailEvent value)? changeEmail,
+    TResult? Function(_ChangePasswordEvent value)? changePassword,
   }) {
     return completeRegistration?.call(this);
   }
@@ -2512,6 +2666,8 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
     TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
     TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
     TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult Function(_ChangeEmailEvent value)? changeEmail,
+    TResult Function(_ChangePasswordEvent value)? changePassword,
     required TResult orElse(),
   }) {
     if (completeRegistration != null) {
@@ -2627,6 +2783,8 @@ class _$AddFavoriteSportsEventImpl implements _AddFavoriteSportsEvent {
         completeRegistration,
     required TResult Function(List<int> sportsIds) addFavoriteSports,
     required TResult Function(List<int> sportsIds) deleteFavoriteSports,
+    required TResult Function() changeEmail,
+    required TResult Function() changePassword,
   }) {
     return addFavoriteSports(sportsIds);
   }
@@ -2650,6 +2808,8 @@ class _$AddFavoriteSportsEventImpl implements _AddFavoriteSportsEvent {
         completeRegistration,
     TResult? Function(List<int> sportsIds)? addFavoriteSports,
     TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult? Function()? changeEmail,
+    TResult? Function()? changePassword,
   }) {
     return addFavoriteSports?.call(sportsIds);
   }
@@ -2673,6 +2833,8 @@ class _$AddFavoriteSportsEventImpl implements _AddFavoriteSportsEvent {
         completeRegistration,
     TResult Function(List<int> sportsIds)? addFavoriteSports,
     TResult Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult Function()? changeEmail,
+    TResult Function()? changePassword,
     required TResult orElse(),
   }) {
     if (addFavoriteSports != null) {
@@ -2701,6 +2863,8 @@ class _$AddFavoriteSportsEventImpl implements _AddFavoriteSportsEvent {
     required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
     required TResult Function(_DeleteFavoriteSportsEvent value)
         deleteFavoriteSports,
+    required TResult Function(_ChangeEmailEvent value) changeEmail,
+    required TResult Function(_ChangePasswordEvent value) changePassword,
   }) {
     return addFavoriteSports(this);
   }
@@ -2723,6 +2887,8 @@ class _$AddFavoriteSportsEventImpl implements _AddFavoriteSportsEvent {
     TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
     TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
     TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult? Function(_ChangeEmailEvent value)? changeEmail,
+    TResult? Function(_ChangePasswordEvent value)? changePassword,
   }) {
     return addFavoriteSports?.call(this);
   }
@@ -2745,6 +2911,8 @@ class _$AddFavoriteSportsEventImpl implements _AddFavoriteSportsEvent {
     TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
     TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
     TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult Function(_ChangeEmailEvent value)? changeEmail,
+    TResult Function(_ChangePasswordEvent value)? changePassword,
     required TResult orElse(),
   }) {
     if (addFavoriteSports != null) {
@@ -2855,6 +3023,8 @@ class _$DeleteFavoriteSportsEventImpl implements _DeleteFavoriteSportsEvent {
         completeRegistration,
     required TResult Function(List<int> sportsIds) addFavoriteSports,
     required TResult Function(List<int> sportsIds) deleteFavoriteSports,
+    required TResult Function() changeEmail,
+    required TResult Function() changePassword,
   }) {
     return deleteFavoriteSports(sportsIds);
   }
@@ -2878,6 +3048,8 @@ class _$DeleteFavoriteSportsEventImpl implements _DeleteFavoriteSportsEvent {
         completeRegistration,
     TResult? Function(List<int> sportsIds)? addFavoriteSports,
     TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult? Function()? changeEmail,
+    TResult? Function()? changePassword,
   }) {
     return deleteFavoriteSports?.call(sportsIds);
   }
@@ -2901,6 +3073,8 @@ class _$DeleteFavoriteSportsEventImpl implements _DeleteFavoriteSportsEvent {
         completeRegistration,
     TResult Function(List<int> sportsIds)? addFavoriteSports,
     TResult Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult Function()? changeEmail,
+    TResult Function()? changePassword,
     required TResult orElse(),
   }) {
     if (deleteFavoriteSports != null) {
@@ -2929,6 +3103,8 @@ class _$DeleteFavoriteSportsEventImpl implements _DeleteFavoriteSportsEvent {
     required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
     required TResult Function(_DeleteFavoriteSportsEvent value)
         deleteFavoriteSports,
+    required TResult Function(_ChangeEmailEvent value) changeEmail,
+    required TResult Function(_ChangePasswordEvent value) changePassword,
   }) {
     return deleteFavoriteSports(this);
   }
@@ -2951,6 +3127,8 @@ class _$DeleteFavoriteSportsEventImpl implements _DeleteFavoriteSportsEvent {
     TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
     TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
     TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult? Function(_ChangeEmailEvent value)? changeEmail,
+    TResult? Function(_ChangePasswordEvent value)? changePassword,
   }) {
     return deleteFavoriteSports?.call(this);
   }
@@ -2973,6 +3151,8 @@ class _$DeleteFavoriteSportsEventImpl implements _DeleteFavoriteSportsEvent {
     TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
     TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
     TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult Function(_ChangeEmailEvent value)? changeEmail,
+    TResult Function(_ChangePasswordEvent value)? changePassword,
     required TResult orElse(),
   }) {
     if (deleteFavoriteSports != null) {
@@ -2990,6 +3170,401 @@ abstract class _DeleteFavoriteSportsEvent implements AuthEvent {
   @JsonKey(ignore: true)
   _$$DeleteFavoriteSportsEventImplCopyWith<_$DeleteFavoriteSportsEventImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ChangeEmailEventImplCopyWith<$Res> {
+  factory _$$ChangeEmailEventImplCopyWith(_$ChangeEmailEventImpl value,
+          $Res Function(_$ChangeEmailEventImpl) then) =
+      __$$ChangeEmailEventImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ChangeEmailEventImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$ChangeEmailEventImpl>
+    implements _$$ChangeEmailEventImplCopyWith<$Res> {
+  __$$ChangeEmailEventImplCopyWithImpl(_$ChangeEmailEventImpl _value,
+      $Res Function(_$ChangeEmailEventImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ChangeEmailEventImpl implements _ChangeEmailEvent {
+  const _$ChangeEmailEventImpl();
+
+  @override
+  String toString() {
+    return 'AuthEvent.changeEmail()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ChangeEmailEventImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() login,
+    required TResult Function() googleLogin,
+    required TResult Function() register,
+    required TResult Function() getUserProfile,
+    required TResult Function() deleteUserProfile,
+    required TResult Function(EditUserProfileParams params) editUserProfile,
+    required TResult Function(PreferenceValue params) editPreferences,
+    required TResult Function() checkUserLogged,
+    required TResult Function() confirmUserEmail,
+    required TResult Function() resendconfirmUserEmail,
+    required TResult Function() getSports,
+    required TResult Function(
+            List<int> imageBytes, String imageType, List<int> selectedSports)
+        completeRegistration,
+    required TResult Function(List<int> sportsIds) addFavoriteSports,
+    required TResult Function(List<int> sportsIds) deleteFavoriteSports,
+    required TResult Function() changeEmail,
+    required TResult Function() changePassword,
+  }) {
+    return changeEmail();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? login,
+    TResult? Function()? googleLogin,
+    TResult? Function()? register,
+    TResult? Function()? getUserProfile,
+    TResult? Function()? deleteUserProfile,
+    TResult? Function(EditUserProfileParams params)? editUserProfile,
+    TResult? Function(PreferenceValue params)? editPreferences,
+    TResult? Function()? checkUserLogged,
+    TResult? Function()? confirmUserEmail,
+    TResult? Function()? resendconfirmUserEmail,
+    TResult? Function()? getSports,
+    TResult? Function(
+            List<int> imageBytes, String imageType, List<int> selectedSports)?
+        completeRegistration,
+    TResult? Function(List<int> sportsIds)? addFavoriteSports,
+    TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult? Function()? changeEmail,
+    TResult? Function()? changePassword,
+  }) {
+    return changeEmail?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? login,
+    TResult Function()? googleLogin,
+    TResult Function()? register,
+    TResult Function()? getUserProfile,
+    TResult Function()? deleteUserProfile,
+    TResult Function(EditUserProfileParams params)? editUserProfile,
+    TResult Function(PreferenceValue params)? editPreferences,
+    TResult Function()? checkUserLogged,
+    TResult Function()? confirmUserEmail,
+    TResult Function()? resendconfirmUserEmail,
+    TResult Function()? getSports,
+    TResult Function(
+            List<int> imageBytes, String imageType, List<int> selectedSports)?
+        completeRegistration,
+    TResult Function(List<int> sportsIds)? addFavoriteSports,
+    TResult Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult Function()? changeEmail,
+    TResult Function()? changePassword,
+    required TResult orElse(),
+  }) {
+    if (changeEmail != null) {
+      return changeEmail();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoginEvent value) login,
+    required TResult Function(_GoogleLoginEvent value) googleLogin,
+    required TResult Function(_RegisterEvent value) register,
+    required TResult Function(_GetUserProfileEvent value) getUserProfile,
+    required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
+    required TResult Function(_EditUserProfileEvent value) editUserProfile,
+    required TResult Function(_EditPreferencesEvent value) editPreferences,
+    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
+    required TResult Function(_ResendConfirmUserEmailEvent value)
+        resendconfirmUserEmail,
+    required TResult Function(_GetSportsEvent value) getSports,
+    required TResult Function(_CompleteRegistrationEvent value)
+        completeRegistration,
+    required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
+    required TResult Function(_DeleteFavoriteSportsEvent value)
+        deleteFavoriteSports,
+    required TResult Function(_ChangeEmailEvent value) changeEmail,
+    required TResult Function(_ChangePasswordEvent value) changePassword,
+  }) {
+    return changeEmail(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_GoogleLoginEvent value)? googleLogin,
+    TResult? Function(_RegisterEvent value)? register,
+    TResult? Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult? Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult? Function(_EditPreferencesEvent value)? editPreferences,
+    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult? Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult? Function(_GetSportsEvent value)? getSports,
+    TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult? Function(_ChangeEmailEvent value)? changeEmail,
+    TResult? Function(_ChangePasswordEvent value)? changePassword,
+  }) {
+    return changeEmail?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoginEvent value)? login,
+    TResult Function(_GoogleLoginEvent value)? googleLogin,
+    TResult Function(_RegisterEvent value)? register,
+    TResult Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult Function(_EditPreferencesEvent value)? editPreferences,
+    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult Function(_GetSportsEvent value)? getSports,
+    TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult Function(_ChangeEmailEvent value)? changeEmail,
+    TResult Function(_ChangePasswordEvent value)? changePassword,
+    required TResult orElse(),
+  }) {
+    if (changeEmail != null) {
+      return changeEmail(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ChangeEmailEvent implements AuthEvent {
+  const factory _ChangeEmailEvent() = _$ChangeEmailEventImpl;
+}
+
+/// @nodoc
+abstract class _$$ChangePasswordEventImplCopyWith<$Res> {
+  factory _$$ChangePasswordEventImplCopyWith(_$ChangePasswordEventImpl value,
+          $Res Function(_$ChangePasswordEventImpl) then) =
+      __$$ChangePasswordEventImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ChangePasswordEventImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$ChangePasswordEventImpl>
+    implements _$$ChangePasswordEventImplCopyWith<$Res> {
+  __$$ChangePasswordEventImplCopyWithImpl(_$ChangePasswordEventImpl _value,
+      $Res Function(_$ChangePasswordEventImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ChangePasswordEventImpl implements _ChangePasswordEvent {
+  const _$ChangePasswordEventImpl();
+
+  @override
+  String toString() {
+    return 'AuthEvent.changePassword()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangePasswordEventImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() login,
+    required TResult Function() googleLogin,
+    required TResult Function() register,
+    required TResult Function() getUserProfile,
+    required TResult Function() deleteUserProfile,
+    required TResult Function(EditUserProfileParams params) editUserProfile,
+    required TResult Function(PreferenceValue params) editPreferences,
+    required TResult Function() checkUserLogged,
+    required TResult Function() confirmUserEmail,
+    required TResult Function() resendconfirmUserEmail,
+    required TResult Function() getSports,
+    required TResult Function(
+            List<int> imageBytes, String imageType, List<int> selectedSports)
+        completeRegistration,
+    required TResult Function(List<int> sportsIds) addFavoriteSports,
+    required TResult Function(List<int> sportsIds) deleteFavoriteSports,
+    required TResult Function() changeEmail,
+    required TResult Function() changePassword,
+  }) {
+    return changePassword();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? login,
+    TResult? Function()? googleLogin,
+    TResult? Function()? register,
+    TResult? Function()? getUserProfile,
+    TResult? Function()? deleteUserProfile,
+    TResult? Function(EditUserProfileParams params)? editUserProfile,
+    TResult? Function(PreferenceValue params)? editPreferences,
+    TResult? Function()? checkUserLogged,
+    TResult? Function()? confirmUserEmail,
+    TResult? Function()? resendconfirmUserEmail,
+    TResult? Function()? getSports,
+    TResult? Function(
+            List<int> imageBytes, String imageType, List<int> selectedSports)?
+        completeRegistration,
+    TResult? Function(List<int> sportsIds)? addFavoriteSports,
+    TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult? Function()? changeEmail,
+    TResult? Function()? changePassword,
+  }) {
+    return changePassword?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? login,
+    TResult Function()? googleLogin,
+    TResult Function()? register,
+    TResult Function()? getUserProfile,
+    TResult Function()? deleteUserProfile,
+    TResult Function(EditUserProfileParams params)? editUserProfile,
+    TResult Function(PreferenceValue params)? editPreferences,
+    TResult Function()? checkUserLogged,
+    TResult Function()? confirmUserEmail,
+    TResult Function()? resendconfirmUserEmail,
+    TResult Function()? getSports,
+    TResult Function(
+            List<int> imageBytes, String imageType, List<int> selectedSports)?
+        completeRegistration,
+    TResult Function(List<int> sportsIds)? addFavoriteSports,
+    TResult Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult Function()? changeEmail,
+    TResult Function()? changePassword,
+    required TResult orElse(),
+  }) {
+    if (changePassword != null) {
+      return changePassword();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoginEvent value) login,
+    required TResult Function(_GoogleLoginEvent value) googleLogin,
+    required TResult Function(_RegisterEvent value) register,
+    required TResult Function(_GetUserProfileEvent value) getUserProfile,
+    required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
+    required TResult Function(_EditUserProfileEvent value) editUserProfile,
+    required TResult Function(_EditPreferencesEvent value) editPreferences,
+    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
+    required TResult Function(_ResendConfirmUserEmailEvent value)
+        resendconfirmUserEmail,
+    required TResult Function(_GetSportsEvent value) getSports,
+    required TResult Function(_CompleteRegistrationEvent value)
+        completeRegistration,
+    required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
+    required TResult Function(_DeleteFavoriteSportsEvent value)
+        deleteFavoriteSports,
+    required TResult Function(_ChangeEmailEvent value) changeEmail,
+    required TResult Function(_ChangePasswordEvent value) changePassword,
+  }) {
+    return changePassword(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_GoogleLoginEvent value)? googleLogin,
+    TResult? Function(_RegisterEvent value)? register,
+    TResult? Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult? Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult? Function(_EditPreferencesEvent value)? editPreferences,
+    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult? Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult? Function(_GetSportsEvent value)? getSports,
+    TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult? Function(_ChangeEmailEvent value)? changeEmail,
+    TResult? Function(_ChangePasswordEvent value)? changePassword,
+  }) {
+    return changePassword?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoginEvent value)? login,
+    TResult Function(_GoogleLoginEvent value)? googleLogin,
+    TResult Function(_RegisterEvent value)? register,
+    TResult Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult Function(_EditPreferencesEvent value)? editPreferences,
+    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult Function(_GetSportsEvent value)? getSports,
+    TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult Function(_ChangeEmailEvent value)? changeEmail,
+    TResult Function(_ChangePasswordEvent value)? changePassword,
+    required TResult orElse(),
+  }) {
+    if (changePassword != null) {
+      return changePassword(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ChangePasswordEvent implements AuthEvent {
+  const factory _ChangePasswordEvent() = _$ChangePasswordEventImpl;
 }
 
 /// @nodoc
@@ -3027,6 +3602,12 @@ mixin _$AuthState {
     required TResult Function() getSportsLoading,
     required TResult Function(Failure? failure) getSportsFailure,
     required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3060,6 +3641,12 @@ mixin _$AuthState {
     TResult? Function()? getSportsLoading,
     TResult? Function(Failure? failure)? getSportsFailure,
     TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3093,6 +3680,12 @@ mixin _$AuthState {
     TResult Function()? getSportsLoading,
     TResult Function(Failure? failure)? getSportsFailure,
     TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -3134,6 +3727,14 @@ mixin _$AuthState {
     required TResult Function(_GetSportsLoading value) getSportsLoading,
     required TResult Function(_GetSportsFailure value) getSportsFailure,
     required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3171,6 +3772,12 @@ mixin _$AuthState {
     TResult? Function(_GetSportsLoading value)? getSportsLoading,
     TResult? Function(_GetSportsFailure value)? getSportsFailure,
     TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3208,6 +3815,12 @@ mixin _$AuthState {
     TResult Function(_GetSportsLoading value)? getSportsLoading,
     TResult Function(_GetSportsFailure value)? getSportsFailure,
     TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -3299,6 +3912,12 @@ class _$InitialImpl implements _Initial {
     required TResult Function() getSportsLoading,
     required TResult Function(Failure? failure) getSportsFailure,
     required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
   }) {
     return initial();
   }
@@ -3335,6 +3954,12 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? getSportsLoading,
     TResult? Function(Failure? failure)? getSportsFailure,
     TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
   }) {
     return initial?.call();
   }
@@ -3371,6 +3996,12 @@ class _$InitialImpl implements _Initial {
     TResult Function()? getSportsLoading,
     TResult Function(Failure? failure)? getSportsFailure,
     TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -3418,6 +4049,14 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_GetSportsLoading value) getSportsLoading,
     required TResult Function(_GetSportsFailure value) getSportsFailure,
     required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return initial(this);
   }
@@ -3458,6 +4097,12 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_GetSportsLoading value)? getSportsLoading,
     TResult? Function(_GetSportsFailure value)? getSportsFailure,
     TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return initial?.call(this);
   }
@@ -3498,6 +4143,12 @@ class _$InitialImpl implements _Initial {
     TResult Function(_GetSportsLoading value)? getSportsLoading,
     TResult Function(_GetSportsFailure value)? getSportsFailure,
     TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -3580,6 +4231,12 @@ class _$RegisterLoadingImpl implements _RegisterLoading {
     required TResult Function() getSportsLoading,
     required TResult Function(Failure? failure) getSportsFailure,
     required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
   }) {
     return registerLoading();
   }
@@ -3616,6 +4273,12 @@ class _$RegisterLoadingImpl implements _RegisterLoading {
     TResult? Function()? getSportsLoading,
     TResult? Function(Failure? failure)? getSportsFailure,
     TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
   }) {
     return registerLoading?.call();
   }
@@ -3652,6 +4315,12 @@ class _$RegisterLoadingImpl implements _RegisterLoading {
     TResult Function()? getSportsLoading,
     TResult Function(Failure? failure)? getSportsFailure,
     TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
     required TResult orElse(),
   }) {
     if (registerLoading != null) {
@@ -3699,6 +4368,14 @@ class _$RegisterLoadingImpl implements _RegisterLoading {
     required TResult Function(_GetSportsLoading value) getSportsLoading,
     required TResult Function(_GetSportsFailure value) getSportsFailure,
     required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return registerLoading(this);
   }
@@ -3739,6 +4416,12 @@ class _$RegisterLoadingImpl implements _RegisterLoading {
     TResult? Function(_GetSportsLoading value)? getSportsLoading,
     TResult? Function(_GetSportsFailure value)? getSportsFailure,
     TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return registerLoading?.call(this);
   }
@@ -3779,6 +4462,12 @@ class _$RegisterLoadingImpl implements _RegisterLoading {
     TResult Function(_GetSportsLoading value)? getSportsLoading,
     TResult Function(_GetSportsFailure value)? getSportsFailure,
     TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (registerLoading != null) {
@@ -3889,6 +4578,12 @@ class _$RegisterFailureImpl implements _RegisterFailure {
     required TResult Function() getSportsLoading,
     required TResult Function(Failure? failure) getSportsFailure,
     required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
   }) {
     return registerFailure(failure);
   }
@@ -3925,6 +4620,12 @@ class _$RegisterFailureImpl implements _RegisterFailure {
     TResult? Function()? getSportsLoading,
     TResult? Function(Failure? failure)? getSportsFailure,
     TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
   }) {
     return registerFailure?.call(failure);
   }
@@ -3961,6 +4662,12 @@ class _$RegisterFailureImpl implements _RegisterFailure {
     TResult Function()? getSportsLoading,
     TResult Function(Failure? failure)? getSportsFailure,
     TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
     required TResult orElse(),
   }) {
     if (registerFailure != null) {
@@ -4008,6 +4715,14 @@ class _$RegisterFailureImpl implements _RegisterFailure {
     required TResult Function(_GetSportsLoading value) getSportsLoading,
     required TResult Function(_GetSportsFailure value) getSportsFailure,
     required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return registerFailure(this);
   }
@@ -4048,6 +4763,12 @@ class _$RegisterFailureImpl implements _RegisterFailure {
     TResult? Function(_GetSportsLoading value)? getSportsLoading,
     TResult? Function(_GetSportsFailure value)? getSportsFailure,
     TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return registerFailure?.call(this);
   }
@@ -4088,6 +4809,12 @@ class _$RegisterFailureImpl implements _RegisterFailure {
     TResult Function(_GetSportsLoading value)? getSportsLoading,
     TResult Function(_GetSportsFailure value)? getSportsFailure,
     TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (registerFailure != null) {
@@ -4204,6 +4931,12 @@ class _$RegisteredImpl implements _Registered {
     required TResult Function() getSportsLoading,
     required TResult Function(Failure? failure) getSportsFailure,
     required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
   }) {
     return registered(this.registered);
   }
@@ -4240,6 +4973,12 @@ class _$RegisteredImpl implements _Registered {
     TResult? Function()? getSportsLoading,
     TResult? Function(Failure? failure)? getSportsFailure,
     TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
   }) {
     return registered?.call(this.registered);
   }
@@ -4276,6 +5015,12 @@ class _$RegisteredImpl implements _Registered {
     TResult Function()? getSportsLoading,
     TResult Function(Failure? failure)? getSportsFailure,
     TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
     required TResult orElse(),
   }) {
     if (registered != null) {
@@ -4323,6 +5068,14 @@ class _$RegisteredImpl implements _Registered {
     required TResult Function(_GetSportsLoading value) getSportsLoading,
     required TResult Function(_GetSportsFailure value) getSportsFailure,
     required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return registered(this);
   }
@@ -4363,6 +5116,12 @@ class _$RegisteredImpl implements _Registered {
     TResult? Function(_GetSportsLoading value)? getSportsLoading,
     TResult? Function(_GetSportsFailure value)? getSportsFailure,
     TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return registered?.call(this);
   }
@@ -4403,6 +5162,12 @@ class _$RegisteredImpl implements _Registered {
     TResult Function(_GetSportsLoading value)? getSportsLoading,
     TResult Function(_GetSportsFailure value)? getSportsFailure,
     TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (registered != null) {
@@ -4490,6 +5255,12 @@ class _$LoginLoadingImpl implements _LoginLoading {
     required TResult Function() getSportsLoading,
     required TResult Function(Failure? failure) getSportsFailure,
     required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
   }) {
     return logginLoading();
   }
@@ -4526,6 +5297,12 @@ class _$LoginLoadingImpl implements _LoginLoading {
     TResult? Function()? getSportsLoading,
     TResult? Function(Failure? failure)? getSportsFailure,
     TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
   }) {
     return logginLoading?.call();
   }
@@ -4562,6 +5339,12 @@ class _$LoginLoadingImpl implements _LoginLoading {
     TResult Function()? getSportsLoading,
     TResult Function(Failure? failure)? getSportsFailure,
     TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
     required TResult orElse(),
   }) {
     if (logginLoading != null) {
@@ -4609,6 +5392,14 @@ class _$LoginLoadingImpl implements _LoginLoading {
     required TResult Function(_GetSportsLoading value) getSportsLoading,
     required TResult Function(_GetSportsFailure value) getSportsFailure,
     required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return logginLoading(this);
   }
@@ -4649,6 +5440,12 @@ class _$LoginLoadingImpl implements _LoginLoading {
     TResult? Function(_GetSportsLoading value)? getSportsLoading,
     TResult? Function(_GetSportsFailure value)? getSportsFailure,
     TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return logginLoading?.call(this);
   }
@@ -4689,6 +5486,12 @@ class _$LoginLoadingImpl implements _LoginLoading {
     TResult Function(_GetSportsLoading value)? getSportsLoading,
     TResult Function(_GetSportsFailure value)? getSportsFailure,
     TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (logginLoading != null) {
@@ -4798,6 +5601,12 @@ class _$LoginFailureImpl implements _LoginFailure {
     required TResult Function() getSportsLoading,
     required TResult Function(Failure? failure) getSportsFailure,
     required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
   }) {
     return logginFailure(failure);
   }
@@ -4834,6 +5643,12 @@ class _$LoginFailureImpl implements _LoginFailure {
     TResult? Function()? getSportsLoading,
     TResult? Function(Failure? failure)? getSportsFailure,
     TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
   }) {
     return logginFailure?.call(failure);
   }
@@ -4870,6 +5685,12 @@ class _$LoginFailureImpl implements _LoginFailure {
     TResult Function()? getSportsLoading,
     TResult Function(Failure? failure)? getSportsFailure,
     TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
     required TResult orElse(),
   }) {
     if (logginFailure != null) {
@@ -4917,6 +5738,14 @@ class _$LoginFailureImpl implements _LoginFailure {
     required TResult Function(_GetSportsLoading value) getSportsLoading,
     required TResult Function(_GetSportsFailure value) getSportsFailure,
     required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return logginFailure(this);
   }
@@ -4957,6 +5786,12 @@ class _$LoginFailureImpl implements _LoginFailure {
     TResult? Function(_GetSportsLoading value)? getSportsLoading,
     TResult? Function(_GetSportsFailure value)? getSportsFailure,
     TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return logginFailure?.call(this);
   }
@@ -4997,6 +5832,12 @@ class _$LoginFailureImpl implements _LoginFailure {
     TResult Function(_GetSportsLoading value)? getSportsLoading,
     TResult Function(_GetSportsFailure value)? getSportsFailure,
     TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (logginFailure != null) {
@@ -5111,6 +5952,12 @@ class _$LoggedInImpl implements _LoggedIn {
     required TResult Function() getSportsLoading,
     required TResult Function(Failure? failure) getSportsFailure,
     required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
   }) {
     return loggedIn(user);
   }
@@ -5147,6 +5994,12 @@ class _$LoggedInImpl implements _LoggedIn {
     TResult? Function()? getSportsLoading,
     TResult? Function(Failure? failure)? getSportsFailure,
     TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
   }) {
     return loggedIn?.call(user);
   }
@@ -5183,6 +6036,12 @@ class _$LoggedInImpl implements _LoggedIn {
     TResult Function()? getSportsLoading,
     TResult Function(Failure? failure)? getSportsFailure,
     TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
     required TResult orElse(),
   }) {
     if (loggedIn != null) {
@@ -5230,6 +6089,14 @@ class _$LoggedInImpl implements _LoggedIn {
     required TResult Function(_GetSportsLoading value) getSportsLoading,
     required TResult Function(_GetSportsFailure value) getSportsFailure,
     required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return loggedIn(this);
   }
@@ -5270,6 +6137,12 @@ class _$LoggedInImpl implements _LoggedIn {
     TResult? Function(_GetSportsLoading value)? getSportsLoading,
     TResult? Function(_GetSportsFailure value)? getSportsFailure,
     TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return loggedIn?.call(this);
   }
@@ -5310,6 +6183,12 @@ class _$LoggedInImpl implements _LoggedIn {
     TResult Function(_GetSportsLoading value)? getSportsLoading,
     TResult Function(_GetSportsFailure value)? getSportsFailure,
     TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (loggedIn != null) {
@@ -5397,6 +6276,12 @@ class _$GoogleLoginLoadingImpl implements _GoogleLoginLoading {
     required TResult Function() getSportsLoading,
     required TResult Function(Failure? failure) getSportsFailure,
     required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
   }) {
     return googleLogginLoading();
   }
@@ -5433,6 +6318,12 @@ class _$GoogleLoginLoadingImpl implements _GoogleLoginLoading {
     TResult? Function()? getSportsLoading,
     TResult? Function(Failure? failure)? getSportsFailure,
     TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
   }) {
     return googleLogginLoading?.call();
   }
@@ -5469,6 +6360,12 @@ class _$GoogleLoginLoadingImpl implements _GoogleLoginLoading {
     TResult Function()? getSportsLoading,
     TResult Function(Failure? failure)? getSportsFailure,
     TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
     required TResult orElse(),
   }) {
     if (googleLogginLoading != null) {
@@ -5516,6 +6413,14 @@ class _$GoogleLoginLoadingImpl implements _GoogleLoginLoading {
     required TResult Function(_GetSportsLoading value) getSportsLoading,
     required TResult Function(_GetSportsFailure value) getSportsFailure,
     required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return googleLogginLoading(this);
   }
@@ -5556,6 +6461,12 @@ class _$GoogleLoginLoadingImpl implements _GoogleLoginLoading {
     TResult? Function(_GetSportsLoading value)? getSportsLoading,
     TResult? Function(_GetSportsFailure value)? getSportsFailure,
     TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return googleLogginLoading?.call(this);
   }
@@ -5596,6 +6507,12 @@ class _$GoogleLoginLoadingImpl implements _GoogleLoginLoading {
     TResult Function(_GetSportsLoading value)? getSportsLoading,
     TResult Function(_GetSportsFailure value)? getSportsFailure,
     TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (googleLogginLoading != null) {
@@ -5706,6 +6623,12 @@ class _$GoogleLoginFailureImpl implements _GoogleLoginFailure {
     required TResult Function() getSportsLoading,
     required TResult Function(Failure? failure) getSportsFailure,
     required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
   }) {
     return googleLogginFailure(failure);
   }
@@ -5742,6 +6665,12 @@ class _$GoogleLoginFailureImpl implements _GoogleLoginFailure {
     TResult? Function()? getSportsLoading,
     TResult? Function(Failure? failure)? getSportsFailure,
     TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
   }) {
     return googleLogginFailure?.call(failure);
   }
@@ -5778,6 +6707,12 @@ class _$GoogleLoginFailureImpl implements _GoogleLoginFailure {
     TResult Function()? getSportsLoading,
     TResult Function(Failure? failure)? getSportsFailure,
     TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
     required TResult orElse(),
   }) {
     if (googleLogginFailure != null) {
@@ -5825,6 +6760,14 @@ class _$GoogleLoginFailureImpl implements _GoogleLoginFailure {
     required TResult Function(_GetSportsLoading value) getSportsLoading,
     required TResult Function(_GetSportsFailure value) getSportsFailure,
     required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return googleLogginFailure(this);
   }
@@ -5865,6 +6808,12 @@ class _$GoogleLoginFailureImpl implements _GoogleLoginFailure {
     TResult? Function(_GetSportsLoading value)? getSportsLoading,
     TResult? Function(_GetSportsFailure value)? getSportsFailure,
     TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return googleLogginFailure?.call(this);
   }
@@ -5905,6 +6854,12 @@ class _$GoogleLoginFailureImpl implements _GoogleLoginFailure {
     TResult Function(_GetSportsLoading value)? getSportsLoading,
     TResult Function(_GetSportsFailure value)? getSportsFailure,
     TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (googleLogginFailure != null) {
@@ -6021,6 +6976,12 @@ class _$GoogleLoggedInImpl implements _GoogleLoggedIn {
     required TResult Function() getSportsLoading,
     required TResult Function(Failure? failure) getSportsFailure,
     required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
   }) {
     return googleLoggedIn(user);
   }
@@ -6057,6 +7018,12 @@ class _$GoogleLoggedInImpl implements _GoogleLoggedIn {
     TResult? Function()? getSportsLoading,
     TResult? Function(Failure? failure)? getSportsFailure,
     TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
   }) {
     return googleLoggedIn?.call(user);
   }
@@ -6093,6 +7060,12 @@ class _$GoogleLoggedInImpl implements _GoogleLoggedIn {
     TResult Function()? getSportsLoading,
     TResult Function(Failure? failure)? getSportsFailure,
     TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
     required TResult orElse(),
   }) {
     if (googleLoggedIn != null) {
@@ -6140,6 +7113,14 @@ class _$GoogleLoggedInImpl implements _GoogleLoggedIn {
     required TResult Function(_GetSportsLoading value) getSportsLoading,
     required TResult Function(_GetSportsFailure value) getSportsFailure,
     required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return googleLoggedIn(this);
   }
@@ -6180,6 +7161,12 @@ class _$GoogleLoggedInImpl implements _GoogleLoggedIn {
     TResult? Function(_GetSportsLoading value)? getSportsLoading,
     TResult? Function(_GetSportsFailure value)? getSportsFailure,
     TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return googleLoggedIn?.call(this);
   }
@@ -6220,6 +7207,12 @@ class _$GoogleLoggedInImpl implements _GoogleLoggedIn {
     TResult Function(_GetSportsLoading value)? getSportsLoading,
     TResult Function(_GetSportsFailure value)? getSportsFailure,
     TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (googleLoggedIn != null) {
@@ -6309,6 +7302,12 @@ class _$ConfirmEmailLoadingImpl implements _ConfirmEmailLoading {
     required TResult Function() getSportsLoading,
     required TResult Function(Failure? failure) getSportsFailure,
     required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
   }) {
     return confirmEmailLoading();
   }
@@ -6345,6 +7344,12 @@ class _$ConfirmEmailLoadingImpl implements _ConfirmEmailLoading {
     TResult? Function()? getSportsLoading,
     TResult? Function(Failure? failure)? getSportsFailure,
     TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
   }) {
     return confirmEmailLoading?.call();
   }
@@ -6381,6 +7386,12 @@ class _$ConfirmEmailLoadingImpl implements _ConfirmEmailLoading {
     TResult Function()? getSportsLoading,
     TResult Function(Failure? failure)? getSportsFailure,
     TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
     required TResult orElse(),
   }) {
     if (confirmEmailLoading != null) {
@@ -6428,6 +7439,14 @@ class _$ConfirmEmailLoadingImpl implements _ConfirmEmailLoading {
     required TResult Function(_GetSportsLoading value) getSportsLoading,
     required TResult Function(_GetSportsFailure value) getSportsFailure,
     required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return confirmEmailLoading(this);
   }
@@ -6468,6 +7487,12 @@ class _$ConfirmEmailLoadingImpl implements _ConfirmEmailLoading {
     TResult? Function(_GetSportsLoading value)? getSportsLoading,
     TResult? Function(_GetSportsFailure value)? getSportsFailure,
     TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return confirmEmailLoading?.call(this);
   }
@@ -6508,6 +7533,12 @@ class _$ConfirmEmailLoadingImpl implements _ConfirmEmailLoading {
     TResult Function(_GetSportsLoading value)? getSportsLoading,
     TResult Function(_GetSportsFailure value)? getSportsFailure,
     TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (confirmEmailLoading != null) {
@@ -6618,6 +7649,12 @@ class _$ConfirmEmailFailureImpl implements _ConfirmEmailFailure {
     required TResult Function() getSportsLoading,
     required TResult Function(Failure? failure) getSportsFailure,
     required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
   }) {
     return confirmEmailFailure(failure);
   }
@@ -6654,6 +7691,12 @@ class _$ConfirmEmailFailureImpl implements _ConfirmEmailFailure {
     TResult? Function()? getSportsLoading,
     TResult? Function(Failure? failure)? getSportsFailure,
     TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
   }) {
     return confirmEmailFailure?.call(failure);
   }
@@ -6690,6 +7733,12 @@ class _$ConfirmEmailFailureImpl implements _ConfirmEmailFailure {
     TResult Function()? getSportsLoading,
     TResult Function(Failure? failure)? getSportsFailure,
     TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
     required TResult orElse(),
   }) {
     if (confirmEmailFailure != null) {
@@ -6737,6 +7786,14 @@ class _$ConfirmEmailFailureImpl implements _ConfirmEmailFailure {
     required TResult Function(_GetSportsLoading value) getSportsLoading,
     required TResult Function(_GetSportsFailure value) getSportsFailure,
     required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return confirmEmailFailure(this);
   }
@@ -6777,6 +7834,12 @@ class _$ConfirmEmailFailureImpl implements _ConfirmEmailFailure {
     TResult? Function(_GetSportsLoading value)? getSportsLoading,
     TResult? Function(_GetSportsFailure value)? getSportsFailure,
     TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return confirmEmailFailure?.call(this);
   }
@@ -6817,6 +7880,12 @@ class _$ConfirmEmailFailureImpl implements _ConfirmEmailFailure {
     TResult Function(_GetSportsLoading value)? getSportsLoading,
     TResult Function(_GetSportsFailure value)? getSportsFailure,
     TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (confirmEmailFailure != null) {
@@ -6940,6 +8009,12 @@ class _$EmailConfirmedImpl implements _EmailConfirmed {
     required TResult Function() getSportsLoading,
     required TResult Function(Failure? failure) getSportsFailure,
     required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
   }) {
     return emailConfirmed(sports);
   }
@@ -6976,6 +8051,12 @@ class _$EmailConfirmedImpl implements _EmailConfirmed {
     TResult? Function()? getSportsLoading,
     TResult? Function(Failure? failure)? getSportsFailure,
     TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
   }) {
     return emailConfirmed?.call(sports);
   }
@@ -7012,6 +8093,12 @@ class _$EmailConfirmedImpl implements _EmailConfirmed {
     TResult Function()? getSportsLoading,
     TResult Function(Failure? failure)? getSportsFailure,
     TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
     required TResult orElse(),
   }) {
     if (emailConfirmed != null) {
@@ -7059,6 +8146,14 @@ class _$EmailConfirmedImpl implements _EmailConfirmed {
     required TResult Function(_GetSportsLoading value) getSportsLoading,
     required TResult Function(_GetSportsFailure value) getSportsFailure,
     required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return emailConfirmed(this);
   }
@@ -7099,6 +8194,12 @@ class _$EmailConfirmedImpl implements _EmailConfirmed {
     TResult? Function(_GetSportsLoading value)? getSportsLoading,
     TResult? Function(_GetSportsFailure value)? getSportsFailure,
     TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return emailConfirmed?.call(this);
   }
@@ -7139,6 +8240,12 @@ class _$EmailConfirmedImpl implements _EmailConfirmed {
     TResult Function(_GetSportsLoading value)? getSportsLoading,
     TResult Function(_GetSportsFailure value)? getSportsFailure,
     TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (emailConfirmed != null) {
@@ -7230,6 +8337,12 @@ class _$ResendConfirmEmailLoadingImpl implements _ResendConfirmEmailLoading {
     required TResult Function() getSportsLoading,
     required TResult Function(Failure? failure) getSportsFailure,
     required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
   }) {
     return resendConfirmEmailLoading();
   }
@@ -7266,6 +8379,12 @@ class _$ResendConfirmEmailLoadingImpl implements _ResendConfirmEmailLoading {
     TResult? Function()? getSportsLoading,
     TResult? Function(Failure? failure)? getSportsFailure,
     TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
   }) {
     return resendConfirmEmailLoading?.call();
   }
@@ -7302,6 +8421,12 @@ class _$ResendConfirmEmailLoadingImpl implements _ResendConfirmEmailLoading {
     TResult Function()? getSportsLoading,
     TResult Function(Failure? failure)? getSportsFailure,
     TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
     required TResult orElse(),
   }) {
     if (resendConfirmEmailLoading != null) {
@@ -7349,6 +8474,14 @@ class _$ResendConfirmEmailLoadingImpl implements _ResendConfirmEmailLoading {
     required TResult Function(_GetSportsLoading value) getSportsLoading,
     required TResult Function(_GetSportsFailure value) getSportsFailure,
     required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return resendConfirmEmailLoading(this);
   }
@@ -7389,6 +8522,12 @@ class _$ResendConfirmEmailLoadingImpl implements _ResendConfirmEmailLoading {
     TResult? Function(_GetSportsLoading value)? getSportsLoading,
     TResult? Function(_GetSportsFailure value)? getSportsFailure,
     TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return resendConfirmEmailLoading?.call(this);
   }
@@ -7429,6 +8568,12 @@ class _$ResendConfirmEmailLoadingImpl implements _ResendConfirmEmailLoading {
     TResult Function(_GetSportsLoading value)? getSportsLoading,
     TResult Function(_GetSportsFailure value)? getSportsFailure,
     TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (resendConfirmEmailLoading != null) {
@@ -7541,6 +8686,12 @@ class _$ResendConfirmEmailFailureImpl implements _ResendConfirmEmailFailure {
     required TResult Function() getSportsLoading,
     required TResult Function(Failure? failure) getSportsFailure,
     required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
   }) {
     return resendConfirmEmailFailure(failure);
   }
@@ -7577,6 +8728,12 @@ class _$ResendConfirmEmailFailureImpl implements _ResendConfirmEmailFailure {
     TResult? Function()? getSportsLoading,
     TResult? Function(Failure? failure)? getSportsFailure,
     TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
   }) {
     return resendConfirmEmailFailure?.call(failure);
   }
@@ -7613,6 +8770,12 @@ class _$ResendConfirmEmailFailureImpl implements _ResendConfirmEmailFailure {
     TResult Function()? getSportsLoading,
     TResult Function(Failure? failure)? getSportsFailure,
     TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
     required TResult orElse(),
   }) {
     if (resendConfirmEmailFailure != null) {
@@ -7660,6 +8823,14 @@ class _$ResendConfirmEmailFailureImpl implements _ResendConfirmEmailFailure {
     required TResult Function(_GetSportsLoading value) getSportsLoading,
     required TResult Function(_GetSportsFailure value) getSportsFailure,
     required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return resendConfirmEmailFailure(this);
   }
@@ -7700,6 +8871,12 @@ class _$ResendConfirmEmailFailureImpl implements _ResendConfirmEmailFailure {
     TResult? Function(_GetSportsLoading value)? getSportsLoading,
     TResult? Function(_GetSportsFailure value)? getSportsFailure,
     TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return resendConfirmEmailFailure?.call(this);
   }
@@ -7740,6 +8917,12 @@ class _$ResendConfirmEmailFailureImpl implements _ResendConfirmEmailFailure {
     TResult Function(_GetSportsLoading value)? getSportsLoading,
     TResult Function(_GetSportsFailure value)? getSportsFailure,
     TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (resendConfirmEmailFailure != null) {
@@ -7830,6 +9013,12 @@ class _$EmailConfirmationSentImpl implements _EmailConfirmationSent {
     required TResult Function() getSportsLoading,
     required TResult Function(Failure? failure) getSportsFailure,
     required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
   }) {
     return emailConfirmationSent();
   }
@@ -7866,6 +9055,12 @@ class _$EmailConfirmationSentImpl implements _EmailConfirmationSent {
     TResult? Function()? getSportsLoading,
     TResult? Function(Failure? failure)? getSportsFailure,
     TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
   }) {
     return emailConfirmationSent?.call();
   }
@@ -7902,6 +9097,12 @@ class _$EmailConfirmationSentImpl implements _EmailConfirmationSent {
     TResult Function()? getSportsLoading,
     TResult Function(Failure? failure)? getSportsFailure,
     TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
     required TResult orElse(),
   }) {
     if (emailConfirmationSent != null) {
@@ -7949,6 +9150,14 @@ class _$EmailConfirmationSentImpl implements _EmailConfirmationSent {
     required TResult Function(_GetSportsLoading value) getSportsLoading,
     required TResult Function(_GetSportsFailure value) getSportsFailure,
     required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return emailConfirmationSent(this);
   }
@@ -7989,6 +9198,12 @@ class _$EmailConfirmationSentImpl implements _EmailConfirmationSent {
     TResult? Function(_GetSportsLoading value)? getSportsLoading,
     TResult? Function(_GetSportsFailure value)? getSportsFailure,
     TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return emailConfirmationSent?.call(this);
   }
@@ -8029,6 +9244,12 @@ class _$EmailConfirmationSentImpl implements _EmailConfirmationSent {
     TResult Function(_GetSportsLoading value)? getSportsLoading,
     TResult Function(_GetSportsFailure value)? getSportsFailure,
     TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (emailConfirmationSent != null) {
@@ -8115,6 +9336,12 @@ class _$CompleteRegistrationLoadingImpl
     required TResult Function() getSportsLoading,
     required TResult Function(Failure? failure) getSportsFailure,
     required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
   }) {
     return completeRegistrationLoading();
   }
@@ -8151,6 +9378,12 @@ class _$CompleteRegistrationLoadingImpl
     TResult? Function()? getSportsLoading,
     TResult? Function(Failure? failure)? getSportsFailure,
     TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
   }) {
     return completeRegistrationLoading?.call();
   }
@@ -8187,6 +9420,12 @@ class _$CompleteRegistrationLoadingImpl
     TResult Function()? getSportsLoading,
     TResult Function(Failure? failure)? getSportsFailure,
     TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
     required TResult orElse(),
   }) {
     if (completeRegistrationLoading != null) {
@@ -8234,6 +9473,14 @@ class _$CompleteRegistrationLoadingImpl
     required TResult Function(_GetSportsLoading value) getSportsLoading,
     required TResult Function(_GetSportsFailure value) getSportsFailure,
     required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return completeRegistrationLoading(this);
   }
@@ -8274,6 +9521,12 @@ class _$CompleteRegistrationLoadingImpl
     TResult? Function(_GetSportsLoading value)? getSportsLoading,
     TResult? Function(_GetSportsFailure value)? getSportsFailure,
     TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return completeRegistrationLoading?.call(this);
   }
@@ -8314,6 +9567,12 @@ class _$CompleteRegistrationLoadingImpl
     TResult Function(_GetSportsLoading value)? getSportsLoading,
     TResult Function(_GetSportsFailure value)? getSportsFailure,
     TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (completeRegistrationLoading != null) {
@@ -8428,6 +9687,12 @@ class _$CompleteRegistrationFailureImpl
     required TResult Function() getSportsLoading,
     required TResult Function(Failure? failure) getSportsFailure,
     required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
   }) {
     return completeRegistrationailure(failure);
   }
@@ -8464,6 +9729,12 @@ class _$CompleteRegistrationFailureImpl
     TResult? Function()? getSportsLoading,
     TResult? Function(Failure? failure)? getSportsFailure,
     TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
   }) {
     return completeRegistrationailure?.call(failure);
   }
@@ -8500,6 +9771,12 @@ class _$CompleteRegistrationFailureImpl
     TResult Function()? getSportsLoading,
     TResult Function(Failure? failure)? getSportsFailure,
     TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
     required TResult orElse(),
   }) {
     if (completeRegistrationailure != null) {
@@ -8547,6 +9824,14 @@ class _$CompleteRegistrationFailureImpl
     required TResult Function(_GetSportsLoading value) getSportsLoading,
     required TResult Function(_GetSportsFailure value) getSportsFailure,
     required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return completeRegistrationailure(this);
   }
@@ -8587,6 +9872,12 @@ class _$CompleteRegistrationFailureImpl
     TResult? Function(_GetSportsLoading value)? getSportsLoading,
     TResult? Function(_GetSportsFailure value)? getSportsFailure,
     TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return completeRegistrationailure?.call(this);
   }
@@ -8627,6 +9918,12 @@ class _$CompleteRegistrationFailureImpl
     TResult Function(_GetSportsLoading value)? getSportsLoading,
     TResult Function(_GetSportsFailure value)? getSportsFailure,
     TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (completeRegistrationailure != null) {
@@ -8745,6 +10042,12 @@ class _$RegistrationCompletedImpl implements _RegistrationCompleted {
     required TResult Function() getSportsLoading,
     required TResult Function(Failure? failure) getSportsFailure,
     required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
   }) {
     return registrationCompleted(userProfile);
   }
@@ -8781,6 +10084,12 @@ class _$RegistrationCompletedImpl implements _RegistrationCompleted {
     TResult? Function()? getSportsLoading,
     TResult? Function(Failure? failure)? getSportsFailure,
     TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
   }) {
     return registrationCompleted?.call(userProfile);
   }
@@ -8817,6 +10126,12 @@ class _$RegistrationCompletedImpl implements _RegistrationCompleted {
     TResult Function()? getSportsLoading,
     TResult Function(Failure? failure)? getSportsFailure,
     TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
     required TResult orElse(),
   }) {
     if (registrationCompleted != null) {
@@ -8864,6 +10179,14 @@ class _$RegistrationCompletedImpl implements _RegistrationCompleted {
     required TResult Function(_GetSportsLoading value) getSportsLoading,
     required TResult Function(_GetSportsFailure value) getSportsFailure,
     required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return registrationCompleted(this);
   }
@@ -8904,6 +10227,12 @@ class _$RegistrationCompletedImpl implements _RegistrationCompleted {
     TResult? Function(_GetSportsLoading value)? getSportsLoading,
     TResult? Function(_GetSportsFailure value)? getSportsFailure,
     TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return registrationCompleted?.call(this);
   }
@@ -8944,6 +10273,12 @@ class _$RegistrationCompletedImpl implements _RegistrationCompleted {
     TResult Function(_GetSportsLoading value)? getSportsLoading,
     TResult Function(_GetSportsFailure value)? getSportsFailure,
     TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (registrationCompleted != null) {
@@ -9032,6 +10367,12 @@ class _$CheckUserLoadingImpl implements _CheckUserLoading {
     required TResult Function() getSportsLoading,
     required TResult Function(Failure? failure) getSportsFailure,
     required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
   }) {
     return checkUserLoading();
   }
@@ -9068,6 +10409,12 @@ class _$CheckUserLoadingImpl implements _CheckUserLoading {
     TResult? Function()? getSportsLoading,
     TResult? Function(Failure? failure)? getSportsFailure,
     TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
   }) {
     return checkUserLoading?.call();
   }
@@ -9104,6 +10451,12 @@ class _$CheckUserLoadingImpl implements _CheckUserLoading {
     TResult Function()? getSportsLoading,
     TResult Function(Failure? failure)? getSportsFailure,
     TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
     required TResult orElse(),
   }) {
     if (checkUserLoading != null) {
@@ -9151,6 +10504,14 @@ class _$CheckUserLoadingImpl implements _CheckUserLoading {
     required TResult Function(_GetSportsLoading value) getSportsLoading,
     required TResult Function(_GetSportsFailure value) getSportsFailure,
     required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return checkUserLoading(this);
   }
@@ -9191,6 +10552,12 @@ class _$CheckUserLoadingImpl implements _CheckUserLoading {
     TResult? Function(_GetSportsLoading value)? getSportsLoading,
     TResult? Function(_GetSportsFailure value)? getSportsFailure,
     TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return checkUserLoading?.call(this);
   }
@@ -9231,6 +10598,12 @@ class _$CheckUserLoadingImpl implements _CheckUserLoading {
     TResult Function(_GetSportsLoading value)? getSportsLoading,
     TResult Function(_GetSportsFailure value)? getSportsFailure,
     TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (checkUserLoading != null) {
@@ -9342,6 +10715,12 @@ class _$CheckUserLoggedImpl implements _CheckUserLogged {
     required TResult Function() getSportsLoading,
     required TResult Function(Failure? failure) getSportsFailure,
     required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
   }) {
     return checkUserLogged(userAuthState);
   }
@@ -9378,6 +10757,12 @@ class _$CheckUserLoggedImpl implements _CheckUserLogged {
     TResult? Function()? getSportsLoading,
     TResult? Function(Failure? failure)? getSportsFailure,
     TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
   }) {
     return checkUserLogged?.call(userAuthState);
   }
@@ -9414,6 +10799,12 @@ class _$CheckUserLoggedImpl implements _CheckUserLogged {
     TResult Function()? getSportsLoading,
     TResult Function(Failure? failure)? getSportsFailure,
     TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
     required TResult orElse(),
   }) {
     if (checkUserLogged != null) {
@@ -9461,6 +10852,14 @@ class _$CheckUserLoggedImpl implements _CheckUserLogged {
     required TResult Function(_GetSportsLoading value) getSportsLoading,
     required TResult Function(_GetSportsFailure value) getSportsFailure,
     required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return checkUserLogged(this);
   }
@@ -9501,6 +10900,12 @@ class _$CheckUserLoggedImpl implements _CheckUserLogged {
     TResult? Function(_GetSportsLoading value)? getSportsLoading,
     TResult? Function(_GetSportsFailure value)? getSportsFailure,
     TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return checkUserLogged?.call(this);
   }
@@ -9541,6 +10946,12 @@ class _$CheckUserLoggedImpl implements _CheckUserLogged {
     TResult Function(_GetSportsLoading value)? getSportsLoading,
     TResult Function(_GetSportsFailure value)? getSportsFailure,
     TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (checkUserLogged != null) {
@@ -9657,6 +11068,12 @@ class _$CeckUserFailureImpl implements _CeckUserFailure {
     required TResult Function() getSportsLoading,
     required TResult Function(Failure? failure) getSportsFailure,
     required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
   }) {
     return checkUserFailure(failure);
   }
@@ -9693,6 +11110,12 @@ class _$CeckUserFailureImpl implements _CeckUserFailure {
     TResult? Function()? getSportsLoading,
     TResult? Function(Failure? failure)? getSportsFailure,
     TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
   }) {
     return checkUserFailure?.call(failure);
   }
@@ -9729,6 +11152,12 @@ class _$CeckUserFailureImpl implements _CeckUserFailure {
     TResult Function()? getSportsLoading,
     TResult Function(Failure? failure)? getSportsFailure,
     TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
     required TResult orElse(),
   }) {
     if (checkUserFailure != null) {
@@ -9776,6 +11205,14 @@ class _$CeckUserFailureImpl implements _CeckUserFailure {
     required TResult Function(_GetSportsLoading value) getSportsLoading,
     required TResult Function(_GetSportsFailure value) getSportsFailure,
     required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return checkUserFailure(this);
   }
@@ -9816,6 +11253,12 @@ class _$CeckUserFailureImpl implements _CeckUserFailure {
     TResult? Function(_GetSportsLoading value)? getSportsLoading,
     TResult? Function(_GetSportsFailure value)? getSportsFailure,
     TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return checkUserFailure?.call(this);
   }
@@ -9856,6 +11299,12 @@ class _$CeckUserFailureImpl implements _CeckUserFailure {
     TResult Function(_GetSportsLoading value)? getSportsLoading,
     TResult Function(_GetSportsFailure value)? getSportsFailure,
     TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (checkUserFailure != null) {
@@ -9947,6 +11396,12 @@ class _$UserProfileLocalLoadingImpl implements _UserProfileLocalLoading {
     required TResult Function() getSportsLoading,
     required TResult Function(Failure? failure) getSportsFailure,
     required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
   }) {
     return userProfileLocalLoading();
   }
@@ -9983,6 +11438,12 @@ class _$UserProfileLocalLoadingImpl implements _UserProfileLocalLoading {
     TResult? Function()? getSportsLoading,
     TResult? Function(Failure? failure)? getSportsFailure,
     TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
   }) {
     return userProfileLocalLoading?.call();
   }
@@ -10019,6 +11480,12 @@ class _$UserProfileLocalLoadingImpl implements _UserProfileLocalLoading {
     TResult Function()? getSportsLoading,
     TResult Function(Failure? failure)? getSportsFailure,
     TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
     required TResult orElse(),
   }) {
     if (userProfileLocalLoading != null) {
@@ -10066,6 +11533,14 @@ class _$UserProfileLocalLoadingImpl implements _UserProfileLocalLoading {
     required TResult Function(_GetSportsLoading value) getSportsLoading,
     required TResult Function(_GetSportsFailure value) getSportsFailure,
     required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return userProfileLocalLoading(this);
   }
@@ -10106,6 +11581,12 @@ class _$UserProfileLocalLoadingImpl implements _UserProfileLocalLoading {
     TResult? Function(_GetSportsLoading value)? getSportsLoading,
     TResult? Function(_GetSportsFailure value)? getSportsFailure,
     TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return userProfileLocalLoading?.call(this);
   }
@@ -10146,6 +11627,12 @@ class _$UserProfileLocalLoadingImpl implements _UserProfileLocalLoading {
     TResult Function(_GetSportsLoading value)? getSportsLoading,
     TResult Function(_GetSportsFailure value)? getSportsFailure,
     TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (userProfileLocalLoading != null) {
@@ -10228,6 +11715,12 @@ class _$UserProfileLoadingImpl implements _UserProfileLoading {
     required TResult Function() getSportsLoading,
     required TResult Function(Failure? failure) getSportsFailure,
     required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
   }) {
     return userProfileLoading();
   }
@@ -10264,6 +11757,12 @@ class _$UserProfileLoadingImpl implements _UserProfileLoading {
     TResult? Function()? getSportsLoading,
     TResult? Function(Failure? failure)? getSportsFailure,
     TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
   }) {
     return userProfileLoading?.call();
   }
@@ -10300,6 +11799,12 @@ class _$UserProfileLoadingImpl implements _UserProfileLoading {
     TResult Function()? getSportsLoading,
     TResult Function(Failure? failure)? getSportsFailure,
     TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
     required TResult orElse(),
   }) {
     if (userProfileLoading != null) {
@@ -10347,6 +11852,14 @@ class _$UserProfileLoadingImpl implements _UserProfileLoading {
     required TResult Function(_GetSportsLoading value) getSportsLoading,
     required TResult Function(_GetSportsFailure value) getSportsFailure,
     required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return userProfileLoading(this);
   }
@@ -10387,6 +11900,12 @@ class _$UserProfileLoadingImpl implements _UserProfileLoading {
     TResult? Function(_GetSportsLoading value)? getSportsLoading,
     TResult? Function(_GetSportsFailure value)? getSportsFailure,
     TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return userProfileLoading?.call(this);
   }
@@ -10427,6 +11946,12 @@ class _$UserProfileLoadingImpl implements _UserProfileLoading {
     TResult Function(_GetSportsLoading value)? getSportsLoading,
     TResult Function(_GetSportsFailure value)? getSportsFailure,
     TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (userProfileLoading != null) {
@@ -10537,6 +12062,12 @@ class _$UserProfileFailureImpl implements _UserProfileFailure {
     required TResult Function() getSportsLoading,
     required TResult Function(Failure? failure) getSportsFailure,
     required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
   }) {
     return userProfileFailure(failure);
   }
@@ -10573,6 +12104,12 @@ class _$UserProfileFailureImpl implements _UserProfileFailure {
     TResult? Function()? getSportsLoading,
     TResult? Function(Failure? failure)? getSportsFailure,
     TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
   }) {
     return userProfileFailure?.call(failure);
   }
@@ -10609,6 +12146,12 @@ class _$UserProfileFailureImpl implements _UserProfileFailure {
     TResult Function()? getSportsLoading,
     TResult Function(Failure? failure)? getSportsFailure,
     TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
     required TResult orElse(),
   }) {
     if (userProfileFailure != null) {
@@ -10656,6 +12199,14 @@ class _$UserProfileFailureImpl implements _UserProfileFailure {
     required TResult Function(_GetSportsLoading value) getSportsLoading,
     required TResult Function(_GetSportsFailure value) getSportsFailure,
     required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return userProfileFailure(this);
   }
@@ -10696,6 +12247,12 @@ class _$UserProfileFailureImpl implements _UserProfileFailure {
     TResult? Function(_GetSportsLoading value)? getSportsLoading,
     TResult? Function(_GetSportsFailure value)? getSportsFailure,
     TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return userProfileFailure?.call(this);
   }
@@ -10736,6 +12293,12 @@ class _$UserProfileFailureImpl implements _UserProfileFailure {
     TResult Function(_GetSportsLoading value)? getSportsLoading,
     TResult Function(_GetSportsFailure value)? getSportsFailure,
     TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (userProfileFailure != null) {
@@ -10853,6 +12416,12 @@ class _$UserProfileFetchedImpl implements _UserProfileFetched {
     required TResult Function() getSportsLoading,
     required TResult Function(Failure? failure) getSportsFailure,
     required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
   }) {
     return userProfileFetched(userProfile);
   }
@@ -10889,6 +12458,12 @@ class _$UserProfileFetchedImpl implements _UserProfileFetched {
     TResult? Function()? getSportsLoading,
     TResult? Function(Failure? failure)? getSportsFailure,
     TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
   }) {
     return userProfileFetched?.call(userProfile);
   }
@@ -10925,6 +12500,12 @@ class _$UserProfileFetchedImpl implements _UserProfileFetched {
     TResult Function()? getSportsLoading,
     TResult Function(Failure? failure)? getSportsFailure,
     TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
     required TResult orElse(),
   }) {
     if (userProfileFetched != null) {
@@ -10972,6 +12553,14 @@ class _$UserProfileFetchedImpl implements _UserProfileFetched {
     required TResult Function(_GetSportsLoading value) getSportsLoading,
     required TResult Function(_GetSportsFailure value) getSportsFailure,
     required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return userProfileFetched(this);
   }
@@ -11012,6 +12601,12 @@ class _$UserProfileFetchedImpl implements _UserProfileFetched {
     TResult? Function(_GetSportsLoading value)? getSportsLoading,
     TResult? Function(_GetSportsFailure value)? getSportsFailure,
     TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return userProfileFetched?.call(this);
   }
@@ -11052,6 +12647,12 @@ class _$UserProfileFetchedImpl implements _UserProfileFetched {
     TResult Function(_GetSportsLoading value)? getSportsLoading,
     TResult Function(_GetSportsFailure value)? getSportsFailure,
     TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (userProfileFetched != null) {
@@ -11140,6 +12741,12 @@ class _$GetSportsLoadingImpl implements _GetSportsLoading {
     required TResult Function() getSportsLoading,
     required TResult Function(Failure? failure) getSportsFailure,
     required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
   }) {
     return getSportsLoading();
   }
@@ -11176,6 +12783,12 @@ class _$GetSportsLoadingImpl implements _GetSportsLoading {
     TResult? Function()? getSportsLoading,
     TResult? Function(Failure? failure)? getSportsFailure,
     TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
   }) {
     return getSportsLoading?.call();
   }
@@ -11212,6 +12825,12 @@ class _$GetSportsLoadingImpl implements _GetSportsLoading {
     TResult Function()? getSportsLoading,
     TResult Function(Failure? failure)? getSportsFailure,
     TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
     required TResult orElse(),
   }) {
     if (getSportsLoading != null) {
@@ -11259,6 +12878,14 @@ class _$GetSportsLoadingImpl implements _GetSportsLoading {
     required TResult Function(_GetSportsLoading value) getSportsLoading,
     required TResult Function(_GetSportsFailure value) getSportsFailure,
     required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return getSportsLoading(this);
   }
@@ -11299,6 +12926,12 @@ class _$GetSportsLoadingImpl implements _GetSportsLoading {
     TResult? Function(_GetSportsLoading value)? getSportsLoading,
     TResult? Function(_GetSportsFailure value)? getSportsFailure,
     TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return getSportsLoading?.call(this);
   }
@@ -11339,6 +12972,12 @@ class _$GetSportsLoadingImpl implements _GetSportsLoading {
     TResult Function(_GetSportsLoading value)? getSportsLoading,
     TResult Function(_GetSportsFailure value)? getSportsFailure,
     TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (getSportsLoading != null) {
@@ -11449,6 +13088,12 @@ class _$GetSportsFailureImpl implements _GetSportsFailure {
     required TResult Function() getSportsLoading,
     required TResult Function(Failure? failure) getSportsFailure,
     required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
   }) {
     return getSportsFailure(failure);
   }
@@ -11485,6 +13130,12 @@ class _$GetSportsFailureImpl implements _GetSportsFailure {
     TResult? Function()? getSportsLoading,
     TResult? Function(Failure? failure)? getSportsFailure,
     TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
   }) {
     return getSportsFailure?.call(failure);
   }
@@ -11521,6 +13172,12 @@ class _$GetSportsFailureImpl implements _GetSportsFailure {
     TResult Function()? getSportsLoading,
     TResult Function(Failure? failure)? getSportsFailure,
     TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
     required TResult orElse(),
   }) {
     if (getSportsFailure != null) {
@@ -11568,6 +13225,14 @@ class _$GetSportsFailureImpl implements _GetSportsFailure {
     required TResult Function(_GetSportsLoading value) getSportsLoading,
     required TResult Function(_GetSportsFailure value) getSportsFailure,
     required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return getSportsFailure(this);
   }
@@ -11608,6 +13273,12 @@ class _$GetSportsFailureImpl implements _GetSportsFailure {
     TResult? Function(_GetSportsLoading value)? getSportsLoading,
     TResult? Function(_GetSportsFailure value)? getSportsFailure,
     TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return getSportsFailure?.call(this);
   }
@@ -11648,6 +13319,12 @@ class _$GetSportsFailureImpl implements _GetSportsFailure {
     TResult Function(_GetSportsLoading value)? getSportsLoading,
     TResult Function(_GetSportsFailure value)? getSportsFailure,
     TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (getSportsFailure != null) {
@@ -11770,6 +13447,12 @@ class _$SportsFetchedImpl implements _SportsFetched {
     required TResult Function() getSportsLoading,
     required TResult Function(Failure? failure) getSportsFailure,
     required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
   }) {
     return sportsFetched(sports);
   }
@@ -11806,6 +13489,12 @@ class _$SportsFetchedImpl implements _SportsFetched {
     TResult? Function()? getSportsLoading,
     TResult? Function(Failure? failure)? getSportsFailure,
     TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
   }) {
     return sportsFetched?.call(sports);
   }
@@ -11842,6 +13531,12 @@ class _$SportsFetchedImpl implements _SportsFetched {
     TResult Function()? getSportsLoading,
     TResult Function(Failure? failure)? getSportsFailure,
     TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
     required TResult orElse(),
   }) {
     if (sportsFetched != null) {
@@ -11889,6 +13584,14 @@ class _$SportsFetchedImpl implements _SportsFetched {
     required TResult Function(_GetSportsLoading value) getSportsLoading,
     required TResult Function(_GetSportsFailure value) getSportsFailure,
     required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
     return sportsFetched(this);
   }
@@ -11929,6 +13632,12 @@ class _$SportsFetchedImpl implements _SportsFetched {
     TResult? Function(_GetSportsLoading value)? getSportsLoading,
     TResult? Function(_GetSportsFailure value)? getSportsFailure,
     TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return sportsFetched?.call(this);
   }
@@ -11969,6 +13678,12 @@ class _$SportsFetchedImpl implements _SportsFetched {
     TResult Function(_GetSportsLoading value)? getSportsLoading,
     TResult Function(_GetSportsFailure value)? getSportsFailure,
     TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
     if (sportsFetched != null) {
@@ -11985,5 +13700,2058 @@ abstract class _SportsFetched implements AuthState {
   List<SportEntity> get sports;
   @JsonKey(ignore: true)
   _$$SportsFetchedImplCopyWith<_$SportsFetchedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ChangeEmailLoadingImplCopyWith<$Res> {
+  factory _$$ChangeEmailLoadingImplCopyWith(_$ChangeEmailLoadingImpl value,
+          $Res Function(_$ChangeEmailLoadingImpl) then) =
+      __$$ChangeEmailLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ChangeEmailLoadingImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$ChangeEmailLoadingImpl>
+    implements _$$ChangeEmailLoadingImplCopyWith<$Res> {
+  __$$ChangeEmailLoadingImplCopyWithImpl(_$ChangeEmailLoadingImpl _value,
+      $Res Function(_$ChangeEmailLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ChangeEmailLoadingImpl implements _ChangeEmailLoading {
+  const _$ChangeEmailLoadingImpl();
+
+  @override
+  String toString() {
+    return 'AuthState.changeEmailLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ChangeEmailLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
+  }) {
+    return changeEmailLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
+  }) {
+    return changeEmailLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
+    required TResult orElse(),
+  }) {
+    if (changeEmailLoading != null) {
+      return changeEmailLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+  }) {
+    return changeEmailLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
+  }) {
+    return changeEmailLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    required TResult orElse(),
+  }) {
+    if (changeEmailLoading != null) {
+      return changeEmailLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ChangeEmailLoading implements AuthState {
+  const factory _ChangeEmailLoading() = _$ChangeEmailLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$ChangeEmailFailureImplCopyWith<$Res> {
+  factory _$$ChangeEmailFailureImplCopyWith(_$ChangeEmailFailureImpl value,
+          $Res Function(_$ChangeEmailFailureImpl) then) =
+      __$$ChangeEmailFailureImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Failure? failure});
+}
+
+/// @nodoc
+class __$$ChangeEmailFailureImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$ChangeEmailFailureImpl>
+    implements _$$ChangeEmailFailureImplCopyWith<$Res> {
+  __$$ChangeEmailFailureImplCopyWithImpl(_$ChangeEmailFailureImpl _value,
+      $Res Function(_$ChangeEmailFailureImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? failure = freezed,
+  }) {
+    return _then(_$ChangeEmailFailureImpl(
+      failure: freezed == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChangeEmailFailureImpl implements _ChangeEmailFailure {
+  const _$ChangeEmailFailureImpl({this.failure = null});
+
+  @override
+  @JsonKey()
+  final Failure? failure;
+
+  @override
+  String toString() {
+    return 'AuthState.changeEmailFailure(failure: $failure)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeEmailFailureImpl &&
+            (identical(other.failure, failure) || other.failure == failure));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, failure);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangeEmailFailureImplCopyWith<_$ChangeEmailFailureImpl> get copyWith =>
+      __$$ChangeEmailFailureImplCopyWithImpl<_$ChangeEmailFailureImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
+  }) {
+    return changeEmailFailure(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
+  }) {
+    return changeEmailFailure?.call(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
+    required TResult orElse(),
+  }) {
+    if (changeEmailFailure != null) {
+      return changeEmailFailure(failure);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+  }) {
+    return changeEmailFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
+  }) {
+    return changeEmailFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    required TResult orElse(),
+  }) {
+    if (changeEmailFailure != null) {
+      return changeEmailFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ChangeEmailFailure implements AuthState {
+  const factory _ChangeEmailFailure({final Failure? failure}) =
+      _$ChangeEmailFailureImpl;
+
+  Failure? get failure;
+  @JsonKey(ignore: true)
+  _$$ChangeEmailFailureImplCopyWith<_$ChangeEmailFailureImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$EmailChangedImplCopyWith<$Res> {
+  factory _$$EmailChangedImplCopyWith(
+          _$EmailChangedImpl value, $Res Function(_$EmailChangedImpl) then) =
+      __$$EmailChangedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool emailChanged});
+}
+
+/// @nodoc
+class __$$EmailChangedImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$EmailChangedImpl>
+    implements _$$EmailChangedImplCopyWith<$Res> {
+  __$$EmailChangedImplCopyWithImpl(
+      _$EmailChangedImpl _value, $Res Function(_$EmailChangedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? emailChanged = null,
+  }) {
+    return _then(_$EmailChangedImpl(
+      emailChanged: null == emailChanged
+          ? _value.emailChanged
+          : emailChanged // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$EmailChangedImpl implements _EmailChanged {
+  const _$EmailChangedImpl({this.emailChanged = false});
+
+  @override
+  @JsonKey()
+  final bool emailChanged;
+
+  @override
+  String toString() {
+    return 'AuthState.emailChanged(emailChanged: $emailChanged)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$EmailChangedImpl &&
+            (identical(other.emailChanged, emailChanged) ||
+                other.emailChanged == emailChanged));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, emailChanged);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$EmailChangedImplCopyWith<_$EmailChangedImpl> get copyWith =>
+      __$$EmailChangedImplCopyWithImpl<_$EmailChangedImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
+  }) {
+    return emailChanged(this.emailChanged);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
+  }) {
+    return emailChanged?.call(this.emailChanged);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
+    required TResult orElse(),
+  }) {
+    if (emailChanged != null) {
+      return emailChanged(this.emailChanged);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+  }) {
+    return emailChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
+  }) {
+    return emailChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    required TResult orElse(),
+  }) {
+    if (emailChanged != null) {
+      return emailChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EmailChanged implements AuthState {
+  const factory _EmailChanged({final bool emailChanged}) = _$EmailChangedImpl;
+
+  bool get emailChanged;
+  @JsonKey(ignore: true)
+  _$$EmailChangedImplCopyWith<_$EmailChangedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ChangePasswordLoadingImplCopyWith<$Res> {
+  factory _$$ChangePasswordLoadingImplCopyWith(
+          _$ChangePasswordLoadingImpl value,
+          $Res Function(_$ChangePasswordLoadingImpl) then) =
+      __$$ChangePasswordLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ChangePasswordLoadingImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$ChangePasswordLoadingImpl>
+    implements _$$ChangePasswordLoadingImplCopyWith<$Res> {
+  __$$ChangePasswordLoadingImplCopyWithImpl(_$ChangePasswordLoadingImpl _value,
+      $Res Function(_$ChangePasswordLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ChangePasswordLoadingImpl implements _ChangePasswordLoading {
+  const _$ChangePasswordLoadingImpl();
+
+  @override
+  String toString() {
+    return 'AuthState.changePasswordLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangePasswordLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
+  }) {
+    return changePasswordLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
+  }) {
+    return changePasswordLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
+    required TResult orElse(),
+  }) {
+    if (changePasswordLoading != null) {
+      return changePasswordLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+  }) {
+    return changePasswordLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
+  }) {
+    return changePasswordLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    required TResult orElse(),
+  }) {
+    if (changePasswordLoading != null) {
+      return changePasswordLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ChangePasswordLoading implements AuthState {
+  const factory _ChangePasswordLoading() = _$ChangePasswordLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$ChangePasswordFailureImplCopyWith<$Res> {
+  factory _$$ChangePasswordFailureImplCopyWith(
+          _$ChangePasswordFailureImpl value,
+          $Res Function(_$ChangePasswordFailureImpl) then) =
+      __$$ChangePasswordFailureImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Failure? failure});
+}
+
+/// @nodoc
+class __$$ChangePasswordFailureImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$ChangePasswordFailureImpl>
+    implements _$$ChangePasswordFailureImplCopyWith<$Res> {
+  __$$ChangePasswordFailureImplCopyWithImpl(_$ChangePasswordFailureImpl _value,
+      $Res Function(_$ChangePasswordFailureImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? failure = freezed,
+  }) {
+    return _then(_$ChangePasswordFailureImpl(
+      failure: freezed == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChangePasswordFailureImpl implements _ChangePasswordFailure {
+  const _$ChangePasswordFailureImpl({this.failure = null});
+
+  @override
+  @JsonKey()
+  final Failure? failure;
+
+  @override
+  String toString() {
+    return 'AuthState.changePasswordFailure(failure: $failure)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangePasswordFailureImpl &&
+            (identical(other.failure, failure) || other.failure == failure));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, failure);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangePasswordFailureImplCopyWith<_$ChangePasswordFailureImpl>
+      get copyWith => __$$ChangePasswordFailureImplCopyWithImpl<
+          _$ChangePasswordFailureImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
+  }) {
+    return changePasswordFailure(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
+  }) {
+    return changePasswordFailure?.call(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
+    required TResult orElse(),
+  }) {
+    if (changePasswordFailure != null) {
+      return changePasswordFailure(failure);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+  }) {
+    return changePasswordFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
+  }) {
+    return changePasswordFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    required TResult orElse(),
+  }) {
+    if (changePasswordFailure != null) {
+      return changePasswordFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ChangePasswordFailure implements AuthState {
+  const factory _ChangePasswordFailure({final Failure? failure}) =
+      _$ChangePasswordFailureImpl;
+
+  Failure? get failure;
+  @JsonKey(ignore: true)
+  _$$ChangePasswordFailureImplCopyWith<_$ChangePasswordFailureImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$PasswordChangedImplCopyWith<$Res> {
+  factory _$$PasswordChangedImplCopyWith(_$PasswordChangedImpl value,
+          $Res Function(_$PasswordChangedImpl) then) =
+      __$$PasswordChangedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool passwordChanged});
+}
+
+/// @nodoc
+class __$$PasswordChangedImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$PasswordChangedImpl>
+    implements _$$PasswordChangedImplCopyWith<$Res> {
+  __$$PasswordChangedImplCopyWithImpl(
+      _$PasswordChangedImpl _value, $Res Function(_$PasswordChangedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? passwordChanged = null,
+  }) {
+    return _then(_$PasswordChangedImpl(
+      passwordChanged: null == passwordChanged
+          ? _value.passwordChanged
+          : passwordChanged // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$PasswordChangedImpl implements _PasswordChanged {
+  const _$PasswordChangedImpl({this.passwordChanged = false});
+
+  @override
+  @JsonKey()
+  final bool passwordChanged;
+
+  @override
+  String toString() {
+    return 'AuthState.passwordChanged(passwordChanged: $passwordChanged)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PasswordChangedImpl &&
+            (identical(other.passwordChanged, passwordChanged) ||
+                other.passwordChanged == passwordChanged));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, passwordChanged);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PasswordChangedImplCopyWith<_$PasswordChangedImpl> get copyWith =>
+      __$$PasswordChangedImplCopyWithImpl<_$PasswordChangedImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
+  }) {
+    return passwordChanged(this.passwordChanged);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
+  }) {
+    return passwordChanged?.call(this.passwordChanged);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
+    required TResult orElse(),
+  }) {
+    if (passwordChanged != null) {
+      return passwordChanged(this.passwordChanged);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+  }) {
+    return passwordChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
+  }) {
+    return passwordChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    required TResult orElse(),
+  }) {
+    if (passwordChanged != null) {
+      return passwordChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PasswordChanged implements AuthState {
+  const factory _PasswordChanged({final bool passwordChanged}) =
+      _$PasswordChangedImpl;
+
+  bool get passwordChanged;
+  @JsonKey(ignore: true)
+  _$$PasswordChangedImplCopyWith<_$PasswordChangedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

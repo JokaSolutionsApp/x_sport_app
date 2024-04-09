@@ -22,7 +22,10 @@ class StadiumRepository extends BaseStadiumRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.statusCode));
+      return Left(ServerFailure(
+        failuar.errorModel.statusCode,
+        failuar.errorModel.message,
+      ));
     }
   }
 
@@ -36,7 +39,10 @@ class StadiumRepository extends BaseStadiumRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.statusCode));
+      return Left(ServerFailure(
+        failuar.errorModel.statusCode,
+        failuar.errorModel.message,
+      ));
     }
   }
 
@@ -50,7 +56,10 @@ class StadiumRepository extends BaseStadiumRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.statusCode));
+      return Left(ServerFailure(
+        failuar.errorModel.statusCode,
+        failuar.errorModel.message,
+      ));
     }
   }
 }

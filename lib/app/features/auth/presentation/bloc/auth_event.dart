@@ -26,4 +26,7 @@ class AuthEvent with _$AuthEvent {
       _AddFavoriteSportsEvent;
   const factory AuthEvent.deleteFavoriteSports({required List<int> sportsIds}) =
       _DeleteFavoriteSportsEvent;
+
+  const factory AuthEvent.changeEmail() = _ChangeEmailEvent;
+  const factory AuthEvent.changePassword() = _ChangePasswordEvent;
 }

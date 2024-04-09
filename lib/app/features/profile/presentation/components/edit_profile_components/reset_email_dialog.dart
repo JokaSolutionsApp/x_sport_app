@@ -1,14 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/controllers/fileds_bloc.dart';
 import 'package:x_sport/app/features/profile/presentation/components/edit_profile_components/status_dialog.dart';
 import 'package:x_sport/app/widgets/text_fields/no_border_textfield_widget.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
 import 'package:x_sport/main.dart';
 
-class ResetEmailDialog extends StatelessWidget {
+class ResetEmailDialog extends StatefulWidget {
   const ResetEmailDialog({
     super.key,
   });
+
+  @override
+  State<ResetEmailDialog> createState() => _ResetEmailDialogState();
+}
+
+class _ResetEmailDialogState extends State<ResetEmailDialog> {
+  late final TextEditingController password;
+  late final TextEditingController email;
+  @override
+  initState() {
+    super.initState();
+    password = TextEditingController();
+    email = TextEditingController();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +42,10 @@ class ResetEmailDialog extends StatelessWidget {
           ),
           NoBorderTextFieldWidget(
             hintText: 'ادخل كبمة المرور',
-            controller: TextEditingController(),
+            labelText: 'ادخل كبمة المرور',
+            controller: password,
             keyboardType: TextInputType.emailAddress,
-            textStream: const Stream.empty(),
+            textStream: editProfileStream.password,
             hintStyle: TextStyle(
               color: XColors.grey4,
               fontSize: 18.sp,
@@ -41,16 +57,17 @@ class ResetEmailDialog extends StatelessWidget {
                 width: 1.2.w,
               ),
             ),
-            onChanged: () {},
+            onChanged: editProfileStream.changePassword,
           ),
           SizedBox(
             height: 8.h,
           ),
           NoBorderTextFieldWidget(
             hintText: 'البريد الالكتروني الجديد',
-            controller: TextEditingController(),
+            labelText: 'البريد الالكتروني الجديد',
+            controller: email,
             keyboardType: TextInputType.emailAddress,
-            textStream: const Stream.empty(),
+            textStream: editProfileStream.email,
             hintStyle: TextStyle(
               color: XColors.grey4,
               fontSize: 18.sp,
@@ -62,7 +79,7 @@ class ResetEmailDialog extends StatelessWidget {
                 width: 1.2.w,
               ),
             ),
-            onChanged: () {},
+            onChanged: editProfileStream.changeEmail,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),

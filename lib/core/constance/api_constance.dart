@@ -16,6 +16,8 @@ class ApiConstance {
   static const deleteFavoriteSports = 'User/DeleteFavoriteSports';
   static const editPreferencesApi = 'User/EditPreferences';
   static const deleteUserProfile = 'User/DeleteAccount';
+  static const changeEmail = 'User/ChangeEmail';
+  static const changePassword = 'User/ChangePassword';
   static const getSportsApi = 'Sport/GetSports';
 
 // Academy

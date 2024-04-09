@@ -23,7 +23,10 @@ class UserRepository extends BaseUserRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.statusCode));
+      return Left(ServerFailure(
+        failuar.errorModel.statusCode,
+        failuar.errorModel.message,
+      ));
     }
   }
 
@@ -34,7 +37,10 @@ class UserRepository extends BaseUserRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.statusCode));
+      return Left(ServerFailure(
+        failuar.errorModel.statusCode,
+        failuar.errorModel.message,
+      ));
     }
   }
 
@@ -45,7 +51,10 @@ class UserRepository extends BaseUserRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.statusCode));
+      return Left(ServerFailure(
+        failuar.errorModel.statusCode,
+        failuar.errorModel.message,
+      ));
     }
   }
 
@@ -56,7 +65,10 @@ class UserRepository extends BaseUserRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.statusCode));
+      return Left(ServerFailure(
+        failuar.errorModel.statusCode,
+        failuar.errorModel.message,
+      ));
     }
   }
 
@@ -67,7 +79,10 @@ class UserRepository extends BaseUserRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.statusCode));
+      return Left(ServerFailure(
+        failuar.errorModel.statusCode,
+        failuar.errorModel.message,
+      ));
     }
   }
 
@@ -78,7 +93,10 @@ class UserRepository extends BaseUserRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.statusCode));
+      return Left(ServerFailure(
+        failuar.errorModel.statusCode,
+        failuar.errorModel.message,
+      ));
     }
   }
 
@@ -89,7 +107,10 @@ class UserRepository extends BaseUserRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.statusCode));
+      return Left(ServerFailure(
+        failuar.errorModel.statusCode,
+        failuar.errorModel.message,
+      ));
     }
   }
 
@@ -100,7 +121,10 @@ class UserRepository extends BaseUserRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.statusCode));
+      return Left(ServerFailure(
+        failuar.errorModel.statusCode,
+        failuar.errorModel.message,
+      ));
     }
   }
 
@@ -113,7 +137,10 @@ class UserRepository extends BaseUserRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.statusCode));
+      return Left(ServerFailure(
+        failuar.errorModel.statusCode,
+        failuar.errorModel.message,
+      ));
     }
   }
 
@@ -125,7 +152,10 @@ class UserRepository extends BaseUserRepository {
       return Right(result);
     } on ServerException catch (failuar) {
       print(failuar.errorModel);
-      return Left(ServerFailure(failuar.errorModel.statusCode));
+      return Left(ServerFailure(
+        failuar.errorModel.statusCode,
+        failuar.errorModel.message,
+      ));
     }
   }
 
@@ -138,7 +168,10 @@ class UserRepository extends BaseUserRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.statusCode));
+      return Left(ServerFailure(
+        failuar.errorModel.statusCode,
+        failuar.errorModel.message,
+      ));
     }
   }
 
@@ -149,7 +182,10 @@ class UserRepository extends BaseUserRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.statusCode));
+      return Left(ServerFailure(
+        failuar.errorModel.statusCode,
+        failuar.errorModel.message,
+      ));
     }
   }
 
@@ -162,7 +198,10 @@ class UserRepository extends BaseUserRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.statusCode));
+      return Left(ServerFailure(
+        failuar.errorModel.statusCode,
+        failuar.errorModel.message,
+      ));
     }
   }
 
@@ -175,7 +214,10 @@ class UserRepository extends BaseUserRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.statusCode));
+      return Left(ServerFailure(
+        failuar.errorModel.statusCode,
+        failuar.errorModel.message,
+      ));
     }
   }
 
@@ -188,7 +230,10 @@ class UserRepository extends BaseUserRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.statusCode));
+      return Left(ServerFailure(
+        failuar.errorModel.statusCode,
+        failuar.errorModel.message,
+      ));
     }
   }
 
@@ -201,7 +246,10 @@ class UserRepository extends BaseUserRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.statusCode));
+      return Left(ServerFailure(
+        failuar.errorModel.statusCode,
+        failuar.errorModel.message,
+      ));
     }
   }
 
@@ -212,7 +260,38 @@ class UserRepository extends BaseUserRepository {
 
       return Right(result);
     } on ServerException catch (failuar) {
-      return Left(ServerFailure(failuar.errorModel.statusCode));
+      return Left(ServerFailure(
+        failuar.errorModel.statusCode,
+        failuar.errorModel.message,
+      ));
+    }
+  }
+
+  @override
+  Future<Either<Failure, bool>> changeEmail() async {
+    try {
+      final result = await baseUsersRemoteDataSource.changeEmail();
+
+      return Right(result);
+    } on ServerException catch (failuar) {
+      return Left(ServerFailure(
+        failuar.errorModel.statusCode,
+        failuar.errorModel.message,
+      ));
+    }
+  }
+
+  @override
+  Future<Either<Failure, bool>> changePassword() async {
+    try {
+      final result = await baseUsersRemoteDataSource.changePassword();
+
+      return Right(result);
+    } on ServerException catch (failuar) {
+      return Left(ServerFailure(
+        failuar.errorModel.statusCode,
+        failuar.errorModel.message,
+      ));
     }
   }
 }

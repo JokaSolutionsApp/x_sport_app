@@ -26,6 +26,8 @@ abstract class BaseUserRemoteDataSource {
   Future<UserProfileEntity> googleLogin();
 
   Future<bool> register();
+  Future<bool> changeEmail();
+  Future<bool> changePassword();
   Future<UserProfileEntity> editUserProfile(
       {required EditUserProfileParams params});
   Future<bool> deleteUserProfile();
@@ -445,6 +447,45 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
       }
     } catch (e) {
       throw ServerException(errorModel: ErrorModel.formJson(const {}));
+    }
+  }
+
+  @override
+  Future<bool> changeEmail() async {
+    try {
+      final postData = {'': ''};
+
+      final response =
+          await ApiService.post(ApiConstance.changeEmail, postData);
+
+      final data = response.data['data'];
+
+      if (response.statusCode == 200) {
+        return data;
+      } else {
+        throw ServerException(errorModel: ErrorModel.formJson(data));
+      }
+    } catch (e) {
+      throw ServerException(errorModel: ErrorModel.formJson(const {}));
+    }
+  }
+
+  @override
+  Future<bool> changePassword() async {
+    final postData = {
+      "oldPassword": editProfileStream.passwordValue,
+      "newPassword": editProfileStream.newPasswordValue
+    };
+    final response =
+        await ApiService.post(ApiConstance.changePassword, postData);
+
+    final data = response.data;
+    print('changePassword $data');
+
+    if (response.statusCode == 200) {
+      return data['data'];
+    } else {
+      throw ServerException(errorModel: ErrorModel.formJson(data));
     }
   }
 }
