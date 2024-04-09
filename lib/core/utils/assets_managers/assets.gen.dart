@@ -58,6 +58,9 @@ class $AssetsIconsGen {
   AssetGenImage get redDownArrow =>
       const AssetGenImage('assets/icons/red_down_arrow.png');
 
+  /// File path: assets/icons/reset.png
+  AssetGenImage get reset => const AssetGenImage('assets/icons/reset.png');
+
   /// List of all assets
   List<dynamic> get values => [
         group,
@@ -73,7 +76,8 @@ class $AssetsIconsGen {
         greenUpArrow,
         icon,
         meds,
-        redDownArrow
+        redDownArrow,
+        reset
       ];
 }
 

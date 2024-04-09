@@ -5,21 +5,24 @@ import '../../../core/constance/app_constance.dart';
 
 class NoBorderTextFieldWidget extends StatefulWidget {
   final TextEditingController controller;
-  final String labelText;
-  final String hintText;
+  final String? labelText;
+  final String? hintText;
   final TextInputType keyboardType;
   final Function onChanged;
-
+  final TextStyle? hintStyle;
   final Stream textStream;
+  final InputBorder? inputBorder;
 
   const NoBorderTextFieldWidget({
     super.key,
-    required this.labelText,
-    required this.hintText,
+    this.labelText,
+    this.hintText,
     required this.controller,
     required this.keyboardType,
     required this.textStream,
     required this.onChanged,
+    this.hintStyle,
+    this.inputBorder,
   });
 
   @override
@@ -47,54 +50,62 @@ class _NoBorderTextFieldWidgetState extends State<NoBorderTextFieldWidget> {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Text(
-              widget.labelText,
+              widget.labelText ?? '',
               style: TextStyle(
-                  color: const Color(0xFF979797),
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.w400),
+                color: const Color(0xFF979797),
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w400,
+              ),
             ),
             StreamBuilder(
-                stream: widget.textStream,
-                builder: (context, snapshot) {
-                  return SizedBox(
-                    height: 50.h,
-                    child: TextFormField(
-                      keyboardType: widget.keyboardType,
-                      style: TextStyle(
-                          color: XColors.Background_Color1,
-                          fontSize: 18.sp,
-                          fontWeight: FontWeight.w400),
-                      controller: widget.controller,
-                      textAlign: TextAlign.end,
-                      textInputAction: TextInputAction.next,
-                      onChanged: (value) => widget.onChanged(value),
-                      decoration: InputDecoration(
-                        hintStyle: TextStyle(
+              stream: widget.textStream,
+              builder: (context, snapshot) {
+                return SizedBox(
+                  height: 50.h,
+                  child: TextFormField(
+                    keyboardType: widget.keyboardType,
+                    style: TextStyle(
+                        color: XColors.Background_Color1,
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.w400),
+                    controller: widget.controller,
+                    textAlign: TextAlign.end,
+                    textInputAction: TextInputAction.next,
+                    onChanged: (value) => widget.onChanged(value),
+                    decoration: InputDecoration(
+                      hintStyle: widget.hintStyle ??
+                          TextStyle(
                             color: XColors.Background_Color1,
                             fontSize: 18.sp,
-                            fontWeight: FontWeight.w400),
-                        hintText: widget.hintText,
-                        suffixIconColor: Colors.black,
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide:
-                              BorderSide(color: Colors.black, width: 1.2.w),
-                        ),
-                        focusedBorder: UnderlineInputBorder(
-                          borderSide:
-                              BorderSide(color: Colors.black, width: 1.2.w),
-                        ),
-                        errorBorder: UnderlineInputBorder(
-                          borderSide:
-                              BorderSide(color: Colors.black, width: 1.2.w),
-                        ),
-                        focusedErrorBorder: UnderlineInputBorder(
-                          borderSide:
-                              BorderSide(color: Colors.black, width: 1.2.w),
-                        ),
-                      ),
+                            fontWeight: FontWeight.w400,
+                          ),
+                      hintText: widget.hintText,
+                      suffixIconColor: Colors.black,
+                      enabledBorder: widget.inputBorder ??
+                          UnderlineInputBorder(
+                            borderSide:
+                                BorderSide(color: Colors.black, width: 1.2.w),
+                          ),
+                      focusedBorder: widget.inputBorder ??
+                          UnderlineInputBorder(
+                            borderSide:
+                                BorderSide(color: Colors.black, width: 1.2.w),
+                          ),
+                      errorBorder: widget.inputBorder ??
+                          UnderlineInputBorder(
+                            borderSide:
+                                BorderSide(color: Colors.black, width: 1.2.w),
+                          ),
+                      focusedErrorBorder: widget.inputBorder ??
+                          UnderlineInputBorder(
+                            borderSide:
+                                BorderSide(color: Colors.black, width: 1.2.w),
+                          ),
                     ),
-                  );
-                }),
+                  ),
+                );
+              },
+            ),
             // StreamBuilder(
             //     stream: widget.textStream,
             //     builder: (context, snapshot) {

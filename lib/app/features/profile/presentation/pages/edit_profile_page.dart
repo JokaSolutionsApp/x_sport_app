@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/profile/presentation/components/edit_profile_components/reset_email_dialog.dart';
+import 'package:x_sport/app/features/profile/presentation/components/edit_profile_components/reset_password_dialog.dart';
 
 import '../../../../../core/constance/app_constance.dart';
 import '../../../../../core/constance/local_data.dart';
@@ -321,6 +323,76 @@ class _EditProfilePageState extends State<EditProfilePage> {
                           fontWeight: FontWeight.w400),
                     ),
                   ],
+                ),
+              ),
+              Container(
+                width: 0.92.sw,
+                alignment: Alignment.centerRight,
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    padding: EdgeInsets.zero,
+                    minimumSize: Size(50.w, 30.h),
+                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    alignment: Alignment.centerLeft,
+                  ),
+                  onPressed: () => showDialog(
+                    context: context,
+                    builder: (context) => const ResetPasswordDialog(),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        'تغيير كلمة المرور',
+                        style: TextStyle(
+                          color: XColors.primary_text_color,
+                          fontSize: 16.sp,
+                          fontFamily: 'Tajawal',
+                          fontWeight: FontWeight.w500,
+                          height: 0,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 5.w,
+                      ),
+                      AssetsManager.icons.reset.image(height: 15.h),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                width: 0.92.sw,
+                alignment: Alignment.centerRight,
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    padding: EdgeInsets.zero,
+                    minimumSize: Size(50.w, 30.h),
+                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    alignment: Alignment.centerLeft,
+                  ),
+                  onPressed: () => showDialog(
+                    context: context,
+                    builder: (context) => const ResetEmailDialog(),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        'تغيير البريد الالكتروني',
+                        style: TextStyle(
+                          color: XColors.primary_text_color,
+                          fontSize: 16.sp,
+                          fontFamily: 'Tajawal',
+                          fontWeight: FontWeight.w500,
+                          height: 0,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 5.w,
+                      ),
+                      AssetsManager.icons.reset.image(height: 15.h),
+                    ],
+                  ),
                 ),
               ),
               Container(

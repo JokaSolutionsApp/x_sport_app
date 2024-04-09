@@ -19,6 +19,7 @@ class XColors {
   static const grey = Color(0xff9D9D9D);
   static const grey2 = Color(0xff2E2E2E);
   static const grey3 = Color(0xffD9D9D9);
+  static const grey4 = Color(0xffA9A9A9);
   static const divider_color = Color(0xffE8E8E8);
   static const primary_text_color = Color(0xFF2E2E2E);
   static const secondary_text_color = Color(0xFF979797);
