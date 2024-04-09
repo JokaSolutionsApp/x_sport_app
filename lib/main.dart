@@ -3,10 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/auth/domain/enitites/user_entity.dart';
 import 'package:x_sport/app/features/courts/domain/enitites/params/stadium_params.dart';
 import 'package:x_sport/app/features/courts/presentation/bloc/stadium_bloc.dart';
-import 'package:x_sport/app/features/profile/presentation/pages/edit_profile_page.dart';
+import 'package:x_sport/route_page.dart';
 
 import 'app/features/academy/presentation/bloc/academy_bloc.dart';
 import 'app/features/auth/presentation/bloc/auth_bloc.dart';
@@ -84,18 +83,7 @@ class MyApp extends StatelessWidget {
               ),
               useMaterial3: true,
             ),
-            home: const EditProfilePage(
-              user: UserEntity(
-                userId: 0,
-                loyaltyPoints: 0,
-                name: 'name',
-                email: 'email',
-                longitude: 0,
-                latitude: 0,
-                imgURL: 'imgURL',
-              ),
-              favoriteSports: [],
-            ),
+            home: const RoutePage(),
           ),
         );
       },
