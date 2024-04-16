@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
           providers: [
             BlocProvider(
               create: (context) => sl<AuthBloc>()
-                ..add(const AuthEvent.checkUserLogged())
+                ..add(const AuthEvent.checkAccountStatus())
                 ..add(const AuthEvent.getSports())
                 ..add(const AuthEvent.getUserProfile()),
             ),

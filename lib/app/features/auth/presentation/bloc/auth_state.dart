@@ -59,9 +59,9 @@ class AuthState with _$AuthState {
 
   // Check User Logged
   const factory AuthState.checkUserLoading() = _CheckUserLoading;
-  const factory AuthState.checkUserLogged({
+  const factory AuthState.checkAccountStatus({
     @Default(UserAuthState.guest) UserAuthState userAuthState,
-  }) = _CheckUserLogged;
+  }) = _checkAccountStatus;
   const factory AuthState.checkUserFailure({
     @Default(null) Failure? failure,
   }) = _CeckUserFailure;

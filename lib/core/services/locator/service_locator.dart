@@ -168,7 +168,7 @@ class ServiceLocator {
     sl.registerLazySingleton(() => GoogleLoginUseCase(sl()));
     sl.registerLazySingleton(() => RegisterUseCase(sl()));
     sl.registerLazySingleton(() => EditUserProfileUseCase(sl()));
-    sl.registerLazySingleton(() => CheckUserLoggedUseCase(sl()));
+    sl.registerLazySingleton(() => AccountStatusUseCase(sl()));
     sl.registerLazySingleton(() => ConfirmUserEmailUseCase(sl()));
     sl.registerLazySingleton(() => ResendConfirmUserEmailUseCase(sl()));
     sl.registerLazySingleton(() => SelectCurrentSportUseCase(sl()));

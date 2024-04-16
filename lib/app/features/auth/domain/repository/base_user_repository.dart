@@ -29,7 +29,7 @@ abstract class BaseUserRepository {
   Future<Either<Failure, UserProfileEntity>> selectCurrentSport(
       {required int sportId});
 
-  Future<Either<Failure, UserAuthState>> checkUserLogged();
+  Future<Either<Failure, UserAuthState>> checkAccountStatus();
   Future<Either<Failure, List<SportEntity>>> confirmUserEmail();
   Future<Either<Failure, void>> resendConfirmUserEmail();
 

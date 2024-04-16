@@ -4,12 +4,12 @@ import '../../../../../../core/utils/enums.dart';
 import '../../../../../../core/error/failure.dart';
 import '../../repository/base_user_repository.dart';
 
-class CheckUserLoggedUseCase {
+class AccountStatusUseCase {
   final BaseUserRepository repository;
 
-  CheckUserLoggedUseCase(this.repository);
+  AccountStatusUseCase(this.repository);
 
   Future<Either<Failure, UserAuthState>> call() async {
-    return await repository.checkUserLogged();
+    return await repository.checkAccountStatus();
   }
 }

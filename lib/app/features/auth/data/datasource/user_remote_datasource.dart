@@ -38,7 +38,7 @@ abstract class BaseUserRemoteDataSource {
       {required List<int> sportsIds});
   Future<UserProfileEntity> addFavoriteSports({required List<int> sportsIds});
   Future<UserProfileEntity> selectCurrentSport({required int sportId});
-  Future<UserAuthState> checkUserLogged();
+  Future<UserAuthState> checkAccountStatus();
   Future<List<SportEntity>> confirmUserEmail();
   Future<void> resendConfirmUserEmail();
 
@@ -244,16 +244,30 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
   }
 
   @override
-  Future<UserAuthState> checkUserLogged() async {
-    final welcome = await sl<SecureStorageService>().containsKey('welcome');
-    final isLogged = await sl<SecureStorageService>().containsKey('token');
-    print("isLoggedwelcome $isLogged $welcome");
-    if (isLogged && welcome) {
-      return UserAuthState.welcome;
-    } else if (isLogged) {
-      return UserAuthState.loggedIn;
+  Future<UserAuthState> checkAccountStatus() async {
+    final email = await sl<SecureStorageService>().read('email');
+
+    final postData = {
+      'email': email,
+    };
+    final response =
+        await ApiService.post(ApiConstance.resendConfirmEmailApi, postData);
+    final data = response.data;
+
+    print(data);
+
+    if (response.statusCode == 200) {
+      if (data == 0) {
+        return UserAuthState.guest;
+      } else if (data == 1) {
+        return UserAuthState.loggedIn;
+      } else if (data == 2) {
+        return UserAuthState.welcome;
+      } else {
+        return UserAuthState.otp;
+      }
     } else {
-      return UserAuthState.guest;
+      throw ServerException(errorModel: ErrorModel.formJson(data));
     }
   }
 

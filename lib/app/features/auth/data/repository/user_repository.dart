@@ -59,9 +59,9 @@ class UserRepository extends BaseUserRepository {
   }
 
   @override
-  Future<Either<Failure, UserAuthState>> checkUserLogged() async {
+  Future<Either<Failure, UserAuthState>> checkAccountStatus() async {
     try {
-      final result = await baseUsersRemoteDataSource.checkUserLogged();
+      final result = await baseUsersRemoteDataSource.checkAccountStatus();
 
       return Right(result);
     } on ServerException catch (failuar) {

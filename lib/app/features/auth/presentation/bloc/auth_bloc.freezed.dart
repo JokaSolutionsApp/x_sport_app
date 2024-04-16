@@ -25,7 +25,7 @@ mixin _$AuthEvent {
     required TResult Function() deleteUserProfile,
     required TResult Function(EditUserProfileParams params) editUserProfile,
     required TResult Function(PreferenceValue params) editPreferences,
-    required TResult Function() checkUserLogged,
+    required TResult Function() checkAccountStatus,
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
@@ -47,7 +47,7 @@ mixin _$AuthEvent {
     TResult? Function()? deleteUserProfile,
     TResult? Function(EditUserProfileParams params)? editUserProfile,
     TResult? Function(PreferenceValue params)? editPreferences,
-    TResult? Function()? checkUserLogged,
+    TResult? Function()? checkAccountStatus,
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
@@ -69,7 +69,7 @@ mixin _$AuthEvent {
     TResult Function()? deleteUserProfile,
     TResult Function(EditUserProfileParams params)? editUserProfile,
     TResult Function(PreferenceValue params)? editPreferences,
-    TResult Function()? checkUserLogged,
+    TResult Function()? checkAccountStatus,
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
@@ -92,7 +92,8 @@ mixin _$AuthEvent {
     required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
     required TResult Function(_EditUserProfileEvent value) editUserProfile,
     required TResult Function(_EditPreferencesEvent value) editPreferences,
-    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_checkAccountStatusEvent value)
+        checkAccountStatus,
     required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
     required TResult Function(_ResendConfirmUserEmailEvent value)
         resendconfirmUserEmail,
@@ -115,7 +116,7 @@ mixin _$AuthEvent {
     TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult? Function(_EditUserProfileEvent value)? editUserProfile,
     TResult? Function(_EditPreferencesEvent value)? editPreferences,
-    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult? Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -136,7 +137,7 @@ mixin _$AuthEvent {
     TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult Function(_EditUserProfileEvent value)? editUserProfile,
     TResult Function(_EditPreferencesEvent value)? editPreferences,
-    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -213,7 +214,7 @@ class _$LoginEventImpl implements _LoginEvent {
     required TResult Function() deleteUserProfile,
     required TResult Function(EditUserProfileParams params) editUserProfile,
     required TResult Function(PreferenceValue params) editPreferences,
-    required TResult Function() checkUserLogged,
+    required TResult Function() checkAccountStatus,
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
@@ -238,7 +239,7 @@ class _$LoginEventImpl implements _LoginEvent {
     TResult? Function()? deleteUserProfile,
     TResult? Function(EditUserProfileParams params)? editUserProfile,
     TResult? Function(PreferenceValue params)? editPreferences,
-    TResult? Function()? checkUserLogged,
+    TResult? Function()? checkAccountStatus,
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
@@ -263,7 +264,7 @@ class _$LoginEventImpl implements _LoginEvent {
     TResult Function()? deleteUserProfile,
     TResult Function(EditUserProfileParams params)? editUserProfile,
     TResult Function(PreferenceValue params)? editPreferences,
-    TResult Function()? checkUserLogged,
+    TResult Function()? checkAccountStatus,
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
@@ -292,7 +293,8 @@ class _$LoginEventImpl implements _LoginEvent {
     required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
     required TResult Function(_EditUserProfileEvent value) editUserProfile,
     required TResult Function(_EditPreferencesEvent value) editPreferences,
-    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_checkAccountStatusEvent value)
+        checkAccountStatus,
     required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
     required TResult Function(_ResendConfirmUserEmailEvent value)
         resendconfirmUserEmail,
@@ -318,7 +320,7 @@ class _$LoginEventImpl implements _LoginEvent {
     TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult? Function(_EditUserProfileEvent value)? editUserProfile,
     TResult? Function(_EditPreferencesEvent value)? editPreferences,
-    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult? Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -342,7 +344,7 @@ class _$LoginEventImpl implements _LoginEvent {
     TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult Function(_EditUserProfileEvent value)? editUserProfile,
     TResult Function(_EditPreferencesEvent value)? editPreferences,
-    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -410,7 +412,7 @@ class _$GoogleLoginEventImpl implements _GoogleLoginEvent {
     required TResult Function() deleteUserProfile,
     required TResult Function(EditUserProfileParams params) editUserProfile,
     required TResult Function(PreferenceValue params) editPreferences,
-    required TResult Function() checkUserLogged,
+    required TResult Function() checkAccountStatus,
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
@@ -435,7 +437,7 @@ class _$GoogleLoginEventImpl implements _GoogleLoginEvent {
     TResult? Function()? deleteUserProfile,
     TResult? Function(EditUserProfileParams params)? editUserProfile,
     TResult? Function(PreferenceValue params)? editPreferences,
-    TResult? Function()? checkUserLogged,
+    TResult? Function()? checkAccountStatus,
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
@@ -460,7 +462,7 @@ class _$GoogleLoginEventImpl implements _GoogleLoginEvent {
     TResult Function()? deleteUserProfile,
     TResult Function(EditUserProfileParams params)? editUserProfile,
     TResult Function(PreferenceValue params)? editPreferences,
-    TResult Function()? checkUserLogged,
+    TResult Function()? checkAccountStatus,
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
@@ -489,7 +491,8 @@ class _$GoogleLoginEventImpl implements _GoogleLoginEvent {
     required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
     required TResult Function(_EditUserProfileEvent value) editUserProfile,
     required TResult Function(_EditPreferencesEvent value) editPreferences,
-    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_checkAccountStatusEvent value)
+        checkAccountStatus,
     required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
     required TResult Function(_ResendConfirmUserEmailEvent value)
         resendconfirmUserEmail,
@@ -515,7 +518,7 @@ class _$GoogleLoginEventImpl implements _GoogleLoginEvent {
     TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult? Function(_EditUserProfileEvent value)? editUserProfile,
     TResult? Function(_EditPreferencesEvent value)? editPreferences,
-    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult? Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -539,7 +542,7 @@ class _$GoogleLoginEventImpl implements _GoogleLoginEvent {
     TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult Function(_EditUserProfileEvent value)? editUserProfile,
     TResult Function(_EditPreferencesEvent value)? editPreferences,
-    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -607,7 +610,7 @@ class _$RegisterEventImpl implements _RegisterEvent {
     required TResult Function() deleteUserProfile,
     required TResult Function(EditUserProfileParams params) editUserProfile,
     required TResult Function(PreferenceValue params) editPreferences,
-    required TResult Function() checkUserLogged,
+    required TResult Function() checkAccountStatus,
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
@@ -632,7 +635,7 @@ class _$RegisterEventImpl implements _RegisterEvent {
     TResult? Function()? deleteUserProfile,
     TResult? Function(EditUserProfileParams params)? editUserProfile,
     TResult? Function(PreferenceValue params)? editPreferences,
-    TResult? Function()? checkUserLogged,
+    TResult? Function()? checkAccountStatus,
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
@@ -657,7 +660,7 @@ class _$RegisterEventImpl implements _RegisterEvent {
     TResult Function()? deleteUserProfile,
     TResult Function(EditUserProfileParams params)? editUserProfile,
     TResult Function(PreferenceValue params)? editPreferences,
-    TResult Function()? checkUserLogged,
+    TResult Function()? checkAccountStatus,
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
@@ -686,7 +689,8 @@ class _$RegisterEventImpl implements _RegisterEvent {
     required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
     required TResult Function(_EditUserProfileEvent value) editUserProfile,
     required TResult Function(_EditPreferencesEvent value) editPreferences,
-    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_checkAccountStatusEvent value)
+        checkAccountStatus,
     required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
     required TResult Function(_ResendConfirmUserEmailEvent value)
         resendconfirmUserEmail,
@@ -712,7 +716,7 @@ class _$RegisterEventImpl implements _RegisterEvent {
     TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult? Function(_EditUserProfileEvent value)? editUserProfile,
     TResult? Function(_EditPreferencesEvent value)? editPreferences,
-    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult? Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -736,7 +740,7 @@ class _$RegisterEventImpl implements _RegisterEvent {
     TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult Function(_EditUserProfileEvent value)? editUserProfile,
     TResult Function(_EditPreferencesEvent value)? editPreferences,
-    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -805,7 +809,7 @@ class _$GetUserProfileEventImpl implements _GetUserProfileEvent {
     required TResult Function() deleteUserProfile,
     required TResult Function(EditUserProfileParams params) editUserProfile,
     required TResult Function(PreferenceValue params) editPreferences,
-    required TResult Function() checkUserLogged,
+    required TResult Function() checkAccountStatus,
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
@@ -830,7 +834,7 @@ class _$GetUserProfileEventImpl implements _GetUserProfileEvent {
     TResult? Function()? deleteUserProfile,
     TResult? Function(EditUserProfileParams params)? editUserProfile,
     TResult? Function(PreferenceValue params)? editPreferences,
-    TResult? Function()? checkUserLogged,
+    TResult? Function()? checkAccountStatus,
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
@@ -855,7 +859,7 @@ class _$GetUserProfileEventImpl implements _GetUserProfileEvent {
     TResult Function()? deleteUserProfile,
     TResult Function(EditUserProfileParams params)? editUserProfile,
     TResult Function(PreferenceValue params)? editPreferences,
-    TResult Function()? checkUserLogged,
+    TResult Function()? checkAccountStatus,
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
@@ -884,7 +888,8 @@ class _$GetUserProfileEventImpl implements _GetUserProfileEvent {
     required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
     required TResult Function(_EditUserProfileEvent value) editUserProfile,
     required TResult Function(_EditPreferencesEvent value) editPreferences,
-    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_checkAccountStatusEvent value)
+        checkAccountStatus,
     required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
     required TResult Function(_ResendConfirmUserEmailEvent value)
         resendconfirmUserEmail,
@@ -910,7 +915,7 @@ class _$GetUserProfileEventImpl implements _GetUserProfileEvent {
     TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult? Function(_EditUserProfileEvent value)? editUserProfile,
     TResult? Function(_EditPreferencesEvent value)? editPreferences,
-    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult? Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -934,7 +939,7 @@ class _$GetUserProfileEventImpl implements _GetUserProfileEvent {
     TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult Function(_EditUserProfileEvent value)? editUserProfile,
     TResult Function(_EditPreferencesEvent value)? editPreferences,
-    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -1005,7 +1010,7 @@ class _$DeleteUserProfileEventImpl implements _DeleteUserProfileEvent {
     required TResult Function() deleteUserProfile,
     required TResult Function(EditUserProfileParams params) editUserProfile,
     required TResult Function(PreferenceValue params) editPreferences,
-    required TResult Function() checkUserLogged,
+    required TResult Function() checkAccountStatus,
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
@@ -1030,7 +1035,7 @@ class _$DeleteUserProfileEventImpl implements _DeleteUserProfileEvent {
     TResult? Function()? deleteUserProfile,
     TResult? Function(EditUserProfileParams params)? editUserProfile,
     TResult? Function(PreferenceValue params)? editPreferences,
-    TResult? Function()? checkUserLogged,
+    TResult? Function()? checkAccountStatus,
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
@@ -1055,7 +1060,7 @@ class _$DeleteUserProfileEventImpl implements _DeleteUserProfileEvent {
     TResult Function()? deleteUserProfile,
     TResult Function(EditUserProfileParams params)? editUserProfile,
     TResult Function(PreferenceValue params)? editPreferences,
-    TResult Function()? checkUserLogged,
+    TResult Function()? checkAccountStatus,
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
@@ -1084,7 +1089,8 @@ class _$DeleteUserProfileEventImpl implements _DeleteUserProfileEvent {
     required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
     required TResult Function(_EditUserProfileEvent value) editUserProfile,
     required TResult Function(_EditPreferencesEvent value) editPreferences,
-    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_checkAccountStatusEvent value)
+        checkAccountStatus,
     required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
     required TResult Function(_ResendConfirmUserEmailEvent value)
         resendconfirmUserEmail,
@@ -1110,7 +1116,7 @@ class _$DeleteUserProfileEventImpl implements _DeleteUserProfileEvent {
     TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult? Function(_EditUserProfileEvent value)? editUserProfile,
     TResult? Function(_EditPreferencesEvent value)? editPreferences,
-    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult? Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -1134,7 +1140,7 @@ class _$DeleteUserProfileEventImpl implements _DeleteUserProfileEvent {
     TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult Function(_EditUserProfileEvent value)? editUserProfile,
     TResult Function(_EditPreferencesEvent value)? editPreferences,
-    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -1230,7 +1236,7 @@ class _$EditUserProfileEventImpl implements _EditUserProfileEvent {
     required TResult Function() deleteUserProfile,
     required TResult Function(EditUserProfileParams params) editUserProfile,
     required TResult Function(PreferenceValue params) editPreferences,
-    required TResult Function() checkUserLogged,
+    required TResult Function() checkAccountStatus,
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
@@ -1255,7 +1261,7 @@ class _$EditUserProfileEventImpl implements _EditUserProfileEvent {
     TResult? Function()? deleteUserProfile,
     TResult? Function(EditUserProfileParams params)? editUserProfile,
     TResult? Function(PreferenceValue params)? editPreferences,
-    TResult? Function()? checkUserLogged,
+    TResult? Function()? checkAccountStatus,
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
@@ -1280,7 +1286,7 @@ class _$EditUserProfileEventImpl implements _EditUserProfileEvent {
     TResult Function()? deleteUserProfile,
     TResult Function(EditUserProfileParams params)? editUserProfile,
     TResult Function(PreferenceValue params)? editPreferences,
-    TResult Function()? checkUserLogged,
+    TResult Function()? checkAccountStatus,
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
@@ -1309,7 +1315,8 @@ class _$EditUserProfileEventImpl implements _EditUserProfileEvent {
     required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
     required TResult Function(_EditUserProfileEvent value) editUserProfile,
     required TResult Function(_EditPreferencesEvent value) editPreferences,
-    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_checkAccountStatusEvent value)
+        checkAccountStatus,
     required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
     required TResult Function(_ResendConfirmUserEmailEvent value)
         resendconfirmUserEmail,
@@ -1335,7 +1342,7 @@ class _$EditUserProfileEventImpl implements _EditUserProfileEvent {
     TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult? Function(_EditUserProfileEvent value)? editUserProfile,
     TResult? Function(_EditPreferencesEvent value)? editPreferences,
-    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult? Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -1359,7 +1366,7 @@ class _$EditUserProfileEventImpl implements _EditUserProfileEvent {
     TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult Function(_EditUserProfileEvent value)? editUserProfile,
     TResult Function(_EditPreferencesEvent value)? editPreferences,
-    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -1462,7 +1469,7 @@ class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
     required TResult Function() deleteUserProfile,
     required TResult Function(EditUserProfileParams params) editUserProfile,
     required TResult Function(PreferenceValue params) editPreferences,
-    required TResult Function() checkUserLogged,
+    required TResult Function() checkAccountStatus,
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
@@ -1487,7 +1494,7 @@ class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
     TResult? Function()? deleteUserProfile,
     TResult? Function(EditUserProfileParams params)? editUserProfile,
     TResult? Function(PreferenceValue params)? editPreferences,
-    TResult? Function()? checkUserLogged,
+    TResult? Function()? checkAccountStatus,
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
@@ -1512,7 +1519,7 @@ class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
     TResult Function()? deleteUserProfile,
     TResult Function(EditUserProfileParams params)? editUserProfile,
     TResult Function(PreferenceValue params)? editPreferences,
-    TResult Function()? checkUserLogged,
+    TResult Function()? checkAccountStatus,
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
@@ -1541,7 +1548,8 @@ class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
     required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
     required TResult Function(_EditUserProfileEvent value) editUserProfile,
     required TResult Function(_EditPreferencesEvent value) editPreferences,
-    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_checkAccountStatusEvent value)
+        checkAccountStatus,
     required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
     required TResult Function(_ResendConfirmUserEmailEvent value)
         resendconfirmUserEmail,
@@ -1567,7 +1575,7 @@ class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
     TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult? Function(_EditUserProfileEvent value)? editUserProfile,
     TResult? Function(_EditPreferencesEvent value)? editPreferences,
-    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult? Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -1591,7 +1599,7 @@ class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
     TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult Function(_EditUserProfileEvent value)? editUserProfile,
     TResult Function(_EditPreferencesEvent value)? editPreferences,
-    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -1621,36 +1629,38 @@ abstract class _EditPreferencesEvent implements AuthEvent {
 }
 
 /// @nodoc
-abstract class _$$CheckUserLoggedEventImplCopyWith<$Res> {
-  factory _$$CheckUserLoggedEventImplCopyWith(_$CheckUserLoggedEventImpl value,
-          $Res Function(_$CheckUserLoggedEventImpl) then) =
-      __$$CheckUserLoggedEventImplCopyWithImpl<$Res>;
+abstract class _$$checkAccountStatusEventImplCopyWith<$Res> {
+  factory _$$checkAccountStatusEventImplCopyWith(
+          _$checkAccountStatusEventImpl value,
+          $Res Function(_$checkAccountStatusEventImpl) then) =
+      __$$checkAccountStatusEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$CheckUserLoggedEventImplCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$CheckUserLoggedEventImpl>
-    implements _$$CheckUserLoggedEventImplCopyWith<$Res> {
-  __$$CheckUserLoggedEventImplCopyWithImpl(_$CheckUserLoggedEventImpl _value,
-      $Res Function(_$CheckUserLoggedEventImpl) _then)
+class __$$checkAccountStatusEventImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$checkAccountStatusEventImpl>
+    implements _$$checkAccountStatusEventImplCopyWith<$Res> {
+  __$$checkAccountStatusEventImplCopyWithImpl(
+      _$checkAccountStatusEventImpl _value,
+      $Res Function(_$checkAccountStatusEventImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$CheckUserLoggedEventImpl implements _CheckUserLoggedEvent {
-  const _$CheckUserLoggedEventImpl();
+class _$checkAccountStatusEventImpl implements _checkAccountStatusEvent {
+  const _$checkAccountStatusEventImpl();
 
   @override
   String toString() {
-    return 'AuthEvent.checkUserLogged()';
+    return 'AuthEvent.checkAccountStatus()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CheckUserLoggedEventImpl);
+            other is _$checkAccountStatusEventImpl);
   }
 
   @override
@@ -1666,7 +1676,7 @@ class _$CheckUserLoggedEventImpl implements _CheckUserLoggedEvent {
     required TResult Function() deleteUserProfile,
     required TResult Function(EditUserProfileParams params) editUserProfile,
     required TResult Function(PreferenceValue params) editPreferences,
-    required TResult Function() checkUserLogged,
+    required TResult Function() checkAccountStatus,
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
@@ -1678,7 +1688,7 @@ class _$CheckUserLoggedEventImpl implements _CheckUserLoggedEvent {
     required TResult Function() changeEmail,
     required TResult Function() changePassword,
   }) {
-    return checkUserLogged();
+    return checkAccountStatus();
   }
 
   @override
@@ -1691,7 +1701,7 @@ class _$CheckUserLoggedEventImpl implements _CheckUserLoggedEvent {
     TResult? Function()? deleteUserProfile,
     TResult? Function(EditUserProfileParams params)? editUserProfile,
     TResult? Function(PreferenceValue params)? editPreferences,
-    TResult? Function()? checkUserLogged,
+    TResult? Function()? checkAccountStatus,
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
@@ -1703,7 +1713,7 @@ class _$CheckUserLoggedEventImpl implements _CheckUserLoggedEvent {
     TResult? Function()? changeEmail,
     TResult? Function()? changePassword,
   }) {
-    return checkUserLogged?.call();
+    return checkAccountStatus?.call();
   }
 
   @override
@@ -1716,7 +1726,7 @@ class _$CheckUserLoggedEventImpl implements _CheckUserLoggedEvent {
     TResult Function()? deleteUserProfile,
     TResult Function(EditUserProfileParams params)? editUserProfile,
     TResult Function(PreferenceValue params)? editPreferences,
-    TResult Function()? checkUserLogged,
+    TResult Function()? checkAccountStatus,
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
@@ -1729,8 +1739,8 @@ class _$CheckUserLoggedEventImpl implements _CheckUserLoggedEvent {
     TResult Function()? changePassword,
     required TResult orElse(),
   }) {
-    if (checkUserLogged != null) {
-      return checkUserLogged();
+    if (checkAccountStatus != null) {
+      return checkAccountStatus();
     }
     return orElse();
   }
@@ -1745,7 +1755,8 @@ class _$CheckUserLoggedEventImpl implements _CheckUserLoggedEvent {
     required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
     required TResult Function(_EditUserProfileEvent value) editUserProfile,
     required TResult Function(_EditPreferencesEvent value) editPreferences,
-    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_checkAccountStatusEvent value)
+        checkAccountStatus,
     required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
     required TResult Function(_ResendConfirmUserEmailEvent value)
         resendconfirmUserEmail,
@@ -1758,7 +1769,7 @@ class _$CheckUserLoggedEventImpl implements _CheckUserLoggedEvent {
     required TResult Function(_ChangeEmailEvent value) changeEmail,
     required TResult Function(_ChangePasswordEvent value) changePassword,
   }) {
-    return checkUserLogged(this);
+    return checkAccountStatus(this);
   }
 
   @override
@@ -1771,7 +1782,7 @@ class _$CheckUserLoggedEventImpl implements _CheckUserLoggedEvent {
     TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult? Function(_EditUserProfileEvent value)? editUserProfile,
     TResult? Function(_EditPreferencesEvent value)? editPreferences,
-    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult? Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -1782,7 +1793,7 @@ class _$CheckUserLoggedEventImpl implements _CheckUserLoggedEvent {
     TResult? Function(_ChangeEmailEvent value)? changeEmail,
     TResult? Function(_ChangePasswordEvent value)? changePassword,
   }) {
-    return checkUserLogged?.call(this);
+    return checkAccountStatus?.call(this);
   }
 
   @override
@@ -1795,7 +1806,7 @@ class _$CheckUserLoggedEventImpl implements _CheckUserLoggedEvent {
     TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult Function(_EditUserProfileEvent value)? editUserProfile,
     TResult Function(_EditPreferencesEvent value)? editPreferences,
-    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -1807,15 +1818,15 @@ class _$CheckUserLoggedEventImpl implements _CheckUserLoggedEvent {
     TResult Function(_ChangePasswordEvent value)? changePassword,
     required TResult orElse(),
   }) {
-    if (checkUserLogged != null) {
-      return checkUserLogged(this);
+    if (checkAccountStatus != null) {
+      return checkAccountStatus(this);
     }
     return orElse();
   }
 }
 
-abstract class _CheckUserLoggedEvent implements AuthEvent {
-  const factory _CheckUserLoggedEvent() = _$CheckUserLoggedEventImpl;
+abstract class _checkAccountStatusEvent implements AuthEvent {
+  const factory _checkAccountStatusEvent() = _$checkAccountStatusEventImpl;
 }
 
 /// @nodoc
@@ -1865,7 +1876,7 @@ class _$ConfirmUserEmailEventImpl implements _ConfirmUserEmailEvent {
     required TResult Function() deleteUserProfile,
     required TResult Function(EditUserProfileParams params) editUserProfile,
     required TResult Function(PreferenceValue params) editPreferences,
-    required TResult Function() checkUserLogged,
+    required TResult Function() checkAccountStatus,
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
@@ -1890,7 +1901,7 @@ class _$ConfirmUserEmailEventImpl implements _ConfirmUserEmailEvent {
     TResult? Function()? deleteUserProfile,
     TResult? Function(EditUserProfileParams params)? editUserProfile,
     TResult? Function(PreferenceValue params)? editPreferences,
-    TResult? Function()? checkUserLogged,
+    TResult? Function()? checkAccountStatus,
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
@@ -1915,7 +1926,7 @@ class _$ConfirmUserEmailEventImpl implements _ConfirmUserEmailEvent {
     TResult Function()? deleteUserProfile,
     TResult Function(EditUserProfileParams params)? editUserProfile,
     TResult Function(PreferenceValue params)? editPreferences,
-    TResult Function()? checkUserLogged,
+    TResult Function()? checkAccountStatus,
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
@@ -1944,7 +1955,8 @@ class _$ConfirmUserEmailEventImpl implements _ConfirmUserEmailEvent {
     required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
     required TResult Function(_EditUserProfileEvent value) editUserProfile,
     required TResult Function(_EditPreferencesEvent value) editPreferences,
-    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_checkAccountStatusEvent value)
+        checkAccountStatus,
     required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
     required TResult Function(_ResendConfirmUserEmailEvent value)
         resendconfirmUserEmail,
@@ -1970,7 +1982,7 @@ class _$ConfirmUserEmailEventImpl implements _ConfirmUserEmailEvent {
     TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult? Function(_EditUserProfileEvent value)? editUserProfile,
     TResult? Function(_EditPreferencesEvent value)? editPreferences,
-    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult? Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -1994,7 +2006,7 @@ class _$ConfirmUserEmailEventImpl implements _ConfirmUserEmailEvent {
     TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult Function(_EditUserProfileEvent value)? editUserProfile,
     TResult Function(_EditPreferencesEvent value)? editPreferences,
-    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -2066,7 +2078,7 @@ class _$ResendConfirmUserEmailEventImpl
     required TResult Function() deleteUserProfile,
     required TResult Function(EditUserProfileParams params) editUserProfile,
     required TResult Function(PreferenceValue params) editPreferences,
-    required TResult Function() checkUserLogged,
+    required TResult Function() checkAccountStatus,
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
@@ -2091,7 +2103,7 @@ class _$ResendConfirmUserEmailEventImpl
     TResult? Function()? deleteUserProfile,
     TResult? Function(EditUserProfileParams params)? editUserProfile,
     TResult? Function(PreferenceValue params)? editPreferences,
-    TResult? Function()? checkUserLogged,
+    TResult? Function()? checkAccountStatus,
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
@@ -2116,7 +2128,7 @@ class _$ResendConfirmUserEmailEventImpl
     TResult Function()? deleteUserProfile,
     TResult Function(EditUserProfileParams params)? editUserProfile,
     TResult Function(PreferenceValue params)? editPreferences,
-    TResult Function()? checkUserLogged,
+    TResult Function()? checkAccountStatus,
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
@@ -2145,7 +2157,8 @@ class _$ResendConfirmUserEmailEventImpl
     required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
     required TResult Function(_EditUserProfileEvent value) editUserProfile,
     required TResult Function(_EditPreferencesEvent value) editPreferences,
-    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_checkAccountStatusEvent value)
+        checkAccountStatus,
     required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
     required TResult Function(_ResendConfirmUserEmailEvent value)
         resendconfirmUserEmail,
@@ -2171,7 +2184,7 @@ class _$ResendConfirmUserEmailEventImpl
     TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult? Function(_EditUserProfileEvent value)? editUserProfile,
     TResult? Function(_EditPreferencesEvent value)? editPreferences,
-    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult? Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -2195,7 +2208,7 @@ class _$ResendConfirmUserEmailEventImpl
     TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult Function(_EditUserProfileEvent value)? editUserProfile,
     TResult Function(_EditPreferencesEvent value)? editPreferences,
-    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -2264,7 +2277,7 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
     required TResult Function() deleteUserProfile,
     required TResult Function(EditUserProfileParams params) editUserProfile,
     required TResult Function(PreferenceValue params) editPreferences,
-    required TResult Function() checkUserLogged,
+    required TResult Function() checkAccountStatus,
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
@@ -2289,7 +2302,7 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
     TResult? Function()? deleteUserProfile,
     TResult? Function(EditUserProfileParams params)? editUserProfile,
     TResult? Function(PreferenceValue params)? editPreferences,
-    TResult? Function()? checkUserLogged,
+    TResult? Function()? checkAccountStatus,
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
@@ -2314,7 +2327,7 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
     TResult Function()? deleteUserProfile,
     TResult Function(EditUserProfileParams params)? editUserProfile,
     TResult Function(PreferenceValue params)? editPreferences,
-    TResult Function()? checkUserLogged,
+    TResult Function()? checkAccountStatus,
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
@@ -2343,7 +2356,8 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
     required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
     required TResult Function(_EditUserProfileEvent value) editUserProfile,
     required TResult Function(_EditPreferencesEvent value) editPreferences,
-    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_checkAccountStatusEvent value)
+        checkAccountStatus,
     required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
     required TResult Function(_ResendConfirmUserEmailEvent value)
         resendconfirmUserEmail,
@@ -2369,7 +2383,7 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
     TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult? Function(_EditUserProfileEvent value)? editUserProfile,
     TResult? Function(_EditPreferencesEvent value)? editPreferences,
-    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult? Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -2393,7 +2407,7 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
     TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult Function(_EditUserProfileEvent value)? editUserProfile,
     TResult Function(_EditPreferencesEvent value)? editPreferences,
-    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -2529,7 +2543,7 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
     required TResult Function() deleteUserProfile,
     required TResult Function(EditUserProfileParams params) editUserProfile,
     required TResult Function(PreferenceValue params) editPreferences,
-    required TResult Function() checkUserLogged,
+    required TResult Function() checkAccountStatus,
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
@@ -2554,7 +2568,7 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
     TResult? Function()? deleteUserProfile,
     TResult? Function(EditUserProfileParams params)? editUserProfile,
     TResult? Function(PreferenceValue params)? editPreferences,
-    TResult? Function()? checkUserLogged,
+    TResult? Function()? checkAccountStatus,
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
@@ -2579,7 +2593,7 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
     TResult Function()? deleteUserProfile,
     TResult Function(EditUserProfileParams params)? editUserProfile,
     TResult Function(PreferenceValue params)? editPreferences,
-    TResult Function()? checkUserLogged,
+    TResult Function()? checkAccountStatus,
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
@@ -2608,7 +2622,8 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
     required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
     required TResult Function(_EditUserProfileEvent value) editUserProfile,
     required TResult Function(_EditPreferencesEvent value) editPreferences,
-    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_checkAccountStatusEvent value)
+        checkAccountStatus,
     required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
     required TResult Function(_ResendConfirmUserEmailEvent value)
         resendconfirmUserEmail,
@@ -2634,7 +2649,7 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
     TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult? Function(_EditUserProfileEvent value)? editUserProfile,
     TResult? Function(_EditPreferencesEvent value)? editPreferences,
-    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult? Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -2658,7 +2673,7 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
     TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult Function(_EditUserProfileEvent value)? editUserProfile,
     TResult Function(_EditPreferencesEvent value)? editPreferences,
-    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -2774,7 +2789,7 @@ class _$AddFavoriteSportsEventImpl implements _AddFavoriteSportsEvent {
     required TResult Function() deleteUserProfile,
     required TResult Function(EditUserProfileParams params) editUserProfile,
     required TResult Function(PreferenceValue params) editPreferences,
-    required TResult Function() checkUserLogged,
+    required TResult Function() checkAccountStatus,
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
@@ -2799,7 +2814,7 @@ class _$AddFavoriteSportsEventImpl implements _AddFavoriteSportsEvent {
     TResult? Function()? deleteUserProfile,
     TResult? Function(EditUserProfileParams params)? editUserProfile,
     TResult? Function(PreferenceValue params)? editPreferences,
-    TResult? Function()? checkUserLogged,
+    TResult? Function()? checkAccountStatus,
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
@@ -2824,7 +2839,7 @@ class _$AddFavoriteSportsEventImpl implements _AddFavoriteSportsEvent {
     TResult Function()? deleteUserProfile,
     TResult Function(EditUserProfileParams params)? editUserProfile,
     TResult Function(PreferenceValue params)? editPreferences,
-    TResult Function()? checkUserLogged,
+    TResult Function()? checkAccountStatus,
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
@@ -2853,7 +2868,8 @@ class _$AddFavoriteSportsEventImpl implements _AddFavoriteSportsEvent {
     required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
     required TResult Function(_EditUserProfileEvent value) editUserProfile,
     required TResult Function(_EditPreferencesEvent value) editPreferences,
-    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_checkAccountStatusEvent value)
+        checkAccountStatus,
     required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
     required TResult Function(_ResendConfirmUserEmailEvent value)
         resendconfirmUserEmail,
@@ -2879,7 +2895,7 @@ class _$AddFavoriteSportsEventImpl implements _AddFavoriteSportsEvent {
     TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult? Function(_EditUserProfileEvent value)? editUserProfile,
     TResult? Function(_EditPreferencesEvent value)? editPreferences,
-    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult? Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -2903,7 +2919,7 @@ class _$AddFavoriteSportsEventImpl implements _AddFavoriteSportsEvent {
     TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult Function(_EditUserProfileEvent value)? editUserProfile,
     TResult Function(_EditPreferencesEvent value)? editPreferences,
-    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -3014,7 +3030,7 @@ class _$DeleteFavoriteSportsEventImpl implements _DeleteFavoriteSportsEvent {
     required TResult Function() deleteUserProfile,
     required TResult Function(EditUserProfileParams params) editUserProfile,
     required TResult Function(PreferenceValue params) editPreferences,
-    required TResult Function() checkUserLogged,
+    required TResult Function() checkAccountStatus,
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
@@ -3039,7 +3055,7 @@ class _$DeleteFavoriteSportsEventImpl implements _DeleteFavoriteSportsEvent {
     TResult? Function()? deleteUserProfile,
     TResult? Function(EditUserProfileParams params)? editUserProfile,
     TResult? Function(PreferenceValue params)? editPreferences,
-    TResult? Function()? checkUserLogged,
+    TResult? Function()? checkAccountStatus,
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
@@ -3064,7 +3080,7 @@ class _$DeleteFavoriteSportsEventImpl implements _DeleteFavoriteSportsEvent {
     TResult Function()? deleteUserProfile,
     TResult Function(EditUserProfileParams params)? editUserProfile,
     TResult Function(PreferenceValue params)? editPreferences,
-    TResult Function()? checkUserLogged,
+    TResult Function()? checkAccountStatus,
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
@@ -3093,7 +3109,8 @@ class _$DeleteFavoriteSportsEventImpl implements _DeleteFavoriteSportsEvent {
     required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
     required TResult Function(_EditUserProfileEvent value) editUserProfile,
     required TResult Function(_EditPreferencesEvent value) editPreferences,
-    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_checkAccountStatusEvent value)
+        checkAccountStatus,
     required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
     required TResult Function(_ResendConfirmUserEmailEvent value)
         resendconfirmUserEmail,
@@ -3119,7 +3136,7 @@ class _$DeleteFavoriteSportsEventImpl implements _DeleteFavoriteSportsEvent {
     TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult? Function(_EditUserProfileEvent value)? editUserProfile,
     TResult? Function(_EditPreferencesEvent value)? editPreferences,
-    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult? Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -3143,7 +3160,7 @@ class _$DeleteFavoriteSportsEventImpl implements _DeleteFavoriteSportsEvent {
     TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult Function(_EditUserProfileEvent value)? editUserProfile,
     TResult Function(_EditPreferencesEvent value)? editPreferences,
-    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -3217,7 +3234,7 @@ class _$ChangeEmailEventImpl implements _ChangeEmailEvent {
     required TResult Function() deleteUserProfile,
     required TResult Function(EditUserProfileParams params) editUserProfile,
     required TResult Function(PreferenceValue params) editPreferences,
-    required TResult Function() checkUserLogged,
+    required TResult Function() checkAccountStatus,
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
@@ -3242,7 +3259,7 @@ class _$ChangeEmailEventImpl implements _ChangeEmailEvent {
     TResult? Function()? deleteUserProfile,
     TResult? Function(EditUserProfileParams params)? editUserProfile,
     TResult? Function(PreferenceValue params)? editPreferences,
-    TResult? Function()? checkUserLogged,
+    TResult? Function()? checkAccountStatus,
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
@@ -3267,7 +3284,7 @@ class _$ChangeEmailEventImpl implements _ChangeEmailEvent {
     TResult Function()? deleteUserProfile,
     TResult Function(EditUserProfileParams params)? editUserProfile,
     TResult Function(PreferenceValue params)? editPreferences,
-    TResult Function()? checkUserLogged,
+    TResult Function()? checkAccountStatus,
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
@@ -3296,7 +3313,8 @@ class _$ChangeEmailEventImpl implements _ChangeEmailEvent {
     required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
     required TResult Function(_EditUserProfileEvent value) editUserProfile,
     required TResult Function(_EditPreferencesEvent value) editPreferences,
-    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_checkAccountStatusEvent value)
+        checkAccountStatus,
     required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
     required TResult Function(_ResendConfirmUserEmailEvent value)
         resendconfirmUserEmail,
@@ -3322,7 +3340,7 @@ class _$ChangeEmailEventImpl implements _ChangeEmailEvent {
     TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult? Function(_EditUserProfileEvent value)? editUserProfile,
     TResult? Function(_EditPreferencesEvent value)? editPreferences,
-    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult? Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -3346,7 +3364,7 @@ class _$ChangeEmailEventImpl implements _ChangeEmailEvent {
     TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult Function(_EditUserProfileEvent value)? editUserProfile,
     TResult Function(_EditPreferencesEvent value)? editPreferences,
-    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -3415,7 +3433,7 @@ class _$ChangePasswordEventImpl implements _ChangePasswordEvent {
     required TResult Function() deleteUserProfile,
     required TResult Function(EditUserProfileParams params) editUserProfile,
     required TResult Function(PreferenceValue params) editPreferences,
-    required TResult Function() checkUserLogged,
+    required TResult Function() checkAccountStatus,
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
@@ -3440,7 +3458,7 @@ class _$ChangePasswordEventImpl implements _ChangePasswordEvent {
     TResult? Function()? deleteUserProfile,
     TResult? Function(EditUserProfileParams params)? editUserProfile,
     TResult? Function(PreferenceValue params)? editPreferences,
-    TResult? Function()? checkUserLogged,
+    TResult? Function()? checkAccountStatus,
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
@@ -3465,7 +3483,7 @@ class _$ChangePasswordEventImpl implements _ChangePasswordEvent {
     TResult Function()? deleteUserProfile,
     TResult Function(EditUserProfileParams params)? editUserProfile,
     TResult Function(PreferenceValue params)? editPreferences,
-    TResult Function()? checkUserLogged,
+    TResult Function()? checkAccountStatus,
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
@@ -3494,7 +3512,8 @@ class _$ChangePasswordEventImpl implements _ChangePasswordEvent {
     required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
     required TResult Function(_EditUserProfileEvent value) editUserProfile,
     required TResult Function(_EditPreferencesEvent value) editPreferences,
-    required TResult Function(_CheckUserLoggedEvent value) checkUserLogged,
+    required TResult Function(_checkAccountStatusEvent value)
+        checkAccountStatus,
     required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
     required TResult Function(_ResendConfirmUserEmailEvent value)
         resendconfirmUserEmail,
@@ -3520,7 +3539,7 @@ class _$ChangePasswordEventImpl implements _ChangePasswordEvent {
     TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult? Function(_EditUserProfileEvent value)? editUserProfile,
     TResult? Function(_EditPreferencesEvent value)? editPreferences,
-    TResult? Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult? Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult? Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -3544,7 +3563,7 @@ class _$ChangePasswordEventImpl implements _ChangePasswordEvent {
     TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
     TResult Function(_EditUserProfileEvent value)? editUserProfile,
     TResult Function(_EditPreferencesEvent value)? editPreferences,
-    TResult Function(_CheckUserLoggedEvent value)? checkUserLogged,
+    TResult Function(_checkAccountStatusEvent value)? checkAccountStatus,
     TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
     TResult Function(_ResendConfirmUserEmailEvent value)?
         resendconfirmUserEmail,
@@ -3592,7 +3611,7 @@ mixin _$AuthState {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -3632,7 +3651,7 @@ mixin _$AuthState {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -3671,7 +3690,7 @@ mixin _$AuthState {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -3717,7 +3736,7 @@ mixin _$AuthState {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -3763,7 +3782,7 @@ mixin _$AuthState {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -3806,7 +3825,7 @@ mixin _$AuthState {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -3902,7 +3921,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -3945,7 +3964,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -3987,7 +4006,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -4039,7 +4058,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -4088,7 +4107,7 @@ class _$InitialImpl implements _Initial {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -4134,7 +4153,7 @@ class _$InitialImpl implements _Initial {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -4221,7 +4240,7 @@ class _$RegisterLoadingImpl implements _RegisterLoading {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -4264,7 +4283,7 @@ class _$RegisterLoadingImpl implements _RegisterLoading {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -4306,7 +4325,7 @@ class _$RegisterLoadingImpl implements _RegisterLoading {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -4358,7 +4377,7 @@ class _$RegisterLoadingImpl implements _RegisterLoading {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -4407,7 +4426,7 @@ class _$RegisterLoadingImpl implements _RegisterLoading {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -4453,7 +4472,7 @@ class _$RegisterLoadingImpl implements _RegisterLoading {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -4568,7 +4587,7 @@ class _$RegisterFailureImpl implements _RegisterFailure {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -4611,7 +4630,7 @@ class _$RegisterFailureImpl implements _RegisterFailure {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -4653,7 +4672,7 @@ class _$RegisterFailureImpl implements _RegisterFailure {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -4705,7 +4724,7 @@ class _$RegisterFailureImpl implements _RegisterFailure {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -4754,7 +4773,7 @@ class _$RegisterFailureImpl implements _RegisterFailure {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -4800,7 +4819,7 @@ class _$RegisterFailureImpl implements _RegisterFailure {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -4921,7 +4940,7 @@ class _$RegisteredImpl implements _Registered {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -4964,7 +4983,7 @@ class _$RegisteredImpl implements _Registered {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -5006,7 +5025,7 @@ class _$RegisteredImpl implements _Registered {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -5058,7 +5077,7 @@ class _$RegisteredImpl implements _Registered {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -5107,7 +5126,7 @@ class _$RegisteredImpl implements _Registered {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -5153,7 +5172,7 @@ class _$RegisteredImpl implements _Registered {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -5245,7 +5264,7 @@ class _$LoginLoadingImpl implements _LoginLoading {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -5288,7 +5307,7 @@ class _$LoginLoadingImpl implements _LoginLoading {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -5330,7 +5349,7 @@ class _$LoginLoadingImpl implements _LoginLoading {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -5382,7 +5401,7 @@ class _$LoginLoadingImpl implements _LoginLoading {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -5431,7 +5450,7 @@ class _$LoginLoadingImpl implements _LoginLoading {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -5477,7 +5496,7 @@ class _$LoginLoadingImpl implements _LoginLoading {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -5591,7 +5610,7 @@ class _$LoginFailureImpl implements _LoginFailure {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -5634,7 +5653,7 @@ class _$LoginFailureImpl implements _LoginFailure {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -5676,7 +5695,7 @@ class _$LoginFailureImpl implements _LoginFailure {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -5728,7 +5747,7 @@ class _$LoginFailureImpl implements _LoginFailure {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -5777,7 +5796,7 @@ class _$LoginFailureImpl implements _LoginFailure {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -5823,7 +5842,7 @@ class _$LoginFailureImpl implements _LoginFailure {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -5942,7 +5961,7 @@ class _$LoggedInImpl implements _LoggedIn {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -5985,7 +6004,7 @@ class _$LoggedInImpl implements _LoggedIn {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -6027,7 +6046,7 @@ class _$LoggedInImpl implements _LoggedIn {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -6079,7 +6098,7 @@ class _$LoggedInImpl implements _LoggedIn {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -6128,7 +6147,7 @@ class _$LoggedInImpl implements _LoggedIn {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -6174,7 +6193,7 @@ class _$LoggedInImpl implements _LoggedIn {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -6266,7 +6285,7 @@ class _$GoogleLoginLoadingImpl implements _GoogleLoginLoading {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -6309,7 +6328,7 @@ class _$GoogleLoginLoadingImpl implements _GoogleLoginLoading {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -6351,7 +6370,7 @@ class _$GoogleLoginLoadingImpl implements _GoogleLoginLoading {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -6403,7 +6422,7 @@ class _$GoogleLoginLoadingImpl implements _GoogleLoginLoading {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -6452,7 +6471,7 @@ class _$GoogleLoginLoadingImpl implements _GoogleLoginLoading {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -6498,7 +6517,7 @@ class _$GoogleLoginLoadingImpl implements _GoogleLoginLoading {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -6613,7 +6632,7 @@ class _$GoogleLoginFailureImpl implements _GoogleLoginFailure {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -6656,7 +6675,7 @@ class _$GoogleLoginFailureImpl implements _GoogleLoginFailure {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -6698,7 +6717,7 @@ class _$GoogleLoginFailureImpl implements _GoogleLoginFailure {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -6750,7 +6769,7 @@ class _$GoogleLoginFailureImpl implements _GoogleLoginFailure {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -6799,7 +6818,7 @@ class _$GoogleLoginFailureImpl implements _GoogleLoginFailure {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -6845,7 +6864,7 @@ class _$GoogleLoginFailureImpl implements _GoogleLoginFailure {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -6966,7 +6985,7 @@ class _$GoogleLoggedInImpl implements _GoogleLoggedIn {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -7009,7 +7028,7 @@ class _$GoogleLoggedInImpl implements _GoogleLoggedIn {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -7051,7 +7070,7 @@ class _$GoogleLoggedInImpl implements _GoogleLoggedIn {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -7103,7 +7122,7 @@ class _$GoogleLoggedInImpl implements _GoogleLoggedIn {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -7152,7 +7171,7 @@ class _$GoogleLoggedInImpl implements _GoogleLoggedIn {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -7198,7 +7217,7 @@ class _$GoogleLoggedInImpl implements _GoogleLoggedIn {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -7292,7 +7311,7 @@ class _$ConfirmEmailLoadingImpl implements _ConfirmEmailLoading {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -7335,7 +7354,7 @@ class _$ConfirmEmailLoadingImpl implements _ConfirmEmailLoading {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -7377,7 +7396,7 @@ class _$ConfirmEmailLoadingImpl implements _ConfirmEmailLoading {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -7429,7 +7448,7 @@ class _$ConfirmEmailLoadingImpl implements _ConfirmEmailLoading {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -7478,7 +7497,7 @@ class _$ConfirmEmailLoadingImpl implements _ConfirmEmailLoading {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -7524,7 +7543,7 @@ class _$ConfirmEmailLoadingImpl implements _ConfirmEmailLoading {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -7639,7 +7658,7 @@ class _$ConfirmEmailFailureImpl implements _ConfirmEmailFailure {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -7682,7 +7701,7 @@ class _$ConfirmEmailFailureImpl implements _ConfirmEmailFailure {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -7724,7 +7743,7 @@ class _$ConfirmEmailFailureImpl implements _ConfirmEmailFailure {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -7776,7 +7795,7 @@ class _$ConfirmEmailFailureImpl implements _ConfirmEmailFailure {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -7825,7 +7844,7 @@ class _$ConfirmEmailFailureImpl implements _ConfirmEmailFailure {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -7871,7 +7890,7 @@ class _$ConfirmEmailFailureImpl implements _ConfirmEmailFailure {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -7999,7 +8018,7 @@ class _$EmailConfirmedImpl implements _EmailConfirmed {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -8042,7 +8061,7 @@ class _$EmailConfirmedImpl implements _EmailConfirmed {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -8084,7 +8103,7 @@ class _$EmailConfirmedImpl implements _EmailConfirmed {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -8136,7 +8155,7 @@ class _$EmailConfirmedImpl implements _EmailConfirmed {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -8185,7 +8204,7 @@ class _$EmailConfirmedImpl implements _EmailConfirmed {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -8231,7 +8250,7 @@ class _$EmailConfirmedImpl implements _EmailConfirmed {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -8327,7 +8346,7 @@ class _$ResendConfirmEmailLoadingImpl implements _ResendConfirmEmailLoading {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -8370,7 +8389,7 @@ class _$ResendConfirmEmailLoadingImpl implements _ResendConfirmEmailLoading {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -8412,7 +8431,7 @@ class _$ResendConfirmEmailLoadingImpl implements _ResendConfirmEmailLoading {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -8464,7 +8483,7 @@ class _$ResendConfirmEmailLoadingImpl implements _ResendConfirmEmailLoading {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -8513,7 +8532,7 @@ class _$ResendConfirmEmailLoadingImpl implements _ResendConfirmEmailLoading {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -8559,7 +8578,7 @@ class _$ResendConfirmEmailLoadingImpl implements _ResendConfirmEmailLoading {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -8676,7 +8695,7 @@ class _$ResendConfirmEmailFailureImpl implements _ResendConfirmEmailFailure {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -8719,7 +8738,7 @@ class _$ResendConfirmEmailFailureImpl implements _ResendConfirmEmailFailure {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -8761,7 +8780,7 @@ class _$ResendConfirmEmailFailureImpl implements _ResendConfirmEmailFailure {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -8813,7 +8832,7 @@ class _$ResendConfirmEmailFailureImpl implements _ResendConfirmEmailFailure {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -8862,7 +8881,7 @@ class _$ResendConfirmEmailFailureImpl implements _ResendConfirmEmailFailure {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -8908,7 +8927,7 @@ class _$ResendConfirmEmailFailureImpl implements _ResendConfirmEmailFailure {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -9003,7 +9022,7 @@ class _$EmailConfirmationSentImpl implements _EmailConfirmationSent {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -9046,7 +9065,7 @@ class _$EmailConfirmationSentImpl implements _EmailConfirmationSent {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -9088,7 +9107,7 @@ class _$EmailConfirmationSentImpl implements _EmailConfirmationSent {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -9140,7 +9159,7 @@ class _$EmailConfirmationSentImpl implements _EmailConfirmationSent {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -9189,7 +9208,7 @@ class _$EmailConfirmationSentImpl implements _EmailConfirmationSent {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -9235,7 +9254,7 @@ class _$EmailConfirmationSentImpl implements _EmailConfirmationSent {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -9326,7 +9345,7 @@ class _$CompleteRegistrationLoadingImpl
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -9369,7 +9388,7 @@ class _$CompleteRegistrationLoadingImpl
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -9411,7 +9430,7 @@ class _$CompleteRegistrationLoadingImpl
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -9463,7 +9482,7 @@ class _$CompleteRegistrationLoadingImpl
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -9512,7 +9531,7 @@ class _$CompleteRegistrationLoadingImpl
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -9558,7 +9577,7 @@ class _$CompleteRegistrationLoadingImpl
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -9677,7 +9696,7 @@ class _$CompleteRegistrationFailureImpl
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -9720,7 +9739,7 @@ class _$CompleteRegistrationFailureImpl
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -9762,7 +9781,7 @@ class _$CompleteRegistrationFailureImpl
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -9814,7 +9833,7 @@ class _$CompleteRegistrationFailureImpl
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -9863,7 +9882,7 @@ class _$CompleteRegistrationFailureImpl
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -9909,7 +9928,7 @@ class _$CompleteRegistrationFailureImpl
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -10032,7 +10051,7 @@ class _$RegistrationCompletedImpl implements _RegistrationCompleted {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -10075,7 +10094,7 @@ class _$RegistrationCompletedImpl implements _RegistrationCompleted {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -10117,7 +10136,7 @@ class _$RegistrationCompletedImpl implements _RegistrationCompleted {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -10169,7 +10188,7 @@ class _$RegistrationCompletedImpl implements _RegistrationCompleted {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -10218,7 +10237,7 @@ class _$RegistrationCompletedImpl implements _RegistrationCompleted {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -10264,7 +10283,7 @@ class _$RegistrationCompletedImpl implements _RegistrationCompleted {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -10357,7 +10376,7 @@ class _$CheckUserLoadingImpl implements _CheckUserLoading {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -10400,7 +10419,7 @@ class _$CheckUserLoadingImpl implements _CheckUserLoading {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -10442,7 +10461,7 @@ class _$CheckUserLoadingImpl implements _CheckUserLoading {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -10494,7 +10513,7 @@ class _$CheckUserLoadingImpl implements _CheckUserLoading {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -10543,7 +10562,7 @@ class _$CheckUserLoadingImpl implements _CheckUserLoading {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -10589,7 +10608,7 @@ class _$CheckUserLoadingImpl implements _CheckUserLoading {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -10618,20 +10637,20 @@ abstract class _CheckUserLoading implements AuthState {
 }
 
 /// @nodoc
-abstract class _$$CheckUserLoggedImplCopyWith<$Res> {
-  factory _$$CheckUserLoggedImplCopyWith(_$CheckUserLoggedImpl value,
-          $Res Function(_$CheckUserLoggedImpl) then) =
-      __$$CheckUserLoggedImplCopyWithImpl<$Res>;
+abstract class _$$checkAccountStatusImplCopyWith<$Res> {
+  factory _$$checkAccountStatusImplCopyWith(_$checkAccountStatusImpl value,
+          $Res Function(_$checkAccountStatusImpl) then) =
+      __$$checkAccountStatusImplCopyWithImpl<$Res>;
   @useResult
   $Res call({UserAuthState userAuthState});
 }
 
 /// @nodoc
-class __$$CheckUserLoggedImplCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res, _$CheckUserLoggedImpl>
-    implements _$$CheckUserLoggedImplCopyWith<$Res> {
-  __$$CheckUserLoggedImplCopyWithImpl(
-      _$CheckUserLoggedImpl _value, $Res Function(_$CheckUserLoggedImpl) _then)
+class __$$checkAccountStatusImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$checkAccountStatusImpl>
+    implements _$$checkAccountStatusImplCopyWith<$Res> {
+  __$$checkAccountStatusImplCopyWithImpl(_$checkAccountStatusImpl _value,
+      $Res Function(_$checkAccountStatusImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -10639,7 +10658,7 @@ class __$$CheckUserLoggedImplCopyWithImpl<$Res>
   $Res call({
     Object? userAuthState = null,
   }) {
-    return _then(_$CheckUserLoggedImpl(
+    return _then(_$checkAccountStatusImpl(
       userAuthState: null == userAuthState
           ? _value.userAuthState
           : userAuthState // ignore: cast_nullable_to_non_nullable
@@ -10650,8 +10669,8 @@ class __$$CheckUserLoggedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CheckUserLoggedImpl implements _CheckUserLogged {
-  const _$CheckUserLoggedImpl({this.userAuthState = UserAuthState.guest});
+class _$checkAccountStatusImpl implements _checkAccountStatus {
+  const _$checkAccountStatusImpl({this.userAuthState = UserAuthState.guest});
 
   @override
   @JsonKey()
@@ -10659,14 +10678,14 @@ class _$CheckUserLoggedImpl implements _CheckUserLogged {
 
   @override
   String toString() {
-    return 'AuthState.checkUserLogged(userAuthState: $userAuthState)';
+    return 'AuthState.checkAccountStatus(userAuthState: $userAuthState)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CheckUserLoggedImpl &&
+            other is _$checkAccountStatusImpl &&
             (identical(other.userAuthState, userAuthState) ||
                 other.userAuthState == userAuthState));
   }
@@ -10677,8 +10696,8 @@ class _$CheckUserLoggedImpl implements _CheckUserLogged {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CheckUserLoggedImplCopyWith<_$CheckUserLoggedImpl> get copyWith =>
-      __$$CheckUserLoggedImplCopyWithImpl<_$CheckUserLoggedImpl>(
+  _$$checkAccountStatusImplCopyWith<_$checkAccountStatusImpl> get copyWith =>
+      __$$checkAccountStatusImplCopyWithImpl<_$checkAccountStatusImpl>(
           this, _$identity);
 
   @override
@@ -10705,7 +10724,7 @@ class _$CheckUserLoggedImpl implements _CheckUserLogged {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -10722,7 +10741,7 @@ class _$CheckUserLoggedImpl implements _CheckUserLogged {
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
   }) {
-    return checkUserLogged(userAuthState);
+    return checkAccountStatus(userAuthState);
   }
 
   @override
@@ -10748,7 +10767,7 @@ class _$CheckUserLoggedImpl implements _CheckUserLogged {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -10764,7 +10783,7 @@ class _$CheckUserLoggedImpl implements _CheckUserLogged {
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
   }) {
-    return checkUserLogged?.call(userAuthState);
+    return checkAccountStatus?.call(userAuthState);
   }
 
   @override
@@ -10790,7 +10809,7 @@ class _$CheckUserLoggedImpl implements _CheckUserLogged {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -10807,8 +10826,8 @@ class _$CheckUserLoggedImpl implements _CheckUserLogged {
     TResult Function(bool passwordChanged)? passwordChanged,
     required TResult orElse(),
   }) {
-    if (checkUserLogged != null) {
-      return checkUserLogged(userAuthState);
+    if (checkAccountStatus != null) {
+      return checkAccountStatus(userAuthState);
     }
     return orElse();
   }
@@ -10842,7 +10861,7 @@ class _$CheckUserLoggedImpl implements _CheckUserLogged {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -10861,7 +10880,7 @@ class _$CheckUserLoggedImpl implements _CheckUserLogged {
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
   }) {
-    return checkUserLogged(this);
+    return checkAccountStatus(this);
   }
 
   @override
@@ -10891,7 +10910,7 @@ class _$CheckUserLoggedImpl implements _CheckUserLogged {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -10907,7 +10926,7 @@ class _$CheckUserLoggedImpl implements _CheckUserLogged {
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
-    return checkUserLogged?.call(this);
+    return checkAccountStatus?.call(this);
   }
 
   @override
@@ -10937,7 +10956,7 @@ class _$CheckUserLoggedImpl implements _CheckUserLogged {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -10954,20 +10973,20 @@ class _$CheckUserLoggedImpl implements _CheckUserLogged {
     TResult Function(_PasswordChanged value)? passwordChanged,
     required TResult orElse(),
   }) {
-    if (checkUserLogged != null) {
-      return checkUserLogged(this);
+    if (checkAccountStatus != null) {
+      return checkAccountStatus(this);
     }
     return orElse();
   }
 }
 
-abstract class _CheckUserLogged implements AuthState {
-  const factory _CheckUserLogged({final UserAuthState userAuthState}) =
-      _$CheckUserLoggedImpl;
+abstract class _checkAccountStatus implements AuthState {
+  const factory _checkAccountStatus({final UserAuthState userAuthState}) =
+      _$checkAccountStatusImpl;
 
   UserAuthState get userAuthState;
   @JsonKey(ignore: true)
-  _$$CheckUserLoggedImplCopyWith<_$CheckUserLoggedImpl> get copyWith =>
+  _$$checkAccountStatusImplCopyWith<_$checkAccountStatusImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -11058,7 +11077,7 @@ class _$CeckUserFailureImpl implements _CeckUserFailure {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -11101,7 +11120,7 @@ class _$CeckUserFailureImpl implements _CeckUserFailure {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -11143,7 +11162,7 @@ class _$CeckUserFailureImpl implements _CeckUserFailure {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -11195,7 +11214,7 @@ class _$CeckUserFailureImpl implements _CeckUserFailure {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -11244,7 +11263,7 @@ class _$CeckUserFailureImpl implements _CeckUserFailure {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -11290,7 +11309,7 @@ class _$CeckUserFailureImpl implements _CeckUserFailure {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -11386,7 +11405,7 @@ class _$UserProfileLocalLoadingImpl implements _UserProfileLocalLoading {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -11429,7 +11448,7 @@ class _$UserProfileLocalLoadingImpl implements _UserProfileLocalLoading {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -11471,7 +11490,7 @@ class _$UserProfileLocalLoadingImpl implements _UserProfileLocalLoading {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -11523,7 +11542,7 @@ class _$UserProfileLocalLoadingImpl implements _UserProfileLocalLoading {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -11572,7 +11591,7 @@ class _$UserProfileLocalLoadingImpl implements _UserProfileLocalLoading {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -11618,7 +11637,7 @@ class _$UserProfileLocalLoadingImpl implements _UserProfileLocalLoading {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -11705,7 +11724,7 @@ class _$UserProfileLoadingImpl implements _UserProfileLoading {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -11748,7 +11767,7 @@ class _$UserProfileLoadingImpl implements _UserProfileLoading {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -11790,7 +11809,7 @@ class _$UserProfileLoadingImpl implements _UserProfileLoading {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -11842,7 +11861,7 @@ class _$UserProfileLoadingImpl implements _UserProfileLoading {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -11891,7 +11910,7 @@ class _$UserProfileLoadingImpl implements _UserProfileLoading {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -11937,7 +11956,7 @@ class _$UserProfileLoadingImpl implements _UserProfileLoading {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -12052,7 +12071,7 @@ class _$UserProfileFailureImpl implements _UserProfileFailure {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -12095,7 +12114,7 @@ class _$UserProfileFailureImpl implements _UserProfileFailure {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -12137,7 +12156,7 @@ class _$UserProfileFailureImpl implements _UserProfileFailure {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -12189,7 +12208,7 @@ class _$UserProfileFailureImpl implements _UserProfileFailure {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -12238,7 +12257,7 @@ class _$UserProfileFailureImpl implements _UserProfileFailure {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -12284,7 +12303,7 @@ class _$UserProfileFailureImpl implements _UserProfileFailure {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -12406,7 +12425,7 @@ class _$UserProfileFetchedImpl implements _UserProfileFetched {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -12449,7 +12468,7 @@ class _$UserProfileFetchedImpl implements _UserProfileFetched {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -12491,7 +12510,7 @@ class _$UserProfileFetchedImpl implements _UserProfileFetched {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -12543,7 +12562,7 @@ class _$UserProfileFetchedImpl implements _UserProfileFetched {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -12592,7 +12611,7 @@ class _$UserProfileFetchedImpl implements _UserProfileFetched {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -12638,7 +12657,7 @@ class _$UserProfileFetchedImpl implements _UserProfileFetched {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -12731,7 +12750,7 @@ class _$GetSportsLoadingImpl implements _GetSportsLoading {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -12774,7 +12793,7 @@ class _$GetSportsLoadingImpl implements _GetSportsLoading {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -12816,7 +12835,7 @@ class _$GetSportsLoadingImpl implements _GetSportsLoading {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -12868,7 +12887,7 @@ class _$GetSportsLoadingImpl implements _GetSportsLoading {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -12917,7 +12936,7 @@ class _$GetSportsLoadingImpl implements _GetSportsLoading {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -12963,7 +12982,7 @@ class _$GetSportsLoadingImpl implements _GetSportsLoading {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -13078,7 +13097,7 @@ class _$GetSportsFailureImpl implements _GetSportsFailure {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -13121,7 +13140,7 @@ class _$GetSportsFailureImpl implements _GetSportsFailure {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -13163,7 +13182,7 @@ class _$GetSportsFailureImpl implements _GetSportsFailure {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -13215,7 +13234,7 @@ class _$GetSportsFailureImpl implements _GetSportsFailure {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -13264,7 +13283,7 @@ class _$GetSportsFailureImpl implements _GetSportsFailure {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -13310,7 +13329,7 @@ class _$GetSportsFailureImpl implements _GetSportsFailure {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -13437,7 +13456,7 @@ class _$SportsFetchedImpl implements _SportsFetched {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -13480,7 +13499,7 @@ class _$SportsFetchedImpl implements _SportsFetched {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -13522,7 +13541,7 @@ class _$SportsFetchedImpl implements _SportsFetched {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -13574,7 +13593,7 @@ class _$SportsFetchedImpl implements _SportsFetched {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -13623,7 +13642,7 @@ class _$SportsFetchedImpl implements _SportsFetched {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -13669,7 +13688,7 @@ class _$SportsFetchedImpl implements _SportsFetched {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -13762,7 +13781,7 @@ class _$ChangeEmailLoadingImpl implements _ChangeEmailLoading {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -13805,7 +13824,7 @@ class _$ChangeEmailLoadingImpl implements _ChangeEmailLoading {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -13847,7 +13866,7 @@ class _$ChangeEmailLoadingImpl implements _ChangeEmailLoading {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -13899,7 +13918,7 @@ class _$ChangeEmailLoadingImpl implements _ChangeEmailLoading {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -13948,7 +13967,7 @@ class _$ChangeEmailLoadingImpl implements _ChangeEmailLoading {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -13994,7 +14013,7 @@ class _$ChangeEmailLoadingImpl implements _ChangeEmailLoading {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -14109,7 +14128,7 @@ class _$ChangeEmailFailureImpl implements _ChangeEmailFailure {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -14152,7 +14171,7 @@ class _$ChangeEmailFailureImpl implements _ChangeEmailFailure {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -14194,7 +14213,7 @@ class _$ChangeEmailFailureImpl implements _ChangeEmailFailure {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -14246,7 +14265,7 @@ class _$ChangeEmailFailureImpl implements _ChangeEmailFailure {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -14295,7 +14314,7 @@ class _$ChangeEmailFailureImpl implements _ChangeEmailFailure {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -14341,7 +14360,7 @@ class _$ChangeEmailFailureImpl implements _ChangeEmailFailure {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -14462,7 +14481,7 @@ class _$EmailChangedImpl implements _EmailChanged {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -14505,7 +14524,7 @@ class _$EmailChangedImpl implements _EmailChanged {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -14547,7 +14566,7 @@ class _$EmailChangedImpl implements _EmailChanged {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -14599,7 +14618,7 @@ class _$EmailChangedImpl implements _EmailChanged {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -14648,7 +14667,7 @@ class _$EmailChangedImpl implements _EmailChanged {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -14694,7 +14713,7 @@ class _$EmailChangedImpl implements _EmailChanged {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -14788,7 +14807,7 @@ class _$ChangePasswordLoadingImpl implements _ChangePasswordLoading {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -14831,7 +14850,7 @@ class _$ChangePasswordLoadingImpl implements _ChangePasswordLoading {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -14873,7 +14892,7 @@ class _$ChangePasswordLoadingImpl implements _ChangePasswordLoading {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -14925,7 +14944,7 @@ class _$ChangePasswordLoadingImpl implements _ChangePasswordLoading {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -14974,7 +14993,7 @@ class _$ChangePasswordLoadingImpl implements _ChangePasswordLoading {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -15020,7 +15039,7 @@ class _$ChangePasswordLoadingImpl implements _ChangePasswordLoading {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -15136,7 +15155,7 @@ class _$ChangePasswordFailureImpl implements _ChangePasswordFailure {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -15179,7 +15198,7 @@ class _$ChangePasswordFailureImpl implements _ChangePasswordFailure {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -15221,7 +15240,7 @@ class _$ChangePasswordFailureImpl implements _ChangePasswordFailure {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -15273,7 +15292,7 @@ class _$ChangePasswordFailureImpl implements _ChangePasswordFailure {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -15322,7 +15341,7 @@ class _$ChangePasswordFailureImpl implements _ChangePasswordFailure {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -15368,7 +15387,7 @@ class _$ChangePasswordFailureImpl implements _ChangePasswordFailure {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,
@@ -15490,7 +15509,7 @@ class _$PasswordChangedImpl implements _PasswordChanged {
     required TResult Function(UserProfileEntity? userProfile)
         registrationCompleted,
     required TResult Function() checkUserLoading,
-    required TResult Function(UserAuthState userAuthState) checkUserLogged,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
     required TResult Function(Failure? failure) checkUserFailure,
     required TResult Function() userProfileLocalLoading,
     required TResult Function() userProfileLoading,
@@ -15533,7 +15552,7 @@ class _$PasswordChangedImpl implements _PasswordChanged {
     TResult? Function(Failure? failure)? completeRegistrationailure,
     TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult? Function()? checkUserLoading,
-    TResult? Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult? Function(Failure? failure)? checkUserFailure,
     TResult? Function()? userProfileLocalLoading,
     TResult? Function()? userProfileLoading,
@@ -15575,7 +15594,7 @@ class _$PasswordChangedImpl implements _PasswordChanged {
     TResult Function(Failure? failure)? completeRegistrationailure,
     TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
     TResult Function()? checkUserLoading,
-    TResult Function(UserAuthState userAuthState)? checkUserLogged,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
     TResult Function(Failure? failure)? checkUserFailure,
     TResult Function()? userProfileLocalLoading,
     TResult Function()? userProfileLoading,
@@ -15627,7 +15646,7 @@ class _$PasswordChangedImpl implements _PasswordChanged {
     required TResult Function(_RegistrationCompleted value)
         registrationCompleted,
     required TResult Function(_CheckUserLoading value) checkUserLoading,
-    required TResult Function(_CheckUserLogged value) checkUserLogged,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
     required TResult Function(_CeckUserFailure value) checkUserFailure,
     required TResult Function(_UserProfileLocalLoading value)
         userProfileLocalLoading,
@@ -15676,7 +15695,7 @@ class _$PasswordChangedImpl implements _PasswordChanged {
         completeRegistrationailure,
     TResult? Function(_RegistrationCompleted value)? registrationCompleted,
     TResult? Function(_CheckUserLoading value)? checkUserLoading,
-    TResult? Function(_CheckUserLogged value)? checkUserLogged,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
     TResult? Function(_CeckUserFailure value)? checkUserFailure,
     TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult? Function(_UserProfileLoading value)? userProfileLoading,
@@ -15722,7 +15741,7 @@ class _$PasswordChangedImpl implements _PasswordChanged {
         completeRegistrationailure,
     TResult Function(_RegistrationCompleted value)? registrationCompleted,
     TResult Function(_CheckUserLoading value)? checkUserLoading,
-    TResult Function(_CheckUserLogged value)? checkUserLogged,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
     TResult Function(_CeckUserFailure value)? checkUserFailure,
     TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
     TResult Function(_UserProfileLoading value)? userProfileLoading,

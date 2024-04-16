@@ -51,7 +51,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final EditUserProfileUseCase editUserProfileUseCase;
   final GetsportsUseCase getsportsUseCase;
   final GetUserProfileUseCase getUserProfileUseCase;
-  final CheckUserLoggedUseCase checkUserLoggedUseCase;
+  final AccountStatusUseCase accountStatusUseCase;
   final CompleteRegistrationUseCase completeRegistrationUseCase;
   final LogoutUserUseCase logoutUserUseCase;
   final EditPreferencesUseCase editPreferencesUseCase;
@@ -70,7 +70,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     this.editUserProfileUseCase,
     this.getsportsUseCase,
     this.getUserProfileUseCase,
-    this.checkUserLoggedUseCase,
+    this.accountStatusUseCase,
     this.completeRegistrationUseCase,
     this.logoutUserUseCase,
     this.editPreferencesUseCase,
@@ -91,7 +91,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             await _deleteUserProfile(event, emit),
         editUserProfile: (event) async => await _editUserProfile(event, emit),
         confirmUserEmail: (event) async => await _confirmUserEmail(event, emit),
-        checkUserLogged: (event) async => await _checkUserLogged(event, emit),
+        checkAccountStatus: (event) async =>
+            await _checkAccountStatus(event, emit),
         resendconfirmUserEmail: (event) async =>
             await _resendconfirmUserEmail(event, emit),
         completeRegistration: (event) async =>
@@ -260,23 +261,29 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     });
   }
 
-  Future<void> _checkUserLogged(event, Emitter<AuthState> emit) async {
-    event as _$CheckUserLoggedEventImpl;
+  Future<void> _checkAccountStatus(event, Emitter<AuthState> emit) async {
+    event as _$checkAccountStatusEventImpl;
     emit(const AuthState.checkUserLoading());
-    final result = await checkUserLoggedUseCase();
+    final result = await accountStatusUseCase();
 
     result.fold((l) {
       emit(const AuthState.checkUserFailure());
     }, (isLogged) {
       if (isLogged == UserAuthState.loggedIn) {
-        emit(const AuthState.checkUserLogged(
+        emit(const AuthState.checkAccountStatus(
             userAuthState: UserAuthState.loggedIn));
-      } else if (isLogged == UserAuthState.welcome) {
-        emit(const AuthState.checkUserLogged(
+      }
+      if (isLogged == UserAuthState.welcome) {
+        emit(const AuthState.checkAccountStatus(
             userAuthState: UserAuthState.welcome));
-      } else if (isLogged == UserAuthState.guest) {
-        emit(const AuthState.checkUserLogged(
+      }
+      if (isLogged == UserAuthState.guest) {
+        emit(const AuthState.checkAccountStatus(
             userAuthState: UserAuthState.guest));
+      }
+      if (isLogged == UserAuthState.otp) {
+        emit(const AuthState.checkAccountStatus(
+            userAuthState: UserAuthState.otp));
       }
     });
   }
@@ -336,7 +343,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     final result = await getUserProfileUseCase();
     result.fold((failure) {
       if (failure.statusCode == 401) {
-        add(const AuthEvent.checkUserLogged());
+        add(const AuthEvent.checkAccountStatus());
       }
       emit(const AuthState.userProfileFailure());
     }, (UserProfileEntity? userProfile) {

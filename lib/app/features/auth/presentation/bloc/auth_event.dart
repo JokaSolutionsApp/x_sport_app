@@ -12,7 +12,7 @@ class AuthEvent with _$AuthEvent {
   const factory AuthEvent.editPreferences({required PreferenceValue params}) =
       _EditPreferencesEvent;
 
-  const factory AuthEvent.checkUserLogged() = _CheckUserLoggedEvent;
+  const factory AuthEvent.checkAccountStatus() = _checkAccountStatusEvent;
   const factory AuthEvent.confirmUserEmail() = _ConfirmUserEmailEvent;
   const factory AuthEvent.resendconfirmUserEmail() =
       _ResendConfirmUserEmailEvent;

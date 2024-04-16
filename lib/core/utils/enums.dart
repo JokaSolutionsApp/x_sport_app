@@ -16,7 +16,7 @@ enum State {
 }
 
 enum UserAuthState {
-  logging,
+  otp,
   loggedIn,
   guest,
   welcome,
