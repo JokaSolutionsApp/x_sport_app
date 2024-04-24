@@ -7,6 +7,8 @@ import 'package:get_it/get_it.dart';
 import 'package:x_sport/app/features/academy/domain/usecase/add_academy_review.dart';
 import 'package:x_sport/app/features/academy/domain/usecase/get_all_Academies.dart';
 import 'package:x_sport/app/features/academy/domain/usecase/inroll_user_in_course.dart';
+import 'package:x_sport/app/features/archives/domain/usecase/get_academy_subscription_archive_usecase.dart';
+import 'package:x_sport/app/features/archives/presentation/bloc/archive_bloc.dart';
 import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/change_email_usecase.dart';
 import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/change_password_usecase.dart';
 import 'package:x_sport/app/features/courts/data/datasource/stadium_remote_datasource.dart';
@@ -74,36 +76,36 @@ class ServiceLocator {
       );
 
       final Dio dio = Dio(baseOptions)
-        ..options.followRedirects = true
+        // ..options.followRedirects = true
         ..options.validateStatus = (status) {
           return status! < 600;
         };
 
-      // Your server's SHA256 fingerprint
-      String fingerprint =
-          "e0f49d9a71f9754f4a5d3f1f16b11a65d049b1814576db09a460e4a55de899b4"
-              .toLowerCase();
+      // // Your server's SHA256 fingerprint
+      // String fingerprint =
+      //     "e0f49d9a71f9754f4a5d3f1f16b11a65d049b1814576db09a460e4a55de899b4"
+      //         .toLowerCase();
 
-      dio.httpClientAdapter = IOHttpClientAdapter(
-        createHttpClient: () {
-          // Don't trust any certificate just because their root cert is trusted.
-          final HttpClient client =
-              HttpClient(context: SecurityContext(withTrustedRoots: true));
-          // You can test the intermediate / root cert here. We just ignore it.
-          client.badCertificateCallback = (cert, host, port) => true;
-          return client;
-        },
-        validateCertificate: (cert, host, port) {
-          // Check that the cert fingerprint matches the one we expect.
-          // We definitely require _some_ certificate.
-          if (cert == null) {
-            return false;
-          }
-          // Validate it any way you want. Here we only check that
-          // the fingerprint matches the OpenSSL SHA256.
-          return fingerprint == sha256.convert(cert.der).toString();
-        },
-      );
+      // dio.httpClientAdapter = IOHttpClientAdapter(
+      //   createHttpClient: () {
+      //     // Don't trust any certificate just because their root cert is trusted.
+      //     final HttpClient client =
+      //         HttpClient(context: SecurityContext(withTrustedRoots: true));
+      //     // You can test the intermediate / root cert here. We just ignore it.
+      //     client.badCertificateCallback = (cert, host, port) => true;
+      //     return client;
+      //   },
+      //   validateCertificate: (cert, host, port) {
+      //     // Check that the cert fingerprint matches the one we expect.
+      //     // We definitely require _some_ certificate.
+      //     if (cert == null) {
+      //       return false;
+      //     }
+      //     // Validate it any way you want. Here we only check that
+      //     // the fingerprint matches the OpenSSL SHA256.
+      //     return fingerprint == sha256.convert(cert.der).toString();
+      //   },
+      // );
       dio.interceptors.add(LogInterceptor(
         requestBody: true,
         responseBody: true,
@@ -162,7 +164,9 @@ class ServiceLocator {
           sl(),
           sl(),
         ));
-
+    sl.registerFactory(() => ArchiveBloc(
+          sl(),
+        ));
     // User UseCases
     sl.registerLazySingleton(() => LoginUseCase(sl()));
     sl.registerLazySingleton(() => GoogleLoginUseCase(sl()));
@@ -201,6 +205,9 @@ class ServiceLocator {
     sl.registerLazySingleton(() => GetFreindsStadiumsCase(sl()));
     sl.registerLazySingleton(() => GetNearByStadiumsCase(sl()));
     sl.registerLazySingleton(() => GetAboutStadiumUseCase(sl()));
+
+    // archive bloc usecases
+    sl.registerLazySingleton(() => GetAcademySupscriptionArchiveUseCase(sl()));
 
     sl.registerLazySingleton<BaseUserRepository>(() => UserRepository(sl()));
     sl.registerLazySingleton<BaseAcademyRepository>(

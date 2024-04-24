@@ -13,6 +13,8 @@ class RoutePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AuthBloc, AuthState>(buildWhen: (prev, cur) {
+      print("value.userAuthState ${cur.runtimeType}");
+
       if (cur.runtimeType == const AuthState.checkAccountStatus().runtimeType) {
         return true;
       }

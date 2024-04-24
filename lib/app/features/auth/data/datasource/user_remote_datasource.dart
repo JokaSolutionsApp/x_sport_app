@@ -172,6 +172,8 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
       final refreshToken = data['data']['authResult']['refreshToken'];
       sl<SecureStorageService>().write('token', token);
       sl<SecureStorageService>().write('refreshToken', refreshToken);
+      await sl<SecureStorageService>()
+          .write('email', registerStream.emailValue);
 
       return UserProfileModel.fromJson(data['data']['userProfile']);
     } else if (response.statusCode == 500) {
@@ -246,22 +248,20 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
   @override
   Future<UserAuthState> checkAccountStatus() async {
     final email = await sl<SecureStorageService>().read('email');
-
     final postData = {
       'email': email,
     };
     final response =
-        await ApiService.post(ApiConstance.resendConfirmEmailApi, postData);
+        await ApiService.post(ApiConstance.accountStatussApi, postData);
     final data = response.data;
-
-    print(data);
+    final statusValue = data['data'];
 
     if (response.statusCode == 200) {
-      if (data == 0) {
+      if (statusValue == 0) {
         return UserAuthState.guest;
-      } else if (data == 1) {
+      } else if (statusValue == 1) {
         return UserAuthState.loggedIn;
-      } else if (data == 2) {
+      } else if (statusValue == 2) {
         return UserAuthState.welcome;
       } else {
         return UserAuthState.otp;

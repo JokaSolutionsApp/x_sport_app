@@ -1,7 +1,7 @@
 class ApiConstance {
-  static const baseUrl =
-      'https://xsportapi-dev.us-east-1.elasticbeanstalk.com/api/';
-
+  // static const baseUrl =
+  //     'https://xsportapi-dev.us-east-1.elasticbeanstalk.com/api/';
+  static const baseUrl = 'https://api.xsportsapp.net/api/';
 // User Auth
   static const loginApi = 'User/Login';
   static const googleLoginApi = 'User/GoogleLogin';
@@ -19,6 +19,7 @@ class ApiConstance {
   static const changeEmail = 'User/ChangeEmail';
   static const changePassword = 'User/ChangePassword';
   static const getSportsApi = 'Sport/GetSports';
+  static const accountStatussApi = 'User/AccountStatus';
 
 // Academy
   static const getSuggestedAcademies = 'Academy/GetSuggestedAcademies';
@@ -36,4 +37,7 @@ class ApiConstance {
   static const getNearByStadiums = 'Stadium/GetNearByStadiums';
   static const getFriendsStadiums = 'Stadium/GetFriendsStadiums';
   static const getAboutStadium = 'Stadium/GetAboutStadium';
+
+// Archive
+  static const getAcademiesSubscriptionArchive = 'Archive/AcademiesSubscriptionArchive';
 }

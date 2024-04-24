@@ -82,6 +82,8 @@ class AcademyRemoteDataSource extends BaseAcademyRemoteDataSource {
   @override
   Future<List<GetCoursesToSubscribeEntity>> getCoursesToSubscribe(
       {required CourseParams params}) async {
+    print('getCoursesToSubscribe');
+
     final queryParams = params.toMap();
 
     final response = await ApiService.get(ApiConstance.getCoursesToSubscribe,

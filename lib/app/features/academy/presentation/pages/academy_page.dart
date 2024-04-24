@@ -2,8 +2,11 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:x_sport/app/features/academy/domain/enitites/params/acedemy_params.dart';
+import 'package:x_sport/app/features/academy/presentation/bloc/academy_bloc.dart';
 import 'package:x_sport/app/features/academy/presentation/components/reviews_tab.dart';
 import 'package:x_sport/app/features/academy/presentation/pages/courses_page.dart';
 import 'package:x_sport/main.dart';
@@ -38,7 +41,11 @@ class _AcademyScreenState extends State<AcademyPage>
   @override
   void initState() {
     _tabController = TabController(length: 3, vsync: this, initialIndex: 2);
-
+    context.read<AcademyBloc>().add(AcademyEvent.getCoursesToSubscribe(
+        params: CourseParams(
+            academyId: widget.academy.academyId,
+            ageCategoryId: 15,
+            genderId: 1)));
     super.initState();
   }
 

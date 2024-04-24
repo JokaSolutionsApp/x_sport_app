@@ -267,8 +267,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     final result = await accountStatusUseCase();
 
     result.fold((l) {
+      print("isLogged $l");
+
       emit(const AuthState.checkUserFailure());
     }, (isLogged) {
+      print("isLogged $isLogged");
       if (isLogged == UserAuthState.loggedIn) {
         emit(const AuthState.checkAccountStatus(
             userAuthState: UserAuthState.loggedIn));
