@@ -1,11 +1,12 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'age_category_with_courses_model.dart';
+
 import '../../domain/enitites/get_courses_to_subscribe_entity.dart';
+
 part 'get_courses_to_subscribe_model.g.dart';
 
 @JsonSerializable()
 class GetCoursesToSubscribeModel extends GetCoursesToSubscribeEntity {
-  GetCoursesToSubscribeModel(
+  const GetCoursesToSubscribeModel(
       {required super.courseId,
       required super.courseName,
       required super.sportId,

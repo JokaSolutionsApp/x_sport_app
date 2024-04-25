@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/academy_review_entity.dart';
-import 'package:x_sport/core/constance/app_constance.dart';
-import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
+
+import '../../../../../core/constance/app_constance.dart';
+import '../../../../../core/utils/assets_managers/assets.gen.dart';
+import '../../domain/enitites/academy_review_entity.dart';
 
 class ReviewContainer extends StatelessWidget {
   final AcademyReviewEntity review;
@@ -21,7 +22,7 @@ class ReviewContainer extends StatelessWidget {
           ),
           title: Text(
             review.userName,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w500,
               color: XColors.black,
@@ -29,7 +30,7 @@ class ReviewContainer extends StatelessWidget {
           ),
           subtitle: Text(
             review.reviewDateTime,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 10,
               fontWeight: FontWeight.w500,
               color: XColors.secondary_text_color,
@@ -53,7 +54,7 @@ class ReviewContainer extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.0),
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: Text(review.reviewContent),
         ),
         const Padding(

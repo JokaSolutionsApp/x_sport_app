@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/academy_entity.dart';
+import '../../domain/enitites/academy_entity.dart';
 
 import '../../../../../core/error/exceptions.dart';
 import '../../../../../core/error/failure.dart';
@@ -8,7 +8,6 @@ import '../../domain/enitites/academy_membership_entity.dart';
 import '../../domain/enitites/academy_review_entity.dart';
 import '../../domain/enitites/get_courses_to_subscribe_entity.dart';
 import '../../domain/enitites/params/acedemy_params.dart';
-import '../../domain/enitites/suggested_academy_entity.dart';
 import '../../domain/repository/base_academy_repository.dart';
 import '../datasource/academy_remote_datasource.dart';
 

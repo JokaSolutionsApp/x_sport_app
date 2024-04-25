@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:x_sport/app/features/auth/data/models/sport_model.dart';
-import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/change_email_usecase.dart';
-import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/change_password_usecase.dart';
-import 'package:x_sport/app/features/profile/presentation/components/edit_profile_components/status_dialog.dart';
+import '../../data/models/sport_model.dart';
+import '../../domain/usecase/user_usecase/change_email_usecase.dart';
+import '../../domain/usecase/user_usecase/change_password_usecase.dart';
+
 import '../../../../../core/constance/app_functions.dart';
 import '../../../../../core/error/failure.dart';
 import '../../../../../core/services/locator/service_locator.dart';

@@ -1,8 +1,9 @@
-import 'package:equatable/equatable.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:x_sport/app/features/academy/data/models/gender_dropdown_item_model.dart';
-import 'package:x_sport/app/features/academy/data/models/suggested_academy_model.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/academy_entity.dart';
+
+import '../../domain/enitites/academy_entity.dart';
+import 'gender_dropdown_item_model.dart';
+import 'suggested_academy_model.dart';
+
 part 'academy_model.g.dart';
 
 @JsonSerializable()

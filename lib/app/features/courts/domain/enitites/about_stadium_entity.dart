@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:x_sport/app/features/courts/domain/enitites/stadium_service_entity.dart';
+
+import 'stadium_service_entity.dart';
 
 @JsonSerializable()
 class AboutStadiumEntity extends Equatable {
@@ -31,7 +32,7 @@ class AboutStadiumEntity extends Equatable {
   @JsonKey(name: 'videos')
   final List<String> videos;
 
-  AboutStadiumEntity({
+  const AboutStadiumEntity({
     required this.stadiumId,
     required this.name,
     required this.description,

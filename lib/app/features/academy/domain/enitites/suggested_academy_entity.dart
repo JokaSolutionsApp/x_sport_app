@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/age_category_dropdown_item.dart';
+
+import 'age_category_dropdown_item.dart';
 
 @JsonSerializable()
 class SuggestedAcademyEntity extends Equatable {
@@ -37,7 +38,7 @@ class SuggestedAcademyEntity extends Equatable {
   @JsonKey(name: 'ageCategoriesDropdownItems')
   final List<AgeCategoryDropdownItem> ageCategoriesDropdownItems;
 
-  SuggestedAcademyEntity({
+  const SuggestedAcademyEntity({
     required this.academyId,
     required this.name,
     required this.description,

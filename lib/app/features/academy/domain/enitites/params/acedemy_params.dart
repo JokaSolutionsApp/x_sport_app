@@ -104,3 +104,35 @@ class AddAcademyReviewParams {
     };
   }
 }
+
+class StadiumParams {
+  final int sportId;
+  final int pageNumber;
+  final int pageSize;
+  StadiumParams({
+    required this.sportId,
+    required this.pageNumber,
+    required this.pageSize,
+  });
+
+  Map<String, dynamic> toMap() {
+    return {
+      "SportId": sportId,
+      "PageNum": pageNumber,
+      "PageSize": pageSize,
+    };
+  }
+}
+
+class ReserviedTimesParams {
+  final int stadiumFloorId;
+  ReserviedTimesParams({
+    required this.stadiumFloorId,
+  });
+
+  Map<String, dynamic> toMap() {
+    return {
+      "stadiumFloorId": stadiumFloorId,
+    };
+  }
+}

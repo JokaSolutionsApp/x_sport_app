@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/get_courses_to_subscribe_entity.dart';
+import '../../../../domain/enitites/get_courses_to_subscribe_entity.dart';
 
 import '../../../../../../../core/constance/app_constance.dart';
 import '../../../../../../../core/constance/app_icons_icons.dart';

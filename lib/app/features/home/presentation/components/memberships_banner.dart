@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/home/presentation/pages/memberships_page.dart';
-import 'package:x_sport/core/constance/app_constance.dart';
-import 'package:x_sport/main.dart';
+import '../pages/memberships_page.dart';
+import '../../../../../core/constance/app_constance.dart';
+import '../../../../../main.dart';
 
 class MembershipsBanner extends StatelessWidget {
   const MembershipsBanner({

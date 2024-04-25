@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/academy/presentation/pages/all_academies_page.dart';
-import 'package:x_sport/main.dart';
+import '../../../../academy/presentation/pages/all_academies_page.dart';
+import '../../../../../../main.dart';
 
 import '../../../../../../core/constance/app_constance.dart';
 

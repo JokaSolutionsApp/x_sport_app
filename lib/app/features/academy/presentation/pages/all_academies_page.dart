@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/params/acedemy_params.dart';
-import 'package:x_sport/app/features/academy/presentation/bloc/academy_bloc.dart';
-import 'package:x_sport/app/features/academy/presentation/pages/academy_page.dart';
-import 'package:x_sport/app/widgets/buttons/submit_button.dart';
-import 'package:x_sport/app/widgets/rectangle_container.dart';
-import 'package:x_sport/core/constance/app_constance.dart';
-import 'package:x_sport/core/constance/app_icons_icons.dart';
-import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
-import 'package:x_sport/main.dart';
+import '../../domain/enitites/params/acedemy_params.dart';
+import '../bloc/academy_bloc.dart';
+import 'academy_page.dart';
+import '../../../../widgets/buttons/submit_button.dart';
+import '../../../../widgets/rectangle_container.dart';
+import '../../../../../core/constance/app_constance.dart';
+import '../../../../../core/constance/app_icons_icons.dart';
+import '../../../../../core/utils/assets_managers/assets.gen.dart';
+import '../../../../../main.dart';
 
 class AllAcademiesPage extends StatefulWidget {
   const AllAcademiesPage({super.key});

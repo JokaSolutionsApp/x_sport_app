@@ -1,8 +1,7 @@
 import 'package:dartz/dartz.dart';
-import '../../enitites/user_profile_entity.dart';
-import '../../params/google_login_params.dart';
 
 import '../../../../../../core/error/failure.dart';
+import '../../enitites/user_profile_entity.dart';
 import '../../repository/base_user_repository.dart';
 
 class GoogleLoginUseCase {

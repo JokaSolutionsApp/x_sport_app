@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/courts/presentation/pages/courts_page.dart';
-import 'package:x_sport/app/features/home/presentation/components/home_components/banner_component.dart';
-import 'package:x_sport/app/features/home/presentation/components/home_components/friends_stadiums_component.dart';
+
 import '../../../../../core/constance/app_constance.dart';
 import '../../../../../core/utils/assets_managers/assets.gen.dart';
 import '../../../../widgets/buttons/submit_button.dart';
 import '../../../../widgets/rectangle_container.dart';
+import '../../../courts/presentation/pages/courts_page.dart';
 import '../../../profile/presentation/components/profile_screen_components/profile_main_components/profile_appbar_component.dart';
+import '../components/home_components/banner_component.dart';
+import '../components/home_components/friends_stadiums_component.dart';
 import '../components/home_components/home_stadiums_component.dart';
 
 class HomePage extends StatefulWidget {
@@ -129,7 +130,7 @@ class _HomePageState extends State<HomePage> {
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  CourtsPage()));
+                                                  const CourtsPage()));
                                     }),
                               )
                             ],

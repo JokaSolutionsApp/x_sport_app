@@ -1,21 +1,25 @@
-import 'dart:io';
-
-import 'package:crypto/crypto.dart';
 import 'package:dio/dio.dart';
-import 'package:dio/io.dart';
 import 'package:get_it/get_it.dart';
-import 'package:x_sport/app/features/academy/domain/usecase/add_academy_review.dart';
-import 'package:x_sport/app/features/academy/domain/usecase/get_all_Academies.dart';
-import 'package:x_sport/app/features/academy/domain/usecase/inroll_user_in_course.dart';
-import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/change_email_usecase.dart';
-import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/change_password_usecase.dart';
-import 'package:x_sport/app/features/courts/data/datasource/stadium_remote_datasource.dart';
-import 'package:x_sport/app/features/courts/data/repository/court_repository.dart';
-import 'package:x_sport/app/features/courts/domain/repository/base_stadium_repository.dart';
-import 'package:x_sport/app/features/courts/domain/usecase/get_about_stadium_usecase.dart';
-import 'package:x_sport/app/features/courts/domain/usecase/get_friends_stadiums_usecase.dart';
-import 'package:x_sport/app/features/courts/domain/usecase/get_near_by_stadiums_usecase.dart';
-import 'package:x_sport/app/features/courts/presentation/bloc/stadium_bloc.dart';
+import '../../../app/features/academy/domain/usecase/add_academy_review.dart';
+import '../../../app/features/academy/domain/usecase/get_all_Academies.dart';
+import '../../../app/features/academy/domain/usecase/inroll_user_in_course.dart';
+import '../../../app/features/auth/domain/usecase/user_usecase/change_email_usecase.dart';
+import '../../../app/features/auth/domain/usecase/user_usecase/change_password_usecase.dart';
+import '../../../app/features/courts/data/datasource/stadium_remote_datasource.dart';
+import '../../../app/features/courts/data/repository/court_repository.dart';
+import '../../../app/features/courts/domain/repository/base_stadium_repository.dart';
+import '../../../app/features/courts/domain/usecase/get_about_stadium_usecase.dart';
+import '../../../app/features/courts/domain/usecase/get_friends_stadiums_usecase.dart';
+import '../../../app/features/courts/domain/usecase/get_near_by_stadiums_usecase.dart';
+import '../../../app/features/courts/presentation/bloc/stadium_bloc.dart';
+import '../../../app/features/match/data/datasource/match_remote_datasource.dart';
+import '../../../app/features/match/data/repository/match_repository.dart';
+import '../../../app/features/match/domain/repository/base_match_repository.dart';
+import '../../../app/features/match/domain/usecase/create_reservation_usecase.dart';
+import '../../../app/features/match/domain/usecase/get_reserved_times_usecase.dart';
+import '../../../app/features/match/domain/usecase/get_sport_stadium_usecase.dart';
+import '../../../app/features/match/domain/usecase/get_sports_usecase.dart';
+import '../../../app/features/match/presentation/bloc/match_reservation_bloc.dart';
 
 import '../../../app/features/academy/data/datasource/academy_remote_datasource.dart';
 import '../../../app/features/academy/data/repository/academy_repository.dart';
@@ -74,36 +78,36 @@ class ServiceLocator {
       );
 
       final Dio dio = Dio(baseOptions)
-        ..options.followRedirects = true
+        // ..options.followRedirects = true
         ..options.validateStatus = (status) {
           return status! < 600;
         };
 
-      // Your server's SHA256 fingerprint
-      String fingerprint =
-          "e0f49d9a71f9754f4a5d3f1f16b11a65d049b1814576db09a460e4a55de899b4"
-              .toLowerCase();
+      // // Your server's SHA256 fingerprint
+      // String fingerprint =
+      //     "e0f49d9a71f9754f4a5d3f1f16b11a65d049b1814576db09a460e4a55de899b4"
+      //         .toLowerCase();
 
-      dio.httpClientAdapter = IOHttpClientAdapter(
-        createHttpClient: () {
-          // Don't trust any certificate just because their root cert is trusted.
-          final HttpClient client =
-              HttpClient(context: SecurityContext(withTrustedRoots: true));
-          // You can test the intermediate / root cert here. We just ignore it.
-          client.badCertificateCallback = (cert, host, port) => true;
-          return client;
-        },
-        validateCertificate: (cert, host, port) {
-          // Check that the cert fingerprint matches the one we expect.
-          // We definitely require _some_ certificate.
-          if (cert == null) {
-            return false;
-          }
-          // Validate it any way you want. Here we only check that
-          // the fingerprint matches the OpenSSL SHA256.
-          return fingerprint == sha256.convert(cert.der).toString();
-        },
-      );
+      // dio.httpClientAdapter = IOHttpClientAdapter(
+      //   createHttpClient: () {
+      //     // Don't trust any certificate just because their root cert is trusted.
+      //     final HttpClient client =
+      //         HttpClient(context: SecurityContext(withTrustedRoots: true));
+      //     // You can test the intermediate / root cert here. We just ignore it.
+      //     client.badCertificateCallback = (cert, host, port) => true;
+      //     return client;
+      //   },
+      //   validateCertificate: (cert, host, port) {
+      //     // Check that the cert fingerprint matches the one we expect.
+      //     // We definitely require _some_ certificate.
+      //     if (cert == null) {
+      //       return false;
+      //     }
+      //     // Validate it any way you want. Here we only check that
+      //     // the fingerprint matches the OpenSSL SHA256.
+      //     return fingerprint == sha256.convert(cert.der).toString();
+      //   },
+      // );
       dio.interceptors.add(LogInterceptor(
         requestBody: true,
         responseBody: true,
@@ -125,43 +129,13 @@ class ServiceLocator {
       return dio;
     });
 
-    sl.registerFactory(() => AuthBloc(
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-        ));
+    sl.registerFactory(() => AuthBloc(sl(), sl(), sl(), sl(), sl(), sl(), sl(),
+        sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl()));
     sl.registerFactory(() => ChatBloc());
-    sl.registerFactory(() => AcademyBloc(
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-        ));
-
-    sl.registerFactory(() => StadiumBloc(
-          sl(),
-          sl(),
-          sl(),
-        ));
+    sl.registerFactory(() =>
+        AcademyBloc(sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl()));
+    sl.registerFactory(() => StadiumBloc(sl(), sl(), sl()));
+    sl.registerFactory(() => MatchReservationBloc(sl(), sl(), sl()));
 
     // User UseCases
     sl.registerLazySingleton(() => LoginUseCase(sl()));
@@ -202,17 +176,28 @@ class ServiceLocator {
     sl.registerLazySingleton(() => GetNearByStadiumsCase(sl()));
     sl.registerLazySingleton(() => GetAboutStadiumUseCase(sl()));
 
+    // Match reservation usecases
+    sl.registerLazySingleton(() => CreateReservationUseCase(sl()));
+    sl.registerLazySingleton(() => GetReservedTimesUseCase(sl()));
+    sl.registerLazySingleton(() => GetsportStadiumUseCase(sl()));
+    sl.registerLazySingleton(() => GetStadiumSportsUseCase(sl()));
+
+    // Base repos
     sl.registerLazySingleton<BaseUserRepository>(() => UserRepository(sl()));
     sl.registerLazySingleton<BaseAcademyRepository>(
         () => AcademyRepository(sl()));
     sl.registerLazySingleton<BaseStadiumRepository>(
         () => StadiumRepository(sl()));
+    sl.registerLazySingleton<BaseMatchRepository>(() => MatchRepository(sl()));
 
+    // Remote repos
     sl.registerLazySingleton<BaseUserRemoteDataSource>(
         () => UserRemoteDataSource());
     sl.registerLazySingleton<BaseAcademyRemoteDataSource>(
         () => AcademyRemoteDataSource());
     sl.registerLazySingleton<BaseStadiumRemoteDataSource>(
         () => StadiumRemoteDataSource());
+    sl.registerLazySingleton<BaseMatchRemoteDataSource>(
+        () => MatchRemoteDataSource());
   }
 }

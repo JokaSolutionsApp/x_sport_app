@@ -10,18 +10,12 @@ part 'user_profile_model.g.dart';
 @JsonSerializable()
 class UserProfileModel extends UserProfileEntity {
   const UserProfileModel({
-    UserModel? user,
-    List<FavoriteSportModel>? favoriteSports,
-    AuthResultModel? authResult,
-    int? followers,
-    int? following,
-  }) : super(
-          user: user,
-          favoriteSports: favoriteSports,
-          authResult: authResult,
-          followers: followers,
-          following: following,
-        );
+    UserModel? super.user,
+    List<FavoriteSportModel>? super.favoriteSports,
+    AuthResultModel? super.authResult,
+    super.followers,
+    super.following,
+  });
 
   factory UserProfileModel.fromJson(Map<String, dynamic> json) =>
       _$UserProfileModelFromJson(json);

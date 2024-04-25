@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/params/acedemy_params.dart';
-import 'package:x_sport/app/features/academy/presentation/bloc/academy_bloc.dart';
-import 'package:x_sport/app/features/auth/domain/enitites/sport_entity.dart';
-import 'package:x_sport/app/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:x_sport/app/features/home/presentation/components/academies_components/suggested_academies_component.dart';
+import '../../../../academy/domain/enitites/params/acedemy_params.dart';
+import '../../../../academy/presentation/bloc/academy_bloc.dart';
+import '../../../../auth/domain/enitites/sport_entity.dart';
+import '../../../../auth/presentation/bloc/auth_bloc.dart';
+import 'suggested_academies_component.dart';
 import '../../../../../../core/constance/app_constance.dart';
 import '../../../../../../core/utils/assets_managers/assets.gen.dart';
 import '../../../../../widgets/rectangle_container.dart';

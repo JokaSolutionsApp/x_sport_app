@@ -1,25 +1,23 @@
-// ignore_for_file: prefer_typing_uninitialized_variables, unnecessary_brace_in_string_interps, null_argument_to_non_null_type
-
 import 'dart:async';
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:x_sport/app/controllers/fileds_bloc.dart';
-import 'package:x_sport/app/features/auth/data/datasource/params/auth_params.dart';
-import 'package:x_sport/app/features/auth/data/models/sport_model.dart';
-import 'package:x_sport/app/features/auth/data/models/user_profile_model.dart';
-import 'package:x_sport/app/features/auth/domain/enitites/sport_entity.dart';
-import 'package:x_sport/app/features/auth/domain/enitites/user_profile_entity.dart';
-import 'package:x_sport/app/features/auth/domain/params/edit_preferences_params.dart';
-import 'package:x_sport/core/constance/api_constance.dart';
-import 'package:x_sport/core/error/exceptions.dart';
-import 'package:x_sport/core/network/error_message_model.dart';
-import 'package:x_sport/core/services/api_service.dart';
-import 'package:x_sport/core/services/locator/service_locator.dart';
-import 'package:x_sport/core/services/secure_storage_service.dart.dart';
-import 'package:x_sport/core/utils/enums.dart';
+import '../../../../controllers/fileds_bloc.dart';
+import 'params/auth_params.dart';
+import '../models/sport_model.dart';
+import '../models/user_profile_model.dart';
+import '../../domain/enitites/sport_entity.dart';
+import '../../domain/enitites/user_profile_entity.dart';
+import '../../domain/params/edit_preferences_params.dart';
+import '../../../../../core/constance/api_constance.dart';
+import '../../../../../core/error/exceptions.dart';
+import '../../../../../core/network/error_message_model.dart';
+import '../../../../../core/services/api_service.dart';
+import '../../../../../core/services/locator/service_locator.dart';
+import '../../../../../core/services/secure_storage_service.dart.dart';
+import '../../../../../core/utils/enums.dart';
 
 abstract class BaseUserRemoteDataSource {
   Future<UserProfileEntity> login();
@@ -209,7 +207,7 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
           await FirebaseAuth.instance.signInWithCredential(credential);
       final idToken = await firebaseAuth.user!.getIdToken();
       if (firebaseAuth.user != null) {
-        print("firebaseAuth ${idToken}");
+        print("firebaseAuth $idToken");
       }
 
       Map<String, dynamic> postData = {
@@ -239,7 +237,7 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
         throw ServerException(errorModel: ErrorModel.formJson(data));
       }
     } else {
-      throw ServerException(errorModel: ErrorModel.formJson({}));
+      throw ServerException(errorModel: ErrorModel.formJson(const {}));
     }
   }
 
@@ -387,7 +385,7 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
       await sl<SecureStorageService>().delete('token');
       await sl<SecureStorageService>().delete('refreshToken');
       throw ServerException(
-          errorModel: ErrorModel.formJson({'statusCode': 401}));
+          errorModel: ErrorModel.formJson(const {'statusCode': 401}));
     } else {
       throw ServerException(errorModel: ErrorModel.formJson(data));
     }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/paymnet/presentation/pages/payment_method_page.dart';
-import 'package:x_sport/main.dart';
+import '../../../paymnet/presentation/pages/payment_method_page.dart';
+import '../../../../../main.dart';
 
 import '../../../../../core/constance/app_constance.dart';
 import '../components/text_form_field_widget.dart';

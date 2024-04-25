@@ -1,6 +1,5 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'age_category_dropdown_item.dart';
 // import 'age_category_with_courses.dart';
 
 // part 'academy.g.dart';

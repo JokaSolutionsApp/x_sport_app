@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/age_category_dropdown_item.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/get_courses_to_subscribe_entity.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/params/acedemy_params.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/suggested_academy_entity.dart';
-import 'package:x_sport/app/features/academy/presentation/bloc/academy_bloc.dart';
-import 'course_card.dart';
+
 import '../../../../../core/constance/app_constance.dart';
+import '../../domain/enitites/age_category_dropdown_item.dart';
+import '../../domain/enitites/get_courses_to_subscribe_entity.dart';
+import '../../domain/enitites/params/acedemy_params.dart';
+import '../../domain/enitites/suggested_academy_entity.dart';
+import '../bloc/academy_bloc.dart';
+import 'course_card.dart';
 
 class CoursesTab extends StatefulWidget {
   final List<AgeCategoryDropdownItem> ageCategoriesDropdownItems;
@@ -136,9 +137,9 @@ class _CoursesTabState extends State<CoursesTab> {
               },
               builder: (context, state) {
                 return state.maybeWhen(
-                    orElse: () => Offstage(),
-                    getCoursesToSubscribeLoading: () => Offstage(),
-                    getCoursesToSubscribeFailure: (failure) => Offstage(),
+                    orElse: () => const Offstage(),
+                    getCoursesToSubscribeLoading: () => const Offstage(),
+                    getCoursesToSubscribeFailure: (failure) => const Offstage(),
                     academyCoursesFetched: (courses) {
                       return ListView.builder(
                           physics: const NeverScrollableScrollPhysics(),

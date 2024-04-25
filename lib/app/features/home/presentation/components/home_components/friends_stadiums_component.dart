@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/courts/presentation/bloc/stadium_bloc.dart';
 
 import '../../../../../../core/constance/app_constance.dart';
 import '../../../../../../core/utils/assets_managers/assets.gen.dart';
 import '../../../../../widgets/buttons/submit_button.dart';
+import '../../../../courts/presentation/bloc/stadium_bloc.dart';
 import '../../../../courts/presentation/pages/courts_page.dart';
 
 class FriendsStadiumsComponent extends StatelessWidget {
@@ -18,14 +18,14 @@ class FriendsStadiumsComponent extends StatelessWidget {
     return BlocBuilder<StadiumBloc, StadiumState>(
       builder: (context, state) {
         return state.maybeMap(
-          orElse: () => Offstage(),
-          getFriendsStadiumsLoading: (value) => Offstage(),
-          getFriendsStadiumsFailure: (value) => Offstage(),
+          orElse: () => const Offstage(),
+          getFriendsStadiumsLoading: (value) => const Offstage(),
+          getFriendsStadiumsFailure: (value) => const Offstage(),
           friendsStadiumsFetched: (value) => Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 8),
+                padding: const EdgeInsets.symmetric(vertical: 8),
                 child: Text(
                   'ملاعب يرتادها اصدقائك',
                   style: TextStyle(
@@ -120,7 +120,7 @@ class FriendsStadiumsComponent extends StatelessWidget {
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  CourtsPage()));
+                                                  const CourtsPage()));
                                     }),
                               )
                             ],

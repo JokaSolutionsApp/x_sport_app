@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/courts/domain/enitites/about_stadium_entity.dart';
-import 'package:x_sport/app/features/courts/domain/enitites/stadium_service_entity.dart';
-import 'package:x_sport/app/features/courts/presentation/bloc/stadium_bloc.dart';
 
 import '../../../../../core/constance/app_constance.dart';
 import '../../../../../core/constance/app_icons_icons.dart';
 import '../../../../widgets/rectangle_container.dart';
+import '../../domain/enitites/about_stadium_entity.dart';
+import '../../domain/enitites/stadium_service_entity.dart';
+import '../bloc/stadium_bloc.dart';
 
 class CourtInformationComponent extends StatefulWidget {
   const CourtInformationComponent({super.key});
@@ -42,9 +42,9 @@ class _CourtInformationComponentState extends State<CourtInformationComponent> {
     return BlocBuilder<StadiumBloc, StadiumState>(
       builder: (context, state) {
         return state.maybeMap(
-            orElse: () => Offstage(),
-            getAboutStadiumFailure: (v) => Offstage(),
-            getAboutStadiumLoading: (v) => Offstage(),
+            orElse: () => const Offstage(),
+            getAboutStadiumFailure: (v) => const Offstage(),
+            getAboutStadiumLoading: (v) => const Offstage(),
             aboutStadiumFetched: (value) {
               final AboutStadiumEntity stadium = value.aboutStadium!;
               return SingleChildScrollView(
