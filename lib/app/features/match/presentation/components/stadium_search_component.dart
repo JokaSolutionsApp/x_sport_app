@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/widgets/rectangle_container.dart';
-import 'package:x_sport/core/constance/app_constance.dart';
+
+import '../../../../../core/constance/app_constance.dart';
+import '../../../../widgets/rectangle_container.dart';
 
 class StadiumSearchComponent extends StatefulWidget {
   final void Function(String)? onChanged;

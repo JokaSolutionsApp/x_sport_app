@@ -1,16 +1,18 @@
 import 'package:bloc/bloc.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+
+import '../../../../../core/error/failure.dart';
 import '../../domain/enitites/about_stadium_entity.dart';
 import '../../domain/enitites/params/stadium_params.dart';
 import '../../domain/enitites/stadiums_entity.dart';
 import '../../domain/usecase/get_about_stadium_usecase.dart';
 import '../../domain/usecase/get_friends_stadiums_usecase.dart';
 import '../../domain/usecase/get_near_by_stadiums_usecase.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-import '../../../../../core/error/failure.dart';
+
+part 'stadium_bloc.freezed.dart';
 part 'stadium_event.dart';
 part 'stadium_state.dart';
-part 'stadium_bloc.freezed.dart';
 
 @singleton
 class StadiumBloc extends Bloc<StadiumEvent, StadiumState> {

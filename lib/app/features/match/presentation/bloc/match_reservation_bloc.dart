@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:x_sport/app/features/match/domain/usecase/reserve_usecase.dart';
 
 import '../../../../../core/constance/app_functions.dart';
 import '../../../../../core/error/failure.dart';
@@ -12,6 +11,7 @@ import '../../domain/enitites/sport_stadium_entity.dart';
 import '../../domain/usecase/get_reserved_times_usecase.dart';
 import '../../domain/usecase/get_sport_stadium_usecase.dart';
 import '../../domain/usecase/get_sports_usecase.dart';
+import '../../domain/usecase/reserve_usecase.dart';
 
 part 'match_reservation_bloc.freezed.dart';
 part 'match_reservation_event.dart';

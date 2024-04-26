@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'converter/floor_converter.dart';
+
 import '../../domain/enitites/sport_stadium_entity.dart';
+import 'converter/floor_converter.dart';
 
 part 'sport_stadium_model.g.dart';
 

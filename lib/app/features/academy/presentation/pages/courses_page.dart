@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../../main.dart';
 import '../../domain/enitites/get_courses_to_subscribe_entity.dart';
 import '../components/course_card.dart';
-import '../../../../../main.dart';
 
 class CoursesPage extends StatelessWidget {
   const CoursesPage({

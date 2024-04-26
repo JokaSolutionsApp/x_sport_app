@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../../core/constance/app_constance.dart';
 import '../../../../../core/services/locator/service_locator.dart';
 import '../../../../../core/services/secure_storage_service.dart.dart';
-
 import '../../../../../core/utils/assets_managers/assets.gen.dart';
+import '../../../../widgets/buttons/submit_button.dart';
+import '../../components/welcome_screen_components/image_picker_component.dart';
 import '../../domain/enitites/sport_entity.dart';
 import '../bloc/auth_bloc.dart';
-import '../../../../../core/constance/app_constance.dart';
-import '../../components/welcome_screen_components/image_picker_component.dart';
-import '../../../../widgets/buttons/submit_button.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({super.key});

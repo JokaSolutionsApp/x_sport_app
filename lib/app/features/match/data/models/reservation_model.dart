@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+
 import '../../domain/enitites/reservation_entity.dart';
 
 part 'reservation_model.g.dart';
