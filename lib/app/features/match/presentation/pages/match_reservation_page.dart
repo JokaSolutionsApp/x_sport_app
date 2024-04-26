@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../controllers/fileds_bloc.dart';
+import 'package:x_sport/app/features/match/domain/enitites/sport_stadium_entity.dart';
+import 'package:x_sport/app/features/match/presentation/components/stadium_search_component.dart';
+
+import '../../../../../core/constance/app_constance.dart';
+import '../../../../../main.dart';
+import '../../../../widgets/buttons/submit_button.dart';
+import '../../../../widgets/rectangle_container.dart';
+import '../../../paymnet/presentation/pages/payment_page.dart';
 import '../bloc/match_reservation_bloc.dart';
 import '../components/match_reservation_components/reservation_stadiums_component.dart';
 import '../components/reservation_dates_component.dart';
 import '../components/reservation_sports_component.dart';
 import '../components/reservation_times_component.dart';
-import '../../../paymnet/presentation/pages/payment_page.dart';
-import '../../../../widgets/buttons/submit_button.dart';
-import '../../../../widgets/rectangle_container.dart';
-import '../../../../widgets/text_fields/location_field.dart';
-import '../../../../../core/constance/app_constance.dart';
-import '../../../../../main.dart';
 
 class MatchReservationPage extends StatefulWidget {
   const MatchReservationPage({super.key});
@@ -25,6 +26,17 @@ class _MatchReservationPageState extends State<MatchReservationPage> {
   TextEditingController location = TextEditingController();
   List<String> options = ['لمرة واحدة', 'متكرر'];
   String? currentOption;
+  String searchText = '';
+  List<SportStadiumEntity>? filteredStadiums;
+
+  searchCourts() {
+    filteredStadiums = context
+        .read<MatchReservationBloc>()
+        .stadiums!
+        .where((court) =>
+            court.stadiumName.toLowerCase().contains(searchText.toLowerCase()))
+        .toList();
+  }
 
   @override
   void initState() {
@@ -50,20 +62,24 @@ class _MatchReservationPageState extends State<MatchReservationPage> {
                 },
                 icon: const Icon(Icons.arrow_forward_ios))
           ]),
-      body: SingleChildScrollView(
-        child: Center(
-          child: BlocBuilder<MatchReservationBloc, MatchReservationState>(
-            builder: (context, state) {
-              return state.maybeWhen(
-                orElse: () => const Offstage(),
-                loading: () => const CircularProgressIndicator(),
-                sportsFailure: (result) => const Offstage(),
-                timesFailure: (result) => const Offstage(),
-                courtsFailure: (result) => const Offstage(),
-                sportsScuccess: (result) => const Offstage(),
-                courtsScuccess: (result) => const Offstage(),
-                timesScuccess: (result) {
-                  return Column(
+      body: BlocBuilder<MatchReservationBloc, MatchReservationState>(
+        builder: (context, state) {
+          return state.maybeWhen(
+            orElse: () => const Offstage(),
+            loading: () => const Center(
+              child: CircularProgressIndicator(
+                color: XColors.primary,
+              ),
+            ),
+            sportsFailure: (result) => const Offstage(),
+            timesFailure: (result) => const Offstage(),
+            courtsFailure: (result) => const Offstage(),
+            sportsScuccess: (result) => const Offstage(),
+            courtsScuccess: (result) => const Offstage(),
+            timesScuccess: (result) {
+              return SingleChildScrollView(
+                child: Center(
+                  child: Column(
                     children: [
                       SizedBox(
                         width: 0.94.sw,
@@ -136,84 +152,66 @@ class _MatchReservationPageState extends State<MatchReservationPage> {
                                 ),
                               ),
                             ),
-                            RectangleContainer(
-                              bottomMargin: 10,
-                              radius: 14,
-                              child: Padding(
-                                padding: EdgeInsets.only(
-                                    right: 12.sp,
-                                    left: 12.w,
-                                    top: 8.w,
-                                    bottom: 28.w),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  children: [
-                                    Text(
-                                      'اين تريد ان تلعب؟',
-                                      style: TextStyle(
-                                          fontSize: 18.sp,
-                                          fontWeight: FontWeight.w500),
-                                    ),
-                                    SizedBox(height: 4.w),
-                                    Align(
-                                      alignment: Alignment.center,
-                                      child: LocationField(
-                                        hintText: 'ملاعب قريبة',
-                                        controller: location,
-                                        keyboardType:
-                                            TextInputType.emailAddress,
-                                        textStream: rankSearchStream.name,
-                                        onChanged: rankSearchStream.changeName,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                            StadiumSearchComponent(
+                              onChanged: (value) => searchText = value,
+                              onPressed: () {
+                                setState(
+                                  () {
+                                    searchCourts();
+                                  },
+                                );
+                              },
                             ),
                           ],
                         ),
                       ),
                       ReservationStadiumsComponent(
-                        stadiums: context.read<MatchReservationBloc>().stadiums,
+                        stadiums: filteredStadiums ??
+                            context.read<MatchReservationBloc>().stadiums,
                       ),
-                      SizedBox(height: 4.w),
-                      SizedBox(
-                        width: 0.94.sw,
-                        child: Column(
-                          children: [
-                            RectangleContainer(
-                              bottomMargin: 10,
-                              radius: 14,
-                              child: Padding(
-                                padding: EdgeInsets.only(
-                                    right: 12.sp,
-                                    left: 12.w,
-                                    top: 8.w,
-                                    bottom: 28.w),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  children: [
-                                    Text(
-                                      ':حدد تاريخ وزمن المباراة',
-                                      style: TextStyle(
-                                          fontSize: 18.sp,
-                                          fontWeight: FontWeight.w500),
+                      Column(
+                        children: [
+                          SizedBox(height: 4.w),
+                          SizedBox(
+                            width: 0.94.sw,
+                            child: Column(
+                              children: [
+                                RectangleContainer(
+                                  bottomMargin: 10,
+                                  radius: 14,
+                                  child: Padding(
+                                    padding: EdgeInsets.only(
+                                        right: 12.sp,
+                                        left: 12.w,
+                                        top: 8.w,
+                                        bottom: 28.w),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
+                                      children: [
+                                        Text(
+                                          ':حدد تاريخ وزمن المباراة',
+                                          style: TextStyle(
+                                              fontSize: 18.sp,
+                                              fontWeight: FontWeight.w500),
+                                        ),
+                                        Text(
+                                          'يمكنك تنظيم مباراة خلال مدة اقصاها 7 ايام',
+                                          style: TextStyle(
+                                              color: const Color(0xFF909090),
+                                              fontSize: 12.sp,
+                                              fontWeight: FontWeight.w500),
+                                        ),
+                                        const ReservationDatesComponent()
+                                      ],
                                     ),
-                                    Text(
-                                      'يمكنك تنظيم مباراة خلال مدة اقصاها 7 ايام',
-                                      style: TextStyle(
-                                          color: const Color(0xFF909090),
-                                          fontSize: 12.sp,
-                                          fontWeight: FontWeight.w500),
-                                    ),
-                                    const ReservationDatesComponent()
-                                  ],
+                                  ),
                                 ),
-                              ),
+                                ReservationTimesComponent(),
+                              ],
                             ),
-                            ReservationTimesComponent(),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                       SubmitButton(
                         radius: 22,
@@ -224,17 +222,18 @@ class _MatchReservationPageState extends State<MatchReservationPage> {
                         onPressed: () {
                           Navigator.of(navigatorKey.currentContext!).push(
                             MaterialPageRoute(
-                                builder: (context) => const PaymentPage()),
+                              builder: (context) => const PaymentPage(),
+                            ),
                           );
                         },
                       ),
                     ],
-                  );
-                },
+                  ),
+                ),
               );
             },
-          ),
-        ),
+          );
+        },
       ),
     );
   }

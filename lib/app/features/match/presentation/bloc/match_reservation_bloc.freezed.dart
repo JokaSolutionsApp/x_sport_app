@@ -21,6 +21,7 @@ mixin _$MatchReservationEvent {
     required TResult Function() getSports,
     required TResult Function(StadiumParams params) getStadiums,
     required TResult Function(ReserviedTimesParams params) getTimes,
+    required TResult Function() reserve,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +29,7 @@ mixin _$MatchReservationEvent {
     TResult? Function()? getSports,
     TResult? Function(StadiumParams params)? getStadiums,
     TResult? Function(ReserviedTimesParams params)? getTimes,
+    TResult? Function()? reserve,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +37,7 @@ mixin _$MatchReservationEvent {
     TResult Function()? getSports,
     TResult Function(StadiumParams params)? getStadiums,
     TResult Function(ReserviedTimesParams params)? getTimes,
+    TResult Function()? reserve,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +46,7 @@ mixin _$MatchReservationEvent {
     required TResult Function(_GetSportsEvent value) getSports,
     required TResult Function(_GetStadiumsEvent value) getStadiums,
     required TResult Function(_GetTimesEvent value) getTimes,
+    required TResult Function(_ReserveEvent value) reserve,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +54,7 @@ mixin _$MatchReservationEvent {
     TResult? Function(_GetSportsEvent value)? getSports,
     TResult? Function(_GetStadiumsEvent value)? getStadiums,
     TResult? Function(_GetTimesEvent value)? getTimes,
+    TResult? Function(_ReserveEvent value)? reserve,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +62,7 @@ mixin _$MatchReservationEvent {
     TResult Function(_GetSportsEvent value)? getSports,
     TResult Function(_GetStadiumsEvent value)? getStadiums,
     TResult Function(_GetTimesEvent value)? getTimes,
+    TResult Function(_ReserveEvent value)? reserve,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -122,6 +128,7 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
     required TResult Function() getSports,
     required TResult Function(StadiumParams params) getStadiums,
     required TResult Function(ReserviedTimesParams params) getTimes,
+    required TResult Function() reserve,
   }) {
     return getSports();
   }
@@ -132,6 +139,7 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
     TResult? Function()? getSports,
     TResult? Function(StadiumParams params)? getStadiums,
     TResult? Function(ReserviedTimesParams params)? getTimes,
+    TResult? Function()? reserve,
   }) {
     return getSports?.call();
   }
@@ -142,6 +150,7 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
     TResult Function()? getSports,
     TResult Function(StadiumParams params)? getStadiums,
     TResult Function(ReserviedTimesParams params)? getTimes,
+    TResult Function()? reserve,
     required TResult orElse(),
   }) {
     if (getSports != null) {
@@ -156,6 +165,7 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
     required TResult Function(_GetSportsEvent value) getSports,
     required TResult Function(_GetStadiumsEvent value) getStadiums,
     required TResult Function(_GetTimesEvent value) getTimes,
+    required TResult Function(_ReserveEvent value) reserve,
   }) {
     return getSports(this);
   }
@@ -166,6 +176,7 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
     TResult? Function(_GetSportsEvent value)? getSports,
     TResult? Function(_GetStadiumsEvent value)? getStadiums,
     TResult? Function(_GetTimesEvent value)? getTimes,
+    TResult? Function(_ReserveEvent value)? reserve,
   }) {
     return getSports?.call(this);
   }
@@ -176,6 +187,7 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
     TResult Function(_GetSportsEvent value)? getSports,
     TResult Function(_GetStadiumsEvent value)? getStadiums,
     TResult Function(_GetTimesEvent value)? getTimes,
+    TResult Function(_ReserveEvent value)? reserve,
     required TResult orElse(),
   }) {
     if (getSports != null) {
@@ -257,6 +269,7 @@ class _$GetStadiumsEventImpl implements _GetStadiumsEvent {
     required TResult Function() getSports,
     required TResult Function(StadiumParams params) getStadiums,
     required TResult Function(ReserviedTimesParams params) getTimes,
+    required TResult Function() reserve,
   }) {
     return getStadiums(params);
   }
@@ -267,6 +280,7 @@ class _$GetStadiumsEventImpl implements _GetStadiumsEvent {
     TResult? Function()? getSports,
     TResult? Function(StadiumParams params)? getStadiums,
     TResult? Function(ReserviedTimesParams params)? getTimes,
+    TResult? Function()? reserve,
   }) {
     return getStadiums?.call(params);
   }
@@ -277,6 +291,7 @@ class _$GetStadiumsEventImpl implements _GetStadiumsEvent {
     TResult Function()? getSports,
     TResult Function(StadiumParams params)? getStadiums,
     TResult Function(ReserviedTimesParams params)? getTimes,
+    TResult Function()? reserve,
     required TResult orElse(),
   }) {
     if (getStadiums != null) {
@@ -291,6 +306,7 @@ class _$GetStadiumsEventImpl implements _GetStadiumsEvent {
     required TResult Function(_GetSportsEvent value) getSports,
     required TResult Function(_GetStadiumsEvent value) getStadiums,
     required TResult Function(_GetTimesEvent value) getTimes,
+    required TResult Function(_ReserveEvent value) reserve,
   }) {
     return getStadiums(this);
   }
@@ -301,6 +317,7 @@ class _$GetStadiumsEventImpl implements _GetStadiumsEvent {
     TResult? Function(_GetSportsEvent value)? getSports,
     TResult? Function(_GetStadiumsEvent value)? getStadiums,
     TResult? Function(_GetTimesEvent value)? getTimes,
+    TResult? Function(_ReserveEvent value)? reserve,
   }) {
     return getStadiums?.call(this);
   }
@@ -311,6 +328,7 @@ class _$GetStadiumsEventImpl implements _GetStadiumsEvent {
     TResult Function(_GetSportsEvent value)? getSports,
     TResult Function(_GetStadiumsEvent value)? getStadiums,
     TResult Function(_GetTimesEvent value)? getTimes,
+    TResult Function(_ReserveEvent value)? reserve,
     required TResult orElse(),
   }) {
     if (getStadiums != null) {
@@ -397,6 +415,7 @@ class _$GetTimesEventImpl implements _GetTimesEvent {
     required TResult Function() getSports,
     required TResult Function(StadiumParams params) getStadiums,
     required TResult Function(ReserviedTimesParams params) getTimes,
+    required TResult Function() reserve,
   }) {
     return getTimes(params);
   }
@@ -407,6 +426,7 @@ class _$GetTimesEventImpl implements _GetTimesEvent {
     TResult? Function()? getSports,
     TResult? Function(StadiumParams params)? getStadiums,
     TResult? Function(ReserviedTimesParams params)? getTimes,
+    TResult? Function()? reserve,
   }) {
     return getTimes?.call(params);
   }
@@ -417,6 +437,7 @@ class _$GetTimesEventImpl implements _GetTimesEvent {
     TResult Function()? getSports,
     TResult Function(StadiumParams params)? getStadiums,
     TResult Function(ReserviedTimesParams params)? getTimes,
+    TResult Function()? reserve,
     required TResult orElse(),
   }) {
     if (getTimes != null) {
@@ -431,6 +452,7 @@ class _$GetTimesEventImpl implements _GetTimesEvent {
     required TResult Function(_GetSportsEvent value) getSports,
     required TResult Function(_GetStadiumsEvent value) getStadiums,
     required TResult Function(_GetTimesEvent value) getTimes,
+    required TResult Function(_ReserveEvent value) reserve,
   }) {
     return getTimes(this);
   }
@@ -441,6 +463,7 @@ class _$GetTimesEventImpl implements _GetTimesEvent {
     TResult? Function(_GetSportsEvent value)? getSports,
     TResult? Function(_GetStadiumsEvent value)? getStadiums,
     TResult? Function(_GetTimesEvent value)? getTimes,
+    TResult? Function(_ReserveEvent value)? reserve,
   }) {
     return getTimes?.call(this);
   }
@@ -451,6 +474,7 @@ class _$GetTimesEventImpl implements _GetTimesEvent {
     TResult Function(_GetSportsEvent value)? getSports,
     TResult Function(_GetStadiumsEvent value)? getStadiums,
     TResult Function(_GetTimesEvent value)? getTimes,
+    TResult Function(_ReserveEvent value)? reserve,
     required TResult orElse(),
   }) {
     if (getTimes != null) {
@@ -468,6 +492,120 @@ abstract class _GetTimesEvent implements MatchReservationEvent {
   @JsonKey(ignore: true)
   _$$GetTimesEventImplCopyWith<_$GetTimesEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ReserveEventImplCopyWith<$Res> {
+  factory _$$ReserveEventImplCopyWith(
+          _$ReserveEventImpl value, $Res Function(_$ReserveEventImpl) then) =
+      __$$ReserveEventImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ReserveEventImplCopyWithImpl<$Res>
+    extends _$MatchReservationEventCopyWithImpl<$Res, _$ReserveEventImpl>
+    implements _$$ReserveEventImplCopyWith<$Res> {
+  __$$ReserveEventImplCopyWithImpl(
+      _$ReserveEventImpl _value, $Res Function(_$ReserveEventImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ReserveEventImpl implements _ReserveEvent {
+  const _$ReserveEventImpl();
+
+  @override
+  String toString() {
+    return 'MatchReservationEvent.reserve()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ReserveEventImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getSports,
+    required TResult Function(StadiumParams params) getStadiums,
+    required TResult Function(ReserviedTimesParams params) getTimes,
+    required TResult Function() reserve,
+  }) {
+    return reserve();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getSports,
+    TResult? Function(StadiumParams params)? getStadiums,
+    TResult? Function(ReserviedTimesParams params)? getTimes,
+    TResult? Function()? reserve,
+  }) {
+    return reserve?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getSports,
+    TResult Function(StadiumParams params)? getStadiums,
+    TResult Function(ReserviedTimesParams params)? getTimes,
+    TResult Function()? reserve,
+    required TResult orElse(),
+  }) {
+    if (reserve != null) {
+      return reserve();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetSportsEvent value) getSports,
+    required TResult Function(_GetStadiumsEvent value) getStadiums,
+    required TResult Function(_GetTimesEvent value) getTimes,
+    required TResult Function(_ReserveEvent value) reserve,
+  }) {
+    return reserve(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetSportsEvent value)? getSports,
+    TResult? Function(_GetStadiumsEvent value)? getStadiums,
+    TResult? Function(_GetTimesEvent value)? getTimes,
+    TResult? Function(_ReserveEvent value)? reserve,
+  }) {
+    return reserve?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetSportsEvent value)? getSports,
+    TResult Function(_GetStadiumsEvent value)? getStadiums,
+    TResult Function(_GetTimesEvent value)? getTimes,
+    TResult Function(_ReserveEvent value)? reserve,
+    required TResult orElse(),
+  }) {
+    if (reserve != null) {
+      return reserve(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ReserveEvent implements MatchReservationEvent {
+  const factory _ReserveEvent() = _$ReserveEventImpl;
 }
 
 /// @nodoc

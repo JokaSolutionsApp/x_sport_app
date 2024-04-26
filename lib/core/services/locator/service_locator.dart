@@ -1,41 +1,26 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import '../../../app/features/academy/domain/usecase/add_academy_review.dart';
-import '../../../app/features/academy/domain/usecase/get_all_Academies.dart';
-import '../../../app/features/academy/domain/usecase/inroll_user_in_course.dart';
-import '../../../app/features/auth/domain/usecase/user_usecase/change_email_usecase.dart';
-import '../../../app/features/auth/domain/usecase/user_usecase/change_password_usecase.dart';
-import '../../../app/features/courts/data/datasource/stadium_remote_datasource.dart';
-import '../../../app/features/courts/data/repository/court_repository.dart';
-import '../../../app/features/courts/domain/repository/base_stadium_repository.dart';
-import '../../../app/features/courts/domain/usecase/get_about_stadium_usecase.dart';
-import '../../../app/features/courts/domain/usecase/get_friends_stadiums_usecase.dart';
-import '../../../app/features/courts/domain/usecase/get_near_by_stadiums_usecase.dart';
-import '../../../app/features/courts/presentation/bloc/stadium_bloc.dart';
-import '../../../app/features/match/data/datasource/match_remote_datasource.dart';
-import '../../../app/features/match/data/repository/match_repository.dart';
-import '../../../app/features/match/domain/repository/base_match_repository.dart';
-import '../../../app/features/match/domain/usecase/create_reservation_usecase.dart';
-import '../../../app/features/match/domain/usecase/get_reserved_times_usecase.dart';
-import '../../../app/features/match/domain/usecase/get_sport_stadium_usecase.dart';
-import '../../../app/features/match/domain/usecase/get_sports_usecase.dart';
-import '../../../app/features/match/presentation/bloc/match_reservation_bloc.dart';
 
 import '../../../app/features/academy/data/datasource/academy_remote_datasource.dart';
 import '../../../app/features/academy/data/repository/academy_repository.dart';
 import '../../../app/features/academy/domain/repository/base_academy_repository.dart';
+import '../../../app/features/academy/domain/usecase/add_academy_review.dart';
 import '../../../app/features/academy/domain/usecase/get_about_academy_usecase.dart';
 import '../../../app/features/academy/domain/usecase/get_academy_courses_in_date_usecase.dart';
 import '../../../app/features/academy/domain/usecase/get_academy_courses_usecase.dart';
 import '../../../app/features/academy/domain/usecase/get_academy_review_usecase.dart';
+import '../../../app/features/academy/domain/usecase/get_all_Academies.dart';
 import '../../../app/features/academy/domain/usecase/get_sports_membership_usecase.dart';
 import '../../../app/features/academy/domain/usecase/get_suggested_academies_usecase.dart';
+import '../../../app/features/academy/domain/usecase/inroll_user_in_course.dart';
 import '../../../app/features/academy/presentation/bloc/academy_bloc.dart';
 import '../../../app/features/auth/data/datasource/user_remote_datasource.dart';
 import '../../../app/features/auth/data/repository/user_repository.dart';
 import '../../../app/features/auth/domain/repository/base_user_repository.dart';
 import '../../../app/features/auth/domain/usecase/chat_uscases/send_message_usecase.dart';
 import '../../../app/features/auth/domain/usecase/user_usecase/add_favorite_sports_usecse.dart';
+import '../../../app/features/auth/domain/usecase/user_usecase/change_email_usecase.dart';
+import '../../../app/features/auth/domain/usecase/user_usecase/change_password_usecase.dart';
 import '../../../app/features/auth/domain/usecase/user_usecase/check_user_logged_usecase.dart';
 import '../../../app/features/auth/domain/usecase/user_usecase/complete_resgisteration_usecase.dart';
 import '../../../app/features/auth/domain/usecase/user_usecase/confirm_user_email_usecase.dart';
@@ -52,6 +37,21 @@ import '../../../app/features/auth/domain/usecase/user_usecase/register_usecase.
 import '../../../app/features/auth/domain/usecase/user_usecase/resend_confirm_user_email_usecase.dart';
 import '../../../app/features/auth/domain/usecase/user_usecase/select_current_sport_usecase.dart';
 import '../../../app/features/auth/presentation/bloc/auth_bloc.dart';
+import '../../../app/features/courts/data/datasource/stadium_remote_datasource.dart';
+import '../../../app/features/courts/data/repository/court_repository.dart';
+import '../../../app/features/courts/domain/repository/base_stadium_repository.dart';
+import '../../../app/features/courts/domain/usecase/get_about_stadium_usecase.dart';
+import '../../../app/features/courts/domain/usecase/get_friends_stadiums_usecase.dart';
+import '../../../app/features/courts/domain/usecase/get_near_by_stadiums_usecase.dart';
+import '../../../app/features/courts/presentation/bloc/stadium_bloc.dart';
+import '../../../app/features/match/data/datasource/match_remote_datasource.dart';
+import '../../../app/features/match/data/repository/match_repository.dart';
+import '../../../app/features/match/domain/repository/base_match_repository.dart';
+import '../../../app/features/match/domain/usecase/get_reserved_times_usecase.dart';
+import '../../../app/features/match/domain/usecase/get_sport_stadium_usecase.dart';
+import '../../../app/features/match/domain/usecase/get_sports_usecase.dart';
+import '../../../app/features/match/domain/usecase/reserve_usecase.dart';
+import '../../../app/features/match/presentation/bloc/match_reservation_bloc.dart';
 import '../../../presentation/controllers/chat_bloc/chat_bloc.dart';
 import '../../constance/api_constance.dart';
 import '../preload_images_service.dart';
@@ -135,7 +135,7 @@ class ServiceLocator {
     sl.registerFactory(() =>
         AcademyBloc(sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl()));
     sl.registerFactory(() => StadiumBloc(sl(), sl(), sl()));
-    sl.registerFactory(() => MatchReservationBloc(sl(), sl(), sl()));
+    sl.registerFactory(() => MatchReservationBloc(sl(), sl(), sl(), sl()));
 
     // User UseCases
     sl.registerLazySingleton(() => LoginUseCase(sl()));
@@ -177,7 +177,7 @@ class ServiceLocator {
     sl.registerLazySingleton(() => GetAboutStadiumUseCase(sl()));
 
     // Match reservation usecases
-    sl.registerLazySingleton(() => CreateReservationUseCase(sl()));
+    sl.registerLazySingleton(() => ReserveUseCase(sl()));
     sl.registerLazySingleton(() => GetReservedTimesUseCase(sl()));
     sl.registerLazySingleton(() => GetsportStadiumUseCase(sl()));
     sl.registerLazySingleton(() => GetStadiumSportsUseCase(sl()));

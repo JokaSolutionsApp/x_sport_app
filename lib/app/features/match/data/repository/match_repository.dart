@@ -1,12 +1,12 @@
 import 'package:dartz/dartz.dart';
+
+import '../../../../../core/error/exceptions.dart';
+import '../../../../../core/error/failure.dart';
 import '../../../academy/domain/enitites/params/acedemy_params.dart';
 import '../../domain/enitites/reservation_entity.dart';
 import '../../domain/enitites/sport_entity.dart';
 import '../../domain/enitites/sport_stadium_entity.dart';
 import '../../domain/repository/base_match_repository.dart';
-
-import '../../../../../core/error/exceptions.dart';
-import '../../../../../core/error/failure.dart';
 import '../datasource/match_remote_datasource.dart';
 
 class MatchRepository extends BaseMatchRepository {
@@ -30,7 +30,7 @@ class MatchRepository extends BaseMatchRepository {
   }
 
   @override
-  Future<Either<Failure, bool>> creatReservation() async {
+  Future<Either<Failure, bool>> reserve() async {
     try {
       final result = await baseMatchRemoteDataSource.createReservation();
       return Right(result);

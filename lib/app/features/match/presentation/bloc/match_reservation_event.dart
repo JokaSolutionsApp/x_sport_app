@@ -7,4 +7,5 @@ class MatchReservationEvent with _$MatchReservationEvent {
       {required StadiumParams params}) = _GetStadiumsEvent;
   const factory MatchReservationEvent.getTimes(
       {required ReserviedTimesParams params}) = _GetTimesEvent;
+  const factory MatchReservationEvent.reserve() = _ReserveEvent;
 }

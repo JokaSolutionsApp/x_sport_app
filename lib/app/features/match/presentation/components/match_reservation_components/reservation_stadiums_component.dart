@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../../../core/constance/app_constance.dart';
+import '../../../../../../core/utils/assets_managers/assets.gen.dart';
 import '../../../../academy/domain/enitites/params/acedemy_params.dart';
 import '../../../domain/enitites/sport_stadium_entity.dart';
 import '../../bloc/match_reservation_bloc.dart';
-import '../../../../../../core/constance/app_constance.dart';
-
-import '../../../../../../core/utils/assets_managers/assets.gen.dart';
 
 class ReservationStadiumsComponent extends StatefulWidget {
   final List<SportStadiumEntity>? stadiums;
@@ -43,6 +43,7 @@ class _ReservationStadiumsComponentState
               onTap: () {
                 setState(() {
                   selectedIdx.value = index;
+                  context.read<MatchReservationBloc>().times = null;
                 });
                 BlocProvider.of<MatchReservationBloc>(context).add(
                   MatchReservationEvent.getTimes(
