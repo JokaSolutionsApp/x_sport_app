@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "774921767039",
+    "project_id": "xsports-a951a",
+    "storage_bucket": "xsports-a951a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774921767039:android:04244949f377b94cdc574a",
+        "android_client_info": {
+          "package_name": "com.jokasolutions.XSports"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "774921767039-ia7prer619f66549vtlcdc09fsv05if3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jokasolutions.XSports",
+            "certificate_hash": "4b8766783a0c67d8a2e4e7341814e11b4903985a"
+          }
+        },
+        {
+          "client_id": "774921767039-is4g36tj4gs55ms3d659cat4b6ndmct6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jokasolutions.XSports",
+            "certificate_hash": "8a8e01afaf8d238d5c2150cd7bbc7d7fedeb67f2"
+          }
+        },
+        {
+          "client_id": "774921767039-sn00keu663aojdge48k8fdlgti2ja08d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBX3qlq6JKR36rX3syys784cDLzMS-6-tc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "774921767039-sn00keu663aojdge48k8fdlgti2ja08d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "774921767039-6mbsnrds15q7v9ekdv6ctt3sc5ncntis.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.xSport.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
