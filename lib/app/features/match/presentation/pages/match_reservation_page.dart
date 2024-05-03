@@ -202,7 +202,9 @@ class _MatchReservationPageState extends State<MatchReservationPage> {
                                               fontSize: 12.sp,
                                               fontWeight: FontWeight.w500),
                                         ),
-                                        const ReservationDatesComponent()
+                                        ReservationDatesComponent(
+                                          times: result,
+                                        )
                                       ],
                                     ),
                                   ),

@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:intl/intl.dart';
+import 'package:x_sport/app/features/match/domain/enitites/reservation_entity.dart';
+import 'package:x_sport/core/constance/app_constance.dart';
 
 class ReservationDatesComponent extends StatefulWidget {
-  const ReservationDatesComponent({super.key});
+  final List<ReservationEntity> times;
+  const ReservationDatesComponent({
+    super.key,
+    required this.times,
+  });
 
   @override
   State<ReservationDatesComponent> createState() =>
@@ -11,45 +17,56 @@ class ReservationDatesComponent extends StatefulWidget {
 }
 
 class _ReservationDatesComponentState extends State<ReservationDatesComponent> {
-  final List<Map<String, dynamic>> dayMaps = [
-    {
-      'dayName': 'الاحد',
-      'day': '5',
-      'MonthName': 'نوفمبر',
-    },
-    {
-      'dayName': 'الاثنين',
-      'day': '6',
-      'MonthName': 'نوفمبر',
-    },
-    {
-      'dayName': 'الثلاثاء',
-      'day': '7',
-      'MonthName': 'نوفمبر',
-    },
-    {
-      'dayName': 'الاربعاء',
-      'day': '8',
-      'MonthName': 'نوفمبر',
-    },
-    {
-      'dayName': 'الخميس',
-      'day': '9',
-      'MonthName': 'نوفمبر',
-    },
-    {
-      'dayName': 'الجمعة',
-      'day': '10',
-      'MonthName': 'نوفمبر',
-    },
-    {
-      'dayName': 'السبت',
-      'day': '11',
-      'MonthName': 'نوفمبر',
-    },
-  ];
+  DateTime now = DateTime.now();
+  List<Map<String, dynamic>> dayMaps = [];
 
-  final ValueNotifier<int?> isSelectedIndex = ValueNotifier<int?>(null);
+  final ValueNotifier<int?> isSelectedIndex = ValueNotifier<int?>(0);
+  @override
+  void initState() {
+    dayMaps = [
+      {
+        'dayName': 'السبت',
+        'day': '${now.day}',
+        'MonthName': now,
+      },
+      {
+        'dayName': 'الاحد',
+        'day': '${now.add(const Duration(days: 1)).day}',
+        'MonthName': now.add(const Duration(days: 1)),
+      },
+      {
+        'dayName': 'الاثنين',
+        'day': '${now.add(const Duration(days: 2)).day}',
+        'MonthName': now.add(const Duration(days: 2)),
+      },
+      {
+        'dayName': 'الثلاثاء',
+        'day': '${now.add(const Duration(days: 3)).day}',
+        'MonthName': now.add(const Duration(days: 3)),
+      },
+      {
+        'dayName': 'الاربعاء',
+        'day': '${now.add(const Duration(days: 4)).day}',
+        'MonthName': now.add(const Duration(days: 4)),
+      },
+      {
+        'dayName': 'الخميس',
+        'day': '${now.add(const Duration(days: 5)).day}',
+        'MonthName': now.add(const Duration(days: 5)),
+      },
+      {
+        'dayName': 'الجمعة',
+        'day': '${now.add(const Duration(days: 6)).day}',
+        'MonthName': now.add(const Duration(days: 6)),
+      }
+    ];
+    super.initState();
+  }
+
+  String getMonthName(DateTime dateTime) {
+    final formatter = DateFormat('MMMM');
+    return formatter.format(dateTime);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +78,7 @@ class _ReservationDatesComponentState extends State<ReservationDatesComponent> {
         reverse: true,
         scrollDirection: Axis.horizontal,
         itemExtent: 54.w,
-        itemCount: dayMaps.length,
+        itemCount: 7,
         itemBuilder: (context, index) {
           return Padding(
             padding: EdgeInsets.symmetric(horizontal: 2.w),
@@ -74,10 +91,9 @@ class _ReservationDatesComponentState extends State<ReservationDatesComponent> {
                     isSelectedIndex.value = index;
                   },
                   child: Container(
-                    // width: 32.h,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
-                        color: isSelected ? Colors.black : Colors.white,
+                        color: isSelected ? XColors.primary : Colors.white,
                         border: Border.all(color: const Color(0xFFE5E5E5)),
                         borderRadius: BorderRadius.circular(28.sp)),
                     child: Column(
@@ -98,7 +114,7 @@ class _ReservationDatesComponentState extends State<ReservationDatesComponent> {
                           ),
                         ),
                         Text(
-                          '${dayMaps[index]['MonthName']}',
+                          getMonthName(dayMaps[index]['MonthName']),
                           style: TextStyle(
                             fontSize: 14.sp,
                             color: isSelected ? Colors.white : Colors.black,
