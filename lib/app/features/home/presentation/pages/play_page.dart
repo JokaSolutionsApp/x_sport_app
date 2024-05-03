@@ -94,11 +94,13 @@ class PlayPage extends StatelessWidget {
                                     ),
                                     SizedBox(width: 20.w),
                                     SizedBox(
-                                        height: 35.w,
-                                        width: 35.w,
                                         child: index == 0 || index == 3
                                             ? AssetsManager.images.play.friendly
-                                                .image()
+                                                .image(
+                                                color: XColors.primary,
+                                                height: 40.w,
+                                                width: 40.w,
+                                              )
                                             : Icon(
                                                 matches[index].icon,
                                                 color: XColors.primary,
@@ -153,7 +155,7 @@ class PlayPage extends StatelessWidget {
                         },
                         text: 'نظم حجز',
                         textSize: 15,
-                        fillColor: const Color(0xFF2492F8),
+                        fillColor: XColors.primary,
                         radius: 12,
                       ),
                     ],

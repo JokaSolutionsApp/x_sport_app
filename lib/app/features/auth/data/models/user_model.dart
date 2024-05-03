@@ -10,11 +10,12 @@ class UserModel extends UserEntity {
     required super.userId,
     required super.loyaltyPoints,
     required super.name,
-    required super.email,
-    required super.phone,
+    super.email,
+    super.phone,
+    super.newEmail,
     required super.gender,
-    required super.longitude,
-    required super.latitude,
+    super.longitude,
+    super.latitude,
     required super.imgURL,
   });
 

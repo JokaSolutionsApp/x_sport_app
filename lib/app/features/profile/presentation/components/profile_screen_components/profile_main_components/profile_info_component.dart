@@ -82,7 +82,7 @@ class ProfileInfoComponent extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            userProfile.user!.name,
+                            userProfile.user!.name ?? '',
                             style: TextStyle(
                               color: const Color(0xFF111C32),
                               fontSize: 15.sp,
@@ -92,7 +92,7 @@ class ProfileInfoComponent extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            userProfile.user!.email,
+                            userProfile.user!.email ?? '',
                             style: const TextStyle(
                               color: Color(0xFF7E7E7E),
                               fontSize: 12,
@@ -142,7 +142,8 @@ class ProfileInfoComponent extends StatelessWidget {
                       decoration: ShapeDecoration(
                         image: DecorationImage(
                             fit: BoxFit.cover,
-                            image: NetworkImage(userProfile.user!.imgURL)),
+                            image:
+                                NetworkImage(userProfile.user!.imgURL ?? '')),
                         color: XColors.Background_Color1,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(11),
@@ -150,7 +151,7 @@ class ProfileInfoComponent extends StatelessWidget {
                       ),
                       child: Offstage(
                         offstage: userProfile.user?.imgURL == null ||
-                            userProfile.user!.imgURL.isNotEmpty,
+                            userProfile.user!.imgURL!.isNotEmpty,
                         child: Text(
                           'BA',
                           style: TextStyle(

@@ -11,6 +11,7 @@ class AuthKeys {
   static const String loyaltyPoints = 'loyaltyPoints';
   static const String name = 'name';
   static const String email = 'email';
+  static const String newEmail = 'newEmail';
   static const String phone = 'phone';
   static const String gender = 'gender';
   static const String longitude = 'longitude';

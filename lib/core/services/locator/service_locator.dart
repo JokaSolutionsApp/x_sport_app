@@ -7,6 +7,9 @@ import 'package:get_it/get_it.dart';
 import 'package:x_sport/app/features/academy/domain/usecase/add_academy_review.dart';
 import 'package:x_sport/app/features/academy/domain/usecase/get_all_Academies.dart';
 import 'package:x_sport/app/features/academy/domain/usecase/inroll_user_in_course.dart';
+import 'package:x_sport/app/features/archives/data/datasource/academy_remote_datasource.dart';
+import 'package:x_sport/app/features/archives/data/repository/archive_repository.dart';
+import 'package:x_sport/app/features/archives/domain/repository/base_archive_repository.dart';
 import 'package:x_sport/app/features/archives/domain/usecase/get_academy_subscription_archive_usecase.dart';
 import 'package:x_sport/app/features/archives/presentation/bloc/archive_bloc.dart';
 import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/change_email_usecase.dart';
@@ -214,6 +217,8 @@ class ServiceLocator {
         () => AcademyRepository(sl()));
     sl.registerLazySingleton<BaseStadiumRepository>(
         () => StadiumRepository(sl()));
+    sl.registerLazySingleton<BaseArchiveRepository>(
+        () => ArchiveRepository(sl()));
 
     sl.registerLazySingleton<BaseUserRemoteDataSource>(
         () => UserRemoteDataSource());
@@ -221,5 +226,8 @@ class ServiceLocator {
         () => AcademyRemoteDataSource());
     sl.registerLazySingleton<BaseStadiumRemoteDataSource>(
         () => StadiumRemoteDataSource());
+
+    sl.registerLazySingleton<BaseArchiveRemoteDataSource>(
+        () => ArchiveRemoteDataSource());
   }
 }

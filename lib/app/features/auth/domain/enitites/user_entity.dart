@@ -12,15 +12,17 @@ class UserEntity extends Equatable {
   @JsonKey(name: AuthKeys.name)
   final String name;
   @JsonKey(name: AuthKeys.email)
-  final String email;
+  final String? email;
+  @JsonKey(name: AuthKeys.newEmail)
+  final String? newEmail;
   @JsonKey(name: AuthKeys.phone)
   final String? phone;
   @JsonKey(name: AuthKeys.gender)
   final String? gender;
   @JsonKey(name: AuthKeys.longitude)
-  final double longitude;
+  final double? longitude;
   @JsonKey(name: AuthKeys.latitude)
-  final double latitude;
+  final double? latitude;
   @JsonKey(name: AuthKeys.imgURL)
   final String imgURL;
 
@@ -28,11 +30,12 @@ class UserEntity extends Equatable {
     required this.userId,
     required this.loyaltyPoints,
     required this.name,
-    required this.email,
+    this.email,
     this.phone,
     this.gender = '',
-    required this.longitude,
-    required this.latitude,
+    this.newEmail,
+    this.longitude,
+    this.latitude,
     required this.imgURL,
   });
 
@@ -42,6 +45,7 @@ class UserEntity extends Equatable {
         loyaltyPoints,
         name,
         email,
+        newEmail,
         phone,
         gender,
         longitude,

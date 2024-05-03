@@ -342,6 +342,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   Future<void> _getUserProfile(event, Emitter<AuthState> emit) async {
     event as _$GetUserProfileEventImpl;
+    final String? token = await sl<SecureStorageService>().read('token');
+
+    if (token == null) {
+      return;
+    }
     emit(const AuthState.userProfileLoading());
     final result = await getUserProfileUseCase();
     result.fold((failure) {
@@ -391,6 +396,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   Future<void> _getSports(event, Emitter<AuthState> emit) async {
     event as _$GetSportsEventImpl;
+    final String? token = await sl<SecureStorageService>().read('token');
+
+    if (token == null) {
+      return;
+    }
     emit(const AuthState.getSportsLoading());
     final result = await getsportsUseCase();
     await result.fold((f) {

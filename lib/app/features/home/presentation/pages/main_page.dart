@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -63,6 +65,13 @@ class _MainScreenState extends State<MainPage>
               ? OptionsButtonComponent(
                   handleAddButton: (int index) {
                     optionsHandler.value = index;
+                    if (index == 3) {
+                      Navigator.of(navigatorKey.currentContext!).push(
+                        MaterialPageRoute(
+                            builder: (context) => const MatchReservationPage()),
+                      );
+                      optionsHandler.value = 0;
+                    }
                   },
                 )
               : const SizedBox.shrink(),
@@ -176,7 +185,7 @@ class _MainScreenState extends State<MainPage>
                       valueListenable: _selectedIndex,
                       builder: (context, selectedIndex, child) {
                         return Container(
-                          height: 72.h,
+                          height: Platform.isIOS ? 94.h : 72.h,
                           decoration: BoxDecoration(
                             color: Colors.white,
                             boxShadow: [

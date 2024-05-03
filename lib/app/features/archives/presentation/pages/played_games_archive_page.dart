@@ -27,7 +27,9 @@ class PlayedGamesArchivePage extends StatelessWidget {
                   showDialog(
                       context: context,
                       builder: (BuildContext context) {
-                        return PlayedGamesFilterDialog();
+                        return PlayedGamesFilterDialog(
+                          hasStatus: true,
+                        );
                       });
                 },
                 child: Container(

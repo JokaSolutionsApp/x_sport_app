@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/academy/domain/enitites/params/acedemy_params.dart';
+import 'package:x_sport/app/features/academy/presentation/bloc/academy_bloc.dart';
+import 'package:x_sport/app/features/auth/domain/enitites/user_profile_entity.dart';
+import 'package:x_sport/app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:x_sport/app/features/paymnet/presentation/pages/payment_method_page.dart';
 import 'package:x_sport/main.dart';
 
@@ -7,7 +12,8 @@ import '../../../../../core/constance/app_constance.dart';
 import '../components/text_form_field_widget.dart';
 
 class AcademyRegisterPage extends StatefulWidget {
-  const AcademyRegisterPage({super.key});
+  const AcademyRegisterPage({super.key, required this.courseId});
+  final int courseId;
 
   @override
   State<AcademyRegisterPage> createState() => _AcademyScreenState();
@@ -24,6 +30,16 @@ class _AcademyScreenState extends State<AcademyRegisterPage>
   TextEditingController nameController = TextEditingController();
   TextEditingController numberController = TextEditingController();
   TextEditingController addressController = TextEditingController();
+
+  late int userId;
+  @override
+  initState() {
+    super.initState();
+    final user = context.read<AuthBloc>().user?.user;
+    if (user != null) {
+      userId = user.userId;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -294,16 +310,26 @@ class _AcademyScreenState extends State<AcademyRegisterPage>
                   hintText: 'رقم الهاتف',
                 ),
                 SizedBox(
-                  height: 300.h,
+                  height: 130.h,
                 ),
                 if (currentOption != 'لاحد افراد العائلة')
                   SizedBox(
-                    height: 73.h,
+                    height: 75.h,
                   ),
                 SizedBox(
                   width: 190.w,
                   child: ElevatedButton(
                     onPressed: () {
+                      context.read<AcademyBloc>().add(
+                          AcademyEvent.inrollUserInCourse(
+                              params: InrollUserInCourseParams(
+                                  uId: userId,
+                                  courseId: widget.courseId,
+                                  isPersonal: true,
+                                  name: nameController.text,
+                                  relativeId: 1,
+                                  residencePlace: addressController.text,
+                                  phone: numberController.text)));
                       Navigator.of(navigatorKey.currentContext!).push(
                         MaterialPageRoute(
                           builder: (context) => PaymentMethodPage(),

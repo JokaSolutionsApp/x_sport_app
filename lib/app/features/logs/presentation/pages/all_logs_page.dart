@@ -12,10 +12,9 @@ class AllLogsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF3FAFF),
-      body: Center(
-          child: Padding(
-        padding: EdgeInsets.only(top: 45.w),
-        child: Column(
+      body: SafeArea(
+        child: Center(
+            child: Column(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -164,8 +163,8 @@ class AllLogsPage extends StatelessWidget {
               ),
             )
           ],
-        ),
-      )),
+        )),
+      ),
     );
   }
 }

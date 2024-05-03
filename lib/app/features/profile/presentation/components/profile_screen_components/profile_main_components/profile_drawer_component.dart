@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:x_sport/app/features/auth/presentation/pages/login_page.dart';
@@ -38,8 +40,8 @@ class ProfileDrawerComponent extends StatelessWidget {
         children: [
           Container(
             alignment: Alignment.center,
-            padding: const EdgeInsets.only(top: 10),
-            height: 132.w,
+            padding: EdgeInsets.only(top: Platform.isIOS ? 40.h : 10.h),
+            height: Platform.isIOS ? 170.w : 132.w,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(14.sp),

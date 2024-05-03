@@ -11,7 +11,6 @@ class AuthResultModel extends AuthResultEntity {
     required String token,
     required String refreshToken,
     required bool success,
-    required dynamic errors, // Assuming errors can have a dynamic structure
     required bool is2StepVerificationRequired,
     required String provider,
     required List<dynamic> randomCodes,
@@ -20,7 +19,6 @@ class AuthResultModel extends AuthResultEntity {
           token: token,
           refreshToken: refreshToken,
           success: success,
-          errors: errors,
           provider: provider,
           randomCodes: randomCodes,
         );

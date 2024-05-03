@@ -17,15 +17,15 @@ class FriendsStadiumsComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<StadiumBloc, StadiumState>(
       builder: (context, state) {
-        return state.maybeMap(
-          orElse: () => Offstage(),
-          getFriendsStadiumsLoading: (value) => Offstage(),
-          getFriendsStadiumsFailure: (value) => Offstage(),
+        return state.maybeWhen(
+          orElse: () => const Offstage(),
+          getFriendsStadiumsLoading: () => const Offstage(),
+          getFriendsStadiumsFailure: (value) => const Offstage(),
           friendsStadiumsFetched: (value) => Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 8),
+                padding: const EdgeInsets.symmetric(vertical: 8),
                 child: Text(
                   'ملاعب يرتادها اصدقائك',
                   style: TextStyle(
@@ -120,7 +120,7 @@ class FriendsStadiumsComponent extends StatelessWidget {
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  CourtsPage()));
+                                                  const CourtsPage()));
                                     }),
                               )
                             ],

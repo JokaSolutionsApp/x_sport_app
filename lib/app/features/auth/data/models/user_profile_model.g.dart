@@ -14,10 +14,6 @@ UserProfileModel _$UserProfileModelFromJson(Map<String, dynamic> json) =>
       favoriteSports: (json['favoriteSports'] as List<dynamic>?)
           ?.map((e) => FavoriteSportModel.fromJson(e as Map<String, dynamic>))
           .toList(),
-      authResult: json['authResult'] == null
-          ? null
-          : AuthResultModel.fromJson(
-              json['authResult'] as Map<String, dynamic>),
       followers: json['followers'] as int?,
       following: json['following'] as int?,
     );
@@ -28,5 +24,4 @@ Map<String, dynamic> _$UserProfileModelToJson(UserProfileModel instance) =>
       'favoriteSports': instance.favoriteSports,
       'followers': instance.followers,
       'following': instance.following,
-      'authResult': instance.authResult,
     };

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../core/constance/app_constance.dart';
@@ -7,7 +8,8 @@ import '../filter_component.dart';
 import '../../../../../widgets/buttons/submit_button.dart';
 
 class PlayedGamesFilterDialog extends StatelessWidget {
-  PlayedGamesFilterDialog({super.key});
+  PlayedGamesFilterDialog({super.key, this.hasStatus = false});
+  final bool hasStatus;
   final games = [
     'الكل',
     'تنس',
@@ -74,7 +76,10 @@ class PlayedGamesFilterDialog extends StatelessWidget {
               children: [
                 FilterComponent(title: ':اللعبة', data: games),
                 FilterComponent(title: ':نوع المباراة', data: type),
-                FilterComponent(title: ':نتيجة المباراة', data: state),
+                Offstage(
+                    offstage: hasStatus == false,
+                    child:
+                        FilterComponent(title: ':نتيجة المباراة', data: state)),
                 FilterComponent(title: ':تاريخ المباراة', data: date),
               ],
             ),

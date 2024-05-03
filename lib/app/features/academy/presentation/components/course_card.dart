@@ -25,7 +25,9 @@ class CourseCard extends StatelessWidget {
         onTap: () {
           Navigator.of(navigatorKey.currentContext!).push(
             MaterialPageRoute(
-              builder: (context) => const AcademyRegisterPage(),
+              builder: (context) => AcademyRegisterPage(
+                courseId: course.courseId,
+              ),
             ),
           );
         },

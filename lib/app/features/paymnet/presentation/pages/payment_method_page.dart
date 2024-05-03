@@ -52,10 +52,9 @@ class PaymentMethodPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF3FAFF),
-      body: Center(
-          child: Padding(
-        padding: EdgeInsets.only(top: 45.w),
-        child: Column(
+      body: SafeArea(
+        child: Center(
+            child: Column(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -185,15 +184,6 @@ class PaymentMethodPage extends StatelessWidget {
                                 fontSize: 12.sp,
                                 fontWeight: FontWeight.w400),
                           ),
-                          SizedBox(height: 6.w),
-                          Text(
-                            'نص يوضح سياسة خصوصية التطبيق المتبعة لحماية معلومات الدفع الشخصية للمستخدم',
-                            textAlign: TextAlign.end,
-                            style: TextStyle(
-                                color: const Color(0xFF595959),
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w400),
-                          ),
                         ],
                       ),
                     ),
@@ -219,8 +209,8 @@ class PaymentMethodPage extends StatelessWidget {
               ),
             ),
           ],
-        ),
-      )),
+        )),
+      ),
     );
   }
 }

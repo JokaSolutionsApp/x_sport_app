@@ -36,7 +36,7 @@ class _ProfileActivitiesComponentState
   @override
   void didChangeDependencies() {
     final List<SportEntity> sportsFavorites = widget.favoritSports
-        .map((e) => SportEntity(sportId: e.id, name: e.name))
+        .map((e) => SportEntity(sportId: e.id, name: e.name ?? ''))
         .toList();
     sportsIds = ValueNotifier(sportsFavorites);
     super.didChangeDependencies();
@@ -134,7 +134,7 @@ class _ProfileActivitiesComponentState
                           child: Container(
                             alignment: Alignment.center,
                             child: Text(
-                              widget.favoritSports[index].name,
+                              widget.favoritSports[index].name ?? '',
                               style: TextStyle(
                                 color: selectedText,
                                 fontSize: 15.sp,
@@ -215,9 +215,10 @@ class _ProfileActivitiesComponentState
                               children: [
                                 Text(
                                   widget
-                                      .userProfile
-                                      .favoriteSports![selectedIndex.value]
-                                      .name,
+                                          .userProfile
+                                          .favoriteSports![selectedIndex.value]
+                                          .name ??
+                                      '',
                                   style: TextStyle(
                                       color: Colors.black,
                                       fontSize: 15.sp,
@@ -229,7 +230,7 @@ class _ProfileActivitiesComponentState
                                             .userProfile
                                             .favoriteSports![
                                                 selectedIndex.value]
-                                            .userLevel[selectedIndex.value],
+                                            .userLevel![selectedIndex.value],
                                         style: TextStyle(
                                             color: Colors.black,
                                             fontSize: 21.sp,
@@ -266,9 +267,10 @@ class _ProfileActivitiesComponentState
                                     ])),
                                 Text(
                                   widget
-                                      .userProfile
-                                      .favoriteSports![selectedIndex.value]
-                                      .name,
+                                          .userProfile
+                                          .favoriteSports![selectedIndex.value]
+                                          .name ??
+                                      '',
                                   style: TextStyle(
                                       color: XColors.primary,
                                       fontSize: 20.sp,

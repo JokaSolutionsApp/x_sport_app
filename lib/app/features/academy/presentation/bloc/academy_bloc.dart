@@ -65,6 +65,8 @@ class AcademyBloc extends Bloc<AcademyEvent, AcademyState> {
     });
   }
 
+  late AcademyEntity academy;
+
   Future<void> _getSportsMembership(event, Emitter<AcademyState> emit) async {
     event as _$GetSportsMembershipEventImpl;
     emit(const AcademyState.getSportsMembershipLoading());
@@ -85,9 +87,12 @@ class AcademyBloc extends Bloc<AcademyEvent, AcademyState> {
     emit(const AcademyState.getSuggestedAcademiesLoading());
     final result = await getSuggestedAcademiesUseCase(params: event.params);
     result.fold((f) {
+      print("allbloc ${f.message}");
+
       emit(AcademyState.getSuggestedAcademiesFailure(failure: f));
     }, (r) {
-      print('bloc _getSuggestedAcademies $r');
+      print("allbloc ${r.suggestedAcademies.first.academyId}");
+      academy = r;
 
       emit(AcademyState.suggestedAcademiesFetched(suggestedAcademies: r));
     });
@@ -102,8 +107,6 @@ class AcademyBloc extends Bloc<AcademyEvent, AcademyState> {
     result.fold((f) {
       emit(AcademyState.getAllAcademiesFailure(failure: f));
     }, (r) {
-      print('bloc _getAllAcademies $r');
-
       emit(AcademyState.allAcademiesFetched(allAcademies: r));
     });
   }

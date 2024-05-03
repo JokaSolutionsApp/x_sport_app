@@ -12,13 +12,13 @@ class UserProfileModel extends UserProfileEntity {
   const UserProfileModel({
     UserModel? user,
     List<FavoriteSportModel>? favoriteSports,
-    AuthResultModel? authResult,
+    // AuthResultModel? authResult,
     int? followers,
     int? following,
   }) : super(
           user: user,
           favoriteSports: favoriteSports,
-          authResult: authResult,
+          // authResult: authResult,
           followers: followers,
           following: following,
         );

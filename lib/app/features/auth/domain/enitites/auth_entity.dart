@@ -8,7 +8,6 @@ class AuthResultEntity extends Equatable {
   final String token;
   final String refreshToken;
   final bool success;
-  final dynamic errors; // Assuming errors can have a dynamic structure
   final bool is2StepVerificationRequired;
   final String provider;
   final List<dynamic>
@@ -18,7 +17,6 @@ class AuthResultEntity extends Equatable {
     required this.token,
     required this.refreshToken,
     required this.success,
-    this.errors,
     required this.is2StepVerificationRequired,
     required this.provider,
     required this.randomCodes,
@@ -31,7 +29,6 @@ class AuthResultEntity extends Equatable {
         refreshToken,
         success,
         is2StepVerificationRequired,
-        errors,
         provider,
         randomCodes,
       ];

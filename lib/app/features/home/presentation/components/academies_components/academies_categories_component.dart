@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:x_sport/app/features/academy/domain/enitites/params/acedemy_params.dart';
 import 'package:x_sport/app/features/academy/presentation/bloc/academy_bloc.dart';
+import 'package:x_sport/app/features/auth/domain/enitites/favorite_sport_entity.dart';
 import 'package:x_sport/app/features/auth/domain/enitites/sport_entity.dart';
 import 'package:x_sport/app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:x_sport/app/features/home/presentation/components/academies_components/suggested_academies_component.dart';
@@ -21,15 +22,17 @@ class AcademeiesCategoriesComponent extends StatefulWidget {
 class _AcademeiesCategoriesComponentState
     extends State<AcademeiesCategoriesComponent> {
   late List<SportEntity> sports;
+  late List<FavoriteSportEntity>? favSports;
   @override
   void initState() {
     super.initState();
     sports = context.read<AuthBloc>().sports;
+    favSports = context.read<AuthBloc>().user?.favoriteSports;
     AcademyEvent.getSuggestedAcademies(
         params: SuggestedAcademyParams(
       pageSize: 1,
       pageNumber: 1,
-      sportId: 1,
+      sportId: favSports?.first.id ?? 1,
     ));
   }
 

@@ -58,8 +58,9 @@ class _EditProfilePageState extends State<EditProfilePage> {
     updateGender = widget.user.gender!;
     allSports = context.read<AuthBloc>().sports;
     sportsIds = widget.favoriteSports
-        .map((e) => SportEntity(sportId: e.id, name: e.name))
+        .map((e) => SportEntity(sportId: e.id, name: e.name!))
         .toList();
+    selectedIds = sportsIds.map((e) => e.sportId).toList();
     name = TextEditingController(text: user.name);
     phone = TextEditingController(text: user.phone);
     getUserLocation();

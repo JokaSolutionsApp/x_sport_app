@@ -11,7 +11,7 @@ class PaymentHistoryComponent extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 14.w, horizontal: 18.w),
       padding: EdgeInsets.symmetric(vertical: 12.w, horizontal: 18.w),
-      height: 420.w,
+      height: 408.w,
       alignment: Alignment.topCenter,
       decoration: BoxDecoration(
           color: Colors.white, borderRadius: BorderRadius.circular(8.sp)),
@@ -68,9 +68,10 @@ class PaymentHistoryComponent extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 370.h,
+            height: 300.h,
             child: ListView.builder(
-                itemCount: 6,
+                shrinkWrap: true,
+                itemCount: 5,
                 itemExtent: 50.h,
                 itemBuilder: (context, index) {
                   return Row(

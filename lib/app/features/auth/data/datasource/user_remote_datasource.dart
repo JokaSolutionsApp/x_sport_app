@@ -171,11 +171,8 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
 
     if (response.statusCode == 200) {
       final token = data['data']['authResult']['token'];
-      final refreshToken = data['data']['authResult']['refreshToken'];
       sl<SecureStorageService>().write('token', token);
-      sl<SecureStorageService>().write('refreshToken', refreshToken);
-      await sl<SecureStorageService>()
-          .write('email', registerStream.emailValue);
+      sl<SecureStorageService>().write('email', signInStream.emailPhoneValue);
 
       return UserProfileModel.fromJson(data['data']['userProfile']);
     } else if (response.statusCode == 500) {
@@ -189,18 +186,19 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
   Future<UserProfileEntity> googleLogin() async {
     GoogleSignIn googleSignIn = GoogleSignIn(
       scopes: [
-        // 'openid', // Ensure this is included
         'email',
-        'profile',
+        'profile', // Basic profile information scope.
       ],
     );
 
     try {
+      // Check if user is already signed in and disconnect if true
       if (await googleSignIn.isSignedIn()) {
         await googleSignIn.disconnect();
       }
     } catch (e) {
       print('Error disconnecting from Google: $e');
+      // You might want to handle this more gracefully in a production app
     }
 
     final GoogleSignInAccount? account = await googleSignIn.signIn();
@@ -209,13 +207,7 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
     if (account != null) {
       final GoogleSignInAuthentication googleAuth =
           await account.authentication;
-      print("GoogleAuth ID Token: ${googleAuth.idToken}");
-      print("GoogleAuth Access Token: ${googleAuth.accessToken}");
-
-      if (googleAuth.idToken == null) {
-        print("ID Token is null, check OAuth consent and scopes.");
-        return Future.error("ID Token is null");
-      }
+      print("googleAuth ${googleAuth.idToken} ${googleAuth.accessToken}");
 
       final credential = GoogleAuthProvider.credential(
         accessToken: googleAuth.accessToken,
@@ -224,14 +216,8 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
 
       final firebaseAuth =
           await FirebaseAuth.instance.signInWithCredential(credential);
-      final idToken = await firebaseAuth.user?.getIdToken();
-
-      if (firebaseAuth.user != null) {
-        print("Firebase Auth ID Token: $idToken");
-      } else {
-        print("Firebase user is null.");
-        return Future.error("Firebase user is null.");
-      }
+      final idToken = await firebaseAuth.user!.getIdToken();
+      print("firebaseAuth ${idToken}");
 
       Map<String, dynamic> postData = {
         'name': account.displayName,
@@ -240,10 +226,13 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
         'latitude': registerStream.latValue,
         'longitude': registerStream.longeValue,
       };
+      print("postData $postData");
 
       final response =
           await ApiService.post(ApiConstance.googleLoginApi, postData);
       final data = response.data;
+      print('googleLogin $data');
+      print('googleLogin ${response.statusCode}');
 
       if (response.statusCode == 200) {
         final token = data['data']['authResult']['token'];
@@ -252,18 +241,16 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
         sl<SecureStorageService>().write('refreshToken', refreshToken);
         return UserProfileModel.fromJson(data['data']);
       } else {
-        print("API error: ${response.statusCode}");
         throw ServerException(errorModel: ErrorModel.fromJson(data));
       }
     } else {
-      print("No Google account returned from sign-in.");
       throw ServerException(errorModel: ErrorModel.fromJson({}));
     }
   }
 
   @override
   Future<UserAuthState> checkAccountStatus() async {
-    final email = await sl<SecureStorageService>().read('email');
+    String? email = await sl<SecureStorageService>().read('email');
     final token = await sl<SecureStorageService>().read('token');
     if (token == null) {
       return UserAuthState.guest;
@@ -274,8 +261,8 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
     final response =
         await ApiService.post(ApiConstance.accountStatussApi, postData);
     final data = response.data;
+    print("statusValue $data");
     final statusValue = data['data'];
-
     if (response.statusCode == 200) {
       if (statusValue == 0) {
         return UserAuthState.guest;
