@@ -53,5 +53,18 @@
 	<string>Camera Access Warning</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Microphone Access Warning</string>
+	<key>GIDClientID</key>
+	<string>774921767039-dbf8r6s51avjgumoe3n4h4mcb0o66o2k.apps.googleusercontent.com</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.774921767039-dbf8r6s51avjgumoe3n4h4mcb0o66o2k</string> <!-- Replace with your REVERSED_CLIENT_ID -->
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>
