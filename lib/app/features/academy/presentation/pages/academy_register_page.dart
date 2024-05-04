@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:x_sport/app/features/academy/domain/enitites/params/acedemy_params.dart';
 import 'package:x_sport/app/features/academy/presentation/bloc/academy_bloc.dart';
-import 'package:x_sport/app/features/auth/domain/enitites/user_profile_entity.dart';
 import 'package:x_sport/app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:x_sport/app/features/paymnet/presentation/pages/payment_method_page.dart';
 import 'package:x_sport/main.dart';
@@ -30,6 +29,8 @@ class _AcademyScreenState extends State<AcademyRegisterPage>
   TextEditingController nameController = TextEditingController();
   TextEditingController numberController = TextEditingController();
   TextEditingController addressController = TextEditingController();
+  bool isPersonal = true;
+  int relativeId = 0;
 
   late int userId;
   @override
@@ -94,7 +95,9 @@ class _AcademyScreenState extends State<AcademyRegisterPage>
                                   value: options[0],
                                   groupValue: currentOption,
                                   onChanged: (value) {
+                                    isPersonal = true;
                                     setState(() {
+                                      relativeId = 0;
                                       currentOption = value.toString();
                                     });
                                   },
@@ -119,6 +122,7 @@ class _AcademyScreenState extends State<AcademyRegisterPage>
                                   value: options[1],
                                   groupValue: currentOption,
                                   onChanged: (value) {
+                                    isPersonal = false;
                                     setState(() {
                                       currentOption = value.toString();
                                     });
@@ -203,6 +207,7 @@ class _AcademyScreenState extends State<AcademyRegisterPage>
                                 .toList(),
                             onChanged: (item) => setState(
                               () {
+                                relativeId = relativeList.indexOf(item) + 1;
                                 selectedRelative = item;
                               },
                             ),
@@ -321,15 +326,18 @@ class _AcademyScreenState extends State<AcademyRegisterPage>
                   child: ElevatedButton(
                     onPressed: () {
                       context.read<AcademyBloc>().add(
-                          AcademyEvent.inrollUserInCourse(
+                            AcademyEvent.inrollUserInCourse(
                               params: InrollUserInCourseParams(
-                                  uId: userId,
-                                  courseId: widget.courseId,
-                                  isPersonal: true,
-                                  name: nameController.text,
-                                  relativeId: 1,
-                                  residencePlace: addressController.text,
-                                  phone: numberController.text)));
+                                uId: userId,
+                                courseId: widget.courseId,
+                                isPersonal: isPersonal,
+                                name: nameController.text,
+                                relativeId: relativeId,
+                                residencePlace: addressController.text,
+                                phone: numberController.text,
+                              ),
+                            ),
+                          );
                       Navigator.of(navigatorKey.currentContext!).push(
                         MaterialPageRoute(
                           builder: (context) => PaymentMethodPage(),
