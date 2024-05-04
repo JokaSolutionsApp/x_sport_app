@@ -88,14 +88,14 @@ class _LoginPageState extends State<LoginPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  OutlinButton(
-                    isButtonEnabled: true,
-                    fillColor: XColors.primary,
-                    textColor: XColors.Background_Color1,
-                    image: AssetsManager.icons.facebook,
-                    text: 'تسجيل الدخول عبر فيسبوك',
-                    onPressed: () {},
-                  ),
+                  // OutlinButton(
+                  //   isButtonEnabled: true,
+                  //   fillColor: XColors.primary,
+                  //   textColor: XColors.Background_Color1,
+                  //   image: AssetsManager.icons.facebook,
+                  //   text: 'تسجيل الدخول عبر فيسبوك',
+                  //   onPressed: () {},
+                  // ),
                   OutlinButton(
                     isButtonEnabled: true,
                     fillColor: XColors.primary,

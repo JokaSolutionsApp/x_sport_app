@@ -48,17 +48,17 @@ class Bloc extends Validators {
       Rx.combineLatest2(emailPhone, password, (e, p) => true);
   bool get otpValid => codeValue.isNotEmpty ? true : false;
 
-  Stream<bool> get registerIsValid => Rx.combineLatest9(
+  Stream<bool> get registerIsValid => Rx.combineLatest7(
       name,
       email,
       password,
       confPassword,
       gender,
       phone,
-      latitude,
-      longitude,
+      // latitude,
+      // longitude,
       privacy,
-      (n, e, p, cp, g, ph, lat, long, pr) => true);
+      (n, e, p, cp, g, ph, pr) => true);
 
   Stream<bool> get editPasswordIsValid => Rx.combineLatest3(
       password, newPassword, confNewPassword, (p, np, cnp) => true);
@@ -88,8 +88,8 @@ class Bloc extends Validators {
   get privacyValue => _privacy.valueOrNull;
   get phoneValue => _phone.valueOrNull;
   get codeValue => _code.valueOrNull;
-  get latValue => _latitude.valueOrNull;
-  get longeValue => _longitude.valueOrNull;
+  get latValue => _latitude.valueOrNull ?? 0.0;
+  get longeValue => _longitude.valueOrNull ?? 0.0;
   get emailPhoneValue => _emailPhone.valueOrNull;
 
   static void disp(Bloc bloc) {

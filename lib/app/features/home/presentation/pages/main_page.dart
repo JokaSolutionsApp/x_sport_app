@@ -70,8 +70,8 @@ class _MainScreenState extends State<MainPage>
                         MaterialPageRoute(
                             builder: (context) => const MatchReservationPage()),
                       );
-                      optionsHandler.value = 0;
                     }
+                    optionsHandler.value = 0;
                   },
                 )
               : const SizedBox.shrink(),

@@ -8,7 +8,7 @@ class StadiumEntity extends Equatable {
   @JsonKey(name: 'stadiumName')
   final String stadiumName;
   @JsonKey(name: 'stadiumType')
-  final String stadiumType;
+  final String? stadiumType;
   @JsonKey(name: 'regionName')
   final String regionName;
   @JsonKey(name: 'lat')
@@ -31,7 +31,7 @@ class StadiumEntity extends Equatable {
   StadiumEntity({
     required this.stadiumId,
     required this.stadiumName,
-    required this.stadiumType,
+    this.stadiumType,
     required this.regionName,
     required this.lat,
     required this.long,

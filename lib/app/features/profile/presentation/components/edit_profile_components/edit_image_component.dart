@@ -7,9 +7,10 @@ import 'package:image_picker/image_picker.dart';
 import '../../../../../../core/constance/app_constance.dart';
 
 class EditImageComponent extends StatelessWidget {
-  final void Function(List<int>, String) getImage;
-
-  EditImageComponent({super.key, required this.getImage});
+  EditImageComponent(
+      {super.key, required this.getImage, required this.userImage});
+  final void Function(List<int>, String, String) getImage;
+  final String userImage;
   final ValueNotifier<XFile?> _pickedImageNotifier =
       ValueNotifier<XFile?>(null);
   Future<void> _pickImage() async {
@@ -23,8 +24,9 @@ class EditImageComponent extends StatelessWidget {
       if (imageParts.length > 1) {
         _pickedImageNotifier.value = XFile(pickedFile.path);
         List<int> imageBytes = await pickedFile.readAsBytes();
+        print("imageParts.first${imageParts.first}");
         final String imageType = imageParts.last.toLowerCase();
-        getImage(imageBytes, imageType);
+        getImage(imageBytes, imageType, imageParts.first);
       }
     }
   }
@@ -43,24 +45,33 @@ class EditImageComponent extends StatelessWidget {
               width: 94.w,
               decoration: const BoxDecoration(
                   color: XColors.Background_Color1, shape: BoxShape.circle),
-              child: pickedImage == null
-                  ? Text(
-                      'BA',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          height: 0,
-                          color: Colors.white,
-                          fontSize: 35.sp,
-                          fontWeight: FontWeight.w500),
-                    )
-                  : ClipOval(
-                      child: Image.file(
-                        File(pickedImage.path),
+              child: userImage.isNotEmpty && pickedImage?.path == null
+                  ? ClipOval(
+                      child: Image.network(
+                        userImage,
                         width: 150.w,
                         height: 150.w,
                         fit: BoxFit.cover,
                       ),
-                    ),
+                    )
+                  : pickedImage == null
+                      ? Text(
+                          '',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              height: 0,
+                              color: Colors.white,
+                              fontSize: 35.sp,
+                              fontWeight: FontWeight.w500),
+                        )
+                      : ClipOval(
+                          child: Image.file(
+                            File(pickedImage.path),
+                            width: 150.w,
+                            height: 150.w,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
             );
           },
         ),

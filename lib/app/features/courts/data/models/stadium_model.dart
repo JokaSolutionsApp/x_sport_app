@@ -8,7 +8,7 @@ class StadiumModel extends StadiumEntity {
   StadiumModel({
     required super.stadiumId,
     required super.stadiumName,
-    required super.stadiumType,
+    super.stadiumType,
     required super.regionName,
     required super.lat,
     required super.long,

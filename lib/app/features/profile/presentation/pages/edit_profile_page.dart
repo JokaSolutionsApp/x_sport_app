@@ -42,6 +42,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
 
   String imageType = '';
   List<int> imageBytes = [];
+  String imageName = '';
   late List<SportEntity> sportsIds;
   List<int> selectedIds = [];
 
@@ -78,6 +79,9 @@ class _EditProfilePageState extends State<EditProfilePage> {
             context.read<AuthBloc>().add(
                   AuthEvent.editUserProfile(
                     params: EditUserProfileParams(
+                      imageName: imageName,
+                      imageBytes: imageBytes,
+                      imageType: imageType,
                       name: name.text,
                       phone: phone.text,
                       gender: updateGender,
@@ -121,10 +125,13 @@ class _EditProfilePageState extends State<EditProfilePage> {
           padding: EdgeInsets.symmetric(horizontal: 8.w),
           child: Column(
             children: [
-              EditImageComponent(getImage: (bytes, type) {
-                imageBytes = bytes;
-                imageType = type;
-              }),
+              EditImageComponent(
+                  userImage: user.imgURL,
+                  getImage: (bytes, type, name) {
+                    imageBytes = bytes;
+                    imageType = type;
+                    imageName = name;
+                  }),
               NoBorderTextFieldWidget(
                 labelText: 'الاسم',
                 controller: name,

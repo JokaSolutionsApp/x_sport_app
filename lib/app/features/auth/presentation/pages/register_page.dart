@@ -86,6 +86,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
                 InkWell(
                   onTap: () async {
+                    getUserLocation();
                     await registerStream.updateLocation();
                   },
                   child: Container(
@@ -104,7 +105,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
                 SizedBox(height: 30.h),
                 GenderComponent(
-                  getGender: (newValue) {
+                  getGender: (newValue) async {
                     registerStream.changeGender(newValue);
                   },
                 ),
@@ -127,7 +128,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             child: Checkbox(
                               activeColor: XColors.Background_Color2,
                               value: isChecked.value,
-                              onChanged: (value) {
+                              onChanged: (value) async {
                                 isChecked.value = !isChecked.value;
                                 registerStream.changePrivacy(value!);
                               },

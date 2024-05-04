@@ -47,6 +47,8 @@
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>App uses location to detect which courts are nearby the user to allow user to easily find nearby locations to book. This is an optionally feature to enhance user experience.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We need access to your location for testing purposes</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Photo Library Access Warning</string>
 	<key>NSCameraUsageDescription</key>

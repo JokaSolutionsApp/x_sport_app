@@ -57,7 +57,7 @@ class PlayPage extends StatelessWidget {
               SizedBox(height: 6.w),
               const BannerComponent(),
               Container(
-                height: 0.484.sh,
+                height: 0.434.sh,
                 margin: EdgeInsets.only(right: 24.w, bottom: 12.h),
                 child: GridView.builder(
                   physics: const NeverScrollableScrollPhysics(),
@@ -131,7 +131,7 @@ class PlayPage extends StatelessWidget {
                 bottomMargin: 0,
                 child: Padding(
                   padding:
-                      EdgeInsets.symmetric(vertical: 20.h, horizontal: 110.w),
+                      EdgeInsets.symmetric(vertical: 10.h, horizontal: 110.w),
                   child: Column(
                     children: [
                       Text(

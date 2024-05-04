@@ -101,6 +101,7 @@ class OptionsButtonComponent extends StatelessWidget {
                     handleAddButton(2);
                   },
                   child: Container(
+                    padding: EdgeInsets.only(right: 5.w),
                     alignment: Alignment.center,
                     decoration: const BoxDecoration(
                         shape: BoxShape.circle, color: Colors.white),

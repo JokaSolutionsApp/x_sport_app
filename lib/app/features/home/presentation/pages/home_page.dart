@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/courts/domain/enitites/params/stadium_params.dart';
+import 'package:x_sport/app/features/courts/presentation/bloc/stadium_bloc.dart';
 import 'package:x_sport/app/features/courts/presentation/pages/courts_page.dart';
 import 'package:x_sport/app/features/home/presentation/components/home_components/banner_component.dart';
 import 'package:x_sport/app/features/home/presentation/components/home_components/friends_stadiums_component.dart';
@@ -18,6 +21,17 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  @override
+  initState() {
+    super.initState();
+    context.read<StadiumBloc>().add(StadiumEvent.getFriendsStadiums(
+        params: StadiumPrams(pageNum: 1, pageSize: 1, sportId: 1)));
+    context.read<StadiumBloc>().add(
+          StadiumEvent.getNearByStadiums(
+              params: StadiumPrams(pageNum: 1, pageSize: 1, sportId: 1)),
+        );
+  }
+
   @override
   Widget build(BuildContext context) {
     final List<HomeOptions> items = [

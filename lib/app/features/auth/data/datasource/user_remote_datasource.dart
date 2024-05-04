@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:x_sport/app/controllers/fileds_bloc.dart';
 import 'package:x_sport/app/features/auth/data/datasource/params/auth_params.dart';
 import 'package:x_sport/app/features/auth/data/models/sport_model.dart';
@@ -250,14 +251,13 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
   Future<UserAuthState> checkAccountStatus() async {
     String? email = await sl<SecureStorageService>().read('email');
     final token = await sl<SecureStorageService>().read('token');
-    if (token == null) {
-      return UserAuthState.guest;
-    }
+
     final postData = {
       'email': email,
     };
     final response =
         await ApiService.post(ApiConstance.accountStatussApi, postData);
+
     final data = response.data;
     print("statusValue $data");
     final statusValue = data['data'];
@@ -268,8 +268,10 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
         return UserAuthState.loggedIn;
       } else if (statusValue == 2) {
         return UserAuthState.welcome;
-      } else {
+      } else if (statusValue == 3) {
         return UserAuthState.otp;
+      } else {
+        return UserAuthState.guest;
       }
     } else {
       return UserAuthState.guest;
@@ -411,7 +413,7 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
     FormData formData = FormData();
     if (params.imageBytes != null) {
       formData.files.add(MapEntry(
-        'profile_image',
+        'File',
         MultipartFile.fromBytes(
           params.imageBytes!,
           filename: '${params.imageName}.${params.imageType}',
@@ -424,7 +426,6 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
     formData.fields.add(MapEntry('Gender', params.gender));
     formData.fields.add(MapEntry('Longitude', params.lat.toString()));
     formData.fields.add(MapEntry('Latitude', params.long.toString()));
-    print("int sportId in params.sportIds ${params.sportIds}");
     for (int sportId in params.sportIds) {
       formData.fields.add(MapEntry('SportsIds[]', sportId.toString()));
     }

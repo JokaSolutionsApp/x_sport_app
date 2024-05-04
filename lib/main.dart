@@ -60,12 +60,12 @@ class MyApp extends StatelessWidget {
                 ..add(
                   StadiumEvent.getFriendsStadiums(
                       params:
-                          StadiumPrams(pageNum: 1, pageSize: 10, sportId: 1)),
+                          StadiumPrams(pageNum: 1, pageSize: 1, sportId: 1)),
                 )
                 ..add(
                   StadiumEvent.getNearByStadiums(
                       params:
-                          StadiumPrams(pageNum: 1, pageSize: 10, sportId: 1)),
+                          StadiumPrams(pageNum: 1, pageSize: 1, sportId: 1)),
                 ),
             ),
           ],

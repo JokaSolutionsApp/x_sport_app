@@ -9,7 +9,7 @@ part of 'stadium_model.dart';
 StadiumModel _$StadiumModelFromJson(Map<String, dynamic> json) => StadiumModel(
       stadiumId: json['stadiumId'] as int,
       stadiumName: json['stadiumName'] as String,
-      stadiumType: json['stadiumType'] as String,
+      stadiumType: json['stadiumType'] as String?,
       regionName: json['regionName'] as String,
       lat: (json['lat'] as num).toDouble(),
       long: (json['long'] as num).toDouble(),
