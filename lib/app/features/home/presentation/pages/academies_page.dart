@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:x_sport/app/features/home/presentation/components/memberships_banner.dart';
+
 import '../../../profile/presentation/components/profile_screen_components/profile_main_components/profile_appbar_component.dart';
 import '../components/academies_components/academies_categories_component.dart';
 import '../components/academies_components/academies_component.dart';
@@ -34,10 +35,10 @@ class _AcademiesPageState extends State<AcademiesPage> {
                 horizontal: 10.w,
                 vertical: 20.h,
               ),
-              child: Column(
+              child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const MembershipsBanner(),
+                  MembershipsBanner(),
                   AcademeiesCategoriesComponent(),
                 ],
               ),

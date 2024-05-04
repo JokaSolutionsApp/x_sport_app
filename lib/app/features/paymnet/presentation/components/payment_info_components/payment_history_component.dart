@@ -11,7 +11,6 @@ class PaymentHistoryComponent extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 14.w, horizontal: 18.w),
       padding: EdgeInsets.symmetric(vertical: 12.w, horizontal: 18.w),
-      height: 408.w,
       alignment: Alignment.topCenter,
       decoration: BoxDecoration(
           color: Colors.white, borderRadius: BorderRadius.circular(8.sp)),
@@ -67,60 +66,57 @@ class PaymentHistoryComponent extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
-            height: 300.h,
-            child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: 5,
-                itemExtent: 50.h,
-                itemBuilder: (context, index) {
-                  return Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        'المبلغ المدفوع',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w500),
-                      ),
-                      Row(
-                        children: [
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'اسم الملعب المحجوز',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 10.sp,
-                                ),
+          ListView.builder(
+              shrinkWrap: true,
+              itemCount: 5,
+              itemExtent: 50.h,
+              itemBuilder: (context, index) {
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      'المبلغ المدفوع',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    Row(
+                      children: [
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'اسم الملعب المحجوز',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 10.sp,
                               ),
-                              Text(
-                                'التاريخ باليوم والساعة',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 10.sp,
-                                ),
-                              ),
-                            ],
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(left: 10.w),
-                            height: 8.w,
-                            width: 8.w,
-                            decoration: const BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.black,
                             ),
-                          )
-                        ],
-                      ),
-                    ],
-                  );
-                }),
-          )
+                            Text(
+                              'التاريخ باليوم والساعة',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 10.sp,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 10.w),
+                          height: 8.w,
+                          width: 8.w,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.black,
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
+                );
+              })
         ],
       ),
     );

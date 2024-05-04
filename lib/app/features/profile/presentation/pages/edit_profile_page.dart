@@ -58,7 +58,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
     updateGender = widget.user.gender!;
     allSports = context.read<AuthBloc>().sports;
     sportsIds = widget.favoriteSports
-        .map((e) => SportEntity(sportId: e.id, name: e.name!))
+        .map((e) => SportEntity(sportId: e.id, name: e.name))
         .toList();
     selectedIds = sportsIds.map((e) => e.sportId).toList();
     name = TextEditingController(text: user.name);
@@ -74,21 +74,26 @@ class _EditProfilePageState extends State<EditProfilePage> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         leading: IconButton(
-            onPressed: () {
-              context.read<AuthBloc>().add(AuthEvent.editUserProfile(
-                  params: EditUserProfileParams(
+          onPressed: () {
+            context.read<AuthBloc>().add(
+                  AuthEvent.editUserProfile(
+                    params: EditUserProfileParams(
                       name: name.text,
                       phone: phone.text,
                       gender: updateGender,
                       sportIds: selectedIds,
-                      lat: editProfileStream.latValue,
-                      long: editProfileStream.longeValue)));
-            },
-            icon: Icon(
-              Icons.done,
-              size: 36.sp,
-              color: XColors.primary,
-            )),
+                      lat: 0,
+                      long: 0,
+                    ),
+                  ),
+                );
+          },
+          icon: Icon(
+            Icons.done,
+            size: 36.sp,
+            color: XColors.primary,
+          ),
+        ),
         actions: [
           Row(
             children: [
