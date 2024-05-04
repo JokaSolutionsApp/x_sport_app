@@ -21,6 +21,7 @@ mixin _$MatchReservationEvent {
     required TResult Function() getSports,
     required TResult Function(StadiumParams params) getStadiums,
     required TResult Function(ReserviedTimesParams params) getTimes,
+    required TResult Function(int dayOrder, int? stadiumId) changeTimes,
     required TResult Function() reserve,
   }) =>
       throw _privateConstructorUsedError;
@@ -29,6 +30,7 @@ mixin _$MatchReservationEvent {
     TResult? Function()? getSports,
     TResult? Function(StadiumParams params)? getStadiums,
     TResult? Function(ReserviedTimesParams params)? getTimes,
+    TResult? Function(int dayOrder, int? stadiumId)? changeTimes,
     TResult? Function()? reserve,
   }) =>
       throw _privateConstructorUsedError;
@@ -37,6 +39,7 @@ mixin _$MatchReservationEvent {
     TResult Function()? getSports,
     TResult Function(StadiumParams params)? getStadiums,
     TResult Function(ReserviedTimesParams params)? getTimes,
+    TResult Function(int dayOrder, int? stadiumId)? changeTimes,
     TResult Function()? reserve,
     required TResult orElse(),
   }) =>
@@ -46,6 +49,7 @@ mixin _$MatchReservationEvent {
     required TResult Function(_GetSportsEvent value) getSports,
     required TResult Function(_GetStadiumsEvent value) getStadiums,
     required TResult Function(_GetTimesEvent value) getTimes,
+    required TResult Function(_ChangeTimesEvent value) changeTimes,
     required TResult Function(_ReserveEvent value) reserve,
   }) =>
       throw _privateConstructorUsedError;
@@ -54,6 +58,7 @@ mixin _$MatchReservationEvent {
     TResult? Function(_GetSportsEvent value)? getSports,
     TResult? Function(_GetStadiumsEvent value)? getStadiums,
     TResult? Function(_GetTimesEvent value)? getTimes,
+    TResult? Function(_ChangeTimesEvent value)? changeTimes,
     TResult? Function(_ReserveEvent value)? reserve,
   }) =>
       throw _privateConstructorUsedError;
@@ -62,6 +67,7 @@ mixin _$MatchReservationEvent {
     TResult Function(_GetSportsEvent value)? getSports,
     TResult Function(_GetStadiumsEvent value)? getStadiums,
     TResult Function(_GetTimesEvent value)? getTimes,
+    TResult Function(_ChangeTimesEvent value)? changeTimes,
     TResult Function(_ReserveEvent value)? reserve,
     required TResult orElse(),
   }) =>
@@ -128,6 +134,7 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
     required TResult Function() getSports,
     required TResult Function(StadiumParams params) getStadiums,
     required TResult Function(ReserviedTimesParams params) getTimes,
+    required TResult Function(int dayOrder, int? stadiumId) changeTimes,
     required TResult Function() reserve,
   }) {
     return getSports();
@@ -139,6 +146,7 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
     TResult? Function()? getSports,
     TResult? Function(StadiumParams params)? getStadiums,
     TResult? Function(ReserviedTimesParams params)? getTimes,
+    TResult? Function(int dayOrder, int? stadiumId)? changeTimes,
     TResult? Function()? reserve,
   }) {
     return getSports?.call();
@@ -150,6 +158,7 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
     TResult Function()? getSports,
     TResult Function(StadiumParams params)? getStadiums,
     TResult Function(ReserviedTimesParams params)? getTimes,
+    TResult Function(int dayOrder, int? stadiumId)? changeTimes,
     TResult Function()? reserve,
     required TResult orElse(),
   }) {
@@ -165,6 +174,7 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
     required TResult Function(_GetSportsEvent value) getSports,
     required TResult Function(_GetStadiumsEvent value) getStadiums,
     required TResult Function(_GetTimesEvent value) getTimes,
+    required TResult Function(_ChangeTimesEvent value) changeTimes,
     required TResult Function(_ReserveEvent value) reserve,
   }) {
     return getSports(this);
@@ -176,6 +186,7 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
     TResult? Function(_GetSportsEvent value)? getSports,
     TResult? Function(_GetStadiumsEvent value)? getStadiums,
     TResult? Function(_GetTimesEvent value)? getTimes,
+    TResult? Function(_ChangeTimesEvent value)? changeTimes,
     TResult? Function(_ReserveEvent value)? reserve,
   }) {
     return getSports?.call(this);
@@ -187,6 +198,7 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
     TResult Function(_GetSportsEvent value)? getSports,
     TResult Function(_GetStadiumsEvent value)? getStadiums,
     TResult Function(_GetTimesEvent value)? getTimes,
+    TResult Function(_ChangeTimesEvent value)? changeTimes,
     TResult Function(_ReserveEvent value)? reserve,
     required TResult orElse(),
   }) {
@@ -221,10 +233,10 @@ class __$$GetStadiumsEventImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? params = null,
+    Object? params = freezed,
   }) {
     return _then(_$GetStadiumsEventImpl(
-      params: null == params
+      params: freezed == params
           ? _value.params
           : params // ignore: cast_nullable_to_non_nullable
               as StadiumParams,
@@ -250,11 +262,12 @@ class _$GetStadiumsEventImpl implements _GetStadiumsEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetStadiumsEventImpl &&
-            (identical(other.params, params) || other.params == params));
+            const DeepCollectionEquality().equals(other.params, params));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, params);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(params));
 
   @JsonKey(ignore: true)
   @override
@@ -269,6 +282,7 @@ class _$GetStadiumsEventImpl implements _GetStadiumsEvent {
     required TResult Function() getSports,
     required TResult Function(StadiumParams params) getStadiums,
     required TResult Function(ReserviedTimesParams params) getTimes,
+    required TResult Function(int dayOrder, int? stadiumId) changeTimes,
     required TResult Function() reserve,
   }) {
     return getStadiums(params);
@@ -280,6 +294,7 @@ class _$GetStadiumsEventImpl implements _GetStadiumsEvent {
     TResult? Function()? getSports,
     TResult? Function(StadiumParams params)? getStadiums,
     TResult? Function(ReserviedTimesParams params)? getTimes,
+    TResult? Function(int dayOrder, int? stadiumId)? changeTimes,
     TResult? Function()? reserve,
   }) {
     return getStadiums?.call(params);
@@ -291,6 +306,7 @@ class _$GetStadiumsEventImpl implements _GetStadiumsEvent {
     TResult Function()? getSports,
     TResult Function(StadiumParams params)? getStadiums,
     TResult Function(ReserviedTimesParams params)? getTimes,
+    TResult Function(int dayOrder, int? stadiumId)? changeTimes,
     TResult Function()? reserve,
     required TResult orElse(),
   }) {
@@ -306,6 +322,7 @@ class _$GetStadiumsEventImpl implements _GetStadiumsEvent {
     required TResult Function(_GetSportsEvent value) getSports,
     required TResult Function(_GetStadiumsEvent value) getStadiums,
     required TResult Function(_GetTimesEvent value) getTimes,
+    required TResult Function(_ChangeTimesEvent value) changeTimes,
     required TResult Function(_ReserveEvent value) reserve,
   }) {
     return getStadiums(this);
@@ -317,6 +334,7 @@ class _$GetStadiumsEventImpl implements _GetStadiumsEvent {
     TResult? Function(_GetSportsEvent value)? getSports,
     TResult? Function(_GetStadiumsEvent value)? getStadiums,
     TResult? Function(_GetTimesEvent value)? getTimes,
+    TResult? Function(_ChangeTimesEvent value)? changeTimes,
     TResult? Function(_ReserveEvent value)? reserve,
   }) {
     return getStadiums?.call(this);
@@ -328,6 +346,7 @@ class _$GetStadiumsEventImpl implements _GetStadiumsEvent {
     TResult Function(_GetSportsEvent value)? getSports,
     TResult Function(_GetStadiumsEvent value)? getStadiums,
     TResult Function(_GetTimesEvent value)? getTimes,
+    TResult Function(_ChangeTimesEvent value)? changeTimes,
     TResult Function(_ReserveEvent value)? reserve,
     required TResult orElse(),
   }) {
@@ -368,10 +387,10 @@ class __$$GetTimesEventImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? params = null,
+    Object? params = freezed,
   }) {
     return _then(_$GetTimesEventImpl(
-      params: null == params
+      params: freezed == params
           ? _value.params
           : params // ignore: cast_nullable_to_non_nullable
               as ReserviedTimesParams,
@@ -397,11 +416,12 @@ class _$GetTimesEventImpl implements _GetTimesEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetTimesEventImpl &&
-            (identical(other.params, params) || other.params == params));
+            const DeepCollectionEquality().equals(other.params, params));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, params);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(params));
 
   @JsonKey(ignore: true)
   @override
@@ -415,6 +435,7 @@ class _$GetTimesEventImpl implements _GetTimesEvent {
     required TResult Function() getSports,
     required TResult Function(StadiumParams params) getStadiums,
     required TResult Function(ReserviedTimesParams params) getTimes,
+    required TResult Function(int dayOrder, int? stadiumId) changeTimes,
     required TResult Function() reserve,
   }) {
     return getTimes(params);
@@ -426,6 +447,7 @@ class _$GetTimesEventImpl implements _GetTimesEvent {
     TResult? Function()? getSports,
     TResult? Function(StadiumParams params)? getStadiums,
     TResult? Function(ReserviedTimesParams params)? getTimes,
+    TResult? Function(int dayOrder, int? stadiumId)? changeTimes,
     TResult? Function()? reserve,
   }) {
     return getTimes?.call(params);
@@ -437,6 +459,7 @@ class _$GetTimesEventImpl implements _GetTimesEvent {
     TResult Function()? getSports,
     TResult Function(StadiumParams params)? getStadiums,
     TResult Function(ReserviedTimesParams params)? getTimes,
+    TResult Function(int dayOrder, int? stadiumId)? changeTimes,
     TResult Function()? reserve,
     required TResult orElse(),
   }) {
@@ -452,6 +475,7 @@ class _$GetTimesEventImpl implements _GetTimesEvent {
     required TResult Function(_GetSportsEvent value) getSports,
     required TResult Function(_GetStadiumsEvent value) getStadiums,
     required TResult Function(_GetTimesEvent value) getTimes,
+    required TResult Function(_ChangeTimesEvent value) changeTimes,
     required TResult Function(_ReserveEvent value) reserve,
   }) {
     return getTimes(this);
@@ -463,6 +487,7 @@ class _$GetTimesEventImpl implements _GetTimesEvent {
     TResult? Function(_GetSportsEvent value)? getSports,
     TResult? Function(_GetStadiumsEvent value)? getStadiums,
     TResult? Function(_GetTimesEvent value)? getTimes,
+    TResult? Function(_ChangeTimesEvent value)? changeTimes,
     TResult? Function(_ReserveEvent value)? reserve,
   }) {
     return getTimes?.call(this);
@@ -474,6 +499,7 @@ class _$GetTimesEventImpl implements _GetTimesEvent {
     TResult Function(_GetSportsEvent value)? getSports,
     TResult Function(_GetStadiumsEvent value)? getStadiums,
     TResult Function(_GetTimesEvent value)? getTimes,
+    TResult Function(_ChangeTimesEvent value)? changeTimes,
     TResult Function(_ReserveEvent value)? reserve,
     required TResult orElse(),
   }) {
@@ -491,6 +517,171 @@ abstract class _GetTimesEvent implements MatchReservationEvent {
   ReserviedTimesParams get params;
   @JsonKey(ignore: true)
   _$$GetTimesEventImplCopyWith<_$GetTimesEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ChangeTimesEventImplCopyWith<$Res> {
+  factory _$$ChangeTimesEventImplCopyWith(_$ChangeTimesEventImpl value,
+          $Res Function(_$ChangeTimesEventImpl) then) =
+      __$$ChangeTimesEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int dayOrder, int? stadiumId});
+}
+
+/// @nodoc
+class __$$ChangeTimesEventImplCopyWithImpl<$Res>
+    extends _$MatchReservationEventCopyWithImpl<$Res, _$ChangeTimesEventImpl>
+    implements _$$ChangeTimesEventImplCopyWith<$Res> {
+  __$$ChangeTimesEventImplCopyWithImpl(_$ChangeTimesEventImpl _value,
+      $Res Function(_$ChangeTimesEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? dayOrder = null,
+    Object? stadiumId = freezed,
+  }) {
+    return _then(_$ChangeTimesEventImpl(
+      dayOrder: null == dayOrder
+          ? _value.dayOrder
+          : dayOrder // ignore: cast_nullable_to_non_nullable
+              as int,
+      stadiumId: freezed == stadiumId
+          ? _value.stadiumId
+          : stadiumId // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChangeTimesEventImpl implements _ChangeTimesEvent {
+  const _$ChangeTimesEventImpl({required this.dayOrder, this.stadiumId});
+
+  @override
+  final int dayOrder;
+  @override
+  final int? stadiumId;
+
+  @override
+  String toString() {
+    return 'MatchReservationEvent.changeTimes(dayOrder: $dayOrder, stadiumId: $stadiumId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeTimesEventImpl &&
+            (identical(other.dayOrder, dayOrder) ||
+                other.dayOrder == dayOrder) &&
+            (identical(other.stadiumId, stadiumId) ||
+                other.stadiumId == stadiumId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, dayOrder, stadiumId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangeTimesEventImplCopyWith<_$ChangeTimesEventImpl> get copyWith =>
+      __$$ChangeTimesEventImplCopyWithImpl<_$ChangeTimesEventImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getSports,
+    required TResult Function(StadiumParams params) getStadiums,
+    required TResult Function(ReserviedTimesParams params) getTimes,
+    required TResult Function(int dayOrder, int? stadiumId) changeTimes,
+    required TResult Function() reserve,
+  }) {
+    return changeTimes(dayOrder, stadiumId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getSports,
+    TResult? Function(StadiumParams params)? getStadiums,
+    TResult? Function(ReserviedTimesParams params)? getTimes,
+    TResult? Function(int dayOrder, int? stadiumId)? changeTimes,
+    TResult? Function()? reserve,
+  }) {
+    return changeTimes?.call(dayOrder, stadiumId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getSports,
+    TResult Function(StadiumParams params)? getStadiums,
+    TResult Function(ReserviedTimesParams params)? getTimes,
+    TResult Function(int dayOrder, int? stadiumId)? changeTimes,
+    TResult Function()? reserve,
+    required TResult orElse(),
+  }) {
+    if (changeTimes != null) {
+      return changeTimes(dayOrder, stadiumId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetSportsEvent value) getSports,
+    required TResult Function(_GetStadiumsEvent value) getStadiums,
+    required TResult Function(_GetTimesEvent value) getTimes,
+    required TResult Function(_ChangeTimesEvent value) changeTimes,
+    required TResult Function(_ReserveEvent value) reserve,
+  }) {
+    return changeTimes(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetSportsEvent value)? getSports,
+    TResult? Function(_GetStadiumsEvent value)? getStadiums,
+    TResult? Function(_GetTimesEvent value)? getTimes,
+    TResult? Function(_ChangeTimesEvent value)? changeTimes,
+    TResult? Function(_ReserveEvent value)? reserve,
+  }) {
+    return changeTimes?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetSportsEvent value)? getSports,
+    TResult Function(_GetStadiumsEvent value)? getStadiums,
+    TResult Function(_GetTimesEvent value)? getTimes,
+    TResult Function(_ChangeTimesEvent value)? changeTimes,
+    TResult Function(_ReserveEvent value)? reserve,
+    required TResult orElse(),
+  }) {
+    if (changeTimes != null) {
+      return changeTimes(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ChangeTimesEvent implements MatchReservationEvent {
+  const factory _ChangeTimesEvent(
+      {required final int dayOrder,
+      final int? stadiumId}) = _$ChangeTimesEventImpl;
+
+  int get dayOrder;
+  int? get stadiumId;
+  @JsonKey(ignore: true)
+  _$$ChangeTimesEventImplCopyWith<_$ChangeTimesEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -535,6 +726,7 @@ class _$ReserveEventImpl implements _ReserveEvent {
     required TResult Function() getSports,
     required TResult Function(StadiumParams params) getStadiums,
     required TResult Function(ReserviedTimesParams params) getTimes,
+    required TResult Function(int dayOrder, int? stadiumId) changeTimes,
     required TResult Function() reserve,
   }) {
     return reserve();
@@ -546,6 +738,7 @@ class _$ReserveEventImpl implements _ReserveEvent {
     TResult? Function()? getSports,
     TResult? Function(StadiumParams params)? getStadiums,
     TResult? Function(ReserviedTimesParams params)? getTimes,
+    TResult? Function(int dayOrder, int? stadiumId)? changeTimes,
     TResult? Function()? reserve,
   }) {
     return reserve?.call();
@@ -557,6 +750,7 @@ class _$ReserveEventImpl implements _ReserveEvent {
     TResult Function()? getSports,
     TResult Function(StadiumParams params)? getStadiums,
     TResult Function(ReserviedTimesParams params)? getTimes,
+    TResult Function(int dayOrder, int? stadiumId)? changeTimes,
     TResult Function()? reserve,
     required TResult orElse(),
   }) {
@@ -572,6 +766,7 @@ class _$ReserveEventImpl implements _ReserveEvent {
     required TResult Function(_GetSportsEvent value) getSports,
     required TResult Function(_GetStadiumsEvent value) getStadiums,
     required TResult Function(_GetTimesEvent value) getTimes,
+    required TResult Function(_ChangeTimesEvent value) changeTimes,
     required TResult Function(_ReserveEvent value) reserve,
   }) {
     return reserve(this);
@@ -583,6 +778,7 @@ class _$ReserveEventImpl implements _ReserveEvent {
     TResult? Function(_GetSportsEvent value)? getSports,
     TResult? Function(_GetStadiumsEvent value)? getStadiums,
     TResult? Function(_GetTimesEvent value)? getTimes,
+    TResult? Function(_ChangeTimesEvent value)? changeTimes,
     TResult? Function(_ReserveEvent value)? reserve,
   }) {
     return reserve?.call(this);
@@ -594,6 +790,7 @@ class _$ReserveEventImpl implements _ReserveEvent {
     TResult Function(_GetSportsEvent value)? getSports,
     TResult Function(_GetStadiumsEvent value)? getStadiums,
     TResult Function(_GetTimesEvent value)? getTimes,
+    TResult Function(_ChangeTimesEvent value)? changeTimes,
     TResult Function(_ReserveEvent value)? reserve,
     required TResult orElse(),
   }) {
@@ -619,8 +816,9 @@ mixin _$MatchReservationState {
     required TResult Function(Failure? failure) courtsFailure,
     required TResult Function(List<SportStadiumEntity> stadiums) courtsScuccess,
     required TResult Function(Failure? failure) timesFailure,
-    required TResult Function(List<ReservationEntity> reservations)
-        timesScuccess,
+    required TResult Function(
+            List<ReservationEntity> reservations, List<String> openTimes)
+        timesSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -632,7 +830,9 @@ mixin _$MatchReservationState {
     TResult? Function(Failure? failure)? courtsFailure,
     TResult? Function(List<SportStadiumEntity> stadiums)? courtsScuccess,
     TResult? Function(Failure? failure)? timesFailure,
-    TResult? Function(List<ReservationEntity> reservations)? timesScuccess,
+    TResult? Function(
+            List<ReservationEntity> reservations, List<String> openTimes)?
+        timesSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -644,7 +844,9 @@ mixin _$MatchReservationState {
     TResult Function(Failure? failure)? courtsFailure,
     TResult Function(List<SportStadiumEntity> stadiums)? courtsScuccess,
     TResult Function(Failure? failure)? timesFailure,
-    TResult Function(List<ReservationEntity> reservations)? timesScuccess,
+    TResult Function(
+            List<ReservationEntity> reservations, List<String> openTimes)?
+        timesSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -657,7 +859,7 @@ mixin _$MatchReservationState {
     required TResult Function(courtsFailure value) courtsFailure,
     required TResult Function(courtsScuccess value) courtsScuccess,
     required TResult Function(timesFailure value) timesFailure,
-    required TResult Function(timesScuccess value) timesScuccess,
+    required TResult Function(timesSuccess value) timesSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -669,7 +871,7 @@ mixin _$MatchReservationState {
     TResult? Function(courtsFailure value)? courtsFailure,
     TResult? Function(courtsScuccess value)? courtsScuccess,
     TResult? Function(timesFailure value)? timesFailure,
-    TResult? Function(timesScuccess value)? timesScuccess,
+    TResult? Function(timesSuccess value)? timesSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -681,7 +883,7 @@ mixin _$MatchReservationState {
     TResult Function(courtsFailure value)? courtsFailure,
     TResult Function(courtsScuccess value)? courtsScuccess,
     TResult Function(timesFailure value)? timesFailure,
-    TResult Function(timesScuccess value)? timesScuccess,
+    TResult Function(timesSuccess value)? timesSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -751,8 +953,9 @@ class _$InitialImpl implements _Initial {
     required TResult Function(Failure? failure) courtsFailure,
     required TResult Function(List<SportStadiumEntity> stadiums) courtsScuccess,
     required TResult Function(Failure? failure) timesFailure,
-    required TResult Function(List<ReservationEntity> reservations)
-        timesScuccess,
+    required TResult Function(
+            List<ReservationEntity> reservations, List<String> openTimes)
+        timesSuccess,
   }) {
     return initial();
   }
@@ -767,7 +970,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function(Failure? failure)? courtsFailure,
     TResult? Function(List<SportStadiumEntity> stadiums)? courtsScuccess,
     TResult? Function(Failure? failure)? timesFailure,
-    TResult? Function(List<ReservationEntity> reservations)? timesScuccess,
+    TResult? Function(
+            List<ReservationEntity> reservations, List<String> openTimes)?
+        timesSuccess,
   }) {
     return initial?.call();
   }
@@ -782,7 +987,9 @@ class _$InitialImpl implements _Initial {
     TResult Function(Failure? failure)? courtsFailure,
     TResult Function(List<SportStadiumEntity> stadiums)? courtsScuccess,
     TResult Function(Failure? failure)? timesFailure,
-    TResult Function(List<ReservationEntity> reservations)? timesScuccess,
+    TResult Function(
+            List<ReservationEntity> reservations, List<String> openTimes)?
+        timesSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -801,7 +1008,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(courtsFailure value) courtsFailure,
     required TResult Function(courtsScuccess value) courtsScuccess,
     required TResult Function(timesFailure value) timesFailure,
-    required TResult Function(timesScuccess value) timesScuccess,
+    required TResult Function(timesSuccess value) timesSuccess,
   }) {
     return initial(this);
   }
@@ -816,7 +1023,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(courtsFailure value)? courtsFailure,
     TResult? Function(courtsScuccess value)? courtsScuccess,
     TResult? Function(timesFailure value)? timesFailure,
-    TResult? Function(timesScuccess value)? timesScuccess,
+    TResult? Function(timesSuccess value)? timesSuccess,
   }) {
     return initial?.call(this);
   }
@@ -831,7 +1038,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(courtsFailure value)? courtsFailure,
     TResult Function(courtsScuccess value)? courtsScuccess,
     TResult Function(timesFailure value)? timesFailure,
-    TResult Function(timesScuccess value)? timesScuccess,
+    TResult Function(timesSuccess value)? timesSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -890,8 +1097,9 @@ class _$loadingImpl implements loading {
     required TResult Function(Failure? failure) courtsFailure,
     required TResult Function(List<SportStadiumEntity> stadiums) courtsScuccess,
     required TResult Function(Failure? failure) timesFailure,
-    required TResult Function(List<ReservationEntity> reservations)
-        timesScuccess,
+    required TResult Function(
+            List<ReservationEntity> reservations, List<String> openTimes)
+        timesSuccess,
   }) {
     return loading();
   }
@@ -906,7 +1114,9 @@ class _$loadingImpl implements loading {
     TResult? Function(Failure? failure)? courtsFailure,
     TResult? Function(List<SportStadiumEntity> stadiums)? courtsScuccess,
     TResult? Function(Failure? failure)? timesFailure,
-    TResult? Function(List<ReservationEntity> reservations)? timesScuccess,
+    TResult? Function(
+            List<ReservationEntity> reservations, List<String> openTimes)?
+        timesSuccess,
   }) {
     return loading?.call();
   }
@@ -921,7 +1131,9 @@ class _$loadingImpl implements loading {
     TResult Function(Failure? failure)? courtsFailure,
     TResult Function(List<SportStadiumEntity> stadiums)? courtsScuccess,
     TResult Function(Failure? failure)? timesFailure,
-    TResult Function(List<ReservationEntity> reservations)? timesScuccess,
+    TResult Function(
+            List<ReservationEntity> reservations, List<String> openTimes)?
+        timesSuccess,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -940,7 +1152,7 @@ class _$loadingImpl implements loading {
     required TResult Function(courtsFailure value) courtsFailure,
     required TResult Function(courtsScuccess value) courtsScuccess,
     required TResult Function(timesFailure value) timesFailure,
-    required TResult Function(timesScuccess value) timesScuccess,
+    required TResult Function(timesSuccess value) timesSuccess,
   }) {
     return loading(this);
   }
@@ -955,7 +1167,7 @@ class _$loadingImpl implements loading {
     TResult? Function(courtsFailure value)? courtsFailure,
     TResult? Function(courtsScuccess value)? courtsScuccess,
     TResult? Function(timesFailure value)? timesFailure,
-    TResult? Function(timesScuccess value)? timesScuccess,
+    TResult? Function(timesSuccess value)? timesSuccess,
   }) {
     return loading?.call(this);
   }
@@ -970,7 +1182,7 @@ class _$loadingImpl implements loading {
     TResult Function(courtsFailure value)? courtsFailure,
     TResult Function(courtsScuccess value)? courtsScuccess,
     TResult Function(timesFailure value)? timesFailure,
-    TResult Function(timesScuccess value)? timesScuccess,
+    TResult Function(timesSuccess value)? timesSuccess,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -1056,8 +1268,9 @@ class _$sportsFailureImpl implements sportsFailure {
     required TResult Function(Failure? failure) courtsFailure,
     required TResult Function(List<SportStadiumEntity> stadiums) courtsScuccess,
     required TResult Function(Failure? failure) timesFailure,
-    required TResult Function(List<ReservationEntity> reservations)
-        timesScuccess,
+    required TResult Function(
+            List<ReservationEntity> reservations, List<String> openTimes)
+        timesSuccess,
   }) {
     return sportsFailure(failure);
   }
@@ -1072,7 +1285,9 @@ class _$sportsFailureImpl implements sportsFailure {
     TResult? Function(Failure? failure)? courtsFailure,
     TResult? Function(List<SportStadiumEntity> stadiums)? courtsScuccess,
     TResult? Function(Failure? failure)? timesFailure,
-    TResult? Function(List<ReservationEntity> reservations)? timesScuccess,
+    TResult? Function(
+            List<ReservationEntity> reservations, List<String> openTimes)?
+        timesSuccess,
   }) {
     return sportsFailure?.call(failure);
   }
@@ -1087,7 +1302,9 @@ class _$sportsFailureImpl implements sportsFailure {
     TResult Function(Failure? failure)? courtsFailure,
     TResult Function(List<SportStadiumEntity> stadiums)? courtsScuccess,
     TResult Function(Failure? failure)? timesFailure,
-    TResult Function(List<ReservationEntity> reservations)? timesScuccess,
+    TResult Function(
+            List<ReservationEntity> reservations, List<String> openTimes)?
+        timesSuccess,
     required TResult orElse(),
   }) {
     if (sportsFailure != null) {
@@ -1106,7 +1323,7 @@ class _$sportsFailureImpl implements sportsFailure {
     required TResult Function(courtsFailure value) courtsFailure,
     required TResult Function(courtsScuccess value) courtsScuccess,
     required TResult Function(timesFailure value) timesFailure,
-    required TResult Function(timesScuccess value) timesScuccess,
+    required TResult Function(timesSuccess value) timesSuccess,
   }) {
     return sportsFailure(this);
   }
@@ -1121,7 +1338,7 @@ class _$sportsFailureImpl implements sportsFailure {
     TResult? Function(courtsFailure value)? courtsFailure,
     TResult? Function(courtsScuccess value)? courtsScuccess,
     TResult? Function(timesFailure value)? timesFailure,
-    TResult? Function(timesScuccess value)? timesScuccess,
+    TResult? Function(timesSuccess value)? timesSuccess,
   }) {
     return sportsFailure?.call(this);
   }
@@ -1136,7 +1353,7 @@ class _$sportsFailureImpl implements sportsFailure {
     TResult Function(courtsFailure value)? courtsFailure,
     TResult Function(courtsScuccess value)? courtsScuccess,
     TResult Function(timesFailure value)? timesFailure,
-    TResult Function(timesScuccess value)? timesScuccess,
+    TResult Function(timesSuccess value)? timesSuccess,
     required TResult orElse(),
   }) {
     if (sportsFailure != null) {
@@ -1235,8 +1452,9 @@ class _$sportsScuccessImpl implements sportsScuccess {
     required TResult Function(Failure? failure) courtsFailure,
     required TResult Function(List<SportStadiumEntity> stadiums) courtsScuccess,
     required TResult Function(Failure? failure) timesFailure,
-    required TResult Function(List<ReservationEntity> reservations)
-        timesScuccess,
+    required TResult Function(
+            List<ReservationEntity> reservations, List<String> openTimes)
+        timesSuccess,
   }) {
     return sportsScuccess(sports);
   }
@@ -1251,7 +1469,9 @@ class _$sportsScuccessImpl implements sportsScuccess {
     TResult? Function(Failure? failure)? courtsFailure,
     TResult? Function(List<SportStadiumEntity> stadiums)? courtsScuccess,
     TResult? Function(Failure? failure)? timesFailure,
-    TResult? Function(List<ReservationEntity> reservations)? timesScuccess,
+    TResult? Function(
+            List<ReservationEntity> reservations, List<String> openTimes)?
+        timesSuccess,
   }) {
     return sportsScuccess?.call(sports);
   }
@@ -1266,7 +1486,9 @@ class _$sportsScuccessImpl implements sportsScuccess {
     TResult Function(Failure? failure)? courtsFailure,
     TResult Function(List<SportStadiumEntity> stadiums)? courtsScuccess,
     TResult Function(Failure? failure)? timesFailure,
-    TResult Function(List<ReservationEntity> reservations)? timesScuccess,
+    TResult Function(
+            List<ReservationEntity> reservations, List<String> openTimes)?
+        timesSuccess,
     required TResult orElse(),
   }) {
     if (sportsScuccess != null) {
@@ -1285,7 +1507,7 @@ class _$sportsScuccessImpl implements sportsScuccess {
     required TResult Function(courtsFailure value) courtsFailure,
     required TResult Function(courtsScuccess value) courtsScuccess,
     required TResult Function(timesFailure value) timesFailure,
-    required TResult Function(timesScuccess value) timesScuccess,
+    required TResult Function(timesSuccess value) timesSuccess,
   }) {
     return sportsScuccess(this);
   }
@@ -1300,7 +1522,7 @@ class _$sportsScuccessImpl implements sportsScuccess {
     TResult? Function(courtsFailure value)? courtsFailure,
     TResult? Function(courtsScuccess value)? courtsScuccess,
     TResult? Function(timesFailure value)? timesFailure,
-    TResult? Function(timesScuccess value)? timesScuccess,
+    TResult? Function(timesSuccess value)? timesSuccess,
   }) {
     return sportsScuccess?.call(this);
   }
@@ -1315,7 +1537,7 @@ class _$sportsScuccessImpl implements sportsScuccess {
     TResult Function(courtsFailure value)? courtsFailure,
     TResult Function(courtsScuccess value)? courtsScuccess,
     TResult Function(timesFailure value)? timesFailure,
-    TResult Function(timesScuccess value)? timesScuccess,
+    TResult Function(timesSuccess value)? timesSuccess,
     required TResult orElse(),
   }) {
     if (sportsScuccess != null) {
@@ -1407,8 +1629,9 @@ class _$courtsFailureImpl implements courtsFailure {
     required TResult Function(Failure? failure) courtsFailure,
     required TResult Function(List<SportStadiumEntity> stadiums) courtsScuccess,
     required TResult Function(Failure? failure) timesFailure,
-    required TResult Function(List<ReservationEntity> reservations)
-        timesScuccess,
+    required TResult Function(
+            List<ReservationEntity> reservations, List<String> openTimes)
+        timesSuccess,
   }) {
     return courtsFailure(failure);
   }
@@ -1423,7 +1646,9 @@ class _$courtsFailureImpl implements courtsFailure {
     TResult? Function(Failure? failure)? courtsFailure,
     TResult? Function(List<SportStadiumEntity> stadiums)? courtsScuccess,
     TResult? Function(Failure? failure)? timesFailure,
-    TResult? Function(List<ReservationEntity> reservations)? timesScuccess,
+    TResult? Function(
+            List<ReservationEntity> reservations, List<String> openTimes)?
+        timesSuccess,
   }) {
     return courtsFailure?.call(failure);
   }
@@ -1438,7 +1663,9 @@ class _$courtsFailureImpl implements courtsFailure {
     TResult Function(Failure? failure)? courtsFailure,
     TResult Function(List<SportStadiumEntity> stadiums)? courtsScuccess,
     TResult Function(Failure? failure)? timesFailure,
-    TResult Function(List<ReservationEntity> reservations)? timesScuccess,
+    TResult Function(
+            List<ReservationEntity> reservations, List<String> openTimes)?
+        timesSuccess,
     required TResult orElse(),
   }) {
     if (courtsFailure != null) {
@@ -1457,7 +1684,7 @@ class _$courtsFailureImpl implements courtsFailure {
     required TResult Function(courtsFailure value) courtsFailure,
     required TResult Function(courtsScuccess value) courtsScuccess,
     required TResult Function(timesFailure value) timesFailure,
-    required TResult Function(timesScuccess value) timesScuccess,
+    required TResult Function(timesSuccess value) timesSuccess,
   }) {
     return courtsFailure(this);
   }
@@ -1472,7 +1699,7 @@ class _$courtsFailureImpl implements courtsFailure {
     TResult? Function(courtsFailure value)? courtsFailure,
     TResult? Function(courtsScuccess value)? courtsScuccess,
     TResult? Function(timesFailure value)? timesFailure,
-    TResult? Function(timesScuccess value)? timesScuccess,
+    TResult? Function(timesSuccess value)? timesSuccess,
   }) {
     return courtsFailure?.call(this);
   }
@@ -1487,7 +1714,7 @@ class _$courtsFailureImpl implements courtsFailure {
     TResult Function(courtsFailure value)? courtsFailure,
     TResult Function(courtsScuccess value)? courtsScuccess,
     TResult Function(timesFailure value)? timesFailure,
-    TResult Function(timesScuccess value)? timesScuccess,
+    TResult Function(timesSuccess value)? timesSuccess,
     required TResult orElse(),
   }) {
     if (courtsFailure != null) {
@@ -1587,8 +1814,9 @@ class _$courtsScuccessImpl implements courtsScuccess {
     required TResult Function(Failure? failure) courtsFailure,
     required TResult Function(List<SportStadiumEntity> stadiums) courtsScuccess,
     required TResult Function(Failure? failure) timesFailure,
-    required TResult Function(List<ReservationEntity> reservations)
-        timesScuccess,
+    required TResult Function(
+            List<ReservationEntity> reservations, List<String> openTimes)
+        timesSuccess,
   }) {
     return courtsScuccess(stadiums);
   }
@@ -1603,7 +1831,9 @@ class _$courtsScuccessImpl implements courtsScuccess {
     TResult? Function(Failure? failure)? courtsFailure,
     TResult? Function(List<SportStadiumEntity> stadiums)? courtsScuccess,
     TResult? Function(Failure? failure)? timesFailure,
-    TResult? Function(List<ReservationEntity> reservations)? timesScuccess,
+    TResult? Function(
+            List<ReservationEntity> reservations, List<String> openTimes)?
+        timesSuccess,
   }) {
     return courtsScuccess?.call(stadiums);
   }
@@ -1618,7 +1848,9 @@ class _$courtsScuccessImpl implements courtsScuccess {
     TResult Function(Failure? failure)? courtsFailure,
     TResult Function(List<SportStadiumEntity> stadiums)? courtsScuccess,
     TResult Function(Failure? failure)? timesFailure,
-    TResult Function(List<ReservationEntity> reservations)? timesScuccess,
+    TResult Function(
+            List<ReservationEntity> reservations, List<String> openTimes)?
+        timesSuccess,
     required TResult orElse(),
   }) {
     if (courtsScuccess != null) {
@@ -1637,7 +1869,7 @@ class _$courtsScuccessImpl implements courtsScuccess {
     required TResult Function(courtsFailure value) courtsFailure,
     required TResult Function(courtsScuccess value) courtsScuccess,
     required TResult Function(timesFailure value) timesFailure,
-    required TResult Function(timesScuccess value) timesScuccess,
+    required TResult Function(timesSuccess value) timesSuccess,
   }) {
     return courtsScuccess(this);
   }
@@ -1652,7 +1884,7 @@ class _$courtsScuccessImpl implements courtsScuccess {
     TResult? Function(courtsFailure value)? courtsFailure,
     TResult? Function(courtsScuccess value)? courtsScuccess,
     TResult? Function(timesFailure value)? timesFailure,
-    TResult? Function(timesScuccess value)? timesScuccess,
+    TResult? Function(timesSuccess value)? timesSuccess,
   }) {
     return courtsScuccess?.call(this);
   }
@@ -1667,7 +1899,7 @@ class _$courtsScuccessImpl implements courtsScuccess {
     TResult Function(courtsFailure value)? courtsFailure,
     TResult Function(courtsScuccess value)? courtsScuccess,
     TResult Function(timesFailure value)? timesFailure,
-    TResult Function(timesScuccess value)? timesScuccess,
+    TResult Function(timesSuccess value)? timesSuccess,
     required TResult orElse(),
   }) {
     if (courtsScuccess != null) {
@@ -1759,8 +1991,9 @@ class _$timesFailureImpl implements timesFailure {
     required TResult Function(Failure? failure) courtsFailure,
     required TResult Function(List<SportStadiumEntity> stadiums) courtsScuccess,
     required TResult Function(Failure? failure) timesFailure,
-    required TResult Function(List<ReservationEntity> reservations)
-        timesScuccess,
+    required TResult Function(
+            List<ReservationEntity> reservations, List<String> openTimes)
+        timesSuccess,
   }) {
     return timesFailure(failure);
   }
@@ -1775,7 +2008,9 @@ class _$timesFailureImpl implements timesFailure {
     TResult? Function(Failure? failure)? courtsFailure,
     TResult? Function(List<SportStadiumEntity> stadiums)? courtsScuccess,
     TResult? Function(Failure? failure)? timesFailure,
-    TResult? Function(List<ReservationEntity> reservations)? timesScuccess,
+    TResult? Function(
+            List<ReservationEntity> reservations, List<String> openTimes)?
+        timesSuccess,
   }) {
     return timesFailure?.call(failure);
   }
@@ -1790,7 +2025,9 @@ class _$timesFailureImpl implements timesFailure {
     TResult Function(Failure? failure)? courtsFailure,
     TResult Function(List<SportStadiumEntity> stadiums)? courtsScuccess,
     TResult Function(Failure? failure)? timesFailure,
-    TResult Function(List<ReservationEntity> reservations)? timesScuccess,
+    TResult Function(
+            List<ReservationEntity> reservations, List<String> openTimes)?
+        timesSuccess,
     required TResult orElse(),
   }) {
     if (timesFailure != null) {
@@ -1809,7 +2046,7 @@ class _$timesFailureImpl implements timesFailure {
     required TResult Function(courtsFailure value) courtsFailure,
     required TResult Function(courtsScuccess value) courtsScuccess,
     required TResult Function(timesFailure value) timesFailure,
-    required TResult Function(timesScuccess value) timesScuccess,
+    required TResult Function(timesSuccess value) timesSuccess,
   }) {
     return timesFailure(this);
   }
@@ -1824,7 +2061,7 @@ class _$timesFailureImpl implements timesFailure {
     TResult? Function(courtsFailure value)? courtsFailure,
     TResult? Function(courtsScuccess value)? courtsScuccess,
     TResult? Function(timesFailure value)? timesFailure,
-    TResult? Function(timesScuccess value)? timesScuccess,
+    TResult? Function(timesSuccess value)? timesSuccess,
   }) {
     return timesFailure?.call(this);
   }
@@ -1839,7 +2076,7 @@ class _$timesFailureImpl implements timesFailure {
     TResult Function(courtsFailure value)? courtsFailure,
     TResult Function(courtsScuccess value)? courtsScuccess,
     TResult Function(timesFailure value)? timesFailure,
-    TResult Function(timesScuccess value)? timesScuccess,
+    TResult Function(timesSuccess value)? timesSuccess,
     required TResult orElse(),
   }) {
     if (timesFailure != null) {
@@ -1859,42 +2096,49 @@ abstract class timesFailure implements MatchReservationState {
 }
 
 /// @nodoc
-abstract class _$$timesScuccessImplCopyWith<$Res> {
-  factory _$$timesScuccessImplCopyWith(
-          _$timesScuccessImpl value, $Res Function(_$timesScuccessImpl) then) =
-      __$$timesScuccessImplCopyWithImpl<$Res>;
+abstract class _$$timesSuccessImplCopyWith<$Res> {
+  factory _$$timesSuccessImplCopyWith(
+          _$timesSuccessImpl value, $Res Function(_$timesSuccessImpl) then) =
+      __$$timesSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<ReservationEntity> reservations});
+  $Res call({List<ReservationEntity> reservations, List<String> openTimes});
 }
 
 /// @nodoc
-class __$$timesScuccessImplCopyWithImpl<$Res>
-    extends _$MatchReservationStateCopyWithImpl<$Res, _$timesScuccessImpl>
-    implements _$$timesScuccessImplCopyWith<$Res> {
-  __$$timesScuccessImplCopyWithImpl(
-      _$timesScuccessImpl _value, $Res Function(_$timesScuccessImpl) _then)
+class __$$timesSuccessImplCopyWithImpl<$Res>
+    extends _$MatchReservationStateCopyWithImpl<$Res, _$timesSuccessImpl>
+    implements _$$timesSuccessImplCopyWith<$Res> {
+  __$$timesSuccessImplCopyWithImpl(
+      _$timesSuccessImpl _value, $Res Function(_$timesSuccessImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? reservations = null,
+    Object? openTimes = null,
   }) {
-    return _then(_$timesScuccessImpl(
+    return _then(_$timesSuccessImpl(
       reservations: null == reservations
           ? _value._reservations
           : reservations // ignore: cast_nullable_to_non_nullable
               as List<ReservationEntity>,
+      openTimes: null == openTimes
+          ? _value._openTimes
+          : openTimes // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$timesScuccessImpl implements timesScuccess {
-  const _$timesScuccessImpl(
-      {final List<ReservationEntity> reservations = const []})
-      : _reservations = reservations;
+class _$timesSuccessImpl implements timesSuccess {
+  const _$timesSuccessImpl(
+      {final List<ReservationEntity> reservations = const [],
+      final List<String> openTimes = const []})
+      : _reservations = reservations,
+        _openTimes = openTimes;
 
   final List<ReservationEntity> _reservations;
   @override
@@ -1905,29 +2149,42 @@ class _$timesScuccessImpl implements timesScuccess {
     return EqualUnmodifiableListView(_reservations);
   }
 
+  final List<String> _openTimes;
+  @override
+  @JsonKey()
+  List<String> get openTimes {
+    if (_openTimes is EqualUnmodifiableListView) return _openTimes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_openTimes);
+  }
+
   @override
   String toString() {
-    return 'MatchReservationState.timesScuccess(reservations: $reservations)';
+    return 'MatchReservationState.timesSuccess(reservations: $reservations, openTimes: $openTimes)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$timesScuccessImpl &&
+            other is _$timesSuccessImpl &&
             const DeepCollectionEquality()
-                .equals(other._reservations, _reservations));
+                .equals(other._reservations, _reservations) &&
+            const DeepCollectionEquality()
+                .equals(other._openTimes, _openTimes));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_reservations));
+      runtimeType,
+      const DeepCollectionEquality().hash(_reservations),
+      const DeepCollectionEquality().hash(_openTimes));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$timesScuccessImplCopyWith<_$timesScuccessImpl> get copyWith =>
-      __$$timesScuccessImplCopyWithImpl<_$timesScuccessImpl>(this, _$identity);
+  _$$timesSuccessImplCopyWith<_$timesSuccessImpl> get copyWith =>
+      __$$timesSuccessImplCopyWithImpl<_$timesSuccessImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1939,10 +2196,11 @@ class _$timesScuccessImpl implements timesScuccess {
     required TResult Function(Failure? failure) courtsFailure,
     required TResult Function(List<SportStadiumEntity> stadiums) courtsScuccess,
     required TResult Function(Failure? failure) timesFailure,
-    required TResult Function(List<ReservationEntity> reservations)
-        timesScuccess,
+    required TResult Function(
+            List<ReservationEntity> reservations, List<String> openTimes)
+        timesSuccess,
   }) {
-    return timesScuccess(reservations);
+    return timesSuccess(reservations, openTimes);
   }
 
   @override
@@ -1955,9 +2213,11 @@ class _$timesScuccessImpl implements timesScuccess {
     TResult? Function(Failure? failure)? courtsFailure,
     TResult? Function(List<SportStadiumEntity> stadiums)? courtsScuccess,
     TResult? Function(Failure? failure)? timesFailure,
-    TResult? Function(List<ReservationEntity> reservations)? timesScuccess,
+    TResult? Function(
+            List<ReservationEntity> reservations, List<String> openTimes)?
+        timesSuccess,
   }) {
-    return timesScuccess?.call(reservations);
+    return timesSuccess?.call(reservations, openTimes);
   }
 
   @override
@@ -1970,11 +2230,13 @@ class _$timesScuccessImpl implements timesScuccess {
     TResult Function(Failure? failure)? courtsFailure,
     TResult Function(List<SportStadiumEntity> stadiums)? courtsScuccess,
     TResult Function(Failure? failure)? timesFailure,
-    TResult Function(List<ReservationEntity> reservations)? timesScuccess,
+    TResult Function(
+            List<ReservationEntity> reservations, List<String> openTimes)?
+        timesSuccess,
     required TResult orElse(),
   }) {
-    if (timesScuccess != null) {
-      return timesScuccess(reservations);
+    if (timesSuccess != null) {
+      return timesSuccess(reservations, openTimes);
     }
     return orElse();
   }
@@ -1989,9 +2251,9 @@ class _$timesScuccessImpl implements timesScuccess {
     required TResult Function(courtsFailure value) courtsFailure,
     required TResult Function(courtsScuccess value) courtsScuccess,
     required TResult Function(timesFailure value) timesFailure,
-    required TResult Function(timesScuccess value) timesScuccess,
+    required TResult Function(timesSuccess value) timesSuccess,
   }) {
-    return timesScuccess(this);
+    return timesSuccess(this);
   }
 
   @override
@@ -2004,9 +2266,9 @@ class _$timesScuccessImpl implements timesScuccess {
     TResult? Function(courtsFailure value)? courtsFailure,
     TResult? Function(courtsScuccess value)? courtsScuccess,
     TResult? Function(timesFailure value)? timesFailure,
-    TResult? Function(timesScuccess value)? timesScuccess,
+    TResult? Function(timesSuccess value)? timesSuccess,
   }) {
-    return timesScuccess?.call(this);
+    return timesSuccess?.call(this);
   }
 
   @override
@@ -2019,22 +2281,24 @@ class _$timesScuccessImpl implements timesScuccess {
     TResult Function(courtsFailure value)? courtsFailure,
     TResult Function(courtsScuccess value)? courtsScuccess,
     TResult Function(timesFailure value)? timesFailure,
-    TResult Function(timesScuccess value)? timesScuccess,
+    TResult Function(timesSuccess value)? timesSuccess,
     required TResult orElse(),
   }) {
-    if (timesScuccess != null) {
-      return timesScuccess(this);
+    if (timesSuccess != null) {
+      return timesSuccess(this);
     }
     return orElse();
   }
 }
 
-abstract class timesScuccess implements MatchReservationState {
-  const factory timesScuccess({final List<ReservationEntity> reservations}) =
-      _$timesScuccessImpl;
+abstract class timesSuccess implements MatchReservationState {
+  const factory timesSuccess(
+      {final List<ReservationEntity> reservations,
+      final List<String> openTimes}) = _$timesSuccessImpl;
 
   List<ReservationEntity> get reservations;
+  List<String> get openTimes;
   @JsonKey(ignore: true)
-  _$$timesScuccessImplCopyWith<_$timesScuccessImpl> get copyWith =>
+  _$$timesSuccessImplCopyWith<_$timesSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

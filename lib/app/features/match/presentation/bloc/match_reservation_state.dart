@@ -1,7 +1,7 @@
 part of 'match_reservation_bloc.dart';
 
 @freezed
-class MatchReservationState with _$MatchReservationState {
+abstract class MatchReservationState with _$MatchReservationState {
   const factory MatchReservationState.initial() = _Initial;
 
   const factory MatchReservationState.loading() = loading;
@@ -26,7 +26,8 @@ class MatchReservationState with _$MatchReservationState {
   const factory MatchReservationState.timesFailure({
     @Default(null) Failure? failure,
   }) = timesFailure;
-  const factory MatchReservationState.timesScuccess({
+  const factory MatchReservationState.timesSuccess({
     @Default([]) List<ReservationEntity> reservations,
-  }) = timesScuccess;
+    @Default([]) List<String> openTimes,
+  }) = timesSuccess;
 }

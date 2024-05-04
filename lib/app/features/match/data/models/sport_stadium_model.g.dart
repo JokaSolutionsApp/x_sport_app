@@ -8,6 +8,10 @@ part of 'sport_stadium_model.dart';
 
 SportStadiumModel _$SportStadiumModelFromJson(Map<String, dynamic> json) =>
     SportStadiumModel(
+      stadiumWorkDays: (json['stadiumWorkDays'] as List<dynamic>)
+          .map((e) =>
+              const WorkDaysJsonConverter().fromJson(e as Map<String, dynamic>))
+          .toList(),
       stadiumId: json['stadiumId'] as int,
       regionName: json['regionName'] as String,
       coverPhoto: json['coverPhoto'] as String,
@@ -37,6 +41,9 @@ Map<String, dynamic> _$SportStadiumModelToJson(SportStadiumModel instance) =>
       'long': instance.longitude,
       'numOfReviews': instance.numberOfReviews,
       'evaluation': instance.evaluation,
+      'stadiumWorkDays': instance.stadiumWorkDays
+          .map(const WorkDaysJsonConverter().toJson)
+          .toList(),
       'coverPhoto': instance.coverPhoto,
       'coverVideo': instance.coverVideo,
       'photos': instance.photos,

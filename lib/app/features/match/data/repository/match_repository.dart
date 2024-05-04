@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
+import 'package:x_sport/app/features/match/domain/enitites/params/match_reservation_params.dart';
 
 import '../../../../../core/error/exceptions.dart';
 import '../../../../../core/error/failure.dart';
-import '../../../academy/domain/enitites/params/acedemy_params.dart';
 import '../../domain/enitites/reservation_entity.dart';
 import '../../domain/enitites/sport_entity.dart';
 import '../../domain/enitites/sport_stadium_entity.dart';
@@ -30,9 +30,11 @@ class MatchRepository extends BaseMatchRepository {
   }
 
   @override
-  Future<Either<Failure, bool>> reserve() async {
+  Future<Either<Failure, bool>> reserve(
+      {required ReservationParams params}) async {
     try {
-      final result = await baseMatchRemoteDataSource.createReservation();
+      final result =
+          await baseMatchRemoteDataSource.createReservation(params: params);
       return Right(result);
     } on ServerException catch (failuar) {
       return Left(

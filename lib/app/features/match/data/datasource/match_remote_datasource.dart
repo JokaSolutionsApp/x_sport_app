@@ -1,26 +1,27 @@
 import 'dart:async';
 import 'dart:convert';
 
-import '../../../academy/domain/enitites/params/acedemy_params.dart';
-import '../models/reservation_model.dart';
-import '../models/sport_model.dart';
-import '../models/sport_stadium_model.dart';
-import '../../domain/enitites/reservation_entity.dart';
-import '../../domain/enitites/sport_entity.dart';
-import '../../domain/enitites/sport_stadium_entity.dart';
+import 'package:x_sport/app/features/match/domain/enitites/params/match_reservation_params.dart';
+
 import '../../../../../core/constance/api_constance.dart';
 import '../../../../../core/error/exceptions.dart';
 import '../../../../../core/network/error_message_model.dart';
 import '../../../../../core/services/api_service.dart';
 import '../../../../../core/services/locator/service_locator.dart';
 import '../../../../../core/services/secure_storage_service.dart.dart';
+import '../../domain/enitites/reservation_entity.dart';
+import '../../domain/enitites/sport_entity.dart';
+import '../../domain/enitites/sport_stadium_entity.dart';
+import '../models/reservation_model.dart';
+import '../models/sport_model.dart';
+import '../models/sport_stadium_model.dart';
 
 abstract class BaseMatchRemoteDataSource {
   Future<List<SportEntity>> getSports();
   Future<List<ReservationEntity>> getReservedTimes();
   Future<List<SportStadiumEntity>> getsportStadiums(
       {required StadiumParams params});
-  Future<bool> createReservation();
+  Future<bool> createReservation({required ReservationParams params});
 }
 
 class MatchRemoteDataSource extends BaseMatchRemoteDataSource {
@@ -46,14 +47,11 @@ class MatchRemoteDataSource extends BaseMatchRemoteDataSource {
   }
 
   @override
-  Future<bool> createReservation() async {
-    final postData = {
-      "reservationDate": "2024-04-25",
-      "reservatonTimeFrom": "09:00:00",
-      "reservatonTimeTo": "11:00:00",
-      "stadiumFloorId": "1"
-    };
-    final response = await ApiService.post(ApiConstance.reserve, postData);
+  Future<bool> createReservation({required ReservationParams params}) async {
+    final response = await ApiService.post(
+      ApiConstance.reserve,
+      params.toMap(),
+    );
     if (response.statusCode == 200) {
       return true;
     } else {

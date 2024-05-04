@@ -1,8 +1,10 @@
 import 'package:equatable/equatable.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'floor_entity.dart';
+import 'package:x_sport/app/features/match/domain/enitites/work_days_entity.dart';
+
 import '../../../../../core/constance/json_keys.dart';
+import 'floor_entity.dart';
 
 @JsonSerializable()
 class SportStadiumEntity extends Equatable {
@@ -22,6 +24,8 @@ class SportStadiumEntity extends Equatable {
   final double numberOfReviews;
   @JsonKey(name: SportStadiumKeys.evaluation)
   final double evaluation;
+  @JsonKey(name: SportStadiumKeys.stadiumWorkDays)
+  final List<WorkDaysEntity> stadiumWorkDays;
   @JsonKey(name: SportStadiumKeys.coverPhoto)
   final String coverPhoto;
   @JsonKey(name: SportStadiumKeys.coverVideo)
@@ -32,6 +36,7 @@ class SportStadiumEntity extends Equatable {
   final List<String> videos;
 
   const SportStadiumEntity({
+    required this.stadiumWorkDays,
     required this.stadiumId,
     required this.regionName,
     required this.coverPhoto,
@@ -48,6 +53,7 @@ class SportStadiumEntity extends Equatable {
 
   @override
   List<Object?> get props => [
+        stadiumWorkDays,
         stadiumId,
         regionName,
         coverPhoto,

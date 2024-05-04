@@ -1,13 +1,20 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:x_sport/app/features/match/data/models/converter/work_days_converter.dart';
 
 import '../../domain/enitites/sport_stadium_entity.dart';
 import 'converter/floor_converter.dart';
 
 part 'sport_stadium_model.g.dart';
 
-@JsonSerializable(converters: [FloorJsonConverter()])
+@JsonSerializable(
+  converters: [
+    FloorJsonConverter(),
+    WorkDaysJsonConverter(),
+  ],
+)
 class SportStadiumModel extends SportStadiumEntity {
   const SportStadiumModel({
+    required super.stadiumWorkDays,
     required super.stadiumId,
     required super.regionName,
     required super.coverPhoto,

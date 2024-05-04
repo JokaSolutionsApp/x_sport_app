@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
-import '../../../academy/domain/enitites/params/acedemy_params.dart';
-import '../enitites/sport_stadium_entity.dart';
+import 'package:x_sport/app/features/match/domain/enitites/params/match_reservation_params.dart';
 
 import '../../../../../core/error/failure.dart';
+import '../enitites/sport_stadium_entity.dart';
 import '../repository/base_match_repository.dart';
 
 class GetsportStadiumUseCase {

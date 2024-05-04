@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/constance/app_constance.dart';
-import '../../../../../main.dart';
 import '../../../../widgets/buttons/submit_button.dart';
 import '../../../../widgets/rectangle_container.dart';
-import '../../../paymnet/presentation/pages/payment_page.dart';
 import '../../domain/enitites/sport_stadium_entity.dart';
 import '../bloc/match_reservation_bloc.dart';
 import '../components/match_reservation_components/reservation_stadiums_component.dart';
@@ -48,21 +47,33 @@ class _MatchReservationPageState extends State<MatchReservationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          automaticallyImplyLeading: false,
-          // toolbarHeight: 0.04.sh,
-          centerTitle: true,
-          title: Text(
-            'ابحث عن خصم جديد',
-            style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.w500),
-          ),
-          actions: [
-            IconButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                icon: const Icon(Icons.arrow_forward_ios))
-          ]),
+        automaticallyImplyLeading: false,
+        // toolbarHeight: 0.04.sh,
+        centerTitle: true,
+        title: Text(
+          'ابحث عن خصم جديد',
+          style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.w500),
+        ),
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              icon: const Icon(Icons.arrow_forward_ios))
+        ],
+      ),
       body: BlocBuilder<MatchReservationBloc, MatchReservationState>(
+        buildWhen: (previous, current) {
+          print('current.runtimeType${current.runtimeType}');
+          current.runtimeType ==
+              const MatchReservationState.timesSuccess().runtimeType;
+          return true;
+        },
+        // (previous is timesSuccess &&
+        //     current is timesSuccess &&
+        //     previous.openTimes != current.openTimes) ||
+        // previous != current,
+
         builder: (context, state) {
           return state.maybeWhen(
             orElse: () => const Offstage(),
@@ -76,7 +87,7 @@ class _MatchReservationPageState extends State<MatchReservationPage> {
             courtsFailure: (result) => const Offstage(),
             sportsScuccess: (result) => const Offstage(),
             courtsScuccess: (result) => const Offstage(),
-            timesScuccess: (result) {
+            timesSuccess: (reservations, openTimes) {
               return SingleChildScrollView(
                 child: Center(
                   child: Column(
@@ -176,40 +187,10 @@ class _MatchReservationPageState extends State<MatchReservationPage> {
                             width: 0.94.sw,
                             child: Column(
                               children: [
-                                RectangleContainer(
-                                  bottomMargin: 10,
-                                  radius: 14,
-                                  child: Padding(
-                                    padding: EdgeInsets.only(
-                                        right: 12.sp,
-                                        left: 12.w,
-                                        top: 8.w,
-                                        bottom: 28.w),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.end,
-                                      children: [
-                                        Text(
-                                          ':حدد تاريخ وزمن المباراة',
-                                          style: TextStyle(
-                                              fontSize: 18.sp,
-                                              fontWeight: FontWeight.w500),
-                                        ),
-                                        Text(
-                                          'يمكنك تنظيم مباراة خلال مدة اقصاها 7 ايام',
-                                          style: TextStyle(
-                                              color: const Color(0xFF909090),
-                                              fontSize: 12.sp,
-                                              fontWeight: FontWeight.w500),
-                                        ),
-                                        ReservationDatesComponent(
-                                          times: result,
-                                        )
-                                      ],
-                                    ),
-                                  ),
+                                ReservationDatesComponent(
+                                  times: reservations,
                                 ),
-                                ReservationTimesComponent(),
+                                const ReservationTimesComponent(),
                               ],
                             ),
                           ),
@@ -220,13 +201,30 @@ class _MatchReservationPageState extends State<MatchReservationPage> {
                         height: 28.w,
                         minWidth: 170.w,
                         fillColor: XColors.primary,
-                        text: 'التالي',
+                        text: 'احجز',
                         onPressed: () {
-                          Navigator.of(navigatorKey.currentContext!).push(
-                            MaterialPageRoute(
-                              builder: (context) => const PaymentPage(),
-                            ),
-                          );
+                          if (context
+                                  .read<MatchReservationBloc>()
+                                  .reservatonTimeFrom ==
+                              null) {
+                            EasyLoading.showError('please select valid dates');
+                          } else {
+                            BlocProvider.of<MatchReservationBloc>(context).add(
+                              const MatchReservationEvent.reserve(),
+                            );
+                          }
+                          // print(context
+                          //     .read<MatchReservationBloc>()
+                          //     .stadiumFloorId);
+                          // print(context
+                          //     .read<MatchReservationBloc>()
+                          //     .reservationDate);
+                          // print(context
+                          //     .read<MatchReservationBloc>()
+                          //     .reservatonTimeFrom);
+                          // print(context
+                          //     .read<MatchReservationBloc>()
+                          //     .reservatonTimeTo);
                         },
                       ),
                     ],

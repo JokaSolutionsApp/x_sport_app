@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/match/domain/enitites/params/match_reservation_params.dart';
 
 import '../../../../../../core/constance/app_constance.dart';
 import '../../../../../../core/utils/assets_managers/assets.gen.dart';
-import '../../../../academy/domain/enitites/params/acedemy_params.dart';
 import '../../../domain/enitites/sport_stadium_entity.dart';
 import '../../bloc/match_reservation_bloc.dart';
 
@@ -46,8 +46,17 @@ class _ReservationStadiumsComponentState
                   context.read<MatchReservationBloc>().times = null;
                 });
                 BlocProvider.of<MatchReservationBloc>(context).add(
+                  MatchReservationEvent.changeTimes(
+                    dayOrder: 0,
+                    stadiumId: widget.stadiums![index].stadiumId,
+                  ),
+                );
+                BlocProvider.of<MatchReservationBloc>(context).add(
                   MatchReservationEvent.getTimes(
-                    params: ReserviedTimesParams(stadiumFloorId: index),
+                    params: ReserviedTimesParams(
+                      stadiumFloorId: index,
+                      stadiumId: widget.stadiums![index].stadiumId,
+                    ),
                   ),
                 );
               },

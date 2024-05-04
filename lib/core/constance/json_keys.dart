@@ -13,6 +13,7 @@ class SportStadiumKeys {
   static const longitude = 'long';
   static const numberOfReviews = 'numOfReviews';
   static const evaluation = 'evaluation';
+  static const stadiumWorkDays = 'stadiumWorkDays';
   static const coverPhoto = 'coverPhoto';
   static const coverVideo = 'coverVideo';
   static const photos = 'photos';
@@ -25,6 +26,13 @@ class FloorKeys {
   static const sportName = 'sportName';
   static const floorName = 'floorName';
   static const numPlayers = 'numPlayers';
+}
+
+class WorkDaysKeys {
+  static const dayOrder = 'dayOrder';
+  static const dayName = 'dayName';
+  static const openAt = 'openAt';
+  static const closeAt = 'closeAt';
 }
 
 class ReservationCreationKeys {
