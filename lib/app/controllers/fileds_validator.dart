@@ -15,7 +15,8 @@ class Validators {
 
   final emailvalidator =
       StreamTransformer<String, String>.fromHandlers(handleData: (email, sink) {
-    String epattern = r'^(?:[0-9]{7,17}|[a-zA-Z0-9._%+-]+@gmail\.com)$';
+    const String epattern =
+        r"^[a-zA-Z0-9.!#$%&\'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.[a-zA-Z]{2,}$";
 
     RegExp eregex = RegExp(epattern);
     if (eregex.hasMatch(email))
@@ -28,7 +29,8 @@ class Validators {
 
   final emailPhoneValidator =
       StreamTransformer<String, String>.fromHandlers(handleData: (email, sink) {
-    String epattern = r'^(?:[0-9]{7,17}|[a-zA-Z0-9._%+-]+@gmail\.com)$';
+    const String epattern =
+        r"^[a-zA-Z0-9.!#$%&\'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.[a-zA-Z]{2,}$";
 
     RegExp eregex = RegExp(epattern);
 

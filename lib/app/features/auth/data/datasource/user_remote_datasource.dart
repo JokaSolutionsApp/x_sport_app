@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_typing_uninitialized_variables, unnecessary_brace_in_string_interps, null_argument_to_non_null_type
-
 import 'dart:async';
 import 'dart:convert';
 
@@ -217,7 +215,7 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
       final firebaseAuth =
           await FirebaseAuth.instance.signInWithCredential(credential);
       final idToken = await firebaseAuth.user!.getIdToken();
-      print("firebaseAuth ${idToken}");
+      print("firebaseAuth $idToken");
 
       Map<String, dynamic> postData = {
         'name': account.displayName,
@@ -244,7 +242,7 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
         throw ServerException(errorModel: ErrorModel.fromJson(data));
       }
     } else {
-      throw ServerException(errorModel: ErrorModel.fromJson({}));
+      throw ServerException(errorModel: ErrorModel.fromJson(const {}));
     }
   }
 

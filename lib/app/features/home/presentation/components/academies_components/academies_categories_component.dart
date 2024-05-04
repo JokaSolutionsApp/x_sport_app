@@ -7,6 +7,7 @@ import 'package:x_sport/app/features/auth/domain/enitites/favorite_sport_entity.
 import 'package:x_sport/app/features/auth/domain/enitites/sport_entity.dart';
 import 'package:x_sport/app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:x_sport/app/features/home/presentation/components/academies_components/suggested_academies_component.dart';
+
 import '../../../../../../core/constance/app_constance.dart';
 import '../../../../../../core/utils/assets_managers/assets.gen.dart';
 import '../../../../../widgets/rectangle_container.dart';
@@ -44,7 +45,7 @@ class _AcademeiesCategoriesComponentState
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
-          height: 80.h,
+          height: 90.h,
           child: ListView.builder(
             shrinkWrap: true,
             scrollDirection: Axis.horizontal,
