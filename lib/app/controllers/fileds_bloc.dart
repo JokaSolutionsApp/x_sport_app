@@ -127,8 +127,8 @@ class Bloc extends Validators {
     }
 
     locationData = await location.getLocation();
-    _latitude.add(locationData.latitude!);
-    _longitude.add(locationData.longitude!);
+    _latitude.add(locationData.latitude ?? 0.0);
+    _longitude.add(locationData.longitude ?? 0.0);
   }
 }
 
