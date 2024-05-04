@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/academy/presentation/components/register_success_dialog.dart';
+import '../../../academy/presentation/components/register_success_dialog.dart';
 
 import '../../../../../core/constance/app_icons_icons.dart';
 import '../../../../../core/utils/assets_managers/assets.gen.dart';

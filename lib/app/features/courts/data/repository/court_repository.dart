@@ -1,11 +1,11 @@
 import 'package:dartz/dartz.dart';
-import 'package:x_sport/app/features/courts/data/datasource/stadium_remote_datasource.dart';
-import 'package:x_sport/app/features/courts/domain/enitites/about_stadium_entity.dart';
-import 'package:x_sport/app/features/courts/domain/enitites/params/stadium_params.dart';
-import 'package:x_sport/app/features/courts/domain/enitites/stadiums_entity.dart';
-import 'package:x_sport/app/features/courts/domain/repository/base_stadium_repository.dart';
-import 'package:x_sport/core/error/exceptions.dart';
-import 'package:x_sport/core/error/failure.dart';
+import '../datasource/stadium_remote_datasource.dart';
+import '../../domain/enitites/about_stadium_entity.dart';
+import '../../domain/enitites/params/stadium_params.dart';
+import '../../domain/enitites/stadiums_entity.dart';
+import '../../domain/repository/base_stadium_repository.dart';
+import '../../../../../core/error/exceptions.dart';
+import '../../../../../core/error/failure.dart';
 
 class StadiumRepository extends BaseStadiumRepository {
   final BaseStadiumRemoteDataSource baseStadiumRemoteDataSource;

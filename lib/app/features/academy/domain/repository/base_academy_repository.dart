@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/academy_entity.dart';
+import '../enitites/academy_entity.dart';
 import '../enitites/about_academy_entity.dart';
 import '../enitites/academy_membership_entity.dart';
 import '../enitites/academy_review_entity.dart';

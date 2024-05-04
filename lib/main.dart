@@ -4,12 +4,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:x_sport/app/features/archives/presentation/bloc/archive_bloc.dart';
-import 'package:x_sport/app/features/courts/domain/enitites/params/stadium_params.dart';
-import 'package:x_sport/app/features/courts/presentation/bloc/stadium_bloc.dart';
-import 'package:x_sport/route_page.dart';
+import 'package:x_sport/app/features/home/presentation/pages/main_page.dart';
 
 import 'app/features/academy/presentation/bloc/academy_bloc.dart';
 import 'app/features/auth/presentation/bloc/auth_bloc.dart';
+import 'app/features/courts/domain/enitites/params/stadium_params.dart';
+import 'app/features/courts/presentation/bloc/stadium_bloc.dart';
+import 'app/features/match/presentation/bloc/match_reservation_bloc.dart';
 import 'core/constance/app_constance.dart';
 import 'core/constance/app_functions.dart';
 import 'core/services/locator/service_locator.dart';
@@ -55,6 +56,7 @@ class MyApp extends StatelessWidget {
             BlocProvider(create: (context) => sl<AcademyBloc>()),
             BlocProvider(create: (context) => sl<ChatBloc>()),
             BlocProvider(create: (context) => sl<ArchiveBloc>()),
+            BlocProvider(create: (context) => sl<MatchReservationBloc>()),
             BlocProvider(
               create: (context) => sl<StadiumBloc>()
                 ..add(
@@ -85,7 +87,7 @@ class MyApp extends StatelessWidget {
               ),
               useMaterial3: true,
             ),
-            home: const RoutePage(),
+            home: const MainPage(),
           ),
         );
       },

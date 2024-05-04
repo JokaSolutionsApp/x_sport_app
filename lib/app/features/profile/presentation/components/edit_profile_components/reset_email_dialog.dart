@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/controllers/fileds_bloc.dart';
-import 'package:x_sport/app/features/profile/presentation/components/edit_profile_components/status_dialog.dart';
-import 'package:x_sport/app/widgets/text_fields/no_border_textfield_widget.dart';
-import 'package:x_sport/core/constance/app_constance.dart';
-import 'package:x_sport/main.dart';
+import '../../../../../controllers/fileds_bloc.dart';
+import 'status_dialog.dart';
+import '../../../../../widgets/text_fields/no_border_textfield_widget.dart';
+import '../../../../../../core/constance/app_constance.dart';
+import '../../../../../../main.dart';
 
 class ResetEmailDialog extends StatefulWidget {
   const ResetEmailDialog({

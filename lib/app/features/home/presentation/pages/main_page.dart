@@ -3,7 +3,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/auth/presentation/bloc/auth_bloc.dart';
+import '../../../auth/presentation/bloc/auth_bloc.dart';
+import '../../../match/presentation/bloc/match_reservation_bloc.dart';
 
 import '../../../../../core/constance/app_constance.dart';
 import '../../../../../core/constance/app_icons_icons.dart';
@@ -65,7 +66,7 @@ class _MainScreenState extends State<MainPage>
               ? OptionsButtonComponent(
                   handleAddButton: (int index) {
                     optionsHandler.value = index;
-                    if (index == 3) {
+                    if (index == 2) {
                       Navigator.of(navigatorKey.currentContext!).push(
                         MaterialPageRoute(
                             builder: (context) => const MatchReservationPage()),
@@ -82,7 +83,7 @@ class _MainScreenState extends State<MainPage>
             builder: (context, value, child) {
               return optionsHandler.value == 1
                   ? Container(
-                      height: 0.52.sh,
+                      height: 0.60.sh,
                       padding:
                           const EdgeInsets.only(left: 10, top: 18, right: 10),
                       decoration: BoxDecoration(
@@ -174,8 +175,9 @@ class _MainScreenState extends State<MainPage>
                               onPressed: () {
                                 Navigator.of(navigatorKey.currentContext!).push(
                                   MaterialPageRoute(
-                                      builder: (context) =>
-                                          const MatchReservationPage()),
+                                    builder: (context) =>
+                                        const MatchReservationPage(),
+                                  ),
                                 );
                               }),
                         ],

@@ -1,8 +1,4 @@
-import 'dart:io';
-
-import 'package:crypto/crypto.dart';
 import 'package:dio/dio.dart';
-import 'package:dio/io.dart';
 import 'package:get_it/get_it.dart';
 import 'package:x_sport/app/features/academy/domain/usecase/add_academy_review.dart';
 import 'package:x_sport/app/features/academy/domain/usecase/get_all_Academies.dart';
@@ -53,6 +49,14 @@ import '../../../app/features/auth/domain/usecase/user_usecase/register_usecase.
 import '../../../app/features/auth/domain/usecase/user_usecase/resend_confirm_user_email_usecase.dart';
 import '../../../app/features/auth/domain/usecase/user_usecase/select_current_sport_usecase.dart';
 import '../../../app/features/auth/presentation/bloc/auth_bloc.dart';
+import '../../../app/features/match/data/datasource/match_remote_datasource.dart';
+import '../../../app/features/match/data/repository/match_repository.dart';
+import '../../../app/features/match/domain/repository/base_match_repository.dart';
+import '../../../app/features/match/domain/usecase/get_reserved_times_usecase.dart';
+import '../../../app/features/match/domain/usecase/get_sport_stadium_usecase.dart';
+import '../../../app/features/match/domain/usecase/get_sports_usecase.dart';
+import '../../../app/features/match/domain/usecase/reserve_usecase.dart';
+import '../../../app/features/match/presentation/bloc/match_reservation_bloc.dart';
 import '../../../presentation/controllers/chat_bloc/chat_bloc.dart';
 import '../../constance/api_constance.dart';
 import '../preload_images_service.dart';
@@ -130,43 +134,13 @@ class ServiceLocator {
       return dio;
     });
 
-    sl.registerFactory(() => AuthBloc(
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-        ));
+    sl.registerFactory(() => AuthBloc(sl(), sl(), sl(), sl(), sl(), sl(), sl(),
+        sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl()));
     sl.registerFactory(() => ChatBloc());
-    sl.registerFactory(() => AcademyBloc(
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-        ));
-
-    sl.registerFactory(() => StadiumBloc(
-          sl(),
-          sl(),
-          sl(),
-        ));
+    sl.registerFactory(() =>
+        AcademyBloc(sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl()));
+    sl.registerFactory(() => StadiumBloc(sl(), sl(), sl()));
+    sl.registerFactory(() => MatchReservationBloc(sl(), sl(), sl(), sl()));
     sl.registerFactory(() => ArchiveBloc(
           sl(),
         ));
@@ -212,6 +186,13 @@ class ServiceLocator {
     // archive bloc usecases
     sl.registerLazySingleton(() => GetAcademySupscriptionArchiveUseCase(sl()));
 
+    // Match reservation usecases
+    sl.registerLazySingleton(() => ReserveUseCase(sl()));
+    sl.registerLazySingleton(() => GetReservedTimesUseCase(sl()));
+    sl.registerLazySingleton(() => GetsportStadiumUseCase(sl()));
+    sl.registerLazySingleton(() => GetStadiumSportsUseCase(sl()));
+
+    // Base repos
     sl.registerLazySingleton<BaseUserRepository>(() => UserRepository(sl()));
     sl.registerLazySingleton<BaseAcademyRepository>(
         () => AcademyRepository(sl()));
@@ -219,7 +200,9 @@ class ServiceLocator {
         () => StadiumRepository(sl()));
     sl.registerLazySingleton<BaseArchiveRepository>(
         () => ArchiveRepository(sl()));
+    sl.registerLazySingleton<BaseMatchRepository>(() => MatchRepository(sl()));
 
+    // Remote repos
     sl.registerLazySingleton<BaseUserRemoteDataSource>(
         () => UserRemoteDataSource());
     sl.registerLazySingleton<BaseAcademyRemoteDataSource>(
@@ -229,5 +212,7 @@ class ServiceLocator {
 
     sl.registerLazySingleton<BaseArchiveRemoteDataSource>(
         () => ArchiveRemoteDataSource());
+    sl.registerLazySingleton<BaseMatchRemoteDataSource>(
+        () => MatchRemoteDataSource());
   }
 }

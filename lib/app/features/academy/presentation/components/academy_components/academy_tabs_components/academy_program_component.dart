@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/params/acedemy_params.dart';
 
+import '../../../../domain/enitites/params/acedemy_params.dart';
 import '../../../bloc/academy_bloc.dart';
 import '../program_tab_components/program_dates_component.dart';
 import '../program_tab_components/training_schedule_component.dart';
@@ -36,9 +36,10 @@ class _AcademyProgramtComponentState extends State<AcademyProgramtComponent> {
       },
       builder: (context, state) {
         return state.maybeWhen(
-            orElse: () => Offstage(),
-            getCoursesToSubscribeLoading: () => CircularProgressIndicator(),
-            getCoursesToSubscribeFailure: (failure) => Offstage(),
+            orElse: () => const Offstage(),
+            getCoursesToSubscribeLoading: () =>
+                const CircularProgressIndicator(),
+            getCoursesToSubscribeFailure: (failure) => const Offstage(),
             academyCoursesFetched: (courses) {
               return Column(
                 children: [

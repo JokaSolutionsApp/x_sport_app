@@ -20,8 +20,10 @@ class Bloc extends Validators {
   final _latitude = BehaviorSubject<double>();
   final _longitude = BehaviorSubject<double>();
   final _emailPhone = BehaviorSubject<String>();
+  final _place = BehaviorSubject<String>();
 
   Stream<String> get name => _name.stream.transform(namevalidator);
+  Stream<String> get place => _place.stream.transform(namevalidator);
   Stream<String> get gender => _name.stream.transform(namevalidator);
 
   Stream<String> get email => _email.stream.transform(emailvalidator);
@@ -60,11 +62,23 @@ class Bloc extends Validators {
       privacy,
       (n, e, p, cp, g, ph, pr) => true);
 
+  Stream<bool> get inrollInCourse => Rx.combineLatest3(
+      name,
+      place,
+      phone,
+      (
+        n,
+        l,
+        p,
+      ) =>
+          true);
+
   Stream<bool> get editPasswordIsValid => Rx.combineLatest3(
       password, newPassword, confNewPassword, (p, np, cnp) => true);
 
   Function(String) get changeName => _name.sink.add;
   Function(String) get changeGender => _gender.sink.add;
+  Function(String) get changePlace => _place.sink.add;
 
   Function(String) get changeEmail => _email.sink.add;
   Function(String) get changePassword => _password.sink.add;
@@ -78,6 +92,7 @@ class Bloc extends Validators {
   Function(String) get changeEmailPhone => _emailPhone.sink.add;
 
   get nameValue => _name.valueOrNull;
+  get placeValue => _place.valueOrNull;
   get genderValue => _gender.valueOrNull;
   get emailValue => _email.valueOrNull;
   get passwordValue => _password.valueOrNull;
@@ -94,6 +109,7 @@ class Bloc extends Validators {
 
   static void disp(Bloc bloc) {
     bloc._name.value = "";
+    bloc._place.value = "";
     bloc._gender.value = "";
     bloc._email.value = "";
     bloc._password.value = "";
@@ -137,3 +153,4 @@ final signInStream = Bloc();
 final editProfileStream = Bloc();
 final rankSearchStream = Bloc();
 final academiesSearchStream = Bloc();
+final courceInroll = Bloc();

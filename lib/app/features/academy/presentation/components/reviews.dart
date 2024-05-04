@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/academy_review_entity.dart';
-import 'package:x_sport/app/features/academy/presentation/components/divider_widget.dart';
-import 'package:x_sport/app/features/academy/presentation/components/review_container.dart';
+import '../../domain/enitites/academy_review_entity.dart';
+import 'divider_widget.dart';
+import 'review_container.dart';
 
 class Reviews extends StatelessWidget {
   final List<AcademyReviewEntity> reviews;

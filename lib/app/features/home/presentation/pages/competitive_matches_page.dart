@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:x_sport/app/features/home/presentation/components/competitive_matches_grid_card.dart';
-import 'package:x_sport/app/features/home/presentation/components/filter_widget.dart';
-import 'package:x_sport/core/constance/app_constance.dart';
-import 'package:x_sport/main.dart';
+import '../components/competitive_matches_grid_card.dart';
+import '../components/filter_widget.dart';
+import '../../../../../core/constance/app_constance.dart';
+import '../../../../../main.dart';
 
 class CompetitveMatchesPage extends StatelessWidget {
   const CompetitveMatchesPage({super.key});

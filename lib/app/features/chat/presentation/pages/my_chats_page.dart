@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/utils/assets_managers/assets.gen.dart';
-import '../../../home/presentation/components/search_components/user_search_bloc.dart';
-import 'chat_page.dart';
 import '../../../../widgets/rectangle_container.dart';
 import '../../../../widgets/text_fields/search.dart';
+import '../../../home/presentation/components/search_components/user_search_bloc.dart';
+import 'chat_page.dart';
 
 class MyChatsPage extends StatefulWidget {
   const MyChatsPage({super.key});

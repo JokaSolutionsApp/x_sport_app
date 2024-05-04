@@ -8,17 +8,16 @@ import 'package:x_sport/core/services/secure_storage_service.dart.dart';
 import 'package:x_sport/main.dart';
 import 'package:x_sport/route_page.dart';
 
+import '../../../../../../../core/constance/app_constance.dart';
+import '../../../../../../../core/constance/app_icons_icons.dart';
+import '../../../../../../widgets/buttons/icon_text_button.dart';
 import '../../../../../archives/presentation/pages/all_archive_page.dart';
 import '../../../../../auth/domain/enitites/favorite_sport_entity.dart';
 import '../../../../../auth/domain/enitites/user_entity.dart';
 import '../../../../../logs/presentation/pages/all_logs_page.dart';
 import '../../../../../paymnet/presentation/pages/payment_info_page.dart';
 import '../../../../../settings/presentation/pages/all_settings_privacy_page.dart';
-
-import '../../../../../../../core/constance/app_constance.dart';
-import '../../../../../../../core/constance/app_icons_icons.dart';
 import '../../../pages/edit_profile_page.dart';
-import '../../../../../../widgets/buttons/icon_text_button.dart';
 
 class ProfileDrawerComponent extends StatelessWidget {
   final UserEntity user;

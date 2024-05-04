@@ -141,7 +141,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 StreamBuilder(
                   stream: registerStream.registerIsValid,
                   builder: (context, snapshot) {
-                    final isButtonEnabled = snapshot.data ?? false;
+                    final isButtonEnabled = snapshot.data ?? true;
                     return SubmitButton(
                       isButtonEnabled: true,
                       fillColor:

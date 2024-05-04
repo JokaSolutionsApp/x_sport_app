@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:x_sport/app/features/academy/presentation/bloc/academy_bloc.dart';
-import 'package:x_sport/app/features/academy/presentation/components/new_review_tile.dart';
-import 'package:x_sport/app/features/academy/presentation/components/rate_card.dart';
-import 'package:x_sport/app/features/academy/presentation/components/review_sort_button.dart';
-import 'package:x_sport/app/features/academy/presentation/components/reviews.dart';
+import '../bloc/academy_bloc.dart';
+import 'new_review_tile.dart';
+import 'rate_card.dart';
+import 'review_sort_button.dart';
+import 'reviews.dart';
 
 class ReviewsTab extends StatefulWidget {
   final int academyId;

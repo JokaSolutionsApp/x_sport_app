@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:x_sport/app/widgets/rectangle_container.dart';
-import 'package:x_sport/core/constance/app_constance.dart';
+import '../../../../auth/presentation/bloc/auth_bloc.dart';
+import '../../../../../widgets/rectangle_container.dart';
+import '../../../../../../core/constance/app_constance.dart';
 
 class HomeBannerComponent extends StatelessWidget {
   const HomeBannerComponent({super.key});

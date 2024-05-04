@@ -1,7 +1,8 @@
 class ApiConstance {
-  // static const baseUrl =
-  //     'https://xsportapi-dev.us-east-1.elasticbeanstalk.com/api/';
+  // // static const baseUrl =
+  // //     'https://xsportapi-dev.us-east-1.elasticbeanstalk.com/api/';
   static const baseUrl = 'https://api.xsportsapp.net/api/';
+
 // User Auth
   static const loginApi = 'User/Login';
   static const googleLoginApi = 'User/GoogleLogin';
@@ -39,5 +40,12 @@ class ApiConstance {
   static const getAboutStadium = 'Stadium/GetAboutStadium';
 
 // Archive
-  static const getAcademiesSubscriptionArchive = 'Archive/AcademiesSubscriptionArchive';
+  static const getAcademiesSubscriptionArchive =
+      'Archive/AcademiesSubscriptionArchive';
+
+// Reservation
+  static const getSportStadiums = 'Reservation/GetSportStadiums';
+  static const getReservedTimes =
+      'Reservation/GetReservedTimes?stadiumFloorId=1';
+  static const reserve = 'Reservation/Reserve';
 }

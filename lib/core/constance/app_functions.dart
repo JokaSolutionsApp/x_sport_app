@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:x_sport/app/features/profile/presentation/components/edit_profile_components/status_dialog.dart';
 
+import '../../app/features/profile/presentation/components/edit_profile_components/status_dialog.dart';
 import 'app_constance.dart';
 
 class EasyLoadingInit {

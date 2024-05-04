@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:x_sport/app/features/academy/presentation/components/divider_widget.dart';
-import 'package:x_sport/core/constance/app_constance.dart';
-import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
+import 'divider_widget.dart';
+import '../../../../../core/constance/app_constance.dart';
+import '../../../../../core/utils/assets_managers/assets.gen.dart';
 
 class NewReviewTile extends StatelessWidget {
   const NewReviewTile({

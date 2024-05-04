@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/get_courses_to_subscribe_entity.dart';
-import 'package:x_sport/app/features/academy/presentation/pages/academy_register_page.dart';
-import 'package:x_sport/main.dart';
+
 import '../../../../../core/constance/app_constance.dart';
+import '../../../../../main.dart';
+import '../../domain/enitites/get_courses_to_subscribe_entity.dart';
+import '../pages/academy_register_page.dart';
 
 class CourseCard extends StatelessWidget {
   final GetCoursesToSubscribeEntity course;
@@ -54,7 +55,7 @@ class CourseCard extends StatelessWidget {
                         ),
                         child: Text(
                           course.courseName,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.w500,
                             color: XColors.white,
@@ -70,7 +71,7 @@ class CourseCard extends StatelessWidget {
                     width: 0.6.sw,
                     child: Text(
                       course.description,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 10,
                         fontWeight: FontWeight.w500,
                         color: XColors.white,
@@ -90,7 +91,7 @@ class CourseCard extends StatelessWidget {
                         padding: EdgeInsets.only(right: 4.w),
                         child: Text(
                           'من ${course.startDate}',
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 10,
                             fontWeight: FontWeight.w400,
                             color: XColors.white,
@@ -101,7 +102,7 @@ class CourseCard extends StatelessWidget {
                         padding: EdgeInsets.only(right: 10.w),
                         child: Text(
                           'حتى ${course.endDate}',
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 10,
                             fontWeight: FontWeight.w400,
                             color: XColors.white,
@@ -157,7 +158,7 @@ class CourseCard extends StatelessWidget {
                   ),
                   Text(
                     '${course.price}\$',
-                    style: TextStyle(
+                    style: const TextStyle(
                       height: 0.8,
                       fontSize: 25,
                       fontWeight: FontWeight.w500,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/profile/presentation/components/edit_profile_components/reset_email_dialog.dart';
-import 'package:x_sport/app/features/profile/presentation/components/edit_profile_components/reset_password_dialog.dart';
+import '../components/edit_profile_components/reset_email_dialog.dart';
+import '../components/edit_profile_components/reset_password_dialog.dart';
 
 import '../../../../../core/constance/app_constance.dart';
 import '../../../../../core/constance/local_data.dart';

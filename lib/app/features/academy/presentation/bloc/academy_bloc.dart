@@ -1,26 +1,27 @@
 import 'package:bloc/bloc.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/academy_entity.dart';
-import 'package:x_sport/app/features/academy/domain/usecase/add_academy_review.dart';
-import 'package:x_sport/app/features/academy/domain/usecase/get_all_Academies.dart';
-import 'package:x_sport/app/features/academy/domain/usecase/inroll_user_in_course.dart';
+import '../../domain/enitites/academy_entity.dart';
+import '../../domain/usecase/add_academy_review.dart';
+import '../../domain/usecase/get_all_Academies.dart';
+import '../../domain/usecase/inroll_user_in_course.dart';
+
+import '../../../../../core/error/failure.dart';
 import '../../domain/enitites/about_academy_entity.dart';
 import '../../domain/enitites/academy_membership_entity.dart';
 import '../../domain/enitites/academy_review_entity.dart';
 import '../../domain/enitites/get_courses_to_subscribe_entity.dart';
 import '../../domain/enitites/params/acedemy_params.dart';
-import '../../domain/enitites/suggested_academy_entity.dart';
 import '../../domain/usecase/get_about_academy_usecase.dart';
 import '../../domain/usecase/get_academy_courses_in_date_usecase.dart';
 import '../../domain/usecase/get_academy_courses_usecase.dart';
 import '../../domain/usecase/get_academy_review_usecase.dart';
 import '../../domain/usecase/get_sports_membership_usecase.dart';
 import '../../domain/usecase/get_suggested_academies_usecase.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-import '../../../../../core/error/failure.dart';
+
+part 'academy_bloc.freezed.dart';
 part 'academy_event.dart';
 part 'academy_state.dart';
-part 'academy_bloc.freezed.dart';
 
 @singleton
 class AcademyBloc extends Bloc<AcademyEvent, AcademyState> {

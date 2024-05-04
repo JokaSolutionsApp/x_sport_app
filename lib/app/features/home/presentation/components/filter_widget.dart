@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:x_sport/core/constance/app_constance.dart';
+import '../../../../../core/constance/app_constance.dart';
 
 class FilterWidget extends StatelessWidget {
   const FilterWidget({

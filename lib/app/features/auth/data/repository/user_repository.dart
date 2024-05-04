@@ -1,9 +1,8 @@
 import 'package:dartz/dartz.dart';
-import '../../domain/params/google_login_params.dart';
-import '../../../../../core/utils/enums.dart';
 
 import '../../../../../core/error/exceptions.dart';
 import '../../../../../core/error/failure.dart';
+import '../../../../../core/utils/enums.dart';
 import '../../domain/enitites/sport_entity.dart';
 import '../../domain/enitites/user_profile_entity.dart';
 import '../../domain/params/edit_preferences_params.dart';

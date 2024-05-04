@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:x_sport/app/features/academy/domain/enitites/get_courses_to_subscribe_entity.dart';
+
+import '../../../../../main.dart';
+import '../../domain/enitites/get_courses_to_subscribe_entity.dart';
 import 'package:x_sport/app/features/academy/presentation/bloc/academy_bloc.dart';
-import 'package:x_sport/app/features/academy/presentation/components/course_card.dart';
-import 'package:x_sport/main.dart';
+import '../components/course_card.dart';
 
 class CoursesPage extends StatelessWidget {
   const CoursesPage({

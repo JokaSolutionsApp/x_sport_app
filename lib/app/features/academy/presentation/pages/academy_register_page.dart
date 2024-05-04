@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/controllers/fileds_bloc.dart';
 import 'package:x_sport/app/features/academy/domain/enitites/params/acedemy_params.dart';
 import 'package:x_sport/app/features/academy/presentation/bloc/academy_bloc.dart';
 import 'package:x_sport/app/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:x_sport/app/features/paymnet/presentation/pages/payment_method_page.dart';
-import 'package:x_sport/main.dart';
+import '../../../paymnet/presentation/pages/payment_method_page.dart';
+import '../../../../../main.dart';
 
 import '../../../../../core/constance/app_constance.dart';
 import '../components/text_form_field_widget.dart';
@@ -299,6 +300,9 @@ class _AcademyScreenState extends State<AcademyRegisterPage>
                 TextFormFieldWidget(
                   controller: nameController,
                   hintText: 'اسم اللاعب',
+                  keyboardType: TextInputType.name,
+                  textStream: courceInroll.name,
+                  onChanged: courceInroll.changeName,
                 ),
                 SizedBox(
                   height: 13.h,
@@ -306,6 +310,9 @@ class _AcademyScreenState extends State<AcademyRegisterPage>
                 TextFormFieldWidget(
                   controller: addressController,
                   hintText: 'مكان الاقامة',
+                  keyboardType: TextInputType.name,
+                  textStream: courceInroll.place,
+                  onChanged: courceInroll.changePlace,
                 ),
                 SizedBox(
                   height: 13.h,
@@ -313,6 +320,9 @@ class _AcademyScreenState extends State<AcademyRegisterPage>
                 TextFormFieldWidget(
                   controller: numberController,
                   hintText: 'رقم الهاتف',
+                  keyboardType: TextInputType.number,
+                  textStream: courceInroll.phone,
+                  onChanged: courceInroll.changePhone,
                 ),
                 SizedBox(
                   height: 130.h,
