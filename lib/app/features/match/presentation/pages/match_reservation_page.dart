@@ -190,7 +190,7 @@ class _MatchReservationPageState extends State<MatchReservationPage> {
                                 ReservationDatesComponent(
                                   times: reservations,
                                 ),
-                                const ReservationTimesComponent(),
+                                ReservationTimesComponent(),
                               ],
                             ),
                           ),
