@@ -233,10 +233,10 @@ class __$$GetStadiumsEventImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? params = freezed,
+    Object? params = null,
   }) {
     return _then(_$GetStadiumsEventImpl(
-      params: freezed == params
+      params: null == params
           ? _value.params
           : params // ignore: cast_nullable_to_non_nullable
               as StadiumParams,
@@ -262,12 +262,11 @@ class _$GetStadiumsEventImpl implements _GetStadiumsEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetStadiumsEventImpl &&
-            const DeepCollectionEquality().equals(other.params, params));
+            (identical(other.params, params) || other.params == params));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(params));
+  int get hashCode => Object.hash(runtimeType, params);
 
   @JsonKey(ignore: true)
   @override
@@ -387,10 +386,10 @@ class __$$GetTimesEventImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? params = freezed,
+    Object? params = null,
   }) {
     return _then(_$GetTimesEventImpl(
-      params: freezed == params
+      params: null == params
           ? _value.params
           : params // ignore: cast_nullable_to_non_nullable
               as ReserviedTimesParams,
@@ -416,12 +415,11 @@ class _$GetTimesEventImpl implements _GetTimesEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetTimesEventImpl &&
-            const DeepCollectionEquality().equals(other.params, params));
+            (identical(other.params, params) || other.params == params));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(params));
+  int get hashCode => Object.hash(runtimeType, params);
 
   @JsonKey(ignore: true)
   @override

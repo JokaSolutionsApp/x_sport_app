@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/academy/domain/enitites/params/acedemy_params.dart';
+import 'package:x_sport/app/features/academy/presentation/bloc/academy_bloc.dart';
+import 'package:x_sport/app/features/auth/domain/enitites/sport_entity.dart';
+import 'package:x_sport/app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:x_sport/app/features/home/presentation/components/memberships_banner.dart';
 
 import '../../../profile/presentation/components/profile_screen_components/profile_main_components/profile_appbar_component.dart';
@@ -15,10 +20,18 @@ class AcademiesPage extends StatefulWidget {
 
 class _AcademiesPageState extends State<AcademiesPage> {
   final TextEditingController search = TextEditingController();
+  late List<SportEntity> sports;
 
   @override
   void initState() {
     super.initState();
+    sports = context.read<AuthBloc>().sports;
+    context.read<AcademyBloc>().add(AcademyEvent.getSuggestedAcademies(
+            params: SuggestedAcademyParams(
+          pageSize: 1,
+          pageNumber: 1,
+          sportId: sports[1].sportId,
+        )));
   }
 
   @override

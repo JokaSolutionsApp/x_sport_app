@@ -109,7 +109,7 @@ class _CoursesTabState extends State<CoursesTab> {
                                         academyId: widget.academy.academyId,
                                         ageCategoryId: newValue.id,
                                         genderId: 1)));
-                            print(newValue.name);
+                            print(newValue.id);
                           }
                         },
                         items: widget.ageCategoriesDropdownItems

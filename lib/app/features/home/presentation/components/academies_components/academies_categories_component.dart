@@ -22,19 +22,12 @@ class AcademeiesCategoriesComponent extends StatefulWidget {
 
 class _AcademeiesCategoriesComponentState
     extends State<AcademeiesCategoriesComponent> {
-  late List<SportEntity> sports;
+  List<SportEntity> sports = [];
   late List<FavoriteSportEntity>? favSports;
   @override
   void initState() {
     super.initState();
     sports = context.read<AuthBloc>().sports;
-    favSports = context.read<AuthBloc>().user?.favoriteSports;
-    AcademyEvent.getSuggestedAcademies(
-        params: SuggestedAcademyParams(
-      pageSize: 1,
-      pageNumber: 1,
-      sportId: favSports?.first.id ?? 1,
-    ));
   }
 
   final ValueNotifier<int> selectedIdx = ValueNotifier<int>(0);

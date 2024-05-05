@@ -161,7 +161,7 @@ class _AcademyAboutComponentState extends State<AcademyAboutComponent> {
                 Container(
                   margin: EdgeInsets.only(top: 20.w),
                   height: 0.13.sh,
-                  width: 0.9.sw,
+                  width: 0.8.sw,
                   child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: aboutAcademy.services.length,

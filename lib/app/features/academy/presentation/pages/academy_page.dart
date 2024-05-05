@@ -119,9 +119,9 @@ class _AcademyScreenState extends State<AcademyPage>
               child: Stack(
                 children: [
                   CarouselSlider.builder(
-                    itemCount: carouselImages.length,
+                    itemCount: widget.academy.photos.length,
                     itemBuilder: (context, index, realIndex) {
-                      final carouselImage = carouselImages[index];
+                      final carouselImage = widget.academy.photos[index];
                       return buildImage(carouselImage, index);
                     },
                     options: CarouselOptions(
@@ -159,7 +159,9 @@ class _AcademyScreenState extends State<AcademyPage>
                               context,
                               MaterialPageRoute(
                                 builder: (context) =>
-                                    const VideoPlayerFullScreenWidget(),
+                                    VideoPlayerFullScreenWidget(
+                                  videos: widget.academy.videos,
+                                ),
                               ),
                             );
                           },
@@ -260,22 +262,22 @@ class _AcademyScreenState extends State<AcademyPage>
                       ],
                     ),
                   ),
-                  Align(
-                    alignment: Alignment.center,
-                    child: SubmitButton(
-                      minWidth: 190.w,
-                      text: 'سجل الان',
-                      height: 54.w,
-                      textSize: 15,
-                      fillColor: XColors.primary,
-                      radius: 6,
-                      onPressed: () {
-                        Navigator.of(navigatorKey.currentContext!).push(
-                            MaterialPageRoute(
-                                builder: (context) => const CoursesPage()));
-                      },
-                    ),
-                  ),
+                  // Align(
+                  //   alignment: Alignment.center,
+                  //   child: SubmitButton(
+                  //     minWidth: 190.w,
+                  //     text: 'سجل الان',
+                  //     height: 54.w,
+                  //     textSize: 15,
+                  //     fillColor: XColors.primary,
+                  //     radius: 6,
+                  //     onPressed: () {
+                  //       Navigator.of(navigatorKey.currentContext!).push(
+                  //           MaterialPageRoute(
+                  //               builder: (context) => const CoursesPage()));
+                  //     },
+                  //   ),
+                  // ),
                 ],
               ),
             ),

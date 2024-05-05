@@ -7,7 +7,9 @@ import '../../../../../core/constance/app_constance.dart';
 class VideoPlayerFullScreenWidget extends StatefulWidget {
   const VideoPlayerFullScreenWidget({
     super.key,
+    required this.videos,
   });
+  final List<String> videos;
 
   @override
   State<VideoPlayerFullScreenWidget> createState() =>
@@ -20,8 +22,7 @@ class _VideoPlayerFullScreenWidgetState
   @override
   void initState() {
     videoPlayerController = VideoPlayerController.networkUrl(
-      Uri.parse(
-          'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'),
+      Uri.parse(widget.videos.first),
     )
       ..addListener(() => setState(() {}))
       ..setLooping(true)

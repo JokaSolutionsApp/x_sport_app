@@ -19,7 +19,7 @@ class PlayPage extends StatelessWidget {
       title: 'المباريات التنافسية',
       subtitle: 'العب مباريات تنافسية قريبة واكسب نقط اكثر!',
       icon: AppIcons.champion_ship,
-      screen: const UpCommingTournamentsPage(),
+      screen: const MatchReservationPage(),
     ),
     LocalMatch(
       title: 'المباريات الودية',

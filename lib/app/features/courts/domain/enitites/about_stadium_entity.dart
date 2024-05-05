@@ -12,7 +12,7 @@ class AboutStadiumEntity extends Equatable {
   @JsonKey(name: 'description')
   final String description;
   @JsonKey(name: 'stadiumType')
-  final String stadiumType;
+  final String? stadiumType;
   @JsonKey(name: 'regionName')
   final String regionName;
   @JsonKey(name: 'price')
@@ -36,7 +36,7 @@ class AboutStadiumEntity extends Equatable {
     required this.stadiumId,
     required this.name,
     required this.description,
-    required this.stadiumType,
+    this.stadiumType,
     required this.regionName,
     required this.price,
     this.openAt,

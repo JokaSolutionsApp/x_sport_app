@@ -30,11 +30,16 @@ class AcademiesComponent extends StatelessWidget {
               const AcademyState.getSuggestedAcademiesFailure().runtimeType) {
             return true;
           }
+          if (current.runtimeType ==
+              const AcademyState.getSuggestedAcademiesEmpty().runtimeType) {
+            return true;
+          }
           return false;
         },
         builder: (context, state) {
           return state.maybeWhen(
               orElse: () => const Offstage(),
+              getSuggestedAcademiesEmpty: () => const Offstage(),
               getSuggestedAcademiesFailure: (value) => const Offstage(),
               getSuggestedAcademiesLoading: () => const Expanded(
                     child: Center(

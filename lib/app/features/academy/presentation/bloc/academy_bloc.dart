@@ -89,13 +89,15 @@ class AcademyBloc extends Bloc<AcademyEvent, AcademyState> {
     final result = await getSuggestedAcademiesUseCase(params: event.params);
     result.fold((f) {
       print("allbloc ${f.message}");
-
       emit(AcademyState.getSuggestedAcademiesFailure(failure: f));
     }, (r) {
-      print("allbloc ${r.suggestedAcademies.first.academyId}");
-      academy = r;
-
-      emit(AcademyState.suggestedAcademiesFetched(suggestedAcademies: r));
+      if (r.suggestedAcademies.isNotEmpty) {
+        print("allbloc ${r.suggestedAcademies.first.academyId}");
+        academy = r;
+        emit(AcademyState.suggestedAcademiesFetched(suggestedAcademies: r));
+      } else {
+        emit(AcademyState.getSuggestedAcademiesEmpty());
+      }
     });
   }
 

@@ -80,7 +80,7 @@ class _HomePageState extends State<HomePage> {
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 10.w),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             const HomeBannerComponent(),
             Container(
@@ -95,6 +95,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               child: GridView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     mainAxisExtent: 186.w,
                     crossAxisCount: 2,
@@ -156,7 +157,7 @@ class _HomePageState extends State<HomePage> {
                     );
                   }),
             ),
-            HomeStadiumsComponent(),
+            //    HomeStadiumsComponent(),
             FriendsStadiumsComponent(),
           ],
         ),

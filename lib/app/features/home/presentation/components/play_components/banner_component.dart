@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/courts/presentation/pages/championship_page.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
+import 'package:x_sport/main.dart';
 
 import '../../../../../../core/utils/assets_managers/assets.gen.dart';
 import 'banner_part_component.dart';
@@ -48,7 +50,10 @@ class BannerComponent extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.of(context).pop();
+                      Navigator.of(navigatorKey.currentContext!).push(
+                        MaterialPageRoute(
+                            builder: (context) => const ChampionshipPage()),
+                      );
                     },
                     child: Container(
                       alignment: Alignment.center,

@@ -15,7 +15,19 @@ class FriendsStadiumsComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<StadiumBloc, StadiumState>(builder: (context, state) {
+    return BlocBuilder<StadiumBloc, StadiumState>(
+        buildWhen: (previous, current) {
+      if (current.runtimeType ==
+          const StadiumState.getFriendsStadiumsLoading().runtimeType) {
+        return true;
+      }
+      if (current.runtimeType ==
+          const StadiumState.friendsStadiumsFetched().runtimeType) {
+        return true;
+      }
+
+      return false;
+    }, builder: (context, state) {
       return state.maybeWhen(
           orElse: () => const Offstage(),
           getFriendsStadiumsLoading: () => const Offstage(),
@@ -43,7 +55,7 @@ class FriendsStadiumsComponent extends StatelessWidget {
                         shrinkWrap: true,
                         scrollDirection: Axis.horizontal,
                         itemExtent: 170.w,
-                        itemCount: 4,
+                        itemCount: value.length,
                         itemBuilder: (context, index) {
                           return Padding(
                               padding: EdgeInsets.symmetric(
@@ -54,8 +66,9 @@ class FriendsStadiumsComponent extends StatelessWidget {
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (context) =>
-                                                const CourtsPage()));
+                                            builder: (context) => CourtsPage(
+                                                  stadium: value[index],
+                                                )));
                                   },
                                   child: Container(
                                       height: 32.h,
@@ -82,19 +95,23 @@ class FriendsStadiumsComponent extends StatelessWidget {
                                                     BorderRadius.circular(
                                                         10.sp),
                                                 image: DecorationImage(
-                                                  fit: BoxFit.cover,
-                                                  image: AssetsManager
-                                                      .images.home.stadium
-                                                      .image()
-                                                      .image,
-                                                )),
+                                                    fit: BoxFit.cover,
+                                                    image: NetworkImage(
+                                                      value[index].coverPhoto,
+                                                    )
+
+                                                    //  AssetsManager
+                                                    //     .images.home.stadium
+                                                    //     .image()
+                                                    //     .image,
+                                                    )),
                                           ),
                                           Container(
                                             padding:
                                                 EdgeInsets.only(right: 10.w),
                                             alignment: Alignment.center,
                                             child: Text(
-                                              'اسم الملعب',
+                                              value[index].stadiumName,
                                               style: TextStyle(
                                                 color: Colors.black,
                                                 fontWeight: FontWeight.w400,
@@ -125,7 +142,10 @@ class FriendsStadiumsComponent extends StatelessWidget {
                                                       context,
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              const CourtsPage()));
+                                                              CourtsPage(
+                                                                stadium: value[
+                                                                    index],
+                                                              )));
                                                 }),
                                           )
                                         ],

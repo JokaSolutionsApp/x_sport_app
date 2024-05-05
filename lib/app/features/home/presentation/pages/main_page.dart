@@ -45,10 +45,9 @@ class _MainScreenState extends State<MainPage>
 
   @override
   void initState() {
+    super.initState();
     confirmCompleted();
     _tabController = TabController(length: 5, vsync: this);
-
-    super.initState();
     context.read<AuthBloc>().add(const AuthEvent.getUserProfile());
   }
 

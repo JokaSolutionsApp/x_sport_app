@@ -8,7 +8,7 @@ part 'about_stadium_model.g.dart';
 class AboutStadiumModel extends AboutStadiumEntity {
   AboutStadiumModel({
     required int stadiumId,
-    required String stadiumType,
+    String? stadiumType,
     required String regionName,
     required String name,
     required String description,
@@ -22,7 +22,7 @@ class AboutStadiumModel extends AboutStadiumEntity {
     required List<String> videos,
   }) : super(
           stadiumId: stadiumId,
-          stadiumType: stadiumType,
+          stadiumType: stadiumType ?? '',
           regionName: regionName,
           name: name,
           description: description,

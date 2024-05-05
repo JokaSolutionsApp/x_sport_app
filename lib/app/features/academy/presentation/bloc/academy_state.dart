@@ -17,6 +17,8 @@ class AcademyState with _$AcademyState {
   // Get Suggested Academies
   const factory AcademyState.getSuggestedAcademiesLoading() =
       _GetSuggestedAcademiesLoading;
+  const factory AcademyState.getSuggestedAcademiesEmpty() =
+      _GetSuggestedAcademiesEmpty;
   const factory AcademyState.getSuggestedAcademiesFailure({
     @Default(null) Failure? failure,
   }) = _GetSuggestedAcademiesFailure;
