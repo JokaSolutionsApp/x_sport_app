@@ -9,33 +9,43 @@ import 'package:x_sport/core/constance/app_constance.dart';
 
 import '../../../../widgets/rectangle_container.dart';
 
-class ReservationTimesComponent extends StatelessWidget {
-  ReservationTimesComponent({super.key});
+class ReservationTimesComponent extends StatefulWidget {
+  const ReservationTimesComponent({super.key});
+
+  @override
+  State<ReservationTimesComponent> createState() =>
+      _ReservationTimesComponentState();
+}
+
+class _ReservationTimesComponentState extends State<ReservationTimesComponent> {
   final ValueNotifier<int?> isSelectedIndex = ValueNotifier<int?>(0);
 
   @override
-  Widget build(BuildContext context) {
-    context.read<MatchReservationBloc>().reservatonTimeFrom =
-        context.read<MatchReservationBloc>().openTimes.isNotEmpty
-            ? () {
-                context.read<MatchReservationBloc>().openTimes[0];
-                String reservatonTimeTo = DateFormat("HH:mm").format(
-                  DateFormat("HH:mm")
-                      .parse(
-                        context.read<MatchReservationBloc>().openTimes[0],
-                      )
-                      .add(
-                        const Duration(
-                          hours: 1,
-                          minutes: 30,
-                        ),
-                      ),
-                );
-                context.read<MatchReservationBloc>().reservatonTimeTo =
-                    reservatonTimeTo;
-              }()
-            : null;
+  void initState() {
+    if (context.read<MatchReservationBloc>().openTimes.isNotEmpty) {
+      context.read<MatchReservationBloc>().reservatonTimeFrom =
+          context.read<MatchReservationBloc>().openTimes[0];
+      context.read<MatchReservationBloc>().reservatonTimeTo =
+          DateFormat("HH:mm").format(
+        DateFormat("HH:mm")
+            .parse(
+              context.read<MatchReservationBloc>().openTimes[0],
+            )
+            .add(
+              const Duration(
+                hours: 1,
+                minutes: 30,
+              ),
+            ),
+      );
+    } else {
+      context.read<MatchReservationBloc>().reservatonTimeFrom = null;
+    }
+    super.initState();
+  }
 
+  @override
+  Widget build(BuildContext context) {
     return RectangleContainer(
       radius: 15,
       bottomMargin: 0,
@@ -46,7 +56,7 @@ class ReservationTimesComponent extends StatelessWidget {
         width: 1.sw,
         child: context.read<MatchReservationBloc>().openTimes.isEmpty
             ? const Center(
-                child: Text('Court is not open on this day'),
+                child: Text('الملعب مغلق في هذا اليوم'),
               )
             : Directionality(
                 textDirection: ui.TextDirection.rtl,
@@ -296,3 +306,4 @@ class ReservationTimesComponent extends StatelessWidget {
 //     );
 //   }
 // }
+

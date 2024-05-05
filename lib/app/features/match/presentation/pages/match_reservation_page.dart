@@ -8,9 +8,9 @@ import '../../../../widgets/buttons/submit_button.dart';
 import '../../../../widgets/rectangle_container.dart';
 import '../../domain/enitites/sport_stadium_entity.dart';
 import '../bloc/match_reservation_bloc.dart';
-import '../components/match_reservation_components/reservation_stadiums_component.dart';
 import '../components/reservation_dates_component.dart';
 import '../components/reservation_sports_component.dart';
+import '../components/reservation_stadiums_component.dart';
 import '../components/reservation_times_component.dart';
 import '../components/stadium_search_component.dart';
 
@@ -63,17 +63,18 @@ class _MatchReservationPageState extends State<MatchReservationPage> {
         ],
       ),
       body: BlocBuilder<MatchReservationBloc, MatchReservationState>(
-        buildWhen: (previous, current) {
-          print('current.runtimeType${current.runtimeType}');
-          current.runtimeType ==
-              const MatchReservationState.timesSuccess().runtimeType;
-          return true;
-        },
-        // (previous is timesSuccess &&
-        //     current is timesSuccess &&
-        //     previous.openTimes != current.openTimes) ||
-        // previous != current,
-
+        // buildWhen: (previous, current) {
+        //   print('current.runtimeType${current.runtimeType}');
+        //   current.runtimeType ==
+        //       const MatchReservationState.timesSuccess().runtimeType;
+        //   return true;
+        // },
+        //
+        // buildWhen: (previous, current) =>
+        //     (previous is timesSuccess &&
+        //         current is timesSuccess &&
+        //         previous.openTimes != current.openTimes) ||
+        //     previous != current,
         builder: (context, state) {
           return state.maybeWhen(
             orElse: () => const Offstage(),

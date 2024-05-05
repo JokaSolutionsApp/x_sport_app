@@ -52,6 +52,7 @@ class MatchReservationBloc
   String? reservationDate;
   String? reservatonTimeFrom;
   String? reservatonTimeTo;
+  bool isFirst = true;
 
   Future<void> _getSports(event, Emitter<MatchReservationState> emit) async {
     event as _$GetSportsEventImpl;
@@ -114,29 +115,33 @@ class MatchReservationBloc
 
   Future<void> _getTimes(event, Emitter<MatchReservationState> emit) async {
     EasyLoadingInit.startLoading();
-    openDays = [];
-    openTimes = [];
-    for (var element in stadiums!) {
-      if (element.stadiumId == event.params.stadiumId) {
-        openDays = element.stadiumWorkDays;
+    if (!isFirst) {
+      times = [];
+      openDays = [];
+      openTimes = [];
+      for (var element in stadiums!) {
+        if (element.stadiumId == event.params.stadiumId) {
+          openDays = element.stadiumWorkDays;
+        }
+      }
+      for (var element in openDays!) {
+        if (element.dayOrder == 0) {
+          final openAt = DateFormat("HH:mm:ss").parse(element.openAt);
+          final closeAt = DateFormat("HH:mm:ss").parse(element.closeAt);
+          final durationInMinutes =
+              (closeAt.difference(openAt).inMinutes / 1.5).ceil();
+          final timeSlots = List<String>.generate(
+            durationInMinutes + 1,
+            (index) => openAt
+                .add(Duration(minutes: index * 90))
+                .toString()
+                .substring(11, 16),
+          );
+          openTimes = timeSlots;
+        }
       }
     }
-    for (var element in openDays!) {
-      if (element.dayOrder == 0) {
-        final openAt = DateFormat("HH:mm:ss").parse(element.openAt);
-        final closeAt = DateFormat("HH:mm:ss").parse(element.closeAt);
-        final durationInMinutes =
-            (closeAt.difference(openAt).inMinutes / 1.5).ceil();
-        final timeSlots = List<String>.generate(
-          durationInMinutes + 1,
-          (index) => openAt
-              .add(Duration(minutes: index * 90))
-              .toString()
-              .substring(11, 16),
-        );
-        openTimes = timeSlots;
-      }
-    }
+    isFirst = false;
     final result = await getReservedTimesUseCase(params: event.params);
     await EasyLoading.dismiss();
     result.fold(
@@ -163,10 +168,7 @@ class MatchReservationBloc
         }
       }
     }
-    // print('openDays$openDays');
     openTimes = [];
-
-    // emit(const MatchReservationState.loading());
     for (var element in openDays!) {
       if (element.dayOrder == event.dayOrder) {
         final openAt = DateFormat("HH:mm:ss").parse(element.openAt);
@@ -183,7 +185,6 @@ class MatchReservationBloc
         openTimes = timeSlots;
       }
     }
-
     emit(
       MatchReservationState.timesSuccess(
         reservations: times ?? [],
