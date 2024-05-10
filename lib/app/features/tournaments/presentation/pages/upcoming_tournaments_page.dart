@@ -262,7 +262,7 @@ class UpCommingTournamentsPage extends StatelessWidget {
                                         GestureDetector(
                                           child: Icon(
                                             AppIcons.calender,
-                                            size: 36.sp,
+                                            size: 26.sp,
                                             color: const Color(0xFF727272),
                                           ),
                                         )

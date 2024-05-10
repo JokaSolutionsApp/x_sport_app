@@ -1,11 +1,9 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../auth/presentation/bloc/auth_bloc.dart';
 import '../../../match/presentation/bloc/match_reservation_bloc.dart';
-
 import '../../../../../core/constance/app_constance.dart';
 import '../../../../../core/constance/app_icons_icons.dart';
 import '../../../../../core/services/locator/service_locator.dart';
@@ -30,13 +28,13 @@ class MainPage extends StatefulWidget {
 
 class _MainScreenState extends State<MainPage>
     with SingleTickerProviderStateMixin {
-  final ValueNotifier _selectedIndex = ValueNotifier(0);
+  final ValueNotifier _selectedIndex = ValueNotifier(1);
   ValueNotifier optionsHandler = ValueNotifier(0);
   late TabController _tabController;
 
   List<Widget> screens = [
     const SearchPage(),
-    const SocialPage(),
+    // const SocialPage(),
     const HomePage(),
     const AcademiesPage(),
     PlayPage(),
@@ -47,7 +45,7 @@ class _MainScreenState extends State<MainPage>
   void initState() {
     super.initState();
     confirmCompleted();
-    _tabController = TabController(length: 5, vsync: this);
+    _tabController = TabController(length: 4, vsync: this, initialIndex: 1);
     context.read<AuthBloc>().add(const AuthEvent.getUserProfile());
   }
 
@@ -186,7 +184,10 @@ class _MainScreenState extends State<MainPage>
                       valueListenable: _selectedIndex,
                       builder: (context, selectedIndex, child) {
                         return Container(
-                          height: Platform.isIOS ? 94.h : 72.h,
+                          padding: EdgeInsets.only(
+                              top: Platform.isAndroid ? 10.h : 0,
+                              bottom: Platform.isIOS ? 10.h : 0),
+                          height: Platform.isIOS ? 90.h : 78.h,
                           decoration: BoxDecoration(
                             color: Colors.white,
                             boxShadow: [
@@ -216,64 +217,48 @@ class _MainScreenState extends State<MainPage>
                               fontSize: 13.sp,
                               color: const Color(0xFF9F9F9F),
                             ),
-                            // isScrollable: true,
-                            // labelPadding:
-                            //     ChartHelper.getTabBarRightPadding(sizer),
                             indicatorSize: TabBarIndicatorSize.label,
-                            // indicatorPadding:
-                            //     ChartHelper.getIndecatorHeight(sizer),
                             indicator: const BoxDecoration(),
-
                             tabs: [
                               Tab(
                                   iconMargin: EdgeInsets.only(bottom: 3.w),
                                   icon: Icon(
                                     Icons.search,
-                                    size: 40.sp,
+                                    size: 36.sp,
                                   ),
                                   text: 'ابحث'),
-                              Tab(
-                                  iconMargin: EdgeInsets.only(bottom: 3.w),
-                                  icon: Icon(
-                                    Icons.language,
-                                    size: 40.sp,
-                                  ),
-                                  text: 'المجتمع'),
+                              // Tab(
+                              //     iconMargin: EdgeInsets.only(bottom: 3.w),
+                              //     icon: Icon(
+                              //       Icons.language,
+                              //       size: 40.sp,
+                              //     ),
+                              //     text: 'المجتمع'),
                               Tab(
                                   iconMargin: EdgeInsets.only(bottom: 3.w),
                                   icon: Icon(
                                     Icons.home_filled,
-                                    size: 42.sp,
+                                    size: 36.sp,
                                   ),
-                                  text: ''), // Placeholder for custom tab
+                                  text:
+                                      'الرئيسية'), // Placeholder for custom tab
                               Tab(
                                   iconMargin: EdgeInsets.only(bottom: 3.w),
                                   icon: Icon(
                                     AppIcons.academy,
-                                    size: 40.sp,
+                                    size: 36.sp,
                                   ),
                                   text: 'الاكاديمية'),
                               Tab(
                                   iconMargin: EdgeInsets.only(bottom: 3.w),
                                   icon: Icon(
                                     Icons.sports_basketball,
-                                    size: 40.sp,
+                                    size: 36.sp,
                                   ),
                                   text: 'العب'),
                             ],
-
-                            // activeColor: XColors.primary,
-                            // backgroundColor: Colors.white,
-                            // initialActiveIndex: 0,
-                            // height: 0.07.sh,
-                            // top: -14,
-                            // curveSize: 60,
-
-                            // style: TabStyle.fixedCircle,
-                            // color: XColors.otp_field_border_color,
                             onTap: (int i) {
                               _selectedIndex.value = i;
-                              // Toggle the visibility of the container when a tab is tapped
                             },
                           ),
                         );
@@ -285,12 +270,12 @@ class _MainScreenState extends State<MainPage>
             ValueListenableBuilder(
                 valueListenable: _selectedIndex,
                 builder: (context, selectedIndex, child) {
-                  return screens.elementAt(_selectedIndex.value);
+                  return screens.elementAt(selectedIndex);
                 }),
             ValueListenableBuilder(
               valueListenable: optionsHandler,
               builder: (context, value, child) {
-                return optionsHandler.value != 0
+                return value != 0
                     ? GestureDetector(
                         onTap: () {
                           optionsHandler.value = 0;
@@ -298,8 +283,7 @@ class _MainScreenState extends State<MainPage>
                         child: Container(
                           width: MediaQuery.of(context).size.width,
                           decoration: BoxDecoration(
-                            color: Colors.black12
-                                .withOpacity(0.6), // Adjust color as needed
+                            color: Colors.black12.withOpacity(0.6),
                           ),
                         ),
                       )

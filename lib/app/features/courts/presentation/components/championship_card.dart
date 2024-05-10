@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/core/constance/app_icons_icons.dart';
 
 import '../../../../../core/constance/app_constance.dart';
 
@@ -80,14 +81,19 @@ class ChampionshipCard extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              const Row(
+              Row(
                 children: [
                   Expanded(
                     child: Row(
                       children: [
-                        Icon(
-                          Icons.calendar_month_outlined,
+                        GestureDetector(
+                          child: Icon(
+                            AppIcons.calender,
+                            size: 26.sp,
+                            color: const Color(0xFF727272),
+                          ),
                         ),
+                        SizedBox(width: 10.w),
                         Text(
                           'البدء:',
                           style: TextStyle(

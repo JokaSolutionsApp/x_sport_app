@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -57,8 +59,11 @@ class PlayPage extends StatelessWidget {
               SizedBox(height: 6.w),
               const BannerComponent(),
               Container(
-                height: 0.434.sh,
-                margin: EdgeInsets.only(right: 24.w, bottom: 12.h),
+                height: Platform.isAndroid ? 0.48.sh : 0.46.sh,
+                margin: EdgeInsets.only(
+                  right: 24.w,
+                  bottom: Platform.isAndroid ? 12.h : 0,
+                ),
                 child: GridView.builder(
                   physics: const NeverScrollableScrollPhysics(),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

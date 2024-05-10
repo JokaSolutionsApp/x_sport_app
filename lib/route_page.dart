@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:x_sport/app/features/auth/presentation/pages/otp_page.dart';
 import 'package:x_sport/app/features/auth/presentation/pages/welcome_page.dart';
+import 'package:x_sport/app/features/paymnet/presentation/pages/payment_page.dart';
 
 import 'app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'app/features/auth/presentation/pages/login_page.dart';
@@ -21,6 +22,7 @@ class RoutePage extends StatelessWidget {
       if (cur.runtimeType == const AuthState.checkAccountStatus().runtimeType) {
         return true;
       }
+
       return false;
     }, builder: (context, state) {
       return state.maybeMap(
@@ -35,6 +37,8 @@ class RoutePage extends StatelessWidget {
             return const WelcomePage();
           } else if (value.userAuthState == UserAuthState.otp) {
             return const OtpPage();
+          } else if (value.userAuthState == UserAuthState.otp) {
+            return const LoginPage();
           } else {
             return const LoginPage();
           }

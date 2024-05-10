@@ -1,4 +1,4 @@
-package com.jokasolutions.XSports
+package com.joka.XSports
 
 import io.flutter.embedding.android.FlutterActivity
 

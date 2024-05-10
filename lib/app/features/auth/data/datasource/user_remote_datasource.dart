@@ -238,7 +238,7 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
         final refreshToken = data['data']['authResult']['refreshToken'];
         sl<SecureStorageService>().write('token', token);
         sl<SecureStorageService>().write('refreshToken', refreshToken);
-        return UserProfileModel.fromJson(data['data']);
+        return UserProfileModel.fromJson(data['data']['userProfile']);
       } else {
         throw ServerException(errorModel: ErrorModel.fromJson(data));
       }
@@ -251,7 +251,9 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
   Future<UserAuthState> checkAccountStatus() async {
     String? email = await sl<SecureStorageService>().read('email');
     final token = await sl<SecureStorageService>().read('token');
-
+    if (token == null) {
+      return UserAuthState.guest;
+    }
     final postData = {
       'email': email,
     };

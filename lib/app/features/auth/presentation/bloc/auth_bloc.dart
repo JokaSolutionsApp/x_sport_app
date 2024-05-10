@@ -132,8 +132,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           .dismiss(); // Dismiss the loading indicator on success as well
       if (r) {
         emit(AuthState.registered(registered: r));
-        Navigator.of(navigatorKey.currentContext!).push(
+        Navigator.of(navigatorKey.currentContext!).pushAndRemoveUntil(
           MaterialPageRoute(builder: (context) => const OtpPage()),
+          ModalRoute.withName('/'),
         );
       }
     });
@@ -158,8 +159,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         emit(AuthState.emailConfirmed(
           sports: r,
         ));
-        Navigator.of(navigatorKey.currentContext!).push(
+
+        Navigator.of(navigatorKey.currentContext!).pushAndRemoveUntil(
           MaterialPageRoute(builder: (context) => const WelcomePage()),
+          ModalRoute.withName('/'),
         );
       },
     );
@@ -204,8 +207,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         emit(AuthState.loggedIn(user: r));
         emit(AuthState.userProfileFetched(userProfile: r));
 
-        Navigator.of(navigatorKey.currentContext!).push(
+        Navigator.of(navigatorKey.currentContext!).pushAndRemoveUntil(
           MaterialPageRoute(builder: (context) => const MainPage()),
+          ModalRoute.withName('/'),
         );
       }
     });
@@ -230,8 +234,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
         await EasyLoading.dismiss();
 
-        Navigator.of(navigatorKey.currentContext!).push(
+        Navigator.of(navigatorKey.currentContext!).pushAndRemoveUntil(
           MaterialPageRoute(builder: (context) => const WelcomePage()),
+          ModalRoute.withName('/'),
         );
       } else {
         emit(AuthState.sportsFetched(sports: sports));
@@ -239,7 +244,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         EasyLoading.showError(f.message);
       }
     }, (r) async {
-      print('_googleLogin $r');
+      print('_googleLogin ${r.user}');
 
       await EasyLoading.dismiss();
       if (r.user != null) {
@@ -248,14 +253,15 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         emit(AuthState.googleLoggedIn(user: r));
         emit(AuthState.userProfileFetched(userProfile: r));
 
-        Navigator.of(navigatorKey.currentContext!).push(
+        Navigator.of(navigatorKey.currentContext!).pushAndRemoveUntil(
           MaterialPageRoute(builder: (context) => const MainPage()),
+          ModalRoute.withName('/'),
         );
       } else {
         emit(AuthState.sportsFetched(sports: sports));
-
-        Navigator.of(navigatorKey.currentContext!).push(
+        Navigator.of(navigatorKey.currentContext!).pushAndRemoveUntil(
           MaterialPageRoute(builder: (context) => const WelcomePage()),
+          ModalRoute.withName('/'),
         );
       }
     });
@@ -267,9 +273,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     final result = await accountStatusUseCase();
 
     result.fold((l) {
-      print("isLogged $l");
-
-      emit(const AuthState.checkUserFailure());
+      emit(const AuthState.checkAccountStatus(
+          userAuthState: UserAuthState.loggedIn));
     }, (isLogged) {
       print("isLogged $isLogged");
       if (isLogged == UserAuthState.loggedIn) {
@@ -307,9 +312,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       (r) {
         emit(AuthState.registrationCompleted(userProfile: r));
         emit(AuthState.userProfileFetched(userProfile: r));
-
-        Navigator.of(navigatorKey.currentContext!).push(
+        Navigator.of(navigatorKey.currentContext!).pushAndRemoveUntil(
           MaterialPageRoute(builder: (context) => const MainPage()),
+          ModalRoute.withName('/'),
         );
       },
     );

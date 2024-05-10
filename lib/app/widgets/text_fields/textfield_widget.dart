@@ -11,6 +11,7 @@ class TextFieldWidget extends StatefulWidget {
   final Color? color;
   final Stream textStream;
   final bool isObscureText;
+  final FocusNode? focusNode;
 
   const TextFieldWidget({
     super.key,
@@ -20,6 +21,7 @@ class TextFieldWidget extends StatefulWidget {
     required this.textStream,
     required this.onChanged,
     this.color,
+    this.focusNode,
     this.isObscureText = false,
   });
 
@@ -70,7 +72,9 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
                   width: 0.83.sw,
                   height: 50.h,
                   child: TextFormField(
-                    cursorHeight: 21.w,
+                    focusNode: widget.focusNode,
+                    cursorRadius: Radius.circular(2.0),
+                    cursorHeight: 20.0.h,
                     cursorColor: widget.color ?? XColors.Background_Color1,
                     textDirection: textDirection,
                     keyboardType: widget.keyboardType,
@@ -85,6 +89,8 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
                     textInputAction: TextInputAction.next,
                     onChanged: (value) => widget.onChanged(value),
                     decoration: InputDecoration(
+                      contentPadding:
+                          EdgeInsets.symmetric(vertical: 10.h, horizontal: 4.w),
                       prefixIcon: widget.isObscureText
                           ? IconButton(
                               icon: const Icon(Icons.remove_red_eye),

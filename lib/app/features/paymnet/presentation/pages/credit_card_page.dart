@@ -21,21 +21,32 @@ class CreditCardPage extends StatefulWidget {
 }
 
 class _CreditCardPageState extends State<CreditCardPage> {
-  TextEditingController name = TextEditingController();
-
-  TextEditingController email = TextEditingController();
-
-  TextEditingController password = TextEditingController();
-
-  TextEditingController confirmPassword = TextEditingController();
-
-  TextEditingController phone = TextEditingController();
+  late TextEditingController name;
+  late TextEditingController email;
+  late TextEditingController password;
+  late TextEditingController confirmPassword;
+  late TextEditingController phone;
 
   var isChecked = ValueNotifier(false);
   @override
   void initState() {
+    name = TextEditingController();
+    email = TextEditingController();
+    password = TextEditingController();
+    confirmPassword = TextEditingController();
+    phone = TextEditingController();
     getUserLocation();
     super.initState();
+  }
+
+  @override
+  dispose() {
+    super.dispose();
+    name.dispose();
+    email.dispose();
+    password.dispose();
+    confirmPassword.dispose();
+    phone.dispose();
   }
 
   getUserLocation() async {
@@ -45,154 +56,164 @@ class _CreditCardPageState extends State<CreditCardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-            gradient: LinearGradient(
-                colors: [XColors.Background_Color1, XColors.Background_Color2],
-                begin: Alignment.centerLeft,
-                end: Alignment.centerRight)),
-        height: 1.sh,
-        child: Stack(
-          children: [
-            Align(
-                alignment: Alignment.bottomCenter,
-                child: Container(
-                  padding: EdgeInsets.only(top: 120.h),
-                  width: 1.sw,
-                  height: 737.h,
-                  decoration: BoxDecoration(
-                      color: const Color(0xFFF6F7F9),
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(60.sp),
-                          topRight: Radius.circular(60.sp))),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        CreditTextField(
-                          labelText: 'رقم البطاقة',
-                          controller: name,
-                          keyboardType: TextInputType.emailAddress,
-                          textStream: registerStream.name,
-                          onChanged: registerStream.changeName,
-                        ),
-                        CreditTextField(
-                          labelText: 'رقم البطاقة',
-                          controller: email,
-                          keyboardType: TextInputType.emailAddress,
-                          textStream: registerStream.email,
-                          onChanged: registerStream.changeEmail,
-                        ),
-                        CreditTextField(
-                          labelText: 'رقم البطاقة',
-                          controller: phone,
-                          keyboardType: TextInputType.number,
-                          textStream: registerStream.phone,
-                          onChanged: registerStream.changePhone,
-                        ),
-                        SizedBox(height: 10.h),
-                        SizedBox(
-                          width: 380.w,
-                          child: Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Text(
-                                  textAlign: TextAlign.end,
-                                  'حفظ معلومات الدفع لهذا الحساب',
-                                  style: TextStyle(
-                                      color: XColors.Outline_primary,
-                                      fontSize: 17.sp,
-                                      fontWeight: FontWeight.w500),
-                                ),
-                                ValueListenableBuilder(
-                                    valueListenable: isChecked,
-                                    builder: (context, value, child) {
-                                      return Transform.scale(
-                                        scale: 0.9.w,
-                                        child: Checkbox(
-                                          activeColor:
-                                              XColors.Background_Color2,
-                                          value: isChecked.value,
-                                          onChanged: (value) {
-                                            isChecked.value = !isChecked.value;
-                                            registerStream
-                                                .changePrivacy(value!);
-                                          },
-                                        ),
-                                      );
-                                    }),
-                              ]),
-                        ),
-                        SizedBox(height: 8.h),
-                        SizedBox(
-                          width: 360.w,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'سيسهل عليك تفعيل هذا الخيار اجراءات الدفع في \nالحجوزات القادمة.',
-                                textAlign: TextAlign.end,
-                                style: TextStyle(
-                                    fontSize: 15.sp,
-                                    fontWeight: FontWeight.w500,
-                                    color: const Color(0xFF959595)),
+      body: SingleChildScrollView(
+        physics: const NeverScrollableScrollPhysics(),
+        child: Container(
+          decoration: const BoxDecoration(
+              gradient: LinearGradient(colors: [
+            XColors.Background_Color1,
+            XColors.Background_Color2
+          ], begin: Alignment.centerLeft, end: Alignment.centerRight)),
+          height: 1.sh,
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: Stack(
+              children: [
+                Align(
+                    alignment: Alignment.bottomCenter,
+                    child: SingleChildScrollView(
+                      child: Container(
+                        padding: EdgeInsets.only(top: 120.h),
+                        width: 1.sw,
+                        height: 737.h,
+                        decoration: BoxDecoration(
+                            color: const Color(0xFFF6F7F9),
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(60.sp),
+                                topRight: Radius.circular(60.sp))),
+                        child: Column(
+                          children: [
+                            CreditTextField(
+                              labelText: 'رقم البطاقة',
+                              controller: name,
+                              keyboardType: TextInputType.phone,
+                              textStream: registerStream.name,
+                              onChanged: registerStream.changeName,
+                            ),
+                            CreditTextField(
+                              labelText: 'رقم البطاقة',
+                              controller: email,
+                              keyboardType: TextInputType.phone,
+                              textStream: registerStream.email,
+                              onChanged: registerStream.changeEmail,
+                            ),
+                            CreditTextField(
+                              labelText: 'رقم البطاقة',
+                              controller: phone,
+                              keyboardType: TextInputType.number,
+                              textStream: registerStream.phone,
+                              onChanged: registerStream.changePhone,
+                            ),
+                            SizedBox(height: 10.h),
+                            SizedBox(
+                              width: 380.w,
+                              child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      textAlign: TextAlign.end,
+                                      'حفظ معلومات الدفع لهذا الحساب',
+                                      style: TextStyle(
+                                          color: XColors.Outline_primary,
+                                          fontSize: 17.sp,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                    ValueListenableBuilder(
+                                        valueListenable: isChecked,
+                                        builder: (context, value, child) {
+                                          return Transform.scale(
+                                            scale: 0.9.w,
+                                            child: Checkbox(
+                                              activeColor:
+                                                  XColors.Background_Color2,
+                                              value: isChecked.value,
+                                              onChanged: (value) {
+                                                isChecked.value =
+                                                    !isChecked.value;
+                                                registerStream
+                                                    .changePrivacy(value!);
+                                              },
+                                            ),
+                                          );
+                                        }),
+                                  ]),
+                            ),
+                            SizedBox(height: 8.h),
+                            SizedBox(
+                              width: 360.w,
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'سيسهل عليك تفعيل هذا الخيار اجراءات الدفع في \nالحجوزات القادمة.',
+                                    textAlign: TextAlign.end,
+                                    style: TextStyle(
+                                        fontSize: 15.sp,
+                                        fontWeight: FontWeight.w500,
+                                        color: const Color(0xFF959595)),
+                                  ),
+                                  const Icon(Icons.warning),
+                                ],
                               ),
-                              const Icon(Icons.warning),
-                            ],
-                          ),
-                        ),
-                        SizedBox(height: 48.w),
-                        StreamBuilder(
-                          stream: registerStream.registerIsValid,
-                          builder: (context, snapshot) {
-                            final isButtonEnabled = snapshot.data ?? false;
-                            return SubmitButton(
-                              minWidth: 232.w,
-                              height: 49.w,
-                              radius: 12,
-                              isButtonEnabled: isButtonEnabled,
-                              fillColor: isButtonEnabled
-                                  ? XColors.primary
-                                  : Colors.grey,
-                              textColor: Colors.white,
-                              text: 'انشر',
-                              onPressed: () {
-                                EasyLoadingInit.startLoading();
-                                Future.delayed(const Duration(seconds: 2), () {
-                                  EasyLoading.dismiss();
-                                  showDialog(
-                                    context: context,
-                                    builder: (context) {
-                                      return const PaymentFailDialog();
-                                    },
-                                  );
-                                  showDialog(
-                                    context: context,
-                                    builder: (context) {
-                                      return const PaymentSuccessDialog();
-                                    },
-                                  );
-                                  Navigator.of(navigatorKey.currentContext!)
-                                      .push(
-                                    MaterialPageRoute(
-                                        builder: (context) => const OtpPage()),
-                                  );
-                                });
-                                // context.read<UserBloc>().add(const SignUpEvent());
+                            ),
+                            SizedBox(height: 48.w),
+                            StreamBuilder(
+                              stream: registerStream.registerIsValid,
+                              builder: (context, snapshot) {
+                                final isButtonEnabled = snapshot.data ?? false;
+                                return SubmitButton(
+                                  minWidth: 232.w,
+                                  height: 49.w,
+                                  radius: 12,
+                                  isButtonEnabled: isButtonEnabled,
+                                  fillColor: isButtonEnabled
+                                      ? XColors.primary
+                                      : Colors.grey,
+                                  textColor: Colors.white,
+                                  text: 'انشر',
+                                  onPressed: () {
+                                    EasyLoadingInit.startLoading();
+                                    Future.delayed(const Duration(seconds: 2),
+                                        () {
+                                      EasyLoading.dismiss();
+                                      showDialog(
+                                        context: context,
+                                        builder: (context) {
+                                          return const PaymentFailDialog();
+                                        },
+                                      );
+                                      showDialog(
+                                        context: context,
+                                        builder: (context) {
+                                          return const PaymentSuccessDialog();
+                                        },
+                                      );
+                                      Navigator.of(navigatorKey.currentContext!)
+                                          .push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const OtpPage()),
+                                      );
+                                    });
+                                    // context.read<UserBloc>().add(const SignUpEvent());
+                                  },
+                                );
                               },
-                            );
-                          },
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                  ),
-                )),
-            Positioned(
-                right: 79.w,
-                top: 110.h,
-                width: 271.w,
-                height: 174.h,
-                child: AssetsManager.images.payment.creditCard.image()),
-          ],
+                      ),
+                    )),
+                Positioned(
+                    right: 79.w,
+                    top: 110.h,
+                    width: 271.w,
+                    height: 174.h,
+                    child: AssetsManager.images.payment.creditCard.image()),
+              ],
+            ),
+          ),
         ),
       ),
     );

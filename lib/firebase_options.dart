@@ -54,20 +54,24 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBX3qlq6JKR36rX3syys784cDLzMS-6-tc',
-    appId: '1:774921767039:android:998e073058c90343dc574a',
-    messagingSenderId: '774921767039',
-    projectId: 'xsports-a951a',
-    storageBucket: 'xsports-a951a.appspot.com',
+    apiKey:
+        'AIzaSyBX3qlq6JKR36rX3syys784cDLzMS-6-tc', // existing API key is correct
+    appId:
+        '1:774921767039:android:766092a5aca98fa2dc574a', // new App ID from your details
+    messagingSenderId: '774921767039', // stays the same
+    projectId: 'xsports-a951a', // stays the same
+    storageBucket: 'xsports-a951a.appspot.com', // stays the same
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBfE8-Uxv-1AgAXc68x8bBOGxdNIE65qzM',
-    appId: '1:774921767039:ios:04bb7118dc73e74cdc574a',
-    messagingSenderId: '774921767039',
-    projectId: 'xsports-a951a',
-    storageBucket: 'xsports-a951a.appspot.com',
-    iosBundleId: 'com.example.xSport',
+    apiKey:
+        'AIzaSyBfE8-Uxv-1AgAXc68x8bBOGxdNIE65qzM', // existing API key is correct
+    appId:
+        '1:774921767039:ios:baa4d772b075a93adc574a', // new App ID from your details
+    messagingSenderId: '774921767039', // stays the same
+    projectId: 'xsports-a951a', // stays the same
+    storageBucket: 'xsports-a951a.appspot.com', // stays the same
+    iosBundleId: 'com.joka.XSports', // new bundle ID
   );
 
   static const FirebaseOptions macos = FirebaseOptions(

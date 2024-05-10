@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>774921767039-dbf8r6s51avjgumoe3n4h4mcb0o66o2k.apps.googleusercontent.com</string>
+	<string>774921767039-slg594paav2cmg0hmjvqr75s8koc9l84.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.774921767039-dbf8r6s51avjgumoe3n4h4mcb0o66o2k</string>
+	<string>com.googleusercontent.apps.774921767039-slg594paav2cmg0hmjvqr75s8koc9l84</string>
 	<key>ANDROID_CLIENT_ID</key>
 	<string>774921767039-ia7prer619f66549vtlcdc09fsv05if3.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
@@ -15,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.jokasolutions.XSports</string>
+	<string>com.joka.XSports</string>
 	<key>PROJECT_ID</key>
 	<string>xsports-a951a</string>
 	<key>STORAGE_BUCKET</key>
@@ -31,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:774921767039:ios:ec235451607e13a2dc574a</string>
+	<string>1:774921767039:ios:baa4d772b075a93adc574a</string>
 </dict>
 </plist>

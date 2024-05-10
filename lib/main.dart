@@ -5,6 +5,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:x_sport/app/features/archives/presentation/bloc/archive_bloc.dart';
 import 'package:x_sport/app/features/home/presentation/pages/main_page.dart';
+import 'package:x_sport/route_page.dart';
 
 import 'app/features/academy/presentation/bloc/academy_bloc.dart';
 import 'app/features/auth/presentation/bloc/auth_bloc.dart';
@@ -87,7 +88,7 @@ class MyApp extends StatelessWidget {
               ),
               useMaterial3: true,
             ),
-            home: const MainPage(),
+            home: const RoutePage(),
           ),
         );
       },

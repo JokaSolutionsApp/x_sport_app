@@ -7,6 +7,42 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:774921767039:android:766092a5aca98fa2dc574a",
+        "android_client_info": {
+          "package_name": "com.joka.XSports"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "774921767039-sn00keu663aojdge48k8fdlgti2ja08d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBX3qlq6JKR36rX3syys784cDLzMS-6-tc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "774921767039-sn00keu663aojdge48k8fdlgti2ja08d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "774921767039-6mbsnrds15q7v9ekdv6ctt3sc5ncntis.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.xSport.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:774921767039:android:04244949f377b94cdc574a",
         "android_client_info": {
           "package_name": "com.jokasolutions.XSports"

@@ -21,13 +21,20 @@ class LoginPage extends StatefulWidget {
   State<LoginPage> createState() => _LoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
-  TextEditingController email = TextEditingController();
-
-  TextEditingController password = TextEditingController();
+class _LoginPageState extends State<LoginPage> with WidgetsBindingObserver {
+  late TextEditingController email;
+  late TextEditingController password;
+  late ScrollController scrollController;
+  late FocusNode passwordFocusNode;
 
   @override
   void initState() {
+    WidgetsBinding.instance.addObserver(this);
+    scrollController = ScrollController();
+    email = TextEditingController();
+    password = TextEditingController();
+    passwordFocusNode = FocusNode();
+
     getUserLocation();
     super.initState();
   }
@@ -38,89 +45,116 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+
     email.dispose();
     password.dispose();
+    passwordFocusNode.dispose();
     super.dispose();
+  }
+
+  @override
+  void didChangeMetrics() {
+    super.didChangeMetrics();
+    final value = MediaQuery.of(context).viewInsets.bottom;
+    print('Keyboard height: $value');
+    if (value > 0 && passwordFocusNode.hasFocus) {
+      scrollController.animateTo(
+        scrollController.position.maxScrollExtent,
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeOut,
+      );
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return IntrinsicHeightComponent(
       title: 'تسجيل الدخول',
-      child: SizedBox(
-        width: 329.w,
-        child: Column(
-          children: [
-            TextFieldWidget(
-              labelText: 'الرقم / البريد الالكتروني',
-              controller: email,
-              keyboardType: TextInputType.emailAddress,
-              textStream: signInStream.emailPhone,
-              onChanged: signInStream.changeEmailPhone,
-            ),
-            TextFieldWidget(
-              labelText: 'كلمة المرور',
-              controller: password,
-              keyboardType: TextInputType.name,
-              textStream: signInStream.password,
-              onChanged: signInStream.changePassword,
-              isObscureText: true,
-            ),
-            SizedBox(height: 30.h),
-            StreamBuilder(
-                stream: signInStream.loginValid,
-                builder: (context, snapshot) {
-                  final isButtonEnabled = snapshot.data ?? false;
-                  return SubmitButton(
-                    isButtonEnabled: isButtonEnabled,
-                    fillColor: isButtonEnabled ? XColors.primary : Colors.grey,
-                    textColor: Colors.white,
-                    text: 'تسجيل الدخول',
-                    onPressed: () {
-                      context.read<AuthBloc>().add(const AuthEvent.login());
-                    },
-                  );
-                }),
-            SizedBox(height: 40.h),
-            SizedBox(
-              width: 329.w,
-              height: 130.h,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  // OutlinButton(
-                  //   isButtonEnabled: true,
-                  //   fillColor: XColors.primary,
-                  //   textColor: XColors.Background_Color1,
-                  //   image: AssetsManager.icons.facebook,
-                  //   text: 'تسجيل الدخول عبر فيسبوك',
-                  //   onPressed: () {},
-                  // ),
-                  OutlinButton(
-                    isButtonEnabled: true,
-                    fillColor: XColors.primary,
-                    textColor: XColors.Background_Color1,
-                    image: AssetsManager.icons.google,
-                    text: 'تسجيل الدخول عبر جوجل',
-                    onPressed: () {
-                      context
-                          .read<AuthBloc>()
-                          .add(const AuthEvent.googleLogin());
-                    },
+      child: SingleChildScrollView(
+        controller: scrollController,
+        child: Padding(
+          padding: EdgeInsets.only(
+              bottom: MediaQuery.of(context).viewInsets.bottom / 1.8),
+          child: SizedBox(
+            width: 329.w,
+            child: Column(
+              children: [
+                TextFieldWidget(
+                  labelText: 'الرقم / البريد الالكتروني',
+                  controller: email,
+                  keyboardType: TextInputType.emailAddress,
+                  textStream: signInStream.emailPhone,
+                  onChanged: signInStream.changeEmailPhone,
+                ),
+                TextFieldWidget(
+                  focusNode: passwordFocusNode,
+                  labelText: 'كلمة المرور',
+                  controller: password,
+                  keyboardType: TextInputType.name,
+                  textStream: signInStream.password,
+                  onChanged: signInStream.changePassword,
+                  isObscureText: true,
+                ),
+                SizedBox(height: 30.h),
+                StreamBuilder(
+                    stream: signInStream.loginValid,
+                    builder: (context, snapshot) {
+                      final isButtonEnabled = snapshot.data ?? false;
+                      return SubmitButton(
+                        isButtonEnabled: isButtonEnabled,
+                        fillColor:
+                            isButtonEnabled ? XColors.primary : Colors.grey,
+                        textColor: Colors.white,
+                        text: 'تسجيل الدخول',
+                        onPressed: () {
+                          context.read<AuthBloc>().add(const AuthEvent.login());
+                        },
+                      );
+                    }),
+                SizedBox(height: 40.h),
+                SizedBox(
+                  width: 329.w,
+                  height: 130.h,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      // OutlinButton(
+                      //   isButtonEnabled: true,
+                      //   fillColor: XColors.primary,
+                      //   textColor: XColors.Background_Color1,
+                      //   image: AssetsManager.icons.facebook,
+                      //   text: 'تسجيل الدخول عبر فيسبوك',
+                      //   onPressed: () {},
+                      // ),
+                      OutlinButton(
+                        isButtonEnabled: true,
+                        fillColor: XColors.primary,
+                        textColor: XColors.Background_Color1,
+                        image: AssetsManager.icons.google,
+                        text: 'تسجيل الدخول عبر جوجل',
+                        onPressed: () {
+                          context
+                              .read<AuthBloc>()
+                              .add(const AuthEvent.googleLogin());
+                        },
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+                SizedBox(height: 26.h),
+                UnderlinButton(
+                  buttonText: 'ليس لديك حساب؟! سجل الان!',
+                  onPressed: () {
+                    Navigator.of(navigatorKey.currentContext!).push(
+                      MaterialPageRoute(
+                          builder: (context) => const RegisterPage()),
+                    );
+                  },
+                ),
+              ],
             ),
-            SizedBox(height: 26.h),
-            UnderlinButton(
-              buttonText: 'ليس لديك حساب؟! سجل الان!',
-              onPressed: () {
-                Navigator.of(navigatorKey.currentContext!).push(
-                  MaterialPageRoute(builder: (context) => const RegisterPage()),
-                );
-              },
-            ),
-          ],
+          ),
         ),
       ),
     );

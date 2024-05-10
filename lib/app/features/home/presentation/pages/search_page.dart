@@ -24,7 +24,7 @@ class _SearchScreenState extends State<SearchPage>
 
   @override
   void initState() {
-    _tabController = TabController(vsync: this, length: 2, initialIndex: 1);
+    _tabController = TabController(vsync: this, length: 1, initialIndex: 0);
     _tabController.addListener(() {
       setState(() {
         _selectedTab = _tabController.index;
@@ -104,28 +104,28 @@ class _SearchScreenState extends State<SearchPage>
                 ],
               ),
             ),
-            Tab(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Text(
-                    'اشخاص',
-                    style: TextStyle(
-                        color:
-                            _selectedTab == 0 ? Colors.black : XColors.primary,
-                        fontSize: 15.sp,
-                        fontWeight: FontWeight.w500),
-                  ),
-                  SizedBox(width: 4.w),
-                  Icon(
-                    size: 30.sp,
-                    Icons.person,
-                    color: _selectedTab == 0 ? Colors.black : XColors.primary,
-                  ),
-                ],
-              ),
-            ),
+            // Tab(
+            //   child: Row(
+            //     mainAxisAlignment: MainAxisAlignment.center,
+            //     crossAxisAlignment: CrossAxisAlignment.end,
+            //     children: [
+            //       Text(
+            //         'اشخاص',
+            //         style: TextStyle(
+            //             color:
+            //                 _selectedTab == 0 ? Colors.black : XColors.primary,
+            //             fontSize: 15.sp,
+            //             fontWeight: FontWeight.w500),
+            //       ),
+            //       SizedBox(width: 4.w),
+            //       Icon(
+            //         size: 30.sp,
+            //         Icons.person,
+            //         color: _selectedTab == 0 ? Colors.black : XColors.primary,
+            //       ),
+            //     ],
+            //   ),
+            // ),
           ],
         ),
         backgroundColor:
@@ -144,327 +144,334 @@ class _SearchScreenState extends State<SearchPage>
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: SizedBox(
-          height: 1.sh,
-          width: 1.sw,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              SizedBox(height: 35.h),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 6.0.w),
-                child: SreachFieldWidget(
-                  controller: _userSearchController,
-                  userSearchBloc: _userSearchBloc,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(right: 12.w, top: 23.h, bottom: 12.h),
-                child: Text(
-                  'عرض مؤخرا',
-                  textAlign: TextAlign.right,
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 15.sp),
-                ),
-              ),
-              Expanded(
-                  child: ListView.builder(
-                padding: EdgeInsets.only(right: 10.w, left: 21),
-                itemCount: 8,
-                // itemCount: snapshot.data!.length,
-                itemBuilder: (context, index) {
-                  // UserSearch user = snapshot.data![index];
-                  return Padding(
-                    padding: EdgeInsets.only(bottom: 40.0.w),
-                    child: Directionality(
-                      textDirection: TextDirection.rtl,
-                      child: GestureDetector(
-                        onTap: () {
-                          // FocusScope.of(context).unfocus();
-                          // Future.delayed(Duration(milliseconds: 150), () {
-                          //   Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //       builder: (context) => PeopleProfilePage(),
-                          //     ),
-                          //   );
-                          // });
-                        },
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                SizedBox(
-                                  height: 50.w,
-                                  width: 50.w,
-                                  child: CircleAvatar(
-                                      backgroundImage: AssetsManager
-                                          .images.avatars.avatar2
-                                          .image(fit: BoxFit.cover)
-                                          .image),
-                                ),
-                                SizedBox(width: 14.w),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'اسم اللاعب',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 15.sp,
-                                          color: Colors.black),
-                                    ),
-                                    Text(
-                                      'معلومات شخصية',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 10.sp,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Container(
-                                  margin: EdgeInsets.only(
-                                      right: 10.w, bottom: 10.w),
-                                  height: 20.w,
-                                  width: 20.w,
-                                  child: AssetsManager.images.main.verified
-                                      .image(fit: BoxFit.cover),
-                                ),
-                              ],
-                            ),
-                            GestureDetector(
-                              child: Icon(
-                                Icons.close,
-                                size: 32.sp,
-                                color: const Color(0xFF2E2E2E),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  );
-                },
-              )),
-              // Expanded(
-              //   child: StreamBuilder<List<UserSearch>>(
-              //     stream: _userSearchBloc.userStream,
-              //     builder: (context, snapshot) {
-              //       // if (snapshot.hasError) {
-              //       //   return Text('Error: ${snapshot.error}');
-              //       // }
-
-              //       if (!snapshot.hasData ||
-              //           snapshot.data!.isEmpty ||
-              //           _userSearchController.text.isEmpty) {
-              //         return Text(' ');
-              //       }
-
-              //       return ListView.builder(
-              //         padding: EdgeInsets.only(right: 10.w, left: 21),
-              //         itemCount: 8,
-              //         // itemCount: snapshot.data!.length,
-              //         itemBuilder: (context, index) {
-              //           // UserSearch user = snapshot.data![index];
-              //           return Padding(
-              //             padding: EdgeInsets.only(bottom: 40.0.w),
-              //             child: Directionality(
-              //               textDirection: TextDirection.rtl,
-              //               child: GestureDetector(
-              //                 onTap: () {
-              //                   // FocusScope.of(context).unfocus();
-              //                   // Future.delayed(Duration(milliseconds: 150), () {
-              //                   //   Navigator.push(
-              //                   //     context,
-              //                   //     MaterialPageRoute(
-              //                   //       builder: (context) => PeopleProfilePage(),
-              //                   //     ),
-              //                   //   );
-              //                   // });
-              //                 },
-              //                 child: Row(
-              //                   mainAxisAlignment:
-              //                       MainAxisAlignment.spaceBetween,
-              //                   children: [
-              //                     Row(
-              //                       children: [
-              //                         Container(
-              //                           height: 50.w,
-              //                           width: 50.w,
-              //                           decoration: BoxDecoration(
-              //                               shape: BoxShape.circle,
-              //                               image: DecorationImage(
-              //                                 image: AssetImage(
-              //                                     'assets/images/avatar2.png'),
-              //                                 fit: BoxFit.cover,
-              //                               )),
-              //                         ),
-              //                         SizedBox(width: 14.w),
-              //                         Column(
-              //                           crossAxisAlignment:
-              //                               CrossAxisAlignment.start,
-              //                           children: [
-              //                             Text(
-              //                               'اسم اللاعب',
-              //                               style: TextStyle(
-              //                                   fontWeight: FontWeight.w500,
-              //                                   fontSize: 15.sp,
-              //                                   color: Colors.black),
-              //                             ),
-              //                             Text(
-              //                               'معلومات شخصية',
-              //                               style: TextStyle(
-              //                                 fontWeight: FontWeight.w500,
-              //                                 fontSize: 10.sp,
-              //                               ),
-              //                             ),
-              //                           ],
-              //                         ),
-              //                         Container(
-              //                           margin: EdgeInsets.only(
-              //                               right: 10.w, bottom: 10.w),
-              //                           height: 20.w,
-              //                           width: 20.w,
-              //                           decoration: BoxDecoration(
-              //                               image: DecorationImage(
-              //                             image: AssetImage(
-              //                                 'assets/images/verified.png'),
-              //                             fit: BoxFit.cover,
-              //                           )),
-              //                         ),
-              //                       ],
-              //                     ),
-              //                     GestureDetector(
-              //                       child: Icon(
-              //                         Icons.cancel_outlined,
-              //                         size: 30.sp,
-              //                         color: Color(0xFF2E2E2E),
-              //                       ),
-              //                     )
-              //                   ],
-              //                 ),
-              //               ),
-              //             ),
-              //           );
-              //         },
-              //       );
-              //     },
-              //   ),
-              // ),
-              SizedBox(
-                height: 0.48.sh,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Padding(
-                      padding:
-                          EdgeInsets.only(right: 12.w, top: 23.h, bottom: 20.h),
-                      child: Text(
-                        'اشخاص قد تعرفهم',
-                        textAlign: TextAlign.right,
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.w400,
-                            fontSize: 15.sp),
-                      ),
-                    ),
-                    Expanded(
-                      child: ListView.builder(
-                        padding: EdgeInsets.only(right: 10.w, left: 21),
-                        itemCount: 2,
-                        itemBuilder: (context, index) {
-                          return Padding(
-                            padding: EdgeInsets.only(bottom: 40.0.w),
-                            child: Directionality(
-                              textDirection: TextDirection.rtl,
-                              child: GestureDetector(
-                                onTap: () {
-                                  // FocusScope.of(context).unfocus();
-                                  // Future.delayed(Duration(milliseconds: 150), () {
-                                  //   Navigator.push(
-                                  //     context,
-                                  //     MaterialPageRoute(
-                                  //       builder: (context) => PeopleProfilePage(),
-                                  //     ),
-                                  //   );
-                                  // });
-                                },
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        SizedBox(
-                                          height: 50.w,
-                                          width: 50.w,
-                                          child: CircleAvatar(
-                                              backgroundImage: AssetsManager
-                                                  .images.avatars.avatar2
-                                                  .image(fit: BoxFit.cover)
-                                                  .image),
-                                        ),
-                                        SizedBox(width: 14.w),
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              'اسم اللاعب',
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.w400,
-                                                  fontSize: 15.sp,
-                                                  color: Colors.black),
-                                            ),
-                                            Text(
-                                              'معلومات شخصية',
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.w500,
-                                                fontSize: 10.sp,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                        Container(
-                                          margin: EdgeInsets.only(
-                                              right: 10.w, bottom: 10.w),
-                                          height: 20.w,
-                                          width: 20.w,
-                                          child: AssetsManager
-                                              .images.main.verified
-                                              .image(fit: BoxFit.cover),
-                                        ),
-                                      ],
-                                    ),
-                                    SubmitButton(
-                                      minWidth: 88.w,
-                                      height: 32.w,
-                                      radius: 6,
-                                      fillColor: XColors.primary,
-                                      textSize: 15,
-                                      text: 'تابع',
-                                      onPressed: () {},
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                          );
-                        },
-                      ),
-                    ),
-                  ],
-                ),
-              )
-            ],
-          ),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 6.0.w, vertical: 15.h),
+        child: SreachFieldWidget(
+          controller: _userSearchController,
+          userSearchBloc: _userSearchBloc,
         ),
       ),
+      // body: SingleChildScrollView(
+      //   child: SizedBox(
+      //     height: 1.sh,
+      //     width: 1.sw,
+      //     child: Column(
+      //       crossAxisAlignment: CrossAxisAlignment.end,
+      //       children: [
+      //         SizedBox(height: 35.h),
+      //         Padding(
+      //           padding: EdgeInsets.symmetric(horizontal: 6.0.w),
+      //           child: SreachFieldWidget(
+      //             controller: _userSearchController,
+      //             userSearchBloc: _userSearchBloc,
+      //           ),
+      //         ),
+      //         Padding(
+      //           padding: EdgeInsets.only(right: 12.w, top: 23.h, bottom: 12.h),
+      //           child: Text(
+      //             'عرض مؤخرا',
+      //             textAlign: TextAlign.right,
+      //             style: TextStyle(
+      //                 color: Colors.black,
+      //                 fontWeight: FontWeight.w400,
+      //                 fontSize: 15.sp),
+      //           ),
+      //         ),
+      //         Expanded(
+      //             child: ListView.builder(
+      //           padding: EdgeInsets.only(right: 10.w, left: 21),
+      //           itemCount: 8,
+      //           // itemCount: snapshot.data!.length,
+      //           itemBuilder: (context, index) {
+      //             // UserSearch user = snapshot.data![index];
+      //             return Padding(
+      //               padding: EdgeInsets.only(bottom: 40.0.w),
+      //               child: Directionality(
+      //                 textDirection: TextDirection.rtl,
+      //                 child: GestureDetector(
+      //                   onTap: () {
+      //                     // FocusScope.of(context).unfocus();
+      //                     // Future.delayed(Duration(milliseconds: 150), () {
+      //                     //   Navigator.push(
+      //                     //     context,
+      //                     //     MaterialPageRoute(
+      //                     //       builder: (context) => PeopleProfilePage(),
+      //                     //     ),
+      //                     //   );
+      //                     // });
+      //                   },
+      //                   child: Row(
+      //                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //                     children: [
+      //                       Row(
+      //                         children: [
+      //                           SizedBox(
+      //                             height: 50.w,
+      //                             width: 50.w,
+      //                             child: CircleAvatar(
+      //                                 backgroundImage: AssetsManager
+      //                                     .images.avatars.avatar2
+      //                                     .image(fit: BoxFit.cover)
+      //                                     .image),
+      //                           ),
+      //                           SizedBox(width: 14.w),
+      //                           Column(
+      //                             crossAxisAlignment: CrossAxisAlignment.start,
+      //                             children: [
+      //                               Text(
+      //                                 'اسم اللاعب',
+      //                                 style: TextStyle(
+      //                                     fontWeight: FontWeight.w500,
+      //                                     fontSize: 15.sp,
+      //                                     color: Colors.black),
+      //                               ),
+      //                               Text(
+      //                                 'معلومات شخصية',
+      //                                 style: TextStyle(
+      //                                   fontWeight: FontWeight.w500,
+      //                                   fontSize: 10.sp,
+      //                                 ),
+      //                               ),
+      //                             ],
+      //                           ),
+      //                           Container(
+      //                             margin: EdgeInsets.only(
+      //                                 right: 10.w, bottom: 10.w),
+      //                             height: 20.w,
+      //                             width: 20.w,
+      //                             child: AssetsManager.images.main.verified
+      //                                 .image(fit: BoxFit.cover),
+      //                           ),
+      //                         ],
+      //                       ),
+      //                       GestureDetector(
+      //                         child: Icon(
+      //                           Icons.close,
+      //                           size: 32.sp,
+      //                           color: const Color(0xFF2E2E2E),
+      //                         ),
+      //                       )
+      //                     ],
+      //                   ),
+      //                 ),
+      //               ),
+      //             );
+      //           },
+      //         )),
+      // Expanded(
+      //   child: StreamBuilder<List<UserSearch>>(
+      //     stream: _userSearchBloc.userStream,
+      //     builder: (context, snapshot) {
+      //       // if (snapshot.hasError) {
+      //       //   return Text('Error: ${snapshot.error}');
+      //       // }
+
+      //       if (!snapshot.hasData ||
+      //           snapshot.data!.isEmpty ||
+      //           _userSearchController.text.isEmpty) {
+      //         return Text(' ');
+      //       }
+
+      //       return ListView.builder(
+      //         padding: EdgeInsets.only(right: 10.w, left: 21),
+      //         itemCount: 8,
+      //         // itemCount: snapshot.data!.length,
+      //         itemBuilder: (context, index) {
+      //           // UserSearch user = snapshot.data![index];
+      //           return Padding(
+      //             padding: EdgeInsets.only(bottom: 40.0.w),
+      //             child: Directionality(
+      //               textDirection: TextDirection.rtl,
+      //               child: GestureDetector(
+      //                 onTap: () {
+      //                   // FocusScope.of(context).unfocus();
+      //                   // Future.delayed(Duration(milliseconds: 150), () {
+      //                   //   Navigator.push(
+      //                   //     context,
+      //                   //     MaterialPageRoute(
+      //                   //       builder: (context) => PeopleProfilePage(),
+      //                   //     ),
+      //                   //   );
+      //                   // });
+      //                 },
+      //                 child: Row(
+      //                   mainAxisAlignment:
+      //                       MainAxisAlignment.spaceBetween,
+      //                   children: [
+      //                     Row(
+      //                       children: [
+      //                         Container(
+      //                           height: 50.w,
+      //                           width: 50.w,
+      //                           decoration: BoxDecoration(
+      //                               shape: BoxShape.circle,
+      //                               image: DecorationImage(
+      //                                 image: AssetImage(
+      //                                     'assets/images/avatar2.png'),
+      //                                 fit: BoxFit.cover,
+      //                               )),
+      //                         ),
+      //                         SizedBox(width: 14.w),
+      //                         Column(
+      //                           crossAxisAlignment:
+      //                               CrossAxisAlignment.start,
+      //                           children: [
+      //                             Text(
+      //                               'اسم اللاعب',
+      //                               style: TextStyle(
+      //                                   fontWeight: FontWeight.w500,
+      //                                   fontSize: 15.sp,
+      //                                   color: Colors.black),
+      //                             ),
+      //                             Text(
+      //                               'معلومات شخصية',
+      //                               style: TextStyle(
+      //                                 fontWeight: FontWeight.w500,
+      //                                 fontSize: 10.sp,
+      //                               ),
+      //                             ),
+      //                           ],
+      //                         ),
+      //                         Container(
+      //                           margin: EdgeInsets.only(
+      //                               right: 10.w, bottom: 10.w),
+      //                           height: 20.w,
+      //                           width: 20.w,
+      //                           decoration: BoxDecoration(
+      //                               image: DecorationImage(
+      //                             image: AssetImage(
+      //                                 'assets/images/verified.png'),
+      //                             fit: BoxFit.cover,
+      //                           )),
+      //                         ),
+      //                       ],
+      //                     ),
+      //                     GestureDetector(
+      //                       child: Icon(
+      //                         Icons.cancel_outlined,
+      //                         size: 30.sp,
+      //                         color: Color(0xFF2E2E2E),
+      //                       ),
+      //                     )
+      //                   ],
+      //                 ),
+      //               ),
+      //             ),
+      //           );
+      //         },
+      //       );
+      //     },
+      //   ),
+      // ),
+      //         SizedBox(
+      //           height: 0.48.sh,
+      //           child: Column(
+      //             crossAxisAlignment: CrossAxisAlignment.end,
+      //             children: [
+      //               Padding(
+      //                 padding:
+      //                     EdgeInsets.only(right: 12.w, top: 23.h, bottom: 20.h),
+      //                 child: Text(
+      //                   'اشخاص قد تعرفهم',
+      //                   textAlign: TextAlign.right,
+      //                   style: TextStyle(
+      //                       color: Colors.black,
+      //                       fontWeight: FontWeight.w400,
+      //                       fontSize: 15.sp),
+      //                 ),
+      //               ),
+      //               Expanded(
+      //                 child: ListView.builder(
+      //                   padding: EdgeInsets.only(right: 10.w, left: 21),
+      //                   itemCount: 2,
+      //                   itemBuilder: (context, index) {
+      //                     return Padding(
+      //                       padding: EdgeInsets.only(bottom: 40.0.w),
+      //                       child: Directionality(
+      //                         textDirection: TextDirection.rtl,
+      //                         child: GestureDetector(
+      //                           onTap: () {
+      //                             // FocusScope.of(context).unfocus();
+      //                             // Future.delayed(Duration(milliseconds: 150), () {
+      //                             //   Navigator.push(
+      //                             //     context,
+      //                             //     MaterialPageRoute(
+      //                             //       builder: (context) => PeopleProfilePage(),
+      //                             //     ),
+      //                             //   );
+      //                             // });
+      //                           },
+      //                           child: Row(
+      //                             mainAxisAlignment:
+      //                                 MainAxisAlignment.spaceBetween,
+      //                             children: [
+      //                               Row(
+      //                                 children: [
+      //                                   SizedBox(
+      //                                     height: 50.w,
+      //                                     width: 50.w,
+      //                                     child: CircleAvatar(
+      //                                         backgroundImage: AssetsManager
+      //                                             .images.avatars.avatar2
+      //                                             .image(fit: BoxFit.cover)
+      //                                             .image),
+      //                                   ),
+      //                                   SizedBox(width: 14.w),
+      //                                   Column(
+      //                                     crossAxisAlignment:
+      //                                         CrossAxisAlignment.start,
+      //                                     children: [
+      //                                       Text(
+      //                                         'اسم اللاعب',
+      //                                         style: TextStyle(
+      //                                             fontWeight: FontWeight.w400,
+      //                                             fontSize: 15.sp,
+      //                                             color: Colors.black),
+      //                                       ),
+      //                                       Text(
+      //                                         'معلومات شخصية',
+      //                                         style: TextStyle(
+      //                                           fontWeight: FontWeight.w500,
+      //                                           fontSize: 10.sp,
+      //                                         ),
+      //                                       ),
+      //                                     ],
+      //                                   ),
+      //                                   Container(
+      //                                     margin: EdgeInsets.only(
+      //                                         right: 10.w, bottom: 10.w),
+      //                                     height: 20.w,
+      //                                     width: 20.w,
+      //                                     child: AssetsManager
+      //                                         .images.main.verified
+      //                                         .image(fit: BoxFit.cover),
+      //                                   ),
+      //                                 ],
+      //                               ),
+      //                               SubmitButton(
+      //                                 minWidth: 88.w,
+      //                                 height: 32.w,
+      //                                 radius: 6,
+      //                                 fillColor: XColors.primary,
+      //                                 textSize: 15,
+      //                                 text: 'تابع',
+      //                                 onPressed: () {},
+      //                               )
+      //                             ],
+      //                           ),
+      //                         ),
+      //                       ),
+      //                     );
+      //                   },
+      //                 ),
+      //               ),
+      //             ],
+      //           ),
+      //         )
+      //       ],
+      //     ),
+      //   ),
+      // ),
     );
   }
 }

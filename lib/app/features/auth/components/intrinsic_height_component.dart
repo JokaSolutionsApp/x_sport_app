@@ -84,21 +84,25 @@ class IntrinsicHeightComponent extends StatelessWidget {
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(60.sp),
                             topRight: Radius.circular(60.sp))),
-                    child: SingleChildScrollView(
-                      child: Column(children: [
-                        Padding(
-                          padding: EdgeInsets.only(top: 40.0.h),
-                          child: Text(
-                            title,
-                            style: TextStyle(
-                                color: XColors.Background_Color1,
-                                fontSize: 28.sp,
-                                fontWeight: FontWeight.w500),
-                          ),
+                    child: Column(children: [
+                      Padding(
+                        padding: EdgeInsets.only(top: 40.0.h),
+                        child: Text(
+                          title,
+                          style: TextStyle(
+                              color: XColors.Background_Color1,
+                              fontSize: 28.sp,
+                              fontWeight: FontWeight.w500),
                         ),
-                        child,
-                      ]),
-                    ),
+                      ),
+                      Expanded(
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 20.w),
+                          child: child,
+                        ),
+                      ),
+                      // child,
+                    ]),
                   ))
             ],
           ),

@@ -41,11 +41,9 @@ class AcademiesComponent extends StatelessWidget {
               orElse: () => const Offstage(),
               getSuggestedAcademiesEmpty: () => const Offstage(),
               getSuggestedAcademiesFailure: (value) => const Offstage(),
-              getSuggestedAcademiesLoading: () => const Expanded(
-                    child: Center(
-                      child: CircularProgressIndicator(
-                        color: XColors.primary,
-                      ),
+              getSuggestedAcademiesLoading: () => Center(
+                    child: CircularProgressIndicator(
+                      color: XColors.primary,
                     ),
                   ),
               suggestedAcademiesFetched: (value) {
