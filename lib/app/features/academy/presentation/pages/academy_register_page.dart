@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:x_sport/app/controllers/fileds_bloc.dart';
@@ -55,6 +56,7 @@ class _AcademyScreenState extends State<AcademyRegisterPage>
               vertical: 16.0,
             ),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
                   height: 30.h,
@@ -331,39 +333,42 @@ class _AcademyScreenState extends State<AcademyRegisterPage>
                   SizedBox(
                     height: 75.h,
                   ),
-                SizedBox(
-                  width: 190.w,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      context.read<AcademyBloc>().add(
-                            AcademyEvent.inrollUserInCourse(
-                              params: InrollUserInCourseParams(
-                                uId: userId,
-                                courseId: widget.courseId,
-                                isPersonal: isPersonal,
-                                name: nameController.text,
-                                relativeId: relativeId,
-                                residencePlace: addressController.text,
-                                phone: numberController.text,
+                Align(
+                  alignment: Alignment.center,
+                  child: SizedBox(
+                    width: 190.w,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        context.read<AcademyBloc>().add(
+                              AcademyEvent.inrollUserInCourse(
+                                params: InrollUserInCourseParams(
+                                  uId: userId,
+                                  courseId: widget.courseId,
+                                  isPersonal: isPersonal,
+                                  name: nameController.text,
+                                  relativeId: relativeId,
+                                  residencePlace: addressController.text,
+                                  phone: numberController.text,
+                                ),
                               ),
-                            ),
-                          );
-                      Navigator.of(navigatorKey.currentContext!).push(
-                        MaterialPageRoute(
-                          builder: (context) => PaymentMethodPage(),
+                            );
+                        Navigator.of(navigatorKey.currentContext!).push(
+                          MaterialPageRoute(
+                            builder: (context) => PaymentMethodPage(),
+                          ),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: XColors.primary,
+                        foregroundColor: const Color.fromRGBO(255, 255, 255, 1),
+                        shape: const RoundedRectangleBorder(),
+                      ),
+                      child: const Text(
+                        'التالي',
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500,
                         ),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: XColors.primary,
-                      foregroundColor: const Color.fromRGBO(255, 255, 255, 1),
-                      shape: const RoundedRectangleBorder(),
-                    ),
-                    child: const Text(
-                      'التالي',
-                      style: TextStyle(
-                        fontSize: 10,
-                        fontWeight: FontWeight.w500,
                       ),
                     ),
                   ),

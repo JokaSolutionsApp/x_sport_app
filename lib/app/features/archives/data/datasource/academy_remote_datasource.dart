@@ -21,7 +21,7 @@ class ArchiveRemoteDataSource extends BaseArchiveRemoteDataSource {
       "FilterByLastYear": false,
       "FilterByLastMonth": false,
       "FilterByLastWeek": false,
-      "FilterByActive": false,
+      "FilterByActive": null,
     };
     final response = await ApiService.get(
       ApiConstance.getAcademiesSubscriptionArchive,

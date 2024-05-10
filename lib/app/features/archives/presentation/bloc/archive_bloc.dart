@@ -23,7 +23,7 @@ class ArchiveBloc extends Bloc<ArchiveEvent, ArchiveState> {
       );
     });
   }
-
+  List<AcademySubscriptionArchive> academySubscriptionArchive = [];
   Future<void> getAcademySupscriptionArchive(
       event, Emitter<ArchiveState> emit) async {
     print('bloc _getSuggestedAcademies');
@@ -33,10 +33,10 @@ class ArchiveBloc extends Bloc<ArchiveEvent, ArchiveState> {
     result.fold((f) {
       emit(ArchiveState.getAcademySubscriptionArchiveFailure(failure: f));
     }, (r) {
-      print('bloc _getSuggestedAcademies $r');
+      academySubscriptionArchive = r;
 
       emit(ArchiveState.academySubscriptionArchiveFetched(
-          academySubscriptionArchive: r));
+          academySubscriptionArchive: academySubscriptionArchive));
     });
   }
 }
