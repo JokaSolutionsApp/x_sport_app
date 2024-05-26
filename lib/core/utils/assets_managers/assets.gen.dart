@@ -15,6 +15,17 @@ class $AssetsIconsGen {
   /// File path: assets/icons/Group.png
   AssetGenImage get group => const AssetGenImage('assets/icons/Group.png');
 
+  /// File path: assets/icons/app_white_logo.png
+  AssetGenImage get appWhiteLogo =>
+      const AssetGenImage('assets/icons/app_white_logo.png');
+
+  /// File path: assets/icons/apple.png
+  AssetGenImage get apple => const AssetGenImage('assets/icons/apple.png');
+
+  /// File path: assets/icons/ar_back_arrow.png
+  AssetGenImage get arBackArrow =>
+      const AssetGenImage('assets/icons/ar_back_arrow.png');
+
   /// File path: assets/icons/car.png
   AssetGenImage get car => const AssetGenImage('assets/icons/car.png');
 
@@ -48,11 +59,25 @@ class $AssetsIconsGen {
   AssetGenImage get greenUpArrow =>
       const AssetGenImage('assets/icons/green_up_arrow.png');
 
+  /// File path: assets/icons/hand.png
+  AssetGenImage get hand => const AssetGenImage('assets/icons/hand.png');
+
   /// File path: assets/icons/icon.png
   AssetGenImage get icon => const AssetGenImage('assets/icons/icon.png');
 
+  /// File path: assets/icons/logo_with_opacity.png
+  AssetGenImage get logoWithOpacity =>
+      const AssetGenImage('assets/icons/logo_with_opacity.png');
+
   /// File path: assets/icons/meds.png
   AssetGenImage get meds => const AssetGenImage('assets/icons/meds.png');
+
+  /// File path: assets/icons/obscure.png
+  AssetGenImage get obscure => const AssetGenImage('assets/icons/obscure.png');
+
+  /// File path: assets/icons/pick_image.png
+  AssetGenImage get pickImage =>
+      const AssetGenImage('assets/icons/pick_image.png');
 
   /// File path: assets/icons/red_down_arrow.png
   AssetGenImage get redDownArrow =>
@@ -67,6 +92,9 @@ class $AssetsIconsGen {
   /// List of all assets
   List<dynamic> get values => [
         group,
+        appWhiteLogo,
+        apple,
+        arBackArrow,
         car,
         clock,
         config,
@@ -77,8 +105,12 @@ class $AssetsIconsGen {
         google,
         grass,
         greenUpArrow,
+        hand,
         icon,
+        logoWithOpacity,
         meds,
+        obscure,
+        pickImage,
         redDownArrow,
         reset,
         send
@@ -88,6 +120,7 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  $AssetsImagesAuthGen get auth => const $AssetsImagesAuthGen();
   $AssetsImagesAcademyGen get academy => const $AssetsImagesAcademyGen();
   $AssetsImagesActivitiesGen get activities =>
       const $AssetsImagesActivitiesGen();
@@ -101,6 +134,37 @@ class $AssetsImagesGen {
   $AssetsImagesPlayGen get play => const $AssetsImagesPlayGen();
   $AssetsImagesRankGen get rank => const $AssetsImagesRankGen();
   $AssetsImagesSocialGen get social => const $AssetsImagesSocialGen();
+
+  /// File path: assets/images/welcome_back_ground.png
+  AssetGenImage get welcomeBackGround =>
+      const AssetGenImage('assets/images/welcome_back_ground.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [welcomeBackGround];
+}
+
+class $AssetsTranslationsGen {
+  const $AssetsTranslationsGen();
+
+  /// File path: assets/translations/ar.json
+  String get ar => 'assets/translations/ar.json';
+
+  /// File path: assets/translations/en.json
+  String get en => 'assets/translations/en.json';
+
+  /// List of all assets
+  List<String> get values => [ar, en];
+}
+
+class $AssetsImagesAuthGen {
+  const $AssetsImagesAuthGen();
+
+  /// File path: assets/images/Auth/x_sports_logo.png
+  AssetGenImage get xSportsLogo =>
+      const AssetGenImage('assets/images/Auth/x_sports_logo.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [xSportsLogo];
 }
 
 class $AssetsImagesAcademyGen {
@@ -417,6 +481,7 @@ class AssetsManager {
 
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $AssetsTranslationsGen translations = $AssetsTranslationsGen();
 }
 
 class AssetGenImage {

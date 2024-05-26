@@ -10,8 +10,9 @@ class CompleteRegistrationUseCase {
   CompleteRegistrationUseCase(this.repository);
 
   Future<Either<Failure, UserProfileEntity>> call(
-      List<int> imageBytes, String imageType, List<int> sportsIds) async {
-    return await repository.completeRegistration(
-        imageBytes, imageType, sportsIds);
+    List<int> imageBytes,
+    String imageType,
+  ) async {
+    return await repository.completeRegistration(imageBytes, imageType);
   }
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:x_sport/app/features/auth/presentation/pages/complete_your_profile.dart';
+import 'package:x_sport/app/features/auth/presentation/pages/create_or_signin.dart';
 import 'package:x_sport/app/features/auth/presentation/pages/otp_page.dart';
 import 'package:x_sport/app/features/auth/presentation/pages/welcome_page.dart';
 import 'package:x_sport/app/features/paymnet/presentation/pages/payment_page.dart';
@@ -30,17 +32,16 @@ class RoutePage extends StatelessWidget {
           return const Offstage();
         },
         checkAccountStatus: (value) {
-          print("value.userAuthState ${value.userAuthState}");
           if (value.userAuthState == UserAuthState.loggedIn) {
             return const MainPage();
           } else if (value.userAuthState == UserAuthState.welcome) {
             return const WelcomePage();
           } else if (value.userAuthState == UserAuthState.otp) {
             return const OtpPage();
-          } else if (value.userAuthState == UserAuthState.otp) {
+          } else if (value.userAuthState == UserAuthState.error) {
             return const LoginPage();
           } else {
-            return const LoginPage();
+            return const CreateOrSignIn();
           }
         },
       );

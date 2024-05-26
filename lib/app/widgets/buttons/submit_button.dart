@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 
 import '../../../core/constance/app_constance.dart';
 
@@ -14,6 +16,9 @@ class SubmitButton extends StatelessWidget {
   final double height;
   final double textSize;
   final double padding;
+  final FontWeight? fontWeight;
+  final bool hasBoarder;
+  final bool hasArrow;
 
   const SubmitButton(
       {super.key,
@@ -26,7 +31,10 @@ class SubmitButton extends StatelessWidget {
       this.minWidth = 329,
       this.height = 58,
       this.textSize = 20,
-      this.padding = 4});
+      this.padding = 4,
+      this.fontWeight = FontWeight.w500,
+      this.hasBoarder = false,
+      this.hasArrow = false});
 
   @override
   Widget build(BuildContext context) {
@@ -37,15 +45,42 @@ class SubmitButton extends StatelessWidget {
       color: fillColor,
       padding: EdgeInsets.all(padding.sp),
       shape: RoundedRectangleBorder(
+        side: hasBoarder
+            ? BorderSide(
+                color: XColors.primary,
+                width: 0.8.w,
+              )
+            : BorderSide.none,
         borderRadius: BorderRadius.circular(radius.sp),
       ),
       onPressed: isButtonEnabled ? onPressed : () {},
-      child: Text(
-        text,
-        style: TextStyle(
-            color: textColor,
-            fontSize: textSize.sp,
-            fontWeight: FontWeight.w500),
+      child: SizedBox(
+        width: minWidth.w,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Offstage(
+              offstage: hasArrow == false,
+              child: Row(
+                children: [
+                  AssetsManager.icons.arBackArrow
+                      .image(color: XColors.white, height: 20.h),
+                  SizedBox(
+                    width: 10.w,
+                  )
+                ],
+              ),
+            ),
+            Text(
+              text,
+              style: TextStyle(
+                color: textColor,
+                fontSize: textSize.sp,
+                fontWeight: fontWeight,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

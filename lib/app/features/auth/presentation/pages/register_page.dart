@@ -1,14 +1,18 @@
+import 'package:easy_localization/easy_localization.dart' hide TextDirection;
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../../../core/constance/app_constance.dart';
-import '../../../../controllers/fileds_bloc.dart';
-import '../../../../widgets/buttons/submit_button.dart';
-import '../../../../widgets/text_fields/textfield_widget.dart';
-import '../../components/intrinsic_height_component.dart';
-import '../../components/register_components/gender_component.dart';
-import '../bloc/auth_bloc.dart';
+import 'package:x_sport/app/controllers/fileds_bloc.dart';
+import 'package:x_sport/app/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:x_sport/app/features/auth/presentation/widgets/auth_header.dart';
+import 'package:x_sport/app/features/auth/presentation/widgets/more_sign_in_options.dart';
+import 'package:x_sport/app/widgets/buttons/submit_button.dart';
+import 'package:x_sport/app/widgets/text_fields/no_border_textfield_widget.dart';
+import 'package:x_sport/core/constance/app_constance.dart';
+import 'package:x_sport/core/localization/locale_keys.g.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -23,11 +27,11 @@ class _RegisterPageState extends State<RegisterPage>
   late TextEditingController name;
   late TextEditingController email;
   late TextEditingController password;
-  late TextEditingController confirmPassword;
   late TextEditingController phone;
   late ScrollController scrollController;
+  late FocusNode nameFocusNode;
   late FocusNode passwordFocusNode;
-  late FocusNode passwordConfirmFocusNode;
+  late FocusNode emailFocusNode;
   late FocusNode phoneFocusNode;
 
   var isChecked = ValueNotifier(false);
@@ -38,10 +42,10 @@ class _RegisterPageState extends State<RegisterPage>
     name = TextEditingController();
     email = TextEditingController();
     password = TextEditingController();
-    confirmPassword = TextEditingController();
     phone = TextEditingController();
+    nameFocusNode = FocusNode();
     passwordFocusNode = FocusNode();
-    passwordConfirmFocusNode = FocusNode();
+    emailFocusNode = FocusNode();
     phoneFocusNode = FocusNode();
 
     getUserLocation();
@@ -59,10 +63,10 @@ class _RegisterPageState extends State<RegisterPage>
     name.dispose();
     email.dispose();
     password.dispose();
-    confirmPassword.dispose();
     phone.dispose();
+    nameFocusNode.dispose();
     passwordFocusNode.dispose();
-    passwordConfirmFocusNode.dispose();
+    emailFocusNode.dispose();
     phoneFocusNode.dispose();
   }
 
@@ -70,152 +74,136 @@ class _RegisterPageState extends State<RegisterPage>
   void didChangeMetrics() {
     super.didChangeMetrics();
     final value = MediaQuery.of(context).viewInsets.bottom;
-    if (value > 0 &&
-        (passwordFocusNode.hasFocus ||
-            passwordConfirmFocusNode.hasFocus ||
-            phoneFocusNode.hasFocus)) {
-      scrollController.animateTo(
-        scrollController.position.maxScrollExtent / 2.7,
-        duration: const Duration(milliseconds: 300),
-        curve: Curves.easeOut,
-      );
+    if (value > 0) {
+      if (passwordFocusNode.hasFocus) {
+        scrollController.animateTo(
+          scrollController.position.maxScrollExtent / 2.7,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOut,
+        );
+      }
+      if (phoneFocusNode.hasFocus) {
+        scrollController.animateTo(
+          scrollController.position.maxScrollExtent / 4.5,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOut,
+        );
+      }
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return IntrinsicHeightComponent(
-      title: 'انشاء الحساب',
-      child: SingleChildScrollView(
-        controller: scrollController,
-        child: Padding(
-          padding:
-              EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
-          child: SizedBox(
-            width: 329.w,
-            height: 1.sh,
-            child: Form(
-              key: key,
-              child: Column(
-                children: [
-                  TextFieldWidget(
-                    labelText: 'الاسم الكامل',
-                    controller: name,
-                    keyboardType: TextInputType.emailAddress,
-                    textStream: registerStream.name,
-                    onChanged: registerStream.changeName,
-                  ),
-                  TextFieldWidget(
-                    labelText: 'البريد الالكتروني',
-                    controller: email,
-                    keyboardType: TextInputType.emailAddress,
-                    textStream: registerStream.email,
-                    onChanged: registerStream.changeEmail,
-                  ),
-                  TextFieldWidget(
-                    focusNode: passwordFocusNode,
-                    labelText: 'كلمة المرور',
-                    controller: password,
-                    keyboardType: TextInputType.name,
-                    textStream: registerStream.password,
-                    onChanged: registerStream.changePassword,
-                    isObscureText: true,
-                  ),
-                  TextFieldWidget(
-                    focusNode: passwordConfirmFocusNode,
-                    labelText: 'تأكيد كلمة المرور',
-                    controller: confirmPassword,
-                    keyboardType: TextInputType.emailAddress,
-                    textStream: registerStream.confPassword,
-                    onChanged: registerStream.changeConfPassword,
-                    isObscureText: true,
-                  ),
-                  TextFieldWidget(
-                    focusNode: phoneFocusNode,
-                    labelText: 'رقم الموبايل',
-                    controller: phone,
-                    keyboardType: TextInputType.number,
-                    textStream: registerStream.phone,
-                    onChanged: registerStream.changePhone,
-                  ),
-                  InkWell(
-                    onTap: () async {
-                      getUserLocation();
-                      await registerStream.updateLocation();
-                    },
-                    child: Container(
-                      height: 50.h,
-                      width: 0.83.sw,
-                      alignment: Alignment.centerRight,
-                      padding: const EdgeInsets.only(right: 10),
-                      margin: EdgeInsets.only(top: 34.0.h),
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(15.sp),
-                          border: Border.all(
-                              color: XColors.Field_Color1, width: 0.5.w)),
-                      child: const Text('تفعيل الموقع الجغرافي'),
-                    ),
-                  ),
-                  SizedBox(height: 30.h),
-                  GenderComponent(
-                    getGender: (newValue) async {
-                      registerStream.changeGender(newValue);
-                    },
-                  ),
-                  SizedBox(height: 10.h),
-                  Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-                    Text(
-                      textAlign: TextAlign.end,
-                      'اوافق على شروط الاستخدام والخصوصية',
-                      style: TextStyle(
-                          color: XColors.Outline_primary,
-                          fontSize: 17.sp,
-                          fontWeight: FontWeight.w500),
-                    ),
-                    Expanded(
-                      child: ValueListenableBuilder(
-                          valueListenable: isChecked,
-                          builder: (context, value, child) {
-                            return Transform.scale(
-                              scale: 0.9.w,
-                              child: Checkbox(
-                                activeColor: XColors.Background_Color2,
-                                value: isChecked.value,
-                                onChanged: (value) async {
-                                  isChecked.value = !isChecked.value;
-                                  registerStream.changePrivacy(value!);
-                                },
-                              ),
-                            );
-                          }),
-                    ),
-                  ]),
-                  SizedBox(height: 8.h),
-                  StreamBuilder(
-                    stream: registerStream.registerIsValid,
-                    builder: (context, snapshot) {
-                      final isButtonEnabled = snapshot.data ?? true;
-                      return SubmitButton(
-                        isButtonEnabled: true,
-                        fillColor:
-                            isButtonEnabled ? XColors.primary : Colors.grey,
-                        textColor: Colors.white,
-                        text: 'انشاء حساب',
-                        onPressed: () {
-                          if (isButtonEnabled) {
-                            context
-                                .read<AuthBloc>()
-                                .add(const AuthEvent.register());
-                          }
-                        },
-                      );
-                    },
-                  ),
-                ],
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      appBar: AppBar(
+        toolbarHeight: 50.h,
+        automaticallyImplyLeading: false,
+        actions: [
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            child: GestureDetector(
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
+                child: AssetsManager.icons.arBackArrow.image()),
+          )
+        ],
+      ),
+      body: SizedBox(
+        height: 1.sh,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Align(
+              alignment: Alignment.topCenter,
+              child: AuthHeader(
+                mainTitle: LocaleKeys.join.tr(),
+                title: LocaleKeys.create_your_id.tr(),
+                subtitle: LocaleKeys.register_sub_title.tr(),
               ),
             ),
-          ),
+            Expanded(
+              child: SizedBox(
+                width: 372.w,
+                child: SingleChildScrollView(
+                  controller: scrollController,
+                  padding: EdgeInsets.only(
+                      bottom: MediaQuery.of(context).viewInsets.bottom / 1.7.h),
+                  child: Column(
+                    children: [
+                      Column(
+                        children: [
+                          NoBorderTextFieldWidget(
+                            focusNode: nameFocusNode,
+                            labelText: LocaleKeys.first_name_and_last_name.tr(),
+                            controller: name,
+                            keyboardType: TextInputType.name,
+                            textStream: registerStream.name,
+                            onChanged: registerStream.changeName,
+                            hintText: 'Basheer turkmany',
+                          ),
+                          NoBorderTextFieldWidget(
+                            focusNode: emailFocusNode,
+                            labelText: LocaleKeys.email.tr(),
+                            controller: email,
+                            keyboardType: TextInputType.emailAddress,
+                            textStream: registerStream.email,
+                            onChanged: registerStream.changeEmail,
+                            hintText: 'example@gmail.com',
+                          ),
+                          NoBorderTextFieldWidget(
+                            focusNode: phoneFocusNode,
+                            labelText: LocaleKeys.mobile_number.tr(),
+                            controller: phone,
+                            keyboardType: TextInputType.number,
+                            textStream: registerStream.phone,
+                            onChanged: registerStream.changePhone,
+                            hintText: '935648050',
+                          ),
+                          NoBorderTextFieldWidget(
+                            focusNode: passwordFocusNode,
+                            labelText: LocaleKeys.password.tr(),
+                            controller: password,
+                            keyboardType: TextInputType.visiblePassword,
+                            textStream: registerStream.password,
+                            onChanged: registerStream.changePassword,
+                            isObscureText: true,
+                            hintText: '****************',
+                          ),
+                          StreamBuilder(
+                            stream: registerStream.registerIsValid,
+                            builder: (context, snapshot) {
+                              final isButtonEnabled = snapshot.data ?? false;
+                              return SubmitButton(
+                                isButtonEnabled: true,
+                                radius: 10.sp,
+                                fillColor: isButtonEnabled
+                                    ? XColors.primary
+                                    : XColors.inactive_button,
+                                textColor: Colors.white,
+                                text: LocaleKeys.create.tr(),
+                                textSize: 22,
+                                fontWeight: FontWeight.w600,
+                                onPressed: () {
+                                  if (isButtonEnabled) {
+                                    context
+                                        .read<AuthBloc>()
+                                        .add(const AuthEvent.register());
+                                  }
+                                },
+                              );
+                            },
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            const MoreSignInOptions(),
+          ],
         ),
       ),
     );

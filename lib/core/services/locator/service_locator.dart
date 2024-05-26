@@ -10,6 +10,7 @@ import 'package:x_sport/app/features/archives/domain/usecase/get_academy_subscri
 import 'package:x_sport/app/features/archives/presentation/bloc/archive_bloc.dart';
 import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/change_email_usecase.dart';
 import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/change_password_usecase.dart';
+import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/skip_profile_picture.dart';
 import 'package:x_sport/app/features/courts/data/datasource/stadium_remote_datasource.dart';
 import 'package:x_sport/app/features/courts/data/repository/court_repository.dart';
 import 'package:x_sport/app/features/courts/domain/repository/base_stadium_repository.dart';
@@ -134,8 +135,26 @@ class ServiceLocator {
       return dio;
     });
 
-    sl.registerFactory(() => AuthBloc(sl(), sl(), sl(), sl(), sl(), sl(), sl(),
-        sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl()));
+    sl.registerFactory(() => AuthBloc(
+          sl(),
+          sl(),
+          sl(),
+          sl(),
+          sl(),
+          sl(),
+          sl(),
+          sl(),
+          sl(),
+          sl(),
+          sl(),
+          sl(),
+          sl(),
+          sl(),
+          sl(),
+          sl(),
+          sl(),
+          sl(),
+        ));
     sl.registerFactory(() => ChatBloc());
     sl.registerFactory(() =>
         AcademyBloc(sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl()));
@@ -163,6 +182,7 @@ class ServiceLocator {
     sl.registerLazySingleton(() => DeleteUserProfileUseCase(sl()));
     sl.registerLazySingleton(() => ChangeEmailUseCase(sl()));
     sl.registerLazySingleton(() => ChangePasswordUseCase(sl()));
+    sl.registerLazySingleton(() => SkipProfilePictureUseCase(sl()));
 
     // chat bloc usecases
     sl.registerLazySingleton(() => SendMessageUseCase(sl()));

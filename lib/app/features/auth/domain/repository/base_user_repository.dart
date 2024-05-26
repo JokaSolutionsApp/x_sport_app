@@ -36,7 +36,8 @@ abstract class BaseUserRepository {
   Future<Either<Failure, bool>> logoutUser();
   Future<Either<Failure, List<SportEntity>>> getSports();
   Future<Either<Failure, UserProfileEntity>> completeRegistration(
-      List<int> imageBytes, String imageType, List<int> selectedSports);
+      List<int> imageBytes, String imageType);
 
   Future<Either<Failure, String>> sendMessage(String userMessage);
+  Future<Either<Failure, bool>> skipProfilePicture();
 }

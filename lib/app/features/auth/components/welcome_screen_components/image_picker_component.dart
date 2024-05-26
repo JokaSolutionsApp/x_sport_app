@@ -4,6 +4,8 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:x_sport/core/constance/app_constance.dart';
+import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
 
 class ImagePcikerComponent extends StatelessWidget {
   final void Function(List<int>, String) getImage;
@@ -34,32 +36,28 @@ class ImagePcikerComponent extends StatelessWidget {
       onTap: _pickImage,
       child: DottedBorder(
         borderType: BorderType.Circle,
-        color: Colors.white,
-        strokeWidth: 1,
-        padding: const EdgeInsets.all(20),
-        dashPattern: const [10],
+        color: XColors.primary,
+        strokeWidth: 2.2.w,
+        padding: EdgeInsets.zero,
+        dashPattern: const [5],
         child: ValueListenableBuilder<XFile?>(
           valueListenable: _pickedImageNotifier,
           builder: (context, pickedImage, child) {
             return Container(
+              decoration: const BoxDecoration(
+                color: XColors.grey2,
+                shape: BoxShape.circle,
+              ),
               alignment: Alignment.center,
-              height: 150.w,
+              height: 300.w,
               child: pickedImage == null
-                  ? const Text(
-                      'اختر صورة شخصية',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 15,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    )
+                  ? AssetsManager.icons.pickImage.image()
                   : ClipOval(
                       child: Image.file(
                         File(pickedImage.path),
-                        width: 150.w,
-                        height: 150.w,
-                        fit: BoxFit.cover,
+                        width: 300.w,
+                        height: 300.w,
+                        fit: BoxFit.fill,
                       ),
                     ),
             );

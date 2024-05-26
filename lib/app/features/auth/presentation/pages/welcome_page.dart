@@ -3,12 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/constance/app_constance.dart';
-import '../../../../../core/services/locator/service_locator.dart';
-import '../../../../../core/services/secure_storage_service.dart.dart';
 import '../../../../../core/utils/assets_managers/assets.gen.dart';
 import '../../../../widgets/buttons/submit_button.dart';
 import '../../components/welcome_screen_components/image_picker_component.dart';
-import '../../domain/enitites/sport_entity.dart';
 import '../bloc/auth_bloc.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -23,258 +20,141 @@ class _WelcomePageState extends State<WelcomePage> {
 
   List<int> imageBytes = [];
 
-  final List<int> selectedSports = [];
-
-  late List<SportEntity> sports;
-  late AuthBloc bloc;
-
-  @override
-  void initState() {
-    super.initState();
-    bloc = context.read<AuthBloc>();
-    bloc.add(const AuthEvent.getSports());
-    confirmCompleted();
-  }
-
-  confirmCompleted() async {
-    await sl<SecureStorageService>().write('welcome', 'yes');
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        flexibleSpace: Container(
-          decoration: const BoxDecoration(
-              gradient: LinearGradient(colors: [
-            XColors.Background_Color1,
-            XColors.Background_Color2
-          ], begin: Alignment.centerLeft, end: Alignment.centerRight)),
-          child: Padding(
-            padding: EdgeInsets.only(top: 20.h),
-            child: Row(
-              children: [
-                IconButton(
-                  icon: const Icon(
-                    Icons.language_sharp,
-                    color: Color(0xFFFFFFFF),
-                  ),
-                  onPressed: () {},
-                  iconSize: 38.w,
-                ),
-              ],
-            ),
-          ),
+        appBar: AppBar(
+          backgroundColor: const Color(0xFF101010),
+          automaticallyImplyLeading: false,
+          elevation: 0,
+          toolbarHeight: 0,
         ),
-        elevation: 0,
-        toolbarHeight: 0,
-      ),
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-              colors: [XColors.Background_Color1, XColors.Background_Color2],
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight),
-        ),
-        child: BlocBuilder<AuthBloc, AuthState>(
-          buildWhen: (previous, current) {
-            print("getget ${current.runtimeType} ");
-            if (current.runtimeType ==
-                const AuthState.getSportsLoading().runtimeType) {
-              return true;
-            }
-            if (current.runtimeType ==
-                const AuthState.getSportsFailure().runtimeType) {
-              return true;
-            }
-            if (current.runtimeType ==
-                const AuthState.sportsFetched().runtimeType) {
-              return true;
-            }
-            return false;
-          },
-          builder: (context, state) => state.maybeWhen(
-            orElse: () => buildLoading(),
-            getSportsLoading: () => buildLoading(),
-            getSportsFailure: (failure) => const Offstage(),
-            sportsFetched: (sports) {
-              sports = bloc.sports;
-              return buildWeclome(sports);
-            },
-          ),
-        ),
-      ),
-    );
-  }
-
-  buildLoading() {
-    return const Center(
-      child: CircularProgressIndicator(
-        color: XColors.primary,
-      ),
-    );
-  }
-
-  buildWeclome(List<SportEntity> sports) {
-    final ValueNotifier<List<bool>> isSelectedList = ValueNotifier<List<bool>>(
-        List.generate(sports.length, (index) => false));
-    return Stack(
-      fit: StackFit.expand,
-      alignment: Alignment.topCenter,
-      children: [
-        Positioned(
-            top: 0.h,
-            child: AssetsManager.images.main.xSportLogo.image(
-              height: 220.h,
-              width: 220.w,
-            )),
-        Positioned(
-            top: 200.h,
+        body: SafeArea(
+          child: Container(
             width: 1.sw,
+            color: const Color(0xFF101010),
             child: Column(
               children: [
-                Text(
-                  'اهلا بك!',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 40.sp,
-                      fontWeight: FontWeight.w400),
+                Padding(
+                  padding: EdgeInsets.only(top: 10.h),
+                  child: AssetsManager.icons.appWhiteLogo.image(
+                    height: 30.h,
+                    fit: BoxFit.fitHeight,
+                  ),
                 ),
-                Text(
-                  textAlign: TextAlign.center,
-                  'قم باكمال معلوماتك الشخصية كي تحقق افضل تجربة في اكس سبورت',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20.sp,
-                      fontWeight: FontWeight.w400),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 13.w),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      SubmitButton(
+                        radius: 35,
+                        height: 28,
+                        minWidth: 96.w,
+                        fillColor: const Color(0xFF313131),
+                        textColor: Colors.white,
+                        fontWeight: FontWeight.w200,
+                        hasBoarder: true,
+                        text: 'skip',
+                        onPressed: () {
+                          context
+                              .read<AuthBloc>()
+                              .add(const AuthEvent.skipProfilePicture());
+                        },
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text(
+                            'Welcome Basheer',
+                            textAlign: TextAlign.end,
+                            style: TextStyle(
+                              color: XColors.white,
+                              fontSize: 21.sp,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                          Text(
+                            'Tell us more',
+                            textAlign: TextAlign.end,
+                            style: TextStyle(
+                              color: XColors.white,
+                              fontSize: 21.sp,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 0.7.sw,
+                            child: Text(
+                              'the more we know, the more we can personalize your XSPORTS experience',
+                              textAlign: TextAlign.end,
+                              style: TextStyle(
+                                color: XColors.grey,
+                                fontSize: 10.sp,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-                SizedBox(height: 30.h),
+                Divider(
+                  thickness: 0.5.h,
+                  color: const Color(0xFF7A7A7A),
+                ),
+                SizedBox(height: 133.h),
                 ImagePcikerComponent(
                   getImage: (bytes, type) {
                     imageBytes = bytes;
                     imageType = type;
                   },
                 ),
-                SizedBox(height: 30.h),
+                SizedBox(height: 21.h),
                 Text(
-                  'اي رياضة تفضل ان تبدأبها؟!',
+                  'TAP TO SELECT',
+                  textAlign: TextAlign.end,
                   style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20.sp,
-                      fontWeight: FontWeight.w400),
-                ),
-                Text(
-                  textAlign: TextAlign.center,
-                  'يمكنك اضافة  المزيد من النشاطات لاحقا!',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.w400),
-                ),
-                SizedBox(height: 30.h),
-                SizedBox(
-                  height: 70.h,
-                  width: 360.w,
-                  child: GridView.builder(
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      mainAxisExtent: 36.w,
-                      crossAxisCount: 3,
-                      crossAxisSpacing: 14.0.w,
-                      mainAxisSpacing: 20.0.w,
-                    ),
-                    itemCount: sports.length,
-                    itemBuilder: (context, index) {
-                      return ValueListenableBuilder(
-                        valueListenable: isSelectedList,
-                        builder: (context, selectedList, child) {
-                          final isSelected = selectedList[index];
-
-                          return GestureDetector(
-                            onTap: () {
-                              final sportId = sports[index].sportId;
-
-                              if (selectedSports.contains(sportId)) {
-                                // If sportId is already in the list, remove it
-                                selectedSports.remove(sportId);
-                              } else {
-                                // If sportId is not in the list, add it
-                                selectedSports.add(sportId);
-                              }
-
-                              final List<bool> newList =
-                                  List.from(selectedList);
-                              newList[index] = !isSelected;
-                              isSelectedList.value = newList;
-                              print(isSelectedList.value);
-                            },
-                            child: Container(
-                              width: 60.0.w,
-                              decoration: BoxDecoration(
-                                color: isSelected
-                                    ? Colors.white
-                                    : Colors.transparent,
-                                borderRadius: BorderRadius.circular(18.sp),
-                                border: Border.all(
-                                  color: Colors.white,
-                                  width: 1.0,
-                                ),
-                              ),
-                              child: Container(
-                                padding: EdgeInsets.symmetric(horizontal: 12.w),
-                                alignment: Alignment.center,
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Expanded(
-                                      child: Icon(
-                                        Icons.sports_tennis_outlined,
-                                        color: isSelected
-                                            ? XColors.Background_Color1
-                                            : Colors.white,
-                                        size: 22.sp,
-                                      ),
-                                    ),
-                                    Expanded(
-                                      flex: 8,
-                                      child: Text(
-                                        textAlign: TextAlign.end,
-                                        sports[index].name,
-                                        style: TextStyle(
-                                            color: isSelected
-                                                ? XColors.Background_Color1
-                                                : Colors.white,
-                                            fontSize: 15.sp,
-                                            fontWeight: FontWeight.w300),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          );
-                        },
-                      );
-                    },
+                    color: XColors.white,
+                    fontSize: 21.sp,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
-                SubmitButton(
-                  radius: 28,
-                  isButtonEnabled: true,
-                  fillColor: XColors.primary,
-                  textColor: Colors.white,
-                  text: 'ابدأ الان',
-                  onPressed: () {
-                    context.read<AuthBloc>().add(AuthEvent.completeRegistration(
-                        imageBytes: imageBytes,
-                        imageType: imageType,
-                        selectedSports: selectedSports));
-                  },
+                SizedBox(height: 100.h),
+                Column(
+                  children: [
+                    Text(
+                      'your preferences can be changed later via your profile',
+                      textAlign: TextAlign.end,
+                      style: TextStyle(
+                        color: XColors.grey,
+                        fontSize: 14.sp,
+                      ),
+                    ),
+                    SizedBox(height: 15.h),
+                    SubmitButton(
+                      hasArrow: true,
+                      radius: 28,
+                      height: 50,
+                      isButtonEnabled: true,
+                      fillColor: XColors.primary,
+                      textColor: Colors.white,
+                      text: 'ابدأ الان',
+                      onPressed: () {
+                        context
+                            .read<AuthBloc>()
+                            .add(AuthEvent.completeRegistration(
+                              imageBytes: imageBytes,
+                              imageType: imageType,
+                            ));
+                      },
+                    ),
+                  ],
                 ),
               ],
-            ))
-      ],
-    );
+            ),
+          ),
+        ));
   }
 }

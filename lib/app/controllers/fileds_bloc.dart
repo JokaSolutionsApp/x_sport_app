@@ -47,20 +47,17 @@ class Bloc extends Validators {
   Stream<double> get longitude => _longitude.stream.transform(cordValidator);
 
   Stream<bool> get loginValid =>
-      Rx.combineLatest2(emailPhone, password, (e, p) => true);
+      Rx.combineLatest2(email, password, (e, p) => true);
   bool get otpValid => codeValue.isNotEmpty ? true : false;
 
-  Stream<bool> get registerIsValid => Rx.combineLatest7(
+  Stream<bool> get registerIsValid => Rx.combineLatest4(
       name,
       email,
       password,
-      confPassword,
-      gender,
       phone,
       // latitude,
       // longitude,
-      privacy,
-      (n, e, p, cp, g, ph, pr) => true);
+      (n, e, p, ph) => true);
 
   Stream<bool> get inrollInCourse => Rx.combineLatest3(
       name,

@@ -102,4 +102,14 @@ class AuthState with _$AuthState {
   const factory AuthState.passwordChanged({
     @Default(false) bool passwordChanged,
   }) = _PasswordChanged;
+
+  // Skip Profile Picture
+  const factory AuthState.skipProfilePictureLoading() =
+      _SkipProfilePictureLoading;
+  const factory AuthState.skipProfilePictureFailure({
+    @Default(null) Failure? failure,
+  }) = _SkipProfilePictureFailure;
+  const factory AuthState.profilePictureSkipped({
+    @Default(false) bool profilePictureSkipped,
+  }) = _ProfilePictureSkipped;
 }

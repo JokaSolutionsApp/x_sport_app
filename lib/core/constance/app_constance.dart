@@ -32,6 +32,8 @@ class XColors {
   static const black = Color(0xff000000);
   static const borderColor = Color(0xffDDDDDD);
   static const shadow_color = Color(0x63000000);
+  static const inactive_button = Color(0xFFBCBCBC);
+  static const grey5 = Color(0xFF6D6D6D);
 }
 
 class XStrings {

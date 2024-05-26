@@ -8,6 +8,7 @@ import 'package:injectable/injectable.dart';
 import 'package:x_sport/app/features/auth/data/models/sport_model.dart';
 import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/change_email_usecase.dart';
 import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/change_password_usecase.dart';
+import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/skip_profile_picture.dart';
 import '../../../../../core/constance/app_functions.dart';
 import '../../../../../core/error/failure.dart';
 import '../../../../../core/services/locator/service_locator.dart';
@@ -61,6 +62,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final DeleteUserProfileUseCase deleteUserProfileUseCase;
   final ChangeEmailUseCase changeEmailUseCase;
   final ChangePasswordUseCase changePasswordUseCase;
+  final SkipProfilePictureUseCase skipProfilePictureUseCase;
 
   AuthBloc(
     this.registerUseCase,
@@ -80,6 +82,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     this.deleteUserProfileUseCase,
     this.changeEmailUseCase,
     this.changePasswordUseCase,
+    this.skipProfilePictureUseCase,
   ) : super(const AuthState.initial()) {
     on<AuthEvent>((event, emit) async {
       await event.map(
@@ -105,6 +108,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             await _deleteFavoriteSports(event, emit),
         changeEmail: (event) async => await _changeEmail(event, emit),
         changePassword: (event) async => await _changePassword(event, emit),
+        skipProfilePicture: (event) async =>
+            await _skipProfilePicture(event, emit),
       );
     });
   }
@@ -128,12 +133,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       }
       emit(const AuthState.registerFailure());
     }, (r) async {
-      await EasyLoading
-          .dismiss(); // Dismiss the loading indicator on success as well
+      await EasyLoading.dismiss();
       if (r) {
         emit(AuthState.registered(registered: r));
         Navigator.of(navigatorKey.currentContext!).pushAndRemoveUntil(
-          MaterialPageRoute(builder: (context) => const OtpPage()),
+          MaterialPageRoute(builder: (context) => const WelcomePage()),
           ModalRoute.withName('/'),
         );
       }
@@ -302,8 +306,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     EasyLoadingInit.startLoading();
     print("loading");
 
-    final result = await completeRegistrationUseCase(
-        event.imageBytes, event.imageType, event.selectedSports);
+    final result =
+        await completeRegistrationUseCase(event.imageBytes, event.imageType);
     await result.fold(
       (f) async {
         EasyLoading.showError(f.message);
@@ -493,5 +497,29 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         );
       });
     });
+  }
+
+  Future<void> _skipProfilePicture(event, Emitter<AuthState> emit) async {
+    event as _$SkipProfilePictureImpl;
+    EasyLoadingInit.startLoading();
+
+    emit(const AuthState.skipProfilePictureLoading());
+    final result = await skipProfilePictureUseCase();
+
+    result.fold((f) {
+      emit(AuthState.skipProfilePictureFailure(
+        failure: f,
+      ));
+      EasyLoading.showError(f.message);
+    }, (r) {
+      emit(AuthState.profilePictureSkipped(
+        profilePictureSkipped: r,
+      ));
+      Navigator.of(navigatorKey.currentContext!).pushAndRemoveUntil(
+        MaterialPageRoute(builder: (context) => const MainPage()),
+        ModalRoute.withName('/'),
+      );
+    });
+    EasyLoading.dismiss();
   }
 }

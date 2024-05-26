@@ -44,9 +44,10 @@ abstract class BaseUserRemoteDataSource {
   Future<bool> logoutUser();
   Future<List<SportEntity>> getSports();
   Future<UserProfileEntity> completeRegistration(
-      List<int> imageBytes, String imageType, List<int> selectedSports);
+      List<int> imageBytes, String imageType);
 
   Future<String> sendMessage(String userMessage);
+  Future<bool> skipProfilePicture();
 }
 
 class UserRemoteDataSource extends BaseUserRemoteDataSource {
@@ -59,18 +60,22 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
       'email': registerStream.emailValue,
       'password': registerStream.passwordValue,
       'phone': registerStream.phoneValue,
-      "gender": registerStream.genderValue,
-      'longitude': registerStream.longeValue,
-      'latitude': registerStream.latValue,
+      // "gender": registerStream.genderValue,
+      // 'longitude': registerStream.longeValue,
+      // 'latitude': registerStream.latValue,
     };
 
     final response = await ApiService.post(ApiConstance.registerApi, postData);
     print("response.data ${response.data}");
+    final data = response.data;
+
     if (response.statusCode == 200) {
       await sl<SecureStorageService>()
           .write('email', registerStream.emailValue);
       await sl<SecureStorageService>()
           .write('password', registerStream.passwordValue);
+      final token = data['data']['token'];
+      sl<SecureStorageService>().write('token', token);
       await sl<SecureStorageService>().write('otp', 'true');
       return true;
     } else {
@@ -131,7 +136,7 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
 
   @override
   Future<UserProfileEntity> completeRegistration(
-      List<int> imageBytes, String imageType, List<int> selectedSports) async {
+      List<int> imageBytes, String imageType) async {
     FormData formData = FormData();
     formData.files.add(MapEntry(
       'File',
@@ -141,15 +146,14 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
       ),
     ));
 
-    for (int sportId in selectedSports) {
-      formData.fields.add(MapEntry('SportsIds[]', sportId.toString()));
-    }
+    // for (int sportId in selectedSports) {
+    //   formData.fields.add(MapEntry('SportsIds[]', sportId.toString()));
+    // }
 
     final response = await ApiService.postFormData(
-        ApiConstance.completeRegistrationApi, formData);
+        ApiConstance.uploadProfilePictureApi, formData);
     final data = response.data;
-    print(formData);
-    print(data);
+
     if (response.statusCode == 200) {
       return UserProfileModel.fromJson(data['data']);
     } else {
@@ -160,7 +164,7 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
   @override
   Future<UserProfileEntity> login() async {
     final postData = {
-      'email': signInStream.emailPhoneValue,
+      'email': signInStream.emailValue,
       'password': signInStream.passwordValue,
     };
 
@@ -171,7 +175,7 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
     if (response.statusCode == 200) {
       final token = data['data']['authResult']['token'];
       sl<SecureStorageService>().write('token', token);
-      sl<SecureStorageService>().write('email', signInStream.emailPhoneValue);
+      sl<SecureStorageService>().write('email', signInStream.emailValue);
 
       return UserProfileModel.fromJson(data['data']['userProfile']);
     } else if (response.statusCode == 500) {
@@ -513,6 +517,19 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
 
     if (response.statusCode == 200) {
       return data['data'];
+    } else {
+      throw ServerException(errorModel: ErrorModel.fromJson(data));
+    }
+  }
+
+  @override
+  Future<bool> skipProfilePicture() async {
+    final response = await ApiService.get(ApiConstance.skipProfilePictureApi);
+    final data = response.data;
+    print('skipProfilePicture $data');
+
+    if (response.statusCode == 200) {
+      return true;
     } else {
       throw ServerException(errorModel: ErrorModel.fromJson(data));
     }

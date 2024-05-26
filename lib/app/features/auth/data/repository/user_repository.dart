@@ -129,10 +129,10 @@ class UserRepository extends BaseUserRepository {
 
   @override
   Future<Either<Failure, UserProfileEntity>> completeRegistration(
-      List<int> imageBytes, String imageType, List<int> selectedSports) async {
+      List<int> imageBytes, String imageType) async {
     try {
       final result = await baseUsersRemoteDataSource.completeRegistration(
-          imageBytes, imageType, selectedSports);
+          imageBytes, imageType);
 
       return Right(result);
     } on ServerException catch (failuar) {
@@ -284,6 +284,20 @@ class UserRepository extends BaseUserRepository {
   Future<Either<Failure, bool>> changePassword() async {
     try {
       final result = await baseUsersRemoteDataSource.changePassword();
+
+      return Right(result);
+    } on ServerException catch (failuar) {
+      return Left(ServerFailure(
+        failuar.errorModel.statusCode,
+        failuar.errorModel.message,
+      ));
+    }
+  }
+
+  @override
+  Future<Either<Failure, bool>> skipProfilePicture() async {
+    try {
+      final result = await baseUsersRemoteDataSource.skipProfilePicture();
 
       return Right(result);
     } on ServerException catch (failuar) {

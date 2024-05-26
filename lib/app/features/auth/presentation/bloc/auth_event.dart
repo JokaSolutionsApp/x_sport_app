@@ -20,7 +20,6 @@ class AuthEvent with _$AuthEvent {
   const factory AuthEvent.completeRegistration({
     required List<int> imageBytes,
     required String imageType,
-    required List<int> selectedSports,
   }) = _CompleteRegistrationEvent;
   const factory AuthEvent.addFavoriteSports({required List<int> sportsIds}) =
       _AddFavoriteSportsEvent;
@@ -29,4 +28,5 @@ class AuthEvent with _$AuthEvent {
 
   const factory AuthEvent.changeEmail() = _ChangeEmailEvent;
   const factory AuthEvent.changePassword() = _ChangePasswordEvent;
+  const factory AuthEvent.skipProfilePicture() = _SkipProfilePicture;
 }

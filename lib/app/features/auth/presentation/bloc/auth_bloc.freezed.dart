@@ -29,13 +29,13 @@ mixin _$AuthEvent {
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
-    required TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)
+    required TResult Function(List<int> imageBytes, String imageType)
         completeRegistration,
     required TResult Function(List<int> sportsIds) addFavoriteSports,
     required TResult Function(List<int> sportsIds) deleteFavoriteSports,
     required TResult Function() changeEmail,
     required TResult Function() changePassword,
+    required TResult Function() skipProfilePicture,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,13 +51,13 @@ mixin _$AuthEvent {
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
-    TResult? Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult? Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult? Function(List<int> sportsIds)? addFavoriteSports,
     TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult? Function()? changeEmail,
     TResult? Function()? changePassword,
+    TResult? Function()? skipProfilePicture,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -73,13 +73,13 @@ mixin _$AuthEvent {
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
-    TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult Function(List<int> sportsIds)? addFavoriteSports,
     TResult Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult Function()? changeEmail,
     TResult Function()? changePassword,
+    TResult Function()? skipProfilePicture,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -105,6 +105,7 @@ mixin _$AuthEvent {
         deleteFavoriteSports,
     required TResult Function(_ChangeEmailEvent value) changeEmail,
     required TResult Function(_ChangePasswordEvent value) changePassword,
+    required TResult Function(_SkipProfilePicture value) skipProfilePicture,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -126,6 +127,7 @@ mixin _$AuthEvent {
     TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult? Function(_ChangeEmailEvent value)? changeEmail,
     TResult? Function(_ChangePasswordEvent value)? changePassword,
+    TResult? Function(_SkipProfilePicture value)? skipProfilePicture,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -147,6 +149,7 @@ mixin _$AuthEvent {
     TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult Function(_ChangeEmailEvent value)? changeEmail,
     TResult Function(_ChangePasswordEvent value)? changePassword,
+    TResult Function(_SkipProfilePicture value)? skipProfilePicture,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -218,13 +221,13 @@ class _$LoginEventImpl implements _LoginEvent {
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
-    required TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)
+    required TResult Function(List<int> imageBytes, String imageType)
         completeRegistration,
     required TResult Function(List<int> sportsIds) addFavoriteSports,
     required TResult Function(List<int> sportsIds) deleteFavoriteSports,
     required TResult Function() changeEmail,
     required TResult Function() changePassword,
+    required TResult Function() skipProfilePicture,
   }) {
     return login();
   }
@@ -243,13 +246,13 @@ class _$LoginEventImpl implements _LoginEvent {
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
-    TResult? Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult? Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult? Function(List<int> sportsIds)? addFavoriteSports,
     TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult? Function()? changeEmail,
     TResult? Function()? changePassword,
+    TResult? Function()? skipProfilePicture,
   }) {
     return login?.call();
   }
@@ -268,13 +271,13 @@ class _$LoginEventImpl implements _LoginEvent {
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
-    TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult Function(List<int> sportsIds)? addFavoriteSports,
     TResult Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult Function()? changeEmail,
     TResult Function()? changePassword,
+    TResult Function()? skipProfilePicture,
     required TResult orElse(),
   }) {
     if (login != null) {
@@ -306,6 +309,7 @@ class _$LoginEventImpl implements _LoginEvent {
         deleteFavoriteSports,
     required TResult Function(_ChangeEmailEvent value) changeEmail,
     required TResult Function(_ChangePasswordEvent value) changePassword,
+    required TResult Function(_SkipProfilePicture value) skipProfilePicture,
   }) {
     return login(this);
   }
@@ -330,6 +334,7 @@ class _$LoginEventImpl implements _LoginEvent {
     TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult? Function(_ChangeEmailEvent value)? changeEmail,
     TResult? Function(_ChangePasswordEvent value)? changePassword,
+    TResult? Function(_SkipProfilePicture value)? skipProfilePicture,
   }) {
     return login?.call(this);
   }
@@ -354,6 +359,7 @@ class _$LoginEventImpl implements _LoginEvent {
     TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult Function(_ChangeEmailEvent value)? changeEmail,
     TResult Function(_ChangePasswordEvent value)? changePassword,
+    TResult Function(_SkipProfilePicture value)? skipProfilePicture,
     required TResult orElse(),
   }) {
     if (login != null) {
@@ -416,13 +422,13 @@ class _$GoogleLoginEventImpl implements _GoogleLoginEvent {
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
-    required TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)
+    required TResult Function(List<int> imageBytes, String imageType)
         completeRegistration,
     required TResult Function(List<int> sportsIds) addFavoriteSports,
     required TResult Function(List<int> sportsIds) deleteFavoriteSports,
     required TResult Function() changeEmail,
     required TResult Function() changePassword,
+    required TResult Function() skipProfilePicture,
   }) {
     return googleLogin();
   }
@@ -441,13 +447,13 @@ class _$GoogleLoginEventImpl implements _GoogleLoginEvent {
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
-    TResult? Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult? Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult? Function(List<int> sportsIds)? addFavoriteSports,
     TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult? Function()? changeEmail,
     TResult? Function()? changePassword,
+    TResult? Function()? skipProfilePicture,
   }) {
     return googleLogin?.call();
   }
@@ -466,13 +472,13 @@ class _$GoogleLoginEventImpl implements _GoogleLoginEvent {
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
-    TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult Function(List<int> sportsIds)? addFavoriteSports,
     TResult Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult Function()? changeEmail,
     TResult Function()? changePassword,
+    TResult Function()? skipProfilePicture,
     required TResult orElse(),
   }) {
     if (googleLogin != null) {
@@ -504,6 +510,7 @@ class _$GoogleLoginEventImpl implements _GoogleLoginEvent {
         deleteFavoriteSports,
     required TResult Function(_ChangeEmailEvent value) changeEmail,
     required TResult Function(_ChangePasswordEvent value) changePassword,
+    required TResult Function(_SkipProfilePicture value) skipProfilePicture,
   }) {
     return googleLogin(this);
   }
@@ -528,6 +535,7 @@ class _$GoogleLoginEventImpl implements _GoogleLoginEvent {
     TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult? Function(_ChangeEmailEvent value)? changeEmail,
     TResult? Function(_ChangePasswordEvent value)? changePassword,
+    TResult? Function(_SkipProfilePicture value)? skipProfilePicture,
   }) {
     return googleLogin?.call(this);
   }
@@ -552,6 +560,7 @@ class _$GoogleLoginEventImpl implements _GoogleLoginEvent {
     TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult Function(_ChangeEmailEvent value)? changeEmail,
     TResult Function(_ChangePasswordEvent value)? changePassword,
+    TResult Function(_SkipProfilePicture value)? skipProfilePicture,
     required TResult orElse(),
   }) {
     if (googleLogin != null) {
@@ -614,13 +623,13 @@ class _$RegisterEventImpl implements _RegisterEvent {
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
-    required TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)
+    required TResult Function(List<int> imageBytes, String imageType)
         completeRegistration,
     required TResult Function(List<int> sportsIds) addFavoriteSports,
     required TResult Function(List<int> sportsIds) deleteFavoriteSports,
     required TResult Function() changeEmail,
     required TResult Function() changePassword,
+    required TResult Function() skipProfilePicture,
   }) {
     return register();
   }
@@ -639,13 +648,13 @@ class _$RegisterEventImpl implements _RegisterEvent {
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
-    TResult? Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult? Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult? Function(List<int> sportsIds)? addFavoriteSports,
     TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult? Function()? changeEmail,
     TResult? Function()? changePassword,
+    TResult? Function()? skipProfilePicture,
   }) {
     return register?.call();
   }
@@ -664,13 +673,13 @@ class _$RegisterEventImpl implements _RegisterEvent {
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
-    TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult Function(List<int> sportsIds)? addFavoriteSports,
     TResult Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult Function()? changeEmail,
     TResult Function()? changePassword,
+    TResult Function()? skipProfilePicture,
     required TResult orElse(),
   }) {
     if (register != null) {
@@ -702,6 +711,7 @@ class _$RegisterEventImpl implements _RegisterEvent {
         deleteFavoriteSports,
     required TResult Function(_ChangeEmailEvent value) changeEmail,
     required TResult Function(_ChangePasswordEvent value) changePassword,
+    required TResult Function(_SkipProfilePicture value) skipProfilePicture,
   }) {
     return register(this);
   }
@@ -726,6 +736,7 @@ class _$RegisterEventImpl implements _RegisterEvent {
     TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult? Function(_ChangeEmailEvent value)? changeEmail,
     TResult? Function(_ChangePasswordEvent value)? changePassword,
+    TResult? Function(_SkipProfilePicture value)? skipProfilePicture,
   }) {
     return register?.call(this);
   }
@@ -750,6 +761,7 @@ class _$RegisterEventImpl implements _RegisterEvent {
     TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult Function(_ChangeEmailEvent value)? changeEmail,
     TResult Function(_ChangePasswordEvent value)? changePassword,
+    TResult Function(_SkipProfilePicture value)? skipProfilePicture,
     required TResult orElse(),
   }) {
     if (register != null) {
@@ -813,13 +825,13 @@ class _$GetUserProfileEventImpl implements _GetUserProfileEvent {
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
-    required TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)
+    required TResult Function(List<int> imageBytes, String imageType)
         completeRegistration,
     required TResult Function(List<int> sportsIds) addFavoriteSports,
     required TResult Function(List<int> sportsIds) deleteFavoriteSports,
     required TResult Function() changeEmail,
     required TResult Function() changePassword,
+    required TResult Function() skipProfilePicture,
   }) {
     return getUserProfile();
   }
@@ -838,13 +850,13 @@ class _$GetUserProfileEventImpl implements _GetUserProfileEvent {
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
-    TResult? Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult? Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult? Function(List<int> sportsIds)? addFavoriteSports,
     TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult? Function()? changeEmail,
     TResult? Function()? changePassword,
+    TResult? Function()? skipProfilePicture,
   }) {
     return getUserProfile?.call();
   }
@@ -863,13 +875,13 @@ class _$GetUserProfileEventImpl implements _GetUserProfileEvent {
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
-    TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult Function(List<int> sportsIds)? addFavoriteSports,
     TResult Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult Function()? changeEmail,
     TResult Function()? changePassword,
+    TResult Function()? skipProfilePicture,
     required TResult orElse(),
   }) {
     if (getUserProfile != null) {
@@ -901,6 +913,7 @@ class _$GetUserProfileEventImpl implements _GetUserProfileEvent {
         deleteFavoriteSports,
     required TResult Function(_ChangeEmailEvent value) changeEmail,
     required TResult Function(_ChangePasswordEvent value) changePassword,
+    required TResult Function(_SkipProfilePicture value) skipProfilePicture,
   }) {
     return getUserProfile(this);
   }
@@ -925,6 +938,7 @@ class _$GetUserProfileEventImpl implements _GetUserProfileEvent {
     TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult? Function(_ChangeEmailEvent value)? changeEmail,
     TResult? Function(_ChangePasswordEvent value)? changePassword,
+    TResult? Function(_SkipProfilePicture value)? skipProfilePicture,
   }) {
     return getUserProfile?.call(this);
   }
@@ -949,6 +963,7 @@ class _$GetUserProfileEventImpl implements _GetUserProfileEvent {
     TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult Function(_ChangeEmailEvent value)? changeEmail,
     TResult Function(_ChangePasswordEvent value)? changePassword,
+    TResult Function(_SkipProfilePicture value)? skipProfilePicture,
     required TResult orElse(),
   }) {
     if (getUserProfile != null) {
@@ -1014,13 +1029,13 @@ class _$DeleteUserProfileEventImpl implements _DeleteUserProfileEvent {
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
-    required TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)
+    required TResult Function(List<int> imageBytes, String imageType)
         completeRegistration,
     required TResult Function(List<int> sportsIds) addFavoriteSports,
     required TResult Function(List<int> sportsIds) deleteFavoriteSports,
     required TResult Function() changeEmail,
     required TResult Function() changePassword,
+    required TResult Function() skipProfilePicture,
   }) {
     return deleteUserProfile();
   }
@@ -1039,13 +1054,13 @@ class _$DeleteUserProfileEventImpl implements _DeleteUserProfileEvent {
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
-    TResult? Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult? Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult? Function(List<int> sportsIds)? addFavoriteSports,
     TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult? Function()? changeEmail,
     TResult? Function()? changePassword,
+    TResult? Function()? skipProfilePicture,
   }) {
     return deleteUserProfile?.call();
   }
@@ -1064,13 +1079,13 @@ class _$DeleteUserProfileEventImpl implements _DeleteUserProfileEvent {
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
-    TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult Function(List<int> sportsIds)? addFavoriteSports,
     TResult Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult Function()? changeEmail,
     TResult Function()? changePassword,
+    TResult Function()? skipProfilePicture,
     required TResult orElse(),
   }) {
     if (deleteUserProfile != null) {
@@ -1102,6 +1117,7 @@ class _$DeleteUserProfileEventImpl implements _DeleteUserProfileEvent {
         deleteFavoriteSports,
     required TResult Function(_ChangeEmailEvent value) changeEmail,
     required TResult Function(_ChangePasswordEvent value) changePassword,
+    required TResult Function(_SkipProfilePicture value) skipProfilePicture,
   }) {
     return deleteUserProfile(this);
   }
@@ -1126,6 +1142,7 @@ class _$DeleteUserProfileEventImpl implements _DeleteUserProfileEvent {
     TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult? Function(_ChangeEmailEvent value)? changeEmail,
     TResult? Function(_ChangePasswordEvent value)? changePassword,
+    TResult? Function(_SkipProfilePicture value)? skipProfilePicture,
   }) {
     return deleteUserProfile?.call(this);
   }
@@ -1150,6 +1167,7 @@ class _$DeleteUserProfileEventImpl implements _DeleteUserProfileEvent {
     TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult Function(_ChangeEmailEvent value)? changeEmail,
     TResult Function(_ChangePasswordEvent value)? changePassword,
+    TResult Function(_SkipProfilePicture value)? skipProfilePicture,
     required TResult orElse(),
   }) {
     if (deleteUserProfile != null) {
@@ -1240,13 +1258,13 @@ class _$EditUserProfileEventImpl implements _EditUserProfileEvent {
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
-    required TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)
+    required TResult Function(List<int> imageBytes, String imageType)
         completeRegistration,
     required TResult Function(List<int> sportsIds) addFavoriteSports,
     required TResult Function(List<int> sportsIds) deleteFavoriteSports,
     required TResult Function() changeEmail,
     required TResult Function() changePassword,
+    required TResult Function() skipProfilePicture,
   }) {
     return editUserProfile(params);
   }
@@ -1265,13 +1283,13 @@ class _$EditUserProfileEventImpl implements _EditUserProfileEvent {
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
-    TResult? Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult? Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult? Function(List<int> sportsIds)? addFavoriteSports,
     TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult? Function()? changeEmail,
     TResult? Function()? changePassword,
+    TResult? Function()? skipProfilePicture,
   }) {
     return editUserProfile?.call(params);
   }
@@ -1290,13 +1308,13 @@ class _$EditUserProfileEventImpl implements _EditUserProfileEvent {
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
-    TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult Function(List<int> sportsIds)? addFavoriteSports,
     TResult Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult Function()? changeEmail,
     TResult Function()? changePassword,
+    TResult Function()? skipProfilePicture,
     required TResult orElse(),
   }) {
     if (editUserProfile != null) {
@@ -1328,6 +1346,7 @@ class _$EditUserProfileEventImpl implements _EditUserProfileEvent {
         deleteFavoriteSports,
     required TResult Function(_ChangeEmailEvent value) changeEmail,
     required TResult Function(_ChangePasswordEvent value) changePassword,
+    required TResult Function(_SkipProfilePicture value) skipProfilePicture,
   }) {
     return editUserProfile(this);
   }
@@ -1352,6 +1371,7 @@ class _$EditUserProfileEventImpl implements _EditUserProfileEvent {
     TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult? Function(_ChangeEmailEvent value)? changeEmail,
     TResult? Function(_ChangePasswordEvent value)? changePassword,
+    TResult? Function(_SkipProfilePicture value)? skipProfilePicture,
   }) {
     return editUserProfile?.call(this);
   }
@@ -1376,6 +1396,7 @@ class _$EditUserProfileEventImpl implements _EditUserProfileEvent {
     TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult Function(_ChangeEmailEvent value)? changeEmail,
     TResult Function(_ChangePasswordEvent value)? changePassword,
+    TResult Function(_SkipProfilePicture value)? skipProfilePicture,
     required TResult orElse(),
   }) {
     if (editUserProfile != null) {
@@ -1473,13 +1494,13 @@ class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
-    required TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)
+    required TResult Function(List<int> imageBytes, String imageType)
         completeRegistration,
     required TResult Function(List<int> sportsIds) addFavoriteSports,
     required TResult Function(List<int> sportsIds) deleteFavoriteSports,
     required TResult Function() changeEmail,
     required TResult Function() changePassword,
+    required TResult Function() skipProfilePicture,
   }) {
     return editPreferences(params);
   }
@@ -1498,13 +1519,13 @@ class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
-    TResult? Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult? Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult? Function(List<int> sportsIds)? addFavoriteSports,
     TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult? Function()? changeEmail,
     TResult? Function()? changePassword,
+    TResult? Function()? skipProfilePicture,
   }) {
     return editPreferences?.call(params);
   }
@@ -1523,13 +1544,13 @@ class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
-    TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult Function(List<int> sportsIds)? addFavoriteSports,
     TResult Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult Function()? changeEmail,
     TResult Function()? changePassword,
+    TResult Function()? skipProfilePicture,
     required TResult orElse(),
   }) {
     if (editPreferences != null) {
@@ -1561,6 +1582,7 @@ class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
         deleteFavoriteSports,
     required TResult Function(_ChangeEmailEvent value) changeEmail,
     required TResult Function(_ChangePasswordEvent value) changePassword,
+    required TResult Function(_SkipProfilePicture value) skipProfilePicture,
   }) {
     return editPreferences(this);
   }
@@ -1585,6 +1607,7 @@ class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
     TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult? Function(_ChangeEmailEvent value)? changeEmail,
     TResult? Function(_ChangePasswordEvent value)? changePassword,
+    TResult? Function(_SkipProfilePicture value)? skipProfilePicture,
   }) {
     return editPreferences?.call(this);
   }
@@ -1609,6 +1632,7 @@ class _$EditPreferencesEventImpl implements _EditPreferencesEvent {
     TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult Function(_ChangeEmailEvent value)? changeEmail,
     TResult Function(_ChangePasswordEvent value)? changePassword,
+    TResult Function(_SkipProfilePicture value)? skipProfilePicture,
     required TResult orElse(),
   }) {
     if (editPreferences != null) {
@@ -1680,13 +1704,13 @@ class _$checkAccountStatusEventImpl implements _checkAccountStatusEvent {
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
-    required TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)
+    required TResult Function(List<int> imageBytes, String imageType)
         completeRegistration,
     required TResult Function(List<int> sportsIds) addFavoriteSports,
     required TResult Function(List<int> sportsIds) deleteFavoriteSports,
     required TResult Function() changeEmail,
     required TResult Function() changePassword,
+    required TResult Function() skipProfilePicture,
   }) {
     return checkAccountStatus();
   }
@@ -1705,13 +1729,13 @@ class _$checkAccountStatusEventImpl implements _checkAccountStatusEvent {
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
-    TResult? Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult? Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult? Function(List<int> sportsIds)? addFavoriteSports,
     TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult? Function()? changeEmail,
     TResult? Function()? changePassword,
+    TResult? Function()? skipProfilePicture,
   }) {
     return checkAccountStatus?.call();
   }
@@ -1730,13 +1754,13 @@ class _$checkAccountStatusEventImpl implements _checkAccountStatusEvent {
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
-    TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult Function(List<int> sportsIds)? addFavoriteSports,
     TResult Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult Function()? changeEmail,
     TResult Function()? changePassword,
+    TResult Function()? skipProfilePicture,
     required TResult orElse(),
   }) {
     if (checkAccountStatus != null) {
@@ -1768,6 +1792,7 @@ class _$checkAccountStatusEventImpl implements _checkAccountStatusEvent {
         deleteFavoriteSports,
     required TResult Function(_ChangeEmailEvent value) changeEmail,
     required TResult Function(_ChangePasswordEvent value) changePassword,
+    required TResult Function(_SkipProfilePicture value) skipProfilePicture,
   }) {
     return checkAccountStatus(this);
   }
@@ -1792,6 +1817,7 @@ class _$checkAccountStatusEventImpl implements _checkAccountStatusEvent {
     TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult? Function(_ChangeEmailEvent value)? changeEmail,
     TResult? Function(_ChangePasswordEvent value)? changePassword,
+    TResult? Function(_SkipProfilePicture value)? skipProfilePicture,
   }) {
     return checkAccountStatus?.call(this);
   }
@@ -1816,6 +1842,7 @@ class _$checkAccountStatusEventImpl implements _checkAccountStatusEvent {
     TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult Function(_ChangeEmailEvent value)? changeEmail,
     TResult Function(_ChangePasswordEvent value)? changePassword,
+    TResult Function(_SkipProfilePicture value)? skipProfilePicture,
     required TResult orElse(),
   }) {
     if (checkAccountStatus != null) {
@@ -1880,13 +1907,13 @@ class _$ConfirmUserEmailEventImpl implements _ConfirmUserEmailEvent {
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
-    required TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)
+    required TResult Function(List<int> imageBytes, String imageType)
         completeRegistration,
     required TResult Function(List<int> sportsIds) addFavoriteSports,
     required TResult Function(List<int> sportsIds) deleteFavoriteSports,
     required TResult Function() changeEmail,
     required TResult Function() changePassword,
+    required TResult Function() skipProfilePicture,
   }) {
     return confirmUserEmail();
   }
@@ -1905,13 +1932,13 @@ class _$ConfirmUserEmailEventImpl implements _ConfirmUserEmailEvent {
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
-    TResult? Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult? Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult? Function(List<int> sportsIds)? addFavoriteSports,
     TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult? Function()? changeEmail,
     TResult? Function()? changePassword,
+    TResult? Function()? skipProfilePicture,
   }) {
     return confirmUserEmail?.call();
   }
@@ -1930,13 +1957,13 @@ class _$ConfirmUserEmailEventImpl implements _ConfirmUserEmailEvent {
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
-    TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult Function(List<int> sportsIds)? addFavoriteSports,
     TResult Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult Function()? changeEmail,
     TResult Function()? changePassword,
+    TResult Function()? skipProfilePicture,
     required TResult orElse(),
   }) {
     if (confirmUserEmail != null) {
@@ -1968,6 +1995,7 @@ class _$ConfirmUserEmailEventImpl implements _ConfirmUserEmailEvent {
         deleteFavoriteSports,
     required TResult Function(_ChangeEmailEvent value) changeEmail,
     required TResult Function(_ChangePasswordEvent value) changePassword,
+    required TResult Function(_SkipProfilePicture value) skipProfilePicture,
   }) {
     return confirmUserEmail(this);
   }
@@ -1992,6 +2020,7 @@ class _$ConfirmUserEmailEventImpl implements _ConfirmUserEmailEvent {
     TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult? Function(_ChangeEmailEvent value)? changeEmail,
     TResult? Function(_ChangePasswordEvent value)? changePassword,
+    TResult? Function(_SkipProfilePicture value)? skipProfilePicture,
   }) {
     return confirmUserEmail?.call(this);
   }
@@ -2016,6 +2045,7 @@ class _$ConfirmUserEmailEventImpl implements _ConfirmUserEmailEvent {
     TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult Function(_ChangeEmailEvent value)? changeEmail,
     TResult Function(_ChangePasswordEvent value)? changePassword,
+    TResult Function(_SkipProfilePicture value)? skipProfilePicture,
     required TResult orElse(),
   }) {
     if (confirmUserEmail != null) {
@@ -2082,13 +2112,13 @@ class _$ResendConfirmUserEmailEventImpl
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
-    required TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)
+    required TResult Function(List<int> imageBytes, String imageType)
         completeRegistration,
     required TResult Function(List<int> sportsIds) addFavoriteSports,
     required TResult Function(List<int> sportsIds) deleteFavoriteSports,
     required TResult Function() changeEmail,
     required TResult Function() changePassword,
+    required TResult Function() skipProfilePicture,
   }) {
     return resendconfirmUserEmail();
   }
@@ -2107,13 +2137,13 @@ class _$ResendConfirmUserEmailEventImpl
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
-    TResult? Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult? Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult? Function(List<int> sportsIds)? addFavoriteSports,
     TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult? Function()? changeEmail,
     TResult? Function()? changePassword,
+    TResult? Function()? skipProfilePicture,
   }) {
     return resendconfirmUserEmail?.call();
   }
@@ -2132,13 +2162,13 @@ class _$ResendConfirmUserEmailEventImpl
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
-    TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult Function(List<int> sportsIds)? addFavoriteSports,
     TResult Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult Function()? changeEmail,
     TResult Function()? changePassword,
+    TResult Function()? skipProfilePicture,
     required TResult orElse(),
   }) {
     if (resendconfirmUserEmail != null) {
@@ -2170,6 +2200,7 @@ class _$ResendConfirmUserEmailEventImpl
         deleteFavoriteSports,
     required TResult Function(_ChangeEmailEvent value) changeEmail,
     required TResult Function(_ChangePasswordEvent value) changePassword,
+    required TResult Function(_SkipProfilePicture value) skipProfilePicture,
   }) {
     return resendconfirmUserEmail(this);
   }
@@ -2194,6 +2225,7 @@ class _$ResendConfirmUserEmailEventImpl
     TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult? Function(_ChangeEmailEvent value)? changeEmail,
     TResult? Function(_ChangePasswordEvent value)? changePassword,
+    TResult? Function(_SkipProfilePicture value)? skipProfilePicture,
   }) {
     return resendconfirmUserEmail?.call(this);
   }
@@ -2218,6 +2250,7 @@ class _$ResendConfirmUserEmailEventImpl
     TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult Function(_ChangeEmailEvent value)? changeEmail,
     TResult Function(_ChangePasswordEvent value)? changePassword,
+    TResult Function(_SkipProfilePicture value)? skipProfilePicture,
     required TResult orElse(),
   }) {
     if (resendconfirmUserEmail != null) {
@@ -2281,13 +2314,13 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
-    required TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)
+    required TResult Function(List<int> imageBytes, String imageType)
         completeRegistration,
     required TResult Function(List<int> sportsIds) addFavoriteSports,
     required TResult Function(List<int> sportsIds) deleteFavoriteSports,
     required TResult Function() changeEmail,
     required TResult Function() changePassword,
+    required TResult Function() skipProfilePicture,
   }) {
     return getSports();
   }
@@ -2306,13 +2339,13 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
-    TResult? Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult? Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult? Function(List<int> sportsIds)? addFavoriteSports,
     TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult? Function()? changeEmail,
     TResult? Function()? changePassword,
+    TResult? Function()? skipProfilePicture,
   }) {
     return getSports?.call();
   }
@@ -2331,13 +2364,13 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
-    TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult Function(List<int> sportsIds)? addFavoriteSports,
     TResult Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult Function()? changeEmail,
     TResult Function()? changePassword,
+    TResult Function()? skipProfilePicture,
     required TResult orElse(),
   }) {
     if (getSports != null) {
@@ -2369,6 +2402,7 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
         deleteFavoriteSports,
     required TResult Function(_ChangeEmailEvent value) changeEmail,
     required TResult Function(_ChangePasswordEvent value) changePassword,
+    required TResult Function(_SkipProfilePicture value) skipProfilePicture,
   }) {
     return getSports(this);
   }
@@ -2393,6 +2427,7 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
     TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult? Function(_ChangeEmailEvent value)? changeEmail,
     TResult? Function(_ChangePasswordEvent value)? changePassword,
+    TResult? Function(_SkipProfilePicture value)? skipProfilePicture,
   }) {
     return getSports?.call(this);
   }
@@ -2417,6 +2452,7 @@ class _$GetSportsEventImpl implements _GetSportsEvent {
     TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult Function(_ChangeEmailEvent value)? changeEmail,
     TResult Function(_ChangePasswordEvent value)? changePassword,
+    TResult Function(_SkipProfilePicture value)? skipProfilePicture,
     required TResult orElse(),
   }) {
     if (getSports != null) {
@@ -2437,7 +2473,7 @@ abstract class _$$CompleteRegistrationEventImplCopyWith<$Res> {
           $Res Function(_$CompleteRegistrationEventImpl) then) =
       __$$CompleteRegistrationEventImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<int> imageBytes, String imageType, List<int> selectedSports});
+  $Res call({List<int> imageBytes, String imageType});
 }
 
 /// @nodoc
@@ -2454,7 +2490,6 @@ class __$$CompleteRegistrationEventImplCopyWithImpl<$Res>
   $Res call({
     Object? imageBytes = null,
     Object? imageType = null,
-    Object? selectedSports = null,
   }) {
     return _then(_$CompleteRegistrationEventImpl(
       imageBytes: null == imageBytes
@@ -2465,10 +2500,6 @@ class __$$CompleteRegistrationEventImplCopyWithImpl<$Res>
           ? _value.imageType
           : imageType // ignore: cast_nullable_to_non_nullable
               as String,
-      selectedSports: null == selectedSports
-          ? _value._selectedSports
-          : selectedSports // ignore: cast_nullable_to_non_nullable
-              as List<int>,
     ));
   }
 }
@@ -2477,11 +2508,8 @@ class __$$CompleteRegistrationEventImplCopyWithImpl<$Res>
 
 class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
   const _$CompleteRegistrationEventImpl(
-      {required final List<int> imageBytes,
-      required this.imageType,
-      required final List<int> selectedSports})
-      : _imageBytes = imageBytes,
-        _selectedSports = selectedSports;
+      {required final List<int> imageBytes, required this.imageType})
+      : _imageBytes = imageBytes;
 
   final List<int> _imageBytes;
   @override
@@ -2493,17 +2521,10 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
 
   @override
   final String imageType;
-  final List<int> _selectedSports;
-  @override
-  List<int> get selectedSports {
-    if (_selectedSports is EqualUnmodifiableListView) return _selectedSports;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_selectedSports);
-  }
 
   @override
   String toString() {
-    return 'AuthEvent.completeRegistration(imageBytes: $imageBytes, imageType: $imageType, selectedSports: $selectedSports)';
+    return 'AuthEvent.completeRegistration(imageBytes: $imageBytes, imageType: $imageType)';
   }
 
   @override
@@ -2514,17 +2535,12 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
             const DeepCollectionEquality()
                 .equals(other._imageBytes, _imageBytes) &&
             (identical(other.imageType, imageType) ||
-                other.imageType == imageType) &&
-            const DeepCollectionEquality()
-                .equals(other._selectedSports, _selectedSports));
+                other.imageType == imageType));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_imageBytes),
-      imageType,
-      const DeepCollectionEquality().hash(_selectedSports));
+      runtimeType, const DeepCollectionEquality().hash(_imageBytes), imageType);
 
   @JsonKey(ignore: true)
   @override
@@ -2547,15 +2563,15 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
-    required TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)
+    required TResult Function(List<int> imageBytes, String imageType)
         completeRegistration,
     required TResult Function(List<int> sportsIds) addFavoriteSports,
     required TResult Function(List<int> sportsIds) deleteFavoriteSports,
     required TResult Function() changeEmail,
     required TResult Function() changePassword,
+    required TResult Function() skipProfilePicture,
   }) {
-    return completeRegistration(imageBytes, imageType, selectedSports);
+    return completeRegistration(imageBytes, imageType);
   }
 
   @override
@@ -2572,15 +2588,15 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
-    TResult? Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult? Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult? Function(List<int> sportsIds)? addFavoriteSports,
     TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult? Function()? changeEmail,
     TResult? Function()? changePassword,
+    TResult? Function()? skipProfilePicture,
   }) {
-    return completeRegistration?.call(imageBytes, imageType, selectedSports);
+    return completeRegistration?.call(imageBytes, imageType);
   }
 
   @override
@@ -2597,17 +2613,17 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
-    TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult Function(List<int> sportsIds)? addFavoriteSports,
     TResult Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult Function()? changeEmail,
     TResult Function()? changePassword,
+    TResult Function()? skipProfilePicture,
     required TResult orElse(),
   }) {
     if (completeRegistration != null) {
-      return completeRegistration(imageBytes, imageType, selectedSports);
+      return completeRegistration(imageBytes, imageType);
     }
     return orElse();
   }
@@ -2635,6 +2651,7 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
         deleteFavoriteSports,
     required TResult Function(_ChangeEmailEvent value) changeEmail,
     required TResult Function(_ChangePasswordEvent value) changePassword,
+    required TResult Function(_SkipProfilePicture value) skipProfilePicture,
   }) {
     return completeRegistration(this);
   }
@@ -2659,6 +2676,7 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
     TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult? Function(_ChangeEmailEvent value)? changeEmail,
     TResult? Function(_ChangePasswordEvent value)? changePassword,
+    TResult? Function(_SkipProfilePicture value)? skipProfilePicture,
   }) {
     return completeRegistration?.call(this);
   }
@@ -2683,6 +2701,7 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
     TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult Function(_ChangeEmailEvent value)? changeEmail,
     TResult Function(_ChangePasswordEvent value)? changePassword,
+    TResult Function(_SkipProfilePicture value)? skipProfilePicture,
     required TResult orElse(),
   }) {
     if (completeRegistration != null) {
@@ -2694,14 +2713,11 @@ class _$CompleteRegistrationEventImpl implements _CompleteRegistrationEvent {
 
 abstract class _CompleteRegistrationEvent implements AuthEvent {
   const factory _CompleteRegistrationEvent(
-          {required final List<int> imageBytes,
-          required final String imageType,
-          required final List<int> selectedSports}) =
-      _$CompleteRegistrationEventImpl;
+      {required final List<int> imageBytes,
+      required final String imageType}) = _$CompleteRegistrationEventImpl;
 
   List<int> get imageBytes;
   String get imageType;
-  List<int> get selectedSports;
   @JsonKey(ignore: true)
   _$$CompleteRegistrationEventImplCopyWith<_$CompleteRegistrationEventImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -2793,13 +2809,13 @@ class _$AddFavoriteSportsEventImpl implements _AddFavoriteSportsEvent {
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
-    required TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)
+    required TResult Function(List<int> imageBytes, String imageType)
         completeRegistration,
     required TResult Function(List<int> sportsIds) addFavoriteSports,
     required TResult Function(List<int> sportsIds) deleteFavoriteSports,
     required TResult Function() changeEmail,
     required TResult Function() changePassword,
+    required TResult Function() skipProfilePicture,
   }) {
     return addFavoriteSports(sportsIds);
   }
@@ -2818,13 +2834,13 @@ class _$AddFavoriteSportsEventImpl implements _AddFavoriteSportsEvent {
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
-    TResult? Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult? Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult? Function(List<int> sportsIds)? addFavoriteSports,
     TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult? Function()? changeEmail,
     TResult? Function()? changePassword,
+    TResult? Function()? skipProfilePicture,
   }) {
     return addFavoriteSports?.call(sportsIds);
   }
@@ -2843,13 +2859,13 @@ class _$AddFavoriteSportsEventImpl implements _AddFavoriteSportsEvent {
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
-    TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult Function(List<int> sportsIds)? addFavoriteSports,
     TResult Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult Function()? changeEmail,
     TResult Function()? changePassword,
+    TResult Function()? skipProfilePicture,
     required TResult orElse(),
   }) {
     if (addFavoriteSports != null) {
@@ -2881,6 +2897,7 @@ class _$AddFavoriteSportsEventImpl implements _AddFavoriteSportsEvent {
         deleteFavoriteSports,
     required TResult Function(_ChangeEmailEvent value) changeEmail,
     required TResult Function(_ChangePasswordEvent value) changePassword,
+    required TResult Function(_SkipProfilePicture value) skipProfilePicture,
   }) {
     return addFavoriteSports(this);
   }
@@ -2905,6 +2922,7 @@ class _$AddFavoriteSportsEventImpl implements _AddFavoriteSportsEvent {
     TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult? Function(_ChangeEmailEvent value)? changeEmail,
     TResult? Function(_ChangePasswordEvent value)? changePassword,
+    TResult? Function(_SkipProfilePicture value)? skipProfilePicture,
   }) {
     return addFavoriteSports?.call(this);
   }
@@ -2929,6 +2947,7 @@ class _$AddFavoriteSportsEventImpl implements _AddFavoriteSportsEvent {
     TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult Function(_ChangeEmailEvent value)? changeEmail,
     TResult Function(_ChangePasswordEvent value)? changePassword,
+    TResult Function(_SkipProfilePicture value)? skipProfilePicture,
     required TResult orElse(),
   }) {
     if (addFavoriteSports != null) {
@@ -3034,13 +3053,13 @@ class _$DeleteFavoriteSportsEventImpl implements _DeleteFavoriteSportsEvent {
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
-    required TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)
+    required TResult Function(List<int> imageBytes, String imageType)
         completeRegistration,
     required TResult Function(List<int> sportsIds) addFavoriteSports,
     required TResult Function(List<int> sportsIds) deleteFavoriteSports,
     required TResult Function() changeEmail,
     required TResult Function() changePassword,
+    required TResult Function() skipProfilePicture,
   }) {
     return deleteFavoriteSports(sportsIds);
   }
@@ -3059,13 +3078,13 @@ class _$DeleteFavoriteSportsEventImpl implements _DeleteFavoriteSportsEvent {
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
-    TResult? Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult? Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult? Function(List<int> sportsIds)? addFavoriteSports,
     TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult? Function()? changeEmail,
     TResult? Function()? changePassword,
+    TResult? Function()? skipProfilePicture,
   }) {
     return deleteFavoriteSports?.call(sportsIds);
   }
@@ -3084,13 +3103,13 @@ class _$DeleteFavoriteSportsEventImpl implements _DeleteFavoriteSportsEvent {
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
-    TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult Function(List<int> sportsIds)? addFavoriteSports,
     TResult Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult Function()? changeEmail,
     TResult Function()? changePassword,
+    TResult Function()? skipProfilePicture,
     required TResult orElse(),
   }) {
     if (deleteFavoriteSports != null) {
@@ -3122,6 +3141,7 @@ class _$DeleteFavoriteSportsEventImpl implements _DeleteFavoriteSportsEvent {
         deleteFavoriteSports,
     required TResult Function(_ChangeEmailEvent value) changeEmail,
     required TResult Function(_ChangePasswordEvent value) changePassword,
+    required TResult Function(_SkipProfilePicture value) skipProfilePicture,
   }) {
     return deleteFavoriteSports(this);
   }
@@ -3146,6 +3166,7 @@ class _$DeleteFavoriteSportsEventImpl implements _DeleteFavoriteSportsEvent {
     TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult? Function(_ChangeEmailEvent value)? changeEmail,
     TResult? Function(_ChangePasswordEvent value)? changePassword,
+    TResult? Function(_SkipProfilePicture value)? skipProfilePicture,
   }) {
     return deleteFavoriteSports?.call(this);
   }
@@ -3170,6 +3191,7 @@ class _$DeleteFavoriteSportsEventImpl implements _DeleteFavoriteSportsEvent {
     TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult Function(_ChangeEmailEvent value)? changeEmail,
     TResult Function(_ChangePasswordEvent value)? changePassword,
+    TResult Function(_SkipProfilePicture value)? skipProfilePicture,
     required TResult orElse(),
   }) {
     if (deleteFavoriteSports != null) {
@@ -3238,13 +3260,13 @@ class _$ChangeEmailEventImpl implements _ChangeEmailEvent {
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
-    required TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)
+    required TResult Function(List<int> imageBytes, String imageType)
         completeRegistration,
     required TResult Function(List<int> sportsIds) addFavoriteSports,
     required TResult Function(List<int> sportsIds) deleteFavoriteSports,
     required TResult Function() changeEmail,
     required TResult Function() changePassword,
+    required TResult Function() skipProfilePicture,
   }) {
     return changeEmail();
   }
@@ -3263,13 +3285,13 @@ class _$ChangeEmailEventImpl implements _ChangeEmailEvent {
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
-    TResult? Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult? Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult? Function(List<int> sportsIds)? addFavoriteSports,
     TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult? Function()? changeEmail,
     TResult? Function()? changePassword,
+    TResult? Function()? skipProfilePicture,
   }) {
     return changeEmail?.call();
   }
@@ -3288,13 +3310,13 @@ class _$ChangeEmailEventImpl implements _ChangeEmailEvent {
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
-    TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult Function(List<int> sportsIds)? addFavoriteSports,
     TResult Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult Function()? changeEmail,
     TResult Function()? changePassword,
+    TResult Function()? skipProfilePicture,
     required TResult orElse(),
   }) {
     if (changeEmail != null) {
@@ -3326,6 +3348,7 @@ class _$ChangeEmailEventImpl implements _ChangeEmailEvent {
         deleteFavoriteSports,
     required TResult Function(_ChangeEmailEvent value) changeEmail,
     required TResult Function(_ChangePasswordEvent value) changePassword,
+    required TResult Function(_SkipProfilePicture value) skipProfilePicture,
   }) {
     return changeEmail(this);
   }
@@ -3350,6 +3373,7 @@ class _$ChangeEmailEventImpl implements _ChangeEmailEvent {
     TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult? Function(_ChangeEmailEvent value)? changeEmail,
     TResult? Function(_ChangePasswordEvent value)? changePassword,
+    TResult? Function(_SkipProfilePicture value)? skipProfilePicture,
   }) {
     return changeEmail?.call(this);
   }
@@ -3374,6 +3398,7 @@ class _$ChangeEmailEventImpl implements _ChangeEmailEvent {
     TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult Function(_ChangeEmailEvent value)? changeEmail,
     TResult Function(_ChangePasswordEvent value)? changePassword,
+    TResult Function(_SkipProfilePicture value)? skipProfilePicture,
     required TResult orElse(),
   }) {
     if (changeEmail != null) {
@@ -3437,13 +3462,13 @@ class _$ChangePasswordEventImpl implements _ChangePasswordEvent {
     required TResult Function() confirmUserEmail,
     required TResult Function() resendconfirmUserEmail,
     required TResult Function() getSports,
-    required TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)
+    required TResult Function(List<int> imageBytes, String imageType)
         completeRegistration,
     required TResult Function(List<int> sportsIds) addFavoriteSports,
     required TResult Function(List<int> sportsIds) deleteFavoriteSports,
     required TResult Function() changeEmail,
     required TResult Function() changePassword,
+    required TResult Function() skipProfilePicture,
   }) {
     return changePassword();
   }
@@ -3462,13 +3487,13 @@ class _$ChangePasswordEventImpl implements _ChangePasswordEvent {
     TResult? Function()? confirmUserEmail,
     TResult? Function()? resendconfirmUserEmail,
     TResult? Function()? getSports,
-    TResult? Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult? Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult? Function(List<int> sportsIds)? addFavoriteSports,
     TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult? Function()? changeEmail,
     TResult? Function()? changePassword,
+    TResult? Function()? skipProfilePicture,
   }) {
     return changePassword?.call();
   }
@@ -3487,13 +3512,13 @@ class _$ChangePasswordEventImpl implements _ChangePasswordEvent {
     TResult Function()? confirmUserEmail,
     TResult Function()? resendconfirmUserEmail,
     TResult Function()? getSports,
-    TResult Function(
-            List<int> imageBytes, String imageType, List<int> selectedSports)?
+    TResult Function(List<int> imageBytes, String imageType)?
         completeRegistration,
     TResult Function(List<int> sportsIds)? addFavoriteSports,
     TResult Function(List<int> sportsIds)? deleteFavoriteSports,
     TResult Function()? changeEmail,
     TResult Function()? changePassword,
+    TResult Function()? skipProfilePicture,
     required TResult orElse(),
   }) {
     if (changePassword != null) {
@@ -3525,6 +3550,7 @@ class _$ChangePasswordEventImpl implements _ChangePasswordEvent {
         deleteFavoriteSports,
     required TResult Function(_ChangeEmailEvent value) changeEmail,
     required TResult Function(_ChangePasswordEvent value) changePassword,
+    required TResult Function(_SkipProfilePicture value) skipProfilePicture,
   }) {
     return changePassword(this);
   }
@@ -3549,6 +3575,7 @@ class _$ChangePasswordEventImpl implements _ChangePasswordEvent {
     TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult? Function(_ChangeEmailEvent value)? changeEmail,
     TResult? Function(_ChangePasswordEvent value)? changePassword,
+    TResult? Function(_SkipProfilePicture value)? skipProfilePicture,
   }) {
     return changePassword?.call(this);
   }
@@ -3573,6 +3600,7 @@ class _$ChangePasswordEventImpl implements _ChangePasswordEvent {
     TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
     TResult Function(_ChangeEmailEvent value)? changeEmail,
     TResult Function(_ChangePasswordEvent value)? changePassword,
+    TResult Function(_SkipProfilePicture value)? skipProfilePicture,
     required TResult orElse(),
   }) {
     if (changePassword != null) {
@@ -3584,6 +3612,207 @@ class _$ChangePasswordEventImpl implements _ChangePasswordEvent {
 
 abstract class _ChangePasswordEvent implements AuthEvent {
   const factory _ChangePasswordEvent() = _$ChangePasswordEventImpl;
+}
+
+/// @nodoc
+abstract class _$$SkipProfilePictureImplCopyWith<$Res> {
+  factory _$$SkipProfilePictureImplCopyWith(_$SkipProfilePictureImpl value,
+          $Res Function(_$SkipProfilePictureImpl) then) =
+      __$$SkipProfilePictureImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SkipProfilePictureImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$SkipProfilePictureImpl>
+    implements _$$SkipProfilePictureImplCopyWith<$Res> {
+  __$$SkipProfilePictureImplCopyWithImpl(_$SkipProfilePictureImpl _value,
+      $Res Function(_$SkipProfilePictureImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SkipProfilePictureImpl implements _SkipProfilePicture {
+  const _$SkipProfilePictureImpl();
+
+  @override
+  String toString() {
+    return 'AuthEvent.skipProfilePicture()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SkipProfilePictureImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() login,
+    required TResult Function() googleLogin,
+    required TResult Function() register,
+    required TResult Function() getUserProfile,
+    required TResult Function() deleteUserProfile,
+    required TResult Function(EditUserProfileParams params) editUserProfile,
+    required TResult Function(PreferenceValue params) editPreferences,
+    required TResult Function() checkAccountStatus,
+    required TResult Function() confirmUserEmail,
+    required TResult Function() resendconfirmUserEmail,
+    required TResult Function() getSports,
+    required TResult Function(List<int> imageBytes, String imageType)
+        completeRegistration,
+    required TResult Function(List<int> sportsIds) addFavoriteSports,
+    required TResult Function(List<int> sportsIds) deleteFavoriteSports,
+    required TResult Function() changeEmail,
+    required TResult Function() changePassword,
+    required TResult Function() skipProfilePicture,
+  }) {
+    return skipProfilePicture();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? login,
+    TResult? Function()? googleLogin,
+    TResult? Function()? register,
+    TResult? Function()? getUserProfile,
+    TResult? Function()? deleteUserProfile,
+    TResult? Function(EditUserProfileParams params)? editUserProfile,
+    TResult? Function(PreferenceValue params)? editPreferences,
+    TResult? Function()? checkAccountStatus,
+    TResult? Function()? confirmUserEmail,
+    TResult? Function()? resendconfirmUserEmail,
+    TResult? Function()? getSports,
+    TResult? Function(List<int> imageBytes, String imageType)?
+        completeRegistration,
+    TResult? Function(List<int> sportsIds)? addFavoriteSports,
+    TResult? Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult? Function()? changeEmail,
+    TResult? Function()? changePassword,
+    TResult? Function()? skipProfilePicture,
+  }) {
+    return skipProfilePicture?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? login,
+    TResult Function()? googleLogin,
+    TResult Function()? register,
+    TResult Function()? getUserProfile,
+    TResult Function()? deleteUserProfile,
+    TResult Function(EditUserProfileParams params)? editUserProfile,
+    TResult Function(PreferenceValue params)? editPreferences,
+    TResult Function()? checkAccountStatus,
+    TResult Function()? confirmUserEmail,
+    TResult Function()? resendconfirmUserEmail,
+    TResult Function()? getSports,
+    TResult Function(List<int> imageBytes, String imageType)?
+        completeRegistration,
+    TResult Function(List<int> sportsIds)? addFavoriteSports,
+    TResult Function(List<int> sportsIds)? deleteFavoriteSports,
+    TResult Function()? changeEmail,
+    TResult Function()? changePassword,
+    TResult Function()? skipProfilePicture,
+    required TResult orElse(),
+  }) {
+    if (skipProfilePicture != null) {
+      return skipProfilePicture();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoginEvent value) login,
+    required TResult Function(_GoogleLoginEvent value) googleLogin,
+    required TResult Function(_RegisterEvent value) register,
+    required TResult Function(_GetUserProfileEvent value) getUserProfile,
+    required TResult Function(_DeleteUserProfileEvent value) deleteUserProfile,
+    required TResult Function(_EditUserProfileEvent value) editUserProfile,
+    required TResult Function(_EditPreferencesEvent value) editPreferences,
+    required TResult Function(_checkAccountStatusEvent value)
+        checkAccountStatus,
+    required TResult Function(_ConfirmUserEmailEvent value) confirmUserEmail,
+    required TResult Function(_ResendConfirmUserEmailEvent value)
+        resendconfirmUserEmail,
+    required TResult Function(_GetSportsEvent value) getSports,
+    required TResult Function(_CompleteRegistrationEvent value)
+        completeRegistration,
+    required TResult Function(_AddFavoriteSportsEvent value) addFavoriteSports,
+    required TResult Function(_DeleteFavoriteSportsEvent value)
+        deleteFavoriteSports,
+    required TResult Function(_ChangeEmailEvent value) changeEmail,
+    required TResult Function(_ChangePasswordEvent value) changePassword,
+    required TResult Function(_SkipProfilePicture value) skipProfilePicture,
+  }) {
+    return skipProfilePicture(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoginEvent value)? login,
+    TResult? Function(_GoogleLoginEvent value)? googleLogin,
+    TResult? Function(_RegisterEvent value)? register,
+    TResult? Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult? Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult? Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult? Function(_EditPreferencesEvent value)? editPreferences,
+    TResult? Function(_checkAccountStatusEvent value)? checkAccountStatus,
+    TResult? Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult? Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult? Function(_GetSportsEvent value)? getSports,
+    TResult? Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult? Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult? Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult? Function(_ChangeEmailEvent value)? changeEmail,
+    TResult? Function(_ChangePasswordEvent value)? changePassword,
+    TResult? Function(_SkipProfilePicture value)? skipProfilePicture,
+  }) {
+    return skipProfilePicture?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoginEvent value)? login,
+    TResult Function(_GoogleLoginEvent value)? googleLogin,
+    TResult Function(_RegisterEvent value)? register,
+    TResult Function(_GetUserProfileEvent value)? getUserProfile,
+    TResult Function(_DeleteUserProfileEvent value)? deleteUserProfile,
+    TResult Function(_EditUserProfileEvent value)? editUserProfile,
+    TResult Function(_EditPreferencesEvent value)? editPreferences,
+    TResult Function(_checkAccountStatusEvent value)? checkAccountStatus,
+    TResult Function(_ConfirmUserEmailEvent value)? confirmUserEmail,
+    TResult Function(_ResendConfirmUserEmailEvent value)?
+        resendconfirmUserEmail,
+    TResult Function(_GetSportsEvent value)? getSports,
+    TResult Function(_CompleteRegistrationEvent value)? completeRegistration,
+    TResult Function(_AddFavoriteSportsEvent value)? addFavoriteSports,
+    TResult Function(_DeleteFavoriteSportsEvent value)? deleteFavoriteSports,
+    TResult Function(_ChangeEmailEvent value)? changeEmail,
+    TResult Function(_ChangePasswordEvent value)? changePassword,
+    TResult Function(_SkipProfilePicture value)? skipProfilePicture,
+    required TResult orElse(),
+  }) {
+    if (skipProfilePicture != null) {
+      return skipProfilePicture(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SkipProfilePicture implements AuthEvent {
+  const factory _SkipProfilePicture() = _$SkipProfilePictureImpl;
 }
 
 /// @nodoc
@@ -3627,6 +3856,9 @@ mixin _$AuthState {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3666,6 +3898,9 @@ mixin _$AuthState {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3705,6 +3940,9 @@ mixin _$AuthState {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -3754,6 +3992,12 @@ mixin _$AuthState {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3797,6 +4041,11 @@ mixin _$AuthState {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3840,6 +4089,11 @@ mixin _$AuthState {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -3937,6 +4191,9 @@ class _$InitialImpl implements _Initial {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return initial();
   }
@@ -3979,6 +4236,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return initial?.call();
   }
@@ -4021,6 +4281,9 @@ class _$InitialImpl implements _Initial {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -4076,6 +4339,12 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return initial(this);
   }
@@ -4122,6 +4391,11 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return initial?.call(this);
   }
@@ -4168,6 +4442,11 @@ class _$InitialImpl implements _Initial {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -4256,6 +4535,9 @@ class _$RegisterLoadingImpl implements _RegisterLoading {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return registerLoading();
   }
@@ -4298,6 +4580,9 @@ class _$RegisterLoadingImpl implements _RegisterLoading {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return registerLoading?.call();
   }
@@ -4340,6 +4625,9 @@ class _$RegisterLoadingImpl implements _RegisterLoading {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (registerLoading != null) {
@@ -4395,6 +4683,12 @@ class _$RegisterLoadingImpl implements _RegisterLoading {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return registerLoading(this);
   }
@@ -4441,6 +4735,11 @@ class _$RegisterLoadingImpl implements _RegisterLoading {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return registerLoading?.call(this);
   }
@@ -4487,6 +4786,11 @@ class _$RegisterLoadingImpl implements _RegisterLoading {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (registerLoading != null) {
@@ -4603,6 +4907,9 @@ class _$RegisterFailureImpl implements _RegisterFailure {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return registerFailure(failure);
   }
@@ -4645,6 +4952,9 @@ class _$RegisterFailureImpl implements _RegisterFailure {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return registerFailure?.call(failure);
   }
@@ -4687,6 +4997,9 @@ class _$RegisterFailureImpl implements _RegisterFailure {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (registerFailure != null) {
@@ -4742,6 +5055,12 @@ class _$RegisterFailureImpl implements _RegisterFailure {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return registerFailure(this);
   }
@@ -4788,6 +5107,11 @@ class _$RegisterFailureImpl implements _RegisterFailure {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return registerFailure?.call(this);
   }
@@ -4834,6 +5158,11 @@ class _$RegisterFailureImpl implements _RegisterFailure {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (registerFailure != null) {
@@ -4956,6 +5285,9 @@ class _$RegisteredImpl implements _Registered {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return registered(this.registered);
   }
@@ -4998,6 +5330,9 @@ class _$RegisteredImpl implements _Registered {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return registered?.call(this.registered);
   }
@@ -5040,6 +5375,9 @@ class _$RegisteredImpl implements _Registered {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (registered != null) {
@@ -5095,6 +5433,12 @@ class _$RegisteredImpl implements _Registered {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return registered(this);
   }
@@ -5141,6 +5485,11 @@ class _$RegisteredImpl implements _Registered {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return registered?.call(this);
   }
@@ -5187,6 +5536,11 @@ class _$RegisteredImpl implements _Registered {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (registered != null) {
@@ -5280,6 +5634,9 @@ class _$LoginLoadingImpl implements _LoginLoading {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return logginLoading();
   }
@@ -5322,6 +5679,9 @@ class _$LoginLoadingImpl implements _LoginLoading {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return logginLoading?.call();
   }
@@ -5364,6 +5724,9 @@ class _$LoginLoadingImpl implements _LoginLoading {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (logginLoading != null) {
@@ -5419,6 +5782,12 @@ class _$LoginLoadingImpl implements _LoginLoading {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return logginLoading(this);
   }
@@ -5465,6 +5834,11 @@ class _$LoginLoadingImpl implements _LoginLoading {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return logginLoading?.call(this);
   }
@@ -5511,6 +5885,11 @@ class _$LoginLoadingImpl implements _LoginLoading {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (logginLoading != null) {
@@ -5626,6 +6005,9 @@ class _$LoginFailureImpl implements _LoginFailure {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return logginFailure(failure);
   }
@@ -5668,6 +6050,9 @@ class _$LoginFailureImpl implements _LoginFailure {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return logginFailure?.call(failure);
   }
@@ -5710,6 +6095,9 @@ class _$LoginFailureImpl implements _LoginFailure {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (logginFailure != null) {
@@ -5765,6 +6153,12 @@ class _$LoginFailureImpl implements _LoginFailure {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return logginFailure(this);
   }
@@ -5811,6 +6205,11 @@ class _$LoginFailureImpl implements _LoginFailure {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return logginFailure?.call(this);
   }
@@ -5857,6 +6256,11 @@ class _$LoginFailureImpl implements _LoginFailure {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (logginFailure != null) {
@@ -5977,6 +6381,9 @@ class _$LoggedInImpl implements _LoggedIn {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return loggedIn(user);
   }
@@ -6019,6 +6426,9 @@ class _$LoggedInImpl implements _LoggedIn {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return loggedIn?.call(user);
   }
@@ -6061,6 +6471,9 @@ class _$LoggedInImpl implements _LoggedIn {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (loggedIn != null) {
@@ -6116,6 +6529,12 @@ class _$LoggedInImpl implements _LoggedIn {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return loggedIn(this);
   }
@@ -6162,6 +6581,11 @@ class _$LoggedInImpl implements _LoggedIn {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return loggedIn?.call(this);
   }
@@ -6208,6 +6632,11 @@ class _$LoggedInImpl implements _LoggedIn {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (loggedIn != null) {
@@ -6301,6 +6730,9 @@ class _$GoogleLoginLoadingImpl implements _GoogleLoginLoading {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return googleLogginLoading();
   }
@@ -6343,6 +6775,9 @@ class _$GoogleLoginLoadingImpl implements _GoogleLoginLoading {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return googleLogginLoading?.call();
   }
@@ -6385,6 +6820,9 @@ class _$GoogleLoginLoadingImpl implements _GoogleLoginLoading {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (googleLogginLoading != null) {
@@ -6440,6 +6878,12 @@ class _$GoogleLoginLoadingImpl implements _GoogleLoginLoading {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return googleLogginLoading(this);
   }
@@ -6486,6 +6930,11 @@ class _$GoogleLoginLoadingImpl implements _GoogleLoginLoading {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return googleLogginLoading?.call(this);
   }
@@ -6532,6 +6981,11 @@ class _$GoogleLoginLoadingImpl implements _GoogleLoginLoading {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (googleLogginLoading != null) {
@@ -6648,6 +7102,9 @@ class _$GoogleLoginFailureImpl implements _GoogleLoginFailure {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return googleLogginFailure(failure);
   }
@@ -6690,6 +7147,9 @@ class _$GoogleLoginFailureImpl implements _GoogleLoginFailure {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return googleLogginFailure?.call(failure);
   }
@@ -6732,6 +7192,9 @@ class _$GoogleLoginFailureImpl implements _GoogleLoginFailure {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (googleLogginFailure != null) {
@@ -6787,6 +7250,12 @@ class _$GoogleLoginFailureImpl implements _GoogleLoginFailure {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return googleLogginFailure(this);
   }
@@ -6833,6 +7302,11 @@ class _$GoogleLoginFailureImpl implements _GoogleLoginFailure {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return googleLogginFailure?.call(this);
   }
@@ -6879,6 +7353,11 @@ class _$GoogleLoginFailureImpl implements _GoogleLoginFailure {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (googleLogginFailure != null) {
@@ -7001,6 +7480,9 @@ class _$GoogleLoggedInImpl implements _GoogleLoggedIn {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return googleLoggedIn(user);
   }
@@ -7043,6 +7525,9 @@ class _$GoogleLoggedInImpl implements _GoogleLoggedIn {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return googleLoggedIn?.call(user);
   }
@@ -7085,6 +7570,9 @@ class _$GoogleLoggedInImpl implements _GoogleLoggedIn {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (googleLoggedIn != null) {
@@ -7140,6 +7628,12 @@ class _$GoogleLoggedInImpl implements _GoogleLoggedIn {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return googleLoggedIn(this);
   }
@@ -7186,6 +7680,11 @@ class _$GoogleLoggedInImpl implements _GoogleLoggedIn {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return googleLoggedIn?.call(this);
   }
@@ -7232,6 +7731,11 @@ class _$GoogleLoggedInImpl implements _GoogleLoggedIn {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (googleLoggedIn != null) {
@@ -7327,6 +7831,9 @@ class _$ConfirmEmailLoadingImpl implements _ConfirmEmailLoading {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return confirmEmailLoading();
   }
@@ -7369,6 +7876,9 @@ class _$ConfirmEmailLoadingImpl implements _ConfirmEmailLoading {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return confirmEmailLoading?.call();
   }
@@ -7411,6 +7921,9 @@ class _$ConfirmEmailLoadingImpl implements _ConfirmEmailLoading {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (confirmEmailLoading != null) {
@@ -7466,6 +7979,12 @@ class _$ConfirmEmailLoadingImpl implements _ConfirmEmailLoading {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return confirmEmailLoading(this);
   }
@@ -7512,6 +8031,11 @@ class _$ConfirmEmailLoadingImpl implements _ConfirmEmailLoading {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return confirmEmailLoading?.call(this);
   }
@@ -7558,6 +8082,11 @@ class _$ConfirmEmailLoadingImpl implements _ConfirmEmailLoading {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (confirmEmailLoading != null) {
@@ -7674,6 +8203,9 @@ class _$ConfirmEmailFailureImpl implements _ConfirmEmailFailure {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return confirmEmailFailure(failure);
   }
@@ -7716,6 +8248,9 @@ class _$ConfirmEmailFailureImpl implements _ConfirmEmailFailure {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return confirmEmailFailure?.call(failure);
   }
@@ -7758,6 +8293,9 @@ class _$ConfirmEmailFailureImpl implements _ConfirmEmailFailure {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (confirmEmailFailure != null) {
@@ -7813,6 +8351,12 @@ class _$ConfirmEmailFailureImpl implements _ConfirmEmailFailure {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return confirmEmailFailure(this);
   }
@@ -7859,6 +8403,11 @@ class _$ConfirmEmailFailureImpl implements _ConfirmEmailFailure {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return confirmEmailFailure?.call(this);
   }
@@ -7905,6 +8454,11 @@ class _$ConfirmEmailFailureImpl implements _ConfirmEmailFailure {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (confirmEmailFailure != null) {
@@ -8034,6 +8588,9 @@ class _$EmailConfirmedImpl implements _EmailConfirmed {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return emailConfirmed(sports);
   }
@@ -8076,6 +8633,9 @@ class _$EmailConfirmedImpl implements _EmailConfirmed {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return emailConfirmed?.call(sports);
   }
@@ -8118,6 +8678,9 @@ class _$EmailConfirmedImpl implements _EmailConfirmed {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (emailConfirmed != null) {
@@ -8173,6 +8736,12 @@ class _$EmailConfirmedImpl implements _EmailConfirmed {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return emailConfirmed(this);
   }
@@ -8219,6 +8788,11 @@ class _$EmailConfirmedImpl implements _EmailConfirmed {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return emailConfirmed?.call(this);
   }
@@ -8265,6 +8839,11 @@ class _$EmailConfirmedImpl implements _EmailConfirmed {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (emailConfirmed != null) {
@@ -8362,6 +8941,9 @@ class _$ResendConfirmEmailLoadingImpl implements _ResendConfirmEmailLoading {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return resendConfirmEmailLoading();
   }
@@ -8404,6 +8986,9 @@ class _$ResendConfirmEmailLoadingImpl implements _ResendConfirmEmailLoading {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return resendConfirmEmailLoading?.call();
   }
@@ -8446,6 +9031,9 @@ class _$ResendConfirmEmailLoadingImpl implements _ResendConfirmEmailLoading {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (resendConfirmEmailLoading != null) {
@@ -8501,6 +9089,12 @@ class _$ResendConfirmEmailLoadingImpl implements _ResendConfirmEmailLoading {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return resendConfirmEmailLoading(this);
   }
@@ -8547,6 +9141,11 @@ class _$ResendConfirmEmailLoadingImpl implements _ResendConfirmEmailLoading {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return resendConfirmEmailLoading?.call(this);
   }
@@ -8593,6 +9192,11 @@ class _$ResendConfirmEmailLoadingImpl implements _ResendConfirmEmailLoading {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (resendConfirmEmailLoading != null) {
@@ -8711,6 +9315,9 @@ class _$ResendConfirmEmailFailureImpl implements _ResendConfirmEmailFailure {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return resendConfirmEmailFailure(failure);
   }
@@ -8753,6 +9360,9 @@ class _$ResendConfirmEmailFailureImpl implements _ResendConfirmEmailFailure {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return resendConfirmEmailFailure?.call(failure);
   }
@@ -8795,6 +9405,9 @@ class _$ResendConfirmEmailFailureImpl implements _ResendConfirmEmailFailure {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (resendConfirmEmailFailure != null) {
@@ -8850,6 +9463,12 @@ class _$ResendConfirmEmailFailureImpl implements _ResendConfirmEmailFailure {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return resendConfirmEmailFailure(this);
   }
@@ -8896,6 +9515,11 @@ class _$ResendConfirmEmailFailureImpl implements _ResendConfirmEmailFailure {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return resendConfirmEmailFailure?.call(this);
   }
@@ -8942,6 +9566,11 @@ class _$ResendConfirmEmailFailureImpl implements _ResendConfirmEmailFailure {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (resendConfirmEmailFailure != null) {
@@ -9038,6 +9667,9 @@ class _$EmailConfirmationSentImpl implements _EmailConfirmationSent {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return emailConfirmationSent();
   }
@@ -9080,6 +9712,9 @@ class _$EmailConfirmationSentImpl implements _EmailConfirmationSent {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return emailConfirmationSent?.call();
   }
@@ -9122,6 +9757,9 @@ class _$EmailConfirmationSentImpl implements _EmailConfirmationSent {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (emailConfirmationSent != null) {
@@ -9177,6 +9815,12 @@ class _$EmailConfirmationSentImpl implements _EmailConfirmationSent {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return emailConfirmationSent(this);
   }
@@ -9223,6 +9867,11 @@ class _$EmailConfirmationSentImpl implements _EmailConfirmationSent {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return emailConfirmationSent?.call(this);
   }
@@ -9269,6 +9918,11 @@ class _$EmailConfirmationSentImpl implements _EmailConfirmationSent {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (emailConfirmationSent != null) {
@@ -9361,6 +10015,9 @@ class _$CompleteRegistrationLoadingImpl
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return completeRegistrationLoading();
   }
@@ -9403,6 +10060,9 @@ class _$CompleteRegistrationLoadingImpl
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return completeRegistrationLoading?.call();
   }
@@ -9445,6 +10105,9 @@ class _$CompleteRegistrationLoadingImpl
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (completeRegistrationLoading != null) {
@@ -9500,6 +10163,12 @@ class _$CompleteRegistrationLoadingImpl
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return completeRegistrationLoading(this);
   }
@@ -9546,6 +10215,11 @@ class _$CompleteRegistrationLoadingImpl
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return completeRegistrationLoading?.call(this);
   }
@@ -9592,6 +10266,11 @@ class _$CompleteRegistrationLoadingImpl
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (completeRegistrationLoading != null) {
@@ -9712,6 +10391,9 @@ class _$CompleteRegistrationFailureImpl
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return completeRegistrationailure(failure);
   }
@@ -9754,6 +10436,9 @@ class _$CompleteRegistrationFailureImpl
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return completeRegistrationailure?.call(failure);
   }
@@ -9796,6 +10481,9 @@ class _$CompleteRegistrationFailureImpl
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (completeRegistrationailure != null) {
@@ -9851,6 +10539,12 @@ class _$CompleteRegistrationFailureImpl
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return completeRegistrationailure(this);
   }
@@ -9897,6 +10591,11 @@ class _$CompleteRegistrationFailureImpl
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return completeRegistrationailure?.call(this);
   }
@@ -9943,6 +10642,11 @@ class _$CompleteRegistrationFailureImpl
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (completeRegistrationailure != null) {
@@ -10067,6 +10771,9 @@ class _$RegistrationCompletedImpl implements _RegistrationCompleted {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return registrationCompleted(userProfile);
   }
@@ -10109,6 +10816,9 @@ class _$RegistrationCompletedImpl implements _RegistrationCompleted {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return registrationCompleted?.call(userProfile);
   }
@@ -10151,6 +10861,9 @@ class _$RegistrationCompletedImpl implements _RegistrationCompleted {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (registrationCompleted != null) {
@@ -10206,6 +10919,12 @@ class _$RegistrationCompletedImpl implements _RegistrationCompleted {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return registrationCompleted(this);
   }
@@ -10252,6 +10971,11 @@ class _$RegistrationCompletedImpl implements _RegistrationCompleted {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return registrationCompleted?.call(this);
   }
@@ -10298,6 +11022,11 @@ class _$RegistrationCompletedImpl implements _RegistrationCompleted {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (registrationCompleted != null) {
@@ -10392,6 +11121,9 @@ class _$CheckUserLoadingImpl implements _CheckUserLoading {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return checkUserLoading();
   }
@@ -10434,6 +11166,9 @@ class _$CheckUserLoadingImpl implements _CheckUserLoading {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return checkUserLoading?.call();
   }
@@ -10476,6 +11211,9 @@ class _$CheckUserLoadingImpl implements _CheckUserLoading {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (checkUserLoading != null) {
@@ -10531,6 +11269,12 @@ class _$CheckUserLoadingImpl implements _CheckUserLoading {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return checkUserLoading(this);
   }
@@ -10577,6 +11321,11 @@ class _$CheckUserLoadingImpl implements _CheckUserLoading {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return checkUserLoading?.call(this);
   }
@@ -10623,6 +11372,11 @@ class _$CheckUserLoadingImpl implements _CheckUserLoading {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (checkUserLoading != null) {
@@ -10740,6 +11494,9 @@ class _$checkAccountStatusImpl implements _checkAccountStatus {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return checkAccountStatus(userAuthState);
   }
@@ -10782,6 +11539,9 @@ class _$checkAccountStatusImpl implements _checkAccountStatus {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return checkAccountStatus?.call(userAuthState);
   }
@@ -10824,6 +11584,9 @@ class _$checkAccountStatusImpl implements _checkAccountStatus {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (checkAccountStatus != null) {
@@ -10879,6 +11642,12 @@ class _$checkAccountStatusImpl implements _checkAccountStatus {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return checkAccountStatus(this);
   }
@@ -10925,6 +11694,11 @@ class _$checkAccountStatusImpl implements _checkAccountStatus {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return checkAccountStatus?.call(this);
   }
@@ -10971,6 +11745,11 @@ class _$checkAccountStatusImpl implements _checkAccountStatus {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (checkAccountStatus != null) {
@@ -11093,6 +11872,9 @@ class _$CeckUserFailureImpl implements _CeckUserFailure {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return checkUserFailure(failure);
   }
@@ -11135,6 +11917,9 @@ class _$CeckUserFailureImpl implements _CeckUserFailure {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return checkUserFailure?.call(failure);
   }
@@ -11177,6 +11962,9 @@ class _$CeckUserFailureImpl implements _CeckUserFailure {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (checkUserFailure != null) {
@@ -11232,6 +12020,12 @@ class _$CeckUserFailureImpl implements _CeckUserFailure {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return checkUserFailure(this);
   }
@@ -11278,6 +12072,11 @@ class _$CeckUserFailureImpl implements _CeckUserFailure {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return checkUserFailure?.call(this);
   }
@@ -11324,6 +12123,11 @@ class _$CeckUserFailureImpl implements _CeckUserFailure {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (checkUserFailure != null) {
@@ -11421,6 +12225,9 @@ class _$UserProfileLocalLoadingImpl implements _UserProfileLocalLoading {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return userProfileLocalLoading();
   }
@@ -11463,6 +12270,9 @@ class _$UserProfileLocalLoadingImpl implements _UserProfileLocalLoading {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return userProfileLocalLoading?.call();
   }
@@ -11505,6 +12315,9 @@ class _$UserProfileLocalLoadingImpl implements _UserProfileLocalLoading {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (userProfileLocalLoading != null) {
@@ -11560,6 +12373,12 @@ class _$UserProfileLocalLoadingImpl implements _UserProfileLocalLoading {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return userProfileLocalLoading(this);
   }
@@ -11606,6 +12425,11 @@ class _$UserProfileLocalLoadingImpl implements _UserProfileLocalLoading {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return userProfileLocalLoading?.call(this);
   }
@@ -11652,6 +12476,11 @@ class _$UserProfileLocalLoadingImpl implements _UserProfileLocalLoading {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (userProfileLocalLoading != null) {
@@ -11740,6 +12569,9 @@ class _$UserProfileLoadingImpl implements _UserProfileLoading {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return userProfileLoading();
   }
@@ -11782,6 +12614,9 @@ class _$UserProfileLoadingImpl implements _UserProfileLoading {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return userProfileLoading?.call();
   }
@@ -11824,6 +12659,9 @@ class _$UserProfileLoadingImpl implements _UserProfileLoading {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (userProfileLoading != null) {
@@ -11879,6 +12717,12 @@ class _$UserProfileLoadingImpl implements _UserProfileLoading {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return userProfileLoading(this);
   }
@@ -11925,6 +12769,11 @@ class _$UserProfileLoadingImpl implements _UserProfileLoading {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return userProfileLoading?.call(this);
   }
@@ -11971,6 +12820,11 @@ class _$UserProfileLoadingImpl implements _UserProfileLoading {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (userProfileLoading != null) {
@@ -12087,6 +12941,9 @@ class _$UserProfileFailureImpl implements _UserProfileFailure {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return userProfileFailure(failure);
   }
@@ -12129,6 +12986,9 @@ class _$UserProfileFailureImpl implements _UserProfileFailure {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return userProfileFailure?.call(failure);
   }
@@ -12171,6 +13031,9 @@ class _$UserProfileFailureImpl implements _UserProfileFailure {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (userProfileFailure != null) {
@@ -12226,6 +13089,12 @@ class _$UserProfileFailureImpl implements _UserProfileFailure {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return userProfileFailure(this);
   }
@@ -12272,6 +13141,11 @@ class _$UserProfileFailureImpl implements _UserProfileFailure {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return userProfileFailure?.call(this);
   }
@@ -12318,6 +13192,11 @@ class _$UserProfileFailureImpl implements _UserProfileFailure {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (userProfileFailure != null) {
@@ -12441,6 +13320,9 @@ class _$UserProfileFetchedImpl implements _UserProfileFetched {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return userProfileFetched(userProfile);
   }
@@ -12483,6 +13365,9 @@ class _$UserProfileFetchedImpl implements _UserProfileFetched {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return userProfileFetched?.call(userProfile);
   }
@@ -12525,6 +13410,9 @@ class _$UserProfileFetchedImpl implements _UserProfileFetched {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (userProfileFetched != null) {
@@ -12580,6 +13468,12 @@ class _$UserProfileFetchedImpl implements _UserProfileFetched {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return userProfileFetched(this);
   }
@@ -12626,6 +13520,11 @@ class _$UserProfileFetchedImpl implements _UserProfileFetched {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return userProfileFetched?.call(this);
   }
@@ -12672,6 +13571,11 @@ class _$UserProfileFetchedImpl implements _UserProfileFetched {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (userProfileFetched != null) {
@@ -12766,6 +13670,9 @@ class _$GetSportsLoadingImpl implements _GetSportsLoading {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return getSportsLoading();
   }
@@ -12808,6 +13715,9 @@ class _$GetSportsLoadingImpl implements _GetSportsLoading {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return getSportsLoading?.call();
   }
@@ -12850,6 +13760,9 @@ class _$GetSportsLoadingImpl implements _GetSportsLoading {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (getSportsLoading != null) {
@@ -12905,6 +13818,12 @@ class _$GetSportsLoadingImpl implements _GetSportsLoading {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return getSportsLoading(this);
   }
@@ -12951,6 +13870,11 @@ class _$GetSportsLoadingImpl implements _GetSportsLoading {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return getSportsLoading?.call(this);
   }
@@ -12997,6 +13921,11 @@ class _$GetSportsLoadingImpl implements _GetSportsLoading {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (getSportsLoading != null) {
@@ -13113,6 +14042,9 @@ class _$GetSportsFailureImpl implements _GetSportsFailure {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return getSportsFailure(failure);
   }
@@ -13155,6 +14087,9 @@ class _$GetSportsFailureImpl implements _GetSportsFailure {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return getSportsFailure?.call(failure);
   }
@@ -13197,6 +14132,9 @@ class _$GetSportsFailureImpl implements _GetSportsFailure {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (getSportsFailure != null) {
@@ -13252,6 +14190,12 @@ class _$GetSportsFailureImpl implements _GetSportsFailure {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return getSportsFailure(this);
   }
@@ -13298,6 +14242,11 @@ class _$GetSportsFailureImpl implements _GetSportsFailure {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return getSportsFailure?.call(this);
   }
@@ -13344,6 +14293,11 @@ class _$GetSportsFailureImpl implements _GetSportsFailure {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (getSportsFailure != null) {
@@ -13472,6 +14426,9 @@ class _$SportsFetchedImpl implements _SportsFetched {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return sportsFetched(sports);
   }
@@ -13514,6 +14471,9 @@ class _$SportsFetchedImpl implements _SportsFetched {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return sportsFetched?.call(sports);
   }
@@ -13556,6 +14516,9 @@ class _$SportsFetchedImpl implements _SportsFetched {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (sportsFetched != null) {
@@ -13611,6 +14574,12 @@ class _$SportsFetchedImpl implements _SportsFetched {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return sportsFetched(this);
   }
@@ -13657,6 +14626,11 @@ class _$SportsFetchedImpl implements _SportsFetched {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return sportsFetched?.call(this);
   }
@@ -13703,6 +14677,11 @@ class _$SportsFetchedImpl implements _SportsFetched {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (sportsFetched != null) {
@@ -13797,6 +14776,9 @@ class _$ChangeEmailLoadingImpl implements _ChangeEmailLoading {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return changeEmailLoading();
   }
@@ -13839,6 +14821,9 @@ class _$ChangeEmailLoadingImpl implements _ChangeEmailLoading {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return changeEmailLoading?.call();
   }
@@ -13881,6 +14866,9 @@ class _$ChangeEmailLoadingImpl implements _ChangeEmailLoading {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (changeEmailLoading != null) {
@@ -13936,6 +14924,12 @@ class _$ChangeEmailLoadingImpl implements _ChangeEmailLoading {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return changeEmailLoading(this);
   }
@@ -13982,6 +14976,11 @@ class _$ChangeEmailLoadingImpl implements _ChangeEmailLoading {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return changeEmailLoading?.call(this);
   }
@@ -14028,6 +15027,11 @@ class _$ChangeEmailLoadingImpl implements _ChangeEmailLoading {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (changeEmailLoading != null) {
@@ -14144,6 +15148,9 @@ class _$ChangeEmailFailureImpl implements _ChangeEmailFailure {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return changeEmailFailure(failure);
   }
@@ -14186,6 +15193,9 @@ class _$ChangeEmailFailureImpl implements _ChangeEmailFailure {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return changeEmailFailure?.call(failure);
   }
@@ -14228,6 +15238,9 @@ class _$ChangeEmailFailureImpl implements _ChangeEmailFailure {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (changeEmailFailure != null) {
@@ -14283,6 +15296,12 @@ class _$ChangeEmailFailureImpl implements _ChangeEmailFailure {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return changeEmailFailure(this);
   }
@@ -14329,6 +15348,11 @@ class _$ChangeEmailFailureImpl implements _ChangeEmailFailure {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return changeEmailFailure?.call(this);
   }
@@ -14375,6 +15399,11 @@ class _$ChangeEmailFailureImpl implements _ChangeEmailFailure {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (changeEmailFailure != null) {
@@ -14497,6 +15526,9 @@ class _$EmailChangedImpl implements _EmailChanged {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return emailChanged(this.emailChanged);
   }
@@ -14539,6 +15571,9 @@ class _$EmailChangedImpl implements _EmailChanged {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return emailChanged?.call(this.emailChanged);
   }
@@ -14581,6 +15616,9 @@ class _$EmailChangedImpl implements _EmailChanged {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (emailChanged != null) {
@@ -14636,6 +15674,12 @@ class _$EmailChangedImpl implements _EmailChanged {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return emailChanged(this);
   }
@@ -14682,6 +15726,11 @@ class _$EmailChangedImpl implements _EmailChanged {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return emailChanged?.call(this);
   }
@@ -14728,6 +15777,11 @@ class _$EmailChangedImpl implements _EmailChanged {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (emailChanged != null) {
@@ -14823,6 +15877,9 @@ class _$ChangePasswordLoadingImpl implements _ChangePasswordLoading {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return changePasswordLoading();
   }
@@ -14865,6 +15922,9 @@ class _$ChangePasswordLoadingImpl implements _ChangePasswordLoading {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return changePasswordLoading?.call();
   }
@@ -14907,6 +15967,9 @@ class _$ChangePasswordLoadingImpl implements _ChangePasswordLoading {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (changePasswordLoading != null) {
@@ -14962,6 +16025,12 @@ class _$ChangePasswordLoadingImpl implements _ChangePasswordLoading {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return changePasswordLoading(this);
   }
@@ -15008,6 +16077,11 @@ class _$ChangePasswordLoadingImpl implements _ChangePasswordLoading {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return changePasswordLoading?.call(this);
   }
@@ -15054,6 +16128,11 @@ class _$ChangePasswordLoadingImpl implements _ChangePasswordLoading {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (changePasswordLoading != null) {
@@ -15171,6 +16250,9 @@ class _$ChangePasswordFailureImpl implements _ChangePasswordFailure {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return changePasswordFailure(failure);
   }
@@ -15213,6 +16295,9 @@ class _$ChangePasswordFailureImpl implements _ChangePasswordFailure {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return changePasswordFailure?.call(failure);
   }
@@ -15255,6 +16340,9 @@ class _$ChangePasswordFailureImpl implements _ChangePasswordFailure {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (changePasswordFailure != null) {
@@ -15310,6 +16398,12 @@ class _$ChangePasswordFailureImpl implements _ChangePasswordFailure {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return changePasswordFailure(this);
   }
@@ -15356,6 +16450,11 @@ class _$ChangePasswordFailureImpl implements _ChangePasswordFailure {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return changePasswordFailure?.call(this);
   }
@@ -15402,6 +16501,11 @@ class _$ChangePasswordFailureImpl implements _ChangePasswordFailure {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (changePasswordFailure != null) {
@@ -15525,6 +16629,9 @@ class _$PasswordChangedImpl implements _PasswordChanged {
     required TResult Function() changePasswordLoading,
     required TResult Function(Failure? failure) changePasswordFailure,
     required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
   }) {
     return passwordChanged(this.passwordChanged);
   }
@@ -15567,6 +16674,9 @@ class _$PasswordChangedImpl implements _PasswordChanged {
     TResult? Function()? changePasswordLoading,
     TResult? Function(Failure? failure)? changePasswordFailure,
     TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
   }) {
     return passwordChanged?.call(this.passwordChanged);
   }
@@ -15609,6 +16719,9 @@ class _$PasswordChangedImpl implements _PasswordChanged {
     TResult Function()? changePasswordLoading,
     TResult Function(Failure? failure)? changePasswordFailure,
     TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (passwordChanged != null) {
@@ -15664,6 +16777,12 @@ class _$PasswordChangedImpl implements _PasswordChanged {
     required TResult Function(_ChangePasswordFailure value)
         changePasswordFailure,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
   }) {
     return passwordChanged(this);
   }
@@ -15710,6 +16829,11 @@ class _$PasswordChangedImpl implements _PasswordChanged {
     TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
   }) {
     return passwordChanged?.call(this);
   }
@@ -15756,6 +16880,11 @@ class _$PasswordChangedImpl implements _PasswordChanged {
     TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
     TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
     required TResult orElse(),
   }) {
     if (passwordChanged != null) {
@@ -15773,4 +16902,1111 @@ abstract class _PasswordChanged implements AuthState {
   @JsonKey(ignore: true)
   _$$PasswordChangedImplCopyWith<_$PasswordChangedImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SkipProfilePictureLoadingImplCopyWith<$Res> {
+  factory _$$SkipProfilePictureLoadingImplCopyWith(
+          _$SkipProfilePictureLoadingImpl value,
+          $Res Function(_$SkipProfilePictureLoadingImpl) then) =
+      __$$SkipProfilePictureLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SkipProfilePictureLoadingImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$SkipProfilePictureLoadingImpl>
+    implements _$$SkipProfilePictureLoadingImplCopyWith<$Res> {
+  __$$SkipProfilePictureLoadingImplCopyWithImpl(
+      _$SkipProfilePictureLoadingImpl _value,
+      $Res Function(_$SkipProfilePictureLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SkipProfilePictureLoadingImpl implements _SkipProfilePictureLoading {
+  const _$SkipProfilePictureLoadingImpl();
+
+  @override
+  String toString() {
+    return 'AuthState.skipProfilePictureLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SkipProfilePictureLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
+  }) {
+    return skipProfilePictureLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
+  }) {
+    return skipProfilePictureLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
+    required TResult orElse(),
+  }) {
+    if (skipProfilePictureLoading != null) {
+      return skipProfilePictureLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
+  }) {
+    return skipProfilePictureLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
+  }) {
+    return skipProfilePictureLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
+    required TResult orElse(),
+  }) {
+    if (skipProfilePictureLoading != null) {
+      return skipProfilePictureLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SkipProfilePictureLoading implements AuthState {
+  const factory _SkipProfilePictureLoading() = _$SkipProfilePictureLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$SkipProfilePictureFailureImplCopyWith<$Res> {
+  factory _$$SkipProfilePictureFailureImplCopyWith(
+          _$SkipProfilePictureFailureImpl value,
+          $Res Function(_$SkipProfilePictureFailureImpl) then) =
+      __$$SkipProfilePictureFailureImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Failure? failure});
+}
+
+/// @nodoc
+class __$$SkipProfilePictureFailureImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$SkipProfilePictureFailureImpl>
+    implements _$$SkipProfilePictureFailureImplCopyWith<$Res> {
+  __$$SkipProfilePictureFailureImplCopyWithImpl(
+      _$SkipProfilePictureFailureImpl _value,
+      $Res Function(_$SkipProfilePictureFailureImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? failure = freezed,
+  }) {
+    return _then(_$SkipProfilePictureFailureImpl(
+      failure: freezed == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SkipProfilePictureFailureImpl implements _SkipProfilePictureFailure {
+  const _$SkipProfilePictureFailureImpl({this.failure = null});
+
+  @override
+  @JsonKey()
+  final Failure? failure;
+
+  @override
+  String toString() {
+    return 'AuthState.skipProfilePictureFailure(failure: $failure)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SkipProfilePictureFailureImpl &&
+            (identical(other.failure, failure) || other.failure == failure));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, failure);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SkipProfilePictureFailureImplCopyWith<_$SkipProfilePictureFailureImpl>
+      get copyWith => __$$SkipProfilePictureFailureImplCopyWithImpl<
+          _$SkipProfilePictureFailureImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
+  }) {
+    return skipProfilePictureFailure(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
+  }) {
+    return skipProfilePictureFailure?.call(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
+    required TResult orElse(),
+  }) {
+    if (skipProfilePictureFailure != null) {
+      return skipProfilePictureFailure(failure);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
+  }) {
+    return skipProfilePictureFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
+  }) {
+    return skipProfilePictureFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
+    required TResult orElse(),
+  }) {
+    if (skipProfilePictureFailure != null) {
+      return skipProfilePictureFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SkipProfilePictureFailure implements AuthState {
+  const factory _SkipProfilePictureFailure({final Failure? failure}) =
+      _$SkipProfilePictureFailureImpl;
+
+  Failure? get failure;
+  @JsonKey(ignore: true)
+  _$$SkipProfilePictureFailureImplCopyWith<_$SkipProfilePictureFailureImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ProfilePictureSkippedImplCopyWith<$Res> {
+  factory _$$ProfilePictureSkippedImplCopyWith(
+          _$ProfilePictureSkippedImpl value,
+          $Res Function(_$ProfilePictureSkippedImpl) then) =
+      __$$ProfilePictureSkippedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool profilePictureSkipped});
+}
+
+/// @nodoc
+class __$$ProfilePictureSkippedImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$ProfilePictureSkippedImpl>
+    implements _$$ProfilePictureSkippedImplCopyWith<$Res> {
+  __$$ProfilePictureSkippedImplCopyWithImpl(_$ProfilePictureSkippedImpl _value,
+      $Res Function(_$ProfilePictureSkippedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? profilePictureSkipped = null,
+  }) {
+    return _then(_$ProfilePictureSkippedImpl(
+      profilePictureSkipped: null == profilePictureSkipped
+          ? _value.profilePictureSkipped
+          : profilePictureSkipped // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ProfilePictureSkippedImpl implements _ProfilePictureSkipped {
+  const _$ProfilePictureSkippedImpl({this.profilePictureSkipped = false});
+
+  @override
+  @JsonKey()
+  final bool profilePictureSkipped;
+
+  @override
+  String toString() {
+    return 'AuthState.profilePictureSkipped(profilePictureSkipped: $profilePictureSkipped)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ProfilePictureSkippedImpl &&
+            (identical(other.profilePictureSkipped, profilePictureSkipped) ||
+                other.profilePictureSkipped == profilePictureSkipped));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, profilePictureSkipped);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ProfilePictureSkippedImplCopyWith<_$ProfilePictureSkippedImpl>
+      get copyWith => __$$ProfilePictureSkippedImplCopyWithImpl<
+          _$ProfilePictureSkippedImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() registerLoading,
+    required TResult Function(Failure? failure) registerFailure,
+    required TResult Function(bool registered) registered,
+    required TResult Function() logginLoading,
+    required TResult Function(Failure? failure) logginFailure,
+    required TResult Function(UserProfileEntity? user) loggedIn,
+    required TResult Function() googleLogginLoading,
+    required TResult Function(Failure? failure) googleLogginFailure,
+    required TResult Function(UserProfileEntity? user) googleLoggedIn,
+    required TResult Function() confirmEmailLoading,
+    required TResult Function(Failure? failure) confirmEmailFailure,
+    required TResult Function(List<SportEntity> sports) emailConfirmed,
+    required TResult Function() resendConfirmEmailLoading,
+    required TResult Function(Failure? failure) resendConfirmEmailFailure,
+    required TResult Function() emailConfirmationSent,
+    required TResult Function() completeRegistrationLoading,
+    required TResult Function(Failure? failure) completeRegistrationailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        registrationCompleted,
+    required TResult Function() checkUserLoading,
+    required TResult Function(UserAuthState userAuthState) checkAccountStatus,
+    required TResult Function(Failure? failure) checkUserFailure,
+    required TResult Function() userProfileLocalLoading,
+    required TResult Function() userProfileLoading,
+    required TResult Function(Failure? failure) userProfileFailure,
+    required TResult Function(UserProfileEntity? userProfile)
+        userProfileFetched,
+    required TResult Function() getSportsLoading,
+    required TResult Function(Failure? failure) getSportsFailure,
+    required TResult Function(List<SportEntity> sports) sportsFetched,
+    required TResult Function() changeEmailLoading,
+    required TResult Function(Failure? failure) changeEmailFailure,
+    required TResult Function(bool emailChanged) emailChanged,
+    required TResult Function() changePasswordLoading,
+    required TResult Function(Failure? failure) changePasswordFailure,
+    required TResult Function(bool passwordChanged) passwordChanged,
+    required TResult Function() skipProfilePictureLoading,
+    required TResult Function(Failure? failure) skipProfilePictureFailure,
+    required TResult Function(bool profilePictureSkipped) profilePictureSkipped,
+  }) {
+    return profilePictureSkipped(this.profilePictureSkipped);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? registerLoading,
+    TResult? Function(Failure? failure)? registerFailure,
+    TResult? Function(bool registered)? registered,
+    TResult? Function()? logginLoading,
+    TResult? Function(Failure? failure)? logginFailure,
+    TResult? Function(UserProfileEntity? user)? loggedIn,
+    TResult? Function()? googleLogginLoading,
+    TResult? Function(Failure? failure)? googleLogginFailure,
+    TResult? Function(UserProfileEntity? user)? googleLoggedIn,
+    TResult? Function()? confirmEmailLoading,
+    TResult? Function(Failure? failure)? confirmEmailFailure,
+    TResult? Function(List<SportEntity> sports)? emailConfirmed,
+    TResult? Function()? resendConfirmEmailLoading,
+    TResult? Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult? Function()? emailConfirmationSent,
+    TResult? Function()? completeRegistrationLoading,
+    TResult? Function(Failure? failure)? completeRegistrationailure,
+    TResult? Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult? Function()? checkUserLoading,
+    TResult? Function(UserAuthState userAuthState)? checkAccountStatus,
+    TResult? Function(Failure? failure)? checkUserFailure,
+    TResult? Function()? userProfileLocalLoading,
+    TResult? Function()? userProfileLoading,
+    TResult? Function(Failure? failure)? userProfileFailure,
+    TResult? Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult? Function()? getSportsLoading,
+    TResult? Function(Failure? failure)? getSportsFailure,
+    TResult? Function(List<SportEntity> sports)? sportsFetched,
+    TResult? Function()? changeEmailLoading,
+    TResult? Function(Failure? failure)? changeEmailFailure,
+    TResult? Function(bool emailChanged)? emailChanged,
+    TResult? Function()? changePasswordLoading,
+    TResult? Function(Failure? failure)? changePasswordFailure,
+    TResult? Function(bool passwordChanged)? passwordChanged,
+    TResult? Function()? skipProfilePictureLoading,
+    TResult? Function(Failure? failure)? skipProfilePictureFailure,
+    TResult? Function(bool profilePictureSkipped)? profilePictureSkipped,
+  }) {
+    return profilePictureSkipped?.call(this.profilePictureSkipped);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? registerLoading,
+    TResult Function(Failure? failure)? registerFailure,
+    TResult Function(bool registered)? registered,
+    TResult Function()? logginLoading,
+    TResult Function(Failure? failure)? logginFailure,
+    TResult Function(UserProfileEntity? user)? loggedIn,
+    TResult Function()? googleLogginLoading,
+    TResult Function(Failure? failure)? googleLogginFailure,
+    TResult Function(UserProfileEntity? user)? googleLoggedIn,
+    TResult Function()? confirmEmailLoading,
+    TResult Function(Failure? failure)? confirmEmailFailure,
+    TResult Function(List<SportEntity> sports)? emailConfirmed,
+    TResult Function()? resendConfirmEmailLoading,
+    TResult Function(Failure? failure)? resendConfirmEmailFailure,
+    TResult Function()? emailConfirmationSent,
+    TResult Function()? completeRegistrationLoading,
+    TResult Function(Failure? failure)? completeRegistrationailure,
+    TResult Function(UserProfileEntity? userProfile)? registrationCompleted,
+    TResult Function()? checkUserLoading,
+    TResult Function(UserAuthState userAuthState)? checkAccountStatus,
+    TResult Function(Failure? failure)? checkUserFailure,
+    TResult Function()? userProfileLocalLoading,
+    TResult Function()? userProfileLoading,
+    TResult Function(Failure? failure)? userProfileFailure,
+    TResult Function(UserProfileEntity? userProfile)? userProfileFetched,
+    TResult Function()? getSportsLoading,
+    TResult Function(Failure? failure)? getSportsFailure,
+    TResult Function(List<SportEntity> sports)? sportsFetched,
+    TResult Function()? changeEmailLoading,
+    TResult Function(Failure? failure)? changeEmailFailure,
+    TResult Function(bool emailChanged)? emailChanged,
+    TResult Function()? changePasswordLoading,
+    TResult Function(Failure? failure)? changePasswordFailure,
+    TResult Function(bool passwordChanged)? passwordChanged,
+    TResult Function()? skipProfilePictureLoading,
+    TResult Function(Failure? failure)? skipProfilePictureFailure,
+    TResult Function(bool profilePictureSkipped)? profilePictureSkipped,
+    required TResult orElse(),
+  }) {
+    if (profilePictureSkipped != null) {
+      return profilePictureSkipped(this.profilePictureSkipped);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegisterLoading value) registerLoading,
+    required TResult Function(_RegisterFailure value) registerFailure,
+    required TResult Function(_Registered value) registered,
+    required TResult Function(_LoginLoading value) logginLoading,
+    required TResult Function(_LoginFailure value) logginFailure,
+    required TResult Function(_LoggedIn value) loggedIn,
+    required TResult Function(_GoogleLoginLoading value) googleLogginLoading,
+    required TResult Function(_GoogleLoginFailure value) googleLogginFailure,
+    required TResult Function(_GoogleLoggedIn value) googleLoggedIn,
+    required TResult Function(_ConfirmEmailLoading value) confirmEmailLoading,
+    required TResult Function(_ConfirmEmailFailure value) confirmEmailFailure,
+    required TResult Function(_EmailConfirmed value) emailConfirmed,
+    required TResult Function(_ResendConfirmEmailLoading value)
+        resendConfirmEmailLoading,
+    required TResult Function(_ResendConfirmEmailFailure value)
+        resendConfirmEmailFailure,
+    required TResult Function(_EmailConfirmationSent value)
+        emailConfirmationSent,
+    required TResult Function(_CompleteRegistrationLoading value)
+        completeRegistrationLoading,
+    required TResult Function(_CompleteRegistrationFailure value)
+        completeRegistrationailure,
+    required TResult Function(_RegistrationCompleted value)
+        registrationCompleted,
+    required TResult Function(_CheckUserLoading value) checkUserLoading,
+    required TResult Function(_checkAccountStatus value) checkAccountStatus,
+    required TResult Function(_CeckUserFailure value) checkUserFailure,
+    required TResult Function(_UserProfileLocalLoading value)
+        userProfileLocalLoading,
+    required TResult Function(_UserProfileLoading value) userProfileLoading,
+    required TResult Function(_UserProfileFailure value) userProfileFailure,
+    required TResult Function(_UserProfileFetched value) userProfileFetched,
+    required TResult Function(_GetSportsLoading value) getSportsLoading,
+    required TResult Function(_GetSportsFailure value) getSportsFailure,
+    required TResult Function(_SportsFetched value) sportsFetched,
+    required TResult Function(_ChangeEmailLoading value) changeEmailLoading,
+    required TResult Function(_ChangeEmailFailure value) changeEmailFailure,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_ChangePasswordLoading value)
+        changePasswordLoading,
+    required TResult Function(_ChangePasswordFailure value)
+        changePasswordFailure,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SkipProfilePictureLoading value)
+        skipProfilePictureLoading,
+    required TResult Function(_SkipProfilePictureFailure value)
+        skipProfilePictureFailure,
+    required TResult Function(_ProfilePictureSkipped value)
+        profilePictureSkipped,
+  }) {
+    return profilePictureSkipped(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_RegisterLoading value)? registerLoading,
+    TResult? Function(_RegisterFailure value)? registerFailure,
+    TResult? Function(_Registered value)? registered,
+    TResult? Function(_LoginLoading value)? logginLoading,
+    TResult? Function(_LoginFailure value)? logginFailure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+    TResult? Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult? Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult? Function(_GoogleLoggedIn value)? googleLoggedIn,
+    TResult? Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult? Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult? Function(_EmailConfirmed value)? emailConfirmed,
+    TResult? Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult? Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult? Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult? Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult? Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult? Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult? Function(_CheckUserLoading value)? checkUserLoading,
+    TResult? Function(_checkAccountStatus value)? checkAccountStatus,
+    TResult? Function(_CeckUserFailure value)? checkUserFailure,
+    TResult? Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult? Function(_UserProfileLoading value)? userProfileLoading,
+    TResult? Function(_UserProfileFailure value)? userProfileFailure,
+    TResult? Function(_UserProfileFetched value)? userProfileFetched,
+    TResult? Function(_GetSportsLoading value)? getSportsLoading,
+    TResult? Function(_GetSportsFailure value)? getSportsFailure,
+    TResult? Function(_SportsFetched value)? sportsFetched,
+    TResult? Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult? Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult? Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult? Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult? Function(_ProfilePictureSkipped value)? profilePictureSkipped,
+  }) {
+    return profilePictureSkipped?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegisterLoading value)? registerLoading,
+    TResult Function(_RegisterFailure value)? registerFailure,
+    TResult Function(_Registered value)? registered,
+    TResult Function(_LoginLoading value)? logginLoading,
+    TResult Function(_LoginFailure value)? logginFailure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    TResult Function(_GoogleLoginLoading value)? googleLogginLoading,
+    TResult Function(_GoogleLoginFailure value)? googleLogginFailure,
+    TResult Function(_GoogleLoggedIn value)? googleLoggedIn,
+    TResult Function(_ConfirmEmailLoading value)? confirmEmailLoading,
+    TResult Function(_ConfirmEmailFailure value)? confirmEmailFailure,
+    TResult Function(_EmailConfirmed value)? emailConfirmed,
+    TResult Function(_ResendConfirmEmailLoading value)?
+        resendConfirmEmailLoading,
+    TResult Function(_ResendConfirmEmailFailure value)?
+        resendConfirmEmailFailure,
+    TResult Function(_EmailConfirmationSent value)? emailConfirmationSent,
+    TResult Function(_CompleteRegistrationLoading value)?
+        completeRegistrationLoading,
+    TResult Function(_CompleteRegistrationFailure value)?
+        completeRegistrationailure,
+    TResult Function(_RegistrationCompleted value)? registrationCompleted,
+    TResult Function(_CheckUserLoading value)? checkUserLoading,
+    TResult Function(_checkAccountStatus value)? checkAccountStatus,
+    TResult Function(_CeckUserFailure value)? checkUserFailure,
+    TResult Function(_UserProfileLocalLoading value)? userProfileLocalLoading,
+    TResult Function(_UserProfileLoading value)? userProfileLoading,
+    TResult Function(_UserProfileFailure value)? userProfileFailure,
+    TResult Function(_UserProfileFetched value)? userProfileFetched,
+    TResult Function(_GetSportsLoading value)? getSportsLoading,
+    TResult Function(_GetSportsFailure value)? getSportsFailure,
+    TResult Function(_SportsFetched value)? sportsFetched,
+    TResult Function(_ChangeEmailLoading value)? changeEmailLoading,
+    TResult Function(_ChangeEmailFailure value)? changeEmailFailure,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_ChangePasswordLoading value)? changePasswordLoading,
+    TResult Function(_ChangePasswordFailure value)? changePasswordFailure,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SkipProfilePictureLoading value)?
+        skipProfilePictureLoading,
+    TResult Function(_SkipProfilePictureFailure value)?
+        skipProfilePictureFailure,
+    TResult Function(_ProfilePictureSkipped value)? profilePictureSkipped,
+    required TResult orElse(),
+  }) {
+    if (profilePictureSkipped != null) {
+      return profilePictureSkipped(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ProfilePictureSkipped implements AuthState {
+  const factory _ProfilePictureSkipped({final bool profilePictureSkipped}) =
+      _$ProfilePictureSkippedImpl;
+
+  bool get profilePictureSkipped;
+  @JsonKey(ignore: true)
+  _$$ProfilePictureSkippedImplCopyWith<_$ProfilePictureSkippedImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
