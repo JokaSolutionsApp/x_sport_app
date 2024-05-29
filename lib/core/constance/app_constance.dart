@@ -34,8 +34,14 @@ class XColors {
   static const shadow_color = Color(0x63000000);
   static const inactive_button = Color(0xFFBCBCBC);
   static const grey5 = Color(0xFF6D6D6D);
+  static const grey6 = Color(0xffC7C7C7);
+  static const blue = Color(0xff1877F2);
+  static const yellow = Color(0xffFDDA52);
+  static const grey7 = Color(0xffF1F1F1);
+  static const grey8 = Color(0xffD8D8D8);
 }
 
 class XStrings {
   static const String fontFamily = 'Tajawal';
+  static const String sampleImage = 'https://picsum.photos/200';
 }

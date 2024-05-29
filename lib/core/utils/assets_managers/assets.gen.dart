@@ -32,6 +32,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/clock.png
   AssetGenImage get clock => const AssetGenImage('assets/icons/clock.png');
 
+  /// File path: assets/icons/clock_thin.png
+  AssetGenImage get clockThin =>
+      const AssetGenImage('assets/icons/clock_thin.png');
+
   /// File path: assets/icons/config.json
   String get config => 'assets/icons/config.json';
 
@@ -65,6 +69,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/icon.png
   AssetGenImage get icon => const AssetGenImage('assets/icons/icon.png');
 
+  /// File path: assets/icons/info.png
+  AssetGenImage get info => const AssetGenImage('assets/icons/info.png');
+
   /// File path: assets/icons/logo_with_opacity.png
   AssetGenImage get logoWithOpacity =>
       const AssetGenImage('assets/icons/logo_with_opacity.png');
@@ -89,6 +96,13 @@ class $AssetsIconsGen {
   /// File path: assets/icons/send.png
   AssetGenImage get send => const AssetGenImage('assets/icons/send.png');
 
+  /// File path: assets/icons/share.png
+  AssetGenImage get share => const AssetGenImage('assets/icons/share.png');
+
+  /// File path: assets/icons/whatsapp.png
+  AssetGenImage get whatsapp =>
+      const AssetGenImage('assets/icons/whatsapp.png');
+
   /// List of all assets
   List<dynamic> get values => [
         group,
@@ -97,6 +111,7 @@ class $AssetsIconsGen {
         arBackArrow,
         car,
         clock,
+        clockThin,
         config,
         delete,
         facebook,
@@ -107,13 +122,16 @@ class $AssetsIconsGen {
         greenUpArrow,
         hand,
         icon,
+        info,
         logoWithOpacity,
         meds,
         obscure,
         pickImage,
         redDownArrow,
         reset,
-        send
+        send,
+        share,
+        whatsapp
       ];
 }
 
@@ -254,12 +272,17 @@ class $AssetsImagesCourtsGen {
   AssetGenImage get court3 =>
       const AssetGenImage('assets/images/courts/court3.png');
 
+  /// File path: assets/images/courts/court_sample.png
+  AssetGenImage get courtSample =>
+      const AssetGenImage('assets/images/courts/court_sample.png');
+
   /// File path: assets/images/courts/courts.png
   AssetGenImage get courts =>
       const AssetGenImage('assets/images/courts/courts.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [court, court1, court2, court3, courts];
+  List<AssetGenImage> get values =>
+      [court, court1, court2, court3, courtSample, courts];
 }
 
 class $AssetsImagesHomeGen {

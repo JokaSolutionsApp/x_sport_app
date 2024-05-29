@@ -17,7 +17,6 @@ import 'app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'app/features/courts/domain/enitites/params/stadium_params.dart';
 import 'app/features/courts/presentation/bloc/stadium_bloc.dart';
 import 'app/features/match/presentation/bloc/match_reservation_bloc.dart';
-import 'core/constance/app_constance.dart';
 import 'core/constance/app_functions.dart';
 import 'core/services/locator/service_locator.dart';
 import 'core/services/preload_images_service.dart';
@@ -60,7 +59,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     sl<ImagePreloadingService>().preloadImages(context);
-    context.read<AppManagerCubit>().switchLanguage(Locale('en'));
+    context.read<AppManagerCubit>().switchLanguage(const Locale('en'));
 
     return ScreenUtilInit(
       designSize: const Size(430, 932),
