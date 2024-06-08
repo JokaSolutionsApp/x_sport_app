@@ -54,7 +54,7 @@ class AllSettingsPrivacyPage extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      // Navigator.push(
+                      // Navigator.of(navigatorKey.currentContext!).push(
                       //     context,
                       //     MaterialPageRoute(
                       //         builder: (context) =>
@@ -82,7 +82,7 @@ class AllSettingsPrivacyPage extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      // Navigator.push(
+                      // Navigator.of(navigatorKey.currentContext!).push(
                       //     context,
                       //     MaterialPageRoute(
                       //         builder: (context) =>
@@ -110,7 +110,7 @@ class AllSettingsPrivacyPage extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      // Navigator.push(
+                      // Navigator.of(navigatorKey.currentContext!).push(
                       //     context,
                       //     MaterialPageRoute(
                       //         builder: (context) => AcademiesArchivePage()));

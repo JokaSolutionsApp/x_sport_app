@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/main.dart';
 
 import '../../../../../../core/constance/app_constance.dart';
 import '../../../../../../core/constance/app_icons_icons.dart';
@@ -56,9 +57,8 @@ class AcademiesComponent extends StatelessWidget {
                       print("coverPhoto ${academy.coverPhoto}");
                       return GestureDetector(
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
+                          Navigator.of(navigatorKey.currentContext!)
+                              .push(MaterialPageRoute(
                                   builder: (context) => AcademyPage(
                                         academy: academy,
                                       )));

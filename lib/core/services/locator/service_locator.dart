@@ -10,6 +10,7 @@ import 'package:x_sport/app/features/archives/domain/usecase/get_academy_subscri
 import 'package:x_sport/app/features/archives/presentation/bloc/archive_bloc.dart';
 import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/change_email_usecase.dart';
 import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/change_password_usecase.dart';
+import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/complete_your_profile.dart';
 import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/skip_profile_picture.dart';
 import 'package:x_sport/app/features/courts/data/datasource/stadium_remote_datasource.dart';
 import 'package:x_sport/app/features/courts/data/repository/court_repository.dart';
@@ -154,6 +155,7 @@ class ServiceLocator {
           sl(),
           sl(),
           sl(),
+          sl(),
         ));
     sl.registerFactory(() => ChatBloc());
     sl.registerFactory(() =>
@@ -183,6 +185,7 @@ class ServiceLocator {
     sl.registerLazySingleton(() => ChangeEmailUseCase(sl()));
     sl.registerLazySingleton(() => ChangePasswordUseCase(sl()));
     sl.registerLazySingleton(() => SkipProfilePictureUseCase(sl()));
+    sl.registerLazySingleton(() => CompleteYourProfileUseCase(sl()));
 
     // chat bloc usecases
     sl.registerLazySingleton(() => SendMessageUseCase(sl()));

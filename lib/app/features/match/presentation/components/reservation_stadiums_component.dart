@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/main.dart';
 
 import '../../../../../core/utils/assets_managers/assets.gen.dart';
 import '../../../courts/presentation/pages/courts_page.dart';
@@ -26,8 +27,7 @@ class ReservationStadiumsComponent extends StatelessWidget {
             child: GestureDetector(
               onTap: () {
                 selectedIdx.value = index;
-                Navigator.push(
-                    context,
+                Navigator.of(navigatorKey.currentContext!).push(
                     MaterialPageRoute(
                         builder: (context) => const CourtsPage()));
               },

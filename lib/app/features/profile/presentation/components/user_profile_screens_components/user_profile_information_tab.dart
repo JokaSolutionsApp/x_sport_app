@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/main.dart';
 
 import '../../../../../../../core/constance/app_constance.dart';
 import '../../../../../../core/constance/local_data.dart';
@@ -258,9 +259,9 @@ class UserProfileInformationTab extends StatelessWidget {
                                           SizedBox(width: 5.w),
                                           GestureDetector(
                                             onTap: () {
-                                              Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
+                                              Navigator.of(navigatorKey
+                                                      .currentContext!)
+                                                  .push(MaterialPageRoute(
                                                       builder: (context) =>
                                                           const ProfileRankingPage()));
                                             },

@@ -10,7 +10,7 @@ class AuthState with _$AuthState {
     @Default(null) Failure? failure,
   }) = _RegisterFailure;
   const factory AuthState.registered({
-    @Default(false) bool registered,
+    @Default(null) UserProfileEntity? user,
   }) = _Registered;
 
   // Login User
@@ -27,9 +27,17 @@ class AuthState with _$AuthState {
   const factory AuthState.googleLogginFailure({
     @Default(null) Failure? failure,
   }) = _GoogleLoginFailure;
-  const factory AuthState.googleLoggedIn({
+  const factory AuthState.googleLoggedIn() = _GoogleLoggedIn;
+
+  // Complete Your Profile
+  const factory AuthState.completeYourProfileLoading() =
+      _CompleteYourProfileLoading;
+  const factory AuthState.completeYourProfileFailure({
+    @Default(null) Failure? failure,
+  }) = _CompleteYourProfileFailure;
+  const factory AuthState.profileCompleted({
     @Default(null) UserProfileEntity? user,
-  }) = _GoogleLoggedIn;
+  }) = _ProfileCompleted;
 
   // Confirm Email
   const factory AuthState.confirmEmailLoading() = _ConfirmEmailLoading;

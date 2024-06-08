@@ -6,13 +6,51 @@ import 'package:image_picker/image_picker.dart';
 
 import '../../../../../../core/constance/app_constance.dart';
 
-class EditImageComponent extends StatelessWidget {
+// ignore: must_be_immutable
+class EditImageComponent extends StatefulWidget {
   EditImageComponent(
-      {super.key, required this.getImage, required this.userImage});
+      {super.key,
+      required this.getImage,
+      required this.userImage,
+      required this.name});
   final void Function(List<int>, String, String) getImage;
   final String userImage;
+  final String name;
+
+  @override
+  State<EditImageComponent> createState() => _EditImageComponentState();
+}
+
+class _EditImageComponentState extends State<EditImageComponent> {
   final ValueNotifier<XFile?> _pickedImageNotifier =
       ValueNotifier<XFile?>(null);
+
+  @override
+  initState() {
+    super.initState();
+    getInitials();
+  }
+
+  String? initials;
+  getInitials() {
+    final name = widget.name;
+    if (name.isNotEmpty) {
+      final nameParts = name.split(' ');
+      if (nameParts.length >= 2) {
+        final firstInitial = nameParts[0].isNotEmpty ? nameParts[0][0] : '';
+        final lastInitial = nameParts[1].isNotEmpty ? nameParts[1][0] : '';
+        setState(() {
+          initials = '$firstInitial$lastInitial';
+        });
+      } else if (nameParts.length == 1) {
+        final firstInitial = nameParts[0].isNotEmpty ? nameParts[0][0] : '';
+        setState(() {
+          initials = firstInitial;
+        });
+      }
+    }
+  }
+
   Future<void> _pickImage() async {
     final ImagePicker picker = ImagePicker();
 
@@ -26,7 +64,7 @@ class EditImageComponent extends StatelessWidget {
         List<int> imageBytes = await pickedFile.readAsBytes();
         print("imageParts.first${imageParts.first}");
         final String imageType = imageParts.last.toLowerCase();
-        getImage(imageBytes, imageType, imageParts.first);
+        widget.getImage(imageBytes, imageType, imageParts.first);
       }
     }
   }
@@ -45,10 +83,10 @@ class EditImageComponent extends StatelessWidget {
               width: 94.w,
               decoration: const BoxDecoration(
                   color: XColors.Background_Color1, shape: BoxShape.circle),
-              child: userImage.isNotEmpty && pickedImage?.path == null
+              child: widget.userImage.isNotEmpty && pickedImage?.path == null
                   ? ClipOval(
                       child: Image.network(
-                        userImage,
+                        widget.userImage,
                         width: 150.w,
                         height: 150.w,
                         fit: BoxFit.cover,
@@ -56,7 +94,7 @@ class EditImageComponent extends StatelessWidget {
                     )
                   : pickedImage == null
                       ? Text(
-                          '',
+                          initials ?? '',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               height: 0,

@@ -126,6 +126,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
           child: Column(
             children: [
               EditImageComponent(
+                  name: user.name,
                   userImage: user.imgURL,
                   getImage: (bytes, type, name) {
                     imageBytes = bytes;

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/main.dart';
 
 import '../../../../../core/utils/assets_managers/assets.gen.dart';
 import '../../../../widgets/rectangle_container.dart';
@@ -157,14 +158,13 @@ class _MyChatsScreenState extends State<MyChatsPage>
                                 textDirection: TextDirection.rtl,
                                 child: GestureDetector(
                                   onTap: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
+                                    Navigator.of(navigatorKey.currentContext!)
+                                        .push(MaterialPageRoute(
                                             builder: (context) =>
                                                 const ChatPage()));
                                     // FocusScope.of(context).unfocus();
                                     // Future.delayed(Duration(milliseconds: 150), () {
-                                    //   Navigator.push(
+                                    //   Navigator.of(navigatorKey.currentContext!).push(
                                     //     context,
                                     //     MaterialPageRoute(
                                     //       builder: (context) => PeopleProfilePage(),

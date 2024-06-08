@@ -1,6 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:x_sport/app/widgets/text_fields/no_border_textfield_widget.dart';
 import 'package:x_sport/core/localization/locale_keys.g.dart';
 import '../../../../../core/constance/app_constance.dart';
@@ -101,8 +103,8 @@ class _CompleteProfilePageState extends State<CompleteProfilePage> {
                         labelText: LocaleKeys.first_name_and_last_name.tr(),
                         controller: name,
                         keyboardType: TextInputType.emailAddress,
-                        textStream: signInStream.name,
-                        onChanged: signInStream.changeName,
+                        textStream: completeYourProfile.name,
+                        onChanged: completeYourProfile.changeName,
                         hintText: 'basheer',
                       ),
                       NoBorderTextFieldWidget(
@@ -111,8 +113,8 @@ class _CompleteProfilePageState extends State<CompleteProfilePage> {
                         labelText: LocaleKeys.mobile_number.tr(),
                         controller: phone,
                         keyboardType: TextInputType.phone,
-                        textStream: signInStream.phone,
-                        onChanged: signInStream.changePhone,
+                        textStream: completeYourProfile.phone,
+                        onChanged: completeYourProfile.changePhone,
                         hintText: '935648050',
                       ),
                     ],
@@ -121,9 +123,10 @@ class _CompleteProfilePageState extends State<CompleteProfilePage> {
                 Align(
                   alignment: Alignment.center,
                   child: StreamBuilder(
-                    stream: signInStream.loginValid,
+                    stream: completeYourProfile.completeYourProfileValid,
                     builder: (context, snapshot) {
                       final isButtonEnabled = snapshot.data ?? false;
+                      print("isButtonEnabled $isButtonEnabled");
                       return SubmitButton(
                         isButtonEnabled: isButtonEnabled,
                         radius: 10.sp,
@@ -135,7 +138,14 @@ class _CompleteProfilePageState extends State<CompleteProfilePage> {
                         textSize: 22,
                         fontWeight: FontWeight.w600,
                         onPressed: () {
-                          if (isButtonEnabled) {}
+                          if (isButtonEnabled) {
+                            context
+                                .read<AuthBloc>()
+                                .add(AuthEvent.completeYourProfile(
+                                  name: name.text,
+                                  phone: phone.text,
+                                ));
+                          }
                         },
                       );
                     },

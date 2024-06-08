@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/main.dart';
 
 import '../../../../../../core/constance/app_constance.dart';
 import '../../../../../../core/utils/assets_managers/assets.gen.dart';
@@ -63,9 +64,8 @@ class FriendsStadiumsComponent extends StatelessWidget {
                               child: GestureDetector(
                                   onTap: () {
                                     selectedIdx.value = index;
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
+                                    Navigator.of(navigatorKey.currentContext!)
+                                        .push(MaterialPageRoute(
                                             builder: (context) => CourtsPage(
                                                   stadium: value[index],
                                                 )));
@@ -138,9 +138,9 @@ class FriendsStadiumsComponent extends StatelessWidget {
                                                 textSize: 14,
                                                 text: 'تابع',
                                                 onPressed: () {
-                                                  Navigator.push(
-                                                      context,
-                                                      MaterialPageRoute(
+                                                  Navigator.of(navigatorKey
+                                                          .currentContext!)
+                                                      .push(MaterialPageRoute(
                                                           builder: (context) =>
                                                               CourtsPage(
                                                                 stadium: value[

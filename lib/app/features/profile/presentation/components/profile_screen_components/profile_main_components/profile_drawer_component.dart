@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/app/features/auth/presentation/pages/create_or_signin.dart';
 import 'package:x_sport/app/features/auth/presentation/pages/login_page.dart';
 import 'package:x_sport/core/services/locator/service_locator.dart';
 import 'package:x_sport/core/services/secure_storage_service.dart.dart';
@@ -19,11 +20,42 @@ import '../../../../../paymnet/presentation/pages/payment_info_page.dart';
 import '../../../../../settings/presentation/pages/all_settings_privacy_page.dart';
 import '../../../pages/edit_profile_page.dart';
 
-class ProfileDrawerComponent extends StatelessWidget {
+class ProfileDrawerComponent extends StatefulWidget {
   final UserEntity user;
   final List<FavoriteSportEntity> favoriteSports;
   const ProfileDrawerComponent(
       {super.key, required this.user, required this.favoriteSports});
+
+  @override
+  State<ProfileDrawerComponent> createState() => _ProfileDrawerComponentState();
+}
+
+class _ProfileDrawerComponentState extends State<ProfileDrawerComponent> {
+  @override
+  initState() {
+    super.initState();
+    getInitials();
+  }
+
+  String? initials;
+  getInitials() {
+    final name = widget.user.name;
+    if (name.isNotEmpty) {
+      final nameParts = name.split(' ');
+      if (nameParts.length >= 2) {
+        final firstInitial = nameParts[0].isNotEmpty ? nameParts[0][0] : '';
+        final lastInitial = nameParts[1].isNotEmpty ? nameParts[1][0] : '';
+        setState(() {
+          initials = '$firstInitial$lastInitial';
+        });
+      } else if (nameParts.length == 1) {
+        final firstInitial = nameParts[0].isNotEmpty ? nameParts[0][0] : '';
+        setState(() {
+          initials = firstInitial;
+        });
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -75,12 +107,11 @@ class ProfileDrawerComponent extends StatelessWidget {
                             tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                             alignment: Alignment.centerLeft),
                         onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
+                          Navigator.of(navigatorKey.currentContext!)
+                              .push(MaterialPageRoute(
                                   builder: (context) => EditProfilePage(
-                                        user: user,
-                                        favoriteSports: favoriteSports,
+                                        user: widget.user,
+                                        favoriteSports: widget.favoriteSports,
                                       )));
                         },
                         child: Row(
@@ -107,24 +138,29 @@ class ProfileDrawerComponent extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 12.w),
+                  margin: EdgeInsets.only(bottom: 4.h, right: 10.w, left: 10.w),
                   alignment: Alignment.center,
                   width: 80.w,
                   height: 80.w,
                   decoration: const BoxDecoration(
-                    // image: DecorationImage(image: NetworkImage(user!.image)),
-                    color: Colors.white,
-                    shape: BoxShape.circle,
-                  ),
-                  child: Text(
-                    'BA',
-                    style: TextStyle(
-                      color: XColors.Background_Color1,
-                      fontSize: 30.sp,
-                      fontWeight: FontWeight.w500,
-                      height: 3.2.w,
-                    ),
-                  ),
+                      color: XColors.white, shape: BoxShape.circle),
+                  child: widget.user.imgURL.isNotEmpty
+                      ? ClipOval(
+                          child: Image.network(
+                            widget.user.imgURL,
+                            width: 80.w,
+                            height: 80.w,
+                            fit: BoxFit.cover,
+                          ),
+                        )
+                      : Text(
+                          initials ?? '',
+                          style: TextStyle(
+                            color: XColors.black,
+                            fontSize: 30.sp,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
                 ),
               ],
             ),
@@ -134,23 +170,19 @@ class ProfileDrawerComponent extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Padding(
-                  padding: EdgeInsets.only(right: 5.w),
-                  child: IconTextButton(
-                    hasDivider: false,
-                    text: 'تعديل الملف الشخصي',
-                    icon: Icons.edit,
-                    iconSize: 21,
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => EditProfilePage(
-                                    user: user,
-                                    favoriteSports: favoriteSports,
-                                  )));
-                    },
-                  ),
+                IconTextButton(
+                  hasDivider: false,
+                  text: 'تعديل الملف الشخصي',
+                  icon: Icons.edit,
+                  iconSize: 21,
+                  onPressed: () {
+                    Navigator.of(navigatorKey.currentContext!)
+                        .push(MaterialPageRoute(
+                            builder: (context) => EditProfilePage(
+                                  user: widget.user,
+                                  favoriteSports: widget.favoriteSports,
+                                )));
+                  },
                 ),
                 Padding(
                   padding: EdgeInsets.only(right: 5.w),
@@ -159,8 +191,7 @@ class ProfileDrawerComponent extends StatelessWidget {
                     icon: AppIcons.credit,
                     iconSize: 21,
                     onPressed: () {
-                      Navigator.push(
-                          context,
+                      Navigator.of(navigatorKey.currentContext!).push(
                           MaterialPageRoute(
                               builder: (context) => const PaymentInfoPage()));
                     },
@@ -170,8 +201,7 @@ class ProfileDrawerComponent extends StatelessWidget {
                   text: 'الارشيف',
                   icon: AppIcons.archive,
                   onPressed: () {
-                    Navigator.push(
-                        context,
+                    Navigator.of(navigatorKey.currentContext!).push(
                         MaterialPageRoute(
                             builder: (context) => const AllArchivePage()));
                   },
@@ -180,8 +210,7 @@ class ProfileDrawerComponent extends StatelessWidget {
                   text: 'الانشطة',
                   icon: AppIcons.clock_activity,
                   onPressed: () {
-                    Navigator.push(
-                        context,
+                    Navigator.of(navigatorKey.currentContext!).push(
                         MaterialPageRoute(
                             builder: (context) => const AllLogsPage()));
                   },
@@ -195,8 +224,7 @@ class ProfileDrawerComponent extends StatelessWidget {
                   text: 'الخصوصية',
                   icon: AppIcons.privacy,
                   onPressed: () {
-                    Navigator.push(
-                        context,
+                    Navigator.of(navigatorKey.currentContext!).push(
                         MaterialPageRoute(
                             builder: (context) =>
                                 const AllSettingsPrivacyPage()));
@@ -231,8 +259,9 @@ class ProfileDrawerComponent extends StatelessWidget {
                 onPressed: () async {
                   await sl<SecureStorageService>().delete('token');
                   Navigator.of(navigatorKey.currentContext!).pushAndRemoveUntil(
-                    MaterialPageRoute(builder: (context) => const LoginPage()),
-                    ModalRoute.withName('/'),
+                    MaterialPageRoute(
+                        builder: (context) => const CreateOrSignIn()),
+                    ModalRoute.withName('/CreateOrSignIn'),
                   );
                 },
               ),

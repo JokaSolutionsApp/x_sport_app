@@ -60,7 +60,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     sl<ImagePreloadingService>().preloadImages(context);
-    context.read<AppManagerCubit>().switchLanguage(Locale('en'));
 
     return ScreenUtilInit(
       designSize: const Size(430, 932),

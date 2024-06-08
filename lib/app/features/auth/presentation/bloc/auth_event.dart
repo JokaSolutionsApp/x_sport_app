@@ -4,6 +4,10 @@ part of 'auth_bloc.dart';
 class AuthEvent with _$AuthEvent {
   const factory AuthEvent.login() = _LoginEvent;
   const factory AuthEvent.googleLogin() = _GoogleLoginEvent;
+  const factory AuthEvent.completeYourProfile({
+    required String name,
+    required String phone,
+  }) = _CompleteYourProfile;
   const factory AuthEvent.register() = _RegisterEvent;
   const factory AuthEvent.getUserProfile() = _GetUserProfileEvent;
   const factory AuthEvent.deleteUserProfile() = _DeleteUserProfileEvent;

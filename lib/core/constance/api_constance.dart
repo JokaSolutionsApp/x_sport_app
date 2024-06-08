@@ -22,6 +22,7 @@ class ApiConstance {
   static const getSportsApi = 'Sport/GetSports';
   static const accountStatussApi = 'User/AccountStatus';
   static const skipProfilePictureApi = 'User/SkipProfilePicture';
+  static const completeGoogleRegistration = 'User/CompleteGoogleRegistration';
 
 // Academy
   static const getSuggestedAcademies = 'Academy/GetSuggestedAcademies';

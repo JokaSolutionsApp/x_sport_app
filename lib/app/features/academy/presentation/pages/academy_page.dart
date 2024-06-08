@@ -155,8 +155,7 @@ class _AcademyScreenState extends State<AcademyPage>
                             shape: BoxShape.circle),
                         child: IconButton(
                           onPressed: () {
-                            Navigator.push(
-                              context,
+                            Navigator.of(navigatorKey.currentContext!).push(
                               MaterialPageRoute(
                                 builder: (context) =>
                                     VideoPlayerFullScreenWidget(

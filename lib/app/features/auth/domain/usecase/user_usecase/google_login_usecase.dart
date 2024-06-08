@@ -9,7 +9,7 @@ class GoogleLoginUseCase {
 
   GoogleLoginUseCase(this.repository);
 
-  Future<Either<Failure, UserProfileEntity>> call() async {
+  Future<Either<Failure, void>> call() async {
     return await repository.googleLogin();
   }
 }

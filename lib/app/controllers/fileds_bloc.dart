@@ -48,6 +48,8 @@ class Bloc extends Validators {
 
   Stream<bool> get loginValid =>
       Rx.combineLatest2(email, password, (e, p) => true);
+  Stream<bool> get completeYourProfileValid =>
+      Rx.combineLatest2(name, phone, (n, p) => true);
   bool get otpValid => codeValue.isNotEmpty ? true : false;
 
   Stream<bool> get registerIsValid => Rx.combineLatest4(
@@ -147,6 +149,7 @@ class Bloc extends Validators {
 
 final registerStream = Bloc();
 final signInStream = Bloc();
+final completeYourProfile = Bloc();
 final editProfileStream = Bloc();
 final rankSearchStream = Bloc();
 final academiesSearchStream = Bloc();

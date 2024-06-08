@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/main.dart';
 import '../../../chat/presentation/pages/my_chats_page.dart';
 
 import '../../../../../core/constance/app_constance.dart';
@@ -250,9 +251,9 @@ class SocialPage extends StatelessWidget {
                                           ),
                                           GestureDetector(
                                             onTap: () {
-                                              Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
+                                              Navigator.of(navigatorKey
+                                                      .currentContext!)
+                                                  .push(MaterialPageRoute(
                                                       builder: (context) =>
                                                           const MyChatsPage()));
                                             },

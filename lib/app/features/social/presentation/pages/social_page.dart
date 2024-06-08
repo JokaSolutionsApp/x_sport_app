@@ -263,8 +263,9 @@ class SocialPage extends StatelessWidget {
                                         ),
                                         GestureDetector(
                                           onTap: () {
-                                            Navigator.push(
-                                              context,
+                                            Navigator.of(navigatorKey
+                                                    .currentContext!)
+                                                .push(
                                               MaterialPageRoute(
                                                 builder: (context) =>
                                                     const MyChatsPage(),

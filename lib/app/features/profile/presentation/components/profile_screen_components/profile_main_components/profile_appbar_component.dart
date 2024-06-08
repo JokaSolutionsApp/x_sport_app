@@ -117,8 +117,7 @@ class ProfileAppBarComponent extends StatelessWidget
                   SizedBox(width: 10.w),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                          context,
+                      Navigator.of(navigatorKey.currentContext!).push(
                           MaterialPageRoute(
                               builder: (context) => const MyChatsPage()));
                     },

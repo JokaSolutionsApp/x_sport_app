@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/main.dart';
 
 import 'academies_archive_page.dart';
 import 'played_games_archive_page.dart';
@@ -61,8 +62,7 @@ class AllArchivePage extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Navigator.push(
-                            context,
+                        Navigator.of(navigatorKey.currentContext!).push(
                             MaterialPageRoute(
                                 builder: (context) =>
                                     const PlayedGamesArchivePage()));
@@ -89,8 +89,7 @@ class AllArchivePage extends StatelessWidget {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.push(
-                            context,
+                        Navigator.of(navigatorKey.currentContext!).push(
                             MaterialPageRoute(
                                 builder: (context) =>
                                     const TournementsArchivePage()));
@@ -117,8 +116,7 @@ class AllArchivePage extends StatelessWidget {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.push(
-                            context,
+                        Navigator.of(navigatorKey.currentContext!).push(
                             MaterialPageRoute(
                                 builder: (context) =>
                                     const AcademiesArchivePage()));
@@ -145,8 +143,7 @@ class AllArchivePage extends StatelessWidget {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.push(
-                            context,
+                        Navigator.of(navigatorKey.currentContext!).push(
                             MaterialPageRoute(
                                 builder: (context) =>
                                     const StoriesArchivePage()));

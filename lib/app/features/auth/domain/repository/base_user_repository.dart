@@ -8,9 +8,9 @@ import '../params/edit_preferences_params.dart';
 
 abstract class BaseUserRepository {
   Future<Either<Failure, UserProfileEntity>> login();
-  Future<Either<Failure, UserProfileEntity>> googleLogin();
+  Future<Either<Failure, void>> googleLogin();
 
-  Future<Either<Failure, bool>> register();
+  Future<Either<Failure, UserProfileEntity>> register();
   Future<Either<Failure, bool>> changeEmail();
   Future<Either<Failure, bool>> changePassword();
   Future<Either<Failure, UserProfileEntity>> editUserProfile(
@@ -37,6 +37,8 @@ abstract class BaseUserRepository {
   Future<Either<Failure, List<SportEntity>>> getSports();
   Future<Either<Failure, UserProfileEntity>> completeRegistration(
       List<int> imageBytes, String imageType);
+  Future<Either<Failure, UserProfileEntity>> completeYourProfile(
+      String name, String phone);
 
   Future<Either<Failure, String>> sendMessage(String userMessage);
   Future<Either<Failure, bool>> skipProfilePicture();

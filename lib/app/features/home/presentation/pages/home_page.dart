@@ -6,6 +6,7 @@ import 'package:x_sport/app/features/courts/presentation/bloc/stadium_bloc.dart'
 import 'package:x_sport/app/features/courts/presentation/pages/courts_page.dart';
 import 'package:x_sport/app/features/home/presentation/components/home_components/banner_component.dart';
 import 'package:x_sport/app/features/home/presentation/components/home_components/friends_stadiums_component.dart';
+import 'package:x_sport/main.dart';
 import '../../../../../core/constance/app_constance.dart';
 import '../../../../../core/utils/assets_managers/assets.gen.dart';
 import '../../../../widgets/buttons/submit_button.dart';
@@ -89,94 +90,98 @@ class _HomePageState extends State<HomePage> {
         }
         return true;
       },
-      child: Scaffold(
-        backgroundColor: const Color(0xFFF6F7F9),
-        appBar: const ProfileAppBarComponent(
-          isProfile: true,
-        ),
-        body: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(horizontal: 10.w),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              const HomeBannerComponent(),
-              Container(
-                height: 434.h,
-                margin: EdgeInsets.only(top: 12.h),
-                alignment: Alignment.center,
-                padding: EdgeInsets.all(12.w),
-                decoration: ShapeDecoration(
-                  color: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20.sp),
-                  ),
-                ),
-                child: GridView.builder(
-                    physics: const NeverScrollableScrollPhysics(),
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      mainAxisExtent: 186.w,
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 12.0.w,
-                      mainAxisSpacing: 10.0.w,
+      child: MaterialApp(
+        home: Scaffold(
+          backgroundColor: const Color(0xFFF6F7F9),
+          appBar: const ProfileAppBarComponent(
+            isProfile: true,
+          ),
+          body: SingleChildScrollView(
+            padding: EdgeInsets.symmetric(horizontal: 10.w),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                const HomeBannerComponent(),
+                Container(
+                  height: 434.h,
+                  margin: EdgeInsets.only(top: 12.h),
+                  alignment: Alignment.center,
+                  padding: EdgeInsets.all(12.w),
+                  decoration: ShapeDecoration(
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.sp),
                     ),
-                    itemCount: items.length,
-                    itemBuilder: (context, index) {
-                      return RectangleContainer(
-                        containerColor: items[index].color,
-                        child: Stack(alignment: Alignment.topRight, children: [
-                          items[index].fadedImage != null
-                              ? Positioned(
-                                  top: items[index].fadedTop,
-                                  left: 9.w,
-                                  height: 50.w,
-                                  width: 50.w,
-                                  child: items[index].fadedImage!.image(),
-                                )
-                              : const SizedBox.shrink(),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                items[index].image.image(),
-                                Text(
-                                  items[index].title,
-                                  textAlign: TextAlign.end,
-                                  style: TextStyle(
-                                    fontSize: 13.sp,
-                                    fontWeight: FontWeight.w500,
-                                    color: items[index].textColor,
+                  ),
+                  child: GridView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        mainAxisExtent: 186.w,
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 12.0.w,
+                        mainAxisSpacing: 10.0.w,
+                      ),
+                      itemCount: items.length,
+                      itemBuilder: (context, index) {
+                        return RectangleContainer(
+                          containerColor: items[index].color,
+                          child:
+                              Stack(alignment: Alignment.topRight, children: [
+                            items[index].fadedImage != null
+                                ? Positioned(
+                                    top: items[index].fadedTop,
+                                    left: 9.w,
+                                    height: 50.w,
+                                    width: 50.w,
+                                    child: items[index].fadedImage!.image(),
+                                  )
+                                : const SizedBox.shrink(),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  items[index].image.image(),
+                                  Text(
+                                    items[index].title,
+                                    textAlign: TextAlign.end,
+                                    style: TextStyle(
+                                      fontSize: 13.sp,
+                                      fontWeight: FontWeight.w500,
+                                      color: items[index].textColor,
+                                    ),
                                   ),
-                                ),
-                                Align(
-                                  alignment: Alignment.center,
-                                  child: SubmitButton(
-                                      textColor: items[index].btnTextColor,
-                                      fillColor: items[index].btnColor,
-                                      radius: 4,
-                                      minWidth: 75,
-                                      height: 18,
-                                      textSize: 14,
-                                      text: 'المزيد',
-                                      onPressed: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    const CourtsPage()));
-                                      }),
-                                )
-                              ],
-                            ),
-                          )
-                        ]),
-                      );
-                    }),
-              ),
-              // HomeStadiumsComponent(),
-              FriendsStadiumsComponent(),
-            ],
+                                  Align(
+                                    alignment: Alignment.center,
+                                    child: SubmitButton(
+                                        textColor: items[index].btnTextColor,
+                                        fillColor: items[index].btnColor,
+                                        radius: 4,
+                                        minWidth: 75,
+                                        height: 18,
+                                        textSize: 14,
+                                        text: 'المزيد',
+                                        onPressed: () {
+                                          Navigator.of(
+                                                  navigatorKey.currentContext!)
+                                              .push(MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const CourtsPage()));
+                                        }),
+                                  )
+                                ],
+                              ),
+                            )
+                          ]),
+                        );
+                      }),
+                ),
+                // HomeStadiumsComponent(),
+                FriendsStadiumsComponent(),
+              ],
+            ),
           ),
         ),
       ),

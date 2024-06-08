@@ -8,6 +8,7 @@ import 'package:x_sport/app/widgets/buttons/submit_button.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
 import 'package:x_sport/core/localization/locale_keys.g.dart';
 import 'package:x_sport/core/utils/assets_managers/assets.gen.dart';
+import 'package:x_sport/main.dart';
 
 class CreateOrSignIn extends StatelessWidget {
   const CreateOrSignIn({super.key});
@@ -72,7 +73,7 @@ class CreateOrSignIn extends StatelessWidget {
             ),
             Positioned(
               width: 1.sw,
-              bottom: 27.h,
+              bottom: 0.h,
               child: Column(
                 children: [
                   SizedBox(
@@ -89,8 +90,7 @@ class CreateOrSignIn extends StatelessWidget {
                           textSize: 22,
                           fontWeight: FontWeight.w600,
                           onPressed: () {
-                            Navigator.push(
-                              context,
+                            Navigator.of(navigatorKey.currentContext!).push(
                               MaterialPageRoute(
                                   builder: (context) => const RegisterPage()),
                             );
@@ -106,8 +106,7 @@ class CreateOrSignIn extends StatelessWidget {
                           textSize: 22,
                           fontWeight: FontWeight.w600,
                           onPressed: () {
-                            Navigator.push(
-                              context,
+                            Navigator.of(navigatorKey.currentContext!).push(
                               MaterialPageRoute(
                                   builder: (context) => const LoginPage()),
                             );
@@ -116,6 +115,7 @@ class CreateOrSignIn extends StatelessWidget {
                       ],
                     ),
                   ),
+                  SizedBox(height: 27.h),
                   const MoreSignInOptions(),
                 ],
               ),

@@ -22,9 +22,9 @@ import '../../../../../core/utils/enums.dart';
 
 abstract class BaseUserRemoteDataSource {
   Future<UserProfileEntity> login();
-  Future<UserProfileEntity> googleLogin();
+  Future<void> googleLogin();
 
-  Future<bool> register();
+  Future<UserProfileEntity> register();
   Future<bool> changeEmail();
   Future<bool> changePassword();
   Future<UserProfileEntity> editUserProfile(
@@ -46,6 +46,8 @@ abstract class BaseUserRemoteDataSource {
   Future<UserProfileEntity> completeRegistration(
       List<int> imageBytes, String imageType);
 
+  Future<UserProfileEntity> completeYourProfile(String name, String phone);
+
   Future<String> sendMessage(String userMessage);
   Future<bool> skipProfilePicture();
 }
@@ -54,15 +56,12 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
   final token = sl<SecureStorageService>().read('token');
 
   @override
-  Future<bool> register() async {
+  Future<UserProfileEntity> register() async {
     final postData = {
       'name': registerStream.nameValue,
       'email': registerStream.emailValue,
       'password': registerStream.passwordValue,
       'phone': registerStream.phoneValue,
-      // "gender": registerStream.genderValue,
-      // 'longitude': registerStream.longeValue,
-      // 'latitude': registerStream.latValue,
     };
 
     final response = await ApiService.post(ApiConstance.registerApi, postData);
@@ -70,14 +69,15 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
     final data = response.data;
 
     if (response.statusCode == 200) {
+      await sl<SecureStorageService>().write('name', registerStream.nameValue);
       await sl<SecureStorageService>()
           .write('email', registerStream.emailValue);
       await sl<SecureStorageService>()
           .write('password', registerStream.passwordValue);
-      final token = data['data']['token'];
+      final token = data['data']['authResult']['token'];
       sl<SecureStorageService>().write('token', token);
-      await sl<SecureStorageService>().write('otp', 'true');
-      return true;
+
+      return UserProfileModel.fromJson(data['data']['userProfile']);
     } else {
       Map<String, dynamic> responseData =
           response.data is String ? json.decode(response.data) : response.data;
@@ -186,7 +186,7 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
   }
 
   @override
-  Future<UserProfileEntity> googleLogin() async {
+  Future<void> googleLogin() async {
     GoogleSignIn googleSignIn = GoogleSignIn(
       scopes: [
         'email',
@@ -226,8 +226,6 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
         'name': account.displayName,
         'email': account.email,
         'firebaseToken': idToken,
-        'latitude': registerStream.latValue,
-        'longitude': registerStream.longeValue,
       };
       print("postData $postData");
 
@@ -242,7 +240,6 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
         final refreshToken = data['data']['authResult']['refreshToken'];
         sl<SecureStorageService>().write('token', token);
         sl<SecureStorageService>().write('refreshToken', refreshToken);
-        return UserProfileModel.fromJson(data['data']['userProfile']);
       } else {
         throw ServerException(errorModel: ErrorModel.fromJson(data));
       }
@@ -271,11 +268,15 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
       if (statusValue == 0) {
         return UserAuthState.guest;
       } else if (statusValue == 1) {
-        return UserAuthState.loggedIn;
+        return UserAuthState.registerWithEmailAndPassword;
       } else if (statusValue == 2) {
-        return UserAuthState.welcome;
+        return UserAuthState.registredWithGoogle;
       } else if (statusValue == 3) {
-        return UserAuthState.otp;
+        return UserAuthState.comletedRegistrationWithGoogle;
+      } else if (statusValue == 4) {
+        return UserAuthState.profilePictureSkipped;
+      } else if (statusValue == 5) {
+        return UserAuthState.RegistrationFinished;
       } else {
         return UserAuthState.guest;
       }
@@ -530,6 +531,30 @@ class UserRemoteDataSource extends BaseUserRemoteDataSource {
 
     if (response.statusCode == 200) {
       return true;
+    } else {
+      throw ServerException(errorModel: ErrorModel.fromJson(data));
+    }
+  }
+
+  @override
+  Future<UserProfileEntity> completeYourProfile(
+      String name, String phone) async {
+    final postData = {
+      'name': name,
+      'phone': phone,
+    };
+
+    final response = await ApiService.post(
+        ApiConstance.completeGoogleRegistration, postData);
+
+    final data = response.data;
+
+    if (response.statusCode == 200) {
+      sl<SecureStorageService>().write('name', name);
+
+      return UserProfileModel.fromJson(data['data']['user']);
+    } else if (response.statusCode == 500) {
+      throw ServerException(errorModel: ErrorModel.fromJson(data));
     } else {
       throw ServerException(errorModel: ErrorModel.fromJson(data));
     }

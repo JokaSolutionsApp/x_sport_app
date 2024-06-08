@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/main.dart';
 
 import '../../../../../core/widgets/global_app_bar.dart';
 import '../../../profile/presentation/components/invite_firends_components.dart/my_friends_component.dart';
@@ -32,8 +33,7 @@ class InviteFirendsPage extends StatelessWidget {
                   SizedBox(width: 12.w),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                          context,
+                      Navigator.of(navigatorKey.currentContext!).push(
                           MaterialPageRoute(
                               builder: (context) => const CreateGroupPage()));
                     },

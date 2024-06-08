@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:easy_localization/easy_localization.dart' hide TextDirection;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +15,9 @@ class AuthHeader extends StatelessWidget {
   final double? logoWidth;
   final double? titleWidth;
   final double? bottomPadding;
-  final String mainTitle;
+  final double? titleTopPadding;
+
+  final Image mainTitle;
   final String title;
   final String? subtitle;
   const AuthHeader(
@@ -25,13 +29,14 @@ class AuthHeader extends StatelessWidget {
       this.logoHeight,
       this.logoWidth,
       this.titleWidth,
-      this.bottomPadding});
+      this.bottomPadding,
+      this.titleTopPadding});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.topCenter,
-      height: 0.24.sh,
+      height: Platform.isAndroid ? 0.24.sh : 0.22.sh,
       child: Stack(
         clipBehavior: Clip.none,
         alignment: Alignment.topCenter,
@@ -40,17 +45,10 @@ class AuthHeader extends StatelessWidget {
             textDirection:
                 context.locale.isRTL ? TextDirection.rtl : TextDirection.ltr,
             end: 7.w,
-            top: -30.h,
+            top: 0.h,
             child: Row(
               children: [
-                Text(
-                  mainTitle,
-                  style: TextStyle(
-                      color: XColors.primary.withOpacity(0.15),
-                      fontSize: mainTitleFontSize ?? 128.sp,
-                      fontWeight: FontWeight.w700,
-                      letterSpacing: 0),
-                ),
+                mainTitle,
                 Padding(
                   padding: EdgeInsets.only(bottom: bottomPadding ?? 36.h),
                   child: AssetsManager.icons.logoWithOpacity.image(
@@ -65,7 +63,7 @@ class AuthHeader extends StatelessWidget {
             textDirection:
                 context.locale.isRTL ? TextDirection.rtl : TextDirection.ltr,
             end: 30.w,
-            top: 82.h,
+            top: titleTopPadding,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -76,7 +74,7 @@ class AuthHeader extends StatelessWidget {
                     textAlign: TextAlign.end,
                     style: TextStyle(
                       color: XColors.black,
-                      fontSize: 24.sp,
+                      fontSize: 22.sp,
                       fontWeight: FontWeight.w700,
                     ),
                   ),

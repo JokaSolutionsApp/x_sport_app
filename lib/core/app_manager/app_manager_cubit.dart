@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:bloc/bloc.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +27,7 @@ class AppManagerCubit extends Cubit<AppManagerState> {
     }
   }
 
-  Future<void> switchLanguage(Locale locale) async {
+  Future<void> switchLanguage(Locale locale, BuildContext context) async {
     final prefs = await SharedPreferences.getInstance();
     String fontFamily;
     if (locale.languageCode == 'ar') {
@@ -38,6 +40,6 @@ class AppManagerCubit extends Cubit<AppManagerState> {
     await prefs.setString(_languageCodeKey, locale.languageCode);
     await prefs.setString(_fontFamilyKey, fontFamily);
     emit(LanguageLoaded(locale, fontFamily));
-    EasyLocalization.of(navigatorKey.currentContext!)!.setLocale(locale);
+    EasyLocalization.of(context)?.setLocale(locale);
   }
 }

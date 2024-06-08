@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/main.dart';
 
 import 'comments_log_page.dart';
 import 'likes_log_page.dart';
@@ -58,8 +59,7 @@ class AllLogsPage extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                          context,
+                      Navigator.of(navigatorKey.currentContext!).push(
                           MaterialPageRoute(
                               builder: (context) => const LikesLogPage()));
                     },
@@ -85,8 +85,7 @@ class AllLogsPage extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                          context,
+                      Navigator.of(navigatorKey.currentContext!).push(
                           MaterialPageRoute(
                               builder: (context) => const CommentsLogPage()));
                     },
@@ -134,8 +133,7 @@ class AllLogsPage extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                          context,
+                      Navigator.of(navigatorKey.currentContext!).push(
                           MaterialPageRoute(
                               builder: (context) => SearchLogPage()));
                     },

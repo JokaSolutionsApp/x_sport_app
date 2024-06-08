@@ -18,9 +18,14 @@ enum State {
 enum UserAuthState {
   otp,
   loggedIn,
+  registerWithEmailAndPassword,
   guest,
   welcome,
   error,
+  registredWithGoogle,
+  comletedRegistrationWithGoogle,
+  profilePictureSkipped,
+  RegistrationFinished,
 }
 
 enum SuggestionsState {

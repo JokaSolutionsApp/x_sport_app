@@ -32,14 +32,18 @@ class RoutePage extends StatelessWidget {
           return const Offstage();
         },
         checkAccountStatus: (value) {
-          if (value.userAuthState == UserAuthState.loggedIn) {
+          if (value.userAuthState == UserAuthState.RegistrationFinished ||
+              value.userAuthState == UserAuthState.profilePictureSkipped) {
             return const MainPage();
-          } else if (value.userAuthState == UserAuthState.welcome) {
+          } else if (value.userAuthState ==
+                  UserAuthState.comletedRegistrationWithGoogle ||
+              value.userAuthState ==
+                  UserAuthState.registerWithEmailAndPassword) {
             return const WelcomePage();
-          } else if (value.userAuthState == UserAuthState.otp) {
-            return const OtpPage();
+          } else if (value.userAuthState == UserAuthState.registredWithGoogle) {
+            return const CompleteProfilePage();
           } else if (value.userAuthState == UserAuthState.error) {
-            return const LoginPage();
+            return const CreateOrSignIn();
           } else {
             return const CreateOrSignIn();
           }

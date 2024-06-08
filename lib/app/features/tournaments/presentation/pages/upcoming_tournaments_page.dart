@@ -95,8 +95,7 @@ class UpCommingTournamentsPage extends StatelessWidget {
               SizedBox(
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                        context,
+                    Navigator.of(navigatorKey.currentContext!).push(
                         MaterialPageRoute(
                             builder: (context) => const MyChatsPage()));
                   },
@@ -187,8 +186,7 @@ class UpCommingTournamentsPage extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                          context,
+                      Navigator.of(navigatorKey.currentContext!).push(
                           MaterialPageRoute(
                               builder: (context) => const TournamentPage()));
                     },

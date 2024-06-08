@@ -3,12 +3,17 @@ import 'dart:convert';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:x_sport/app/features/auth/data/models/sport_model.dart';
 import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/change_email_usecase.dart';
 import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/change_password_usecase.dart';
+import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/complete_your_profile.dart';
 import 'package:x_sport/app/features/auth/domain/usecase/user_usecase/skip_profile_picture.dart';
+import 'package:x_sport/app/features/auth/presentation/pages/complete_your_profile.dart';
+import 'package:x_sport/app/features/auth/presentation/pages/create_or_signin.dart';
 import '../../../../../core/constance/app_functions.dart';
 import '../../../../../core/error/failure.dart';
 import '../../../../../core/services/locator/service_locator.dart';
@@ -63,6 +68,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final ChangeEmailUseCase changeEmailUseCase;
   final ChangePasswordUseCase changePasswordUseCase;
   final SkipProfilePictureUseCase skipProfilePictureUseCase;
+  final CompleteYourProfileUseCase completeYourProfileUseCase;
 
   AuthBloc(
     this.registerUseCase,
@@ -83,11 +89,14 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     this.changeEmailUseCase,
     this.changePasswordUseCase,
     this.skipProfilePictureUseCase,
+    this.completeYourProfileUseCase,
   ) : super(const AuthState.initial()) {
     on<AuthEvent>((event, emit) async {
       await event.map(
         login: (event) async => await _login(event, emit),
         googleLogin: (event) async => await _googleLogin(event, emit),
+        completeYourProfile: (event) async =>
+            await _completeYourProfile(event, emit),
         register: (event) async => await _register(event, emit),
         deleteUserProfile: (event) async =>
             await _deleteUserProfile(event, emit),
@@ -127,15 +136,25 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     await result.fold((f) async {
       await EasyLoading.dismiss();
       if (f.statusCode == 500) {
-        EasyLoading.showError(f.message);
+        AuthBloc.showToastError(
+          context: navigatorKey.currentContext!,
+          title: f.message,
+          fToast: FToast(),
+        );
       } else {
-        EasyLoading.showError(f.message);
+        AuthBloc.showToastError(
+          context: navigatorKey.currentContext!,
+          title: f.message,
+          fToast: FToast(),
+        );
       }
       emit(const AuthState.registerFailure());
     }, (r) async {
       await EasyLoading.dismiss();
-      if (r) {
-        emit(AuthState.registered(registered: r));
+      if (r.toString().isNotEmpty) {
+        user = r;
+        emit(AuthState.registered(user: user));
+
         Navigator.of(navigatorKey.currentContext!).pushAndRemoveUntil(
           MaterialPageRoute(builder: (context) => const WelcomePage()),
           ModalRoute.withName('/'),
@@ -199,10 +218,20 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     final result = await loginUseCase();
 
     await result.fold((f) async {
+      EasyLoading.dismiss();
+
       if (f.statusCode == 500) {
-        EasyLoading.showError(f.message);
+        AuthBloc.showToastError(
+          context: navigatorKey.currentContext!,
+          title: f.message,
+          fToast: FToast(),
+        );
       } else {
-        EasyLoading.showError(f.message);
+        AuthBloc.showToastError(
+          context: navigatorKey.currentContext!,
+          title: f.message,
+          fToast: FToast(),
+        );
       }
       emit(const AuthState.logginFailure());
     }, (r) async {
@@ -213,7 +242,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
         Navigator.of(navigatorKey.currentContext!).pushAndRemoveUntil(
           MaterialPageRoute(builder: (context) => const MainPage()),
-          ModalRoute.withName('/'),
+          ModalRoute.withName('/MainPage'),
         );
       }
     });
@@ -248,21 +277,53 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         EasyLoading.showError(f.message);
       }
     }, (r) async {
-      print('_googleLogin ${r.user}');
-
       await EasyLoading.dismiss();
-      if (r.user != null) {
-        emit(AuthState.sportsFetched(sports: sports));
 
-        emit(AuthState.googleLoggedIn(user: r));
-        emit(AuthState.userProfileFetched(userProfile: r));
+      Navigator.of(navigatorKey.currentContext!).pushAndRemoveUntil(
+        MaterialPageRoute(builder: (context) => const CompleteProfilePage()),
+        ModalRoute.withName('/'),
+      );
+      // print('_googleLogin ${r.user}');
 
-        Navigator.of(navigatorKey.currentContext!).pushAndRemoveUntil(
-          MaterialPageRoute(builder: (context) => const MainPage()),
-          ModalRoute.withName('/'),
-        );
-      } else {
-        emit(AuthState.sportsFetched(sports: sports));
+      // await EasyLoading.dismiss();
+      // if (r.user != null) {
+      //   emit(AuthState.sportsFetched(sports: sports));
+
+      //   emit(AuthState.googleLoggedIn(user: r));
+      //   emit(AuthState.userProfileFetched(userProfile: r));
+
+      //   Navigator.of(navigatorKey.currentContext!).pushAndRemoveUntil(
+      //     MaterialPageRoute(builder: (context) => const MainPage()),
+      //     ModalRoute.withName('/'),
+      //   );
+      // } else {
+      //   emit(AuthState.sportsFetched(sports: sports));
+      //   Navigator.of(navigatorKey.currentContext!).pushAndRemoveUntil(
+      //     MaterialPageRoute(builder: (context) => const WelcomePage()),
+      //     ModalRoute.withName('/'),
+      //   );
+      // }
+    });
+  }
+
+  Future<void> _completeYourProfile(event, Emitter<AuthState> emit) async {
+    event as _$CompleteYourProfileImpl;
+    emit(const AuthState.completeRegistrationLoading());
+    EasyLoadingInit.startLoading();
+
+    final result =
+        await completeYourProfileUseCase(name: event.name, phone: event.phone);
+
+    await result.fold((f) async {
+      EasyLoading.showError(f.message);
+
+      emit(const AuthState.completeYourProfileFailure());
+    }, (r) async {
+      await EasyLoading.dismiss();
+      if (r.toString().isNotEmpty) {
+        user = r;
+        emit(AuthState.profileCompleted(user: user));
+
         Navigator.of(navigatorKey.currentContext!).pushAndRemoveUntil(
           MaterialPageRoute(builder: (context) => const WelcomePage()),
           ModalRoute.withName('/'),
@@ -278,25 +339,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
     result.fold((l) {
       emit(const AuthState.checkAccountStatus(
-          userAuthState: UserAuthState.loggedIn));
-    }, (isLogged) {
-      print("isLogged $isLogged");
-      if (isLogged == UserAuthState.loggedIn) {
-        emit(const AuthState.checkAccountStatus(
-            userAuthState: UserAuthState.loggedIn));
-      }
-      if (isLogged == UserAuthState.welcome) {
-        emit(const AuthState.checkAccountStatus(
-            userAuthState: UserAuthState.welcome));
-      }
-      if (isLogged == UserAuthState.guest) {
-        emit(const AuthState.checkAccountStatus(
-            userAuthState: UserAuthState.guest));
-      }
-      if (isLogged == UserAuthState.otp) {
-        emit(const AuthState.checkAccountStatus(
-            userAuthState: UserAuthState.otp));
-      }
+          userAuthState: UserAuthState.guest));
+    }, (userAuthState) {
+      print("userAuthState $userAuthState");
+      emit(AuthState.checkAccountStatus(userAuthState: userAuthState));
     });
   }
 
@@ -318,7 +364,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         emit(AuthState.userProfileFetched(userProfile: r));
         Navigator.of(navigatorKey.currentContext!).pushAndRemoveUntil(
           MaterialPageRoute(builder: (context) => const MainPage()),
-          ModalRoute.withName('/'),
+          ModalRoute.withName('/MainPage'),
         );
       },
     );
@@ -440,10 +486,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     }, (r) async {
       EasyLoading.dismiss();
       await sl<SecureStorageService>().delete('token');
-
       Navigator.of(navigatorKey.currentContext!).pushAndRemoveUntil(
-        MaterialPageRoute(builder: (context) => const LoginPage()),
-        ModalRoute.withName('/'),
+        MaterialPageRoute(builder: (context) => const CreateOrSignIn()),
+        ModalRoute.withName('/CreateOrSignIn'),
       );
     });
   }
@@ -517,9 +562,93 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       ));
       Navigator.of(navigatorKey.currentContext!).pushAndRemoveUntil(
         MaterialPageRoute(builder: (context) => const MainPage()),
-        ModalRoute.withName('/'),
+        ModalRoute.withName('/MainPage'),
       );
     });
     EasyLoading.dismiss();
+  }
+
+  static getKeyboardPadding(BuildContext context) {
+    final bottomInset = MediaQuery.of(context).viewInsets.bottom;
+    final keyboardIsOpen = bottomInset > 0;
+    double toastPosition = 0.0;
+    if (keyboardIsOpen) {
+      toastPosition = bottomInset + 50;
+    } else {
+      toastPosition = 10.0;
+    }
+    return toastPosition;
+  }
+
+  static showToastError({
+    required BuildContext context,
+    required FToast fToast,
+    required String title,
+  }) {
+    fToast.init(context);
+    double padding = getKeyboardPadding(context);
+    final double titleWidth = (title.length * 14.sp)
+        .toDouble(); // Calculate title width based on length and font size
+
+    fToast.showToast(
+      child: Container(
+        height: 45.h,
+        alignment: Alignment.center,
+        padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 5.h),
+        decoration: BoxDecoration(
+          color: Colors.black,
+          borderRadius: BorderRadius.circular(28),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+              child: Text(
+                "*$title",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w700,
+                ),
+                maxLines: 2,
+              ),
+            ),
+            SizedBox(width: 4.w), // Add spacing between text and red container
+            Container(
+              alignment: Alignment.center,
+              height: 30.h,
+              width: 30.h,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.red,
+              ),
+              child: Text(
+                'x',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18.sp,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
+      positionedToastBuilder: (context, child) {
+        return Positioned(
+          bottom: padding.h,
+          left: (MediaQuery.of(context).size.width - titleWidth) / 2 -
+              10.w, // Center the toast horizontally
+          right: (MediaQuery.of(context).size.width - titleWidth) / 2 -
+              10.w, // Center the toast horizontally
+          child: child,
+        );
+      },
+      gravity: ToastGravity.BOTTOM,
+      isDismissable: true,
+      toastDuration: const Duration(
+        seconds: 2,
+      ),
+    );
   }
 }

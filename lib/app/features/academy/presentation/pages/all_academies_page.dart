@@ -98,8 +98,7 @@ class _AllAcademiesPageState extends State<AllAcademiesPage> {
 
                         return GestureDetector(
                           onTap: () {
-                            Navigator.push(
-                              context,
+                            Navigator.of(navigatorKey.currentContext!).push(
                               MaterialPageRoute(
                                 builder: (context) => AcademyPage(
                                   academy: academy,

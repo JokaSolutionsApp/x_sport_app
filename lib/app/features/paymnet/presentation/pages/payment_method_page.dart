@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/main.dart';
 
 import '../../../../../core/constance/app_icons_icons.dart';
 import '../../../../../core/utils/assets_managers/assets.gen.dart';
@@ -198,8 +199,7 @@ class PaymentMethodPage extends StatelessWidget {
                         text: 'التالي',
                         textSize: 15,
                         onPressed: () {
-                          Navigator.push(
-                              context,
+                          Navigator.of(navigatorKey.currentContext!).push(
                               MaterialPageRoute(
                                   builder: (context) =>
                                       PaymentAddMethodInfoPage()));

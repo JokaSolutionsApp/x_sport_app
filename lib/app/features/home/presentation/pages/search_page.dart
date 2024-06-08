@@ -192,7 +192,7 @@ class _SearchScreenState extends State<SearchPage>
       //                   onTap: () {
       //                     // FocusScope.of(context).unfocus();
       //                     // Future.delayed(Duration(milliseconds: 150), () {
-      //                     //   Navigator.push(
+      //                     //   Navigator.of(navigatorKey.currentContext!).push(
       //                     //     context,
       //                     //     MaterialPageRoute(
       //                     //       builder: (context) => PeopleProfilePage(),
@@ -286,7 +286,7 @@ class _SearchScreenState extends State<SearchPage>
       //                 onTap: () {
       //                   // FocusScope.of(context).unfocus();
       //                   // Future.delayed(Duration(milliseconds: 150), () {
-      //                   //   Navigator.push(
+      //                   //   Navigator.of(navigatorKey.currentContext!).push(
       //                   //     context,
       //                   //     MaterialPageRoute(
       //                   //       builder: (context) => PeopleProfilePage(),
@@ -393,7 +393,7 @@ class _SearchScreenState extends State<SearchPage>
       //                           onTap: () {
       //                             // FocusScope.of(context).unfocus();
       //                             // Future.delayed(Duration(milliseconds: 150), () {
-      //                             //   Navigator.push(
+      //                             //   Navigator.of(navigatorKey.currentContext!).push(
       //                             //     context,
       //                             //     MaterialPageRoute(
       //                             //       builder: (context) => PeopleProfilePage(),

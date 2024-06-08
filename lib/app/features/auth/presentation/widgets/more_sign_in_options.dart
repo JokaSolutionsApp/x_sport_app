@@ -1,6 +1,13 @@
+import 'dart:io';
+
 import 'package:easy_localization/easy_localization.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:sign_in_with_apple/sign_in_with_apple.dart';
+import 'package:x_sport/app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:x_sport/core/constance/app_constance.dart';
 import 'package:x_sport/core/localization/locale_externsion.dart';
 import 'package:x_sport/core/localization/locale_keys.g.dart';
@@ -12,7 +19,8 @@ class MoreSignInOptions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: 27.h, top: 54.h),
+      padding:
+          EdgeInsets.only(bottom: 27.h, top: Platform.isAndroid ? 54.h : 0.h),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
@@ -57,8 +65,39 @@ class MoreSignInOptions extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         GestureDetector(
+                            onTap: () async {
+                              // try {
+                              //   final appleCredential =
+                              //       await SignInWithApple.getAppleIDCredential(
+                              //     scopes: [
+                              //       AppleIDAuthorizationScopes.email,
+                              //       AppleIDAuthorizationScopes.fullName,
+                              //     ],
+                              //   );
+
+                              //   final oauthCredential =
+                              //       OAuthProvider("apple.com").credential(
+                              //     idToken: appleCredential.identityToken,
+                              //     accessToken:
+                              //         appleCredential.authorizationCode,
+                              //   );
+
+                              //   final UserCredential userCredential =
+                              //       await FirebaseAuth.instance
+                              //           .signInWithCredential(oauthCredential);
+
+                              //   print('User signed in: ${userCredential.user}');
+                              // } catch (e) {
+                              //   print('Error with Apple Sign-In: $e');
+                              // }
+                            },
                             child: AssetsManager.icons.apple.image()),
                         GestureDetector(
+                            onTap: () {
+                              context
+                                  .read<AuthBloc>()
+                                  .add(AuthEvent.googleLogin());
+                            },
                             child: AssetsManager.icons.google.image()),
                         GestureDetector(
                             child: AssetsManager.icons.facebook.image()),

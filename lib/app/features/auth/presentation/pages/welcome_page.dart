@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/core/services/locator/service_locator.dart';
+import 'package:x_sport/core/services/secure_storage_service.dart.dart';
 
 import '../../../../../core/constance/app_constance.dart';
 import '../../../../../core/utils/assets_managers/assets.gen.dart';
@@ -17,8 +19,21 @@ class WelcomePage extends StatefulWidget {
 
 class _WelcomePageState extends State<WelcomePage> {
   String imageType = '';
-
   List<int> imageBytes = [];
+  String? name;
+
+  @override
+  initState() {
+    super.initState();
+    getName();
+  }
+
+  Future<void> getName() async {
+    final retrievedName = await sl<SecureStorageService>().read('name');
+    setState(() {
+      name = retrievedName;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +82,7 @@ class _WelcomePageState extends State<WelcomePage> {
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Text(
-                            'Welcome Basheer',
+                            'Welcome ${name ?? ''}',
                             textAlign: TextAlign.end,
                             style: TextStyle(
                               color: XColors.white,

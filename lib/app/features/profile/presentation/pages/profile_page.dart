@@ -39,8 +39,10 @@ class ProfilePage extends StatelessWidget {
         return state.maybeMap(
           orElse: () => const Offstage(),
           userProfileFailure: (_) => const Offstage(),
-          userProfileLocalLoading: (_) => const Offstage(),
-          userProfileLoading: (_) => const CircularProgressIndicator.adaptive(),
+          userProfileLocalLoading: (_) =>
+              Center(child: const CircularProgressIndicator.adaptive()),
+          userProfileLoading: (_) =>
+              Center(child: const CircularProgressIndicator.adaptive()),
           userProfileFetched: (value) {
             UserProfileEntity userProfile = value.userProfile!;
 

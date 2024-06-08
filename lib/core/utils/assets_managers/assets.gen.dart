@@ -159,12 +159,19 @@ class $AssetsTranslationsGen {
 class $AssetsImagesAuthGen {
   const $AssetsImagesAuthGen();
 
+  /// File path: assets/images/Auth/join.png
+  AssetGenImage get join => const AssetGenImage('assets/images/Auth/join.png');
+
+  /// File path: assets/images/Auth/sign_in.png
+  AssetGenImage get signIn =>
+      const AssetGenImage('assets/images/Auth/sign_in.png');
+
   /// File path: assets/images/Auth/x_sports_logo.png
   AssetGenImage get xSportsLogo =>
       const AssetGenImage('assets/images/Auth/x_sports_logo.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [xSportsLogo];
+  List<AssetGenImage> get values => [join, signIn, xSportsLogo];
 }
 
 class $AssetsImagesAcademyGen {

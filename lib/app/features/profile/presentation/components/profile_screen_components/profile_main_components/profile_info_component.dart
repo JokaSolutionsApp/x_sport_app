@@ -11,7 +11,7 @@ import '../../../pages/edit_profile_page.dart';
 import '../../../pages/profile_ranking_page.dart';
 import 'profile_stats_component.dart';
 
-class ProfileInfoComponent extends StatelessWidget {
+class ProfileInfoComponent extends StatefulWidget {
   final UserProfileEntity userProfile;
   final int? points;
   final List<FavoriteSportEntity> favoriteSports;
@@ -20,6 +20,37 @@ class ProfileInfoComponent extends StatelessWidget {
       required this.userProfile,
       required this.points,
       required this.favoriteSports});
+
+  @override
+  State<ProfileInfoComponent> createState() => _ProfileInfoComponentState();
+}
+
+class _ProfileInfoComponentState extends State<ProfileInfoComponent> {
+  @override
+  initState() {
+    super.initState();
+    getInitials();
+  }
+
+  String? initials;
+  getInitials() {
+    final name = widget.userProfile.user?.name ?? '';
+    if (name.isNotEmpty) {
+      final nameParts = name.split(' ');
+      if (nameParts.length >= 2) {
+        final firstInitial = nameParts[0].isNotEmpty ? nameParts[0][0] : '';
+        final lastInitial = nameParts[1].isNotEmpty ? nameParts[1][0] : '';
+        setState(() {
+          initials = '$firstInitial$lastInitial';
+        });
+      } else if (nameParts.length == 1) {
+        final firstInitial = nameParts[0].isNotEmpty ? nameParts[0][0] : '';
+        setState(() {
+          initials = firstInitial;
+        });
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,8 +73,7 @@ class ProfileInfoComponent extends StatelessWidget {
                         children: [
                           GestureDetector(
                               onTap: () {
-                                Navigator.push(
-                                    context,
+                                Navigator.of(navigatorKey.currentContext!).push(
                                     MaterialPageRoute(
                                         builder: (context) =>
                                             const ProfileRankingPage()));
@@ -63,7 +93,7 @@ class ProfileInfoComponent extends StatelessWidget {
                           ),
                           SizedBox(width: 6.h),
                           Text(
-                            userProfile.user!.loyaltyPoints.toString(),
+                            widget.userProfile.user!.loyaltyPoints.toString(),
                             style: TextStyle(
                               color: XColors.primary,
                               fontSize: 17.sp,
@@ -82,7 +112,7 @@ class ProfileInfoComponent extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            userProfile.user!.name ?? '',
+                            widget.userProfile.user!.name ?? '',
                             style: TextStyle(
                               color: const Color(0xFF111C32),
                               fontSize: 15.sp,
@@ -92,7 +122,7 @@ class ProfileInfoComponent extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            userProfile.user!.email ?? '',
+                            widget.userProfile.user!.email ?? '',
                             style: const TextStyle(
                               color: Color(0xFF7E7E7E),
                               fontSize: 12,
@@ -113,12 +143,12 @@ class ProfileInfoComponent extends StatelessWidget {
                           ),
                           InkWell(
                             onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
+                              Navigator.of(navigatorKey.currentContext!)
+                                  .push(MaterialPageRoute(
                                       builder: (context) => EditProfilePage(
-                                            user: userProfile.user!,
-                                            favoriteSports: favoriteSports,
+                                            user: widget.userProfile.user!,
+                                            favoriteSports:
+                                                widget.favoriteSports,
                                           )));
                             },
                             child: Text(
@@ -142,18 +172,18 @@ class ProfileInfoComponent extends StatelessWidget {
                       decoration: ShapeDecoration(
                         image: DecorationImage(
                             fit: BoxFit.cover,
-                            image:
-                                NetworkImage(userProfile.user!.imgURL ?? '')),
+                            image: NetworkImage(
+                                widget.userProfile.user!.imgURL ?? '')),
                         color: XColors.Background_Color1,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(11),
                         ),
                       ),
                       child: Offstage(
-                        offstage: userProfile.user?.imgURL == null ||
-                            userProfile.user!.imgURL!.isNotEmpty,
+                        offstage: widget.userProfile.user?.imgURL == null ||
+                            widget.userProfile.user!.imgURL.isNotEmpty,
                         child: Text(
-                          'BA',
+                          initials ?? '',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 35.sp,
@@ -176,8 +206,9 @@ class ProfileInfoComponent extends StatelessWidget {
                       Navigator.of(navigatorKey.currentContext!).push(
                         MaterialPageRoute(
                           builder: (context) => EditProfilePage(
-                            user: userProfile.user!,
-                            favoriteSports: userProfile.favoriteSports ?? [],
+                            user: widget.userProfile.user!,
+                            favoriteSports:
+                                widget.userProfile.favoriteSports ?? [],
                           ),
                         ),
                       );
@@ -198,8 +229,8 @@ class ProfileInfoComponent extends StatelessWidget {
             Align(
               alignment: Alignment.bottomCenter,
               child: ProfileStatsComponent(
-                following: userProfile.following,
-                followers: userProfile.followers,
+                following: widget.userProfile.following,
+                followers: widget.userProfile.followers,
                 matchesCount: 0,
               ),
             ),

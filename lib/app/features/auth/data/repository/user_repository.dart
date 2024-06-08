@@ -30,7 +30,7 @@ class UserRepository extends BaseUserRepository {
   }
 
   @override
-  Future<Either<Failure, UserProfileEntity>> googleLogin() async {
+  Future<Either<Failure, void>> googleLogin() async {
     try {
       final result = await baseUsersRemoteDataSource.googleLogin();
 
@@ -44,7 +44,7 @@ class UserRepository extends BaseUserRepository {
   }
 
   @override
-  Future<Either<Failure, bool>> register() async {
+  Future<Either<Failure, UserProfileEntity>> register() async {
     try {
       final result = await baseUsersRemoteDataSource.register();
 
@@ -298,6 +298,22 @@ class UserRepository extends BaseUserRepository {
   Future<Either<Failure, bool>> skipProfilePicture() async {
     try {
       final result = await baseUsersRemoteDataSource.skipProfilePicture();
+
+      return Right(result);
+    } on ServerException catch (failuar) {
+      return Left(ServerFailure(
+        failuar.errorModel.statusCode,
+        failuar.errorModel.message,
+      ));
+    }
+  }
+
+  @override
+  Future<Either<Failure, UserProfileEntity>> completeYourProfile(
+      String name, String phone) async {
+    try {
+      final result =
+          await baseUsersRemoteDataSource.completeYourProfile(name, phone);
 
       return Right(result);
     } on ServerException catch (failuar) {

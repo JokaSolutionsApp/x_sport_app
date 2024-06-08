@@ -173,29 +173,32 @@ class _CreditCardPageState extends State<CreditCardPage> {
                                   textColor: Colors.white,
                                   text: 'انشر',
                                   onPressed: () {
-                                    EasyLoadingInit.startLoading();
-                                    Future.delayed(const Duration(seconds: 2),
-                                        () {
-                                      EasyLoading.dismiss();
-                                      showDialog(
-                                        context: context,
-                                        builder: (context) {
-                                          return const PaymentFailDialog();
-                                        },
-                                      );
-                                      showDialog(
-                                        context: context,
-                                        builder: (context) {
-                                          return const PaymentSuccessDialog();
-                                        },
-                                      );
-                                      Navigator.of(navigatorKey.currentContext!)
-                                          .push(
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const OtpPage()),
-                                      );
-                                    });
+                                    if (isButtonEnabled) {
+                                      EasyLoadingInit.startLoading();
+                                      Future.delayed(const Duration(seconds: 2),
+                                          () {
+                                        EasyLoading.dismiss();
+                                        showDialog(
+                                          context: context,
+                                          builder: (context) {
+                                            return const PaymentFailDialog();
+                                          },
+                                        );
+                                        showDialog(
+                                          context: context,
+                                          builder: (context) {
+                                            return const PaymentSuccessDialog();
+                                          },
+                                        );
+                                        Navigator.of(
+                                                navigatorKey.currentContext!)
+                                            .push(
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const OtpPage()),
+                                        );
+                                      });
+                                    }
                                     // context.read<UserBloc>().add(const SignUpEvent());
                                   },
                                 );

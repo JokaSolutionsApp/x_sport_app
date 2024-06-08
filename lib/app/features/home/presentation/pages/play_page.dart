@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:x_sport/main.dart';
 
 import '../../../../../core/constance/app_constance.dart';
 import '../../../../../core/constance/app_icons_icons.dart';
@@ -72,8 +73,7 @@ class PlayPage extends StatelessWidget {
                   itemBuilder: (BuildContext context, int index) {
                     return GestureDetector(
                       onTap: () {
-                        Navigator.push(
-                            context,
+                        Navigator.of(navigatorKey.currentContext!).push(
                             MaterialPageRoute(
                                 builder: (context) => matches[index].screen));
                       },
@@ -152,8 +152,7 @@ class PlayPage extends StatelessWidget {
                         minWidth: 180,
                         height: 40,
                         onPressed: () {
-                          Navigator.push(
-                              context,
+                          Navigator.of(navigatorKey.currentContext!).push(
                               MaterialPageRoute(
                                   builder: (context) =>
                                       const MatchReservationPage()));

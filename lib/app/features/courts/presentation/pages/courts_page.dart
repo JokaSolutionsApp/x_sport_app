@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:x_sport/app/features/courts/domain/enitites/stadiums_entity.dart';
+import 'package:x_sport/main.dart';
 import '../bloc/stadium_bloc.dart';
 import '../../../academy/presentation/components/video_player_full_screen_widget.dart';
 import '../../../../../core/constance/app_constance.dart';
@@ -170,8 +171,9 @@ class _CourtsScreenState extends State<CourtsPage>
                                         shape: BoxShape.circle),
                                     child: IconButton(
                                       onPressed: () {
-                                        Navigator.push(
-                                          context,
+                                        Navigator.of(
+                                                navigatorKey.currentContext!)
+                                            .push(
                                           MaterialPageRoute(
                                             builder: (context) =>
                                                 VideoPlayerFullScreenWidget(

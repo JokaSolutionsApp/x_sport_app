@@ -22,9 +22,9 @@ class Validators {
     if (eregex.hasMatch(email))
       sink.add(email);
     else if (email == null || email.isEmpty)
-      sink.addError("ادخل البربد الالكتروني");
+      sink.addError("Enter your email");
     else
-      sink.addError("البريد الالكتروني غير صحيح");
+      sink.addError("The email is not valid");
   });
 
   final emailPhoneValidator =
@@ -39,7 +39,7 @@ class Validators {
     else if (email == null || email.isEmpty)
       sink.addError(" ");
     else
-      sink.addError("البريد الالكتروني غير صحيح");
+      sink.addError("The email is not valid");
   });
   var passvalidator =
       StreamTransformer<String, String>.fromHandlers(handleData: (pass, sink) {
@@ -51,7 +51,7 @@ class Validators {
       sink.addError(" ");
     else
       sink.addError(
-          "يجب أن تتكون كلمات المرور من 6 أحرف على الأقل، وحرف واحد على الأقل غير أبجدي رقمي، ورقم واحد على الأقل، وحرف كبير واحد على الأقل.");
+          "password must be at least 8 character long and include 1 capital letter and 1 symbol");
   });
 
   var confValidator =
@@ -64,7 +64,7 @@ class Validators {
     else if (conf == null || conf.isEmpty)
       sink.addError(" ");
     else
-      sink.addError("كلمة المرور غير مطابقة");
+      sink.addError("pssowrd doesn't match");
   });
 
   var confNewValidator =
@@ -77,7 +77,7 @@ class Validators {
     else if (conf == null || conf.isEmpty)
       sink.addError(" ");
     else
-      sink.addError("كلمة المرور غير مطابقة");
+      sink.addError("pssowrd doesn't match");
   });
 
   var phonevalidator = StreamTransformer<String, String>.fromHandlers(
@@ -90,7 +90,7 @@ class Validators {
       } else if (phone.isEmpty || phone == null) {
         sink.addError(" ");
       } else {
-        sink.addError("ادخل رقم هاتف صحيح");
+        sink.addError("Add a currect mobile number");
       }
     },
   );
